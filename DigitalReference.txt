@@ -1,0 +1,15 @@
+# Ontology metadata attributes required for registration in the TIB ontology hub.
+# The file name is identical to the ontology's ttl file with .txt extension.
+
+shortName: DigitalReference
+title: Digital Reference
+description: Semantic Web for semiconductor supply chains and supply chains containing semiconductors
+autorFullName: Hans Ehm
+authorEmail: hans.ehm@infineon.com
+maintainerFullname: Nour Ramzy
+maintainerEmail: nour.ramzy@infineon.com
+keywords: semiconductor, supply chain, ecsel  
+license: GNU General Public License v3.0 #Change if you have another license
+version: v0.0.1 #Change if you have already released the ontology under specific version
+repositoryURL: https://github.com/tibonto/dr
+releaseURL: https://github.com/tibonto/dr/releases/tag/v0.0.1

@@ -22,9 +22,11 @@
 @base <http://www.w3id.org/ecsel-dr> .
 
 <http://www.w3id.org/ecsel-dr> rdf:type owl:Ontology ;
-                                dc:description "Holistic ontology that represents supply chains that manufacture semiconductors or use semiconductors as part of what they produce."@en ;
+                                dc:description "Holistic Ontology for semiconductor manufacturing and development, products and systems containing semiconductors and connected supply chains."@en ;
                                 dc:title "Digital Reference"@en ;
                                 terms:created "2019-11-07"@en ;
+                                terms:creator "George Dimitrakopoulos"@en ,
+                                              "Hans Ehm"@en ;
                                 terms:isVersionOf <http://www.w3id.org/ecsel-dr> ;
                                 terms:modified "2020-09-18"@en ;
                                 terms:title "Digital Reference"@en ;
@@ -13779,6 +13781,102 @@ ecsel-dr-RAMI40:Work_Center rdf:type owl:NamedIndividual .
 [ rdf:type swrl:Imp ;
    swrl:body [ rdf:type swrl:AtomList ;
                rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate <http://www.w3.org/ns/sosa/Actuation> ;
+                           swrl:argument1 <urn:swrl:var#x>
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate <http://www.w3.org/ns/sosa/madeByActuator> ;
+                                      swrl:argument1 <urn:swrl:var#x> ;
+                                      swrl:argument2 <urn:swrl:var#y>
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate <http://www.w3.org/ns/ssn/implements> ;
+                                                 swrl:argument1 <urn:swrl:var#y> ;
+                                                 swrl:argument2 <urn:swrl:var#z>
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate <http://www.w3.org/ns/sosa/usedProcedure> ;
+                           swrl:argument1 <urn:swrl:var#x> ;
+                           swrl:argument2 <urn:swrl:var#z>
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate <http://www.w3.org/ns/sosa/Observation> ;
+                           swrl:argument1 <urn:swrl:var#x>
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate <http://www.w3.org/ns/sosa/madeBySensor> ;
+                                      swrl:argument1 <urn:swrl:var#x> ;
+                                      swrl:argument2 <urn:swrl:var#y>
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate <http://www.w3.org/ns/ssn/implements> ;
+                                                 swrl:argument1 <urn:swrl:var#y> ;
+                                                 swrl:argument2 <urn:swrl:var#z>
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate <http://www.w3.org/ns/sosa/usedProcedure> ;
+                           swrl:argument1 <urn:swrl:var#x> ;
+                           swrl:argument2 <urn:swrl:var#z>
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate <http://www.w3.org/ns/sosa/Sampling> ;
+                           swrl:argument1 <urn:swrl:var#x>
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate <http://www.w3.org/ns/sosa/madeBySampler> ;
+                                      swrl:argument1 <urn:swrl:var#x> ;
+                                      swrl:argument2 <urn:swrl:var#y>
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate <http://www.w3.org/ns/ssn/implements> ;
+                                                 swrl:argument1 <urn:swrl:var#y> ;
+                                                 swrl:argument2 <urn:swrl:var#z>
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate <http://www.w3.org/ns/sosa/usedProcedure> ;
+                           swrl:argument1 <urn:swrl:var#x> ;
+                           swrl:argument2 <urn:swrl:var#z>
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
                            swrl:classPredicate ecsel-dr-OOSMP:ApplicationArea ;
                            swrl:argument1 <urn:swrl:var#x>
                          ] ;
@@ -13833,6 +13931,38 @@ ecsel-dr-RAMI40:Work_Center rdf:type owl:NamedIndividual .
    swrl:head [ rdf:type swrl:AtomList ;
                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
                            swrl:propertyPredicate ecsel-dr-OOSMP:subApplicationAreaOf ;
+                           swrl:argument1 <urn:swrl:var#x> ;
+                           swrl:argument2 <urn:swrl:var#z>
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate <http://www.w3id.org/ecsel-dr-PWR#Platform> ;
+                           swrl:argument1 <urn:swrl:var#x>
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate <http://www.w3.org/ns/ssn/inDeployment> ;
+                                      swrl:argument1 <urn:swrl:var#x> ;
+                                      swrl:argument2 <urn:swrl:var#y>
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate <http://www.w3.org/ns/ssn/deployedSystem> ;
+                                                 swrl:argument1 <urn:swrl:var#y> ;
+                                                 swrl:argument2 <urn:swrl:var#z>
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate <http://www.w3.org/ns/sosa/hosts> ;
                            swrl:argument1 <urn:swrl:var#x> ;
                            swrl:argument2 <urn:swrl:var#z>
                          ] ;

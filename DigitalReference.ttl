@@ -2375,7 +2375,7 @@ ecsel-dr-OOSMP:hasPriceIndication rdf:type owl:ObjectProperty ;
                                   owl:inverseOf ecsel-dr-OOSMP:priceIndicationOf ;
                                   rdf:type owl:FunctionalProperty ;
                                   rdfs:domain ecsel-dr-OOSMP:Semiconductor_Solution ;
-                                  rdfs:range ecsel-dr-OOSMP:PriceIndication ;
+                                  rdfs:range ecsel-dr-OOSMP:Price_Indication ;
                                   rdfs:comment "BOM"@en .
 
 
@@ -2586,7 +2586,7 @@ ecsel-dr-OOSMP:partOfAsSmartDriver rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-OOSMP#priceIndicationOf
 ecsel-dr-OOSMP:priceIndicationOf rdf:type owl:ObjectProperty ,
                                           owl:InverseFunctionalProperty ;
-                                 rdfs:domain ecsel-dr-OOSMP:PriceIndication ;
+                                 rdfs:domain ecsel-dr-OOSMP:Price_Indication ;
                                  rdfs:range ecsel-dr-OOSMP:Semiconductor_Solution .
 
 
@@ -8353,11 +8353,6 @@ ecsel-dr-AH:AH_Service rdf:type owl:Class ;
                        rdfs:subClassOf ecsel-dr-AH:Service .
 
 
-###  http://www.w3id.org/ecsel-dr-AH#AH_ServiceRegistry_System_Sys_DD
-ecsel-dr-AH:AH_ServiceRegistry_System_Sys_DD rdf:type owl:Class ;
-                                             rdfs:subClassOf ecsel-dr-AH:AH_Mandatory_Core_System_Sy_SDD .
-
-
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Service_Discovery_Service_IDD
 ecsel-dr-AH:AH_Service_Discovery_Service_IDD rdf:type owl:Class ;
                                              rdfs:subClassOf ecsel-dr-AH:AH_Mandatory_Core_Service_IDD .
@@ -8391,6 +8386,11 @@ That is, CP and SP are useful if different service implementations use the same 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Service_Registry_System_Sy_SD
 ecsel-dr-AH:AH_Service_Registry_System_Sy_SD rdf:type owl:Class ;
                                              rdfs:subClassOf ecsel-dr-AH:AH_Mandatory_Core_System_Sy_SD .
+
+
+###  http://www.w3id.org/ecsel-dr-AH#AH_Service_Registry_System_Sys_DD
+ecsel-dr-AH:AH_Service_Registry_System_Sys_DD rdf:type owl:Class ;
+                                              rdfs:subClassOf ecsel-dr-AH:AH_Mandatory_Core_System_Sy_SDD .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Service_Registry_WADL
@@ -10761,17 +10761,17 @@ ecsel-dr-OOSMP:Pressure_Sensor rdf:type owl:Class ;
                                skos:prefLabel "Pressure Sensor"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#PriceIndication
-ecsel-dr-OOSMP:PriceIndication rdf:type owl:Class ;
-                               owl:equivalentClass [ rdf:type owl:Class ;
-                                                     owl:oneOf ( ecsel-dr-OOSMP:HighPrice_PriceIndication
-                                                                 ecsel-dr-OOSMP:LowPrice_PriceIndication
-                                                                 ecsel-dr-OOSMP:MediumPrice_PriceIndication
-                                                               )
-                                                   ] ;
-                               rdfs:comment "A price indication helps the customer to evaluate the price of an item. A price indication can be \"high\", \"low\", or \"medium\"."@en ;
-                               rdfs:label "Price Indication"@en ;
-                               skos:prefLabel "Price Indication"@en .
+###  http://www.w3id.org/ecsel-dr-OOSMP#Price_Indication
+ecsel-dr-OOSMP:Price_Indication rdf:type owl:Class ;
+                                owl:equivalentClass [ rdf:type owl:Class ;
+                                                      owl:oneOf ( ecsel-dr-OOSMP:HighPrice_PriceIndication
+                                                                  ecsel-dr-OOSMP:LowPrice_PriceIndication
+                                                                  ecsel-dr-OOSMP:MediumPrice_PriceIndication
+                                                                )
+                                                    ] ;
+                                rdfs:comment "A price indication helps the customer to evaluate the price of an item. A price indication can be \"high\", \"low\", or \"medium\"."@en ;
+                                rdfs:label "Price Indication"@en ;
+                                skos:prefLabel "Price Indication"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Product

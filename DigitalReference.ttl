@@ -385,42 +385,14 @@ time:before rdf:type owl:ObjectProperty ,
             skos:definition "Gives directionality to time. If a temporal entity T1 is before another temporal entity T2, then the end of T1 is before the beginning of T2. Thus, \"before\" can be considered to be basic to instants and derived for intervals."@en .
 
 
-###  http://www.w3.org/2006/time#hasBeginning
-time:hasBeginning rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf time:has_Time ;
-                  rdfs:domain time:Temporal_Entity ;
-                  rdfs:range time:Instant ;
-                  rdfs:comment "Beginning of a temporal entity"@en ;
-                  rdfs:label "has beginning"@en ;
-                  skos:definition "Beginning of a temporal entity."@en .
-
-
-###  http://www.w3.org/2006/time#hasDuration
-time:hasDuration rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf time:has_Temporal_Duration ;
-                 rdfs:range time:Duration ;
-                 rdfs:comment "Duration of a temporal entity, expressed as a scaled value or nominal value"@en ;
-                 rdfs:label "has duration"@en ;
-                 skos:definition "Duration of a temporal entity, event or activity, or thing, expressed as a scaled value"@en .
-
-
-###  http://www.w3.org/2006/time#hasDurationDescription
-time:hasDurationDescription rdf:type owl:ObjectProperty ;
-                            rdfs:subPropertyOf time:has_Temporal_Duration ;
-                            rdfs:range time:General_Duration_Description ;
-                            rdfs:comment "Duration of a temporal entity, expressed using a structured description"@en ;
-                            rdfs:label "has duration description"@en ;
-                            skos:definition "Duration of a temporal entity, expressed using a structured description"@en .
-
-
-###  http://www.w3.org/2006/time#hasEnd
-time:hasEnd rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf time:has_Time ;
-            rdfs:domain time:Temporal_Entity ;
-            rdfs:range time:Instant ;
-            rdfs:comment "End of a temporal entity."@en ;
-            rdfs:label "has end"@en ;
-            skos:definition "End of a temporal entity."@en .
+###  http://www.w3.org/2006/time#has_Beginning
+time:has_Beginning rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf time:has_Time ;
+                   rdfs:domain time:Temporal_Entity ;
+                   rdfs:range time:Instant ;
+                   rdfs:comment "Beginning of a temporal entity"@en ;
+                   rdfs:label "has beginning"@en ;
+                   skos:definition "Beginning of a temporal entity."@en .
 
 
 ###  http://www.w3.org/2006/time#has_Date_Time_Description
@@ -430,6 +402,34 @@ time:has_Date_Time_Description rdf:type owl:ObjectProperty ;
                                rdfs:comment "Value of DateTimeInterval expressed as a structured value. The beginning and end of the interval coincide with the limits of the shortest element in the description."@en ;
                                rdfs:label "has Date-Time description"@en ;
                                skos:definition "Value of DateTimeInterval expressed as a structured value. The beginning and end of the interval coincide with the limits of the shortest element in the description."@en .
+
+
+###  http://www.w3.org/2006/time#has_Duration
+time:has_Duration rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf time:has_Temporal_Duration ;
+                  rdfs:range time:Duration ;
+                  rdfs:comment "Duration of a temporal entity, expressed as a scaled value or nominal value"@en ;
+                  rdfs:label "has duration"@en ;
+                  skos:definition "Duration of a temporal entity, event or activity, or thing, expressed as a scaled value"@en .
+
+
+###  http://www.w3.org/2006/time#has_Duration_Description
+time:has_Duration_Description rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf time:has_Temporal_Duration ;
+                              rdfs:range time:General_Duration_Description ;
+                              rdfs:comment "Duration of a temporal entity, expressed using a structured description"@en ;
+                              rdfs:label "has duration description"@en ;
+                              skos:definition "Duration of a temporal entity, expressed using a structured description"@en .
+
+
+###  http://www.w3.org/2006/time#has_End
+time:has_End rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf time:has_Time ;
+             rdfs:domain time:Temporal_Entity ;
+             rdfs:range time:Instant ;
+             rdfs:comment "End of a temporal entity."@en ;
+             rdfs:label "has end"@en ;
+             skos:definition "End of a temporal entity."@en .
 
 
 ###  http://www.w3.org/2006/time#has_TRS
@@ -524,19 +524,10 @@ time:intervalFinishes rdf:type owl:ObjectProperty ;
                       skos:definition "If a proper interval T1 is intervalFinishes another proper interval T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is coincident with the end of T2."@en .
 
 
-###  http://www.w3.org/2006/time#intervalStartedBy
-time:intervalStartedBy rdf:type owl:ObjectProperty ;
-                       owl:inverseOf time:intervalStarts ;
-                       rdfs:domain time:Proper_Interval ;
-                       rdfs:range time:Proper_Interval ;
-                       rdfs:comment "If a proper interval T1 is intervalStarted another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is after the end of T2."@en ;
-                       rdfs:label "interval started by"@en ;
-                       skos:definition "If a proper interval T1 is intervalStarted another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is after the end of T2."@en .
-
-
 ###  http://www.w3.org/2006/time#intervalStarts
 time:intervalStarts rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf time:interval_in ;
+                    owl:inverseOf time:interval_started_by ;
                     rdfs:domain time:Proper_Interval ;
                     rdfs:range time:Proper_Interval ;
                     rdfs:comment "If a proper interval T1 is intervalStarts another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is before the end of T2."@en ;
@@ -653,18 +644,27 @@ time:interval_overlaps rdf:type owl:ObjectProperty ;
                        skos:definition "If a proper interval T1 is intervalOverlaps another proper interval T2, then the beginning of T1 is before the beginning of T2, the end of T1 is after the beginning of T2, and the end of T1 is before the end of T2."@en .
 
 
-###  http://www.w3.org/2006/time#monthOfYear
-time:monthOfYear rdf:type owl:ObjectProperty ;
-                 rdfs:domain time:General_Date_Time_Description ;
-                 rdfs:range time:Month_Of_Year ;
-                 rdfs:comment "The month of the year, whose value is a member of the class time:MonthOfYear"@en ;
-                 rdfs:label "month of year"@en ;
-                 skos:definition "The month of the year, whose value is a member of the class time:MonthOfYear"@en ;
-                 skos:editorialNote "Feature at risk - added in 2017 revision, and not yet widely used. "@en .
+###  http://www.w3.org/2006/time#interval_started_by
+time:interval_started_by rdf:type owl:ObjectProperty ;
+                         rdfs:domain time:Proper_Interval ;
+                         rdfs:range time:Proper_Interval ;
+                         rdfs:comment "If a proper interval T1 is intervalStarted another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is after the end of T2."@en ;
+                         rdfs:label "interval started by"@en ;
+                         skos:definition "If a proper interval T1 is intervalStarted another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is after the end of T2."@en .
 
 
-###  http://www.w3.org/2006/time#time_Zone
-time:time_Zone rdf:type owl:ObjectProperty ;
+###  http://www.w3.org/2006/time#month_of_year
+time:month_of_year rdf:type owl:ObjectProperty ;
+                   rdfs:domain time:General_Date_Time_Description ;
+                   rdfs:range time:Month_Of_Year ;
+                   rdfs:comment "The month of the year, whose value is a member of the class time:MonthOfYear"@en ;
+                   rdfs:label "month of year"@en ;
+                   skos:definition "The month of the year, whose value is a member of the class time:MonthOfYear"@en ;
+                   skos:editorialNote "Feature at risk - added in 2017 revision, and not yet widely used. "@en .
+
+
+###  http://www.w3.org/2006/time#time_zone
+time:time_zone rdf:type owl:ObjectProperty ;
                rdfs:domain time:General_Date_Time_Description ;
                rdfs:range time:Time_Zone ;
                rdfs:comment "The time zone for clock elements in the temporal position"@en ;
@@ -699,8 +699,8 @@ time:unit_type rdf:type owl:ObjectProperty ;
                                                 rdfs:label "has member"@en .
 
 
-###  http://www.w3.org/TR/vocab-ssn-ext/has_Ultimate_Feature_Of_Interest
-<http://www.w3.org/TR/vocab-ssn-ext/has_Ultimate_Feature_Of_Interest> rdf:type owl:ObjectProperty ;
+###  http://www.w3.org/TR/vocab-ssn-ext/has_ultimate_Feature_Of_Interest
+<http://www.w3.org/TR/vocab-ssn-ext/has_ultimate_Feature_Of_Interest> rdf:type owl:ObjectProperty ;
                                                                       rdfs:range <http://www.w3.org/ns/sosa/Feature_Of_Interest> ;
                                                                       rdfs:comment "Link to the ultimate feature of interest of an observation or act of sampling. This is useful when the proximate feature of interest is a sample of the ultimate feature of interest, directly or transitively."@en ;
                                                                       rdfs:label "has ultimate feature of interest"@en .
@@ -721,8 +721,8 @@ org:unit_of rdf:type owl:ObjectProperty ,
             rdfs:range org:Organization .
 
 
-###  http://www.w3.org/ns/sosa/acts_on_Property
-<http://www.w3.org/ns/sosa/acts_on_Property> rdf:type owl:ObjectProperty ;
+###  http://www.w3.org/ns/sosa/acts_on_property
+<http://www.w3.org/ns/sosa/acts_on_property> rdf:type owl:ObjectProperty ;
                                              owl:inverseOf <http://www.w3.org/ns/sosa/is_acted_on_by> ;
                                              rdfs:domain <http://www.w3.org/ns/sosa/Actuation> ;
                                              rdfs:range <http://www.w3.org/ns/sosa/Actuatable_Property> ;
@@ -755,8 +755,22 @@ org:unit_of rdf:type owl:ObjectProperty ,
                                                     skos:example "For example, in an Observation of the weight of a person, the FeatureOfInterest is the person and the property is its weight."@en .
 
 
-###  http://www.w3.org/ns/sosa/has_Result
-<http://www.w3.org/ns/sosa/has_Result> rdf:type owl:ObjectProperty ;
+###  http://www.w3.org/ns/sosa/has_Sample
+<http://www.w3.org/ns/sosa/has_Sample> rdf:type owl:ObjectProperty ;
+                                       owl:inverseOf <http://www.w3.org/ns/sosa/is_Sample_of> ;
+                                       rdf:type owl:InverseFunctionalProperty ;
+                                       rdfs:domain <http://www.w3.org/ns/sosa/Feature_Of_Interest> ;
+                                       rdfs:range <http://www.w3.org/ns/sosa/Sample> ;
+                                       schema:domainIncludes <http://www.w3.org/ns/sosa/FeatureOfInterest> ;
+                                       schema:rangeIncludes <http://www.w3.org/ns/sosa/Sample> ;
+                                       rdfs:comment "Relation between a FeatureOfInterest and the Sample used to represent it."@en ;
+                                       rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
+                                       rdfs:label "has sample"@en ;
+                                       skos:definition "Relation between a FeatureOfInterest and the Sample used to represent it."@en .
+
+
+###  http://www.w3.org/ns/sosa/has_result
+<http://www.w3.org/ns/sosa/has_result> rdf:type owl:ObjectProperty ;
                                        owl:inverseOf <http://www.w3.org/ns/sosa/is_result_of> ;
                                        rdfs:domain <http://www.w3.org/ns/sosa/Actuation> ,
                                                    <http://www.w3.org/ns/sosa/Observation> ,
@@ -772,20 +786,6 @@ org:unit_of rdf:type owl:ObjectProperty ,
                                        rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
                                        rdfs:label "has result"@en ;
                                        skos:definition "Relation linking an Observation or Actuation or act of Sampling and a Result or Sample."@en .
-
-
-###  http://www.w3.org/ns/sosa/has_Sample
-<http://www.w3.org/ns/sosa/has_Sample> rdf:type owl:ObjectProperty ;
-                                       owl:inverseOf <http://www.w3.org/ns/sosa/is_Sample_of> ;
-                                       rdf:type owl:InverseFunctionalProperty ;
-                                       rdfs:domain <http://www.w3.org/ns/sosa/Feature_Of_Interest> ;
-                                       rdfs:range <http://www.w3.org/ns/sosa/Sample> ;
-                                       schema:domainIncludes <http://www.w3.org/ns/sosa/FeatureOfInterest> ;
-                                       schema:rangeIncludes <http://www.w3.org/ns/sosa/Sample> ;
-                                       rdfs:comment "Relation between a FeatureOfInterest and the Sample used to represent it."@en ;
-                                       rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
-                                       rdfs:label "has sample"@en ;
-                                       skos:definition "Relation between a FeatureOfInterest and the Sample used to represent it."@en .
 
 
 ###  http://www.w3.org/ns/sosa/hosts
@@ -1000,8 +1000,8 @@ org:unit_of rdf:type owl:ObjectProperty ,
                                      skos:definition "Relation between a Sensor and an ObservableProperty that it is capable of sensing."@en .
 
 
-###  http://www.w3.org/ns/sosa/phenomenon_Time
-<http://www.w3.org/ns/sosa/phenomenon_Time> rdf:type owl:ObjectProperty ;
+###  http://www.w3.org/ns/sosa/phenomenon_time
+<http://www.w3.org/ns/sosa/phenomenon_time> rdf:type owl:ObjectProperty ;
                                             rdfs:domain <http://www.w3.org/ns/sosa/Actuation> ,
                                                         <http://www.w3.org/ns/sosa/Observation> ,
                                                         <http://www.w3.org/ns/sosa/Sampling> ;
@@ -1041,8 +1041,8 @@ org:unit_of rdf:type owl:ObjectProperty ,
                                                              rdfs:label "has sample relationship" .
 
 
-###  http://www.w3.org/ns/sosa/sampling/nature_of_Relationship
-<http://www.w3.org/ns/sosa/sampling/nature_of_Relationship> rdf:type owl:ObjectProperty ;
+###  http://www.w3.org/ns/sosa/sampling/nature_of_relationship
+<http://www.w3.org/ns/sosa/sampling/nature_of_relationship> rdf:type owl:ObjectProperty ;
                                                             rdfs:domain <http://www.w3.org/ns/sosa/sampling/Sample_Relationship> ;
                                                             rdfs:range <http://www.w3.org/ns/sosa/sampling/Sample_Relationship> ;
                                                             rdfs:comment "Links a SampleRelationship to an indication of the nature of the relationship." ;
@@ -1148,8 +1148,8 @@ org:unit_of rdf:type owl:ObjectProperty ,
                                         skos:definition "Relation between an entity and a Property of that entity."@en .
 
 
-###  http://www.w3.org/ns/ssn/has_Sub_System
-<http://www.w3.org/ns/ssn/has_Sub_System> rdf:type owl:ObjectProperty ;
+###  http://www.w3.org/ns/ssn/has_sub_system
+<http://www.w3.org/ns/ssn/has_sub_system> rdf:type owl:ObjectProperty ;
                                           rdfs:domain <http://www.w3.org/ns/ssn/System> ;
                                           rdfs:range <http://www.w3.org/ns/ssn/System> ;
                                           rdfs:comment "Relation between a System and its component parts."@en ;
@@ -1199,8 +1199,8 @@ org:unit_of rdf:type owl:ObjectProperty ,
                                           skos:definition "Relation between a Property and the entity it belongs to."@en .
 
 
-###  http://www.w3.org/ns/ssn/is_Proxy_for
-<http://www.w3.org/ns/ssn/is_Proxy_for> rdf:type owl:ObjectProperty ;
+###  http://www.w3.org/ns/ssn/is_proxy_for
+<http://www.w3.org/ns/ssn/is_proxy_for> rdf:type owl:ObjectProperty ;
                                         rdfs:domain <http://www.w3.org/ns/ssn/Stimulus> ;
                                         rdfs:range <http://www.w3.org/ns/ssn/Property> ;
                                         rdfs:comment "A relation from a Stimulus to the Property that the Stimulus is serving as a proxy for."@en ;
@@ -1281,6 +1281,16 @@ org:unit_of rdf:type owl:ObjectProperty ,
                                                        rdfs:label "has system property" .
 
 
+###  http://www.w3.org/ns/ssn/systems/has_quality_of_observation
+<http://www.w3.org/ns/ssn/systems/has_quality_of_observation> rdf:type owl:ObjectProperty ;
+                                                              rdfs:subPropertyOf <http://www.w3.org/ns/ssn/has_Property> ;
+                                                              rdfs:domain <http://www.w3.org/ns/sosa/Observation> ;
+                                                              rdfs:range <http://www.w3.org/ns/sosa/Result> ;
+                                                              rdfs:comment "Relation linking an Observation to the adjudged quality of the Result. This is complementary to the SystemCapability information recorded for the Sensor that made the Observation." ;
+                                                              rdfs:isDefinedBy <http://www.w3.org/ns/ssn/systems/> ;
+                                                              rdfs:label "quality of observation" .
+
+
 ###  http://www.w3.org/ns/ssn/systems/in_Condition
 <http://www.w3.org/ns/ssn/systems/in_Condition> rdf:type owl:ObjectProperty ;
                                                 rdfs:domain <http://www.w3.org/ns/ssn/systems/Operating_Range> ,
@@ -1291,16 +1301,6 @@ org:unit_of rdf:type owl:ObjectProperty ,
                                                 rdfs:isDefinedBy <http://www.w3.org/ns/ssn/systems/> ;
                                                 rdfs:label "in condition" ;
                                                 skos:example "Used for example to say that a Sensor has a particular accuracy in particular Conditions." .
-
-
-###  http://www.w3.org/ns/ssn/systems/quality_of_Observation
-<http://www.w3.org/ns/ssn/systems/quality_of_Observation> rdf:type owl:ObjectProperty ;
-                                                          rdfs:subPropertyOf <http://www.w3.org/ns/ssn/has_Property> ;
-                                                          rdfs:domain <http://www.w3.org/ns/sosa/Observation> ;
-                                                          rdfs:range <http://www.w3.org/ns/sosa/Result> ;
-                                                          rdfs:comment "Relation linking an Observation to the adjudged quality of the Result. This is complementary to the SystemCapability information recorded for the Sensor that made the Observation." ;
-                                                          rdfs:isDefinedBy <http://www.w3.org/ns/ssn/systems/> ;
-                                                          rdfs:label "quality of observation" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#contains_Device
@@ -1315,8 +1315,8 @@ ecsel-dr-AH:contains_Device rdf:type owl:ObjectProperty ;
                             rdfs:range ecsel-dr-AH:Device .
 
 
-###  http://www.w3id.org/ecsel-dr-AH#defines_Compliant_Documentation
-ecsel-dr-AH:defines_Compliant_Documentation rdf:type owl:ObjectProperty ;
+###  http://www.w3id.org/ecsel-dr-AH#defines_compliant_documentation
+ecsel-dr-AH:defines_compliant_documentation rdf:type owl:ObjectProperty ;
                                             rdfs:domain ecsel-dr-AH:Service_Oriented_Architecture ;
                                             rdfs:range [ rdf:type owl:Class ;
                                                          owl:unionOf ( ecsel-dr-AH:Service_Documentation
@@ -1325,20 +1325,20 @@ ecsel-dr-AH:defines_Compliant_Documentation rdf:type owl:ObjectProperty ;
                                                        ] .
 
 
-###  http://www.w3id.org/ecsel-dr-AH#defines_Compliant_Service
-ecsel-dr-AH:defines_Compliant_Service rdf:type owl:ObjectProperty ;
+###  http://www.w3id.org/ecsel-dr-AH#defines_compliant_service
+ecsel-dr-AH:defines_compliant_service rdf:type owl:ObjectProperty ;
                                       rdfs:domain ecsel-dr-AH:Service_Oriented_Architecture ;
                                       rdfs:range ecsel-dr-AH:Service .
 
 
-###  http://www.w3id.org/ecsel-dr-AH#defines_Compliant_System
-ecsel-dr-AH:defines_Compliant_System rdf:type owl:ObjectProperty ;
+###  http://www.w3id.org/ecsel-dr-AH#defines_compliant_system
+ecsel-dr-AH:defines_compliant_system rdf:type owl:ObjectProperty ;
                                      rdfs:domain ecsel-dr-AH:Service_Oriented_Architecture ;
                                      rdfs:range ecsel-dr-AH:Software_System .
 
 
-###  http://www.w3id.org/ecsel-dr-AH#defines_Compliant_System_Architecture
-ecsel-dr-AH:defines_Compliant_System_Architecture rdf:type owl:ObjectProperty ;
+###  http://www.w3id.org/ecsel-dr-AH#defines_compliant_system_architecture
+ecsel-dr-AH:defines_compliant_system_architecture rdf:type owl:ObjectProperty ;
                                                   rdfs:domain ecsel-dr-AH:Service_Oriented_Architecture ;
                                                   rdfs:range ecsel-dr-AH:System_Of_Systems .
 
@@ -1441,7 +1441,7 @@ ecsel-dr-AH:documents_Service_Part rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-AH#has_Architectural_Part
 ecsel-dr-AH:has_Architectural_Part rdf:type owl:ObjectProperty ;
-                                   owl:inverseOf ecsel-dr-AH:is_Architectural_Part_of .
+                                   owl:inverseOf ecsel-dr-AH:is_architectural_part_of .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#has_Information_Model
@@ -1459,22 +1459,22 @@ ecsel-dr-AH:has_Method rdf:type owl:ObjectProperty ;
                        rdfs:range ecsel-dr-AH:Method .
 
 
-###  http://www.w3id.org/ecsel-dr-AH#has_Property
-ecsel-dr-AH:has_Property rdf:type owl:ObjectProperty ;
-                         owl:inverseOf ecsel-dr-AH:is_Property_of ;
-                         rdfs:domain ecsel-dr-AH:Service_Oriented_Architecture ;
-                         rdfs:range ecsel-dr-AH:SoA_Property .
+###  http://www.w3id.org/ecsel-dr-AH#has_SoA_Property
+ecsel-dr-AH:has_SoA_Property rdf:type owl:ObjectProperty ;
+                             owl:inverseOf ecsel-dr-AH:is_SoA_Property_of ;
+                             rdfs:domain ecsel-dr-AH:Service_Oriented_Architecture ;
+                             rdfs:range ecsel-dr-AH:SoA_Property .
 
 
-###  http://www.w3id.org/ecsel-dr-AH#has_part
-ecsel-dr-AH:has_part rdf:type owl:ObjectProperty ;
-                     owl:inverseOf ecsel-dr-AH:is_part_of ;
-                     rdfs:domain [ rdf:type owl:Class ;
-                                   owl:unionOf ( ecsel-dr-AH:Service_Documentation
-                                                 ecsel-dr-AH:System_Documentation
-                                               )
-                                 ] ;
-                     rdfs:range ecsel-dr-AH:Documentation_Document .
+###  http://www.w3id.org/ecsel-dr-AH#has_part_Documentation_Document
+ecsel-dr-AH:has_part_Documentation_Document rdf:type owl:ObjectProperty ;
+                                            owl:inverseOf ecsel-dr-AH:is_part_of ;
+                                            rdfs:domain [ rdf:type owl:Class ;
+                                                          owl:unionOf ( ecsel-dr-AH:Service_Documentation
+                                                                        ecsel-dr-AH:System_Documentation
+                                                                      )
+                                                        ] ;
+                                            rdfs:range ecsel-dr-AH:Documentation_Document .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#hosts
@@ -1500,13 +1500,9 @@ ecsel-dr-AH:is_AH_System_documented_by rdf:type owl:ObjectProperty ;
                                        rdfs:range ecsel-dr-AH:AH_System_Documentation .
 
 
-###  http://www.w3id.org/ecsel-dr-AH#is_Architectural_Part_of
-ecsel-dr-AH:is_Architectural_Part_of rdf:type owl:ObjectProperty .
-
-
 ###  http://www.w3id.org/ecsel-dr-AH#is_Device_in
 ecsel-dr-AH:is_Device_in rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf ecsel-dr-AH:is_Architectural_Part_of ;
+                         rdfs:subPropertyOf ecsel-dr-AH:is_architectural_part_of ;
                          rdfs:domain ecsel-dr-AH:Device ;
                          rdfs:range [ rdf:type owl:Class ;
                                       owl:unionOf ( ecsel-dr-AH:AH_Local_Cloud
@@ -1523,15 +1519,9 @@ ecsel-dr-AH:is_Information_Model_of rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-AH#is_Method_of
 ecsel-dr-AH:is_Method_of rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf ecsel-dr-AH:is_Architectural_Part_of ;
+                         rdfs:subPropertyOf ecsel-dr-AH:is_architectural_part_of ;
                          rdfs:domain ecsel-dr-AH:Method ;
                          rdfs:range ecsel-dr-AH:Service .
-
-
-###  http://www.w3id.org/ecsel-dr-AH#is_Property_of
-ecsel-dr-AH:is_Property_of rdf:type owl:ObjectProperty ;
-                           rdfs:domain ecsel-dr-AH:SoA_Property ;
-                           rdfs:range ecsel-dr-AH:Service_Oriented_Architecture .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#is_Service_Producer_of
@@ -1549,11 +1539,21 @@ ecsel-dr-AH:is_Service_documented_by rdf:type owl:ObjectProperty ;
                                      rdfs:range ecsel-dr-AH:Service_Documentation .
 
 
+###  http://www.w3id.org/ecsel-dr-AH#is_SoA_Property_of
+ecsel-dr-AH:is_SoA_Property_of rdf:type owl:ObjectProperty ;
+                               rdfs:domain ecsel-dr-AH:SoA_Property ;
+                               rdfs:range ecsel-dr-AH:Service_Oriented_Architecture .
+
+
 ###  http://www.w3id.org/ecsel-dr-AH#is_System_documented_by
 ecsel-dr-AH:is_System_documented_by rdf:type owl:ObjectProperty ;
                                     rdfs:subPropertyOf ecsel-dr-AH:is_documented_by ;
                                     rdfs:domain ecsel-dr-AH:Software_System ;
                                     rdfs:range ecsel-dr-AH:System_Documentation .
+
+
+###  http://www.w3id.org/ecsel-dr-AH#is_architectural_part_of
+ecsel-dr-AH:is_architectural_part_of rdf:type owl:ObjectProperty .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#is_documented_by
@@ -1574,7 +1574,7 @@ ecsel-dr-AH:is_documented_by rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-AH#is_hosted_by
 ecsel-dr-AH:is_hosted_by rdf:type owl:ObjectProperty ;
                          owl:equivalentProperty ecsel-dr-AH:runs_on ;
-                         rdfs:subPropertyOf ecsel-dr-AH:is_Architectural_Part_of ;
+                         rdfs:subPropertyOf ecsel-dr-AH:is_architectural_part_of ;
                          rdfs:domain ecsel-dr-AH:Software_System ;
                          rdfs:range ecsel-dr-AH:Device .
 
@@ -1619,7 +1619,7 @@ ecsel-dr-AH:is_referred_to_by rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-AH#produced_by
 ecsel-dr-AH:produced_by rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf ecsel-dr-AH:is_Architectural_Part_of ;
+                        rdfs:subPropertyOf ecsel-dr-AH:is_architectural_part_of ;
                         owl:inverseOf ecsel-dr-AH:produces ;
                         rdfs:domain ecsel-dr-AH:Service ;
                         rdfs:range ecsel-dr-AH:Software_System .
@@ -1739,18 +1739,18 @@ ecsel-dr-AH:uses_Comm_Tech rdf:type owl:ObjectProperty ;
                                       ] .
 
 
+###  http://www.w3id.org/ecsel-dr-AH#uses_Communication_Security_Mechanism
+ecsel-dr-AH:uses_Communication_Security_Mechanism rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf ecsel-dr-AH:uses_Comm_Tech ;
+                                                  rdfs:domain ecsel-dr-AH:Service ;
+                                                  rdfs:range ecsel-dr-AH:Communication_Security_Mechanism .
+
+
 ###  http://www.w3id.org/ecsel-dr-AH#uses_Data_Format
 ecsel-dr-AH:uses_Data_Format rdf:type owl:ObjectProperty ;
                              rdfs:subPropertyOf ecsel-dr-AH:uses_Comm_Tech ;
                              rdfs:domain ecsel-dr-AH:Service ;
                              rdfs:range ecsel-dr-AH:Data_Format .
-
-
-###  http://www.w3id.org/ecsel-dr-AH#uses_Security_Mechanism
-ecsel-dr-AH:uses_Security_Mechanism rdf:type owl:ObjectProperty ;
-                                    rdfs:subPropertyOf ecsel-dr-AH:uses_Comm_Tech ;
-                                    rdfs:domain ecsel-dr-AH:Service ;
-                                    rdfs:range ecsel-dr-AH:Communication_Security_Mechanism .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#uses_Transfer_Protocol
@@ -1797,25 +1797,25 @@ ecsel-dr-AT:has_IT_Module_Or_Part rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#has_Implementation_Technology
 ecsel-dr-AT:has_Implementation_Technology rdf:type owl:ObjectProperty ;
-                                          owl:inverseOf ecsel-dr-AT:implements_OSI_Layer .
+                                          owl:inverseOf ecsel-dr-AT:implements_OSI_layer .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#has_Service_Description_Language
-ecsel-dr-AT:has_Service_Description_Language rdf:type owl:ObjectProperty ;
-                                             owl:inverseOf ecsel-dr-AT:is_Service_Description_Language_of ;
+###  http://www.w3id.org/ecsel-dr-AT#has_service_description_language
+ecsel-dr-AT:has_service_description_language rdf:type owl:ObjectProperty ;
+                                             owl:inverseOf ecsel-dr-AT:is_service_description_language_of ;
                                              rdfs:domain ecsel-dr-AT:Service_Oriented_Architecture ;
                                              rdfs:range ecsel-dr-AT:W3C_L_5_Data_Semantics .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#has_Vendor
-ecsel-dr-AT:has_Vendor rdf:type owl:ObjectProperty ;
-                       owl:inverseOf ecsel-dr-AT:is_Vendor_of ;
+###  http://www.w3id.org/ecsel-dr-AT#has_vendor
+ecsel-dr-AT:has_vendor rdf:type owl:ObjectProperty ;
+                       owl:inverseOf ecsel-dr-AT:is_vendor_of ;
                        rdfs:domain ecsel-dr-AT:IT-System ;
                        rdfs:range ecsel-dr-AT:IT-Vendor .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#implements_OSI_Layer
-ecsel-dr-AT:implements_OSI_Layer rdf:type owl:ObjectProperty ;
+###  http://www.w3id.org/ecsel-dr-AT#implements_OSI_layer
+ecsel-dr-AT:implements_OSI_layer rdf:type owl:ObjectProperty ;
                                  rdfs:domain [ rdf:type owl:Class ;
                                                owl:unionOf ( ecsel-dr-AT:OSI_1_2_Net_Access_Technology
                                                              ecsel-dr-AT:OSI_3_4_Network_Technology
@@ -1853,27 +1853,27 @@ ecsel-dr-AT:is_Device_of_OSI_Layer rdf:type owl:ObjectProperty ;
                                               ] .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#is_Service_Description_Language_of
-ecsel-dr-AT:is_Service_Description_Language_of rdf:type owl:ObjectProperty .
+###  http://www.w3id.org/ecsel-dr-AT#is_part_of_IT_Suite
+ecsel-dr-AT:is_part_of_IT_Suite rdf:type owl:ObjectProperty ;
+                                rdfs:domain ecsel-dr-AT:IT-System ;
+                                rdfs:range ecsel-dr-AT:IT-System .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#is_Standard_of
-ecsel-dr-AT:is_Standard_of rdf:type owl:ObjectProperty ;
+###  http://www.w3id.org/ecsel-dr-AT#is_service_description_language_of
+ecsel-dr-AT:is_service_description_language_of rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3id.org/ecsel-dr-AT#is_standard_of
+ecsel-dr-AT:is_standard_of rdf:type owl:ObjectProperty ;
                            owl:inverseOf ecsel-dr-AT:standardized_by ;
                            rdfs:domain ecsel-dr-AT:Standard ;
                            rdfs:range owl:Thing .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#is_Vendor_of
-ecsel-dr-AT:is_Vendor_of rdf:type owl:ObjectProperty ;
+###  http://www.w3id.org/ecsel-dr-AT#is_vendor_of
+ecsel-dr-AT:is_vendor_of rdf:type owl:ObjectProperty ;
                          rdfs:domain ecsel-dr-AT:IT-Vendor ;
                          rdfs:range ecsel-dr-AT:IT-System .
-
-
-###  http://www.w3id.org/ecsel-dr-AT#is_part_of_IT_Suite
-ecsel-dr-AT:is_part_of_IT_Suite rdf:type owl:ObjectProperty ;
-                                rdfs:domain ecsel-dr-AT:IT-System ;
-                                rdfs:range ecsel-dr-AT:IT-System .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#standardized_by
@@ -2005,15 +2005,6 @@ ecsel-dr-AT:used_in_ISA-95_Layer rdf:type owl:ObjectProperty ;
                                                 rdfs:range <http://www.w3id.org/ecsel-dr-OM#Supply> .
 
 
-###  http://www.w3id.org/ecsel-dr-OM#is_Reconciled_Order_Change_Request
-<http://www.w3id.org/ecsel-dr-OM#is_Reconciled_Order_Change_Request> rdf:type owl:ObjectProperty ;
-                                                                     rdfs:subPropertyOf owl:topObjectProperty ;
-                                                                     rdf:type owl:FunctionalProperty ,
-                                                                              owl:InverseFunctionalProperty ;
-                                                                     rdfs:domain <http://www.w3id.org/ecsel-dr-OM#Order_Line_Item> ;
-                                                                     rdfs:range <http://www.w3id.org/ecsel-dr-OM#Order_Change_Request> .
-
-
 ###  http://www.w3id.org/ecsel-dr-OM#is_Reconciled_Order_Line_Item
 <http://www.w3id.org/ecsel-dr-OM#is_Reconciled_Order_Line_Item> rdf:type owl:ObjectProperty ;
                                                                 rdfs:subPropertyOf owl:topObjectProperty ;
@@ -2073,6 +2064,15 @@ ecsel-dr-AT:used_in_ISA-95_Layer rdf:type owl:ObjectProperty ;
                                                              rdfs:subPropertyOf owl:topObjectProperty ;
                                                              rdfs:domain <http://www.w3id.org/ecsel-dr-OM#Open_Order> ;
                                                              rdfs:range <http://www.w3id.org/ecsel-dr-OM#Open_Order_Book> .
+
+
+###  http://www.w3id.org/ecsel-dr-OM#is_reconciled_Order_Change_Request
+<http://www.w3id.org/ecsel-dr-OM#is_reconciled_Order_Change_Request> rdf:type owl:ObjectProperty ;
+                                                                     rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                     rdf:type owl:FunctionalProperty ,
+                                                                              owl:InverseFunctionalProperty ;
+                                                                     rdfs:domain <http://www.w3id.org/ecsel-dr-OM#Order_Line_Item> ;
+                                                                     rdfs:range <http://www.w3id.org/ecsel-dr-OM#Order_Change_Request> .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#is_requested_by_Customer
@@ -2137,7 +2137,7 @@ ecsel-dr-OOSMP:belongs_to_Product_Line rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#can_be_applied_in
 ecsel-dr-OOSMP:can_be_applied_in rdf:type owl:ObjectProperty ;
-                                 owl:inverseOf ecsel-dr-OOSMP:finds_Application_through ;
+                                 owl:inverseOf ecsel-dr-OOSMP:finds_application_through ;
                                  rdfs:domain [ rdf:type owl:Class ;
                                                owl:unionOf ( ecsel-dr-OOSMP:Product
                                                              ecsel-dr-OOSMP:Solution
@@ -2173,7 +2173,7 @@ ecsel-dr-OOSMP:contains_Gate_Driver rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-OOSMP#contains_Intelligent_Power_Module
 ecsel-dr-OOSMP:contains_Intelligent_Power_Module rdf:type owl:ObjectProperty ;
                                                  rdfs:subPropertyOf ecsel-dr-OOSMP:contains_Product ;
-                                                 owl:inverseOf ecsel-dr-OOSMP:part_of_AsIntelligent_Power_Module ;
+                                                 owl:inverseOf ecsel-dr-OOSMP:part_of_as_Intelligent_Power_Module ;
                                                  rdfs:domain ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution ;
                                                  rdfs:range ecsel-dr-OOSMP:Intelligent_Power_Module .
 
@@ -2209,8 +2209,8 @@ ecsel-dr-OOSMP:could_contain_Sensor rdf:type owl:ObjectProperty ;
                                     rdfs:range ecsel-dr-OOSMP:Sensor .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#finds_Application_through
-ecsel-dr-OOSMP:finds_Application_through rdf:type owl:ObjectProperty ;
+###  http://www.w3id.org/ecsel-dr-OOSMP#finds_application_through
+ecsel-dr-OOSMP:finds_application_through rdf:type owl:ObjectProperty ;
                                          rdfs:domain ecsel-dr-OOSMP:Application_Area ;
                                          rdfs:range [ rdf:type owl:Class ;
                                                       owl:unionOf ( ecsel-dr-OOSMP:Product
@@ -2219,50 +2219,26 @@ ecsel-dr-OOSMP:finds_Application_through rdf:type owl:ObjectProperty ;
                                                     ] .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#hasApplicationLevel2
-ecsel-dr-OOSMP:hasApplicationLevel2 rdf:type owl:ObjectProperty ;
-                                    rdfs:subPropertyOf ecsel-dr-OOSMP:has_Sub_Application_Area ;
-                                    owl:inverseOf ecsel-dr-OOSMP:is_Sub_Application_Area_of_Application_Level_1 ;
-                                    rdfs:domain ecsel-dr-OOSMP:Application_Level_1 ;
-                                    rdfs:range ecsel-dr-OOSMP:Application_Level_2 .
+###  http://www.w3id.org/ecsel-dr-OOSMP#has_Application_Level_2
+ecsel-dr-OOSMP:has_Application_Level_2 rdf:type owl:ObjectProperty ;
+                                       rdfs:subPropertyOf ecsel-dr-OOSMP:has_sub_application_area ;
+                                       owl:inverseOf ecsel-dr-OOSMP:is_sub_application_area_of_Application_Level_1 ;
+                                       rdfs:domain ecsel-dr-OOSMP:Application_Level_1 ;
+                                       rdfs:range ecsel-dr-OOSMP:Application_Level_2 .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#hasApplicationLevel3
-ecsel-dr-OOSMP:hasApplicationLevel3 rdf:type owl:ObjectProperty ;
-                                    rdfs:subPropertyOf ecsel-dr-OOSMP:has_Sub_Application_Area ;
-                                    owl:inverseOf ecsel-dr-OOSMP:is_Sub_Application_Area_of_Application_Level_2 ;
-                                    rdfs:domain ecsel-dr-OOSMP:Application_Level_2 ;
-                                    rdfs:range ecsel-dr-OOSMP:Application_Level_3 .
-
-
-###  http://www.w3id.org/ecsel-dr-OOSMP#hasMainApplication
-ecsel-dr-OOSMP:hasMainApplication rdf:type owl:ObjectProperty ;
-                                  rdfs:subPropertyOf ecsel-dr-OOSMP:has_Sub_Application_Area ;
-                                  owl:inverseOf ecsel-dr-OOSMP:is_Sub_Application_Area_of_Industry ;
-                                  rdfs:domain ecsel-dr-OOSMP:Industry ;
-                                  rdfs:range ecsel-dr-OOSMP:Main_Application .
-
-
-###  http://www.w3id.org/ecsel-dr-OOSMP#hasSensorSubApplication
-ecsel-dr-OOSMP:hasSensorSubApplication rdf:type owl:ObjectProperty ;
-                                       rdfs:subPropertyOf ecsel-dr-OOSMP:has_Sub_Application_Area ;
-                                       owl:inverseOf ecsel-dr-OOSMP:is_Sub_Application_Area_of_Sensor_Main_Application ;
-                                       rdfs:domain ecsel-dr-OOSMP:Sensor_Main_Application ;
-                                       rdfs:range ecsel-dr-OOSMP:Sensor_Sub_Application .
-
-
-###  http://www.w3id.org/ecsel-dr-OOSMP#hasSubApplication
-ecsel-dr-OOSMP:hasSubApplication rdf:type owl:ObjectProperty ;
-                                 rdfs:subPropertyOf ecsel-dr-OOSMP:has_Sub_Application_Area ;
-                                 owl:inverseOf ecsel-dr-OOSMP:is_Sub_Application_Area_of_Main_Application ;
-                                 rdfs:domain ecsel-dr-OOSMP:Main_Application ;
-                                 rdfs:range ecsel-dr-OOSMP:Sub_Application .
+###  http://www.w3id.org/ecsel-dr-OOSMP#has_Application_Level_3
+ecsel-dr-OOSMP:has_Application_Level_3 rdf:type owl:ObjectProperty ;
+                                       rdfs:subPropertyOf ecsel-dr-OOSMP:has_sub_application_area ;
+                                       owl:inverseOf ecsel-dr-OOSMP:is_sub_application_area_of_Application_Level_2 ;
+                                       rdfs:domain ecsel-dr-OOSMP:Application_Level_2 ;
+                                       rdfs:range ecsel-dr-OOSMP:Application_Level_3 .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#has_Business_Line
 ecsel-dr-OOSMP:has_Business_Line rdf:type owl:ObjectProperty ;
-                                 rdfs:subPropertyOf ecsel-dr-OOSMP:has_Sub_Unit ;
-                                 owl:inverseOf ecsel-dr-OOSMP:subUnitOfDivision ;
+                                 rdfs:subPropertyOf ecsel-dr-OOSMP:has_sub_unit ;
+                                 owl:inverseOf ecsel-dr-OOSMP:sub_unit_of_Division ;
                                  rdf:type owl:InverseFunctionalProperty ;
                                  rdfs:domain ecsel-dr-OOSMP:Division ;
                                  rdfs:range ecsel-dr-OOSMP:Business_Line .
@@ -2300,6 +2276,14 @@ ecsel-dr-OOSMP:has_Integration_Level rdf:type owl:ObjectProperty ;
                                      rdf:type owl:FunctionalProperty ;
                                      rdfs:domain ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution ;
                                      rdfs:range ecsel-dr-OOSMP:Integration_Level .
+
+
+###  http://www.w3id.org/ecsel-dr-OOSMP#has_Main_Application
+ecsel-dr-OOSMP:has_Main_Application rdf:type owl:ObjectProperty ;
+                                    rdfs:subPropertyOf ecsel-dr-OOSMP:has_sub_application_area ;
+                                    owl:inverseOf ecsel-dr-OOSMP:is_sub_application_area_of_Industry ;
+                                    rdfs:domain ecsel-dr-OOSMP:Industry ;
+                                    rdfs:range ecsel-dr-OOSMP:Main_Application .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#has_Main_Power_Device_Type
@@ -2354,7 +2338,7 @@ ecsel-dr-OOSMP:has_Price_Indication rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#has_Product_Line
 ecsel-dr-OOSMP:has_Product_Line rdf:type owl:ObjectProperty ;
-                                rdfs:subPropertyOf ecsel-dr-OOSMP:has_Sub_Unit ;
+                                rdfs:subPropertyOf ecsel-dr-OOSMP:has_sub_unit ;
                                 owl:inverseOf ecsel-dr-OOSMP:is_sub_unit_of_Business_Line ;
                                 rdf:type owl:InverseFunctionalProperty ;
                                 rdfs:domain ecsel-dr-OOSMP:Business_Line ;
@@ -2404,6 +2388,14 @@ ecsel-dr-OOSMP:has_Sensing_Type rdf:type owl:ObjectProperty ;
                                 rdfs:range ecsel-dr-OOSMP:Sensing_Type .
 
 
+###  http://www.w3id.org/ecsel-dr-OOSMP#has_Sensor_Sub_Application
+ecsel-dr-OOSMP:has_Sensor_Sub_Application rdf:type owl:ObjectProperty ;
+                                          rdfs:subPropertyOf ecsel-dr-OOSMP:has_sub_application_area ;
+                                          owl:inverseOf ecsel-dr-OOSMP:is_sub_application_area_of_Sensor_Main_Application ;
+                                          rdfs:domain ecsel-dr-OOSMP:Sensor_Main_Application ;
+                                          rdfs:range ecsel-dr-OOSMP:Sensor_Sub_Application .
+
+
 ###  http://www.w3id.org/ecsel-dr-OOSMP#has_Solution_Qualification
 ecsel-dr-OOSMP:has_Solution_Qualification rdf:type owl:ObjectProperty ;
                                           rdfs:subPropertyOf ecsel-dr-OOSMP:has_Qualification ;
@@ -2412,20 +2404,12 @@ ecsel-dr-OOSMP:has_Solution_Qualification rdf:type owl:ObjectProperty ;
                                           rdfs:range ecsel-dr-OOSMP:Qualification .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#has_Sub_Application_Area
-ecsel-dr-OOSMP:has_Sub_Application_Area rdf:type owl:ObjectProperty ;
-                                        owl:inverseOf ecsel-dr-OOSMP:is_Sub_Application_Area_of ;
-                                        rdf:type owl:IrreflexiveProperty ;
-                                        rdfs:domain ecsel-dr-OOSMP:Application_Area ;
-                                        rdfs:range ecsel-dr-OOSMP:Application_Area .
-
-
-###  http://www.w3id.org/ecsel-dr-OOSMP#has_Sub_Unit
-ecsel-dr-OOSMP:has_Sub_Unit rdf:type owl:ObjectProperty ;
-                            owl:inverseOf ecsel-dr-OOSMP:is_Sub_Unit_of ;
-                            rdf:type owl:IrreflexiveProperty ;
-                            rdfs:domain org:Organizational_Unit ;
-                            rdfs:range org:Organizational_Unit .
+###  http://www.w3id.org/ecsel-dr-OOSMP#has_Sub_Application
+ecsel-dr-OOSMP:has_Sub_Application rdf:type owl:ObjectProperty ;
+                                   rdfs:subPropertyOf ecsel-dr-OOSMP:has_sub_application_area ;
+                                   owl:inverseOf ecsel-dr-OOSMP:is_sub_application_area_of_Main_Application ;
+                                   rdfs:domain ecsel-dr-OOSMP:Main_Application ;
+                                   rdfs:range ecsel-dr-OOSMP:Sub_Application .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#has_Topology
@@ -2434,6 +2418,22 @@ ecsel-dr-OOSMP:has_Topology rdf:type owl:ObjectProperty ;
                             rdf:type owl:FunctionalProperty ;
                             rdfs:domain ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution ;
                             rdfs:range ecsel-dr-OOSMP:Topology .
+
+
+###  http://www.w3id.org/ecsel-dr-OOSMP#has_sub_application_area
+ecsel-dr-OOSMP:has_sub_application_area rdf:type owl:ObjectProperty ;
+                                        owl:inverseOf ecsel-dr-OOSMP:is_sub_application_area_of ;
+                                        rdf:type owl:IrreflexiveProperty ;
+                                        rdfs:domain ecsel-dr-OOSMP:Application_Area ;
+                                        rdfs:range ecsel-dr-OOSMP:Application_Area .
+
+
+###  http://www.w3id.org/ecsel-dr-OOSMP#has_sub_unit
+ecsel-dr-OOSMP:has_sub_unit rdf:type owl:ObjectProperty ;
+                            owl:inverseOf ecsel-dr-OOSMP:is_Sub_Unit_of ;
+                            rdf:type owl:IrreflexiveProperty ;
+                            rdfs:domain org:Organizational_Unit ;
+                            rdfs:range org:Organizational_Unit .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#is_Completely_Lead_Free_Status_of
@@ -2554,48 +2554,6 @@ ecsel-dr-OOSMP:is_Solution_Qualification_of rdf:type owl:ObjectProperty ;
                                             rdfs:range ecsel-dr-OOSMP:Semiconductor_Solution .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#is_Sub_Application_Area_of
-ecsel-dr-OOSMP:is_Sub_Application_Area_of rdf:type owl:ObjectProperty ,
-                                                   owl:IrreflexiveProperty ;
-                                          rdfs:domain ecsel-dr-OOSMP:Application_Area ;
-                                          rdfs:range ecsel-dr-OOSMP:Application_Area .
-
-
-###  http://www.w3id.org/ecsel-dr-OOSMP#is_Sub_Application_Area_of_Application_Level_1
-ecsel-dr-OOSMP:is_Sub_Application_Area_of_Application_Level_1 rdf:type owl:ObjectProperty ;
-                                                              rdfs:subPropertyOf ecsel-dr-OOSMP:is_Sub_Application_Area_of ;
-                                                              rdfs:domain ecsel-dr-OOSMP:Application_Level_2 ;
-                                                              rdfs:range ecsel-dr-OOSMP:Application_Level_1 .
-
-
-###  http://www.w3id.org/ecsel-dr-OOSMP#is_Sub_Application_Area_of_Application_Level_2
-ecsel-dr-OOSMP:is_Sub_Application_Area_of_Application_Level_2 rdf:type owl:ObjectProperty ;
-                                                              rdfs:subPropertyOf ecsel-dr-OOSMP:is_Sub_Application_Area_of ;
-                                                              rdfs:domain ecsel-dr-OOSMP:Application_Level_3 ;
-                                                              rdfs:range ecsel-dr-OOSMP:Application_Level_2 .
-
-
-###  http://www.w3id.org/ecsel-dr-OOSMP#is_Sub_Application_Area_of_Industry
-ecsel-dr-OOSMP:is_Sub_Application_Area_of_Industry rdf:type owl:ObjectProperty ;
-                                                   rdfs:subPropertyOf ecsel-dr-OOSMP:is_Sub_Application_Area_of ;
-                                                   rdfs:domain ecsel-dr-OOSMP:Main_Application ;
-                                                   rdfs:range ecsel-dr-OOSMP:Industry .
-
-
-###  http://www.w3id.org/ecsel-dr-OOSMP#is_Sub_Application_Area_of_Main_Application
-ecsel-dr-OOSMP:is_Sub_Application_Area_of_Main_Application rdf:type owl:ObjectProperty ;
-                                                           rdfs:subPropertyOf ecsel-dr-OOSMP:is_Sub_Application_Area_of ;
-                                                           rdfs:domain ecsel-dr-OOSMP:Sub_Application ;
-                                                           rdfs:range ecsel-dr-OOSMP:Main_Application .
-
-
-###  http://www.w3id.org/ecsel-dr-OOSMP#is_Sub_Application_Area_of_Sensor_Main_Application
-ecsel-dr-OOSMP:is_Sub_Application_Area_of_Sensor_Main_Application rdf:type owl:ObjectProperty ;
-                                                                  rdfs:subPropertyOf ecsel-dr-OOSMP:is_Sub_Application_Area_of ;
-                                                                  rdfs:domain ecsel-dr-OOSMP:Sensor_Sub_Application ;
-                                                                  rdfs:range ecsel-dr-OOSMP:Sensor_Main_Application .
-
-
 ###  http://www.w3id.org/ecsel-dr-OOSMP#is_Sub_Unit_of
 ecsel-dr-OOSMP:is_Sub_Unit_of rdf:type owl:ObjectProperty ,
                                        owl:IrreflexiveProperty ;
@@ -2605,10 +2563,52 @@ ecsel-dr-OOSMP:is_Sub_Unit_of rdf:type owl:ObjectProperty ,
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#is_Topology_of
 ecsel-dr-OOSMP:is_Topology_of rdf:type owl:ObjectProperty ;
-                              rdfs:subPropertyOf <http://www.w3id.org/ecsel-dr-PMV#is_Sub_Flow_of> ;
+                              rdfs:subPropertyOf <http://www.w3id.org/ecsel-dr-PMV#is_sub_flow_of> ;
                               rdf:type owl:InverseFunctionalProperty ;
                               rdfs:domain ecsel-dr-OOSMP:Topology ;
                               rdfs:range ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution .
+
+
+###  http://www.w3id.org/ecsel-dr-OOSMP#is_sub_application_area_of
+ecsel-dr-OOSMP:is_sub_application_area_of rdf:type owl:ObjectProperty ,
+                                                   owl:IrreflexiveProperty ;
+                                          rdfs:domain ecsel-dr-OOSMP:Application_Area ;
+                                          rdfs:range ecsel-dr-OOSMP:Application_Area .
+
+
+###  http://www.w3id.org/ecsel-dr-OOSMP#is_sub_application_area_of_Application_Level_1
+ecsel-dr-OOSMP:is_sub_application_area_of_Application_Level_1 rdf:type owl:ObjectProperty ;
+                                                              rdfs:subPropertyOf ecsel-dr-OOSMP:is_sub_application_area_of ;
+                                                              rdfs:domain ecsel-dr-OOSMP:Application_Level_2 ;
+                                                              rdfs:range ecsel-dr-OOSMP:Application_Level_1 .
+
+
+###  http://www.w3id.org/ecsel-dr-OOSMP#is_sub_application_area_of_Application_Level_2
+ecsel-dr-OOSMP:is_sub_application_area_of_Application_Level_2 rdf:type owl:ObjectProperty ;
+                                                              rdfs:subPropertyOf ecsel-dr-OOSMP:is_sub_application_area_of ;
+                                                              rdfs:domain ecsel-dr-OOSMP:Application_Level_3 ;
+                                                              rdfs:range ecsel-dr-OOSMP:Application_Level_2 .
+
+
+###  http://www.w3id.org/ecsel-dr-OOSMP#is_sub_application_area_of_Industry
+ecsel-dr-OOSMP:is_sub_application_area_of_Industry rdf:type owl:ObjectProperty ;
+                                                   rdfs:subPropertyOf ecsel-dr-OOSMP:is_sub_application_area_of ;
+                                                   rdfs:domain ecsel-dr-OOSMP:Main_Application ;
+                                                   rdfs:range ecsel-dr-OOSMP:Industry .
+
+
+###  http://www.w3id.org/ecsel-dr-OOSMP#is_sub_application_area_of_Main_Application
+ecsel-dr-OOSMP:is_sub_application_area_of_Main_Application rdf:type owl:ObjectProperty ;
+                                                           rdfs:subPropertyOf ecsel-dr-OOSMP:is_sub_application_area_of ;
+                                                           rdfs:domain ecsel-dr-OOSMP:Sub_Application ;
+                                                           rdfs:range ecsel-dr-OOSMP:Main_Application .
+
+
+###  http://www.w3id.org/ecsel-dr-OOSMP#is_sub_application_area_of_Sensor_Main_Application
+ecsel-dr-OOSMP:is_sub_application_area_of_Sensor_Main_Application rdf:type owl:ObjectProperty ;
+                                                                  rdfs:subPropertyOf ecsel-dr-OOSMP:is_sub_application_area_of ;
+                                                                  rdfs:domain ecsel-dr-OOSMP:Sensor_Sub_Application ;
+                                                                  rdfs:range ecsel-dr-OOSMP:Sensor_Main_Application .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#is_sub_unit_of_Business_Line
@@ -2640,13 +2640,6 @@ ecsel-dr-OOSMP:part_of rdf:type owl:ObjectProperty ;
                        rdfs:range ecsel-dr-OOSMP:Solution .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#part_of_AsIntelligent_Power_Module
-ecsel-dr-OOSMP:part_of_AsIntelligent_Power_Module rdf:type owl:ObjectProperty ;
-                                                  rdfs:subPropertyOf ecsel-dr-OOSMP:part_of ;
-                                                  rdfs:domain ecsel-dr-OOSMP:Intelligent_Power_Module ;
-                                                  rdfs:range ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution .
-
-
 ###  http://www.w3id.org/ecsel-dr-OOSMP#part_of_as_Additional_Power_Management
 ecsel-dr-OOSMP:part_of_as_Additional_Power_Management rdf:type owl:ObjectProperty ;
                                                       rdfs:subPropertyOf ecsel-dr-OOSMP:part_of ;
@@ -2666,6 +2659,13 @@ ecsel-dr-OOSMP:part_of_as_Gate_Driver rdf:type owl:ObjectProperty ;
                                       rdfs:subPropertyOf ecsel-dr-OOSMP:part_of ;
                                       rdfs:domain ecsel-dr-OOSMP:Gate_Driver ;
                                       rdfs:range ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution .
+
+
+###  http://www.w3id.org/ecsel-dr-OOSMP#part_of_as_Intelligent_Power_Module
+ecsel-dr-OOSMP:part_of_as_Intelligent_Power_Module rdf:type owl:ObjectProperty ;
+                                                   rdfs:subPropertyOf ecsel-dr-OOSMP:part_of ;
+                                                   rdfs:domain ecsel-dr-OOSMP:Intelligent_Power_Module ;
+                                                   rdfs:range ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#part_of_as_Microcontroller
@@ -2709,17 +2709,17 @@ ecsel-dr-OOSMP:responsible_for_Application_Level3_Division rdf:type owl:ObjectPr
                                                            rdfs:range ecsel-dr-OOSMP:Application_Level_3 .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#subUnitOfDivision
-ecsel-dr-OOSMP:subUnitOfDivision rdf:type owl:ObjectProperty ;
-                                 rdfs:subPropertyOf ecsel-dr-OOSMP:is_Sub_Unit_of ;
-                                 rdf:type owl:FunctionalProperty ;
-                                 rdfs:domain ecsel-dr-OOSMP:Business_Line ;
-                                 rdfs:range ecsel-dr-OOSMP:Division .
+###  http://www.w3id.org/ecsel-dr-OOSMP#sub_unit_of_Division
+ecsel-dr-OOSMP:sub_unit_of_Division rdf:type owl:ObjectProperty ;
+                                    rdfs:subPropertyOf ecsel-dr-OOSMP:is_Sub_Unit_of ;
+                                    rdf:type owl:FunctionalProperty ;
+                                    rdfs:domain ecsel-dr-OOSMP:Business_Line ;
+                                    rdfs:range ecsel-dr-OOSMP:Division .
 
 
 ###  http://www.w3id.org/ecsel-dr-ORG#has_Category_Level
 <http://www.w3id.org/ecsel-dr-ORG#has_Category_Level> rdf:type owl:ObjectProperty ;
-                                                      owl:inverseOf <http://www.w3id.org/ecsel-dr-ORG#is_Category_Level_of> ;
+                                                      owl:inverseOf <http://www.w3id.org/ecsel-dr-ORG#is_category_level_of> ;
                                                       rdf:type owl:FunctionalProperty ;
                                                       rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#IFX_Project> ;
                                                       rdfs:range <http://www.w3id.org/ecsel-dr-ORG#Category> ;
@@ -2729,7 +2729,7 @@ ecsel-dr-OOSMP:subUnitOfDivision rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-ORG#has_Certification_Level
 <http://www.w3id.org/ecsel-dr-ORG#has_Certification_Level> rdf:type owl:ObjectProperty ;
                                                            rdfs:subPropertyOf <http://www.w3id.org/ecsel-dr-ORG#has_Contributor> ;
-                                                           owl:inverseOf <http://www.w3id.org/ecsel-dr-ORG#is_Certification_Level_of> ;
+                                                           owl:inverseOf <http://www.w3id.org/ecsel-dr-ORG#is_certification_level_of> ;
                                                            rdf:type owl:FunctionalProperty ;
                                                            rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#IFX_Project> ;
                                                            rdfs:range <http://www.w3id.org/ecsel-dr-ORG#Certification> ;
@@ -2738,7 +2738,7 @@ ecsel-dr-OOSMP:subUnitOfDivision rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-ORG#has_Contributor
 <http://www.w3id.org/ecsel-dr-ORG#has_Contributor> rdf:type owl:ObjectProperty ;
-                                                   owl:inverseOf <http://www.w3id.org/ecsel-dr-ORG#is_Contributor_of> ;
+                                                   owl:inverseOf <http://www.w3id.org/ecsel-dr-ORG#is_contributor_of> ;
                                                    rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#Role> ;
                                                    rdfs:range [ rdf:type owl:Class ;
                                                                 owl:unionOf ( <http://www.w3id.org/ecsel-dr-ORG#Central_Function>
@@ -2785,15 +2785,6 @@ ecsel-dr-OOSMP:subUnitOfDivision rdf:type owl:ObjectProperty ;
                                             rdfs:comment "Relation between a project or a subproject and their tasks"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-ORG#has_Training_Level
-<http://www.w3id.org/ecsel-dr-ORG#has_Training_Level> rdf:type owl:ObjectProperty ;
-                                                      owl:inverseOf <http://www.w3id.org/ecsel-dr-ORG#is_Training_Level_of> ;
-                                                      rdf:type owl:FunctionalProperty ;
-                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#Project_Manager> ;
-                                                      rdfs:range <http://www.w3id.org/ecsel-dr-ORG#Training> ;
-                                                      rdfs:comment "Relation between a project manager and its training level"@en .
-
-
 ###  http://www.w3id.org/ecsel-dr-ORG#has_Work_Package
 <http://www.w3id.org/ecsel-dr-ORG#has_Work_Package> rdf:type owl:ObjectProperty ;
                                                     owl:inverseOf <http://www.w3id.org/ecsel-dr-ORG#is_Work_Package_of> ;
@@ -2807,32 +2798,13 @@ ecsel-dr-OOSMP:subUnitOfDivision rdf:type owl:ObjectProperty ;
                                                     rdfs:comment "Relation between a project or a subproject and their work packages"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-ORG#is_Category_Level_of
-<http://www.w3id.org/ecsel-dr-ORG#is_Category_Level_of> rdf:type owl:ObjectProperty ,
-                                                                 owl:FunctionalProperty ;
-                                                        rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#Category> ;
-                                                        rdfs:range <http://www.w3id.org/ecsel-dr-ORG#IFX_Project> ;
-                                                        rdfs:comment "Relation between a category and its projects"@en .
-
-
-###  http://www.w3id.org/ecsel-dr-ORG#is_Certification_Level_of
-<http://www.w3id.org/ecsel-dr-ORG#is_Certification_Level_of> rdf:type owl:ObjectProperty ,
-                                                                      owl:FunctionalProperty ;
-                                                             rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#Certification> ;
-                                                             rdfs:range <http://www.w3id.org/ecsel-dr-ORG#IFX_Project> ;
-                                                             rdfs:comment "Relation between a certification and its projects"@en .
-
-
-###  http://www.w3id.org/ecsel-dr-ORG#is_Contributor_of
-<http://www.w3id.org/ecsel-dr-ORG#is_Contributor_of> rdf:type owl:ObjectProperty ;
-                                                     rdfs:domain [ rdf:type owl:Class ;
-                                                                   owl:unionOf ( <http://www.w3id.org/ecsel-dr-ORG#Central_Function>
-                                                                                 <http://www.w3id.org/ecsel-dr-ORG#Division>
-                                                                                 <http://www.w3id.org/ecsel-dr-ORG#Region>
-                                                                               )
-                                                                 ] ;
-                                                     rdfs:range <http://www.w3id.org/ecsel-dr-ORG#Role> ;
-                                                     rdfs:comment "Relation between a Central function, a division or a region and their roles"@en .
+###  http://www.w3id.org/ecsel-dr-ORG#has_training_level
+<http://www.w3id.org/ecsel-dr-ORG#has_training_level> rdf:type owl:ObjectProperty ;
+                                                      owl:inverseOf <http://www.w3id.org/ecsel-dr-ORG#is_training_level_of> ;
+                                                      rdf:type owl:FunctionalProperty ;
+                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#Project_Manager> ;
+                                                      rdfs:range <http://www.w3id.org/ecsel-dr-ORG#Training> ;
+                                                      rdfs:comment "Relation between a project manager and its training level"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-ORG#is_Project_Status
@@ -2867,14 +2839,6 @@ ecsel-dr-OOSMP:subUnitOfDivision rdf:type owl:ObjectProperty ;
                                               rdfs:comment "Relation between a task and the project or subproject it is part of"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-ORG#is_Training_Level_of
-<http://www.w3id.org/ecsel-dr-ORG#is_Training_Level_of> rdf:type owl:ObjectProperty ,
-                                                                 owl:FunctionalProperty ;
-                                                        rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#Training> ;
-                                                        rdfs:range <http://www.w3id.org/ecsel-dr-ORG#Project_Manager> ;
-                                                        rdfs:comment "Relation between a training and the project manager that has it"@en .
-
-
 ###  http://www.w3id.org/ecsel-dr-ORG#is_Work_Package_of
 <http://www.w3id.org/ecsel-dr-ORG#is_Work_Package_of> rdf:type owl:ObjectProperty ,
                                                                owl:FunctionalProperty ;
@@ -2885,6 +2849,42 @@ ecsel-dr-OOSMP:subUnitOfDivision rdf:type owl:ObjectProperty ;
                                                                                )
                                                                  ] ;
                                                       rdfs:comment "Relation between a workpackage and the project or subproject it is part of"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-ORG#is_category_level_of
+<http://www.w3id.org/ecsel-dr-ORG#is_category_level_of> rdf:type owl:ObjectProperty ,
+                                                                 owl:FunctionalProperty ;
+                                                        rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#Category> ;
+                                                        rdfs:range <http://www.w3id.org/ecsel-dr-ORG#IFX_Project> ;
+                                                        rdfs:comment "Relation between a category and its projects"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-ORG#is_certification_level_of
+<http://www.w3id.org/ecsel-dr-ORG#is_certification_level_of> rdf:type owl:ObjectProperty ,
+                                                                      owl:FunctionalProperty ;
+                                                             rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#Certification> ;
+                                                             rdfs:range <http://www.w3id.org/ecsel-dr-ORG#IFX_Project> ;
+                                                             rdfs:comment "Relation between a certification and its projects"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-ORG#is_contributor_of
+<http://www.w3id.org/ecsel-dr-ORG#is_contributor_of> rdf:type owl:ObjectProperty ;
+                                                     rdfs:domain [ rdf:type owl:Class ;
+                                                                   owl:unionOf ( <http://www.w3id.org/ecsel-dr-ORG#Central_Function>
+                                                                                 <http://www.w3id.org/ecsel-dr-ORG#Division>
+                                                                                 <http://www.w3id.org/ecsel-dr-ORG#Region>
+                                                                               )
+                                                                 ] ;
+                                                     rdfs:range <http://www.w3id.org/ecsel-dr-ORG#Role> ;
+                                                     rdfs:comment "Relation between a Central function, a division or a region and their roles"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-ORG#is_training_level_of
+<http://www.w3id.org/ecsel-dr-ORG#is_training_level_of> rdf:type owl:ObjectProperty ,
+                                                                 owl:FunctionalProperty ;
+                                                        rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#Training> ;
+                                                        rdfs:range <http://www.w3id.org/ecsel-dr-ORG#Project_Manager> ;
+                                                        rdfs:comment "Relation between a training and the project manager that has it"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PMV#activates
@@ -2901,21 +2901,6 @@ ecsel-dr-OOSMP:subUnitOfDivision rdf:type owl:ObjectProperty ;
                                              skos:altLabel "activ" .
 
 
-###  http://www.w3id.org/ecsel-dr-PMV#activates_Function
-<http://www.w3id.org/ecsel-dr-PMV#activates_Function> rdf:type owl:ObjectProperty ;
-                                                      rdfs:subPropertyOf <http://www.w3id.org/ecsel-dr-PMV#activates> ;
-                                                      owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#is_activated_by_Function> ;
-                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Event> ;
-                                                      rdfs:range [ rdf:type owl:Class ;
-                                                                   owl:unionOf ( <http://www.w3id.org/ecsel-dr-PMV#Process_Interface>
-                                                                                 <http://www.w3id.org/ecsel-dr-PMV#Task>
-                                                                               )
-                                                                 ] ;
-                                                      rdfs:comment "Specialization of the activates property that links the class Event with Task and Process Interface in the course of the process flow." ;
-                                                      rdfs:label "activatesFunction" ;
-                                                      skos:altLabel "activ function" .
-
-
 ###  http://www.w3id.org/ecsel-dr-PMV#activates_Task
 <http://www.w3id.org/ecsel-dr-PMV#activates_Task> rdf:type owl:ObjectProperty ;
                                                   rdfs:subPropertyOf <http://www.w3id.org/ecsel-dr-PMV#activates> ;
@@ -2925,6 +2910,21 @@ ecsel-dr-OOSMP:subUnitOfDivision rdf:type owl:ObjectProperty ;
                                                   rdfs:comment "Specialization of the activates property that links the class Rule with Task in the course of the process flow." ;
                                                   rdfs:label "activatesTask" ;
                                                   skos:altLabel "activ task" .
+
+
+###  http://www.w3id.org/ecsel-dr-PMV#activates_function
+<http://www.w3id.org/ecsel-dr-PMV#activates_function> rdf:type owl:ObjectProperty ;
+                                                      rdfs:subPropertyOf <http://www.w3id.org/ecsel-dr-PMV#activates> ;
+                                                      owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#is_activated_by_function> ;
+                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Event> ;
+                                                      rdfs:range [ rdf:type owl:Class ;
+                                                                   owl:unionOf ( <http://www.w3id.org/ecsel-dr-PMV#Process_Interface>
+                                                                                 <http://www.w3id.org/ecsel-dr-PMV#Task>
+                                                                               )
+                                                                 ] ;
+                                                      rdfs:comment "Specialization of the activates property that links the class Event with Task and Process Interface in the course of the process flow." ;
+                                                      rdfs:label "activatesFunction" ;
+                                                      skos:altLabel "activ function" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PMV#belongs_to_Model
@@ -2998,19 +2998,19 @@ ecsel-dr-OOSMP:subUnitOfDivision rdf:type owl:ObjectProperty ;
                                             skos:altLabel "control" .
 
 
-###  http://www.w3id.org/ecsel-dr-PMV#creates
-<http://www.w3id.org/ecsel-dr-PMV#creates> rdf:type owl:ObjectProperty ;
-                                           owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#is_created_by> ;
-                                           rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Modelling_Function_Object> ,
-                                                       [ rdf:type owl:Class ;
-                                                         owl:unionOf ( <http://www.w3id.org/ecsel-dr-PMV#Process_Interface>
-                                                                       <http://www.w3id.org/ecsel-dr-PMV#Task>
-                                                                     )
-                                                       ] ;
-                                           rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Event> ;
-                                           rdfs:comment "A process step creates an event. The connector is used to represent the chronological order in an EPC." ;
-                                           rdfs:label "creates" ;
-                                           skos:altLabel "creat" .
+###  http://www.w3id.org/ecsel-dr-PMV#creates_Event
+<http://www.w3id.org/ecsel-dr-PMV#creates_Event> rdf:type owl:ObjectProperty ;
+                                                 owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#is_created_by> ;
+                                                 rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Modelling_Function_Object> ,
+                                                             [ rdf:type owl:Class ;
+                                                               owl:unionOf ( <http://www.w3id.org/ecsel-dr-PMV#Process_Interface>
+                                                                             <http://www.w3id.org/ecsel-dr-PMV#Task>
+                                                                           )
+                                                             ] ;
+                                                 rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Event> ;
+                                                 rdfs:comment "A process step creates an event. The connector is used to represent the chronological order in an EPC." ;
+                                                 rdfs:label "creates" ;
+                                                 skos:altLabel "creat" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PMV#diagramed_on
@@ -3069,7 +3069,7 @@ ecsel-dr-OOSMP:subUnitOfDivision rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-PMV#has_Next_Model
 <http://www.w3id.org/ecsel-dr-PMV#has_Next_Model> rdf:type owl:ObjectProperty ;
-                                                  owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#has_Previous_Model> ;
+                                                  owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#has_previous_model> ;
                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Business_Process_Flow> ;
                                                   rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Business_Process_Flow> ;
                                                   rdfs:comment "An EPC can have another EPC following which is dependent on the result. The connector is used to represent the chronological order in a VACD." ;
@@ -3095,9 +3095,19 @@ ecsel-dr-OOSMP:subUnitOfDivision rdf:type owl:ObjectProperty ;
                                               skos:altLabel "object" .
 
 
-###  http://www.w3id.org/ecsel-dr-PMV#has_Output
-<http://www.w3id.org/ecsel-dr-PMV#has_Output> rdf:type owl:ObjectProperty ;
-                                              owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#is_Output_of> ;
+###  http://www.w3id.org/ecsel-dr-PMV#has_as_input
+<http://www.w3id.org/ecsel-dr-PMV#has_as_input> rdf:type owl:ObjectProperty ;
+                                                owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#is_input_for> ;
+                                                rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Task> ;
+                                                rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Technical_Term> ;
+                                                rdfs:comment "A process step can have technical term(s) as input." ;
+                                                rdfs:label "hasAsInput" ;
+                                                skos:altLabel "input" .
+
+
+###  http://www.w3id.org/ecsel-dr-PMV#has_output
+<http://www.w3id.org/ecsel-dr-PMV#has_output> rdf:type owl:ObjectProperty ;
+                                              owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#is_output_of> ;
                                               rdf:type owl:InverseFunctionalProperty ;
                                               rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Function> ,
                                                           <http://www.w3id.org/ecsel-dr-PMV#Task> ;
@@ -3110,8 +3120,8 @@ ecsel-dr-OOSMP:subUnitOfDivision rdf:type owl:ObjectProperty ;
                                               skos:altLabel "output" .
 
 
-###  http://www.w3id.org/ecsel-dr-PMV#has_Previous_Model
-<http://www.w3id.org/ecsel-dr-PMV#has_Previous_Model> rdf:type owl:ObjectProperty ;
+###  http://www.w3id.org/ecsel-dr-PMV#has_previous_model
+<http://www.w3id.org/ecsel-dr-PMV#has_previous_model> rdf:type owl:ObjectProperty ;
                                                       rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Business_Process_Flow> ;
                                                       rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Business_Process_Flow> ;
                                                       rdfs:comment "An EPC can have another EPC previous to itself and is dependent on its results. The connector is used to represent the chronological order in a VACD." ;
@@ -3119,9 +3129,9 @@ ecsel-dr-OOSMP:subUnitOfDivision rdf:type owl:ObjectProperty ;
                                                       skos:altLabel "previou model" .
 
 
-###  http://www.w3id.org/ecsel-dr-PMV#has_Sub_Flow
-<http://www.w3id.org/ecsel-dr-PMV#has_Sub_Flow> rdf:type owl:ObjectProperty ;
-                                                owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#is_Sub_Flow_of> ;
+###  http://www.w3id.org/ecsel-dr-PMV#has_sub_flow
+<http://www.w3id.org/ecsel-dr-PMV#has_sub_flow> rdf:type owl:ObjectProperty ;
+                                                owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#is_sub_flow_of> ;
                                                 rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Task> ;
                                                 rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Business_Process_Flow> ;
                                                 rdfs:comment "EPCs can have other EPCs as subordinates. The connector is used to represent the hierarchical order." ;
@@ -3129,23 +3139,13 @@ ecsel-dr-OOSMP:subUnitOfDivision rdf:type owl:ObjectProperty ;
                                                 skos:altLabel "sub flow" .
 
 
-###  http://www.w3id.org/ecsel-dr-PMV#has_Sub_Model
-<http://www.w3id.org/ecsel-dr-PMV#has_Sub_Model> rdf:type owl:ObjectProperty ;
+###  http://www.w3id.org/ecsel-dr-PMV#has_sub_model
+<http://www.w3id.org/ecsel-dr-PMV#has_sub_model> rdf:type owl:ObjectProperty ;
                                                  rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Function> ;
                                                  rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Model> ;
                                                  rdfs:comment "Denotes to which instance of \"Process\" an instance of a \"Process Element\" belongs." ;
                                                  rdfs:label "hasSubModel" ;
                                                  skos:altLabel "sub model" .
-
-
-###  http://www.w3id.org/ecsel-dr-PMV#has_as_Input
-<http://www.w3id.org/ecsel-dr-PMV#has_as_Input> rdf:type owl:ObjectProperty ;
-                                                owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#is_Input_for> ;
-                                                rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Task> ;
-                                                rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Technical_Term> ;
-                                                rdfs:comment "A process step can have technical term(s) as input." ;
-                                                rdfs:label "hasAsInput" ;
-                                                skos:altLabel "input" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PMV#has_subordinate
@@ -3186,15 +3186,6 @@ ecsel-dr-OOSMP:subUnitOfDivision rdf:type owl:ObjectProperty ;
                                                      skos:altLabel "superior vacd" .
 
 
-###  http://www.w3id.org/ecsel-dr-PMV#is_Input_for
-<http://www.w3id.org/ecsel-dr-PMV#is_Input_for> rdf:type owl:ObjectProperty ;
-                                                rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Technical_Term> ;
-                                                rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Task> ;
-                                                rdfs:comment "A software independent business object or product/services may be input for a process step." ;
-                                                rdfs:label "isInputFor" ;
-                                                skos:altLabel "input" .
-
-
 ###  http://www.w3id.org/ecsel-dr-PMV#is_Input_of
 <http://www.w3id.org/ecsel-dr-PMV#is_Input_of> rdf:type owl:ObjectProperty ,
                                                         owl:FunctionalProperty ;
@@ -3203,19 +3194,6 @@ ecsel-dr-OOSMP:subUnitOfDivision rdf:type owl:ObjectProperty ;
                                                rdfs:comment "An external physical or non-physical input is used in a function in a process flow and is therefore input of it." ;
                                                rdfs:label "isInputFor" ;
                                                skos:altLabel "isinput" .
-
-
-###  http://www.w3id.org/ecsel-dr-PMV#is_Output_of
-<http://www.w3id.org/ecsel-dr-PMV#is_Output_of> rdf:type owl:ObjectProperty ,
-                                                         owl:FunctionalProperty ;
-                                                rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Output> ,
-                                                            <http://www.w3id.org/ecsel-dr-PMV#Technical_Term> ;
-                                                rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Function> ,
-                                                           <http://www.w3id.org/ecsel-dr-PMV#Task> ;
-                                                rdfs:comment "A software independent business object may be output of a process step." ,
-                                                             "Physical or non-physical output is produced by a function in a process flow." ;
-                                                rdfs:label "isOutputOf" ;
-                                                skos:altLabel "output" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PMV#is_Predecessor_of
@@ -3227,15 +3205,6 @@ ecsel-dr-OOSMP:subUnitOfDivision rdf:type owl:ObjectProperty ;
                                                      rdfs:comment "The connector is used to represent the chronological order of value chain elements." ;
                                                      rdfs:label "isPredecessorOf" ;
                                                      skos:altLabel "predecessor" .
-
-
-###  http://www.w3id.org/ecsel-dr-PMV#is_Sub_Flow_of
-<http://www.w3id.org/ecsel-dr-PMV#is_Sub_Flow_of> rdf:type owl:ObjectProperty ;
-                                                  rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Business_Process_Flow> ;
-                                                  rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Task> ;
-                                                  rdfs:comment "EPCs can have other EPCs as superiors. The connector is used to represent the hierarchical order." ;
-                                                  rdfs:label "isSubFlowOf" ;
-                                                  skos:altLabel "sub flow" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PMV#is_activated_by
@@ -3251,8 +3220,18 @@ ecsel-dr-OOSMP:subUnitOfDivision rdf:type owl:ObjectProperty ;
                                                    skos:altLabel "activ" .
 
 
-###  http://www.w3id.org/ecsel-dr-PMV#is_activated_by_Function
-<http://www.w3id.org/ecsel-dr-PMV#is_activated_by_Function> rdf:type owl:ObjectProperty ;
+###  http://www.w3id.org/ecsel-dr-PMV#is_activated_by_Task
+<http://www.w3id.org/ecsel-dr-PMV#is_activated_by_Task> rdf:type owl:ObjectProperty ;
+                                                        rdfs:subPropertyOf <http://www.w3id.org/ecsel-dr-PMV#is_activated_by> ;
+                                                        rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Task> ;
+                                                        rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Rule> ;
+                                                        rdfs:comment "Represents the inverse property of activatesTask." ;
+                                                        rdfs:label "isActivatedByTask" ;
+                                                        skos:altLabel "activ task" .
+
+
+###  http://www.w3id.org/ecsel-dr-PMV#is_activated_by_function
+<http://www.w3id.org/ecsel-dr-PMV#is_activated_by_function> rdf:type owl:ObjectProperty ;
                                                             rdfs:subPropertyOf <http://www.w3id.org/ecsel-dr-PMV#is_activated_by> ;
                                                             rdfs:domain [ rdf:type owl:Class ;
                                                                           owl:unionOf ( <http://www.w3id.org/ecsel-dr-PMV#Process_Interface>
@@ -3263,16 +3242,6 @@ ecsel-dr-OOSMP:subUnitOfDivision rdf:type owl:ObjectProperty ;
                                                             rdfs:comment "Represents the inverse property of activatesFunction." ;
                                                             rdfs:label "isActivatedByFunction" ;
                                                             skos:altLabel "activ function" .
-
-
-###  http://www.w3id.org/ecsel-dr-PMV#is_activated_by_Task
-<http://www.w3id.org/ecsel-dr-PMV#is_activated_by_Task> rdf:type owl:ObjectProperty ;
-                                                        rdfs:subPropertyOf <http://www.w3id.org/ecsel-dr-PMV#is_activated_by> ;
-                                                        rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Task> ;
-                                                        rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Rule> ;
-                                                        rdfs:comment "Represents the inverse property of activatesTask." ;
-                                                        rdfs:label "isActivatedByTask" ;
-                                                        skos:altLabel "activ task" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PMV#is_assigned_to
@@ -3352,6 +3321,15 @@ ecsel-dr-OOSMP:subUnitOfDivision rdf:type owl:ObjectProperty ;
                                                   skos:altLabel "exectu" .
 
 
+###  http://www.w3id.org/ecsel-dr-PMV#is_input_for
+<http://www.w3id.org/ecsel-dr-PMV#is_input_for> rdf:type owl:ObjectProperty ;
+                                                rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Technical_Term> ;
+                                                rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Task> ;
+                                                rdfs:comment "A software independent business object or product/services may be input for a process step." ;
+                                                rdfs:label "isInputFor" ;
+                                                skos:altLabel "input" .
+
+
 ###  http://www.w3id.org/ecsel-dr-PMV#is_linked_by
 <http://www.w3id.org/ecsel-dr-PMV#is_linked_by> rdf:type owl:ObjectProperty ;
                                                 owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#links> ;
@@ -3361,16 +3339,29 @@ ecsel-dr-OOSMP:subUnitOfDivision rdf:type owl:ObjectProperty ;
                                                 skos:altLabel "link" .
 
 
-###  http://www.w3id.org/ecsel-dr-PMV#is_processed_by
-<http://www.w3id.org/ecsel-dr-PMV#is_processed_by> rdf:type owl:ObjectProperty ;
-                                                   owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#processes> ;
-                                                   rdf:type owl:FunctionalProperty ,
-                                                            owl:InverseFunctionalProperty ;
-                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Function> ;
-                                                   rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Human_Output> ;
-                                                   rdfs:comment "The execution of a function in a process flow is processed by a person (human output)." ;
-                                                   rdfs:label "isProcessedBy" ;
-                                                   skos:altLabel "process" .
+###  http://www.w3id.org/ecsel-dr-PMV#is_output_of
+<http://www.w3id.org/ecsel-dr-PMV#is_output_of> rdf:type owl:ObjectProperty ,
+                                                         owl:FunctionalProperty ;
+                                                rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Output> ,
+                                                            <http://www.w3id.org/ecsel-dr-PMV#Technical_Term> ;
+                                                rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Function> ,
+                                                           <http://www.w3id.org/ecsel-dr-PMV#Task> ;
+                                                rdfs:comment "A software independent business object may be output of a process step." ,
+                                                             "Physical or non-physical output is produced by a function in a process flow." ;
+                                                rdfs:label "isOutputOf" ;
+                                                skos:altLabel "output" .
+
+
+###  http://www.w3id.org/ecsel-dr-PMV#is_processed_by_Human_Output
+<http://www.w3id.org/ecsel-dr-PMV#is_processed_by_Human_Output> rdf:type owl:ObjectProperty ;
+                                                                owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#processes_Function> ;
+                                                                rdf:type owl:FunctionalProperty ,
+                                                                         owl:InverseFunctionalProperty ;
+                                                                rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Function> ;
+                                                                rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Human_Output> ;
+                                                                rdfs:comment "The execution of a function in a process flow is processed by a person (human output)." ;
+                                                                rdfs:label "isProcessedBy" ;
+                                                                skos:altLabel "process" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PMV#is_represented_by
@@ -3397,6 +3388,15 @@ ecsel-dr-OOSMP:subUnitOfDivision rdf:type owl:ObjectProperty ;
                                                               rdfs:comment "An organizational unit is responible for a function in a process flow." ;
                                                               rdfs:label "isResponsibleFor" ;
                                                               skos:altLabel "respons" .
+
+
+###  http://www.w3id.org/ecsel-dr-PMV#is_sub_flow_of
+<http://www.w3id.org/ecsel-dr-PMV#is_sub_flow_of> rdf:type owl:ObjectProperty ;
+                                                  rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Business_Process_Flow> ;
+                                                  rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Task> ;
+                                                  rdfs:comment "EPCs can have other EPCs as superiors. The connector is used to represent the hierarchical order." ;
+                                                  rdfs:label "isSubFlowOf" ;
+                                                  skos:altLabel "sub flow" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PMV#is_supported_by
@@ -3499,15 +3499,15 @@ ecsel-dr-OOSMP:subUnitOfDivision rdf:type owl:ObjectProperty ;
                                                           skos:altLabel "inform" .
 
 
-###  http://www.w3id.org/ecsel-dr-PMV#processes
-<http://www.w3id.org/ecsel-dr-PMV#processes> rdf:type owl:ObjectProperty ,
-                                                      owl:FunctionalProperty ,
-                                                      owl:InverseFunctionalProperty ;
-                                             rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Human_Output> ;
-                                             rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Function> ;
-                                             rdfs:comment "Some person, referred to as human output here, processes a function in a process flow. " ;
-                                             rdfs:label "processes" ;
-                                             skos:altLabel "process" .
+###  http://www.w3id.org/ecsel-dr-PMV#processes_Function
+<http://www.w3id.org/ecsel-dr-PMV#processes_Function> rdf:type owl:ObjectProperty ,
+                                                               owl:FunctionalProperty ,
+                                                               owl:InverseFunctionalProperty ;
+                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Human_Output> ;
+                                                      rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Function> ;
+                                                      rdfs:comment "Some person, referred to as human output here, processes a function in a process flow. " ;
+                                                      rdfs:label "processes" ;
+                                                      skos:altLabel "process" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PMV#relevant_to
@@ -3675,28 +3675,13 @@ ecsel-dr-PROD:shipped_to rdf:type owl:ObjectProperty ;
                                      ] .
 
 
-###  http://www.w3id.org/ecsel-dr-PROD#substitute_Product
-ecsel-dr-PROD:substitute_Product rdf:type owl:ObjectProperty ;
+###  http://www.w3id.org/ecsel-dr-PROD#substitute_product
+ecsel-dr-PROD:substitute_product rdf:type owl:ObjectProperty ;
                                  rdfs:domain ecsel-dr-PROD:Sales_Product ;
                                  rdfs:range ecsel-dr-PROD:Sales_Product ;
                                  rdfs:comment "A Sales Product SP2 that can be used instead of a Sales Product SP1 to promise an order to a customer."@en ,
                                               "Are finishedProductNumbers with different SalesProductNumber that meet the customer’s requirements on form – fit – function."@en ;
                                  rdfs:label "substitute product"@en .
-
-
-###  http://www.w3id.org/ecsel-dr-PWR#Power_loss_Calculated_by
-<http://www.w3id.org/ecsel-dr-PWR#Power_loss_Calculated_by> rdf:type owl:ObjectProperty ;
-                                                            rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#On-State_Power_loss> ;
-                                                            rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Drain_Current> ,
-                                                                       <http://www.w3id.org/ecsel-dr-PWR#On-State_Resistance> ;
-                                                            rdfs:label "has a Power Loss Calculated by Multiplicatoin of" .
-
-
-###  http://www.w3id.org/ecsel-dr-PWR#The_Enhansment_Mode_Is_Working_As
-<http://www.w3id.org/ecsel-dr-PWR#The_Enhansment_Mode_Is_Working_As> rdf:type owl:ObjectProperty ;
-                                                                     rdfs:subPropertyOf <http://www.w3id.org/ecsel-dr-PWR#acting_as> ;
-                                                                     rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Enhancement> ;
-                                                                     rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Switcher> .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#acting_as
@@ -3716,9 +3701,11 @@ ecsel-dr-PROD:substitute_Product rdf:type owl:ObjectProperty ;
                                        rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Products> .
 
 
-###  http://www.w3id.org/ecsel-dr-PWR#has_A_Voltage
-<http://www.w3id.org/ecsel-dr-PWR#has_A_Voltage> rdf:type owl:ObjectProperty ;
-                                                 rdfs:label "has A Voltage" .
+###  http://www.w3id.org/ecsel-dr-PWR#enhancement_mode_is_working_as
+<http://www.w3id.org/ecsel-dr-PWR#enhancement_mode_is_working_as> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:subPropertyOf <http://www.w3id.org/ecsel-dr-PWR#acting_as> ;
+                                                                  rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Enhancement> ;
+                                                                  rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Switcher> .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#has_Application_Area
@@ -3759,13 +3746,6 @@ ecsel-dr-PROD:substitute_Product rdf:type owl:ObjectProperty ;
                                                 rdfs:label "has The Elements" .
 
 
-###  http://www.w3id.org/ecsel-dr-PWR#has_Industry_Sector
-<http://www.w3id.org/ecsel-dr-PWR#has_Industry_Sector> rdf:type owl:ObjectProperty ;
-                                                       rdfs:subPropertyOf <http://www.w3id.org/ecsel-dr-PWR#are> ;
-                                                       rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Infineon_Device> ;
-                                                       rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Semiconductors> .
-
-
 ###  http://www.w3id.org/ecsel-dr-PWR#has_Information_Object
 <http://www.w3id.org/ecsel-dr-PWR#has_Information_Object> rdf:type owl:ObjectProperty ;
                                                           rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Infineon_Device> ;
@@ -3775,11 +3755,11 @@ ecsel-dr-PROD:substitute_Product rdf:type owl:ObjectProperty ;
                                                           rdfs:label "has information object" .
 
 
-###  http://www.w3id.org/ecsel-dr-PWR#has_Output
-<http://www.w3id.org/ecsel-dr-PWR#has_Output> rdf:type owl:ObjectProperty ;
-                                              rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Process> ;
-                                              rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Process_Output> ;
-                                              rdfs:label "has output" .
+###  http://www.w3id.org/ecsel-dr-PWR#has_Operation_Region
+<http://www.w3id.org/ecsel-dr-PWR#has_Operation_Region> rdf:type owl:ObjectProperty ;
+                                                        rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Infineon_Device> ;
+                                                        rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Region_Of_Operation> ;
+                                                        rdfs:label "has an Operation Region" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#has_Process_Input
@@ -3789,39 +3769,18 @@ ecsel-dr-PROD:substitute_Product rdf:type owl:ObjectProperty ;
                                                      rdfs:label "has input" .
 
 
+###  http://www.w3id.org/ecsel-dr-PWR#has_Process_Output
+<http://www.w3id.org/ecsel-dr-PWR#has_Process_Output> rdf:type owl:ObjectProperty ;
+                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Process> ;
+                                                      rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Process_Output> ;
+                                                      rdfs:label "has output" .
+
+
 ###  http://www.w3id.org/ecsel-dr-PWR#has_Property
 <http://www.w3id.org/ecsel-dr-PWR#has_Property> rdf:type owl:ObjectProperty ;
                                                 rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Infineon_Device> ;
                                                 rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Property> ;
                                                 rdfs:label "has Properties" .
-
-
-###  http://www.w3id.org/ecsel-dr-PWR#has_Voltage
-<http://www.w3id.org/ecsel-dr-PWR#has_Voltage> rdf:type owl:ObjectProperty ;
-                                               rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#The_Application_Voltage> ;
-                                               rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Drain_Voltagea> ;
-                                               rdfs:label "is a Volatge of" .
-
-
-###  http://www.w3id.org/ecsel-dr-PWR#has_a_Voltage_Equals_or_Greater_Than
-<http://www.w3id.org/ecsel-dr-PWR#has_a_Voltage_Equals_or_Greater_Than> rdf:type owl:ObjectProperty ;
-                                                                        rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#On-State_Voltage> ;
-                                                                        rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Threshold_Voltage> ;
-                                                                        rdfs:label "has a Voltage Equals or Greater Than" .
-
-
-###  http://www.w3id.org/ecsel-dr-PWR#has_an_Operation_Modes
-<http://www.w3id.org/ecsel-dr-PWR#has_an_Operation_Modes> rdf:type owl:ObjectProperty ;
-                                                          rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Infineon_Device> ;
-                                                          rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Enhancement> ;
-                                                          rdfs:label "has an Operation Modes" .
-
-
-###  http://www.w3id.org/ecsel-dr-PWR#has_an_Operation_Region
-<http://www.w3id.org/ecsel-dr-PWR#has_an_Operation_Region> rdf:type owl:ObjectProperty ;
-                                                           rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Infineon_Device> ;
-                                                           rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Region_Of_Operation> ;
-                                                           rdfs:label "has an Operation Region" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#has_an_Output_Current
@@ -3831,15 +3790,48 @@ ecsel-dr-PROD:substitute_Product rdf:type owl:ObjectProperty ;
                                                          rdfs:label "has an Output Current" .
 
 
-###  http://www.w3id.org/ecsel-dr-PWR#has_propeties_of
-<http://www.w3id.org/ecsel-dr-PWR#has_propeties_of> rdf:type owl:ObjectProperty ;
-                                                    rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Semiconductor_Product(its_name)_Data_Sheet> ;
-                                                    rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Infineon_Device> ;
-                                                    rdfs:label "has The Propeties of" .
+###  http://www.w3id.org/ecsel-dr-PWR#has_industry_sector
+<http://www.w3id.org/ecsel-dr-PWR#has_industry_sector> rdf:type owl:ObjectProperty ;
+                                                       rdfs:subPropertyOf <http://www.w3id.org/ecsel-dr-PWR#are> ;
+                                                       rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Infineon_Device> ;
+                                                       rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Semiconductors> .
 
 
-###  http://www.w3id.org/ecsel-dr-PWR#in_deployment
-<http://www.w3id.org/ecsel-dr-PWR#in_deployment> rdf:type owl:ObjectProperty ;
+###  http://www.w3id.org/ecsel-dr-PWR#has_operation_modes
+<http://www.w3id.org/ecsel-dr-PWR#has_operation_modes> rdf:type owl:ObjectProperty ;
+                                                       rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Infineon_Device> ;
+                                                       rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Enhancement> ;
+                                                       rdfs:label "has an Operation Modes" .
+
+
+###  http://www.w3id.org/ecsel-dr-PWR#has_properties_of
+<http://www.w3id.org/ecsel-dr-PWR#has_properties_of> rdf:type owl:ObjectProperty ;
+                                                     rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Semiconductor_Product(its_name)_Data_Sheet> ;
+                                                     rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Infineon_Device> ;
+                                                     rdfs:label "has The Propeties of" .
+
+
+###  http://www.w3id.org/ecsel-dr-PWR#has_voltage
+<http://www.w3id.org/ecsel-dr-PWR#has_voltage> rdf:type owl:ObjectProperty ;
+                                               rdfs:label "has A Voltage" .
+
+
+###  http://www.w3id.org/ecsel-dr-PWR#has_voltage_Drain_Voltage
+<http://www.w3id.org/ecsel-dr-PWR#has_voltage_Drain_Voltage> rdf:type owl:ObjectProperty ;
+                                                             rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#The_Application_Voltage> ;
+                                                             rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Drain_Voltagea> ;
+                                                             rdfs:label "is a Volatge of" .
+
+
+###  http://www.w3id.org/ecsel-dr-PWR#has_voltage_equals_or_greater_than
+<http://www.w3id.org/ecsel-dr-PWR#has_voltage_equals_or_greater_than> rdf:type owl:ObjectProperty ;
+                                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#On-State_Voltage> ;
+                                                                      rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Threshold_Voltage> ;
+                                                                      rdfs:label "has a Voltage Equals or Greater Than" .
+
+
+###  http://www.w3id.org/ecsel-dr-PWR#in_Deployment
+<http://www.w3id.org/ecsel-dr-PWR#in_Deployment> rdf:type owl:ObjectProperty ;
                                                  rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Platform> ;
                                                  rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Deployment> ;
                                                  rdfs:comment "Relation between a Platform and a Deployment, recording that the object was used as a platform for a system/ a device (sensor/power converter) for a particular deployment: as in this PhysicalObject is acting as a Platform inDeployment Deployment." ;
@@ -3848,8 +3840,8 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#inDeployment""" ;
                                                  rdfs:label "in deployment" .
 
 
-###  http://www.w3id.org/ecsel-dr-PWR#is_a_Product_of
-<http://www.w3id.org/ecsel-dr-PWR#is_a_Product_of> rdf:type owl:ObjectProperty ;
+###  http://www.w3id.org/ecsel-dr-PWR#is_a_product_of
+<http://www.w3id.org/ecsel-dr-PWR#is_a_product_of> rdf:type owl:ObjectProperty ;
                                                    rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#SiC_MOSFET> ;
                                                    rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Products> ;
                                                    rdfs:label "is a Product of" .
@@ -3870,6 +3862,14 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#inDeployment""" ;
                                                  rdfs:label "The Depletion Mode Is Working As" .
 
 
+###  http://www.w3id.org/ecsel-dr-PWR#power_loss_calculated_by
+<http://www.w3id.org/ecsel-dr-PWR#power_loss_calculated_by> rdf:type owl:ObjectProperty ;
+                                                            rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#On-State_Power_loss> ;
+                                                            rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Drain_Current> ,
+                                                                       <http://www.w3id.org/ecsel-dr-PWR#On-State_Resistance> ;
+                                                            rdfs:label "has a Power Loss Calculated by Multiplicatoin of" .
+
+
 ###  http://www.w3id.org/ecsel-dr-PWR#the_Temperature_must_not_exceed
 <http://www.w3id.org/ecsel-dr-PWR#the_Temperature_must_not_exceed> rdf:type owl:ObjectProperty ;
                                                                    rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Infineon_Device> ;
@@ -3882,13 +3882,6 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#inDeployment""" ;
                                                                                                rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Infineon_Device> ;
                                                                                                rdfs:range <http://www.w3id.org/ecsel-dr-PWR#The_Method_Of_The_Device_Function> ;
                                                                                                rdfs:label "Makes Switching" .
-
-
-###  http://www.w3id.org/ecsel-dr-RAMI40#Uses
-ecsel-dr-RAMI40:Uses rdf:type owl:ObjectProperty ;
-                     owl:inverseOf ecsel-dr-RAMI40:is_used_by_Standard_Organisation ;
-                     rdfs:domain ecsel-dr-RAMI40:Standard_Organisation ;
-                     rdfs:range ecsel-dr-RAMI40:Standard .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#contains_Admin_Shell
@@ -3907,8 +3900,8 @@ ecsel-dr-RAMI40:describes rdf:type owl:ObjectProperty ;
                           rdfs:label "describes"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-RAMI40#energy_Efficiency_Value
-ecsel-dr-RAMI40:energy_Efficiency_Value rdf:type owl:ObjectProperty ;
+###  http://www.w3id.org/ecsel-dr-RAMI40#energy_efficiency_value
+ecsel-dr-RAMI40:energy_efficiency_value rdf:type owl:ObjectProperty ;
                                         rdfs:domain ecsel-dr-RAMI40:Energy_Efficiency ;
                                         rdfs:range ecsel-dr-RAMI40:Measure ;
                                         rdfs:comment "Points to the value of the Energy Efficiency comsuption."@en ;
@@ -3947,15 +3940,10 @@ ecsel-dr-RAMI40:has_RAMI_Life_Cycle_Layer rdf:type owl:ObjectProperty ;
                                           skos:definition "Connects the concepts with the correspondent layer in the RAMI Hierarchy Levels"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-RAMI40#has_Reference
-ecsel-dr-RAMI40:has_Reference rdf:type owl:ObjectProperty ;
-                              rdfs:domain ecsel-dr-RAMI40:Submodel .
-
-
 ###  http://www.w3id.org/ecsel-dr-RAMI40#has_Semantic_Expression
 ecsel-dr-RAMI40:has_Semantic_Expression rdf:type owl:ObjectProperty ;
                                         rdfs:domain ecsel-dr-RAMI40:Submodel ;
-                                        rdfs:range ecsel-dr-RAMI40:Expression_Semantic .
+                                        rdfs:range ecsel-dr-RAMI40:Semantic_Expression .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#has_Submodel
@@ -3972,8 +3960,13 @@ ecsel-dr-RAMI40:has_Used_Date rdf:type owl:ObjectProperty ;
                               rdfs:label "has used date"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-RAMI40#has_Version
-ecsel-dr-RAMI40:has_Version rdf:type owl:ObjectProperty ;
+###  http://www.w3id.org/ecsel-dr-RAMI40#has_reference
+ecsel-dr-RAMI40:has_reference rdf:type owl:ObjectProperty ;
+                              rdfs:domain ecsel-dr-RAMI40:Submodel .
+
+
+###  http://www.w3id.org/ecsel-dr-RAMI40#has_version
+ecsel-dr-RAMI40:has_version rdf:type owl:ObjectProperty ;
                             rdfs:domain ecsel-dr-RAMI40:Standard ;
                             rdfs:range ecsel-dr-RAMI40:Standard_Version ;
                             rdfs:comment "The current version of Standard."@en ;
@@ -4013,22 +4006,17 @@ ecsel-dr-RAMI40:is_part_of_Asset rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#is_used_by_Standard_Organisation
 ecsel-dr-RAMI40:is_used_by_Standard_Organisation rdf:type owl:ObjectProperty ;
+                                                 owl:inverseOf ecsel-dr-RAMI40:uses_Standard ;
                                                  rdfs:domain ecsel-dr-RAMI40:Standard ;
                                                  rdfs:range ecsel-dr-RAMI40:Standard_Organisation .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#uses_Standard
 ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
+                              rdfs:domain ecsel-dr-RAMI40:Standard_Organisation ;
                               rdfs:range ecsel-dr-RAMI40:Standard ;
                               rdfs:comment "Points to the standards describing the functions attached to the asset via the administration shell"@en ;
                               rdfs:label "uses standard"@en .
-
-
-###  http://www.w3id.org/ecsel-dr-SCP#calculate
-<http://www.w3id.org/ecsel-dr-SCP#calculate> rdf:type owl:ObjectProperty ;
-                                             rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Supply_Demand_Match> ;
-                                             rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Supply_Picture> ;
-                                             rdfs:label "calculate"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#calculate_based
@@ -4043,6 +4031,13 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
                                                       rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Marketing_Demands> ;
                                                       rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Sales_Demands> ;
                                                       rdfs:label "calculateBasedOn"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-SCP#calculates
+<http://www.w3id.org/ecsel-dr-SCP#calculates> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Supply_Demand_Match> ;
+                                              rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Supply_Picture> ;
+                                              rdfs:label "calculate"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#consists_of_Open_Order_Book
@@ -4066,18 +4061,18 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
                                             rdfs:label "consume"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SCP#contribute
-<http://www.w3id.org/ecsel-dr-SCP#contribute> rdf:type owl:ObjectProperty ;
-                                              rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Orders> ;
-                                              rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Prioritized_Orders> ;
-                                              rdfs:label "contribute"@en .
+###  http://www.w3id.org/ecsel-dr-SCP#contribute_to
+<http://www.w3id.org/ecsel-dr-SCP#contribute_to> rdf:type owl:ObjectProperty ;
+                                                 rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Orders> ;
+                                                 rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Prioritized_Orders> ;
+                                                 rdfs:label "contribute"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SCP#create
-<http://www.w3id.org/ecsel-dr-SCP#create> rdf:type owl:ObjectProperty ;
-                                          rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#CLM> ;
-                                          rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Prioritized_Orders> ;
-                                          rdfs:label "create"@en .
+###  http://www.w3id.org/ecsel-dr-SCP#creates_Prioritized_Order
+<http://www.w3id.org/ecsel-dr-SCP#creates_Prioritized_Order> rdf:type owl:ObjectProperty ;
+                                                             rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#CLM> ;
+                                                             rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Prioritized_Orders> ;
+                                                             rdfs:label "create"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#enter_to
@@ -4087,11 +4082,11 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
                                             rdfs:label "enterTo"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SCP#figure_out_from
-<http://www.w3id.org/ecsel-dr-SCP#figure_out_from> rdf:type owl:ObjectProperty ;
-                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Target_Allocation> ;
-                                                   rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Allocated_Available_To_Promise> ;
-                                                   rdfs:label "figureOutFrom"@en .
+###  http://www.w3id.org/ecsel-dr-SCP#figured_out_from
+<http://www.w3id.org/ecsel-dr-SCP#figured_out_from> rdf:type owl:ObjectProperty ;
+                                                    rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Target_Allocation> ;
+                                                    rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Allocated_Available_To_Promise> ;
+                                                    rdfs:label "figureOutFrom"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#generates
@@ -4122,11 +4117,11 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
                                                 rdfs:label "hasInputin"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SCP#has_Result
-<http://www.w3id.org/ecsel-dr-SCP#has_Result> rdf:type owl:ObjectProperty ;
-                                              rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Marketing_Demands> ;
-                                              rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Operational_Demand> ;
-                                              rdfs:label "hasResult"@en .
+###  http://www.w3id.org/ecsel-dr-SCP#has_result_Operational_Demand
+<http://www.w3id.org/ecsel-dr-SCP#has_result_Operational_Demand> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Marketing_Demands> ;
+                                                                 rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Operational_Demand> ;
+                                                                 rdfs:label "hasResult"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#is_Place_Orders
@@ -4234,18 +4229,11 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
                                                rdfs:label "transferTo"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SCP#use
-<http://www.w3id.org/ecsel-dr-SCP#use> rdf:type owl:ObjectProperty ;
-                                       rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#CLM> ;
-                                       rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Order_Line_Item> ;
-                                       rdfs:label "use"@en .
-
-
-###  http://www.w3id.org/ecsel-dr-SCP#useIn
-<http://www.w3id.org/ecsel-dr-SCP#useIn> rdf:type owl:ObjectProperty ;
-                                         rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Bottleneck_Resource> ;
-                                         rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Resource_Capacity> ;
-                                         rdfs:label "useIn"@en .
+###  http://www.w3id.org/ecsel-dr-SCP#use_in
+<http://www.w3id.org/ecsel-dr-SCP#use_in> rdf:type owl:ObjectProperty ;
+                                          rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Bottleneck_Resource> ;
+                                          rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Resource_Capacity> ;
+                                          rdfs:label "useIn"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#use_up
@@ -4253,6 +4241,13 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
                                           rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Order_Line_Item> ;
                                           rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Allocated_Available_To_Promise> ;
                                           rdfs:label "useUp"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-SCP#uses
+<http://www.w3id.org/ecsel-dr-SCP#uses> rdf:type owl:ObjectProperty ;
+                                        rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#CLM> ;
+                                        rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Order_Line_Item> ;
+                                        rdfs:label "use"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#belongs_to_Furnace_Process
@@ -4478,22 +4473,6 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
                                                    rdfs:range <http://www.w3id.org/ecsel-dr-SO#Release_Plan> .
 
 
-###  http://www.w3id.org/ecsel-dr-SO#has_Route
-<http://www.w3id.org/ecsel-dr-SO#has_Route> rdf:type owl:ObjectProperty ;
-                                            owl:inverseOf <http://www.w3id.org/ecsel-dr-SO#is_Route_of> ;
-                                            rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Product_Level_3> ,
-                                                        [ rdf:type owl:Class ;
-                                                          owl:unionOf ( <http://www.w3id.org/ecsel-dr-SO#Lot>
-                                                                        <http://www.w3id.org/ecsel-dr-SO#Operation>
-                                                                        <http://www.w3id.org/ecsel-dr-SO#Process_Flow>
-                                                                        <http://www.w3id.org/ecsel-dr-SO#Simulation_Part>
-                                                                        <http://www.w3id.org/ecsel-dr-SO#Technology>
-                                                                      )
-                                                        ] ;
-                                            rdfs:range <http://www.w3id.org/ecsel-dr-SO#Route> ,
-                                                       <http://www.w3id.org/ecsel-dr-SO#Simulation_Route> .
-
-
 ###  http://www.w3id.org/ecsel-dr-SO#has_Shift
 <http://www.w3id.org/ecsel-dr-SO#has_Shift> rdf:type owl:ObjectProperty ;
                                             owl:inverseOf <http://www.w3id.org/ecsel-dr-SO#is_Shift_of> ;
@@ -4563,15 +4542,31 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
                                                rdfs:range <http://www.w3id.org/ecsel-dr-SO#Workshop> .
 
 
-###  http://www.w3id.org/ecsel-dr-SO#has_part
-<http://www.w3id.org/ecsel-dr-SO#has_part> rdf:type owl:ObjectProperty ;
-                                           owl:inverseOf <http://www.w3id.org/ecsel-dr-SO#is_part_of> ;
-                                           rdfs:domain [ rdf:type owl:Class ;
-                                                         owl:unionOf ( <http://www.w3id.org/ecsel-dr-SO#Process_Line>
-                                                                       <http://www.w3id.org/ecsel-dr-SO#Simulation_Route>
-                                                                     )
-                                                       ] ;
-                                           rdfs:range <http://www.w3id.org/ecsel-dr-SO#Simulation_Part> .
+###  http://www.w3id.org/ecsel-dr-SO#has_part_Simulation_Part
+<http://www.w3id.org/ecsel-dr-SO#has_part_Simulation_Part> rdf:type owl:ObjectProperty ;
+                                                           owl:inverseOf <http://www.w3id.org/ecsel-dr-SO#is_part_of> ;
+                                                           rdfs:domain [ rdf:type owl:Class ;
+                                                                         owl:unionOf ( <http://www.w3id.org/ecsel-dr-SO#Process_Line>
+                                                                                       <http://www.w3id.org/ecsel-dr-SO#Simulation_Route>
+                                                                                     )
+                                                                       ] ;
+                                                           rdfs:range <http://www.w3id.org/ecsel-dr-SO#Simulation_Part> .
+
+
+###  http://www.w3id.org/ecsel-dr-SO#has_route
+<http://www.w3id.org/ecsel-dr-SO#has_route> rdf:type owl:ObjectProperty ;
+                                            owl:inverseOf <http://www.w3id.org/ecsel-dr-SO#is_route_of> ;
+                                            rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Product_Level_3> ,
+                                                        [ rdf:type owl:Class ;
+                                                          owl:unionOf ( <http://www.w3id.org/ecsel-dr-SO#Lot>
+                                                                        <http://www.w3id.org/ecsel-dr-SO#Operation>
+                                                                        <http://www.w3id.org/ecsel-dr-SO#Process_Flow>
+                                                                        <http://www.w3id.org/ecsel-dr-SO#Simulation_Part>
+                                                                        <http://www.w3id.org/ecsel-dr-SO#Technology>
+                                                                      )
+                                                        ] ;
+                                            rdfs:range <http://www.w3id.org/ecsel-dr-SO#Route> ,
+                                                       <http://www.w3id.org/ecsel-dr-SO#Simulation_Route> .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#is_Bottlenecks_of
@@ -4638,10 +4633,6 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
 <http://www.w3id.org/ecsel-dr-SO#is_Release_Plan_of> rdf:type owl:ObjectProperty .
 
 
-###  http://www.w3id.org/ecsel-dr-SO#is_Route_of
-<http://www.w3id.org/ecsel-dr-SO#is_Route_of> rdf:type owl:ObjectProperty .
-
-
 ###  http://www.w3id.org/ecsel-dr-SO#is_Shift_of
 <http://www.w3id.org/ecsel-dr-SO#is_Shift_of> rdf:type owl:ObjectProperty .
 
@@ -4701,11 +4692,11 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
                                                   rdfs:range <http://www.w3id.org/ecsel-dr-SO#Timecoupling> .
 
 
-###  http://www.w3id.org/ecsel-dr-SO#is_processed_by
-<http://www.w3id.org/ecsel-dr-SO#is_processed_by> rdf:type owl:ObjectProperty ;
-                                                  owl:inverseOf <http://www.w3id.org/ecsel-dr-SO#processes> ;
-                                                  rdfs:domain <http://www.w3id.org/ecsel-dr-SO#EPA> ;
-                                                  rdfs:range <http://www.w3id.org/ecsel-dr-SO#Tool> .
+###  http://www.w3id.org/ecsel-dr-SO#is_processed_by_Tool
+<http://www.w3id.org/ecsel-dr-SO#is_processed_by_Tool> rdf:type owl:ObjectProperty ;
+                                                       owl:inverseOf <http://www.w3id.org/ecsel-dr-SO#processes> ;
+                                                       rdfs:domain <http://www.w3id.org/ecsel-dr-SO#EPA> ;
+                                                       rdfs:range <http://www.w3id.org/ecsel-dr-SO#Tool> .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#is_required_by
@@ -4722,6 +4713,10 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-SO#is_robotically_loaded_by
 <http://www.w3id.org/ecsel-dr-SO#is_robotically_loaded_by> rdf:type owl:ObjectProperty ;
                                                            owl:inverseOf <http://www.w3id.org/ecsel-dr-SO#robotically_loads> .
+
+
+###  http://www.w3id.org/ecsel-dr-SO#is_route_of
+<http://www.w3id.org/ecsel-dr-SO#is_route_of> rdf:type owl:ObjectProperty .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#is_unloaded_by
@@ -4769,8 +4764,8 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
                                           rdfs:range <http://www.w3id.org/ecsel-dr-SO#Tool> .
 
 
-###  http://www.w3id.org/ecsel-dr-SO#uses_one_or_more_Technology
-<http://www.w3id.org/ecsel-dr-SO#uses_one_or_more_Technology> rdf:type owl:ObjectProperty ;
+###  http://www.w3id.org/ecsel-dr-SO#uses_one_or_more_technology
+<http://www.w3id.org/ecsel-dr-SO#uses_one_or_more_technology> rdf:type owl:ObjectProperty ;
                                                               rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Process> ;
                                                               rdfs:range <http://www.w3id.org/ecsel-dr-SO#Workshop> .
 
@@ -6967,11 +6962,11 @@ time:General_Date_Time_Description rdf:type owl:Class ;
                                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                    ] ,
                                                    [ rdf:type owl:Restriction ;
-                                                     owl:onProperty time:monthOfYear ;
+                                                     owl:onProperty time:month_of_year ;
                                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                    ] ,
                                                    [ rdf:type owl:Restriction ;
-                                                     owl:onProperty time:time_Zone ;
+                                                     owl:onProperty time:time_zone ;
                                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                    ] ,
                                                    [ rdf:type owl:Restriction ;
@@ -7305,7 +7300,7 @@ It is deprecated in this edition of OWL-Time. """ ;
                                                                               owl:minCardinality "1"^^xsd:nonNegativeInteger
                                                                             ] ,
                                                                             [ rdf:type owl:Restriction ;
-                                                                              owl:onProperty <http://www.w3.org/TR/vocab-ssn-ext/has_Ultimate_Feature_Of_Interest> ;
+                                                                              owl:onProperty <http://www.w3.org/TR/vocab-ssn-ext/has_ultimate_Feature_Of_Interest> ;
                                                                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                                             ] ,
                                                                             [ rdf:type owl:Restriction ;
@@ -7321,7 +7316,7 @@ It is deprecated in this edition of OWL-Time. """ ;
                                                                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                                             ] ,
                                                                             [ rdf:type owl:Restriction ;
-                                                                              owl:onProperty <http://www.w3.org/ns/sosa/phenomenon_Time> ;
+                                                                              owl:onProperty <http://www.w3.org/ns/sosa/phenomenon_time> ;
                                                                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                                             ] ,
                                                                             [ rdf:type owl:Restriction ;
@@ -7370,7 +7365,7 @@ org:Organizational_Unit rdf:type owl:Class ;
 ###  http://www.w3.org/ns/sosa/Actuation
 <http://www.w3.org/ns/sosa/Actuation> rdf:type owl:Class ;
                                       rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                        owl:onProperty <http://www.w3.org/ns/sosa/acts_on_Property> ;
+                                                        owl:onProperty <http://www.w3.org/ns/sosa/acts_on_property> ;
                                                         owl:allValuesFrom <http://www.w3.org/ns/sosa/Actuatable_Property>
                                                       ] ,
                                                       [ rdf:type owl:Restriction ;
@@ -7378,7 +7373,7 @@ org:Organizational_Unit rdf:type owl:Class ;
                                                         owl:allValuesFrom <http://www.w3.org/ns/sosa/Feature_Of_Interest>
                                                       ] ,
                                                       [ rdf:type owl:Restriction ;
-                                                        owl:onProperty <http://www.w3.org/ns/sosa/has_Result> ;
+                                                        owl:onProperty <http://www.w3.org/ns/sosa/has_result> ;
                                                         owl:allValuesFrom <http://www.w3.org/ns/sosa/Result>
                                                       ] ,
                                                       [ rdf:type owl:Restriction ;
@@ -7390,11 +7385,11 @@ org:Organizational_Unit rdf:type owl:Class ;
                                                         owl:allValuesFrom <http://www.w3.org/ns/sosa/Procedure>
                                                       ] ,
                                                       [ rdf:type owl:Restriction ;
-                                                        owl:onProperty <http://www.w3.org/ns/sosa/acts_on_Property> ;
+                                                        owl:onProperty <http://www.w3.org/ns/sosa/acts_on_property> ;
                                                         owl:minCardinality "1"^^xsd:nonNegativeInteger
                                                       ] ,
                                                       [ rdf:type owl:Restriction ;
-                                                        owl:onProperty <http://www.w3.org/ns/sosa/has_Result> ;
+                                                        owl:onProperty <http://www.w3.org/ns/sosa/has_result> ;
                                                         owl:minCardinality "1"^^xsd:nonNegativeInteger
                                                       ] ,
                                                       [ rdf:type owl:Restriction ;
@@ -7472,7 +7467,7 @@ org:Organizational_Unit rdf:type owl:Class ;
                                                                   owl:allValuesFrom <http://www.w3.org/ns/sosa/Observation>
                                                                 ] ,
                                                                 [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty [ owl:inverseOf <http://www.w3.org/ns/ssn/is_Proxy_for>
+                                                                  owl:onProperty [ owl:inverseOf <http://www.w3.org/ns/ssn/is_proxy_for>
                                                                                  ] ;
                                                                   owl:allValuesFrom <http://www.w3.org/ns/ssn/Stimulus>
                                                                 ] ;
@@ -7490,7 +7485,7 @@ org:Organizational_Unit rdf:type owl:Class ;
                                                           owl:allValuesFrom <http://www.w3.org/ns/sosa/Feature_Of_Interest>
                                                         ] ,
                                                         [ rdf:type owl:Restriction ;
-                                                          owl:onProperty <http://www.w3.org/ns/sosa/has_Result> ;
+                                                          owl:onProperty <http://www.w3.org/ns/sosa/has_result> ;
                                                           owl:allValuesFrom <http://www.w3.org/ns/sosa/Result>
                                                         ] ,
                                                         [ rdf:type owl:Restriction ;
@@ -7510,7 +7505,7 @@ org:Organizational_Unit rdf:type owl:Class ;
                                                           owl:allValuesFrom <http://www.w3.org/ns/ssn/Stimulus>
                                                         ] ,
                                                         [ rdf:type owl:Restriction ;
-                                                          owl:onProperty <http://www.w3.org/ns/sosa/has_Result> ;
+                                                          owl:onProperty <http://www.w3.org/ns/sosa/has_result> ;
                                                           owl:minCardinality "1"^^xsd:nonNegativeInteger
                                                         ] ,
                                                         [ rdf:type owl:Restriction ;
@@ -7526,7 +7521,7 @@ org:Organizational_Unit rdf:type owl:Class ;
                                                           owl:cardinality "1"^^xsd:nonNegativeInteger
                                                         ] ,
                                                         [ rdf:type owl:Restriction ;
-                                                          owl:onProperty <http://www.w3.org/ns/sosa/phenomenon_Time> ;
+                                                          owl:onProperty <http://www.w3.org/ns/sosa/phenomenon_time> ;
                                                           owl:cardinality "1"^^xsd:nonNegativeInteger
                                                         ] ,
                                                         [ rdf:type owl:Restriction ;
@@ -7655,7 +7650,7 @@ A Sample is intended to sample some FatureOfInterest, so there is an expectation
                                                        owl:allValuesFrom <http://www.w3.org/ns/sosa/Feature_Of_Interest>
                                                      ] ,
                                                      [ rdf:type owl:Restriction ;
-                                                       owl:onProperty <http://www.w3.org/ns/sosa/has_Result> ;
+                                                       owl:onProperty <http://www.w3.org/ns/sosa/has_result> ;
                                                        owl:allValuesFrom <http://www.w3.org/ns/sosa/Sample>
                                                      ] ,
                                                      [ rdf:type owl:Restriction ;
@@ -7667,7 +7662,7 @@ A Sample is intended to sample some FatureOfInterest, so there is an expectation
                                                        owl:allValuesFrom <http://www.w3.org/ns/sosa/Procedure>
                                                      ] ,
                                                      [ rdf:type owl:Restriction ;
-                                                       owl:onProperty <http://www.w3.org/ns/sosa/has_Result> ;
+                                                       owl:onProperty <http://www.w3.org/ns/sosa/has_result> ;
                                                        owl:minCardinality "1"^^xsd:nonNegativeInteger
                                                      ] ,
                                                      [ rdf:type owl:Restriction ;
@@ -7828,7 +7823,7 @@ A Sample is intended to sample some FatureOfInterest, so there is an expectation
 ###  http://www.w3.org/ns/ssn/Stimulus
 <http://www.w3.org/ns/ssn/Stimulus> rdf:type owl:Class ;
                                     rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                      owl:onProperty <http://www.w3.org/ns/ssn/is_Proxy_for> ;
+                                                      owl:onProperty <http://www.w3.org/ns/ssn/is_proxy_for> ;
                                                       owl:allValuesFrom <http://www.w3.org/ns/sosa/Observable_Property>
                                                     ] ,
                                                     [ rdf:type owl:Restriction ;
@@ -7858,7 +7853,7 @@ A Sample is intended to sample some FatureOfInterest, so there is an expectation
                                                     owl:allValuesFrom <http://www.w3.org/ns/ssn/Deployment>
                                                   ] ,
                                                   [ rdf:type owl:Restriction ;
-                                                    owl:onProperty <http://www.w3.org/ns/ssn/has_Sub_System> ;
+                                                    owl:onProperty <http://www.w3.org/ns/ssn/has_sub_system> ;
                                                     owl:allValuesFrom <http://www.w3.org/ns/ssn/System>
                                                   ] ,
                                                   [ rdf:type owl:Restriction ;
@@ -7866,7 +7861,7 @@ A Sample is intended to sample some FatureOfInterest, so there is an expectation
                                                     owl:allValuesFrom <http://www.w3.org/ns/sosa/Procedure>
                                                   ] ,
                                                   [ rdf:type owl:Restriction ;
-                                                    owl:onProperty [ owl:inverseOf <http://www.w3.org/ns/ssn/has_Sub_System>
+                                                    owl:onProperty [ owl:inverseOf <http://www.w3.org/ns/ssn/has_sub_system>
                                                                    ] ;
                                                     owl:allValuesFrom <http://www.w3.org/ns/ssn/System>
                                                   ] ;
@@ -11568,7 +11563,7 @@ Functionality: Jump function to next process (e.g. EPC, VAC), typically at the e
 <http://www.w3id.org/ecsel-dr-PMV#Technical_Term_Input_Element> rdf:type owl:Class ;
                                                                 rdfs:subClassOf [ owl:intersectionOf ( <http://www.w3id.org/ecsel-dr-PMV#Technical_Term>
                                                                                                        [ rdf:type owl:Restriction ;
-                                                                                                         owl:onProperty <http://www.w3id.org/ecsel-dr-PMV#is_Input_for> ;
+                                                                                                         owl:onProperty <http://www.w3id.org/ecsel-dr-PMV#is_input_for> ;
                                                                                                          owl:someValuesFrom <http://www.w3id.org/ecsel-dr-PMV#Task>
                                                                                                        ]
                                                                                                      ) ;
@@ -11583,7 +11578,7 @@ Functionality: Jump function to next process (e.g. EPC, VAC), typically at the e
 <http://www.w3id.org/ecsel-dr-PMV#Technical_Term_Output_Element> rdf:type owl:Class ;
                                                                  rdfs:subClassOf [ owl:intersectionOf ( <http://www.w3id.org/ecsel-dr-PMV#Technical_Term>
                                                                                                         [ rdf:type owl:Restriction ;
-                                                                                                          owl:onProperty <http://www.w3id.org/ecsel-dr-PMV#is_Output_of> ;
+                                                                                                          owl:onProperty <http://www.w3id.org/ecsel-dr-PMV#is_output_of> ;
                                                                                                           owl:someValuesFrom <http://www.w3id.org/ecsel-dr-PMV#Task>
                                                                                                         ]
                                                                                                       ) ;
@@ -12071,23 +12066,23 @@ https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Object\"""" .
 ###  http://www.w3id.org/ecsel-dr-PWR#On-State_Voltage
 <http://www.w3id.org/ecsel-dr-PWR#On-State_Voltage> rdf:type owl:Class ;
                                                     owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                                 owl:onProperty <http://www.w3id.org/ecsel-dr-PWR#has_A_Voltage> ;
-                                                                                                 owl:allValuesFrom <http://www.w3id.org/ecsel-dr-PWR#Negative_(-)>
+                                                                                                 owl:onProperty <http://www.w3id.org/ecsel-dr-PWR#has_Configuration> ;
+                                                                                                 owl:allValuesFrom <http://www.w3id.org/ecsel-dr-PWR#N-Channel_Configuration>
                                                                                                ]
                                                                                                [ rdf:type owl:Restriction ;
-                                                                                                 owl:onProperty <http://www.w3id.org/ecsel-dr-PWR#has_Configuration> ;
-                                                                                                 owl:allValuesFrom <http://www.w3id.org/ecsel-dr-PWR#P-Channel_Configuration>
+                                                                                                 owl:onProperty <http://www.w3id.org/ecsel-dr-PWR#has_voltage> ;
+                                                                                                 owl:allValuesFrom <http://www.w3id.org/ecsel-dr-PWR#Postive_(+)>
                                                                                                ]
                                                                                              ) ;
                                                                           rdf:type owl:Class
                                                                         ] ,
                                                                         [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                                 owl:onProperty <http://www.w3id.org/ecsel-dr-PWR#has_A_Voltage> ;
-                                                                                                 owl:allValuesFrom <http://www.w3id.org/ecsel-dr-PWR#Postive_(+)>
+                                                                                                 owl:onProperty <http://www.w3id.org/ecsel-dr-PWR#has_Configuration> ;
+                                                                                                 owl:allValuesFrom <http://www.w3id.org/ecsel-dr-PWR#P-Channel_Configuration>
                                                                                                ]
                                                                                                [ rdf:type owl:Restriction ;
-                                                                                                 owl:onProperty <http://www.w3id.org/ecsel-dr-PWR#has_Configuration> ;
-                                                                                                 owl:allValuesFrom <http://www.w3id.org/ecsel-dr-PWR#N-Channel_Configuration>
+                                                                                                 owl:onProperty <http://www.w3id.org/ecsel-dr-PWR#has_voltage> ;
+                                                                                                 owl:allValuesFrom <http://www.w3id.org/ecsel-dr-PWR#Negative_(-)>
                                                                                                ]
                                                                                              ) ;
                                                                           rdf:type owl:Class
@@ -12466,16 +12461,6 @@ ecsel-dr-RAMI40:Energy_Efficiency rdf:type owl:Class ;
                                   rdfs:subClassOf ecsel-dr-RAMI40:Submodel .
 
 
-###  http://www.w3id.org/ecsel-dr-RAMI40#Expression_Semantic
-ecsel-dr-RAMI40:Expression_Semantic rdf:type owl:Class ;
-                                    owl:equivalentClass [ rdf:type owl:Class ;
-                                                          owl:oneOf ( ecsel-dr-RAMI40:Confirmation
-                                                                      ecsel-dr-RAMI40:Measurement
-                                                                      ecsel-dr-RAMI40:Requirement
-                                                                    )
-                                                        ] .
-
-
 ###  http://www.w3id.org/ecsel-dr-RAMI40#I4.0_Component
 ecsel-dr-RAMI40:I4.0_Component rdf:type owl:Class ;
                                dc:source "Industrie 4.0 – Begriffe/Terms, VDI Statusreport Industrie 4.0 (April 2017)"@en ;
@@ -12547,6 +12532,16 @@ ecsel-dr-RAMI40:RAMI_Life_Cycle_Dimension rdf:type owl:Class ;
                                           skos:definition "It describes the different Life Cycle and Value Stream layers for the RAMI model according to the IEC 62890 Standard." ;
                                           skos:preLabel "RAMI Layer" ,
                                                         "RAMI Life Cycle Dimension" .
+
+
+###  http://www.w3id.org/ecsel-dr-RAMI40#Semantic_Expression
+ecsel-dr-RAMI40:Semantic_Expression rdf:type owl:Class ;
+                                    owl:equivalentClass [ rdf:type owl:Class ;
+                                                          owl:oneOf ( ecsel-dr-RAMI40:Confirmation
+                                                                      ecsel-dr-RAMI40:Measurement
+                                                                      ecsel-dr-RAMI40:Requirement
+                                                                    )
+                                                        ] .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Sensor
@@ -13721,13 +13716,13 @@ In the original OWL-Time the following constraint appeared:
 [ rdf:type swrl:Imp ;
    swrl:body [ rdf:type swrl:AtomList ;
                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate ecsel-dr-OOSMP:has_Sub_Unit ;
+                           swrl:propertyPredicate ecsel-dr-OOSMP:has_sub_unit ;
                            swrl:argument1 <urn:swrl:var#x> ;
                            swrl:argument2 <urn:swrl:var#y>
                          ] ;
                rdf:rest [ rdf:type swrl:AtomList ;
                           rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                      swrl:propertyPredicate ecsel-dr-OOSMP:has_Sub_Unit ;
+                                      swrl:propertyPredicate ecsel-dr-OOSMP:has_sub_unit ;
                                       swrl:argument1 <urn:swrl:var#y> ;
                                       swrl:argument2 <urn:swrl:var#z>
                                     ] ;
@@ -13742,7 +13737,7 @@ In the original OWL-Time the following constraint appeared:
              ] ;
    swrl:head [ rdf:type swrl:AtomList ;
                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate ecsel-dr-OOSMP:has_Sub_Unit ;
+                           swrl:propertyPredicate ecsel-dr-OOSMP:has_sub_unit ;
                            swrl:argument1 <urn:swrl:var#x> ;
                            swrl:argument2 <urn:swrl:var#z>
                          ] ;
@@ -13880,21 +13875,21 @@ In the original OWL-Time the following constraint appeared:
 
 [ rdf:type swrl:Imp ;
    swrl:body [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:ClassAtom ;
-                           swrl:classPredicate ecsel-dr-OOSMP:Application_Area ;
-                           swrl:argument1 <urn:swrl:var#x>
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate ecsel-dr-OOSMP:has_sub_application_area ;
+                           swrl:argument1 <urn:swrl:var#x> ;
+                           swrl:argument2 <urn:swrl:var#y>
                          ] ;
                rdf:rest [ rdf:type swrl:AtomList ;
                           rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                      swrl:propertyPredicate ecsel-dr-OOSMP:has_Sub_Application_Area ;
-                                      swrl:argument1 <urn:swrl:var#x> ;
-                                      swrl:argument2 <urn:swrl:var#y>
+                                      swrl:propertyPredicate ecsel-dr-OOSMP:has_sub_application_area ;
+                                      swrl:argument1 <urn:swrl:var#y> ;
+                                      swrl:argument2 <urn:swrl:var#z>
                                     ] ;
                           rdf:rest [ rdf:type swrl:AtomList ;
-                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                                 swrl:propertyPredicate ecsel-dr-OOSMP:has_Sub_Application_Area ;
-                                                 swrl:argument1 <urn:swrl:var#y> ;
-                                                 swrl:argument2 <urn:swrl:var#z>
+                                     rdf:first [ rdf:type swrl:ClassAtom ;
+                                                 swrl:classPredicate ecsel-dr-OOSMP:Application_Area ;
+                                                 swrl:argument1 <urn:swrl:var#x>
                                                ] ;
                                      rdf:rest rdf:nil
                                    ]
@@ -13902,7 +13897,7 @@ In the original OWL-Time the following constraint appeared:
              ] ;
    swrl:head [ rdf:type swrl:AtomList ;
                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate ecsel-dr-OOSMP:has_Sub_Application_Area ;
+                           swrl:propertyPredicate ecsel-dr-OOSMP:has_sub_application_area ;
                            swrl:argument1 <urn:swrl:var#x> ;
                            swrl:argument2 <urn:swrl:var#z>
                          ] ;
@@ -13912,21 +13907,21 @@ In the original OWL-Time the following constraint appeared:
 
 [ rdf:type swrl:Imp ;
    swrl:body [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:ClassAtom ;
-                           swrl:classPredicate ecsel-dr-OOSMP:Application_Area ;
-                           swrl:argument1 <urn:swrl:var#x>
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate ecsel-dr-OOSMP:is_sub_application_area_of ;
+                           swrl:argument1 <urn:swrl:var#x> ;
+                           swrl:argument2 <urn:swrl:var#y>
                          ] ;
                rdf:rest [ rdf:type swrl:AtomList ;
                           rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                      swrl:propertyPredicate ecsel-dr-OOSMP:is_Sub_Application_Area_of ;
-                                      swrl:argument1 <urn:swrl:var#x> ;
-                                      swrl:argument2 <urn:swrl:var#y>
+                                      swrl:propertyPredicate ecsel-dr-OOSMP:is_sub_application_area_of ;
+                                      swrl:argument1 <urn:swrl:var#y> ;
+                                      swrl:argument2 <urn:swrl:var#z>
                                     ] ;
                           rdf:rest [ rdf:type swrl:AtomList ;
-                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                                 swrl:propertyPredicate ecsel-dr-OOSMP:is_Sub_Application_Area_of ;
-                                                 swrl:argument1 <urn:swrl:var#y> ;
-                                                 swrl:argument2 <urn:swrl:var#z>
+                                     rdf:first [ rdf:type swrl:ClassAtom ;
+                                                 swrl:classPredicate ecsel-dr-OOSMP:Application_Area ;
+                                                 swrl:argument1 <urn:swrl:var#x>
                                                ] ;
                                      rdf:rest rdf:nil
                                    ]
@@ -13934,7 +13929,7 @@ In the original OWL-Time the following constraint appeared:
              ] ;
    swrl:head [ rdf:type swrl:AtomList ;
                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate ecsel-dr-OOSMP:is_Sub_Application_Area_of ;
+                           swrl:propertyPredicate ecsel-dr-OOSMP:is_sub_application_area_of ;
                            swrl:argument1 <urn:swrl:var#x> ;
                            swrl:argument2 <urn:swrl:var#z>
                          ] ;

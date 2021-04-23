@@ -5030,31 +5030,31 @@ time:years rdf:type owl:DatatypeProperty ;
                                         skos:definition "The result time is the instant of time when the Observation, Actuation or Sampling activity was completed."@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AH#Device_ID
-ecsel-dr-AH:Device_ID rdf:type owl:DatatypeProperty ,
-                               owl:FunctionalProperty ;
-                      rdfs:domain ecsel-dr-AH:Device ;
-                      rdfs:range xsd:string ;
-                      rdfs:comment """Data property of each device in Arrowhead context. Needed by Device Discovery service.
+###  http://www.w3id.org/ecsel-dr-AH#has_Device_ID
+ecsel-dr-AH:has_Device_ID rdf:type owl:DatatypeProperty ,
+                                   owl:FunctionalProperty ;
+                          rdfs:domain ecsel-dr-AH:Device ;
+                          rdfs:range xsd:string ;
+                          rdfs:comment """Data property of each device in Arrowhead context. Needed by Device Discovery service.
 Purpose: provides an unique identifier for a device."""@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AH#Device_Name
-ecsel-dr-AH:Device_Name rdf:type owl:DatatypeProperty ;
-                        rdfs:domain ecsel-dr-AH:Device ;
-                        rdfs:range xsd:string .
+###  http://www.w3id.org/ecsel-dr-AH#has_Device_Name
+ecsel-dr-AH:has_Device_Name rdf:type owl:DatatypeProperty ;
+                            rdfs:domain ecsel-dr-AH:Device ;
+                            rdfs:range xsd:string .
 
 
-###  http://www.w3id.org/ecsel-dr-AH#IP_address
-ecsel-dr-AH:IP_address rdf:type owl:DatatypeProperty ;
-                       rdfs:domain ecsel-dr-AH:Device ;
-                       rdfs:range xsd:string .
+###  http://www.w3id.org/ecsel-dr-AH#has_IP_address
+ecsel-dr-AH:has_IP_address rdf:type owl:DatatypeProperty ;
+                           rdfs:domain ecsel-dr-AH:Device ;
+                           rdfs:range xsd:string .
 
 
-###  http://www.w3id.org/ecsel-dr-AH#MAC_address
-ecsel-dr-AH:MAC_address rdf:type owl:DatatypeProperty ;
-                        rdfs:domain ecsel-dr-AH:Device ;
-                        rdfs:range xsd:string .
+###  http://www.w3id.org/ecsel-dr-AH#has_MAC_address
+ecsel-dr-AH:has_MAC_address rdf:type owl:DatatypeProperty ;
+                            rdfs:domain ecsel-dr-AH:Device ;
+                            rdfs:range xsd:string .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#has_Confirmed_Delivery_Date
@@ -5865,61 +5865,78 @@ ecsel-dr-OOSMP:has_Temperature_Min rdf:type owl:DatatypeProperty ;
                                                         skos:altLabel "transact code" .
 
 
-###  http://www.w3id.org/ecsel-dr-PROD#additional_Property
-ecsel-dr-PROD:additional_Property rdf:type owl:DatatypeProperty ;
-                                  rdfs:domain ecsel-dr-PROD:Product ;
-                                  rdfs:range xsd:string ;
-                                  rdfs:comment "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org."@en ;
-                                  rdfs:label "additional property"@en .
-
-
-###  http://www.w3id.org/ecsel-dr-PROD#customer_Part_Number
-ecsel-dr-PROD:customer_Part_Number rdf:type owl:DatatypeProperty ;
-                                   rdfs:domain ecsel-dr-PROD:CPN_Spec ;
-                                   rdfs:range xsd:string ;
-                                   rdfs:comment "Product identifier used by the customer to identify one IFX product"@en ;
-                                   rdfs:label "customer part number"@en .
-
-
-###  http://www.w3id.org/ecsel-dr-PROD#delivery_Lead_Time
-ecsel-dr-PROD:delivery_Lead_Time rdf:type owl:DatatypeProperty ;
-                                 rdfs:domain ecsel-dr-PROD:Finished_Product ;
-                                 rdfs:range xsd:integer ;
-                                 rdfs:comment "The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup."@en ;
-                                 rdfs:isDefinedBy "http://schema.org/deliveryLeadTime"@en ;
-                                 rdfs:label "delivery lead time"@en .
-
-
-###  http://www.w3id.org/ecsel-dr-PROD#finished_Product_Number
-ecsel-dr-PROD:finished_Product_Number rdf:type owl:DatatypeProperty ;
-                                      rdfs:domain ecsel-dr-PROD:Finished_Product ;
-                                      rdfs:range xsd:string ;
-                                      rdfs:comment "finishedProductNumber is the unique identifier for a FinishedProduct"@en ;
-                                      rdfs:label "finished product number"@en .
-
-
-###  http://www.w3id.org/ecsel-dr-PROD#halogen_Free
-ecsel-dr-PROD:halogen_Free rdf:type owl:DatatypeProperty ;
-                           rdfs:domain ecsel-dr-PROD:Sales_Product ;
-                           rdfs:range xsd:boolean ;
-                           rdfs:comment "Free of halogen is a material classification. These are materials that emit limited smoke and no halogen when exposed to high sources of heat."@en ,
-                                        "halogen free states if a SalesProduct is halogen free or not."@en ;
-                           rdfs:label "halogen free"@en .
-
-
 ###  http://www.w3id.org/ecsel-dr-PROD#has_Product_Family
 ecsel-dr-PROD:has_Product_Family rdf:type owl:DatatypeProperty ;
                                  rdfs:domain ecsel-dr-PROD:Sales_Product ;
                                  rdfs:range rdfs:Literal .
 
 
-###  http://www.w3id.org/ecsel-dr-PROD#location
-ecsel-dr-PROD:location rdf:type owl:DatatypeProperty ;
-                       rdfs:domain ecsel-dr-PROD:Planning_Element ,
-                                   ecsel-dr-PROD:Product ;
-                       rdfs:range xsd:string ;
-                       rdfs:comment "A Location within Infineon’s internal supply chain is a local area where products are manufactured or stored."@en ;
-                       rdfs:label "location"@en .
+###  http://www.w3id.org/ecsel-dr-PROD#has_additional_Property
+ecsel-dr-PROD:has_additional_Property rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain ecsel-dr-PROD:Product ;
+                                      rdfs:range xsd:string ;
+                                      rdfs:comment "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org."@en ;
+                                      rdfs:label "additional property"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-PROD#has_customer_Part_Number
+ecsel-dr-PROD:has_customer_Part_Number rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain ecsel-dr-PROD:CPN_Spec ;
+                                       rdfs:range xsd:string ;
+                                       rdfs:comment "Product identifier used by the customer to identify one IFX product"@en ;
+                                       rdfs:label "customer part number"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-PROD#has_delivery_Lead_Time
+ecsel-dr-PROD:has_delivery_Lead_Time rdf:type owl:DatatypeProperty ;
+                                     rdfs:domain ecsel-dr-PROD:Finished_Product ;
+                                     rdfs:range xsd:integer ;
+                                     rdfs:comment "The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup."@en ;
+                                     rdfs:isDefinedBy "http://schema.org/deliveryLeadTime"@en ;
+                                     rdfs:label "delivery lead time"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-PROD#has_finished_Product_Number
+ecsel-dr-PROD:has_finished_Product_Number rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain ecsel-dr-PROD:Finished_Product ;
+                                          rdfs:range xsd:string ;
+                                          rdfs:comment "finishedProductNumber is the unique identifier for a FinishedProduct"@en ;
+                                          rdfs:label "finished product number"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-PROD#has_location
+ecsel-dr-PROD:has_location rdf:type owl:DatatypeProperty ;
+                           rdfs:domain ecsel-dr-PROD:Planning_Element ,
+                                       ecsel-dr-PROD:Product ;
+                           rdfs:range xsd:string ;
+                           rdfs:comment "A Location within Infineon’s internal supply chain is a local area where products are manufactured or stored."@en ;
+                           rdfs:label "location"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-PROD#has_orderable_Part_Number
+ecsel-dr-PROD:has_orderable_Part_Number rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain ecsel-dr-PROD:Sales_Product ;
+                                        rdfs:range xsd:string ;
+                                        rdfs:comment "Customers may use the OPN as their customer part number for ordering at Infineon. It is based on product attributes"@en ;
+                                        rdfs:label "orderable part number"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-PROD#has_sales_Product_Name
+ecsel-dr-PROD:has_sales_Product_Name rdf:type owl:DatatypeProperty ;
+                                     rdfs:domain ecsel-dr-PROD:Sales_Product ;
+                                     rdfs:range xsd:string ;
+                                     rdfs:comment """In verbal communication it is usually identified by Sales Product Name (SPN) which might not be sufficient for unique identification.
+It reflects a product from customer view without differentiation of manufacturing route or storage location ( form – fit – function )."""@en ;
+                                     rdfs:label "sales product name"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-PROD#is_halogen_Free
+ecsel-dr-PROD:is_halogen_Free rdf:type owl:DatatypeProperty ;
+                              rdfs:domain ecsel-dr-PROD:Sales_Product ;
+                              rdfs:range xsd:boolean ;
+                              rdfs:comment "Free of halogen is a material classification. These are materials that emit limited smoke and no halogen when exposed to high sources of heat."@en ,
+                                           "halogen free states if a SalesProduct is halogen free or not."@en ;
+                              rdfs:label "halogen free"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PROD#min_Order_Quantity
@@ -5932,26 +5949,9 @@ ecsel-dr-PROD:min_Order_Quantity rdf:type owl:DatatypeProperty ;
                                  rdfs:range xsd:integer .
 
 
-###  http://www.w3id.org/ecsel-dr-PROD#orderable_Part_Number
-ecsel-dr-PROD:orderable_Part_Number rdf:type owl:DatatypeProperty ;
-                                    rdfs:domain ecsel-dr-PROD:Sales_Product ;
-                                    rdfs:range xsd:string ;
-                                    rdfs:comment "Customers may use the OPN as their customer part number for ordering at Infineon. It is based on product attributes"@en ;
-                                    rdfs:label "orderable part number"@en .
-
-
-###  http://www.w3id.org/ecsel-dr-PROD#sales_Product_Name
-ecsel-dr-PROD:sales_Product_Name rdf:type owl:DatatypeProperty ;
-                                 rdfs:domain ecsel-dr-PROD:Sales_Product ;
-                                 rdfs:range xsd:string ;
-                                 rdfs:comment """In verbal communication it is usually identified by Sales Product Name (SPN) which might not be sufficient for unique identification.
-It reflects a product from customer view without differentiation of manufacturing route or storage location ( form – fit – function )."""@en ;
-                                 rdfs:label "sales product name"@en .
-
-
 ###  http://www.w3id.org/ecsel-dr-PROD#sales_Product_Number
 ecsel-dr-PROD:sales_Product_Number rdf:type owl:DatatypeProperty ;
-                                   rdfs:subPropertyOf ecsel-dr-PROD:sales_Product_Name ;
+                                   rdfs:subPropertyOf ecsel-dr-PROD:has_sales_Product_Name ;
                                    rdfs:domain ecsel-dr-PROD:Sales_Product ;
                                    rdfs:range xsd:string ;
                                    rdfs:comment "A salesProductNumber is a unique identifier of a Sales Product"@en ;
@@ -5973,39 +5973,39 @@ ecsel-dr-RAMI40:has_Description rdf:type owl:DatatypeProperty ;
                                 skos:definition "Description of the Object/Entity"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SCP#Confirmed_Date
-<http://www.w3id.org/ecsel-dr-SCP#Confirmed_Date> rdf:type owl:DatatypeProperty ;
-                                                  rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Open_Order_Book> ;
-                                                  rdfs:range xsd:dateTime ;
-                                                  rdfs:label "ConfirmedDate"@en .
-
-
-###  http://www.w3id.org/ecsel-dr-SCP#Confirmed_Quantity
-<http://www.w3id.org/ecsel-dr-SCP#Confirmed_Quantity> rdf:type owl:DatatypeProperty ;
+###  http://www.w3id.org/ecsel-dr-SCP#has_Confirmed_Date
+<http://www.w3id.org/ecsel-dr-SCP#has_Confirmed_Date> rdf:type owl:DatatypeProperty ;
                                                       rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Open_Order_Book> ;
-                                                      rdfs:range xsd:integer ;
-                                                      rdfs:label "ConfirmedQuantity"@en .
+                                                      rdfs:range xsd:dateTime ;
+                                                      rdfs:label "ConfirmedDate"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SCP#Customer_Location
-<http://www.w3id.org/ecsel-dr-SCP#Customer_Location> rdf:type owl:DatatypeProperty ;
-                                                     rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Customers> ;
-                                                     rdfs:range xsd:string ;
-                                                     rdfs:label "CustomerLocation"@en .
+###  http://www.w3id.org/ecsel-dr-SCP#has_Confirmed_Quantity
+<http://www.w3id.org/ecsel-dr-SCP#has_Confirmed_Quantity> rdf:type owl:DatatypeProperty ;
+                                                          rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Open_Order_Book> ;
+                                                          rdfs:range xsd:integer ;
+                                                          rdfs:label "ConfirmedQuantity"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SCP#Customers_ID
-<http://www.w3id.org/ecsel-dr-SCP#Customers_ID> rdf:type owl:DatatypeProperty ;
-                                                rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Customers> ;
-                                                rdfs:range xsd:integer ;
-                                                rdfs:label "CustomersID"@en .
+###  http://www.w3id.org/ecsel-dr-SCP#has_Customer_Location
+<http://www.w3id.org/ecsel-dr-SCP#has_Customer_Location> rdf:type owl:DatatypeProperty ;
+                                                         rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Customers> ;
+                                                         rdfs:range xsd:string ;
+                                                         rdfs:label "CustomerLocation"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SCP#Granularity
-<http://www.w3id.org/ecsel-dr-SCP#Granularity> rdf:type owl:DatatypeProperty ;
-                                               rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Customers> ;
-                                               rdfs:range rdfs:Literal ;
-                                               rdfs:label "Granularity"@en .
+###  http://www.w3id.org/ecsel-dr-SCP#has_Customers_ID
+<http://www.w3id.org/ecsel-dr-SCP#has_Customers_ID> rdf:type owl:DatatypeProperty ;
+                                                    rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Customers> ;
+                                                    rdfs:range xsd:integer ;
+                                                    rdfs:label "CustomersID"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-SCP#has_Granularity
+<http://www.w3id.org/ecsel-dr-SCP#has_Granularity> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Customers> ;
+                                                   rdfs:range rdfs:Literal ;
+                                                   rdfs:label "Granularity"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#from_Equipment_Group_ID
@@ -13695,8 +13695,8 @@ In the original OWL-Time the following constraint appeared:
       time:Sunday
     ) ;"""@en ;
                  skos:definition "The day of week"@en ;
-                 rdfs:label "Day of week"@en ,
-                            "day of week"@en ;
+                 rdfs:label "day of week"@en ,
+                            "Day of week"@en ;
                  skos:note "Membership of the class :DayOfWeek is open, to allow for alternative week lengths and different day names."@en ;
                  rdfs:comment "The day of week, whose value is a member of the class time:DayOfWeek"@en ;
                  skos:definition "The day of week, whose value is a member of the class time:DayOfWeek"@en ;

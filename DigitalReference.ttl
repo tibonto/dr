@@ -4804,6 +4804,37 @@ time:days rdf:type owl:DatatypeProperty ;
           skos:definition "length of, or element of the length of, a temporal extent expressed in days"@en .
 
 
+###  http://www.w3.org/2006/time#fiscal_Day_Of_Year
+time:fiscal_Day_Of_Year rdf:type owl:DatatypeProperty ;
+                        rdfs:domain time:General_Date_Time_Description ;
+                        rdfs:range xsd:negativeInteger ;
+                        rdfs:comment "day number within the fiscal year" ;
+                        rdfs:label "fiscal day of year" .
+
+
+###  http://www.w3.org/2006/time#fiscal_Month
+time:fiscal_Month rdf:type owl:DatatypeProperty ;
+                  rdfs:domain time:General_Date_Time_Description ;
+                  rdfs:range xsd:negativeInteger ;
+                  rdfs:comment "month number within the fiscal year" ;
+                  rdfs:label "fiscal month" .
+
+
+###  http://www.w3.org/2006/time#fiscal_Week
+time:fiscal_Week rdf:type owl:DatatypeProperty ;
+                 rdfs:domain time:General_Date_Time_Description ;
+                 rdfs:range xsd:negativeInteger ;
+                 rdfs:comment "week number within the fiscal year" ;
+                 rdfs:label "fiscal week" .
+
+
+###  http://www.w3.org/2006/time#fiscal_Year
+time:fiscal_Year rdf:type owl:DatatypeProperty ;
+                 rdfs:domain time:General_Date_Time_Description ;
+                 rdfs:comment "Fiscal year position in a calendar-clock system" ;
+                 rdfs:label "fiscal year" .
+
+
 ###  http://www.w3.org/2006/time#has_XSD_Duration
 time:has_XSD_Duration rdf:type owl:DatatypeProperty ;
                       rdfs:domain time:Temporal_Entity ;
@@ -6978,6 +7009,22 @@ time:General_Date_Time_Description rdf:type owl:Class ;
                                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                    ] ,
                                                    [ rdf:type owl:Restriction ;
+                                                     owl:onProperty time:fiscal_Day_Of_Year ;
+                                                     owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty time:fiscal_Month ;
+                                                     owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty time:fiscal_Week ;
+                                                     owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty time:fiscal_Year ;
+                                                     owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
                                                      owl:onProperty time:hour ;
                                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                    ] ,
@@ -7090,6 +7137,14 @@ time:Month_Of_Year rdf:type owl:Class ;
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty time:day ;
+                                     owl:cardinality "0"^^xsd:nonNegativeInteger
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty time:fiscal_Week ;
+                                     owl:cardinality "0"^^xsd:nonNegativeInteger
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty time:fiscal_Year ;
                                      owl:cardinality "0"^^xsd:nonNegativeInteger
                                    ] ,
                                    [ rdf:type owl:Restriction ;

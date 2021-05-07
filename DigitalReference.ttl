@@ -3582,12 +3582,12 @@ ecsel-dr-OOSMP:sub_unit_of_Division rdf:type owl:ObjectProperty ;
                                         skos:altLabel "use" .
 
 
-###  http://www.w3id.org/ecsel-dr-PROD#alternate_Product
-ecsel-dr-PROD:alternate_Product rdf:type owl:ObjectProperty ;
-                                rdfs:domain ecsel-dr-PROD:Finished_Product ;
-                                rdfs:range ecsel-dr-PROD:Finished_Product ;
-                                rdfs:comment "All FinishedProducts that share the same SalesProductNumber"@en ;
-                                rdfs:label "alternate product"@en .
+###  http://www.w3id.org/ecsel-dr-PROD#alternates_Product
+ecsel-dr-PROD:alternates_Product rdf:type owl:ObjectProperty ;
+                                 rdfs:domain ecsel-dr-PROD:Finished_Product ;
+                                 rdfs:range ecsel-dr-PROD:Finished_Product ;
+                                 rdfs:comment "All FinishedProducts that share the same SalesProductNumber"@en ;
+                                 rdfs:label "alternate product"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PROD#customer
@@ -3739,11 +3739,11 @@ ecsel-dr-PROD:substitute_product rdf:type owl:ObjectProperty ;
                                                  rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Geometric_Dimension> .
 
 
-###  http://www.w3id.org/ecsel-dr-PWR#has_Elements
-<http://www.w3id.org/ecsel-dr-PWR#has_Elements> rdf:type owl:ObjectProperty ;
-                                                rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Infineon_Device> ;
-                                                rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Device_Elements> ;
-                                                rdfs:label "has The Elements" .
+###  http://www.w3id.org/ecsel-dr-PWR#has_Element
+<http://www.w3id.org/ecsel-dr-PWR#has_Element> rdf:type owl:ObjectProperty ;
+                                               rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Infineon_Device> ;
+                                               rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Device_Element> ;
+                                               rdfs:label "has Element" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#has_Information_Object
@@ -4019,18 +4019,18 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
                               rdfs:label "uses standard"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SCP#calculate_based
-<http://www.w3id.org/ecsel-dr-SCP#calculate_based> rdf:type owl:ObjectProperty ;
-                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Orders_Reschedule> ;
-                                                   rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Supply_Picture> ;
-                                                   rdfs:label "calculateBased"@en .
+###  http://www.w3id.org/ecsel-dr-SCP#calculated_based
+<http://www.w3id.org/ecsel-dr-SCP#calculated_based> rdf:type owl:ObjectProperty ;
+                                                    rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Order_Reschedule> ;
+                                                    rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Supply_Picture> ;
+                                                    rdfs:label "calculated_based"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SCP#calculate_based_on
-<http://www.w3id.org/ecsel-dr-SCP#calculate_based_on> rdf:type owl:ObjectProperty ;
-                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Marketing_Demands> ;
-                                                      rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Sales_Demands> ;
-                                                      rdfs:label "calculateBasedOn"@en .
+###  http://www.w3id.org/ecsel-dr-SCP#calculated_based_on
+<http://www.w3id.org/ecsel-dr-SCP#calculated_based_on> rdf:type owl:ObjectProperty ;
+                                                       rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Marketing_Demand> ;
+                                                       rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Sales_Demand> ;
+                                                       rdfs:label "calculatedBasedOn"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#calculates
@@ -4047,11 +4047,11 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
                                                                rdfs:label "consistOf"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SCP#constitute
-<http://www.w3id.org/ecsel-dr-SCP#constitute> rdf:type owl:ObjectProperty ;
-                                              rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Orders> ;
-                                              rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Sales_Demands> ;
-                                              rdfs:label "constitute"@en .
+###  http://www.w3id.org/ecsel-dr-SCP#constitutes
+<http://www.w3id.org/ecsel-dr-SCP#constitutes> rdf:type owl:ObjectProperty ;
+                                               rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Order> ;
+                                               rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Sales_Demand> ;
+                                               rdfs:label "constitutes"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#consumes
@@ -4061,11 +4061,11 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
                                             rdfs:label "consume"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SCP#contribute_to
-<http://www.w3id.org/ecsel-dr-SCP#contribute_to> rdf:type owl:ObjectProperty ;
-                                                 rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Orders> ;
-                                                 rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Prioritized_Orders> ;
-                                                 rdfs:label "contribute"@en .
+###  http://www.w3id.org/ecsel-dr-SCP#contributes_to
+<http://www.w3id.org/ecsel-dr-SCP#contributes_to> rdf:type owl:ObjectProperty ;
+                                                  rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Order> ;
+                                                  rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Prioritized_Orders> ;
+                                                  rdfs:label "contributes_to"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#creates_Prioritized_Order
@@ -4075,11 +4075,11 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
                                                              rdfs:label "create"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SCP#enter_to
-<http://www.w3id.org/ecsel-dr-SCP#enter_to> rdf:type owl:ObjectProperty ;
-                                            rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Orders> ;
-                                            rdfs:range <http://www.w3id.org/ecsel-dr-SCP#CLM> ;
-                                            rdfs:label "enterTo"@en .
+###  http://www.w3id.org/ecsel-dr-SCP#entered_to
+<http://www.w3id.org/ecsel-dr-SCP#entered_to> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Order> ;
+                                              rdfs:range <http://www.w3id.org/ecsel-dr-SCP#CLM> ;
+                                              rdfs:label "entered_to"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#figured_out_from
@@ -4099,7 +4099,7 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-SCP#goes_to
 <http://www.w3id.org/ecsel-dr-SCP#goes_to> rdf:type owl:ObjectProperty ;
                                            rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Order_Line_Item> ;
-                                           rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Orders_Schedule_Line> ;
+                                           rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Order_Schedule_Line> ;
                                            rdfs:label "goesTo"@en .
 
 
@@ -4119,7 +4119,7 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-SCP#has_result_Operational_Demand
 <http://www.w3id.org/ecsel-dr-SCP#has_result_Operational_Demand> rdf:type owl:ObjectProperty ;
-                                                                 rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Marketing_Demands> ;
+                                                                 rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Marketing_Demand> ;
                                                                  rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Operational_Demand> ;
                                                                  rdfs:label "hasResult"@en .
 
@@ -4127,7 +4127,7 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-SCP#is_Place_Orders
 <http://www.w3id.org/ecsel-dr-SCP#is_Place_Orders> rdf:type owl:ObjectProperty ;
                                                    rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Customers> ;
-                                                   rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Orders> ;
+                                                   rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Order> ;
                                                    rdfs:label "isPlaceOrders"@en .
 
 
@@ -4141,14 +4141,14 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-SCP#is_result_of_Orders_Reschedule
 <http://www.w3id.org/ecsel-dr-SCP#is_result_of_Orders_Reschedule> rdf:type owl:ObjectProperty ;
                                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#NEWs> ;
-                                                                  rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Orders_Reschedule> ;
+                                                                  rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Order_Reschedule> ;
                                                                   rdfs:label "isResultOf"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#is_transfer_to
 <http://www.w3id.org/ecsel-dr-SCP#is_transfer_to> rdf:type owl:ObjectProperty ;
                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Order_Line_Item> ;
-                                                  rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Orders_Schedule_Line> ;
+                                                  rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Order_Schedule_Line> ;
                                                   rdfs:label "isTransferTo"@en .
 
 
@@ -4169,15 +4169,15 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-SCP#matches_to
 <http://www.w3id.org/ecsel-dr-SCP#matches_to> rdf:type owl:ObjectProperty ;
                                               rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Aggregated_Capacity> ;
-                                              rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Marketing_Demands> ;
+                                              rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Marketing_Demand> ;
                                               rdfs:label "matchTO"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SCP#obtain_from
-<http://www.w3id.org/ecsel-dr-SCP#obtain_from> rdf:type owl:ObjectProperty ;
-                                               rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Forecast> ;
-                                               rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Sales_Demands> ;
-                                               rdfs:label "obtainFrom"@en .
+###  http://www.w3id.org/ecsel-dr-SCP#obtained_from
+<http://www.w3id.org/ecsel-dr-SCP#obtained_from> rdf:type owl:ObjectProperty ;
+                                                 rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Forecast> ;
+                                                 rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Sales_Demand> ;
+                                                 rdfs:label "obtained_from"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#provides
@@ -4197,20 +4197,20 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-SCP#results_in
 <http://www.w3id.org/ecsel-dr-SCP#results_in> rdf:type owl:ObjectProperty ;
                                               rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Open_Order_Book> ;
-                                              rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Orders_Reschedule> ;
+                                              rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Order_Reschedule> ;
                                               rdfs:label "resultIn"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SCP#send_to
-<http://www.w3id.org/ecsel-dr-SCP#send_to> rdf:type owl:ObjectProperty ;
+###  http://www.w3id.org/ecsel-dr-SCP#sent_to
+<http://www.w3id.org/ecsel-dr-SCP#sent_to> rdf:type owl:ObjectProperty ;
                                            rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#NEWs> ;
                                            rdfs:range <http://www.w3id.org/ecsel-dr-SCP#CLM> ;
-                                           rdfs:label "sendTo"@en .
+                                           rdfs:label "sent_to"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#sort_to
 <http://www.w3id.org/ecsel-dr-SCP#sort_to> rdf:type owl:ObjectProperty ;
-                                           rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Orders> ;
+                                           rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Order> ;
                                            rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Order_Line_Item> ;
                                            rdfs:label "sortTo"@en .
 
@@ -4267,17 +4267,17 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
                                             owl:inverseOf <http://www.w3id.org/ecsel-dr-SO#is_dedicated_to> .
 
 
-###  http://www.w3id.org/ecsel-dr-SO#has_Bottlenecks
-<http://www.w3id.org/ecsel-dr-SO#has_Bottlenecks> rdf:type owl:ObjectProperty ;
-                                                  owl:inverseOf <http://www.w3id.org/ecsel-dr-SO#is_Bottlenecks_of> ;
-                                                  rdfs:range <http://www.w3id.org/ecsel-dr-SO#Bottlenecks> .
+###  http://www.w3id.org/ecsel-dr-SO#has_Bottleneck
+<http://www.w3id.org/ecsel-dr-SO#has_Bottleneck> rdf:type owl:ObjectProperty ;
+                                                 owl:inverseOf <http://www.w3id.org/ecsel-dr-SO#is_Bottleneck_of> ;
+                                                 rdfs:range <http://www.w3id.org/ecsel-dr-SO#Bottleneck> .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#has_Current_WIP
 <http://www.w3id.org/ecsel-dr-SO#has_Current_WIP> rdf:type owl:ObjectProperty ;
                                                   owl:inverseOf <http://www.w3id.org/ecsel-dr-SO#is_Current_WIP> ;
                                                   rdfs:domain [ rdf:type owl:Class ;
-                                                                owl:unionOf ( <http://www.w3id.org/ecsel-dr-SO#Bottlenecks>
+                                                                owl:unionOf ( <http://www.w3id.org/ecsel-dr-SO#Bottleneck>
                                                                               <http://www.w3id.org/ecsel-dr-SO#Equipment_Group>
                                                                               <http://www.w3id.org/ecsel-dr-SO#Event_Calendar>
                                                                               <http://www.w3id.org/ecsel-dr-SO#Lot_Size>
@@ -4299,7 +4299,7 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
                                              owl:inverseOf <http://www.w3id.org/ecsel-dr-SO#is_Demand_of> ;
                                              rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Product> ,
                                                          [ rdf:type owl:Class ;
-                                                           owl:unionOf ( <http://www.w3id.org/ecsel-dr-SO#Bottlenecks>
+                                                           owl:unionOf ( <http://www.w3id.org/ecsel-dr-SO#Bottleneck>
                                                                          <http://www.w3id.org/ecsel-dr-SO#Equipment_Group>
                                                                          <http://www.w3id.org/ecsel-dr-SO#Event_Calendar>
                                                                          <http://www.w3id.org/ecsel-dr-SO#Fab>
@@ -4310,7 +4310,7 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
                                                                        )
                                                          ] ;
                                              rdfs:range <http://www.w3id.org/ecsel-dr-SO#Demand_Snapshot> ,
-                                                        <http://www.w3id.org/ecsel-dr-SO#Production_Requests> .
+                                                        <http://www.w3id.org/ecsel-dr-SO#Production_Request> .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#has_Equipment
@@ -4325,7 +4325,7 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
 <http://www.w3id.org/ecsel-dr-SO#has_Equipment_Group> rdf:type owl:ObjectProperty ;
                                                       owl:inverseOf <http://www.w3id.org/ecsel-dr-SO#is_Equipment_Group_of> ;
                                                       rdfs:domain [ rdf:type owl:Class ;
-                                                                    owl:unionOf ( <http://www.w3id.org/ecsel-dr-SO#Bottlenecks>
+                                                                    owl:unionOf ( <http://www.w3id.org/ecsel-dr-SO#Bottleneck>
                                                                                   <http://www.w3id.org/ecsel-dr-SO#Current_WIP>
                                                                                   <http://www.w3id.org/ecsel-dr-SO#Demand_Snapshot>
                                                                                   <http://www.w3id.org/ecsel-dr-SO#Event_Calendar>
@@ -4343,7 +4343,7 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
 <http://www.w3id.org/ecsel-dr-SO#has_Event_Calendar> rdf:type owl:ObjectProperty ;
                                                      owl:inverseOf <http://www.w3id.org/ecsel-dr-SO#is_Event_Calendar_of> ;
                                                      rdfs:domain [ rdf:type owl:Class ;
-                                                                   owl:unionOf ( <http://www.w3id.org/ecsel-dr-SO#Bottlenecks>
+                                                                   owl:unionOf ( <http://www.w3id.org/ecsel-dr-SO#Bottleneck>
                                                                                  <http://www.w3id.org/ecsel-dr-SO#Current_WIP>
                                                                                  <http://www.w3id.org/ecsel-dr-SO#Demand_Snapshot>
                                                                                  <http://www.w3id.org/ecsel-dr-SO#Equipment_Group>
@@ -4393,7 +4393,7 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
 <http://www.w3id.org/ecsel-dr-SO#has_Lot_Size> rdf:type owl:ObjectProperty ;
                                                owl:inverseOf <http://www.w3id.org/ecsel-dr-SO#is_Lot_Size_of> ;
                                                rdfs:domain [ rdf:type owl:Class ;
-                                                             owl:unionOf ( <http://www.w3id.org/ecsel-dr-SO#Bottlenecks>
+                                                             owl:unionOf ( <http://www.w3id.org/ecsel-dr-SO#Bottleneck>
                                                                            <http://www.w3id.org/ecsel-dr-SO#Current_WIP>
                                                                            <http://www.w3id.org/ecsel-dr-SO#Demand_Snapshot>
                                                                            <http://www.w3id.org/ecsel-dr-SO#Equipment_Group>
@@ -4412,7 +4412,7 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
                                                 owl:inverseOf <http://www.w3id.org/ecsel-dr-SO#is_Operation_of> ;
                                                 rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Product> ,
                                                             [ rdf:type owl:Class ;
-                                                              owl:unionOf ( <http://www.w3id.org/ecsel-dr-SO#Bottlenecks>
+                                                              owl:unionOf ( <http://www.w3id.org/ecsel-dr-SO#Bottleneck>
                                                                             <http://www.w3id.org/ecsel-dr-SO#Current_WIP>
                                                                             <http://www.w3id.org/ecsel-dr-SO#Demand_Snapshot>
                                                                             <http://www.w3id.org/ecsel-dr-SO#Equipment_Group>
@@ -4451,7 +4451,7 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
 <http://www.w3id.org/ecsel-dr-SO#has_Product_Level> rdf:type owl:ObjectProperty ;
                                                     owl:inverseOf <http://www.w3id.org/ecsel-dr-SO#is_Product_Level_of> ;
                                                     rdfs:domain [ rdf:type owl:Class ;
-                                                                  owl:unionOf ( <http://www.w3id.org/ecsel-dr-SO#Bottlenecks>
+                                                                  owl:unionOf ( <http://www.w3id.org/ecsel-dr-SO#Bottleneck>
                                                                                 <http://www.w3id.org/ecsel-dr-SO#Demand_Snapshot>
                                                                                 <http://www.w3id.org/ecsel-dr-SO#Lot_Size>
                                                                                 <http://www.w3id.org/ecsel-dr-SO#Operation>
@@ -4569,8 +4569,8 @@ ecsel-dr-RAMI40:uses_Standard rdf:type owl:ObjectProperty ;
                                                        <http://www.w3id.org/ecsel-dr-SO#Simulation_Route> .
 
 
-###  http://www.w3id.org/ecsel-dr-SO#is_Bottlenecks_of
-<http://www.w3id.org/ecsel-dr-SO#is_Bottlenecks_of> rdf:type owl:ObjectProperty .
+###  http://www.w3id.org/ecsel-dr-SO#is_Bottleneck_of
+<http://www.w3id.org/ecsel-dr-SO#is_Bottleneck_of> rdf:type owl:ObjectProperty .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#is_Current_WIP
@@ -5322,12 +5322,12 @@ ecsel-dr-AH:has_MAC_address rdf:type owl:DatatypeProperty ;
                                                        rdfs:range xsd:string .
 
 
-###  http://www.w3id.org/ecsel-dr-OM#has_Supplier_Comments
-<http://www.w3id.org/ecsel-dr-OM#has_Supplier_Comments> rdf:type owl:DatatypeProperty ;
-                                                        rdfs:subPropertyOf owl:topDataProperty ;
-                                                        rdf:type owl:FunctionalProperty ;
-                                                        rdfs:domain <http://www.w3id.org/ecsel-dr-OM#Order_Change_Request> ;
-                                                        rdfs:range xsd:string .
+###  http://www.w3id.org/ecsel-dr-OM#has_Supplier_Comment
+<http://www.w3id.org/ecsel-dr-OM#has_Supplier_Comment> rdf:type owl:DatatypeProperty ;
+                                                       rdfs:subPropertyOf owl:topDataProperty ;
+                                                       rdf:type owl:FunctionalProperty ;
+                                                       rdfs:domain <http://www.w3id.org/ecsel-dr-OM#Order_Change_Request> ;
+                                                       rdfs:range xsd:string .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#has_Supplier_Reason_Code
@@ -6156,7 +6156,7 @@ ecsel-dr-RAMI40:has_Description rdf:type owl:DatatypeProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-SO#has_Equipment_Group_ID
 <http://www.w3id.org/ecsel-dr-SO#has_Equipment_Group_ID> rdf:type owl:DatatypeProperty ;
-                                                         rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Bottlenecks> ,
+                                                         rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Bottleneck> ,
                                                                      <http://www.w3id.org/ecsel-dr-SO#Current_WIP> ,
                                                                      <http://www.w3id.org/ecsel-dr-SO#Equipment_Group> ,
                                                                      <http://www.w3id.org/ecsel-dr-SO#Lot_Size> ,
@@ -6514,7 +6514,7 @@ ecsel-dr-RAMI40:has_Description rdf:type owl:DatatypeProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-SO#has_Product_Level_3_Pseudonym
 <http://www.w3id.org/ecsel-dr-SO#has_Product_Level_3_Pseudonym> rdf:type owl:DatatypeProperty ;
-                                                                rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Bottlenecks> ,
+                                                                rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Bottleneck> ,
                                                                             <http://www.w3id.org/ecsel-dr-SO#Cycle_Time_Committment> ,
                                                                             <http://www.w3id.org/ecsel-dr-SO#Delivery_Commitment> ,
                                                                             <http://www.w3id.org/ecsel-dr-SO#Demand_Snapshot> ,
@@ -11868,10 +11868,10 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Device\"""" .
                                                         rdfs:label "Device Configuration" .
 
 
-###  http://www.w3id.org/ecsel-dr-PWR#Device_Elements
-<http://www.w3id.org/ecsel-dr-PWR#Device_Elements> rdf:type owl:Class ;
-                                                   rdfs:comment "Elements that are part of a device"@en ;
-                                                   rdfs:label "Device Elements" .
+###  http://www.w3id.org/ecsel-dr-PWR#Device_Element
+<http://www.w3id.org/ecsel-dr-PWR#Device_Element> rdf:type owl:Class ;
+                                                  rdfs:comment "Elements that are part of a device"@en ;
+                                                  rdfs:label "Device Element" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Documents
@@ -11885,7 +11885,7 @@ http://xmlns.com/foaf/spec/#term_Document\"""" .
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Drain
 <http://www.w3id.org/ecsel-dr-PWR#Drain> rdf:type owl:Class ;
-                                         rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Device_Elements> .
+                                         rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Device_Element> .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Drain-Source_Voltage
@@ -11954,7 +11954,7 @@ https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Entity""" .
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Gate
 <http://www.w3id.org/ecsel-dr-PWR#Gate> rdf:type owl:Class ;
-                                        rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Device_Elements> .
+                                        rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Device_Element> .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Gate_Driver
@@ -12321,7 +12321,7 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Observation""" ;
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Source
 <http://www.w3id.org/ecsel-dr-PWR#Source> rdf:type owl:Class ;
-                                          rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Device_Elements> .
+                                          rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Device_Element> .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Switcher
@@ -12707,10 +12707,10 @@ The universe provides access to the fact tables delivered by GOAL like Availabil
                                                        rdfs:label "BottleneckResource"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SCP#Buffer_Stock_Orders
-<http://www.w3id.org/ecsel-dr-SCP#Buffer_Stock_Orders> rdf:type owl:Class ;
-                                                       rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SCP#Orders> ;
-                                                       rdfs:label "BufferStockOrders"@en .
+###  http://www.w3id.org/ecsel-dr-SCP#Buffer_Stock_Order
+<http://www.w3id.org/ecsel-dr-SCP#Buffer_Stock_Order> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SCP#Order> ;
+                                                      rdfs:label "Buffer_Stock_Order"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#CLM
@@ -12731,13 +12731,13 @@ The universe provides access to the fact tables delivered by GOAL like Availabil
                                                 rdfs:label "Confirmation"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SCP#Consignment_Orders
-<http://www.w3id.org/ecsel-dr-SCP#Consignment_Orders> rdf:type owl:Class ;
-                                                      rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SCP#Orders> ;
-                                                      rdfs:comment """Consignment Stock is a logistics concept where the supplier (Vendor) owned goods are stored at a customer location.
+###  http://www.w3id.org/ecsel-dr-SCP#Consignment_Order
+<http://www.w3id.org/ecsel-dr-SCP#Consignment_Order> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SCP#Order> ;
+                                                     rdfs:comment """Consignment Stock is a logistics concept where the supplier (Vendor) owned goods are stored at a customer location.
 
 The supplier (Vendor) is responsible to maintain his stock within a defined min/max level."""@en ;
-                                                      rdfs:label "ConsignmentOrders"@en .
+                                                     rdfs:label "Consignment_Order"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Customers
@@ -12762,7 +12762,7 @@ The supplier (Vendor) is responsible to maintain his stock within a defined min/
 
 ###  http://www.w3id.org/ecsel-dr-SCP#EDI_Forecast
 <http://www.w3id.org/ecsel-dr-SCP#EDI_Forecast> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SCP#Orders> ;
+                                                rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SCP#Order> ;
                                                 rdfs:comment "The EDI Forecast Universe is a Data Mart that was started in 2010 (?) to support Forecast Accuracy  analysis"@en ;
                                                 rdfs:label "EDIForecast"@en .
 
@@ -12786,9 +12786,9 @@ The supplier (Vendor) is responsible to maintain his stock within a defined min/
                                                rdfs:label "HP_Forecast"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SCP#Marketing_Demands
-<http://www.w3id.org/ecsel-dr-SCP#Marketing_Demands> rdf:type owl:Class ;
-                                                     rdfs:label "MarketingDemands"@en .
+###  http://www.w3id.org/ecsel-dr-SCP#Marketing_Demand
+<http://www.w3id.org/ecsel-dr-SCP#Marketing_Demand> rdf:type owl:Class ;
+                                                    rdfs:label "Marketing Demand"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Max_Stock
@@ -12834,27 +12834,27 @@ The supplier (Vendor) is responsible to maintain his stock within a defined min/
                                                       rdfs:label "OperationalDemand"@en .
 
 
+###  http://www.w3id.org/ecsel-dr-SCP#Order
+<http://www.w3id.org/ecsel-dr-SCP#Order> rdf:type owl:Class ;
+                                         rdfs:label "Orders"@en .
+
+
 ###  http://www.w3id.org/ecsel-dr-SCP#Order_Line_Item
 <http://www.w3id.org/ecsel-dr-SCP#Order_Line_Item> rdf:type owl:Class ;
                                                    rdfs:comment "Every product on the order is referenced by a record that includes quantity and a reference to which order it belongs"@en ;
                                                    rdfs:label "OrderLineItem"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SCP#Orders
-<http://www.w3id.org/ecsel-dr-SCP#Orders> rdf:type owl:Class ;
-                                          rdfs:label "Orders"@en .
+###  http://www.w3id.org/ecsel-dr-SCP#Order_Reschedule
+<http://www.w3id.org/ecsel-dr-SCP#Order_Reschedule> rdf:type owl:Class ;
+                                                    rdfs:comment "Any change in the requested order delivery date in an order line is referred to as an order rescheduling."@en ;
+                                                    rdfs:label "Order_Reschedule"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SCP#Orders_Reschedule
-<http://www.w3id.org/ecsel-dr-SCP#Orders_Reschedule> rdf:type owl:Class ;
-                                                     rdfs:comment "Any change in the requested order delivery date in an order line is referred to as an order rescheduling."@en ;
-                                                     rdfs:label "OrdersReschedule"@en .
-
-
-###  http://www.w3id.org/ecsel-dr-SCP#Orders_Schedule_Line
-<http://www.w3id.org/ecsel-dr-SCP#Orders_Schedule_Line> rdf:type owl:Class ;
-                                                        rdfs:comment "Schedule lines contain all the delivery related information"@en ;
-                                                        rdfs:label "ordersScheduleLine"@en .
+###  http://www.w3id.org/ecsel-dr-SCP#Order_Schedule_Line
+<http://www.w3id.org/ecsel-dr-SCP#Order_Schedule_Line> rdf:type owl:Class ;
+                                                       rdfs:comment "Schedule lines contain all the delivery related information"@en ;
+                                                       rdfs:label "Order_Schedule_Line"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Prioritized_Demand
@@ -12911,15 +12911,15 @@ The supplier (Vendor) is responsible to maintain his stock within a defined min/
                                                 rdfs:label "SafetyStock"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SCP#Sales_Demands
-<http://www.w3id.org/ecsel-dr-SCP#Sales_Demands> rdf:type owl:Class ;
-                                                 rdfs:label "SalesDemands"@en .
+###  http://www.w3id.org/ecsel-dr-SCP#Sales_Demand
+<http://www.w3id.org/ecsel-dr-SCP#Sales_Demand> rdf:type owl:Class ;
+                                                rdfs:label "Sales_Demand"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SCP#Standard_Orders
-<http://www.w3id.org/ecsel-dr-SCP#Standard_Orders> rdf:type owl:Class ;
-                                                   rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SCP#Orders> ;
-                                                   rdfs:label "StandardOrders"@en .
+###  http://www.w3id.org/ecsel-dr-SCP#Standard_Order
+<http://www.w3id.org/ecsel-dr-SCP#Standard_Order> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SCP#Order> ;
+                                                  rdfs:label "Standard_Order"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Stocks
@@ -12952,10 +12952,10 @@ These items are not yet completed but either just being fabricated or waiting in
                                        rdfs:label "WIP"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SO#Bottlenecks
-<http://www.w3id.org/ecsel-dr-SO#Bottlenecks> rdf:type owl:Class ;
-                                              rdfs:comment "A capacity Bottleneck is defined as an equipment or multiple equipment that reflect the capacity of the whole line (either a dedicated Line or Pool sharing)."@en ;
-                                              rdfs:label "Bottlenecks"@en .
+###  http://www.w3id.org/ecsel-dr-SO#Bottleneck
+<http://www.w3id.org/ecsel-dr-SO#Bottleneck> rdf:type owl:Class ;
+                                             rdfs:comment "A capacity Bottleneck is defined as an equipment or multiple equipment that reflect the capacity of the whole line (either a dedicated Line or Pool sharing)."@en ;
+                                             rdfs:label "Bottleneck"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Capacity
@@ -13243,10 +13243,10 @@ because the mid capacity planning is done on this first aggregated product level
                                                  rdfs:label "Product Number"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SO#Production_Requests
-<http://www.w3id.org/ecsel-dr-SO#Production_Requests> rdf:type owl:Class ;
-                                                      rdfs:comment "Production requests definte what the facilities need to produce when and in what quantity."@en ;
-                                                      rdfs:label "Production Requests"@en .
+###  http://www.w3id.org/ecsel-dr-SO#Production_Request
+<http://www.w3id.org/ecsel-dr-SO#Production_Request> rdf:type owl:Class ;
+                                                     rdfs:comment "Production requests definte what the facilities need to produce when and in what quantity."@en ;
+                                                     rdfs:label "Production_Request"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Productive

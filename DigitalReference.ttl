@@ -1307,6 +1307,66 @@ org:unit_of rdf:type owl:ObjectProperty ,
                                                 skos:example "Used for example to say that a Sensor has a particular accuracy in particular Conditions." .
 
 
+###  http://www.w3id.org/ecsel-dr#has_date_time_interval
+:has_date_time_interval rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf owl:topObjectProperty ;
+                        owl:inverseOf :is_date_time_interval_of ;
+                        rdfs:domain :Public_Holiday ;
+                        rdfs:range time:Date_Time_Interval .
+
+
+###  http://www.w3id.org/ecsel-dr#has_event_public_holiday
+:has_event_public_holiday rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf owl:topObjectProperty ;
+                          owl:inverseOf :is_in_event_calendar ;
+                          rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Event_Calendar> ;
+                          rdfs:range :Public_Holiday .
+
+
+###  http://www.w3id.org/ecsel-dr#has_geographical_location
+:has_geographical_location rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf owl:topObjectProperty ;
+                           owl:inverseOf :is_georaphical_location_of ;
+                           rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Plant> ;
+                           rdfs:range :Geographical_Location .
+
+
+###  http://www.w3id.org/ecsel-dr#has_public_holiday
+:has_public_holiday rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    owl:inverseOf :is_public_holiday_in ;
+                    rdfs:domain :Geographical_Location ;
+                    rdfs:range :Public_Holiday .
+
+
+###  http://www.w3id.org/ecsel-dr#is_date_time_interval_of
+:is_date_time_interval_of rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf owl:topObjectProperty ;
+                          rdfs:domain :Public_Holiday ;
+                          rdfs:range time:Date_Time_Interval .
+
+
+###  http://www.w3id.org/ecsel-dr#is_georaphical_location_of
+:is_georaphical_location_of rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf owl:topObjectProperty ;
+                            rdfs:domain :Geographical_Location ;
+                            rdfs:range :Public_Holiday .
+
+
+###  http://www.w3id.org/ecsel-dr#is_in_event_calendar
+:is_in_event_calendar rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf owl:topObjectProperty ;
+                      rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Event_Calendar> ;
+                      rdfs:range :Public_Holiday .
+
+
+###  http://www.w3id.org/ecsel-dr#is_public_holiday_in
+:is_public_holiday_in rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf owl:topObjectProperty ;
+                      rdfs:domain :Geographical_Location ;
+                      rdfs:range :Public_Holiday .
+
+
 ###  http://www.w3id.org/ecsel-dr-AH#contains_device
 ecsel-dr-AH:contains_device rdf:type owl:ObjectProperty ;
                             rdfs:subPropertyOf ecsel-dr-AH:has_architectural_part ;
@@ -5065,6 +5125,20 @@ time:years rdf:type owl:DatatypeProperty ;
                                         skos:definition "The result time is the instant of time when the Observation, Actuation or Sampling activity was completed."@en .
 
 
+###  http://www.w3id.org/ecsel-dr#has_holiday_name
+:has_holiday_name rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  rdfs:domain :Public_Holiday ;
+                  rdfs:range xsd:string .
+
+
+###  http://www.w3id.org/ecsel-dr#has_location_name
+:has_location_name rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdfs:domain :Geographical_Location ;
+                   rdfs:range xsd:string .
+
+
 ###  http://www.w3id.org/ecsel-dr-AH#has_IP_address
 ecsel-dr-AH:has_IP_address rdf:type owl:DatatypeProperty ;
                            rdfs:domain ecsel-dr-AH:Device ;
@@ -8110,6 +8184,18 @@ In the absence of SurvivalProperties, simply describes the Conditions a System c
                                                    rdfs:comment "An identifiable and observable characteristic that represents the system's ability to operate its primary purpose: a sensor to make Observations, an Actuator to make Actuations, or a Sampler to make Sampling." ;
                                                    rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
                                                    rdfs:label "System Property" .
+
+
+###  http://www.w3id.org/ecsel-dr#Geographical_Location
+:Geographical_Location rdf:type owl:Class ;
+                       rdfs:comment "Name of country or region" .
+
+
+###  http://www.w3id.org/ecsel-dr#Public_Holiday
+:Public_Holiday rdf:type owl:Class ;
+                rdfs:subClassOf time:Date_Time_Interval ,
+                                <http://www.w3id.org/ecsel-dr-SO#Event_Calendar> ;
+                rdfs:comment "Special period of time when some processes may not take place or some constrains may occure" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Application_Servcice_IDD

@@ -1875,7 +1875,7 @@ ecsel-dr-AT:has_service_description_language rdf:type owl:ObjectProperty ;
 ecsel-dr-AT:has_vendor rdf:type owl:ObjectProperty ;
                        owl:inverseOf ecsel-dr-AT:is_vendor_of ;
                        rdfs:domain ecsel-dr-AT:IT-System ;
-                       rdfs:range ecsel-dr-AT:IT-Vendor .
+                       rdfs:range ecsel-dr-AT:IT_Vendor .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#implements_OSI_layer
@@ -1936,7 +1936,7 @@ ecsel-dr-AT:is_standard_of rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#is_vendor_of
 ecsel-dr-AT:is_vendor_of rdf:type owl:ObjectProperty ;
-                         rdfs:domain ecsel-dr-AT:IT-Vendor ;
+                         rdfs:domain ecsel-dr-AT:IT_Vendor ;
                          rdfs:range ecsel-dr-AT:IT-System .
 
 
@@ -3762,7 +3762,7 @@ ecsel-dr-PROD:substitute_product rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-PWR#are
 <http://www.w3id.org/ecsel-dr-PWR#are> rdf:type owl:ObjectProperty ;
                                        rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Semiconductors> ;
-                                       rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Products> .
+                                       rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Product> .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#enhancement_mode_is_working_as
@@ -3781,7 +3781,7 @@ ecsel-dr-PROD:substitute_product rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-PWR#has_application_area
 <http://www.w3id.org/ecsel-dr-PWR#has_application_area> rdf:type owl:ObjectProperty ;
-                                                        rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Products> ;
+                                                        rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Product> ;
                                                         rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Application_Area> .
 
 
@@ -3806,7 +3806,7 @@ ecsel-dr-PROD:substitute_product rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-PWR#has_dimension
 <http://www.w3id.org/ecsel-dr-PWR#has_dimension> rdf:type owl:ObjectProperty ;
-                                                 rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Products> ;
+                                                 rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Product> ;
                                                  rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Geometric_Dimension> .
 
 
@@ -3883,7 +3883,7 @@ ecsel-dr-PROD:substitute_product rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-PWR#has_voltage_drain_voltage
 <http://www.w3id.org/ecsel-dr-PWR#has_voltage_drain_voltage> rdf:type owl:ObjectProperty ;
                                                              rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#The_Application_Voltage> ;
-                                                             rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Drain_Voltagea> ;
+                                                             rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Drain_Voltage> ;
                                                              rdfs:label "is a Volatge of" .
 
 
@@ -3907,7 +3907,7 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#inDeployment""" ;
 ###  http://www.w3id.org/ecsel-dr-PWR#is_a_product_of
 <http://www.w3id.org/ecsel-dr-PWR#is_a_product_of> rdf:type owl:ObjectProperty ;
                                                    rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#SiC_MOSFET> ;
-                                                   rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Products> ;
+                                                   rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Product> ;
                                                    rdfs:label "is a Product of" .
 
 
@@ -4197,7 +4197,7 @@ ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-SCP#is_place_orders
 <http://www.w3id.org/ecsel-dr-SCP#is_place_orders> rdf:type owl:ObjectProperty ;
-                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Customers> ;
+                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Customer> ;
                                                    rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Order> ;
                                                    rdfs:label "isPlaceOrders"@en .
 
@@ -4526,7 +4526,7 @@ ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
 <http://www.w3id.org/ecsel-dr-SO#has_priority_class> rdf:type owl:ObjectProperty ;
                                                      owl:inverseOf <http://www.w3id.org/ecsel-dr-SO#is_priority_class_of> ;
                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-SO#EPA> ;
-                                                     rdfs:range <http://www.w3id.org/ecsel-dr-SO#Priority_Classes> .
+                                                     rdfs:range <http://www.w3id.org/ecsel-dr-SO#Priority_Class> .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#has_product_level
@@ -6098,21 +6098,21 @@ ecsel-dr-RAMI40:has_description rdf:type owl:DatatypeProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-SCP#has_customer_location
 <http://www.w3id.org/ecsel-dr-SCP#has_customer_location> rdf:type owl:DatatypeProperty ;
-                                                         rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Customers> ;
+                                                         rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Customer> ;
                                                          rdfs:range xsd:string ;
                                                          rdfs:label "CustomerLocation"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#has_customers_ID
 <http://www.w3id.org/ecsel-dr-SCP#has_customers_ID> rdf:type owl:DatatypeProperty ;
-                                                    rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Customers> ;
+                                                    rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Customer> ;
                                                     rdfs:range xsd:integer ;
                                                     rdfs:label "CustomersID"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#has_granularity
 <http://www.w3id.org/ecsel-dr-SCP#has_granularity> rdf:type owl:DatatypeProperty ;
-                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Customers> ;
+                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Customer> ;
                                                    rdfs:range rdfs:Literal ;
                                                    rdfs:label "Granularity"@en .
 
@@ -8718,7 +8718,7 @@ ecsel-dr-AH:Point-to-Point_Communication_Technology rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AH#Programmable_Logic_Controller
 ecsel-dr-AH:Programmable_Logic_Controller rdf:type owl:Class ;
-                                          owl:equivalentClass ecsel-dr-AT:PLC ;
+                                          owl:equivalentClass ecsel-dr-AT:Programmable_Logic_Controller ;
                                           rdfs:subClassOf ecsel-dr-AH:Device ;
                                           rdfs:comment "A programmable logic controller is an industrial digital computer which has been ruggedized and adapted for the control of manufacturing processes"@en ;
                                           rdfs:label "PLC"@en ,
@@ -8738,7 +8738,7 @@ ecsel-dr-AH:Semantic_Profile_SP rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AH#Sensor_Device
 ecsel-dr-AH:Sensor_Device rdf:type owl:Class ;
-                          owl:equivalentClass ecsel-dr-AT:SensorDevice ;
+                          owl:equivalentClass ecsel-dr-AT:Sensor_Device ;
                           rdfs:subClassOf ecsel-dr-AH:Constrained_Device ;
                           rdfs:comment "A category of devices which's purpose is to sense"@en .
 
@@ -9151,8 +9151,8 @@ ecsel-dr-AT:DNS rdf:type owl:Class ;
                 rdfs:subClassOf ecsel-dr-AT:OSI_5_7_Application_Protocol .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#DNS-SD
-ecsel-dr-AT:DNS-SD rdf:type owl:Class ;
+###  http://www.w3id.org/ecsel-dr-AT#DNS_SD
+ecsel-dr-AT:DNS_SD rdf:type owl:Class ;
                    rdfs:subClassOf ecsel-dr-AT:OSI_5_7_Application_Protocol .
 
 
@@ -9305,7 +9305,7 @@ ecsel-dr-AT:Factory_Layout_Planning rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#Factory_Simulation_System
 ecsel-dr-AT:Factory_Simulation_System rdf:type owl:Class ;
-                                      rdfs:subClassOf ecsel-dr-AT:Simulation-System .
+                                      rdfs:subClassOf ecsel-dr-AT:Simulation_System .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Fieldbus_CP_Family
@@ -9515,8 +9515,8 @@ ecsel-dr-AT:IT-System rdf:type owl:Class ;
                       rdfs:comment "An information system is a formal, sociotechnical, organizational system designed to collect, process, store, and distribute information."@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#IT-Vendor
-ecsel-dr-AT:IT-Vendor rdf:type owl:Class ;
+###  http://www.w3id.org/ecsel-dr-AT#IT_Vendor
+ecsel-dr-AT:IT_Vendor rdf:type owl:Class ;
                       rdfs:comment "A provider of IT systems and services"@en .
 
 
@@ -9601,14 +9601,14 @@ Alternative protocols include the Advanced Message Queuing Protocol (AMQP), Stre
 (https://en.wikipedia.org/wiki/MQTT)"""@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#MQTT-SN
-ecsel-dr-AT:MQTT-SN rdf:type owl:Class ;
-                    rdfs:subClassOf ecsel-dr-AT:MQTT_Non_TCPIP_Based .
-
-
 ###  http://www.w3id.org/ecsel-dr-AT#MQTT_Non_TCPIP_Based
 ecsel-dr-AT:MQTT_Non_TCPIP_Based rdf:type owl:Class ;
                                  rdfs:subClassOf ecsel-dr-AT:MQTT .
+
+
+###  http://www.w3id.org/ecsel-dr-AT#MQTT_SN
+ecsel-dr-AT:MQTT_SN rdf:type owl:Class ;
+                    rdfs:subClassOf ecsel-dr-AT:MQTT_Non_TCPIP_Based .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#MQTT_TCPIP
@@ -9623,12 +9623,12 @@ ecsel-dr-AT:MQTT_TCPIP_Based rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#Machine_Simulation_System
 ecsel-dr-AT:Machine_Simulation_System rdf:type owl:Class ;
-                                      rdfs:subClassOf ecsel-dr-AT:Simulation-System .
+                                      rdfs:subClassOf ecsel-dr-AT:Simulation_System .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Manufacturing_Simulation_System
 ecsel-dr-AT:Manufacturing_Simulation_System rdf:type owl:Class ;
-                                            rdfs:subClassOf ecsel-dr-AT:Simulation-System .
+                                            rdfs:subClassOf ecsel-dr-AT:Simulation_System .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Markup_Language
@@ -9658,11 +9658,11 @@ ecsel-dr-AT:Message_Broker-System rdf:type owl:Class ;
                                   rdfs:comment "Is an intermediary computer program module that translates a message from the formal messaging protocol of the sender to the formal messaging protocol of the receiver."@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#Micro_Controller
-ecsel-dr-AT:Micro_Controller rdf:type owl:Class ;
-                             owl:equivalentClass ecsel-dr-OOSMP:Microcontroller ,
-                                                 <http://www.w3id.org/ecsel-dr-PWR#Microcontroller> ;
-                             rdfs:subClassOf ecsel-dr-AT:Control_Device .
+###  http://www.w3id.org/ecsel-dr-AT#Microcontroller
+ecsel-dr-AT:Microcontroller rdf:type owl:Class ;
+                            owl:equivalentClass ecsel-dr-OOSMP:Microcontroller ,
+                                                <http://www.w3id.org/ecsel-dr-PWR#Microcontroller> ;
+                            rdfs:subClassOf ecsel-dr-AT:Control_Device .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#N3_TURTLE
@@ -9841,11 +9841,6 @@ ecsel-dr-AT:Ontology rdf:type owl:Class ;
                      rdfs:comment "An ontology encompasses a representation, formal naming and definition of the categories, properties and relations between the concepts, data and entities that substantiate one, many or all domains of discourse."@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#PLC
-ecsel-dr-AT:PLC rdf:type owl:Class ;
-                rdfs:subClassOf ecsel-dr-AT:Control_Device .
-
-
 ###  http://www.w3id.org/ecsel-dr-AT#PLM-System
 ecsel-dr-AT:PLM-System rdf:type owl:Class ;
                        rdfs:subClassOf ecsel-dr-AT:IT-System .
@@ -9928,6 +9923,11 @@ ecsel-dr-AT:Product_Lifecycle_Phase rdf:type owl:Class .
 ###  http://www.w3id.org/ecsel-dr-AT#Production_Cell_Planning
 ecsel-dr-AT:Production_Cell_Planning rdf:type owl:Class ;
                                      rdfs:subClassOf ecsel-dr-AT:PLM1_Module .
+
+
+###  http://www.w3id.org/ecsel-dr-AT#Programmable_Logic_Controller
+ecsel-dr-AT:Programmable_Logic_Controller rdf:type owl:Class ;
+                                          rdfs:subClassOf ecsel-dr-AT:Control_Device .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Proxy
@@ -10048,8 +10048,8 @@ ecsel-dr-AT:SMQTT rdf:type owl:Class ;
                   rdfs:subClassOf ecsel-dr-AT:MQTT_TCPIP_Based .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#SMQTT-SN
-ecsel-dr-AT:SMQTT-SN rdf:type owl:Class ;
+###  http://www.w3id.org/ecsel-dr-AT#SMQTT_SN
+ecsel-dr-AT:SMQTT_SN rdf:type owl:Class ;
                      rdfs:subClassOf ecsel-dr-AT:MQTT_Non_TCPIP_Based .
 
 
@@ -10106,9 +10106,9 @@ ecsel-dr-AT:Sens_ML rdf:type owl:Class ;
                     rdfs:subClassOf ecsel-dr-AT:Markup_Language .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#SensorDevice
-ecsel-dr-AT:SensorDevice rdf:type owl:Class ;
-                         rdfs:subClassOf ecsel-dr-AT:Device .
+###  http://www.w3id.org/ecsel-dr-AT#Sensor_Device
+ecsel-dr-AT:Sensor_Device rdf:type owl:Class ;
+                          rdfs:subClassOf ecsel-dr-AT:Device .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Service_Data_Language
@@ -10133,8 +10133,8 @@ ecsel-dr-AT:Service_Oriented_Architecture_Implementation rdf:type owl:Class ;
 This class contains existing implementations, i.e. software systems, which are designed as Service-oriented Architectures. That is, these systems realize service-oriented communication between their participants / components. (2018-08-04 HB)."""@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#Simulation-System
-ecsel-dr-AT:Simulation-System rdf:type owl:Class ;
+###  http://www.w3id.org/ecsel-dr-AT#Simulation_System
+ecsel-dr-AT:Simulation_System rdf:type owl:Class ;
                               rdfs:subClassOf ecsel-dr-AT:IT-System ;
                               rdfs:comment "Is a set of techniques that uses computers to imitate the operations of various real-world tasks or processes through simulation."@en .
 
@@ -10195,7 +10195,7 @@ ecsel-dr-AT:Stationary_Robot rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#Supply_Chain_Simulation_System
 ecsel-dr-AT:Supply_Chain_Simulation_System rdf:type owl:Class ;
-                                           rdfs:subClassOf ecsel-dr-AT:Simulation-System .
+                                           rdfs:subClassOf ecsel-dr-AT:Simulation_System .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Switch
@@ -10442,7 +10442,7 @@ ecsel-dr-AT:uPnP rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-OM#Customer
 <http://www.w3id.org/ecsel-dr-OM#Customer> rdf:type owl:Class ;
-                                           owl:equivalentClass <http://www.w3id.org/ecsel-dr-SCP#Customers> ;
+                                           owl:equivalentClass <http://www.w3id.org/ecsel-dr-SCP#Customer> ;
                                            rdfs:comment "A customer is an business that purchases another company's goods or services."@en ;
                                            rdfs:label "Customer"@en .
 
@@ -10893,7 +10893,7 @@ ecsel-dr-OOSMP:Price_Indication rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Product
 ecsel-dr-OOSMP:Product rdf:type owl:Class ;
                        owl:equivalentClass ecsel-dr-PROD:Product ,
-                                           <http://www.w3id.org/ecsel-dr-PWR#Products> ,
+                                           <http://www.w3id.org/ecsel-dr-PWR#Product> ,
                                            <http://www.w3id.org/ecsel-dr-SO#Product> ;
                        rdfs:comment "A product is something that is produced with effort (e.g. by mechanical or industrial processes) and sold to a customer. A product is either tangible (physical product) or intangible (service)."@en ,
                                     "A solution is a combination of products which is sold to a customer. Thereby, a solution solves a problem or fulfills a customer need."@en ;
@@ -11491,12 +11491,12 @@ Has the weakest logic and should be used as sparingly as absolutely possible""" 
                                       skos:altLabel "or" .
 
 
-###  http://www.w3id.org/ecsel-dr-PMV#Other_Services
-<http://www.w3id.org/ecsel-dr-PMV#Other_Services> rdf:type owl:Class ;
-                                                  rdfs:subClassOf <http://purl.org/dc/dcmitype/Service> ;
-                                                  rdfs:comment "Collection of other services used as input to a production process or which are created during a production process." ;
-                                                  rdfs:label "Other Services" ;
-                                                  skos:altLabel "service"@en .
+###  http://www.w3id.org/ecsel-dr-PMV#Other_Service
+<http://www.w3id.org/ecsel-dr-PMV#Other_Service> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://purl.org/dc/dcmitype/Service> ;
+                                                 rdfs:comment "Collection of other services used as input to a production process or which are created during a production process." ;
+                                                 rdfs:label "Other Services" ;
+                                                 skos:altLabel "service"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PMV#Output
@@ -11516,15 +11516,6 @@ Has the weakest logic and should be used as sparingly as absolutely possible""" 
                                            skos:altLabel "process" .
 
 
-###  http://www.w3id.org/ecsel-dr-PMV#ProcessGroup
-<http://www.w3id.org/ecsel-dr-PMV#ProcessGroup> rdf:type owl:Class ;
-                                                owl:equivalentClass <http://www.w3id.org/ecsel-dr-SO#Process_Group> ;
-                                                rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PMV#Structural_Function_Object> ;
-                                                rdfs:comment "A set of a processes covering a single business area. Usually under the ownership of one business process owner and correlates to one module. E.g. Procurement" ;
-                                                rdfs:label "Process Group" ;
-                                                skos:altLabel "process group" .
-
-
 ###  http://www.w3id.org/ecsel-dr-PMV#Process_Diagram
 <http://www.w3id.org/ecsel-dr-PMV#Process_Diagram> rdf:type owl:Class ;
                                                    rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PMV#Model> ;
@@ -11532,6 +11523,15 @@ Has the weakest logic and should be used as sparingly as absolutely possible""" 
                                                    rdfs:label "Process Diagram" ;
                                                    skos:altLabel "Process Diagram (L2)" ,
                                                                  "process diagram" .
+
+
+###  http://www.w3id.org/ecsel-dr-PMV#Process_Group
+<http://www.w3id.org/ecsel-dr-PMV#Process_Group> rdf:type owl:Class ;
+                                                 owl:equivalentClass <http://www.w3id.org/ecsel-dr-SO#Process_Group> ;
+                                                 rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PMV#Structural_Function_Object> ;
+                                                 rdfs:comment "A set of a processes covering a single business area. Usually under the ownership of one business process owner and correlates to one module. E.g. Procurement" ;
+                                                 rdfs:label "Process Group" ;
+                                                 skos:altLabel "process group" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PMV#Process_Group_Map
@@ -11832,7 +11832,7 @@ ecsel-dr-PROD:Planning_Element rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-PROD#Product
 ecsel-dr-PROD:Product rdf:type owl:Class ;
-                      owl:equivalentClass <http://www.w3id.org/ecsel-dr-PWR#Products> ,
+                      owl:equivalentClass <http://www.w3id.org/ecsel-dr-PWR#Product> ,
                                           <http://www.w3id.org/ecsel-dr-SO#Product> ;
                       rdfs:subClassOf owl:Thing ;
                       rdfs:comment "A product is a work product that is delivered to the customer."@en ,
@@ -11964,12 +11964,12 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Device\"""" .
                                                   rdfs:label "Device Element" .
 
 
-###  http://www.w3id.org/ecsel-dr-PWR#Documents
-<http://www.w3id.org/ecsel-dr-PWR#Documents> rdf:type owl:Class ;
-                                             owl:equivalentClass foaf:Document ;
-                                             rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Information_Object> ;
-                                             rdfs:comment "The document class presents those things which are, broadly conceived, \"documents''. It should contain the manuals and the data sheet of the devices." ;
-                                             rdfs:isDefinedBy """Friend of a friend ontology
+###  http://www.w3id.org/ecsel-dr-PWR#Document
+<http://www.w3id.org/ecsel-dr-PWR#Document> rdf:type owl:Class ;
+                                            owl:equivalentClass foaf:Document ;
+                                            rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Information_Object> ;
+                                            rdfs:comment "The document class presents those things which are, broadly conceived, \"documents''. It should contain the manuals and the data sheet of the devices." ;
+                                            rdfs:isDefinedBy """Friend of a friend ontology
 http://xmlns.com/foaf/spec/#term_Document\"""" .
 
 
@@ -11990,11 +11990,11 @@ http://xmlns.com/foaf/spec/#term_Document\"""" .
                                                  rdfs:label "Drain Current" .
 
 
-###  http://www.w3id.org/ecsel-dr-PWR#Drain_Voltagea
-<http://www.w3id.org/ecsel-dr-PWR#Drain_Voltagea> rdf:type owl:Class ;
-                                                  rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Process_Input> ,
-                                                                  <http://www.w3id.org/ecsel-dr-PWR#Property> ;
-                                                  rdfs:label "Gate-Source Voltage" .
+###  http://www.w3id.org/ecsel-dr-PWR#Drain_Voltage
+<http://www.w3id.org/ecsel-dr-PWR#Drain_Voltage> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Process_Input> ,
+                                                                 <http://www.w3id.org/ecsel-dr-PWR#Property> ;
+                                                 rdfs:label "Gate-Source Voltage" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Electric_Vehicle_Charging
@@ -12277,10 +12277,10 @@ Example: A post might act as the platform, a body might act as a platform for an
 http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Platform\"""" .
 
 
-###  http://www.w3id.org/ecsel-dr-PWR#Power_Converters
-<http://www.w3id.org/ecsel-dr-PWR#Power_Converters> rdf:type owl:Class ;
-                                                    rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Semiconductors> ;
-                                                    rdfs:comment "Industrial sector of Power Converters"@en .
+###  http://www.w3id.org/ecsel-dr-PWR#Power_Converter
+<http://www.w3id.org/ecsel-dr-PWR#Power_Converter> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Semiconductors> ;
+                                                   rdfs:comment "Industrial sector of Power Converters"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Price
@@ -12314,16 +12314,16 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#ProcessOutput""" ;
                                                   rdfs:label "Process Output" .
 
 
-###  http://www.w3id.org/ecsel-dr-PWR#Products
-<http://www.w3id.org/ecsel-dr-PWR#Products> rdf:type owl:Class ;
-                                            owl:equivalentClass <http://www.w3id.org/ecsel-dr-SO#Product> ;
-                                            rdfs:comment """The superclass of all classes describing products or services types, either by nature or purpose. Examples for such subclasses are \"TV set\", \"vacuum cleaner\", etc. An instance of this class can be either an actual product or service (gr:Individual), a placeholder instance for unknown instances of a mass-produced commodity (gr:SomeItems), or a model / prototype specification (gr:ProductOrServiceModel). When in doubt, use gr:SomeItems.
+###  http://www.w3id.org/ecsel-dr-PWR#Product
+<http://www.w3id.org/ecsel-dr-PWR#Product> rdf:type owl:Class ;
+                                           owl:equivalentClass <http://www.w3id.org/ecsel-dr-SO#Product> ;
+                                           rdfs:comment """The superclass of all classes describing products or services types, either by nature or purpose. Examples for such subclasses are \"TV set\", \"vacuum cleaner\", etc. An instance of this class can be either an actual product or service (gr:Individual), a placeholder instance for unknown instances of a mass-produced commodity (gr:SomeItems), or a model / prototype specification (gr:ProductOrServiceModel). When in doubt, use gr:SomeItems.
 
 Examples: 
 a) MyCellphone123, i.e. my personal, tangible cell phone (gr:Individual)
 b) Siemens1234, i.e. the Siemens cell phone make and model 1234 (gr:ProductOrServiceModel)
 c) dummyCellPhone123 as a placeholder for actual instances of a certain kind of cell phones (gr:SomeItems)""" ;
-                                            rdfs:isDefinedBy """The Web Vocabulary for E-Commerce Good Relations
+                                           rdfs:isDefinedBy """The Web Vocabulary for E-Commerce Good Relations
 http://www.heppnetz.de/ontologies/goodrelations/v1.html#ProductOrService""" .
 
 
@@ -12549,7 +12549,7 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Sensing""" ;
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Semiconductor_Product(its_name)_Data_Sheet
 <http://www.w3id.org/ecsel-dr-PWR#Semiconductor_Product(its_name)_Data_Sheet> rdf:type owl:Class ;
-                                                                              rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Documents> ;
+                                                                              rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Document> ;
                                                                               rdfs:comment "Data sheet of a semiconductor product"@en ;
                                                                               rdfs:label "SiC MOSFET DataSheet" .
 
@@ -12830,10 +12830,10 @@ The supplier (Vendor) is responsible to maintain his stock within a defined min/
                                                      rdfs:label "Consignment_Order"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SCP#Customers
-<http://www.w3id.org/ecsel-dr-SCP#Customers> rdf:type owl:Class ;
-                                             rdfs:comment "A person or entity that buys goods or services  from a shop or business."@en ;
-                                             rdfs:label "Customers"@en .
+###  http://www.w3id.org/ecsel-dr-SCP#Customer
+<http://www.w3id.org/ecsel-dr-SCP#Customer> rdf:type owl:Class ;
+                                            rdfs:comment "A person or entity that buys goods or services  from a shop or business."@en ;
+                                            rdfs:label "Customers"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#DB
@@ -12864,10 +12864,10 @@ The supplier (Vendor) is responsible to maintain his stock within a defined min/
                                             rdfs:label "Forecast"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SCP#General_Customers
-<http://www.w3id.org/ecsel-dr-SCP#General_Customers> rdf:type owl:Class ;
-                                                     rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SCP#Customers> ;
-                                                     rdfs:label "GeneralCustomers"@en .
+###  http://www.w3id.org/ecsel-dr-SCP#General_Customer
+<http://www.w3id.org/ecsel-dr-SCP#General_Customer> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SCP#Customer> ;
+                                                    rdfs:label "GeneralCustomers"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#HP_Forecast
@@ -12957,10 +12957,10 @@ The supplier (Vendor) is responsible to maintain his stock within a defined min/
                                                       rdfs:label "PrioritizedOrders"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SCP#Private_Customers
-<http://www.w3id.org/ecsel-dr-SCP#Private_Customers> rdf:type owl:Class ;
-                                                     rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SCP#Customers> ;
-                                                     rdfs:label "PrivateCustomers"@en .
+###  http://www.w3id.org/ecsel-dr-SCP#Private_Customer
+<http://www.w3id.org/ecsel-dr-SCP#Private_Customer> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SCP#Customer> ;
+                                                    rdfs:label "PrivateCustomers"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Promise
@@ -13095,7 +13095,7 @@ via the release plan. (strategy entity)"""@en ;
 
 ###  http://www.w3id.org/ecsel-dr-SO#Development
 <http://www.w3id.org/ecsel-dr-SO#Development> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SO#Priority_Classes> ;
+                                              rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SO#Priority_Class> ;
                                               rdfs:comment "These lots have the same maxium waiting time as standard lots, however they are put before the standard lots."@en ;
                                               rdfs:label "Development"@en .
 
@@ -13158,7 +13158,7 @@ via the release plan. (strategy entity)"""@en ;
 
 ###  http://www.w3id.org/ecsel-dr-SO#Hot
 <http://www.w3id.org/ecsel-dr-SO#Hot> rdf:type owl:Class ;
-                                      rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SO#Priority_Classes> ;
+                                      rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SO#Priority_Class> ;
                                       rdfs:comment "These lots are processed after a certain maximum waiting time which is shorter than the maximum waiting time of standard lots. In general, for all classes, if there is more than one product type waiting."@en ;
                                       rdfs:label "Hot"@en .
 
@@ -13237,10 +13237,10 @@ via the release plan. (strategy entity)"""@en ;
                                         rdfs:label "Plant"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SO#Priority_Classes
-<http://www.w3id.org/ecsel-dr-SO#Priority_Classes> rdf:type owl:Class ;
-                                                   rdfs:comment "Each lot is characterized by a product type and a priority class. The priority classes are listed as follows: development, hot, productive, rocket and timecoupling."@en ;
-                                                   rdfs:label "Priority Classes"@en .
+###  http://www.w3id.org/ecsel-dr-SO#Priority_Class
+<http://www.w3id.org/ecsel-dr-SO#Priority_Class> rdf:type owl:Class ;
+                                                 rdfs:comment "Each lot is characterized by a product type and a priority class. The priority classes are listed as follows: development, hot, productive, rocket and timecoupling."@en ;
+                                                 rdfs:label "Priority Class"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Process
@@ -13341,7 +13341,7 @@ because the mid capacity planning is done on this first aggregated product level
 
 ###  http://www.w3id.org/ecsel-dr-SO#Productive
 <http://www.w3id.org/ecsel-dr-SO#Productive> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SO#Priority_Classes> ;
+                                             rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SO#Priority_Class> ;
                                              rdfs:comment "The standard lots, also referred to as Productive (Prod) lots, are the most common lot type and have no priority."@en ;
                                              rdfs:label "Productive"@en .
 
@@ -13366,7 +13366,7 @@ because the mid capacity planning is done on this first aggregated product level
 
 ###  http://www.w3id.org/ecsel-dr-SO#Rocket
 <http://www.w3id.org/ecsel-dr-SO#Rocket> rdf:type owl:Class ;
-                                         rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SO#Priority_Classes> ;
+                                         rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SO#Priority_Class> ;
                                          rdfs:comment "Rocket lots are processed immediately if a machine has free capacity. The remaining furnace space is then filled up with lots of the same product."@en ;
                                          rdfs:label "Rocket"@en .
 
@@ -13448,7 +13448,7 @@ because the mid capacity planning is done on this first aggregated product level
 
 ###  http://www.w3id.org/ecsel-dr-SO#Timecoupling
 <http://www.w3id.org/ecsel-dr-SO#Timecoupling> rdf:type owl:Class ;
-                                               rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SO#Priority_Classes> ;
+                                               rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SO#Priority_Class> ;
                                                rdfs:comment "Lots of this type are requested by the next machine in the production line in irregular intervals. Special chemical characteristics require the lot being further processed immediately after the furnace operation. Thus, the downstram machines keep capacity free for the resulting time slot. timecoupling can be turned on or off. if it is on all lots are processed no matter how many are waiting and if not they wait."@en ;
                                                rdfs:label "Time coupling"@en .
 

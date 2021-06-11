@@ -2785,7 +2785,7 @@ ecsel-dr-OOSMP:sub_unit_of_division rdf:type owl:ObjectProperty ;
 <http://www.w3id.org/ecsel-dr-ORG#has_category_level> rdf:type owl:ObjectProperty ;
                                                       owl:inverseOf <http://www.w3id.org/ecsel-dr-ORG#is_category_level_of> ;
                                                       rdf:type owl:FunctionalProperty ;
-                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#IFX_Project> ;
+                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#Company_Project> ;
                                                       rdfs:range <http://www.w3id.org/ecsel-dr-ORG#Category> ;
                                                       rdfs:comment "Relation between a project and its categories"@en .
 
@@ -2795,7 +2795,7 @@ ecsel-dr-OOSMP:sub_unit_of_division rdf:type owl:ObjectProperty ;
                                                            rdfs:subPropertyOf <http://www.w3id.org/ecsel-dr-ORG#has_contributor> ;
                                                            owl:inverseOf <http://www.w3id.org/ecsel-dr-ORG#is_certification_level_of> ;
                                                            rdf:type owl:FunctionalProperty ;
-                                                           rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#IFX_Project> ;
+                                                           rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#Company_Project> ;
                                                            rdfs:range <http://www.w3id.org/ecsel-dr-ORG#Certification> ;
                                                            rdfs:comment "Relation between a project and the certification that it has"@en .
 
@@ -2816,7 +2816,7 @@ ecsel-dr-OOSMP:sub_unit_of_division rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-ORG#has_project_status
 <http://www.w3id.org/ecsel-dr-ORG#has_project_status> rdf:type owl:ObjectProperty ;
                                                       owl:inverseOf <http://www.w3id.org/ecsel-dr-ORG#is_project_status> ;
-                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#IFX_Project> ;
+                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#Company_Project> ;
                                                       rdfs:range <http://www.w3id.org/ecsel-dr-ORG#Project_Status> ;
                                                       rdfs:comment "Relation between a project and its status"@en .
 
@@ -2824,7 +2824,7 @@ ecsel-dr-OOSMP:sub_unit_of_division rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-ORG#has_role
 <http://www.w3id.org/ecsel-dr-ORG#has_role> rdf:type owl:ObjectProperty ;
                                             owl:inverseOf <http://www.w3id.org/ecsel-dr-ORG#is_role_of> ;
-                                            rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#IFX_Project> ;
+                                            rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#Company_Project> ;
                                             rdfs:range <http://www.w3id.org/ecsel-dr-ORG#Role> ;
                                             rdfs:comment "A relation that connects a role with a project"@en .
 
@@ -2832,7 +2832,7 @@ ecsel-dr-OOSMP:sub_unit_of_division rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-ORG#has_sub_project
 <http://www.w3id.org/ecsel-dr-ORG#has_sub_project> rdf:type owl:ObjectProperty ;
                                                    owl:inverseOf <http://www.w3id.org/ecsel-dr-ORG#is_sub_project_of> ;
-                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#IFX_Project> ;
+                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#Company_Project> ;
                                                    rdfs:range <http://www.w3id.org/ecsel-dr-ORG#Sub_Project> ;
                                                    rdfs:comment "Relation between a project and its subprojects"@en .
 
@@ -2841,7 +2841,7 @@ ecsel-dr-OOSMP:sub_unit_of_division rdf:type owl:ObjectProperty ;
 <http://www.w3id.org/ecsel-dr-ORG#has_task> rdf:type owl:ObjectProperty ;
                                             owl:inverseOf <http://www.w3id.org/ecsel-dr-ORG#is_task_of> ;
                                             rdfs:domain [ rdf:type owl:Class ;
-                                                          owl:unionOf ( <http://www.w3id.org/ecsel-dr-ORG#IFX_Project>
+                                                          owl:unionOf ( <http://www.w3id.org/ecsel-dr-ORG#Company_Project>
                                                                         <http://www.w3id.org/ecsel-dr-ORG#Sub_Project>
                                                                       )
                                                         ] ;
@@ -2863,7 +2863,7 @@ ecsel-dr-OOSMP:sub_unit_of_division rdf:type owl:ObjectProperty ;
                                                     owl:inverseOf <http://www.w3id.org/ecsel-dr-ORG#is_work_package_of> ;
                                                     rdf:type owl:FunctionalProperty ;
                                                     rdfs:domain [ rdf:type owl:Class ;
-                                                                  owl:unionOf ( <http://www.w3id.org/ecsel-dr-ORG#IFX_Project>
+                                                                  owl:unionOf ( <http://www.w3id.org/ecsel-dr-ORG#Company_Project>
                                                                                 <http://www.w3id.org/ecsel-dr-ORG#Sub_Project>
                                                                               )
                                                                 ] ;
@@ -2875,7 +2875,7 @@ ecsel-dr-OOSMP:sub_unit_of_division rdf:type owl:ObjectProperty ;
 <http://www.w3id.org/ecsel-dr-ORG#is_category_level_of> rdf:type owl:ObjectProperty ,
                                                                  owl:FunctionalProperty ;
                                                         rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#Category> ;
-                                                        rdfs:range <http://www.w3id.org/ecsel-dr-ORG#IFX_Project> ;
+                                                        rdfs:range <http://www.w3id.org/ecsel-dr-ORG#Company_Project> ;
                                                         rdfs:comment "Relation between a category and its projects"@en .
 
 
@@ -2883,7 +2883,7 @@ ecsel-dr-OOSMP:sub_unit_of_division rdf:type owl:ObjectProperty ;
 <http://www.w3id.org/ecsel-dr-ORG#is_certification_level_of> rdf:type owl:ObjectProperty ,
                                                                       owl:FunctionalProperty ;
                                                              rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#Certification> ;
-                                                             rdfs:range <http://www.w3id.org/ecsel-dr-ORG#IFX_Project> ;
+                                                             rdfs:range <http://www.w3id.org/ecsel-dr-ORG#Company_Project> ;
                                                              rdfs:comment "Relation between a certification and its projects"@en .
 
 
@@ -2902,21 +2902,21 @@ ecsel-dr-OOSMP:sub_unit_of_division rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-ORG#is_project_status
 <http://www.w3id.org/ecsel-dr-ORG#is_project_status> rdf:type owl:ObjectProperty ;
                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#Project_Status> ;
-                                                     rdfs:range <http://www.w3id.org/ecsel-dr-ORG#IFX_Project> ;
+                                                     rdfs:range <http://www.w3id.org/ecsel-dr-ORG#Company_Project> ;
                                                      rdfs:comment "Relation between a project status and the project it is part of"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-ORG#is_role_of
 <http://www.w3id.org/ecsel-dr-ORG#is_role_of> rdf:type owl:ObjectProperty ;
                                               rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#Role> ;
-                                              rdfs:range <http://www.w3id.org/ecsel-dr-ORG#IFX_Project> ;
+                                              rdfs:range <http://www.w3id.org/ecsel-dr-ORG#Company_Project> ;
                                               rdfs:comment "Relation between a role and the project it is part of"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-ORG#is_sub_project_of
 <http://www.w3id.org/ecsel-dr-ORG#is_sub_project_of> rdf:type owl:ObjectProperty ;
                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#Sub_Project> ;
-                                                     rdfs:range <http://www.w3id.org/ecsel-dr-ORG#IFX_Project> ;
+                                                     rdfs:range <http://www.w3id.org/ecsel-dr-ORG#Company_Project> ;
                                                      rdfs:comment "Relation between a subproject and the project it is part of"@en .
 
 
@@ -2924,7 +2924,7 @@ ecsel-dr-OOSMP:sub_unit_of_division rdf:type owl:ObjectProperty ;
 <http://www.w3id.org/ecsel-dr-ORG#is_task_of> rdf:type owl:ObjectProperty ;
                                               rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#Task> ;
                                               rdfs:range [ rdf:type owl:Class ;
-                                                           owl:unionOf ( <http://www.w3id.org/ecsel-dr-ORG#IFX_Project>
+                                                           owl:unionOf ( <http://www.w3id.org/ecsel-dr-ORG#Company_Project>
                                                                          <http://www.w3id.org/ecsel-dr-ORG#Sub_Project>
                                                                        )
                                                          ] ;
@@ -2944,7 +2944,7 @@ ecsel-dr-OOSMP:sub_unit_of_division rdf:type owl:ObjectProperty ;
                                                                owl:FunctionalProperty ;
                                                       rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#Work_Package> ;
                                                       rdfs:range [ rdf:type owl:Class ;
-                                                                   owl:unionOf ( <http://www.w3id.org/ecsel-dr-ORG#IFX_Project>
+                                                                   owl:unionOf ( <http://www.w3id.org/ecsel-dr-ORG#Company_Project>
                                                                                  <http://www.w3id.org/ecsel-dr-ORG#Sub_Project>
                                                                                )
                                                                  ] ;
@@ -3755,7 +3755,7 @@ ecsel-dr-PROD:substitute_product rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-PWR#amplified_by
 <http://www.w3id.org/ecsel-dr-PWR#amplified_by> rdf:type owl:ObjectProperty ;
                                                 rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#The_Method_Of_The_Device_Function> ;
-                                                rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Infineon_Device> ;
+                                                rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Amplication_Switching_Device> ;
                                                 rdfs:label "The Act of The Switching" .
 
 
@@ -3787,14 +3787,14 @@ ecsel-dr-PROD:substitute_product rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-PWR#has_configuration
 <http://www.w3id.org/ecsel-dr-PWR#has_configuration> rdf:type owl:ObjectProperty ;
-                                                     rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Infineon_Device> ;
+                                                     rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Amplication_Switching_Device> ;
                                                      rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Device_Configuration> ;
                                                      rdfs:label "has A Configuration" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#has_control_method
 <http://www.w3id.org/ecsel-dr-PWR#has_control_method> rdf:type owl:ObjectProperty ;
-                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Infineon_Device> ;
+                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Amplication_Switching_Device> ;
                                                       rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Control_Method> .
 
 
@@ -3812,7 +3812,7 @@ ecsel-dr-PROD:substitute_product rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-PWR#has_element
 <http://www.w3id.org/ecsel-dr-PWR#has_element> rdf:type owl:ObjectProperty ;
-                                               rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Infineon_Device> ;
+                                               rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Amplication_Switching_Device> ;
                                                rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Device_Element> ;
                                                rdfs:label "has Element" .
 
@@ -3820,13 +3820,13 @@ ecsel-dr-PROD:substitute_product rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-PWR#has_industry_sector
 <http://www.w3id.org/ecsel-dr-PWR#has_industry_sector> rdf:type owl:ObjectProperty ;
                                                        rdfs:subPropertyOf <http://www.w3id.org/ecsel-dr-PWR#are> ;
-                                                       rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Infineon_Device> ;
+                                                       rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Amplication_Switching_Device> ;
                                                        rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Semiconductors> .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#has_information_object
 <http://www.w3id.org/ecsel-dr-PWR#has_information_object> rdf:type owl:ObjectProperty ;
-                                                          rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Infineon_Device> ;
+                                                          rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Amplication_Switching_Device> ;
                                                           rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Semiconductor_Product(its_name)_Data_Sheet> ;
                                                           rdfs:comment "States that the devices have ona or more information objects, which can be a sensor data sheet for the sensors." ;
                                                           rdfs:isDefinedBy "IFX" ;
@@ -3835,14 +3835,14 @@ ecsel-dr-PROD:substitute_product rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-PWR#has_operation_modes
 <http://www.w3id.org/ecsel-dr-PWR#has_operation_modes> rdf:type owl:ObjectProperty ;
-                                                       rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Infineon_Device> ;
+                                                       rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Amplication_Switching_Device> ;
                                                        rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Enhancement> ;
                                                        rdfs:label "has an Operation Modes" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#has_operation_region
 <http://www.w3id.org/ecsel-dr-PWR#has_operation_region> rdf:type owl:ObjectProperty ;
-                                                        rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Infineon_Device> ;
+                                                        rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Amplication_Switching_Device> ;
                                                         rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Region_Of_Operation> ;
                                                         rdfs:label "has an Operation Region" .
 
@@ -3864,13 +3864,13 @@ ecsel-dr-PROD:substitute_product rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-PWR#has_properties_of
 <http://www.w3id.org/ecsel-dr-PWR#has_properties_of> rdf:type owl:ObjectProperty ;
                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Semiconductor_Product(its_name)_Data_Sheet> ;
-                                                     rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Infineon_Device> ;
+                                                     rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Amplication_Switching_Device> ;
                                                      rdfs:label "has The Propeties of" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#has_property
 <http://www.w3id.org/ecsel-dr-PWR#has_property> rdf:type owl:ObjectProperty ;
-                                                rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Infineon_Device> ;
+                                                rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Amplication_Switching_Device> ;
                                                 rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Property> ;
                                                 rdfs:label "has Properties" .
 
@@ -3914,7 +3914,7 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#inDeployment""" ;
 ###  http://www.w3id.org/ecsel-dr-PWR#is_produced_by
 <http://www.w3id.org/ecsel-dr-PWR#is_produced_by> rdf:type owl:ObjectProperty ;
                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#The_Device_Output> ;
-                                                  rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Infineon_Device> ;
+                                                  rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Amplication_Switching_Device> ;
                                                   rdfs:label "is produced by" .
 
 
@@ -3936,14 +3936,14 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#inDeployment""" ;
 
 ###  http://www.w3id.org/ecsel-dr-PWR#the_temperature_must_not_exceed
 <http://www.w3id.org/ecsel-dr-PWR#the_temperature_must_not_exceed> rdf:type owl:ObjectProperty ;
-                                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Infineon_Device> ;
+                                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Amplication_Switching_Device> ;
                                                                    rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Maximum_Junction_Temperature> ;
                                                                    rdfs:label "The Temperature Must Not Exceed" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#made_(the_method_name,_e.g.:_observation,_and_amlification)
 <http://www.w3id.org/ecsel-dr-PWR#made_(the_method_name,_e.g.:_observation,_and_amlification)> rdf:type owl:ObjectProperty ;
-                                                                                               rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Infineon_Device> ;
+                                                                                               rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Amplication_Switching_Device> ;
                                                                                                rdfs:range <http://www.w3id.org/ecsel-dr-PWR#The_Method_Of_The_Device_Function> ;
                                                                                                rdfs:label "Makes Switching" .
 
@@ -5767,7 +5767,7 @@ ecsel-dr-OOSMP:has_temperature_min rdf:type owl:DatatypeProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-ORG#has_budget_factor
 <http://www.w3id.org/ecsel-dr-ORG#has_budget_factor> rdf:type owl:DatatypeProperty ;
-                                                     rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#IFX_Project> ;
+                                                     rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#Company_Project> ;
                                                      rdfs:range xsd:integer ;
                                                      rdfs:comment "The budget factor of a project"@en .
 
@@ -5775,7 +5775,7 @@ ecsel-dr-OOSMP:has_temperature_min rdf:type owl:DatatypeProperty ;
 ###  http://www.w3id.org/ecsel-dr-ORG#has_budget_value
 <http://www.w3id.org/ecsel-dr-ORG#has_budget_value> rdf:type owl:DatatypeProperty ,
                                                              owl:FunctionalProperty ;
-                                                    rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#IFX_Project> ;
+                                                    rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#Company_Project> ;
                                                     rdfs:range xsd:integer ;
                                                     rdfs:comment "The value of the budget of a project"@en .
 
@@ -5796,21 +5796,21 @@ ecsel-dr-OOSMP:has_temperature_min rdf:type owl:DatatypeProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-ORG#has_goal
 <http://www.w3id.org/ecsel-dr-ORG#has_goal> rdf:type owl:DatatypeProperty ;
-                                            rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#IFX_Project> ;
+                                            rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#Company_Project> ;
                                             rdfs:range xsd:string ;
                                             rdfs:comment "The goal of a project"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-ORG#has_impact_factor
 <http://www.w3id.org/ecsel-dr-ORG#has_impact_factor> rdf:type owl:DatatypeProperty ;
-                                                     rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#IFX_Project> ;
+                                                     rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#Company_Project> ;
                                                      rdfs:range xsd:integer ;
                                                      rdfs:comment "The factor of impact of a project"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-ORG#has_interface_complexity_factor
 <http://www.w3id.org/ecsel-dr-ORG#has_interface_complexity_factor> rdf:type owl:DatatypeProperty ;
-                                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#IFX_Project> ;
+                                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#Company_Project> ;
                                                                    rdfs:range xsd:integer ;
                                                                    rdfs:comment "The factor of complexity of the interface"@en .
 
@@ -5834,14 +5834,14 @@ ecsel-dr-OOSMP:has_temperature_min rdf:type owl:DatatypeProperty ;
 ###  http://www.w3id.org/ecsel-dr-ORG#has_name
 <http://www.w3id.org/ecsel-dr-ORG#has_name> rdf:type owl:DatatypeProperty ,
                                                      owl:FunctionalProperty ;
-                                            rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#IFX_Project> ;
+                                            rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#Company_Project> ;
                                             rdfs:range xsd:string ;
                                             rdfs:comment "The name of the project"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-ORG#has_resulting_factor_average
 <http://www.w3id.org/ecsel-dr-ORG#has_resulting_factor_average> rdf:type owl:DatatypeProperty ;
-                                                                rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#IFX_Project> ;
+                                                                rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#Company_Project> ;
                                                                 rdfs:range xsd:integer .
 
 
@@ -11078,17 +11078,17 @@ of linear, rotation or 3 dimensional movements."""@en ;
                                                  rdfs:label "Certification"@en .
 
 
+###  http://www.w3id.org/ecsel-dr-ORG#Company_Project
+<http://www.w3id.org/ecsel-dr-ORG#Company_Project> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.w3id.org/ecsel-dr-ORG#Project> ;
+                                                   rdfs:comment "Projects that are or have been developed using our methodology, based on the IPMA standard."@en ;
+                                                   rdfs:label "Company Project"@en .
+
+
 ###  http://www.w3id.org/ecsel-dr-ORG#Division
 <http://www.w3id.org/ecsel-dr-ORG#Division> rdf:type owl:Class ;
                                             rdfs:comment "Hierarchical structure of an organization. For example ATV, DDS, ICP..."@en ;
                                             rdfs:label "Division"@en .
-
-
-###  http://www.w3id.org/ecsel-dr-ORG#IFX_Project
-<http://www.w3id.org/ecsel-dr-ORG#IFX_Project> rdf:type owl:Class ;
-                                               rdfs:subClassOf <http://www.w3id.org/ecsel-dr-ORG#Project> ;
-                                               rdfs:comment "Projects that are or have been developed using our methodology, based on the IPMA standard."@en ;
-                                               rdfs:label "Infineon Technologies Project Management Improvement Activity Project"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-ORG#Project
@@ -11271,6 +11271,22 @@ A Business Process Flow is a sequence of required tasks to create specified outp
                                                                        "busi process flow"@en .
 
 
+###  http://www.w3id.org/ecsel-dr-PMV#Company_Process_Framework
+<http://www.w3id.org/ecsel-dr-PMV#Company_Process_Framework> rdf:type owl:Class ;
+                                                             rdfs:subClassOf [ owl:intersectionOf ( <http://www.w3id.org/ecsel-dr-PMV#VACD>
+                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                      owl:onProperty <http://www.w3id.org/ecsel-dr-PMV#has_subordinate_VACD> ;
+                                                                                                      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                      owl:onClass <http://www.w3id.org/ecsel-dr-PMV#BP_Landscape>
+                                                                                                    ]
+                                                                                                  ) ;
+                                                                               rdf:type owl:Class
+                                                                             ] ;
+                                                             rdfs:comment "IPF is the structured overview of all IFX Core and Enabler Processes. It contains 4 Core Processes and 6 Enabler Processes." ;
+                                                             rdfs:label "Company Process Framework" ;
+                                                             skos:altLabel "Company process framework" .
+
+
 ###  http://www.w3id.org/ecsel-dr-PMV#Computer_Hardware
 <http://www.w3id.org/ecsel-dr-PMV#Computer_Hardware> rdf:type owl:Class ;
                                                      rdfs:subClassOf terms:Physical_Resource ;
@@ -11346,22 +11362,6 @@ A Business Process Flow is a sequence of required tasks to create specified outp
                                                 rdfs:label "Human Output" ;
                                                 skos:altLabel "Role" ,
                                                               "human output" .
-
-
-###  http://www.w3id.org/ecsel-dr-PMV#IFX_Process_Framework
-<http://www.w3id.org/ecsel-dr-PMV#IFX_Process_Framework> rdf:type owl:Class ;
-                                                         rdfs:subClassOf [ owl:intersectionOf ( <http://www.w3id.org/ecsel-dr-PMV#VACD>
-                                                                                                [ rdf:type owl:Restriction ;
-                                                                                                  owl:onProperty <http://www.w3id.org/ecsel-dr-PMV#has_subordinate_VACD> ;
-                                                                                                  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                                                  owl:onClass <http://www.w3id.org/ecsel-dr-PMV#BP_Landscape>
-                                                                                                ]
-                                                                                              ) ;
-                                                                           rdf:type owl:Class
-                                                                         ] ;
-                                                         rdfs:comment "IPF is the structured overview of all IFX Core and Enabler Processes. It contains 4 Core Processes and 6 Enabler Processes." ;
-                                                         rdfs:label "Infineon Process Framework" ;
-                                                         skos:altLabel "infineon process framework" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PMV#Input
@@ -11872,6 +11872,21 @@ Example: mathematical entities: formal semantics elements, regions within dimens
 https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Abstract\"""" .
 
 
+###  http://www.w3id.org/ecsel-dr-PWR#Amplication_Switching_Device
+<http://www.w3id.org/ecsel-dr-PWR#Amplication_Switching_Device> rdf:type owl:Class ;
+                                                                owl:equivalentClass <http://www.w3id.org/ecsel-dr-PWR#SiC_MOSFET> ;
+                                                                rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Device> ;
+                                                                rdfs:comment """Should defined as its function for example:
+
+-Sensor
+-Power Converter 
+-Microcontroller 
+
+Then must be defined what the device it is, for exmaple:
+-A sensing device is a device that implments sensing.""" ;
+                                                                rdfs:label "Amplication (switching) Device" .
+
+
 ###  http://www.w3id.org/ecsel-dr-PWR#Application_Area
 <http://www.w3id.org/ecsel-dr-PWR#Application_Area> rdf:type owl:Class ;
                                                     rdfs:comment "The different application ares that the product can be used." ;
@@ -12083,21 +12098,6 @@ https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Entity""" .
 
 This classification is done by The Global Industry Classification Standard (GICS) is an industry taxonomy developed in 1999 by MSCI and Standard & Poor's (S&P) for use by the global financial community. The GICS structure consists of 11 sectors, 24 industry groups, 68 industries and 157 sub-industries[1] into which S&P has categorized all major public companies""" ;
                                                     rdfs:isDefinedBy "http://umbel.org/umbel/rc/" .
-
-
-###  http://www.w3id.org/ecsel-dr-PWR#Infineon_Device
-<http://www.w3id.org/ecsel-dr-PWR#Infineon_Device> rdf:type owl:Class ;
-                                                   owl:equivalentClass <http://www.w3id.org/ecsel-dr-PWR#SiC_MOSFET> ;
-                                                   rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Device> ;
-                                                   rdfs:comment """Should defined as its function for example:
-
--Sensor
--Power Converter 
--Microcontroller 
-
-Then must be defined what the device it is, for exmaple:
--A sensing device is a device that implments sensing.""" ;
-                                                   rdfs:label "Amplication (switching) Device" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Information_Entity

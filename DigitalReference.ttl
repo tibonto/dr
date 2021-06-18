@@ -127,6 +127,10 @@ rdfs:label rdfs:comment "Any name of a concept"@en ;
 xsd:pattern rdf:type owl:AnnotationProperty .
 
 
+###  http://www.w3.org/2002/07/owl#maxCardinality
+owl:maxCardinality rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.w3.org/2004/02/skos/core#altLabel
 skos:altLabel rdf:type owl:AnnotationProperty ;
               rdfs:comment "The alternative name of a conept, e.g. a misspelled name,  a concept can have one or more alternative names."@en ;
@@ -363,12 +367,6 @@ Note that the value-space is not defined, so a generic OWL2 processor cannot com
 #    Object Properties
 #################################################################
 
-###  http://www.w3.org/2006/time#Day_Of_Week
-time:Day_Of_Week rdf:type owl:ObjectProperty ;
-                 rdfs:domain time:General_Date_Time_Description ;
-                 rdfs:range time:Day_Of_Week .
-
-
 ###  http://www.w3.org/2006/time#after
 time:after rdf:type owl:ObjectProperty ;
            owl:inverseOf time:before ;
@@ -387,6 +385,15 @@ time:before rdf:type owl:ObjectProperty ,
             rdfs:comment "Gives directionality to time. If a temporal entity T1 is before another temporal entity T2, then the end of T1 is before the beginning of T2. Thus, \"before\" can be considered to be basic to instants and derived for intervals."@en ;
             rdfs:label "before"@en ;
             skos:definition "Gives directionality to time. If a temporal entity T1 is before another temporal entity T2, then the end of T1 is before the beginning of T2. Thus, \"before\" can be considered to be basic to instants and derived for intervals."@en .
+
+
+###  http://www.w3.org/2006/time#day_of_week
+time:day_of_week rdf:type owl:ObjectProperty ;
+                 rdfs:domain time:General_Date_Time_Description ;
+                 rdfs:range time:Day_Of_Week ;
+                 rdfs:comment "The day of week, whose value is a member of the class time:DayOfWeek"@en ;
+                 rdfs:label "day of week"@en ;
+                 skos:definition "The day of week, whose value is a member of the class time:DayOfWeek"@en .
 
 
 ###  http://www.w3.org/2006/time#has_TRS
@@ -6998,7 +7005,24 @@ time:Date_Time_Interval rdf:type owl:Class ;
 
 ###  http://www.w3.org/2006/time#Day_Of_Week
 time:Day_Of_Week rdf:type owl:Class ;
-                 rdfs:subClassOf owl:Thing .
+                 rdfs:subClassOf owl:Thing ;
+                 rdfs:comment "The day of week"@en ;
+                 rdfs:label "Day of week"@en ;
+                 skos:changeNote """Remove enumeration from definition, in order to allow other days to be used when required in other calendars. 
+NOTE: existing days are still present as members of the class, but the class membership is now open. 
+
+In the original OWL-Time the following constraint appeared: 
+  owl:oneOf (
+      time:Monday
+      time:Tuesday
+      time:Wednesday
+      time:Thursday
+      time:Friday
+      time:Saturday
+      time:Sunday
+    ) ;"""@en ;
+                 skos:definition "The day of week"@en ;
+                 skos:note "Membership of the class :DayOfWeek is open, to allow for alternative week lengths and different day names."@en .
 
 
 ###  http://www.w3.org/2006/time#Duration
@@ -7067,7 +7091,7 @@ time:General_Date_Time_Description rdf:type owl:Class ;
                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
                                                    ] ,
                                                    [ rdf:type owl:Restriction ;
-                                                     owl:onProperty time:Day_Of_Week ;
+                                                     owl:onProperty time:day_of_week ;
                                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                    ] ,
                                                    [ rdf:type owl:Restriction ;
@@ -11378,13 +11402,13 @@ A Business Process Flow is a sequence of required tasks to create specified outp
                                                                                     [ rdf:type owl:Class ;
                                                                                       owl:unionOf ( [ rdf:type owl:Restriction ;
                                                                                                       owl:onProperty <http://www.w3id.org/ecsel-dr-PMV#evaluates> ;
-                                                                                                      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                      owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
                                                                                                       owl:onClass <http://www.w3id.org/ecsel-dr-PMV#Event>
                                                                                                     ]
                                                                                                     [ rdf:type owl:Restriction ;
                                                                                                       owl:onProperty <http://www.w3id.org/ecsel-dr-PMV#is_assigned_to> ;
                                                                                                       owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
-                                                                                                      owl:onClass <http://www.w3id.org/ecsel-dr-PMV#Task>
+                                                                                                      owl:onClass <http://www.w3id.org/ecsel-dr-ORG#Task>
                                                                                                     ]
                                                                                                   )
                                                                                     ]
@@ -11392,7 +11416,7 @@ A Business Process Flow is a sequence of required tasks to create specified outp
                                                                                       owl:unionOf ( [ rdf:type owl:Restriction ;
                                                                                                       owl:onProperty <http://www.w3id.org/ecsel-dr-PMV#activates_task> ;
                                                                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                                                      owl:onClass <http://www.w3id.org/ecsel-dr-PMV#Task>
+                                                                                                      owl:onClass <http://www.w3id.org/ecsel-dr-ORG#Task>
                                                                                                     ]
                                                                                                     [ rdf:type owl:Restriction ;
                                                                                                       owl:onProperty <http://www.w3id.org/ecsel-dr-PMV#leads_to_event> ;
@@ -11406,14 +11430,14 @@ A Business Process Flow is a sequence of required tasks to create specified outp
                                                              ] ,
                                                              [ owl:intersectionOf ( <http://www.w3id.org/ecsel-dr-PMV#Rule>
                                                                                     [ rdf:type owl:Restriction ;
-                                                                                      owl:onProperty <http://www.w3id.org/ecsel-dr-PMV#leads_to_event> ;
-                                                                                      owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
-                                                                                      owl:onClass <http://www.w3id.org/ecsel-dr-PMV#Event>
-                                                                                    ]
-                                                                                    [ rdf:type owl:Restriction ;
                                                                                       owl:onProperty <http://www.w3id.org/ecsel-dr-PMV#is_assigned_to> ;
                                                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                                      owl:onClass <http://www.w3id.org/ecsel-dr-PMV#Task>
+                                                                                      owl:onClass <http://www.w3id.org/ecsel-dr-ORG#Task>
+                                                                                    ]
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://www.w3id.org/ecsel-dr-PMV#leads_to_event> ;
+                                                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                      owl:onClass <http://www.w3id.org/ecsel-dr-PMV#Event>
                                                                                     ]
                                                                                   ) ;
                                                                rdf:type owl:Class
@@ -11606,27 +11630,27 @@ Functionality: Jump function to next process (e.g. EPC, VAC), typically at the e
                                               rdfs:subClassOf [ owl:intersectionOf ( <http://www.w3id.org/ecsel-dr-PMV#Rule>
                                                                                      [ rdf:type owl:Class ;
                                                                                        owl:unionOf ( [ rdf:type owl:Restriction ;
-                                                                                                       owl:onProperty <http://www.w3id.org/ecsel-dr-PMV#evaluates> ;
-                                                                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                                                       owl:onClass <http://www.w3id.org/ecsel-dr-PMV#Event>
+                                                                                                       owl:onProperty <http://www.w3id.org/ecsel-dr-PMV#activates> ;
+                                                                                                       owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                                                                       owl:onClass <http://www.w3id.org/ecsel-dr-ORG#Task>
                                                                                                      ]
                                                                                                      [ rdf:type owl:Restriction ;
-                                                                                                       owl:onProperty <http://www.w3id.org/ecsel-dr-PMV#is_assigned_to> ;
+                                                                                                       owl:onProperty <http://www.w3id.org/ecsel-dr-PMV#leads_to_event> ;
                                                                                                        owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
-                                                                                                       owl:onClass <http://www.w3id.org/ecsel-dr-PMV#Task>
+                                                                                                       owl:onClass <http://www.w3id.org/ecsel-dr-PMV#Event>
                                                                                                      ]
                                                                                                    )
                                                                                      ]
                                                                                      [ rdf:type owl:Class ;
                                                                                        owl:unionOf ( [ rdf:type owl:Restriction ;
-                                                                                                       owl:onProperty <http://www.w3id.org/ecsel-dr-PMV#activates> ;
-                                                                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                                                       owl:onClass <http://www.w3id.org/ecsel-dr-PMV#Task>
-                                                                                                     ]
-                                                                                                     [ rdf:type owl:Restriction ;
-                                                                                                       owl:onProperty <http://www.w3id.org/ecsel-dr-PMV#leads_to_event> ;
+                                                                                                       owl:onProperty <http://www.w3id.org/ecsel-dr-PMV#evaluates> ;
                                                                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                                                                        owl:onClass <http://www.w3id.org/ecsel-dr-PMV#Event>
+                                                                                                     ]
+                                                                                                     [ rdf:type owl:Restriction ;
+                                                                                                       owl:onProperty <http://www.w3id.org/ecsel-dr-PMV#is_assigned_to> ;
+                                                                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                       owl:onClass <http://www.w3id.org/ecsel-dr-ORG#Task>
                                                                                                      ]
                                                                                                    )
                                                                                      ]
@@ -13822,31 +13846,8 @@ ecsel-dr-RAMI40:Type rdf:type owl:NamedIndividual .
 ecsel-dr-RAMI40:Work_Center rdf:type owl:NamedIndividual .
 
 
-#################################################################
-#    Annotations
-#################################################################
-
-time:Day_Of_Week skos:changeNote """Remove enumeration from definition, in order to allow other days to be used when required in other calendars. 
-NOTE: existing days are still present as members of the class, but the class membership is now open. 
-
-In the original OWL-Time the following constraint appeared: 
-  owl:oneOf (
-      time:Monday
-      time:Tuesday
-      time:Wednesday
-      time:Thursday
-      time:Friday
-      time:Saturday
-      time:Sunday
-    ) ;"""@en ;
-                 skos:definition "The day of week"@en ;
-                 rdfs:label "Day of week"@en ,
-                            "day of week"@en ;
-                 skos:note "Membership of the class :DayOfWeek is open, to allow for alternative week lengths and different day names."@en ;
-                 rdfs:comment "The day of week, whose value is a member of the class time:DayOfWeek"@en ;
-                 skos:definition "The day of week, whose value is a member of the class time:DayOfWeek"@en ;
-                 rdfs:comment "The day of week"@en .
-
+[ owl:maxCardinality "1"^^xsd:nonNegativeInteger
+] .
 
 #################################################################
 #    Rules

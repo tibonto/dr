@@ -7219,7 +7219,7 @@ time:January rdf:type owl:Class ;
              rdfs:subClassOf time:Date_Time_Description ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty time:unit_type ;
-                               owl:hasValue time:unitMonth
+                               owl:hasValue time:Unit_Month
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty time:month ;
@@ -7235,7 +7235,7 @@ time:Month_Of_Year rdf:type owl:Class ;
                    rdfs:subClassOf time:Date_Time_Description ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty time:unit_type ;
-                                     owl:hasValue time:unitMonth
+                                     owl:hasValue time:Unit_Month
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty time:day ;
@@ -8418,7 +8418,8 @@ ecsel-dr-AH:AH_Inter_Cloud_Negotiations_Service_SD rdf:type owl:Class ;
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Local_Cloud
-ecsel-dr-AH:AH_Local_Cloud rdf:type owl:Class .
+ecsel-dr-AH:AH_Local_Cloud rdf:type owl:Class ;
+                           rdfs:label "AH Local Cloud" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Mandatory_Core_Service
@@ -8636,35 +8637,41 @@ ecsel-dr-AH:Communication_Profile_CP rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#Communication_Security_Mechanism
 ecsel-dr-AH:Communication_Security_Mechanism rdf:type owl:Class ;
                                              rdfs:subClassOf ecsel-dr-AH:Communication_Technology ;
-                                             rdfs:comment "corresponds to a part of OSI layer 5" .
+                                             rdfs:comment "corresponds to a part of OSI layer 5" ;
+                                             rdfs:label "Communication Security Mechanism" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Communication_Technology
 ecsel-dr-AH:Communication_Technology rdf:type owl:Class ;
-                                     rdfs:comment "Communications technology, also known as information technology, refers to all equipment and programs that are used to process and communicate information."@en .
+                                     rdfs:comment "Communications technology, also known as information technology, refers to all equipment and programs that are used to process and communicate information."@en ;
+                                     rdfs:label "Communication Technology" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Constrained_Device
 ecsel-dr-AH:Constrained_Device rdf:type owl:Class ;
                                rdfs:subClassOf ecsel-dr-AH:Device ;
                                rdfs:comment """A constrained device is a device in the sense of an service-oriented architecture that is restricted in terms of processing capabilities (speed, complexity of operations), memory and power supply. 
-The concept constrained device was introduced in the context of the Internet of Things (IoT) and refers for example to sensor devices, location devices, switches etc. which are connected by low-power wireless communication technologies like BLE, ZigBee, Z-Wave etc., have a battery on board that should last for two to three years and which are (very) small in physical size."""@en .
+The concept constrained device was introduced in the context of the Internet of Things (IoT) and refers for example to sensor devices, location devices, switches etc. which are connected by low-power wireless communication technologies like BLE, ZigBee, Z-Wave etc., have a battery on board that should last for two to three years and which are (very) small in physical size."""@en ;
+                               rdfs:label "Constrained Device" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Data_Format
 ecsel-dr-AH:Data_Format rdf:type owl:Class ;
-                        rdfs:comment "Data format in information technology may refer to: Data type, constraint placed upon the interpretation of data in a type system."@en .
+                        rdfs:comment "Data format in information technology may refer to: Data type, constraint placed upon the interpretation of data in a type system."@en ;
+                        rdfs:label "Data Format" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Data_Link_Media_Access_Technology
 ecsel-dr-AH:Data_Link_Media_Access_Technology rdf:type owl:Class ;
                                               rdfs:subClassOf ecsel-dr-AH:Communication_Technology ;
-                                              rdfs:comment "corresponds to OSI layer 1 and 2 technologies, like Ethernet, WLAN (802.11), WPAN (802.15.4), EtherCAT, ProfiNet, ..." .
+                                              rdfs:comment "corresponds to OSI layer 1 and 2 technologies, like Ethernet, WLAN (802.11), WPAN (802.15.4), EtherCAT, ProfiNet, ..." ;
+                                              rdfs:label "Data Link Media Access Technology" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Data_Model
 ecsel-dr-AH:Data_Model rdf:type owl:Class ;
-                       rdfs:comment "A data model is an abstract model that organizes elements of data and standardizes how they relate to one another and to the properties of real-world entities."@en .
+                       rdfs:comment "A data model is an abstract model that organizes elements of data and standardizes how they relate to one another and to the properties of real-world entities."@en ;
+                       rdfs:label "Data Model" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Device
@@ -8681,30 +8688,33 @@ ecsel-dr-AH:Documentation_Document rdf:type owl:Class ;
                                    rdfs:comment "A document that documents something"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AH#End-to-End_Communication_Technology
-ecsel-dr-AH:End-to-End_Communication_Technology rdf:type owl:Class ;
+###  http://www.w3id.org/ecsel-dr-AH#End_To_End_Communication_Technology
+ecsel-dr-AH:End_To_End_Communication_Technology rdf:type owl:Class ;
                                                 rdfs:subClassOf ecsel-dr-AH:Communication_Technology ;
-                                                rdfs:comment "The end-to-end principle is a design framework in computer networking. In networks designed according to this principle, application-specific features reside in the communicating end nodes of the network, rather than in intermediary nodes, such as gateways and routers, that exist to establish the network."@en .
+                                                rdfs:comment "The end-to-end principle is a design framework in computer networking. In networks designed according to this principle, application-specific features reside in the communicating end nodes of the network, rather than in intermediary nodes, such as gateways and routers, that exist to establish the network."@en ;
+                                                rdfs:label "End-to-End Communication Technology" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Gateway
 ecsel-dr-AH:Gateway rdf:type owl:Class ;
                     owl:equivalentClass ecsel-dr-AT:Gateway ;
                     rdfs:subClassOf ecsel-dr-AH:Device ;
-                    rdfs:comment "A gateway is a piece of networking hardware used in telecommunications for telecommunications networks that allows data to flow from one discrete network to another."@en .
+                    rdfs:comment "A gateway is a piece of networking hardware used in telecommunications for telecommunications networks that allows data to flow from one discrete network to another."@en ;
+                    rdfs:label "Gateway" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Illumination_Device
 ecsel-dr-AH:Illumination_Device rdf:type owl:Class ;
                                 rdfs:subClassOf ecsel-dr-AH:Constrained_Device ;
-                                rdfs:comment "A category of devices which's purpose is to illuminate"@en .
+                                rdfs:comment "A category of devices which's purpose is to illuminate"@en ;
+                                rdfs:label "Illumination Device" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Industrial_Personal_Computer
 ecsel-dr-AH:Industrial_Personal_Computer rdf:type owl:Class ;
                                          rdfs:subClassOf ecsel-dr-AH:Device ;
                                          rdfs:comment "Industrial PCs are primarily used for process control and/or data acquisition. In some cases, an industrial PC is simply used as a front-end to another control computer in a distributed processing environment."@en ;
-                                         rdfs:label "IPC"@en .
+                                         rdfs:label "Industrial Personal Computer"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Information_Model
@@ -8730,14 +8740,15 @@ ecsel-dr-AH:Method rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#Personal_Computer
 ecsel-dr-AH:Personal_Computer rdf:type owl:Class ;
                               rdfs:subClassOf ecsel-dr-AH:Device ;
-                              rdfs:comment "A personal computer is a multi-purpose computer whose size, capabilities, and price make it feasible for individual use."@en ;
-                              rdfs:label "PC"@en .
+                              rdfs:comment "A personal computer (PC) is a multi-purpose computer whose size, capabilities, and price make it feasible for individual use."@en ;
+                              rdfs:label "Personal Computer"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AH#Point-to-Point_Communication_Technology
-ecsel-dr-AH:Point-to-Point_Communication_Technology rdf:type owl:Class ;
+###  http://www.w3id.org/ecsel-dr-AH#Point_To_Point_Communication_Technology
+ecsel-dr-AH:Point_To_Point_Communication_Technology rdf:type owl:Class ;
                                                     rdfs:subClassOf ecsel-dr-AH:Communication_Technology ;
-                                                    rdfs:comment "corresponds to OSI layer 3, e.g. IPv4 or IPv6" .
+                                                    rdfs:comment "corresponds to OSI layer 3, e.g. IPv4 or IPv6" ;
+                                                    rdfs:label "Point-to-Point Communication Technology" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Programmable_Logic_Controller
@@ -8752,7 +8763,8 @@ ecsel-dr-AH:Programmable_Logic_Controller rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#Raspberry_Pi
 ecsel-dr-AH:Raspberry_Pi rdf:type owl:Class ;
                          rdfs:subClassOf ecsel-dr-AH:Device ;
-                         rdfs:comment "The Raspberry Pi is a series of small single-board computers developed in the United Kingdom by the Raspberry Pi Foundation to put the power of computing and digital making into the hands of people all over the world."@en .
+                         rdfs:comment "The Raspberry Pi is a series of small single-board computers developed in the United Kingdom by the Raspberry Pi Foundation to put the power of computing and digital making into the hands of people all over the world."@en ;
+                         rdfs:label "Raspberry Pi" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Semantic_Profile_SP
@@ -8764,7 +8776,8 @@ ecsel-dr-AH:Semantic_Profile_SP rdf:type owl:Class ;
 ecsel-dr-AH:Sensor_Device rdf:type owl:Class ;
                           owl:equivalentClass ecsel-dr-AT:Sensor_Device ;
                           rdfs:subClassOf ecsel-dr-AH:Constrained_Device ;
-                          rdfs:comment "A category of devices which's purpose is to sense"@en .
+                          rdfs:comment "A category of devices which's purpose is to sense"@en ;
+                          rdfs:label "Sensor Device" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Service
@@ -8803,7 +8816,8 @@ ecsel-dr-AH:Service_Oriented_Architecture rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#Smartphone
 ecsel-dr-AH:Smartphone rdf:type owl:Class ;
                        rdfs:subClassOf ecsel-dr-AH:Device ;
-                       rdfs:comment "A smartphone is a mobile device that combines cellular and mobile computing functions into one unit."@en .
+                       rdfs:comment "A smartphone is a mobile device that combines cellular and mobile computing functions into one unit."@en ;
+                       rdfs:label "Smartphone" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#SoA_Property
@@ -8818,7 +8832,8 @@ ecsel-dr-AH:Software_System rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#Switch_Device
 ecsel-dr-AH:Switch_Device rdf:type owl:Class ;
                           rdfs:subClassOf ecsel-dr-AH:Constrained_Device ;
-                          rdfs:comment "A switch is a device in a computer network that connects other devices together."@en .
+                          rdfs:comment "A switch is a device in a computer network that connects other devices together."@en ;
+                          rdfs:label "Switch Device" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#System_Description_Sy_SD
@@ -8867,13 +8882,15 @@ Lawrence Mandel (29 May 2008). \"Describe REST Web services with WSDL 2.0: A how
 ###  http://www.w3id.org/ecsel-dr-AH#Tablet_Computer
 ecsel-dr-AH:Tablet_Computer rdf:type owl:Class ;
                             rdfs:subClassOf ecsel-dr-AH:Device ;
-                            rdfs:comment "A tablet computer, commonly shortened to tablet, is a mobile device, typically with a mobile operating system and touchscreen display"@en .
+                            rdfs:comment "A tablet computer, commonly shortened to tablet, is a mobile device, typically with a mobile operating system and touchscreen display"@en ;
+                            rdfs:label "Tablet Computer" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Transfer_Protocol
 ecsel-dr-AH:Transfer_Protocol rdf:type owl:Class ;
                               rdfs:subClassOf ecsel-dr-AH:Communication_Technology ;
-                              rdfs:comment "corresponds to OSI layers 6 and 7" .
+                              rdfs:comment "corresponds to OSI layers 6 and 7" ;
+                              rdfs:label "Transfer Protocol" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#AGV
@@ -8930,7 +8947,8 @@ ecsel-dr-AT:AS2 rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#Actuator_Device
 ecsel-dr-AT:Actuator_Device rdf:type owl:Class ;
-                            rdfs:subClassOf ecsel-dr-AT:Device .
+                            rdfs:subClassOf ecsel-dr-AT:Device ;
+                            rdfs:label "Acutator Device" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Apple_Talk
@@ -8978,7 +8996,8 @@ ecsel-dr-AT:Big_Data_Analytics-System rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#Bit
 ecsel-dr-AT:Bit rdf:type owl:Class ;
-                rdfs:subClassOf ecsel-dr-AT:Data_Transmission_Unit .
+                rdfs:subClassOf ecsel-dr-AT:Data_Transmission_Unit ;
+                rdfs:label "Bit" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Bluetooth
@@ -9214,7 +9233,8 @@ ecsel-dr-AT:Database-System rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#Device
 ecsel-dr-AT:Device rdf:type owl:Class ;
-                   owl:equivalentClass <http://www.w3id.org/ecsel-dr-PWR#Device> .
+                   owl:equivalentClass <http://www.w3id.org/ecsel-dr-PWR#Device> ;
+                   rdfs:label "Device" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Device_Control_App
@@ -9349,12 +9369,14 @@ ecsel-dr-AT:Fieldbus_Car_Airplane rdf:type owl:Class .
 
 ###  http://www.w3id.org/ecsel-dr-AT#Frame
 ecsel-dr-AT:Frame rdf:type owl:Class ;
-                  rdfs:subClassOf ecsel-dr-AT:Data_Transmission_Unit .
+                  rdfs:subClassOf ecsel-dr-AT:Data_Transmission_Unit ;
+                  rdfs:label "Frame" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Gateway
 ecsel-dr-AT:Gateway rdf:type owl:Class ;
-                    rdfs:subClassOf ecsel-dr-AT:Communication_Device .
+                    rdfs:subClassOf ecsel-dr-AT:Communication_Device ;
+                    rdfs:label "Gateway" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#HTML
@@ -9673,7 +9695,8 @@ ecsel-dr-AT:Material_Flow_Simulation rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#Message
 ecsel-dr-AT:Message rdf:type owl:Class ;
-                    rdfs:subClassOf ecsel-dr-AT:Data_Transmission_Unit .
+                    rdfs:subClassOf ecsel-dr-AT:Data_Transmission_Unit ;
+                    rdfs:label "Message" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Message_Broker-System
@@ -9932,7 +9955,8 @@ ecsel-dr-AT:PL_Phase_4_Usage_Maintenance rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#Packet
 ecsel-dr-AT:Packet rdf:type owl:Class ;
-                   rdfs:subClassOf ecsel-dr-AT:Data_Transmission_Unit .
+                   rdfs:subClassOf ecsel-dr-AT:Data_Transmission_Unit ;
+                   rdfs:label "Packet" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Product_Data_Management-Module
@@ -9951,7 +9975,8 @@ ecsel-dr-AT:Production_Cell_Planning rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#Programmable_Logic_Controller
 ecsel-dr-AT:Programmable_Logic_Controller rdf:type owl:Class ;
-                                          rdfs:subClassOf ecsel-dr-AT:Control_Device .
+                                          rdfs:subClassOf ecsel-dr-AT:Control_Device ;
+                                          rdfs:label "Programmable Logic Controller" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Proxy
@@ -10117,7 +10142,8 @@ ecsel-dr-AT:STOMP rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#Segment
 ecsel-dr-AT:Segment rdf:type owl:Class ;
-                    rdfs:subClassOf ecsel-dr-AT:Data_Transmission_Unit .
+                    rdfs:subClassOf ecsel-dr-AT:Data_Transmission_Unit ;
+                    rdfs:label "Segment" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Sen_ML
@@ -10132,7 +10158,8 @@ ecsel-dr-AT:Sens_ML rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#Sensor_Device
 ecsel-dr-AT:Sensor_Device rdf:type owl:Class ;
-                          rdfs:subClassOf ecsel-dr-AT:Device .
+                          rdfs:subClassOf ecsel-dr-AT:Device ;
+                          rdfs:label "Sensor Device" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Service_Data_Language
@@ -10461,7 +10488,8 @@ ecsel-dr-AT:uPnP rdf:type owl:Class ;
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Contact_Person_Data
-<http://www.w3id.org/ecsel-dr-OM#Contact_Person_Data> rdf:type owl:Class .
+<http://www.w3id.org/ecsel-dr-OM#Contact_Person_Data> rdf:type owl:Class ;
+                                                      rdfs:label "Contact Person Data" .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Customer
@@ -10472,20 +10500,24 @@ ecsel-dr-AT:uPnP rdf:type owl:Class ;
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Customer_Data
-<http://www.w3id.org/ecsel-dr-OM#Customer_Data> rdf:type owl:Class .
+<http://www.w3id.org/ecsel-dr-OM#Customer_Data> rdf:type owl:Class ;
+                                                rdfs:label "Customer Data" .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Customer_Plant
-<http://www.w3id.org/ecsel-dr-OM#Customer_Plant> rdf:type owl:Class .
+<http://www.w3id.org/ecsel-dr-OM#Customer_Plant> rdf:type owl:Class ;
+                                                 rdfs:label "Customer Plant" .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Customer_Plant_Data
-<http://www.w3id.org/ecsel-dr-OM#Customer_Plant_Data> rdf:type owl:Class .
+<http://www.w3id.org/ecsel-dr-OM#Customer_Plant_Data> rdf:type owl:Class ;
+                                                      rdfs:label "Customer Plant Data" .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Demand_Fulfillement
 <http://www.w3id.org/ecsel-dr-OM#Demand_Fulfillement> rdf:type owl:Class ;
-                                                      rdfs:comment "The process of meeting a customer’s demand for product or services by fulfilling their request."@en .
+                                                      rdfs:comment "The process of meeting a customer’s demand for product or services by fulfilling their request."@en ;
+                                                      rdfs:label "Demand Fulfillement" .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Open_Order
@@ -10528,7 +10560,7 @@ ecsel-dr-AT:uPnP rdf:type owl:Class ;
 <http://www.w3id.org/ecsel-dr-OM#User_Action> rdf:type owl:Class ;
                                               owl:equivalentClass [ rdf:type owl:Class ;
                                                                     owl:oneOf ( <http://www.w3id.org/ecsel-dr-OM#Accepted>
-                                                                                <http://www.w3id.org/ecsel-dr-OM#AcceptedWithChange>
+                                                                                <http://www.w3id.org/ecsel-dr-OM#Accepted_With_Change>
                                                                                 <http://www.w3id.org/ecsel-dr-OM#Rejected>
                                                                               )
                                                                   ] .
@@ -10596,22 +10628,19 @@ ecsel-dr-OOSMP:Business_Line rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Completely_Lead_Free_Status
 ecsel-dr-OOSMP:Completely_Lead_Free_Status rdf:type owl:Class ;
                                            owl:equivalentClass [ rdf:type owl:Class ;
-                                                                 owl:oneOf ( ecsel-dr-OOSMP:CompletelyLeadFree_Status
-                                                                             ecsel-dr-OOSMP:NotCompletelyLeadFree_Status
+                                                                 owl:oneOf ( ecsel-dr-OOSMP:Completely_Lead_Free_Status
+                                                                             ecsel-dr-OOSMP:Not_Completely_Lead_Free_Status
                                                                            )
                                                                ] ;
-                                           rdfs:subClassOf ecsel-dr-OOSMP:Semiconductor_Product_Status ;
-                                           rdfs:comment "This status determines whether a semiconductor product is lead free or not."@en ;
-                                           rdfs:label "Completely Lead Free Status"@en ;
-                                           skos:prefLabel "Completely Lead Free Status"@en .
+                                           rdfs:subClassOf ecsel-dr-OOSMP:Semiconductor_Product_Status .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Design_Target
 ecsel-dr-OOSMP:Design_Target rdf:type owl:Class ;
                              owl:equivalentClass [ rdf:type owl:Class ;
-                                                   owl:oneOf ( ecsel-dr-OOSMP:Allrounder_DesignTarget
-                                                               ecsel-dr-OOSMP:EasyToDesign_DesignTarget
-                                                               ecsel-dr-OOSMP:FlexibleToDesign_DesignTarget
+                                                   owl:oneOf ( ecsel-dr-OOSMP:Allrounder_Design_Target
+                                                               ecsel-dr-OOSMP:Easy_To_Design_Design_Target
+                                                               ecsel-dr-OOSMP:Flexible_To_Design_Design_Target
                                                              )
                                                  ] ;
                              rdfs:comment "Semiconductor solutions are design for different purposes, with different design goals respectively. Design targets comprise \"flexible to design\", \"easy to design\" and \"allrounder\"."@en ;
@@ -10666,14 +10695,11 @@ ecsel-dr-OOSMP:Hall_Switch rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Halogen_Free_Status
 ecsel-dr-OOSMP:Halogen_Free_Status rdf:type owl:Class ;
                                    owl:equivalentClass [ rdf:type owl:Class ;
-                                                         owl:oneOf ( ecsel-dr-OOSMP:HalogenFree_Status
-                                                                     ecsel-dr-OOSMP:NotHalogenFree_Status
+                                                         owl:oneOf ( ecsel-dr-OOSMP:Halogen_Free_Status
+                                                                     ecsel-dr-OOSMP:Not_Halogen_Free_Status
                                                                    )
                                                        ] ;
-                                   rdfs:subClassOf ecsel-dr-OOSMP:Semiconductor_Product_Status ;
-                                   rdfs:comment "This status determines whether a semiconductor product is halogen free or not."@en ;
-                                   rdfs:label "Halogen Free Status"@en ;
-                                   skos:prefLabel "Halogen Free Status"@en .
+                                   rdfs:subClassOf ecsel-dr-OOSMP:Semiconductor_Product_Status .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Industry
@@ -10696,11 +10722,11 @@ ecsel-dr-OOSMP:Integrated_Pressure_Sensor rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Integration_Level
 ecsel-dr-OOSMP:Integration_Level rdf:type owl:Class ;
                                  owl:equivalentClass [ rdf:type owl:Class ;
-                                                       owl:oneOf ( ecsel-dr-OOSMP:Discrete_SolutionIntegrationLevel
-                                                                   ecsel-dr-OOSMP:FullyIntegrated_SolutionIntegrationLevel
-                                                                   ecsel-dr-OOSMP:IntegratedControllerDriver_SolutionIntegrationLevel
-                                                                   ecsel-dr-OOSMP:IntegratedDriverPowerStage_SolutionIntegrationLevel
-                                                                   ecsel-dr-OOSMP:IntegratedPowerStage_SolutionIntegrationLevel
+                                                       owl:oneOf ( ecsel-dr-OOSMP:Discrete_Solution_Integration_Level
+                                                                   ecsel-dr-OOSMP:Fully_Integrated_Solution_Integration_Level
+                                                                   ecsel-dr-OOSMP:Integrated_Controller_Driver_Solution_Integration_Level
+                                                                   ecsel-dr-OOSMP:Integrated_Driver-Power_Stage_Solution_Integration_Level
+                                                                   ecsel-dr-OOSMP:Integrated_Power_Stage_Solution_Integration_Level
                                                                  )
                                                      ] ;
                                  rdfs:comment "Each motor control and drive solution has an integration level which states if the different stage are built in an integrated or discrete way. The stages of a motor control and drive solution are \"Controller\", \"Driver\", \"Power Stage\". Following this, the different integration levels are \"discrete\" (not integrated), \"fully integrated\", \"integrated controller driver\", \"integrated driver power stage\", \"integrated power stage\"."@en ;
@@ -10762,9 +10788,9 @@ ecsel-dr-OOSMP:Main_Application rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Main_Power_Device_Type
 ecsel-dr-OOSMP:Main_Power_Device_Type rdf:type owl:Class ;
                                       owl:equivalentClass [ rdf:type owl:Class ;
-                                                            owl:oneOf ( ecsel-dr-OOSMP:IGBT_MainPowerDeviceType
-                                                                        ecsel-dr-OOSMP:MOSFET_MainPowerDeviceType
-                                                                        ecsel-dr-OOSMP:Relay_MainPowerDeviceType
+                                                            owl:oneOf ( ecsel-dr-OOSMP:IGBT_Main_Power_Device_Type
+                                                                        ecsel-dr-OOSMP:MOSFET_Main_Power_Device_Type
+                                                                        ecsel-dr-OOSMP:Relay_Main_Power_Device_Type
                                                                       )
                                                           ] ;
                                       rdfs:comment "Each motor control and drive solution has a main power device type. Main power device type can be an \"IGBT\", \"MOSFET\" or \"Relay\"."@en ;
@@ -10839,11 +10865,11 @@ ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution_Without_Sensor rdf:type owl:Clas
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Motor_Type
 ecsel-dr-OOSMP:Motor_Type rdf:type owl:Class ;
                           owl:equivalentClass [ rdf:type owl:Class ;
-                                                owl:oneOf ( ecsel-dr-OOSMP:BrushedDC_MotorType
-                                                            ecsel-dr-OOSMP:Induction_MotorType
-                                                            ecsel-dr-OOSMP:PMSM_BLDC_MotorType
-                                                            ecsel-dr-OOSMP:PermanentMagnetStepper_MotorType
-                                                            ecsel-dr-OOSMP:SwitchedReluctance_MotorType
+                                                owl:oneOf ( ecsel-dr-OOSMP:BrushedDC_Motor_Type
+                                                            ecsel-dr-OOSMP:Induction_Motor_Type
+                                                            ecsel-dr-OOSMP:PMSM_BLDC_Motor_Type
+                                                            ecsel-dr-OOSMP:Permanent_Magnet_Stepper_Motor_Type
+                                                            ecsel-dr-OOSMP:Switched_Reluctance_Motor_Type
                                                           )
                                               ] ;
                           rdfs:comment "Each motor control and drive solution has a motor type. The different motor types that exist are \"brushed DC\", \"induction\", \"permanent magnet stepper\", \"PMSM BLDC\" and \"switched reluctance\"."@en ;
@@ -10854,8 +10880,8 @@ ecsel-dr-OOSMP:Motor_Type rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Mounting_Style
 ecsel-dr-OOSMP:Mounting_Style rdf:type owl:Class ;
                               owl:equivalentClass [ rdf:type owl:Class ;
-                                                    owl:oneOf ( ecsel-dr-OOSMP:SMDSMT_MountingStyle
-                                                                ecsel-dr-OOSMP:ThroughHole_MountingStyle
+                                                    owl:oneOf ( ecsel-dr-OOSMP:SMDSMT_Mounting_Style
+                                                                ecsel-dr-OOSMP:Through_Hole_Mounting_Style
                                                               )
                                                   ] ;
                               rdfs:comment "Each sensor has a specific mounting style. A mounting style can either be a \"SMDSMT\" or \"Through Hole\"."@en ;
@@ -10866,10 +10892,10 @@ ecsel-dr-OOSMP:Mounting_Style rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-OOSMP#OPN_Status
 ecsel-dr-OOSMP:OPN_Status rdf:type owl:Class ;
                           owl:equivalentClass [ rdf:type owl:Class ;
-                                                owl:oneOf ( ecsel-dr-OOSMP:ActiveAndPreferred_OPNStatus
-                                                            ecsel-dr-OOSMP:Active_OPNStatus
-                                                            ecsel-dr-OOSMP:Discontinued_OPNStatus
-                                                            ecsel-dr-OOSMP:NotForNewDesign_OPNStatus
+                                                owl:oneOf ( ecsel-dr-OOSMP:Active_And_Preferred_OPN_Status
+                                                            ecsel-dr-OOSMP:Active_OPN_Status
+                                                            ecsel-dr-OOSMP:Discontinued_OPN_Status
+                                                            ecsel-dr-OOSMP:Not_For_New_Design_OPN_Status
                                                           )
                                               ] ;
                           rdfs:subClassOf ecsel-dr-OOSMP:Semiconductor_Product_Status ;
@@ -10904,9 +10930,9 @@ ecsel-dr-OOSMP:Pressure_Sensor rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Price_Indication
 ecsel-dr-OOSMP:Price_Indication rdf:type owl:Class ;
                                 owl:equivalentClass [ rdf:type owl:Class ;
-                                                      owl:oneOf ( ecsel-dr-OOSMP:HighPrice_PriceIndication
-                                                                  ecsel-dr-OOSMP:LowPrice_PriceIndication
-                                                                  ecsel-dr-OOSMP:MediumPrice_PriceIndication
+                                                      owl:oneOf ( ecsel-dr-OOSMP:High_Price_Price_Indication
+                                                                  ecsel-dr-OOSMP:Low_Price_Price_Indication
+                                                                  ecsel-dr-OOSMP:Medium_Price_Price_Indication
                                                                 )
                                                     ] ;
                                 rdfs:comment "A price indication helps the customer to evaluate the price of an item. A price indication can be \"high\", \"low\", or \"medium\"."@en ;
@@ -10958,14 +10984,11 @@ ecsel-dr-OOSMP:Radar rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Ro_HS_Compliant_Status
 ecsel-dr-OOSMP:Ro_HS_Compliant_Status rdf:type owl:Class ;
                                       owl:equivalentClass [ rdf:type owl:Class ;
-                                                            owl:oneOf ( ecsel-dr-OOSMP:NotRoHSCompliant_Status
-                                                                        ecsel-dr-OOSMP:RoHSCompliant_Status
+                                                            owl:oneOf ( ecsel-dr-OOSMP:Not_Ro_HS_Compliant_Status
+                                                                        ecsel-dr-OOSMP:Ro_HS_Compliant_Status
                                                                       )
                                                           ] ;
-                                      rdfs:subClassOf ecsel-dr-OOSMP:Semiconductor_Product_Status ;
-                                      rdfs:comment "This status determines whether a product is RoHS compliant or not."@en ;
-                                      rdfs:label "RoHS Compliant Status"@en ;
-                                      skos:prefLabel "RoHS Compliant Status"@en .
+                                      rdfs:subClassOf ecsel-dr-OOSMP:Semiconductor_Product_Status .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Semiconductor_Product
@@ -10994,8 +11017,8 @@ ecsel-dr-OOSMP:Semiconductor_Solution rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Sensing_Type
 ecsel-dr-OOSMP:Sensing_Type rdf:type owl:Class ;
                             owl:equivalentClass [ rdf:type owl:Class ;
-                                                  owl:oneOf ( ecsel-dr-OOSMP:WithSensor_SensingType
-                                                              ecsel-dr-OOSMP:WithoutSensor_SensingType
+                                                  owl:oneOf ( ecsel-dr-OOSMP:With_Sensor_Sensing_Type
+                                                              ecsel-dr-OOSMP:Without_Sensor_Sensing_Type
                                                             )
                                                 ] ;
                             rdfs:comment "The sensing type of a semiconductor solution determines whether a semiconductor solution contains a sensor (\"WithSensor\") or not (\"WithoutSensor)."@en ;
@@ -11056,12 +11079,12 @@ ecsel-dr-OOSMP:Sub_Application rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Topology
 ecsel-dr-OOSMP:Topology rdf:type owl:Class ;
                         owl:equivalentClass [ rdf:type owl:Class ;
-                                              owl:oneOf ( ecsel-dr-OOSMP:HBridge_Topology
-                                                          ecsel-dr-OOSMP:HalfBridge_Topology
-                                                          ecsel-dr-OOSMP:HighSide_Topology
-                                                          ecsel-dr-OOSMP:LowSide_Topology
+                                              owl:oneOf ( ecsel-dr-OOSMP:H_Bridge_Topology
+                                                          ecsel-dr-OOSMP:Half_Bridge_Topology
+                                                          ecsel-dr-OOSMP:High_Side_Topology
+                                                          ecsel-dr-OOSMP:Low_Side_Topology
                                                           ecsel-dr-OOSMP:Relay_Topology
-                                                          ecsel-dr-OOSMP:_3Phase_Topology
+                                                          <http://www.w3id.org/ecsel-dr-OOSMP#3Phase_Topology>
                                                         )
                                             ] ;
                         rdfs:comment "Topology describes the arrangement and the amount of chips in a semiconductor solution. A toplogy can be \"3 phase\", \"half bridge\", \"h-bridge\", \"high side\", \"low side\" and \"relay\"."@en ;
@@ -11141,8 +11164,8 @@ of linear, rotation or 3 dimensional movements."""@en ;
                                                   owl:equivalentClass [ rdf:type owl:Class ;
                                                                         owl:oneOf ( <http://www.w3id.org/ecsel-dr-ORG#Idea>
                                                                                     <http://www.w3id.org/ecsel-dr-ORG#Implemented>
-                                                                                    <http://www.w3id.org/ecsel-dr-ORG#InPreperation>
-                                                                                    <http://www.w3id.org/ecsel-dr-ORG#OnHold>
+                                                                                    <http://www.w3id.org/ecsel-dr-ORG#In_Preperation>
+                                                                                    <http://www.w3id.org/ecsel-dr-ORG#On_Hold>
                                                                                     <http://www.w3id.org/ecsel-dr-ORG#Running>
                                                                                     <http://www.w3id.org/ecsel-dr-ORG#Withdrawn>
                                                                                   )
@@ -12535,7 +12558,8 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Sensing""" ;
 <http://www.w3id.org/ecsel-dr-PWR#Voltage_Controlled> rdf:type owl:Class ;
                                                       rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Control_Method> ;
                                                       rdfs:comment "by applying the voltage between Gate and Sourcet o turn on, turn off the MOSFET, and  increaseing, decreasing  the MOSFET output current." ;
-                                                      rdfs:isDefinedBy "rdfs:isDefinedBy" .
+                                                      rdfs:isDefinedBy "rdfs:isDefinedBy" ;
+                                                      rdfs:label "Voltage Controlled" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Weight
@@ -12607,7 +12631,8 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Sensing""" ;
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Admin_Shell
-ecsel-dr-RAMI40:Admin_Shell rdf:type owl:Class .
+ecsel-dr-RAMI40:Admin_Shell rdf:type owl:Class ;
+                            rdfs:label "Admin Shell" .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Asset
@@ -12616,7 +12641,8 @@ ecsel-dr-RAMI40:Asset rdf:type owl:Class .
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Date
 ecsel-dr-RAMI40:Date rdf:type owl:Class ;
-                     rdfs:comment "A numbered day in a month, often given with a combination of the name of the day, the month, and the year"@en .
+                     rdfs:comment "A numbered day in a month, often given with a combination of the name of the day, the month, and the year"@en ;
+                     rdfs:label "Date" .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Dimension
@@ -12765,7 +12791,8 @@ ecsel-dr-RAMI40:Transport_Interface rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Used_Date
 ecsel-dr-RAMI40:Used_Date rdf:type owl:Class ;
-                          rdfs:subClassOf ecsel-dr-RAMI40:Date .
+                          rdfs:subClassOf ecsel-dr-RAMI40:Date ;
+                          rdfs:label "Used Date" .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Version
@@ -12797,7 +12824,7 @@ ecsel-dr-RAMI40:View rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-SCP#Aggregated_Capacity
 <http://www.w3id.org/ecsel-dr-SCP#Aggregated_Capacity> rdf:type owl:Class ;
                                                        rdfs:comment "(restricted) The Aggregated Capacity Group combines products that are interchangeable in production resources (e.g. can be produced on the same equipment) and having the same capacity consumption. Using an ACG provides flexibility in a way of switching demands of this products within this ACG."@en ;
-                                                       rdfs:label "AggregatedCapacity"@en .
+                                                       rdfs:label "Aggregated Capacity"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Allocated_Available_To_Promise
@@ -12805,13 +12832,13 @@ ecsel-dr-RAMI40:View rdf:type owl:Class ;
                                                                   rdfs:comment """AATP  is a data mart  that shows data from GOAL AATP process, combining data from 3 sources: SAP, I2 Applications and LogDB. 
 
 The universe provides access to the fact tables delivered by GOAL like Availability / Allocation Planning / Seller Mapping / Coverage."""@en ;
-                                                                  rdfs:label "Allocated Available to Promise"@en .
+                                                                  rdfs:label "Allocated Available To Promise"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Available_To_Promise
 <http://www.w3id.org/ecsel-dr-SCP#Available_To_Promise> rdf:type owl:Class ;
                                                         rdfs:comment "Available to promise is a business function that provides a response to customer order inquiries, based on resource availability. It generates available quantities of the requested product, and delivery due dates."@en ;
-                                                        rdfs:label "Available to Promise"@en .
+                                                        rdfs:label "Available To Promise"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Bottleneck_Resource
@@ -12836,7 +12863,7 @@ The universe provides access to the fact tables delivered by GOAL like Availabil
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Capacity_Bottleneck
 <http://www.w3id.org/ecsel-dr-SCP#Capacity_Bottleneck> rdf:type owl:Class ;
-                                                       rdfs:label "CapacityBottleneck"@en .
+                                                       rdfs:label "Capacity Bottleneck"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Confirmation
@@ -12857,7 +12884,7 @@ The supplier (Vendor) is responsible to maintain his stock within a defined min/
 ###  http://www.w3id.org/ecsel-dr-SCP#Customer
 <http://www.w3id.org/ecsel-dr-SCP#Customer> rdf:type owl:Class ;
                                             rdfs:comment "A person or entity that buys goods or services  from a shop or business."@en ;
-                                            rdfs:label "Customers"@en .
+                                            rdfs:label "Customer"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#DB
@@ -12891,7 +12918,7 @@ The supplier (Vendor) is responsible to maintain his stock within a defined min/
 ###  http://www.w3id.org/ecsel-dr-SCP#General_Customer
 <http://www.w3id.org/ecsel-dr-SCP#General_Customer> rdf:type owl:Class ;
                                                     rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SCP#Customer> ;
-                                                    rdfs:label "GeneralCustomers"@en .
+                                                    rdfs:label "General Customers"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#HP_Forecast
@@ -12984,7 +13011,7 @@ The supplier (Vendor) is responsible to maintain his stock within a defined min/
 ###  http://www.w3id.org/ecsel-dr-SCP#Private_Customer
 <http://www.w3id.org/ecsel-dr-SCP#Private_Customer> rdf:type owl:Class ;
                                                     rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SCP#Customer> ;
-                                                    rdfs:label "PrivateCustomers"@en .
+                                                    rdfs:label "Private Customers"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Promise
@@ -13530,16 +13557,16 @@ foaf:Person rdf:type owl:Class ;
 <http://www.opengis.net/def/uom/ISO-8601/0/Gregorian> rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3.org/2006/time#unitMonth
-time:unitMonth rdf:type owl:NamedIndividual .
+###  http://www.w3.org/2006/time#Unit_Month
+time:Unit_Month rdf:type owl:NamedIndividual .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Accepted
 <http://www.w3id.org/ecsel-dr-OM#Accepted> rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OM#AcceptedWithChange
-<http://www.w3id.org/ecsel-dr-OM#AcceptedWithChange> rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OM#Accepted_With_Change
+<http://www.w3id.org/ecsel-dr-OM#Accepted_With_Change> rdf:type owl:NamedIndividual .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Pull
@@ -13558,168 +13585,168 @@ time:unitMonth rdf:type owl:NamedIndividual .
 <http://www.w3id.org/ecsel-dr-OM#Rejected> rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#ActiveAndPreferred_OPNStatus
-ecsel-dr-OOSMP:ActiveAndPreferred_OPNStatus rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#Active_And_Preferred_OPN_Status
+ecsel-dr-OOSMP:Active_And_Preferred_OPN_Status rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#Active_OPNStatus
-ecsel-dr-OOSMP:Active_OPNStatus rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#Active_OPN_Status
+ecsel-dr-OOSMP:Active_OPN_Status rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#Allrounder_DesignTarget
-ecsel-dr-OOSMP:Allrounder_DesignTarget rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#Allrounder_Design_Target
+ecsel-dr-OOSMP:Allrounder_Design_Target rdf:type owl:NamedIndividual .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Automotive_Qualification
 ecsel-dr-OOSMP:Automotive_Qualification rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#BrushedDC_MotorType
-ecsel-dr-OOSMP:BrushedDC_MotorType rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#BrushedDC_Motor_Type
+ecsel-dr-OOSMP:BrushedDC_Motor_Type rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#CompletelyLeadFree_Status
-ecsel-dr-OOSMP:CompletelyLeadFree_Status rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#Completely_Lead_Free_Status
+ecsel-dr-OOSMP:Completely_Lead_Free_Status rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#Discontinued_OPNStatus
-ecsel-dr-OOSMP:Discontinued_OPNStatus rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#Discontinued_OPN_Status
+ecsel-dr-OOSMP:Discontinued_OPN_Status rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#Discrete_SolutionIntegrationLevel
-ecsel-dr-OOSMP:Discrete_SolutionIntegrationLevel rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#Discrete_Solution_Integration_Level
+ecsel-dr-OOSMP:Discrete_Solution_Integration_Level rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#EasyToDesign_DesignTarget
-ecsel-dr-OOSMP:EasyToDesign_DesignTarget rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#Easy_To_Design_Design_Target
+ecsel-dr-OOSMP:Easy_To_Design_Design_Target rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#FlexibleToDesign_DesignTarget
-ecsel-dr-OOSMP:FlexibleToDesign_DesignTarget rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#Flexible_To_Design_Design_Target
+ecsel-dr-OOSMP:Flexible_To_Design_Design_Target rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#FullyIntegrated_SolutionIntegrationLevel
-ecsel-dr-OOSMP:FullyIntegrated_SolutionIntegrationLevel rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#Fully_Integrated_Solution_Integration_Level
+ecsel-dr-OOSMP:Fully_Integrated_Solution_Integration_Level rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#HBridge_Topology
-ecsel-dr-OOSMP:HBridge_Topology rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#H_Bridge_Topology
+ecsel-dr-OOSMP:H_Bridge_Topology rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#HalfBridge_Topology
-ecsel-dr-OOSMP:HalfBridge_Topology rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#Half_Bridge_Topology
+ecsel-dr-OOSMP:Half_Bridge_Topology rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#HalogenFree_Status
-ecsel-dr-OOSMP:HalogenFree_Status rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#Halogen_Free_Status
+ecsel-dr-OOSMP:Halogen_Free_Status rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#HighPrice_PriceIndication
-ecsel-dr-OOSMP:HighPrice_PriceIndication rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#High_Price_Price_Indication
+ecsel-dr-OOSMP:High_Price_Price_Indication rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#HighSide_Topology
-ecsel-dr-OOSMP:HighSide_Topology rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#High_Side_Topology
+ecsel-dr-OOSMP:High_Side_Topology rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#IGBT_MainPowerDeviceType
-ecsel-dr-OOSMP:IGBT_MainPowerDeviceType rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#IGBT_Main_Power_Device_Type
+ecsel-dr-OOSMP:IGBT_Main_Power_Device_Type rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#Induction_MotorType
-ecsel-dr-OOSMP:Induction_MotorType rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#Induction_Motor_Type
+ecsel-dr-OOSMP:Induction_Motor_Type rdf:type owl:NamedIndividual .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Industrial_Qualification
 ecsel-dr-OOSMP:Industrial_Qualification rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#IntegratedControllerDriver_SolutionIntegrationLevel
-ecsel-dr-OOSMP:IntegratedControllerDriver_SolutionIntegrationLevel rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#Integrated_Controller_Driver_Solution_Integration_Level
+ecsel-dr-OOSMP:Integrated_Controller_Driver_Solution_Integration_Level rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#IntegratedDriverPowerStage_SolutionIntegrationLevel
-ecsel-dr-OOSMP:IntegratedDriverPowerStage_SolutionIntegrationLevel rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#Integrated_Driver-Power_Stage_Solution_Integration_Level
+ecsel-dr-OOSMP:Integrated_Driver-Power_Stage_Solution_Integration_Level rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#IntegratedPowerStage_SolutionIntegrationLevel
-ecsel-dr-OOSMP:IntegratedPowerStage_SolutionIntegrationLevel rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#Integrated_Power_Stage_Solution_Integration_Level
+ecsel-dr-OOSMP:Integrated_Power_Stage_Solution_Integration_Level rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#LowPrice_PriceIndication
-ecsel-dr-OOSMP:LowPrice_PriceIndication rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#Low_Price_Price_Indication
+ecsel-dr-OOSMP:Low_Price_Price_Indication rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#LowSide_Topology
-ecsel-dr-OOSMP:LowSide_Topology rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#Low_Side_Topology
+ecsel-dr-OOSMP:Low_Side_Topology rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#MOSFET_MainPowerDeviceType
-ecsel-dr-OOSMP:MOSFET_MainPowerDeviceType rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#MOSFET_Main_Power_Device_Type
+ecsel-dr-OOSMP:MOSFET_Main_Power_Device_Type rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#MediumPrice_PriceIndication
-ecsel-dr-OOSMP:MediumPrice_PriceIndication rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#Medium_Price_Price_Indication
+ecsel-dr-OOSMP:Medium_Price_Price_Indication rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#NotCompletelyLeadFree_Status
-ecsel-dr-OOSMP:NotCompletelyLeadFree_Status rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#Not_Completely_Lead_Free_Status
+ecsel-dr-OOSMP:Not_Completely_Lead_Free_Status rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#NotForNewDesign_OPNStatus
-ecsel-dr-OOSMP:NotForNewDesign_OPNStatus rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#Not_For_New_Design_OPN_Status
+ecsel-dr-OOSMP:Not_For_New_Design_OPN_Status rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#NotHalogenFree_Status
-ecsel-dr-OOSMP:NotHalogenFree_Status rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#Not_Halogen_Free_Status
+ecsel-dr-OOSMP:Not_Halogen_Free_Status rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#NotRoHSCompliant_Status
-ecsel-dr-OOSMP:NotRoHSCompliant_Status rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#Not_Ro_HS_Compliant_Status
+ecsel-dr-OOSMP:Not_Ro_HS_Compliant_Status rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#PMSM_BLDC_MotorType
-ecsel-dr-OOSMP:PMSM_BLDC_MotorType rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#PMSM_BLDC_Motor_Type
+ecsel-dr-OOSMP:PMSM_BLDC_Motor_Type rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#PermanentMagnetStepper_MotorType
-ecsel-dr-OOSMP:PermanentMagnetStepper_MotorType rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#Permanent_Magnet_Stepper_Motor_Type
+ecsel-dr-OOSMP:Permanent_Magnet_Stepper_Motor_Type rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#Relay_MainPowerDeviceType
-ecsel-dr-OOSMP:Relay_MainPowerDeviceType rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#Relay_Main_Power_Device_Type
+ecsel-dr-OOSMP:Relay_Main_Power_Device_Type rdf:type owl:NamedIndividual .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Relay_Topology
 ecsel-dr-OOSMP:Relay_Topology rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#RoHSCompliant_Status
-ecsel-dr-OOSMP:RoHSCompliant_Status rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#Ro_HS_Compliant_Status
+ecsel-dr-OOSMP:Ro_HS_Compliant_Status rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#SMDSMT_MountingStyle
-ecsel-dr-OOSMP:SMDSMT_MountingStyle rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#SMDSMT_Mounting_Style
+ecsel-dr-OOSMP:SMDSMT_Mounting_Style rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#SwitchedReluctance_MotorType
-ecsel-dr-OOSMP:SwitchedReluctance_MotorType rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#Switched_Reluctance_Motor_Type
+ecsel-dr-OOSMP:Switched_Reluctance_Motor_Type rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#ThroughHole_MountingStyle
-ecsel-dr-OOSMP:ThroughHole_MountingStyle rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#Through_Hole_Mounting_Style
+ecsel-dr-OOSMP:Through_Hole_Mounting_Style rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#WithSensor_SensingType
-ecsel-dr-OOSMP:WithSensor_SensingType rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#With_Sensor_Sensing_Type
+ecsel-dr-OOSMP:With_Sensor_Sensing_Type rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#WithoutSensor_SensingType
-ecsel-dr-OOSMP:WithoutSensor_SensingType rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#Without_Sensor_Sensing_Type
+ecsel-dr-OOSMP:Without_Sensor_Sensing_Type rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#_3Phase_Topology
-ecsel-dr-OOSMP:_3Phase_Topology rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-OOSMP#3Phase_Topology
+<http://www.w3id.org/ecsel-dr-OOSMP#3Phase_Topology> rdf:type owl:NamedIndividual .
 
 
 ###  http://www.w3id.org/ecsel-dr-ORG#Autobahn
@@ -13738,16 +13765,16 @@ ecsel-dr-OOSMP:_3Phase_Topology rdf:type owl:NamedIndividual .
 <http://www.w3id.org/ecsel-dr-ORG#Implemented> rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-ORG#InPreperation
-<http://www.w3id.org/ecsel-dr-ORG#InPreperation> rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-ORG#In_Preperation
+<http://www.w3id.org/ecsel-dr-ORG#In_Preperation> rdf:type owl:NamedIndividual .
 
 
 ###  http://www.w3id.org/ecsel-dr-ORG#Mission
 <http://www.w3id.org/ecsel-dr-ORG#Mission> rdf:type owl:NamedIndividual .
 
 
-###  http://www.w3id.org/ecsel-dr-ORG#OnHold
-<http://www.w3id.org/ecsel-dr-ORG#OnHold> rdf:type owl:NamedIndividual .
+###  http://www.w3id.org/ecsel-dr-ORG#On_Hold
+<http://www.w3id.org/ecsel-dr-ORG#On_Hold> rdf:type owl:NamedIndividual .
 
 
 ###  http://www.w3id.org/ecsel-dr-ORG#Running
@@ -13848,6 +13875,25 @@ ecsel-dr-RAMI40:Work_Center rdf:type owl:NamedIndividual .
 
 [ owl:maxCardinality "1"^^xsd:nonNegativeInteger
 ] .
+
+#################################################################
+#    Annotations
+#################################################################
+
+ecsel-dr-OOSMP:Completely_Lead_Free_Status skos:prefLabel "Completely Lead Free Status"@en ;
+                                            rdfs:label "Completely Lead Free Status"@en ;
+                                            rdfs:comment "This status determines whether a semiconductor product is lead free or not."@en .
+
+
+ecsel-dr-OOSMP:Halogen_Free_Status rdfs:comment "This status determines whether a semiconductor product is halogen free or not."@en ;
+                                   skos:prefLabel "Halogen Free Status"@en ;
+                                   rdfs:label "Halogen Free Status"@en .
+
+
+ecsel-dr-OOSMP:Ro_HS_Compliant_Status rdfs:label "RoHS Compliant Status"@en ;
+                                      rdfs:comment "This status determines whether a product is RoHS compliant or not."@en ;
+                                      skos:prefLabel "RoHS Compliant Status"@en .
+
 
 #################################################################
 #    Rules

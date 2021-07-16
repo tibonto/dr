@@ -1904,8 +1904,8 @@ ecsel-dr-AT:has_implementation_technology rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-AT#has_service_description_language
 ecsel-dr-AT:has_service_description_language rdf:type owl:ObjectProperty ;
                                              owl:inverseOf ecsel-dr-AT:is_service_description_language_of ;
-                                             rdfs:domain ecsel-dr-AT:Service_Oriented_Architecture ;
-                                             rdfs:range ecsel-dr-AT:W3C_L_5_Data_Semantics .
+                                             rdfs:domain ecsel-dr-AT:Service_Oriented_Architecture_Protocols ;
+                                             rdfs:range ecsel-dr-AT:W3C_L5_Data_Semantics .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#has_vendor
@@ -1992,7 +1992,7 @@ ecsel-dr-AT:used_in_ISA_95_communication rdf:type owl:ObjectProperty ;
                                                        owl:unionOf ( ecsel-dr-AT:OSI_1_2_Net_Access_Technology
                                                                      ecsel-dr-AT:OSI_3_4_Network_Technology
                                                                      ecsel-dr-AT:OSI_5_7_Application_Protocol
-                                                                     ecsel-dr-AT:Service_Oriented_Architecture
+                                                                     ecsel-dr-AT:Service_Oriented_Architecture_Protocols
                                                                    )
                                                      ] ;
                                          rdfs:range [ rdf:type owl:Class ;
@@ -3198,7 +3198,7 @@ ecsel-dr-OOSMP:sub_unit_of_division rdf:type owl:ObjectProperty ;
                                               owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#relevant_to> ;
                                               rdfs:domain [ rdf:type owl:Class ;
                                                             owl:unionOf ( <http://www.w3id.org/ecsel-dr-PMV#Business_Process_Flow>
-                                                                          <http://www.w3id.org/ecsel-dr-PMV#VACD>
+                                                                          <http://www.w3id.org/ecsel-dr-PMV#Value_Added_Chain_Diagram>
                                                                         )
                                                           ] ;
                                               rdfs:range [ rdf:type owl:Class ;
@@ -3277,7 +3277,7 @@ ecsel-dr-OOSMP:sub_unit_of_division rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-PMV#has_subordinate
 <http://www.w3id.org/ecsel-dr-PMV#has_subordinate> rdf:type owl:ObjectProperty ;
                                                    owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#has_superior> ;
-                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#VACD> ;
+                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Value_Added_Chain_Diagram> ;
                                                    rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Business_Process_Flow> ;
                                                    rdfs:comment "Value-added chain diagrams have EPCs as subordinates. The connector is used to represent the hierarchical order." ;
                                                    rdfs:label "hasSubordinate" ;
@@ -3287,8 +3287,8 @@ ecsel-dr-OOSMP:sub_unit_of_division rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-PMV#has_subordinate_VACD
 <http://www.w3id.org/ecsel-dr-PMV#has_subordinate_VACD> rdf:type owl:ObjectProperty ;
                                                         owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#has_superior_VACD> ;
-                                                        rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#VACD> ;
-                                                        rdfs:range <http://www.w3id.org/ecsel-dr-PMV#VACD> ;
+                                                        rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Value_Added_Chain_Diagram> ;
+                                                        rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Value_Added_Chain_Diagram> ;
                                                         rdfs:comment "Value-added chain diagrams have value-added chain diagrams as subordinates. The connector is used to represent the hierarchical order." ;
                                                         rdfs:label "hasSubordinateVACD" ;
                                                         skos:altLabel "subordin vacd" .
@@ -3297,7 +3297,7 @@ ecsel-dr-OOSMP:sub_unit_of_division rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-PMV#has_superior
 <http://www.w3id.org/ecsel-dr-PMV#has_superior> rdf:type owl:ObjectProperty ;
                                                 rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Business_Process_Flow> ;
-                                                rdfs:range <http://www.w3id.org/ecsel-dr-PMV#VACD> ;
+                                                rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Value_Added_Chain_Diagram> ;
                                                 rdfs:comment "EPCs have value-added chain diagrams as superior. The connector is used to represent the hierarchical order." ;
                                                 rdfs:label "hasSuperior" ;
                                                 skos:altLabel "superior" .
@@ -3305,8 +3305,8 @@ ecsel-dr-OOSMP:sub_unit_of_division rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-PMV#has_superior_VACD
 <http://www.w3id.org/ecsel-dr-PMV#has_superior_VACD> rdf:type owl:ObjectProperty ;
-                                                     rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#VACD> ;
-                                                     rdfs:range <http://www.w3id.org/ecsel-dr-PMV#VACD> ;
+                                                     rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Value_Added_Chain_Diagram> ;
+                                                     rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Value_Added_Chain_Diagram> ;
                                                      rdfs:comment "Value-added chain diagrams have another value-added chain diagram as superior. The connector is used to represent the hierarchical order." ;
                                                      rdfs:label "hasSuperiorVACD" ;
                                                      skos:altLabel "superior vacd" .
@@ -3496,7 +3496,7 @@ ecsel-dr-OOSMP:sub_unit_of_division rdf:type owl:ObjectProperty ;
                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Task> ,
                                                                  [ rdf:type owl:Class ;
                                                                    owl:unionOf ( <http://www.w3id.org/ecsel-dr-PMV#Business_Process_Flow>
-                                                                                 <http://www.w3id.org/ecsel-dr-PMV#VACD>
+                                                                                 <http://www.w3id.org/ecsel-dr-PMV#Value_Added_Chain_Diagram>
                                                                                )
                                                                  ] ;
                                                      rdfs:range <http://www.w3id.org/ecsel-dr-PMV#BP_Activity> ,
@@ -3645,7 +3645,7 @@ ecsel-dr-OOSMP:sub_unit_of_division rdf:type owl:ObjectProperty ;
                                                            ] ;
                                                rdfs:range [ rdf:type owl:Class ;
                                                             owl:unionOf ( <http://www.w3id.org/ecsel-dr-PMV#Business_Process_Flow>
-                                                                          <http://www.w3id.org/ecsel-dr-PMV#VACD>
+                                                                          <http://www.w3id.org/ecsel-dr-PMV#Value_Added_Chain_Diagram>
                                                                         )
                                                           ] ;
                                                rdfs:comment "An object is relevant for EPCs and value-added chain diagrams." ;
@@ -3660,7 +3660,7 @@ ecsel-dr-OOSMP:sub_unit_of_division rdf:type owl:ObjectProperty ;
                                               rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Task> ,
                                                          [ rdf:type owl:Class ;
                                                            owl:unionOf ( <http://www.w3id.org/ecsel-dr-PMV#Business_Process_Flow>
-                                                                         <http://www.w3id.org/ecsel-dr-PMV#VACD>
+                                                                         <http://www.w3id.org/ecsel-dr-PMV#Value_Added_Chain_Diagram>
                                                                        )
                                                          ] ;
                                               rdfs:comment "A aris:BPActivity is the graphical representation of a aris:VACD or aris:BPFlow in a aris:VACD." ;
@@ -4141,12 +4141,12 @@ ecsel-dr-RAMI40:is_part_of_asset rdf:type owl:ObjectProperty ;
 ecsel-dr-RAMI40:is_used_by_standard_organisation rdf:type owl:ObjectProperty ;
                                                  owl:inverseOf ecsel-dr-RAMI40:uses_standard ;
                                                  rdfs:domain ecsel-dr-RAMI40:Standard ;
-                                                 rdfs:range ecsel-dr-RAMI40:Standard_Organisation .
+                                                 rdfs:range ecsel-dr-RAMI40:Standard_Organization .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#uses_standard
 ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
-                              rdfs:domain ecsel-dr-RAMI40:Standard_Organisation ;
+                              rdfs:domain ecsel-dr-RAMI40:Standard_Organization ;
                               rdfs:range ecsel-dr-RAMI40:Standard ;
                               rdfs:comment "Points to the standards describing the functions attached to the asset via the administration shell"@en ;
                               rdfs:label "uses standard"@en .
@@ -4407,7 +4407,7 @@ ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
 <http://www.w3id.org/ecsel-dr-SO#has_WIP_station> rdf:type owl:ObjectProperty ;
                                                   owl:inverseOf <http://www.w3id.org/ecsel-dr-SO#is_WIP_station_of> ;
                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Capacity> ;
-                                                  rdfs:range <http://www.w3id.org/ecsel-dr-SO#WIP_Station> .
+                                                  rdfs:range <http://www.w3id.org/ecsel-dr-SO#Work_In_Progress_Station> .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#has_bottleneck
@@ -4871,7 +4871,7 @@ ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-SO#manually_loads
 <http://www.w3id.org/ecsel-dr-SO#manually_loads> rdf:type owl:ObjectProperty ;
                                                  rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Operator> ;
-                                                 rdfs:range <http://www.w3id.org/ecsel-dr-SO#WIP_Station> ;
+                                                 rdfs:range <http://www.w3id.org/ecsel-dr-SO#Work_In_Progress_Station> ;
                                                  rdfs:comment "the operator will load the wafer into the wip station and then the robot will load the wafers from the wip station to the tool" .
 
 
@@ -7127,7 +7127,8 @@ terms:Physical_Resource rdf:type owl:Class ;
 
 
 ###  http://purl.org/vocommons/voaf#Vocabulary
-<http://purl.org/vocommons/voaf#Vocabulary> rdf:type owl:Class .
+<http://purl.org/vocommons/voaf#Vocabulary> rdf:type owl:Class ;
+                                            rdfs:label "Vocabulary"@en .
 
 
 ###  http://www.ontologydesignpatterns.org/cp/owl/informationrealization.owl#Information_Object
@@ -7171,7 +7172,7 @@ time:Date_Time_Description rdf:type owl:Class ;
 time:Date_Time_Interval rdf:type owl:Class ;
                         rdfs:subClassOf time:Proper_Interval ;
                         rdfs:comment "DateTimeInterval is a subclass of ProperInterval, defined using the multi-element DateTimeDescription."@en ;
-                        rdfs:label "Date-time interval"@en ;
+                        rdfs:label "Date-time Interval"@en ;
                         skos:definition "DateTimeInterval is a subclass of ProperInterval, defined using the multi-element DateTimeDescription."@en ;
                         skos:note ":DateTimeInterval can only be used for an interval whose limits coincide with a date-time element aligned to the calendar and timezone indicated. For example, while both have a duration of one day, the 24-hour interval beginning at midnight at the beginning of 8 May in Central Europe can be expressed as a :DateTimeInterval, but the 24-hour interval starting at 1:30pm cannot."@en .
 
@@ -7180,7 +7181,7 @@ time:Date_Time_Interval rdf:type owl:Class ;
 time:Day_Of_Week rdf:type owl:Class ;
                  rdfs:subClassOf owl:Thing ;
                  rdfs:comment "The day of week"@en ;
-                 rdfs:label "Day of week"@en ;
+                 rdfs:label "Day Of Week"@en ;
                  skos:changeNote """Remove enumeration from definition, in order to allow other days to be used when required in other calendars. 
 NOTE: existing days are still present as members of the class, but the class membership is now open. 
 
@@ -7210,7 +7211,7 @@ time:Duration rdf:type owl:Class ;
                                 owl:cardinality "1"^^xsd:nonNegativeInteger
                               ] ;
               rdfs:comment "Duration of a temporal extent expressed as a number scaled by a temporal unit"@en ;
-              rdfs:label "Time duration"@en ;
+              rdfs:label "Time Duration"@en ;
               skos:definition "Duration of a temporal extent expressed as a number scaled by a temporal unit"@en ;
               skos:note "Alternative to time:DurationDescription to support description of a temporal duration other than using a calendar/clock system."@en .
 
@@ -7251,7 +7252,7 @@ time:Duration_Description rdf:type owl:Class ;
                                             owl:allValuesFrom xsd:decimal
                                           ] ;
                           rdfs:comment "Description of temporal extent structured with separate values for the various elements of a calendar-clock system. The temporal reference system is fixed to Gregorian Calendar, and the range of each of the numeric properties is restricted to xsd:decimal"@en ;
-                          rdfs:label "Duration description"@en ;
+                          rdfs:label "Duration Description"@en ;
                           skos:definition "Description of temporal extent structured with separate values for the various elements of a calendar-clock system. The temporal reference system is fixed to Gregorian Calendar, and the range of each of the numeric properties is restricted to xsd:decimal"@en ;
                           skos:note "In the Gregorian calendar the length of the month is not fixed. Therefore, a value like \"2.5 months\" cannot be exactly compared with a similar duration expressed in terms of weeks or days."@en .
 
@@ -7324,7 +7325,7 @@ time:General_Date_Time_Description rdf:type owl:Class ;
                                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                    ] ;
                                    rdfs:comment "Description of date and time structured with separate values for the various elements of a calendar-clock system"@en ;
-                                   rdfs:label "Generalized date-time description"@en ;
+                                   rdfs:label "Generalized Date-time Description"@en ;
                                    skos:definition "Description of date and time structured with separate values for the various elements of a calendar-clock system"@en ;
                                    skos:note "Some combinations of properties are redundant - for example, within a specified :year if :dayOfYear is provided then :day and :month can be computed, and vice versa. Individual values should be consistent with each other and the calendar, indicated through the value of the :hasTRS property." .
 
@@ -7365,7 +7366,7 @@ time:General_Duration_Description rdf:type owl:Class ;
                                                     owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                   ] ;
                                   rdfs:comment "Description of temporal extent structured with separate values for the various elements of a calendar-clock system."@en ;
-                                  rdfs:label "Generalized duration description"@en ;
+                                  rdfs:label "Generalized Duration Description"@en ;
                                   skos:definition "Description of temporal extent structured with separate values for the various elements of a calendar-clock system."@en ;
                                   skos:note "The extent of a time duration expressed as a GeneralDurationDescription depends on the Temporal Reference System. In some calendars the length of the week or month is not constant within the year. Therefore, a value like \"2.5 months\" may not necessarily be exactly compared with a similar duration expressed in terms of weeks or days. When non-earth-based calendars are considered even more care must be taken in comparing durations."@en .
 
@@ -7375,7 +7376,7 @@ time:Instant rdf:type owl:Class ;
              rdfs:subClassOf time:Temporal_Entity ;
              owl:disjointWith time:Proper_Interval ;
              rdfs:comment "A temporal entity with zero extent or duration"@en ;
-             rdfs:label "Time instant"@en ;
+             rdfs:label "Time Instant"@en ;
              skos:definition "A temporal entity with zero extent or duration"@en .
 
 
@@ -7383,7 +7384,7 @@ time:Instant rdf:type owl:Class ;
 time:Interval rdf:type owl:Class ;
               rdfs:subClassOf time:Temporal_Entity ;
               rdfs:comment "A temporal entity with an extent or duration"@en ;
-              rdfs:label "Time interval"@en ;
+              rdfs:label "Time Interval"@en ;
               skos:definition "A temporal entity with an extent or duration"@en .
 
 
@@ -7457,7 +7458,7 @@ time:Month_Of_Year rdf:type owl:Class ;
 time:Proper_Interval rdf:type owl:Class ;
                      rdfs:subClassOf time:Interval ;
                      rdfs:comment "A temporal entity with non-zero extent or duration, i.e. for which the value of the beginning and end are different"@en ;
-                     rdfs:label "Proper interval"@en ;
+                     rdfs:label "Proper Interval"@en ;
                      skos:definition "A temporal entity with non-zero extent or duration, i.e. for which the value of the beginning and end are different"@en .
 
 
@@ -7476,7 +7477,7 @@ This is a stub class, representing the set of all temporal reference systems."""
 ###  http://www.w3.org/2006/time#Temporal_Duration
 time:Temporal_Duration rdf:type owl:Class ;
                        rdfs:comment "Time extent; duration of a time interval separate from its particular start position"@en ;
-                       rdfs:label "Temporal duration"@en ;
+                       rdfs:label "Temporal Duration"@en ;
                        skos:definition "Time extent; duration of a time interval separate from its particular start position"@en .
 
 
@@ -7491,8 +7492,8 @@ time:Temporal_Entity rdf:type owl:Class ;
                      rdfs:comment "A temporal interval or instant." ,
                                   "A temporal interval or instant."@en ;
                      rdfs:isDefinedBy "http://www.w3.org/TR/owl-time/#time:TemporalEntity" ;
-                     rdfs:label "Temporal entity" ,
-                                "Temporal entity"@en ;
+                     rdfs:label "Temporal Entity" ,
+                                "Temporal Entity"@en ;
                      skos:definition "A temporal interval or instant."@en .
 
 
@@ -7503,7 +7504,7 @@ time:Temporal_Position rdf:type owl:Class ;
                                          owl:cardinality "1"^^xsd:nonNegativeInteger
                                        ] ;
                        rdfs:comment "A position on a time-line"@en ;
-                       rdfs:label "Temporal position"@en ;
+                       rdfs:label "Temporal Position"@en ;
                        skos:definition "A position on a time-line"@en .
 
 
@@ -7511,7 +7512,7 @@ time:Temporal_Position rdf:type owl:Class ;
 time:Temporal_Unit rdf:type owl:Class ;
                    rdfs:subClassOf time:Temporal_Duration ;
                    rdfs:comment "A standard duration, which provides a scale factor for a time extent, or the granularity or precision for a time position."@en ;
-                   rdfs:label "Temporal unit"@en ;
+                   rdfs:label "Temporal Unit"@en ;
                    skos:changeNote """Remove enumeration from definition, in order to allow other units to be used when required in other coordinate systems. 
 NOTE: existing units are still present as members of the class, but the class membership is now open. 
 
@@ -7544,7 +7545,7 @@ time:Time_Position rdf:type owl:Class ;
                                                  )
                                    ] ;
                    rdfs:comment "A temporal position described using either a (nominal) value from an ordinal reference system, or a (numeric) value in a temporal coordinate system. "@en ;
-                   rdfs:label "Time position"@en ;
+                   rdfs:label "Time Position"@en ;
                    skos:definition "A temporal position described using either a (nominal) value from an ordinal reference system, or a (numeric) value in a temporal coordinate system. "@en .
 
 
@@ -8405,7 +8406,8 @@ ecsel-dr-AH:AH_Application_Servcice_IDD rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Application_Service
 ecsel-dr-AH:AH_Application_Service rdf:type owl:Class ;
                                    rdfs:subClassOf ecsel-dr-AH:AH_Service ;
-                                   rdfs:comment "Application services – they are application specific and are implemented by application systems along with functionalities (to match requirements of an application)"@en .
+                                   rdfs:comment "Application services – they are application specific and are implemented by application systems along with functionalities (to match requirements of an application)"@en ;
+                                   rdfs:label "AH Application Service"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Application_Service_SD
@@ -8466,7 +8468,8 @@ ecsel-dr-AH:AH_Authorization_System_WADL rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Automation_Supporting_Service
 ecsel-dr-AH:AH_Automation_Supporting_Service rdf:type owl:Class ;
-                                             rdfs:subClassOf ecsel-dr-AH:AH_Core_Service .
+                                             rdfs:subClassOf ecsel-dr-AH:AH_Core_Service ;
+                                             rdfs:label "AH Automation Supporting Service"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Automation_Supporting_Service_IDD
@@ -8501,7 +8504,8 @@ ecsel-dr-AH:AH_Automation_Supporting_System_Sy_SDD rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Core_Service
 ecsel-dr-AH:AH_Core_Service rdf:type owl:Class ;
-                            rdfs:subClassOf ecsel-dr-AH:AH_Service .
+                            rdfs:subClassOf ecsel-dr-AH:AH_Service ;
+                            rdfs:label "AH Core Service"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Core_Service_IDD
@@ -8629,7 +8633,8 @@ ecsel-dr-AH:AH_Local_Cloud rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Mandatory_Core_Service
 ecsel-dr-AH:AH_Mandatory_Core_Service rdf:type owl:Class ;
-                                      rdfs:subClassOf ecsel-dr-AH:AH_Core_Service .
+                                      rdfs:subClassOf ecsel-dr-AH:AH_Core_Service ;
+                                      rdfs:label "AH Mandatory Core Service"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Mandatory_Core_Service_IDD
@@ -8725,7 +8730,8 @@ ecsel-dr-AH:AH_Service_Discovery_Service_SD rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Service_Documentation
 ecsel-dr-AH:AH_Service_Documentation rdf:type owl:Class ;
-                                     rdfs:subClassOf ecsel-dr-AH:Service_Documentation .
+                                     rdfs:subClassOf ecsel-dr-AH:Service_Documentation ;
+                                     rdfs:label "AH Service Documentation"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Service_Documentation_Document
@@ -8817,7 +8823,8 @@ ecsel-dr-AH:AH_System_Discovery_Service_SD rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_System_Documentation
 ecsel-dr-AH:AH_System_Documentation rdf:type owl:Class ;
-                                    rdfs:subClassOf ecsel-dr-AH:System_Documentation .
+                                    rdfs:subClassOf ecsel-dr-AH:System_Documentation ;
+                                    rdfs:label "AH System Documentation"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_System_Documentation_Document
@@ -8828,7 +8835,8 @@ ecsel-dr-AH:AH_System_Documentation_Document rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_System_Of_Systems_Documentation
 ecsel-dr-AH:AH_System_Of_Systems_Documentation rdf:type owl:Class ;
-                                               rdfs:subClassOf ecsel-dr-AH:System_Documentation .
+                                               rdfs:subClassOf ecsel-dr-AH:System_Documentation ;
+                                               rdfs:label "AH System of Systems Documentation"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_System_Of_Systems_Documentation_Document
@@ -8863,7 +8871,8 @@ ecsel-dr-AH:AH_Token_Generation_Service_IDD rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AH#Arrowhead
 ecsel-dr-AH:Arrowhead rdf:type owl:Class ;
-                      rdfs:subClassOf ecsel-dr-AH:Service_Oriented_Architecture .
+                      rdfs:subClassOf ecsel-dr-AH:Service_Oriented_Architecture ;
+                      rdfs:label "Arrowhead"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Communication_Profile_CP
@@ -9050,14 +9059,15 @@ ecsel-dr-AH:Service_Description_SD rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AH#Service_Documentation
 ecsel-dr-AH:Service_Documentation rdf:type owl:Class ;
-                                  rdfs:comment "Service documentation is any communicable material that is used to describe, explain or instruct regarding some attributes of a service"@en .
+                                  rdfs:comment "Service documentation is any communicable material that is used to describe, explain or instruct regarding some attributes of a service"@en ;
+                                  rdfs:label "Service Documentation"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Service_Oriented_Architecture
 ecsel-dr-AH:Service_Oriented_Architecture rdf:type owl:Class ;
-                                          owl:equivalentClass ecsel-dr-AT:Service_Oriented_Architecture ;
-                                          rdfs:comment "Service-oriented architecture is a style of software design where services are provided to the other components by application components, through a communication protocol over a network."@en ;
-                                          rdfs:label "SoA"@en .
+                                          owl:equivalentClass ecsel-dr-AT:Service_Oriented_Architecture_Protocols ;
+                                          rdfs:comment "Service-oriented architecture (SoA) is a style of software design where services are provided to the other components by application components, through a communication protocol over a network."@en ;
+                                          rdfs:label "Service-oriented Architecture"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Smartphone
@@ -9068,12 +9078,14 @@ ecsel-dr-AH:Smartphone rdf:type owl:Class ;
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#SoA_Property
-ecsel-dr-AH:SoA_Property rdf:type owl:Class .
+ecsel-dr-AH:SoA_Property rdf:type owl:Class ;
+                         rdfs:label "SoA Property"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Software_System
 ecsel-dr-AH:Software_System rdf:type owl:Class ;
-                            rdfs:comment "System software is software designed to provide a platform for other software."@en .
+                            rdfs:comment "System software is software designed to provide a platform for other software."@en ;
+                            rdfs:label "Software System"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Switch_Device
@@ -9097,12 +9109,14 @@ ecsel-dr-AH:System_Design_Description_Sy_SDD rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AH#System_Documentation
 ecsel-dr-AH:System_Documentation rdf:type owl:Class ;
-                                 rdfs:comment "System documentation is any communicable material that is used to describe, explain or instruct regarding some attributes of a system"@en .
+                                 rdfs:comment "System documentation is any communicable material that is used to describe, explain or instruct regarding some attributes of a system"@en ;
+                                 rdfs:label "System Documentation"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#System_Of_Systems
 ecsel-dr-AH:System_Of_Systems rdf:type owl:Class ;
-                              rdfs:comment "System of systems is a collection of task-oriented or dedicated systems that pool their resources and capabilities together to create a new, more complex system which offers more functionality and performance than simply the sum of the constituent systems."@en .
+                              rdfs:comment "System of systems is a collection of task-oriented or dedicated systems that pool their resources and capabilities together to create a new, more complex system which offers more functionality and performance than simply the sum of the constituent systems."@en ;
+                              rdfs:label "System of Systems"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#System_Of_Systems_Description_So_SD
@@ -9162,24 +9176,28 @@ ecsel-dr-AT:AMQP rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#ANSI
 ecsel-dr-AT:ANSI rdf:type owl:Class ;
                  rdfs:subClassOf ecsel-dr-AT:Standardisation_Organization ;
-                 rdfs:comment "Is a private non-profit organization that oversees the development of voluntary consensus standards for products, services, processes, systems, and personnel in the United States."@en .
+                 rdfs:comment "Is a private non-profit organization that oversees the development of voluntary consensus standards for products, services, processes, systems, and personnel in the United States."@en ;
+                 rdfs:label "ANSI"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#ANSI_Standard
 ecsel-dr-AT:ANSI_Standard rdf:type owl:Class ;
                           rdfs:subClassOf ecsel-dr-AT:Standard ;
-                          rdfs:comment "Is a private non-profit organization that oversees the development of voluntary consensus standards for products, services, processes, systems, and personnel in the United States."@en .
-
-
-###  http://www.w3id.org/ecsel-dr-AT#ANSI_X12-Specification
-ecsel-dr-AT:ANSI_X12-Specification rdf:type owl:Class ;
-                                   rdfs:subClassOf ecsel-dr-AT:EDI_Specification .
+                          rdfs:comment "Is a private non-profit organization that oversees the development of voluntary consensus standards for products, services, processes, systems, and personnel in the United States."@en ;
+                          rdfs:label "ANSI Standard"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#ANSI_X12_Data_Format
 ecsel-dr-AT:ANSI_X12_Data_Format rdf:type owl:Class ;
-                                 rdfs:subClassOf ecsel-dr-AT:W3C_L_2_Data_Syntax ;
-                                 rdfs:comment "Is predominant in North America."@en .
+                                 rdfs:subClassOf ecsel-dr-AT:W3C_L2_Data_Syntax ;
+                                 rdfs:comment "Is predominant in North America."@en ;
+                                 rdfs:label "ANSI X12 Data Format"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-AT#ANSI_X12_Specification
+ecsel-dr-AT:ANSI_X12_Specification rdf:type owl:Class ;
+                                   rdfs:subClassOf ecsel-dr-AT:EDI_Specification ;
+                                   rdfs:label "ANSI X12 Specification"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#APS
@@ -9217,23 +9235,27 @@ ecsel-dr-AT:Assembly_Line_Planning rdf:type owl:Class ;
 ecsel-dr-AT:Auto_Gration_Specification rdf:type owl:Class ;
                                        rdfs:subClassOf ecsel-dr-AT:Service_Data_Language ;
                                        rdfs:comment """XML Schema describing the Grammar of data content representing the content of a set of EDIFACT messages.
-Relies on XML as data syntax, XML Schema as knowledge representation scheme and on EDIFACT message specifications (like ORDER, ORDRSP, DELFOR, DELJIT etc.). Has no Semantics representation.""" .
+Relies on XML as data syntax, XML Schema as knowledge representation scheme and on EDIFACT message specifications (like ORDER, ORDRSP, DELFOR, DELJIT etc.). Has no Semantics representation.""" ;
+                                       rdfs:label "Auto Gration Specification"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#Automation_ML
-ecsel-dr-AT:Automation_ML rdf:type owl:Class ;
-                          rdfs:subClassOf ecsel-dr-AT:Markup_Language .
+###  http://www.w3id.org/ecsel-dr-AT#Automation_Markup_Language
+ecsel-dr-AT:Automation_Markup_Language rdf:type owl:Class ;
+                                       rdfs:subClassOf ecsel-dr-AT:Markup_Language ;
+                                       rdfs:label "Automation Markup Language"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#B2MML-based_Service
-ecsel-dr-AT:B2MML-based_Service rdf:type owl:Class ;
-                                rdfs:subClassOf ecsel-dr-AT:Service_Oriented_Architecture ;
-                                rdfs:comment "B2MML consists of a set of XML schemas written using the World Wide Web Consortium's XML Schema language (XSD) that implement the data models in the ISA-95 standard."@en .
+###  http://www.w3id.org/ecsel-dr-AT#B2MML_Based_Service
+ecsel-dr-AT:B2MML_Based_Service rdf:type owl:Class ;
+                                rdfs:subClassOf ecsel-dr-AT:Service_Oriented_Architecture_Protocols ;
+                                rdfs:comment "B2MML consists of a set of XML schemas written using the World Wide Web Consortium's XML Schema language (XSD) that implement the data models in the ISA-95 standard."@en ;
+                                rdfs:label "B2MML-based Service"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#B2M_ML
-ecsel-dr-AT:B2M_ML rdf:type owl:Class ;
-                   rdfs:subClassOf ecsel-dr-AT:Markup_Language .
+###  http://www.w3id.org/ecsel-dr-AT#B2M_Markup_Language
+ecsel-dr-AT:B2M_Markup_Language rdf:type owl:Class ;
+                                rdfs:subClassOf ecsel-dr-AT:Markup_Language ;
+                                rdfs:label "B2M Markup Language"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#BI-System
@@ -9418,22 +9440,23 @@ ecsel-dr-AT:CPF9_HART rdf:type owl:Class ;
                       rdfs:label "CPF9 HART"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#CSV
-ecsel-dr-AT:CSV rdf:type owl:Class ;
-                rdfs:subClassOf ecsel-dr-AT:W3C_L_2_Data_Syntax ;
-                rdfs:comment "Is a delimited text file that uses a comma to separate values. Each line of the file is a data record."@en ;
-                rdfs:label "Comma Separated Values" .
-
-
 ###  http://www.w3id.org/ecsel-dr-AT#Character_Set
 ecsel-dr-AT:Character_Set rdf:type owl:Class ;
-                          rdfs:subClassOf ecsel-dr-AT:W3C_L_1_Web_Platform ;
-                          rdfs:comment "Is a collection of characters that might be used by multiple languages."@en .
+                          rdfs:subClassOf ecsel-dr-AT:W3C_L1_Web_Platform ;
+                          rdfs:comment "Is a collection of characters that might be used by multiple languages."@en ;
+                          rdfs:label "Character Set"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#CoAP
 ecsel-dr-AT:CoAP rdf:type owl:Class ;
                  rdfs:subClassOf ecsel-dr-AT:OSI_5_7_Application_Protocol .
+
+
+###  http://www.w3id.org/ecsel-dr-AT#Comma_Separated_Values
+ecsel-dr-AT:Comma_Separated_Values rdf:type owl:Class ;
+                                   rdfs:subClassOf ecsel-dr-AT:W3C_L2_Data_Syntax ;
+                                   rdfs:comment "Comma Separated Values (CSV) is a delimited text file that uses a comma to separate values. Each line of the file is a data record."@en ;
+                                   rdfs:label "Comma Separated Values" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Communication_Device
@@ -9479,7 +9502,8 @@ ecsel-dr-AT:DNS_SD rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#DPWS
 ecsel-dr-AT:DPWS rdf:type owl:Class ;
-                 rdfs:subClassOf ecsel-dr-AT:Service_Oriented_Architecture .
+                 rdfs:subClassOf ecsel-dr-AT:Service_Oriented_Architecture_Protocols ;
+                 rdfs:label "DPWS"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#DSL
@@ -9489,12 +9513,14 @@ ecsel-dr-AT:DSL rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#Data_Language_Semantic_Web_Stack_Based
 ecsel-dr-AT:Data_Language_Semantic_Web_Stack_Based rdf:type owl:Class ;
-                                                   rdfs:subClassOf ecsel-dr-AT:W3C_L_3_Knowledge_Representation .
+                                                   rdfs:subClassOf ecsel-dr-AT:W3C_L3_Knowledge_Representation ;
+                                                   rdfs:label "Data Language Semantic Web Stack Based"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#Data_Language_XML-based
-ecsel-dr-AT:Data_Language_XML-based rdf:type owl:Class ;
-                                    rdfs:subClassOf ecsel-dr-AT:W3C_L_3_Knowledge_Representation .
+###  http://www.w3id.org/ecsel-dr-AT#Data_Language_XML_Based
+ecsel-dr-AT:Data_Language_XML_Based rdf:type owl:Class ;
+                                    rdfs:subClassOf ecsel-dr-AT:W3C_L3_Knowledge_Representation ;
+                                    rdfs:label "Data Language XML-based"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Data_Transmission_Unit
@@ -9541,53 +9567,62 @@ ecsel-dr-AT:Digital_Factory_Twin rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#Document_Type_Description
 ecsel-dr-AT:Document_Type_Description rdf:type owl:Class ;
-                                      rdfs:subClassOf ecsel-dr-AT:Data_Language_XML-based ;
-                                      rdfs:comment "Is a set of markup declarations that define a document type for an SGML-family markup language (GML, SGML, XML, HTML)."@en .
-
-
-###  http://www.w3id.org/ecsel-dr-AT#EDIFACT-Specification
-ecsel-dr-AT:EDIFACT-Specification rdf:type owl:Class ;
-                                  rdfs:subClassOf ecsel-dr-AT:EDI_Specification ;
-                                  rdfs:comment "Is an Electronic Data Interchange format used in Business-to-business transactions. It allows EDIFACT message types to be used by XML systems."@en .
+                                      rdfs:subClassOf ecsel-dr-AT:Data_Language_XML_Based ;
+                                      rdfs:comment "Is a set of markup declarations that define a document type for an SGML-family markup language (GML, SGML, XML, HTML)."@en ;
+                                      rdfs:label "Document Type Description"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#EDIFACT_DELFOR
 ecsel-dr-AT:EDIFACT_DELFOR rdf:type owl:Class ;
-                           rdfs:subClassOf ecsel-dr-AT:EDIFACT-Specification .
+                           rdfs:subClassOf ecsel-dr-AT:EDIFACT_Specification ;
+                           rdfs:label "EDIFACT DELFOR"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#EDIFACT_DELJIT
 ecsel-dr-AT:EDIFACT_DELJIT rdf:type owl:Class ;
-                           rdfs:subClassOf ecsel-dr-AT:EDIFACT-Specification .
+                           rdfs:subClassOf ecsel-dr-AT:EDIFACT_Specification ;
+                           rdfs:label "EDIFACT DELJIT"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#EDIFACT_DESADV
 ecsel-dr-AT:EDIFACT_DESADV rdf:type owl:Class ;
-                           rdfs:subClassOf ecsel-dr-AT:EDIFACT-Specification .
+                           rdfs:subClassOf ecsel-dr-AT:EDIFACT_Specification ;
+                           rdfs:label "EDIFACT DESADV"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#EDIFACT_Data_Format
 ecsel-dr-AT:EDIFACT_Data_Format rdf:type owl:Class ;
-                                rdfs:subClassOf ecsel-dr-AT:W3C_L_2_Data_Syntax ;
+                                rdfs:subClassOf ecsel-dr-AT:W3C_L2_Data_Syntax ;
                                 rdfs:comment """Data Format of EDIFACT messages. 
 Describes e.g. block organization, data field separators etc. 
-Holds for all EDIFACT messages (which are described in DataSemantics class hierarchy)."""@de .
+Holds for all EDIFACT messages (which are described in DataSemantics class hierarchy)."""@de ;
+                                rdfs:label "EDIFACT Data Format"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#EDIFACT_ORDERS
 ecsel-dr-AT:EDIFACT_ORDERS rdf:type owl:Class ;
-                           rdfs:subClassOf ecsel-dr-AT:EDIFACT-Specification .
+                           rdfs:subClassOf ecsel-dr-AT:EDIFACT_Specification ;
+                           rdfs:label "EDIFACT ORDERS"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#EDIFACT_ORDRSP
 ecsel-dr-AT:EDIFACT_ORDRSP rdf:type owl:Class ;
-                           rdfs:subClassOf ecsel-dr-AT:EDIFACT-Specification .
+                           rdfs:subClassOf ecsel-dr-AT:EDIFACT_Specification ;
+                           rdfs:label "EDIFACT ORDRSP"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-AT#EDIFACT_Specification
+ecsel-dr-AT:EDIFACT_Specification rdf:type owl:Class ;
+                                  rdfs:subClassOf ecsel-dr-AT:EDI_Specification ;
+                                  rdfs:comment "Is an Electronic Data Interchange format used in Business-to-business transactions. It allows EDIFACT message types to be used by XML systems."@en ;
+                                  rdfs:label "EDIFACT Specification"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#EDI_Specification
 ecsel-dr-AT:EDI_Specification rdf:type owl:Class ;
-                              rdfs:subClassOf ecsel-dr-AT:W3C_L_5_Data_Semantics ;
-                              rdfs:comment "It provides a technical basis for automated commercial \"conversations\" between two entities, either internal or external."@en .
+                              rdfs:subClassOf ecsel-dr-AT:W3C_L5_Data_Semantics ;
+                              rdfs:comment "It provides a technical basis for automated commercial \"conversations\" between two entities, either internal or external."@en ;
+                              rdfs:label "EDI Specification"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#ERP-System
@@ -9661,8 +9696,9 @@ ecsel-dr-AT:Gateway rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#HTML
 ecsel-dr-AT:HTML rdf:type owl:Class ;
-                 rdfs:subClassOf ecsel-dr-AT:W3C_L_2_Data_Syntax ;
-                 rdfs:comment "Is the standard markup language for documents designed to be displayed in a web browser."@en .
+                 rdfs:subClassOf ecsel-dr-AT:W3C_L2_Data_Syntax ;
+                 rdfs:comment "Is the standard markup language for documents designed to be displayed in a web browser."@en ;
+                 rdfs:label "HTML"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#HTTP
@@ -9683,37 +9719,42 @@ ecsel-dr-AT:Hub rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#IEC
 ecsel-dr-AT:IEC rdf:type owl:Class ;
-                rdfs:subClassOf ecsel-dr-AT:Standardisation_Organization .
+                rdfs:subClassOf ecsel-dr-AT:Standardisation_Organization ;
+                rdfs:label "IEC"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#IEC_Standard
 ecsel-dr-AT:IEC_Standard rdf:type owl:Class ;
                          rdfs:subClassOf ecsel-dr-AT:Standard ;
                          rdfs:comment "standard maintained and published by IEC."@en ;
-                         rdfs:label "IEC standard"@en .
+                         rdfs:label "IEC Standard"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#IEEE
 ecsel-dr-AT:IEEE rdf:type owl:Class ;
-                 rdfs:subClassOf ecsel-dr-AT:Standardisation_Organization .
+                 rdfs:subClassOf ecsel-dr-AT:Standardisation_Organization ;
+                 rdfs:label "IEEE"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#IEEE_Standard
 ecsel-dr-AT:IEEE_Standard rdf:type owl:Class ;
                           rdfs:subClassOf ecsel-dr-AT:Standard ;
-                          rdfs:comment "Is an organization within IEEE that develops global standards in a broad range of industries"@en .
+                          rdfs:comment "Is an organization within IEEE that develops global standards in a broad range of industries"@en ;
+                          rdfs:label "IEEE Standard"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#IETF
 ecsel-dr-AT:IETF rdf:type owl:Class ;
                  rdfs:subClassOf ecsel-dr-AT:Standardisation_Organization ;
-                 rdfs:comment "Is an open standards organization, which develops and promotes voluntary Internet standards, in particular the standards that comprise the Internet protocol suite"@en .
+                 rdfs:comment "Is an open standards organization, which develops and promotes voluntary Internet standards, in particular the standards that comprise the Internet protocol suite"@en ;
+                 rdfs:label "IETF"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#IETF_Standard
 ecsel-dr-AT:IETF_Standard rdf:type owl:Class ;
                           rdfs:subClassOf ecsel-dr-AT:Standard ;
-                          rdfs:comment "Is an open standards organization, which develops and promotes voluntary Internet standards, in particular the standards that comprise the Internet protocol suite"@en .
+                          rdfs:comment "Is an open standards organization, which develops and promotes voluntary Internet standards, in particular the standards that comprise the Internet protocol suite"@en ;
+                          rdfs:label "IETF Standard"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#IMAP
@@ -9723,7 +9764,8 @@ ecsel-dr-AT:IMAP rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#ISA
 ecsel-dr-AT:ISA rdf:type owl:Class ;
-                rdfs:subClassOf ecsel-dr-AT:Standardisation_Organization .
+                rdfs:subClassOf ecsel-dr-AT:Standardisation_Organization ;
+                rdfs:label "ISA"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#ISA-95_Automation_Hierarchy
@@ -9823,18 +9865,21 @@ ecsel-dr-AT:ISA-95_Layer_4_ERP rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#ISA_Standard
 ecsel-dr-AT:ISA_Standard rdf:type owl:Class ;
                          rdfs:subClassOf ecsel-dr-AT:Standard ;
-                         rdfs:comment "Is one of the foremost professional organizations in the world for setting standards and educating industry professionals in automation."@en .
+                         rdfs:comment "Is one of the foremost professional organizations in the world for setting standards and educating industry professionals in automation."@en ;
+                         rdfs:label "ISA Standard"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#ISO
 ecsel-dr-AT:ISO rdf:type owl:Class ;
-                rdfs:subClassOf ecsel-dr-AT:Standardisation_Organization .
+                rdfs:subClassOf ecsel-dr-AT:Standardisation_Organization ;
+                rdfs:label "ISO"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#ISO_Standard
 ecsel-dr-AT:ISO_Standard rdf:type owl:Class ;
                          rdfs:subClassOf ecsel-dr-AT:Standard ;
-                         rdfs:comment "Is an international standard-setting body composed of representatives from various national standards organizations."@en .
+                         rdfs:comment "Is an international standard-setting body composed of representatives from various national standards organizations."@en ;
+                         rdfs:label "ISO Standard"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#IT-System
@@ -9865,13 +9910,15 @@ ecsel-dr-AT:Industry_PC rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#JSON
 ecsel-dr-AT:JSON rdf:type owl:Class ;
-                 rdfs:subClassOf ecsel-dr-AT:W3C_L_2_Data_Syntax ;
-                 rdfs:comment "Is an open standard file format, and data interchange format, that uses human-readable text to store and transmit data objects consisting of attribute–value pairs and array data types (or any other serializable value)."@en .
+                 rdfs:subClassOf ecsel-dr-AT:W3C_L2_Data_Syntax ;
+                 rdfs:comment "Is an open standard file format, and data interchange format, that uses human-readable text to store and transmit data objects consisting of attribute–value pairs and array data types (or any other serializable value)."@en ;
+                 rdfs:label "JSON"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#KPI_ML
-ecsel-dr-AT:KPI_ML rdf:type owl:Class ;
-                   rdfs:subClassOf ecsel-dr-AT:Markup_Language .
+###  http://www.w3id.org/ecsel-dr-AT#KPI_Markup_Language
+ecsel-dr-AT:KPI_Markup_Language rdf:type owl:Class ;
+                                rdfs:subClassOf ecsel-dr-AT:Markup_Language ;
+                                rdfs:label "KPI Markup Language"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#LES
@@ -9898,13 +9945,15 @@ ecsel-dr-AT:MES rdf:type owl:Class ;
 ecsel-dr-AT:MESA rdf:type owl:Class ;
                  rdfs:subClassOf ecsel-dr-AT:Standardisation_Organization ;
                  rdfs:comment "Is a worldwide not-for-profit community of manufacturing companies, information technology hardware and software suppliers, system integrators, consulting service providers, analysts, editors, academics, and students."@en ,
-                              "especially MESA XML Committee"@en .
+                              "especially MESA XML Committee"@en ;
+                 rdfs:label "MESA"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#MESA_Standard
 ecsel-dr-AT:MESA_Standard rdf:type owl:Class ;
                           rdfs:subClassOf ecsel-dr-AT:Standard ;
-                          rdfs:comment "Is a worldwide not-for-profit community of manufacturing companies, information technology hardware and software suppliers, system integrators, consulting service providers, analysts, editors, academics, and students."@en .
+                          rdfs:comment "Is a worldwide not-for-profit community of manufacturing companies, information technology hardware and software suppliers, system integrators, consulting service providers, analysts, editors, academics, and students."@en ;
+                          rdfs:label "MESA Standard"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#MIS
@@ -9961,8 +10010,9 @@ ecsel-dr-AT:Manufacturing_Simulation_System rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#Markup_Language
 ecsel-dr-AT:Markup_Language rdf:type owl:Class ;
-                            rdfs:subClassOf ecsel-dr-AT:W3C_L_5_Data_Semantics ;
-                            rdfs:comment "Is a system for annotating a document in a way that is syntactically distinguishable from the text, meaning when the document is processed for display, the markup language is not shown, and is only used to format the text."@en .
+                            rdfs:subClassOf ecsel-dr-AT:W3C_L5_Data_Semantics ;
+                            rdfs:comment "Markup Language (ML) is a system for annotating a document in a way that is syntactically distinguishable from the text, meaning when the document is processed for display, the markup language is not shown, and is only used to format the text."@en ;
+                            rdfs:label "Markup Language"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Material_Flow_Planning
@@ -9997,8 +10047,9 @@ ecsel-dr-AT:Microcontroller rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#N3_TURTLE
 ecsel-dr-AT:N3_TURTLE rdf:type owl:Class ;
-                      rdfs:subClassOf ecsel-dr-AT:W3C_L_2_Data_Syntax ;
-                      rdfs:comment "Is a syntax and file format for expressing data in the Resource Description Framework (RDF) data model. Turtle syntax is similar to that of SPARQL, an RDF query language. It is a common data format for storing RDF data"@en .
+                      rdfs:subClassOf ecsel-dr-AT:W3C_L2_Data_Syntax ;
+                      rdfs:comment "Is a syntax and file format for expressing data in the Resource Description Framework (RDF) data model. Turtle syntax is similar to that of SPARQL, an RDF query language. It is a common data format for storing RDF data"@en ;
+                      rdfs:label "N3 TURTLE"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Network_Layer_Model
@@ -10008,13 +10059,15 @@ ecsel-dr-AT:Network_Layer_Model rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#OASIS
 ecsel-dr-AT:OASIS rdf:type owl:Class ;
-                  rdfs:subClassOf ecsel-dr-AT:Standardisation_Organization .
+                  rdfs:subClassOf ecsel-dr-AT:Standardisation_Organization ;
+                  rdfs:label "OASIS"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#OASIS_Standard
 ecsel-dr-AT:OASIS_Standard rdf:type owl:Class ;
                            rdfs:subClassOf ecsel-dr-AT:Standard ;
-                           rdfs:comment "Is a global nonprofit consortium that works on the development, convergence, and adoption of open standards for security, Internet of Things, energy, content technologies, emergency management, and other areas."@en .
+                           rdfs:comment "Is a global nonprofit consortium that works on the development, convergence, and adoption of open standards for security, Internet of Things, energy, content technologies, emergency management, and other areas."@en ;
+                           rdfs:label "OASIS Standard"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#OCF
@@ -10027,7 +10080,8 @@ ecsel-dr-AT:OCF rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#OCF_Standard
 ecsel-dr-AT:OCF_Standard rdf:type owl:Class ;
                          rdfs:subClassOf ecsel-dr-AT:Standard ;
-                         rdfs:comment "Is an industry organization having as its stated mission is to develop specification standards, promote a set of interoperability guidelines, and provide a certification program for devices involved in the Internet of Things (IoT)."@en .
+                         rdfs:comment "Is an industry organization having as its stated mission is to develop specification standards, promote a set of interoperability guidelines, and provide a certification program for devices involved in the Internet of Things (IoT)."@en ;
+                         rdfs:label "OCF Standard"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#OMG
@@ -10040,7 +10094,8 @@ ecsel-dr-AT:OMG rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#OMG_Standard
 ecsel-dr-AT:OMG_Standard rdf:type owl:Class ;
                          rdfs:subClassOf ecsel-dr-AT:Standard ;
-                         rdfs:comment "Is a computer industry standards consortium. OMG Task Forces develop enterprise integration standards for a range of technologies."@en .
+                         rdfs:comment "Is a computer industry standards consortium. OMG Task Forces develop enterprise integration standards for a range of technologies."@en ;
+                         rdfs:label "OMG Standard"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#OPC
@@ -10050,7 +10105,8 @@ ecsel-dr-AT:OPC rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#OPC_UA
 ecsel-dr-AT:OPC_UA rdf:type owl:Class ;
-                   rdfs:subClassOf ecsel-dr-AT:Service_Oriented_Architecture .
+                   rdfs:subClassOf ecsel-dr-AT:Service_Oriented_Architecture_Protocols ;
+                   rdfs:label "OPC UA"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#OPC_UA_Binary_Protocol
@@ -10160,15 +10216,16 @@ ecsel-dr-AT:OSI_Transport_Protocol rdf:type owl:Class .
 
 ###  http://www.w3id.org/ecsel-dr-AT#OWL
 ecsel-dr-AT:OWL rdf:type owl:Class ;
-                rdfs:subClassOf ecsel-dr-AT:W3C_L_4_Semantics_Representation ;
-                rdfs:comment "Is a family of knowledge representation languages for authoring ontologies."@en ;
-                rdfs:label "Web Ontology Language"@de .
+                rdfs:subClassOf ecsel-dr-AT:W3C_L4_Semantics_Representation ;
+                rdfs:comment "Web Ontology Language (OWL) is a family of knowledge representation languages for authoring ontologies."@en ;
+                rdfs:label "Web Ontology Language"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Ontology
 ecsel-dr-AT:Ontology rdf:type owl:Class ;
-                     rdfs:subClassOf ecsel-dr-AT:W3C_L_5_Data_Semantics ;
-                     rdfs:comment "An ontology encompasses a representation, formal naming and definition of the categories, properties and relations between the concepts, data and entities that substantiate one, many or all domains of discourse."@en .
+                     rdfs:subClassOf ecsel-dr-AT:W3C_L5_Data_Semantics ;
+                     rdfs:comment "An ontology encompasses a representation, formal naming and definition of the categories, properties and relations between the concepts, data and entities that substantiate one, many or all domains of discourse."@en ;
+                     rdfs:label "Ontology"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#PLM-System
@@ -10271,7 +10328,7 @@ ecsel-dr-AT:Proxy rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#RDF
 ecsel-dr-AT:RDF rdf:type owl:Class ;
                 rdfs:subClassOf ecsel-dr-AT:Data_Language_Semantic_Web_Stack_Based ;
-                rdfs:comment "Is a family of World Wide Web Consortium (W3C) specifications originally designed as a metadata data model. It has come to be used as a general method for conceptual description or modeling of information that is implemented in web resources, using a variety of syntax notations and data serialization formats. It is also used in knowledge management applications."@en ;
+                rdfs:comment "Resource Description Framework (RDF) is a family of World Wide Web Consortium (W3C) specifications originally designed as a metadata data model. It has come to be used as a general method for conceptual description or modeling of information that is implemented in web resources, using a variety of syntax notations and data serialization formats. It is also used in knowledge management applications."@en ;
                 rdfs:label "Resource Description Framework"@de .
 
 
@@ -10283,20 +10340,22 @@ ecsel-dr-AT:RDF-Graph_Store rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#RDFS
 ecsel-dr-AT:RDFS rdf:type owl:Class ;
-                 rdfs:subClassOf ecsel-dr-AT:W3C_L_4_Semantics_Representation ;
+                 rdfs:subClassOf ecsel-dr-AT:W3C_L4_Semantics_Representation ;
                  rdfs:comment "Is a set of classes with certain properties using the RDF extensible knowledge representation data model, providing basic elements for the description of ontologies, otherwise called RDF vocabularies, intended to structure RDF resources."@en ;
                  rdfs:label "Resource Description Framework Schema"@de .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#RDFa
 ecsel-dr-AT:RDFa rdf:type owl:Class ;
-                 rdfs:subClassOf ecsel-dr-AT:W3C_L_2_Data_Syntax ;
-                 rdfs:comment "Is a W3C Recommendation that adds a set of attribute-level extensions to HTML, XHTML and various XML-based document types for embedding rich metadata within Web documents."@en .
+                 rdfs:subClassOf ecsel-dr-AT:W3C_L2_Data_Syntax ;
+                 rdfs:comment "Is a W3C Recommendation that adds a set of attribute-level extensions to HTML, XHTML and various XML-based document types for embedding rich metadata within Web documents."@en ;
+                 rdfs:label "RDFa"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#REST
 ecsel-dr-AT:REST rdf:type owl:Class ;
-                 rdfs:subClassOf ecsel-dr-AT:Service_Oriented_Architecture .
+                 rdfs:subClassOf ecsel-dr-AT:Service_Oriented_Architecture_Protocols ;
+                 rdfs:label "REST"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#RFID
@@ -10330,10 +10389,11 @@ ecsel-dr-AT:Robot_Cell_Planning rdf:type owl:Class ;
                                 rdfs:subClassOf ecsel-dr-AT:PLM1_Module .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#Rosetta_Net-Specification
-ecsel-dr-AT:Rosetta_Net-Specification rdf:type owl:Class ;
+###  http://www.w3id.org/ecsel-dr-AT#Rosetta_Net_Specification
+ecsel-dr-AT:Rosetta_Net_Specification rdf:type owl:Class ;
                                       rdfs:subClassOf ecsel-dr-AT:RDFS ;
-                                      rdfs:comment "Is a non-profit consortium aimed at establishing standard processes for the sharing of business information (B2B)."@en .
+                                      rdfs:comment "Is a non-profit consortium aimed at establishing standard processes for the sharing of business information (B2B)."@en ;
+                                      rdfs:label "Rosetta Net Specification"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Router
@@ -10375,7 +10435,8 @@ ecsel-dr-AT:SECS rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#SECS_GEM
 ecsel-dr-AT:SECS_GEM rdf:type owl:Class ;
-                     rdfs:subClassOf ecsel-dr-AT:Service_Oriented_Architecture .
+                     rdfs:subClassOf ecsel-dr-AT:Service_Oriented_Architecture_Protocols ;
+                     rdfs:label "SECS GEM"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#SMQTT
@@ -10395,30 +10456,35 @@ ecsel-dr-AT:SMTP rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#SOAP
 ecsel-dr-AT:SOAP rdf:type owl:Class ;
-                 rdfs:subClassOf ecsel-dr-AT:Service_Oriented_Architecture .
+                 rdfs:subClassOf ecsel-dr-AT:Service_Oriented_Architecture_Protocols ;
+                 rdfs:label "SOAP"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#SOSA
 ecsel-dr-AT:SOSA rdf:type owl:Class ;
                  rdfs:subClassOf ecsel-dr-AT:Ontology ;
-                 rdfs:comment "A lightweight version of the SSN ontology"@en .
+                 rdfs:comment "A lightweight version of the SSN ontology"@en ;
+                 rdfs:label "SOSA"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#SPARQL_Language
 ecsel-dr-AT:SPARQL_Language rdf:type owl:Class ;
                             rdfs:subClassOf ecsel-dr-AT:Data_Language_Semantic_Web_Stack_Based ;
-                            rdfs:comment "Is an RDF query language—that is, a semantic query language for databases—able to retrieve and manipulate data stored in Resource Description Framework (RDF) format."@en .
+                            rdfs:comment "Is an RDF query language—that is, a semantic query language for databases—able to retrieve and manipulate data stored in Resource Description Framework (RDF) format."@en ;
+                            rdfs:label "SPARQL Language"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#SPARQL_Protocol
 ecsel-dr-AT:SPARQL_Protocol rdf:type owl:Class ;
-                            rdfs:subClassOf ecsel-dr-AT:Service_Oriented_Architecture .
+                            rdfs:subClassOf ecsel-dr-AT:Service_Oriented_Architecture_Protocols ;
+                            rdfs:label "SPARQL Protocol"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#SSN
 ecsel-dr-AT:SSN rdf:type owl:Class ;
                 rdfs:subClassOf ecsel-dr-AT:Ontology ;
-                rdfs:comment "Enables expressive representation of sensor observations, sampling, and actuation."@en .
+                rdfs:comment "Enables expressive representation of sensor observations, sampling, and actuation."@en ;
+                rdfs:label "SSN"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#STOMP
@@ -10432,14 +10498,16 @@ ecsel-dr-AT:Segment rdf:type owl:Class ;
                     rdfs:label "Segment" .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#Sen_ML
-ecsel-dr-AT:Sen_ML rdf:type owl:Class ;
-                   rdfs:subClassOf ecsel-dr-AT:Markup_Language .
+###  http://www.w3id.org/ecsel-dr-AT#Sen_Markup_Language
+ecsel-dr-AT:Sen_Markup_Language rdf:type owl:Class ;
+                                rdfs:subClassOf ecsel-dr-AT:Markup_Language ;
+                                rdfs:label "Sen Markup Language"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#Sens_ML
-ecsel-dr-AT:Sens_ML rdf:type owl:Class ;
-                    rdfs:subClassOf ecsel-dr-AT:Markup_Language .
+###  http://www.w3id.org/ecsel-dr-AT#Sens_Markup_Language
+ecsel-dr-AT:Sens_Markup_Language rdf:type owl:Class ;
+                                 rdfs:subClassOf ecsel-dr-AT:Markup_Language ;
+                                 rdfs:label "Sens Markup Language"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Sensor_Device
@@ -10450,13 +10518,8 @@ ecsel-dr-AT:Sensor_Device rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#Service_Data_Language
 ecsel-dr-AT:Service_Data_Language rdf:type owl:Class ;
-                                  rdfs:subClassOf ecsel-dr-AT:W3C_L_5_Data_Semantics .
-
-
-###  http://www.w3id.org/ecsel-dr-AT#Service_Oriented_Architecture
-ecsel-dr-AT:Service_Oriented_Architecture rdf:type owl:Class ;
-                                          rdfs:comment "Is a style of software design where services are provided to the other components by application components, through a communication protocol over a network."@en ;
-                                          rdfs:label "Service Oriented Architecture Protocols"@de .
+                                  rdfs:subClassOf ecsel-dr-AT:W3C_L5_Data_Semantics ;
+                                  rdfs:label "Service Data Language"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Service_Oriented_Architecture_Function_Pattern
@@ -10468,6 +10531,12 @@ ecsel-dr-AT:Service_Oriented_Architecture_Implementation rdf:type owl:Class ;
                                                          rdfs:comment """Implementations or Realizations of Service-oriented Architectures.
 
 This class contains existing implementations, i.e. software systems, which are designed as Service-oriented Architectures. That is, these systems realize service-oriented communication between their participants / components. (2018-08-04 HB)."""@en .
+
+
+###  http://www.w3id.org/ecsel-dr-AT#Service_Oriented_Architecture_Protocols
+ecsel-dr-AT:Service_Oriented_Architecture_Protocols rdf:type owl:Class ;
+                                                    rdfs:comment "Is a style of software design where services are provided to the other components by application components, through a communication protocol over a network."@en ;
+                                                    rdfs:label "Service-oriented Architecture Protocols"@de .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Simulation_System
@@ -10522,7 +10591,8 @@ ecsel-dr-AT:Standard rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#Standardisation_Organization
 ecsel-dr-AT:Standardisation_Organization rdf:type owl:Class ;
-                                         rdfs:comment "Is an organization whose primary activities are developing, coordinating, promulgating, revising, amending, reissuing, interpreting, or otherwise producing technical standards that are intended to address the needs of a group of affected adopters."@en .
+                                         rdfs:comment "Is an organization whose primary activities are developing, coordinating, promulgating, revising, amending, reissuing, interpreting, or otherwise producing technical standards that are intended to address the needs of a group of affected adopters."@en ;
+                                         rdfs:label "Standardization Organization"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Stationary_Robot
@@ -10599,12 +10669,14 @@ ecsel-dr-AT:UDS rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#UML
 ecsel-dr-AT:UML rdf:type owl:Class ;
-                rdfs:subClassOf ecsel-dr-AT:Markup_Language .
+                rdfs:subClassOf ecsel-dr-AT:Markup_Language ;
+                rdfs:label "UML"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#W3C
 ecsel-dr-AT:W3C rdf:type owl:Class ;
-                rdfs:subClassOf ecsel-dr-AT:Standardisation_Organization .
+                rdfs:subClassOf ecsel-dr-AT:Standardisation_Organization ;
+                rdfs:label "W3C"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#W3C_Data_Knowledge_Stack
@@ -10612,35 +10684,42 @@ ecsel-dr-AT:W3C_Data_Knowledge_Stack rdf:type owl:Class ;
                                      rdfs:subClassOf ecsel-dr-AT:Network_Layer_Model .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#W3C_L_1_Web_Platform
-ecsel-dr-AT:W3C_L_1_Web_Platform rdf:type owl:Class .
+###  http://www.w3id.org/ecsel-dr-AT#W3C_L1_Web_Platform
+ecsel-dr-AT:W3C_L1_Web_Platform rdf:type owl:Class ;
+                                rdfs:label "W3C L1 Data Semantics"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#W3C_L_2_Data_Syntax
-ecsel-dr-AT:W3C_L_2_Data_Syntax rdf:type owl:Class .
+###  http://www.w3id.org/ecsel-dr-AT#W3C_L2_Data_Syntax
+ecsel-dr-AT:W3C_L2_Data_Syntax rdf:type owl:Class ;
+                               rdfs:label "W3C L2 Data Semantics"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#W3C_L_3_Knowledge_Representation
-ecsel-dr-AT:W3C_L_3_Knowledge_Representation rdf:type owl:Class .
+###  http://www.w3id.org/ecsel-dr-AT#W3C_L3_Knowledge_Representation
+ecsel-dr-AT:W3C_L3_Knowledge_Representation rdf:type owl:Class ;
+                                            rdfs:label "W3C L3 Data Semantics"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#W3C_L_4_Semantics_Representation
-ecsel-dr-AT:W3C_L_4_Semantics_Representation rdf:type owl:Class .
+###  http://www.w3id.org/ecsel-dr-AT#W3C_L4_Semantics_Representation
+ecsel-dr-AT:W3C_L4_Semantics_Representation rdf:type owl:Class ;
+                                            rdfs:label "W3C L4 Data Semantics"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#W3C_L_5_Data_Semantics
-ecsel-dr-AT:W3C_L_5_Data_Semantics rdf:type owl:Class .
+###  http://www.w3id.org/ecsel-dr-AT#W3C_L5_Data_Semantics
+ecsel-dr-AT:W3C_L5_Data_Semantics rdf:type owl:Class ;
+                                  rdfs:label "W3C L5 Data Semantics"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#W3C_Standard
 ecsel-dr-AT:W3C_Standard rdf:type owl:Class ;
                          rdfs:subClassOf ecsel-dr-AT:Standard ;
-                         rdfs:comment "Is the main international standards organization for the World Wide Web."@en .
+                         rdfs:comment "Is the main international standards organization for the World Wide Web."@en ;
+                         rdfs:label "W3C Standard"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#WADL
 ecsel-dr-AT:WADL rdf:type owl:Class ;
-                 rdfs:subClassOf ecsel-dr-AT:Markup_Language .
+                 rdfs:subClassOf ecsel-dr-AT:Markup_Language ;
+                 rdfs:label "WADL"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#WAP
@@ -10666,18 +10745,21 @@ ecsel-dr-AT:WPAN_802_15_4 rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#WSDL
 ecsel-dr-AT:WSDL rdf:type owl:Class ;
-                 rdfs:subClassOf ecsel-dr-AT:Markup_Language .
+                 rdfs:subClassOf ecsel-dr-AT:Markup_Language ;
+                 rdfs:label "WSDL"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Web_Address
 ecsel-dr-AT:Web_Address rdf:type owl:Class ;
-                        rdfs:subClassOf ecsel-dr-AT:W3C_L_1_Web_Platform ;
-                        rdfs:comment "Is a reference to a web resource that specifies its location on a computer network and a mechanism for retrieving it."@en .
+                        rdfs:subClassOf ecsel-dr-AT:W3C_L1_Web_Platform ;
+                        rdfs:comment "Is a reference to a web resource that specifies its location on a computer network and a mechanism for retrieving it."@en ;
+                        rdfs:label "Web Address"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Web_Application_Protocol
 ecsel-dr-AT:Web_Application_Protocol rdf:type owl:Class ;
-                                     rdfs:subClassOf ecsel-dr-AT:W3C_L_1_Web_Platform .
+                                     rdfs:subClassOf ecsel-dr-AT:W3C_L1_Web_Platform ;
+                                     rdfs:label "Web Application Protocol"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Wireless_HART
@@ -10692,21 +10774,23 @@ ecsel-dr-AT:X400 rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#XHTML
 ecsel-dr-AT:XHTML rdf:type owl:Class ;
-                  rdfs:subClassOf ecsel-dr-AT:W3C_L_2_Data_Syntax ;
-                  rdfs:comment "Is a separate language from HTML that began as a reformulation of HTML 4.01 using XML 1.0."@en .
+                  rdfs:subClassOf ecsel-dr-AT:W3C_L2_Data_Syntax ;
+                  rdfs:comment "Is a separate language from HTML that began as a reformulation of HTML 4.01 using XML 1.0."@en ;
+                  rdfs:label "XHTML"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#XML
 ecsel-dr-AT:XML rdf:type owl:Class ;
-                rdfs:subClassOf ecsel-dr-AT:W3C_L_2_Data_Syntax ;
-                rdfs:comment "Is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable."@en ;
-                rdfs:label "Extended Markup Language" .
+                rdfs:subClassOf ecsel-dr-AT:W3C_L2_Data_Syntax ;
+                rdfs:comment "Extended Markup Language (XML) Is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable."@en ;
+                rdfs:label "XML" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#XML_Schema
 ecsel-dr-AT:XML_Schema rdf:type owl:Class ;
-                       rdfs:subClassOf ecsel-dr-AT:Data_Language_XML-based ;
-                       rdfs:comment "A recommendation of the World Wide Web Consortium (W3C), specifies how to formally describe the elements in an Extensible Markup Language (XML) document."@en .
+                       rdfs:subClassOf ecsel-dr-AT:Data_Language_XML_Based ;
+                       rdfs:comment "A recommendation of the World Wide Web Consortium (W3C), specifies how to formally describe the elements in an Extensible Markup Language (XML) document."@en ;
+                       rdfs:label "XML Schema"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#XMPP
@@ -10842,7 +10926,8 @@ ecsel-dr-AT:uPnP rdf:type owl:Class ;
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Supplier_Data
-<http://www.w3id.org/ecsel-dr-OM#Supplier_Data> rdf:type owl:Class .
+<http://www.w3id.org/ecsel-dr-OM#Supplier_Data> rdf:type owl:Class ;
+                                                rdfs:label "Supplier Data"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Supply
@@ -10856,7 +10941,8 @@ ecsel-dr-AT:uPnP rdf:type owl:Class ;
                                                                                 <http://www.w3id.org/ecsel-dr-OM#Accepted_With_Change>
                                                                                 <http://www.w3id.org/ecsel-dr-OM#Rejected>
                                                                               )
-                                                                  ] .
+                                                                  ] ;
+                                              rdfs:label "User Action"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Additional_Power_Management
@@ -11490,7 +11576,7 @@ of linear, rotation or 3 dimensional movements."""@en ;
 ###  http://www.w3id.org/ecsel-dr-ORG#Sub_Project
 <http://www.w3id.org/ecsel-dr-ORG#Sub_Project> rdf:type owl:Class ;
                                                rdfs:comment "A project within a larger project."@en ;
-                                               rdfs:label "SubProject"@en .
+                                               rdfs:label "Sub Project"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-ORG#Task
@@ -11535,33 +11621,8 @@ Used to divide/rejoin tasks/flows which happen in parallel with another, rather 
                                                            rdfs:subClassOf <http://purl.org/dc/dcmitype/Software> ;
                                                            rdfs:comment "An application system type classifies individual application systems which have exactly the same technological properties. Process steps might be supported by application systems. Object describe IT systems (library for IT systems available)." ;
                                                            rdfs:isDefinedBy "https://wiki.scn.sap.com/wiki/pages/viewpage.action?pageId=156532992" ;
-                                                           rdfs:label "Application system type" ;
+                                                           rdfs:label "Application System Type" ;
                                                            skos:altLabel "applic system type" .
-
-
-###  http://www.w3id.org/ecsel-dr-PMV#BP
-<http://www.w3id.org/ecsel-dr-PMV#BP> rdf:type owl:Class ;
-                                      rdfs:subClassOf [ owl:intersectionOf ( <http://www.w3id.org/ecsel-dr-PMV#VACD>
-                                                                             [ rdf:type owl:Class ;
-                                                                               owl:unionOf ( [ rdf:type owl:Restriction ;
-                                                                                               owl:onProperty <http://www.w3id.org/ecsel-dr-PMV#has_subordinate_VACD> ;
-                                                                                               owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                                               owl:onClass <http://www.w3id.org/ecsel-dr-PMV#BP>
-                                                                                             ]
-                                                                                             [ rdf:type owl:Restriction ;
-                                                                                               owl:onProperty <http://www.w3id.org/ecsel-dr-PMV#has_subordinate> ;
-                                                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                                               owl:onClass <http://www.w3id.org/ecsel-dr-PMV#Business_Process_Flow>
-                                                                                             ]
-                                                                                           )
-                                                                             ]
-                                                                           ) ;
-                                                        rdf:type owl:Class
-                                                      ] ;
-                                      rdfs:comment "A Business Process consists of a series of value-creating activities that reach the performance expected by customers and fulfill goals derived from the business strategy." ;
-                                      rdfs:label "Business Process" ;
-                                      skos:altLabel "BP" ,
-                                                    "busi process" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PMV#BP_Activity
@@ -11573,33 +11634,29 @@ Used to divide/rejoin tasks/flows which happen in parallel with another, rather 
                                                              "busi process activ" .
 
 
-###  http://www.w3id.org/ecsel-dr-PMV#BP_Landscape
-<http://www.w3id.org/ecsel-dr-PMV#BP_Landscape> rdf:type owl:Class ;
-                                                rdfs:subClassOf [ owl:intersectionOf ( <http://www.w3id.org/ecsel-dr-PMV#VACD>
-                                                                                       [ rdf:type owl:Class ;
-                                                                                         owl:unionOf ( [ rdf:type owl:Restriction ;
-                                                                                                         owl:onProperty <http://www.w3id.org/ecsel-dr-PMV#has_subordinate_VACD> ;
-                                                                                                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                                                         owl:onClass [ rdf:type owl:Class ;
-                                                                                                                       owl:unionOf ( <http://www.w3id.org/ecsel-dr-PMV#BP>
-                                                                                                                                     <http://www.w3id.org/ecsel-dr-PMV#BP_Landscape>
-                                                                                                                                   )
-                                                                                                                     ]
-                                                                                                       ]
-                                                                                                       [ rdf:type owl:Restriction ;
-                                                                                                         owl:onProperty <http://www.w3id.org/ecsel-dr-PMV#has_subordinate> ;
-                                                                                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                                                         owl:onClass <http://www.w3id.org/ecsel-dr-PMV#Business_Process_Flow>
-                                                                                                       ]
-                                                                                                     )
-                                                                                       ]
-                                                                                     ) ;
-                                                                  rdf:type owl:Class
-                                                                ] ;
-                                                rdfs:comment "A Business Process Landscape is a detailed overview of a specific Core- or Enabler Process." ;
-                                                rdfs:label "Business Process Landscape" ;
-                                                skos:altLabel "BP Landscape" ,
-                                                              "busi process landscap" .
+###  http://www.w3id.org/ecsel-dr-PMV#Business_Process
+<http://www.w3id.org/ecsel-dr-PMV#Business_Process> rdf:type owl:Class ;
+                                                    rdfs:subClassOf [ owl:intersectionOf ( <http://www.w3id.org/ecsel-dr-PMV#Value_Added_Chain_Diagram>
+                                                                                           [ rdf:type owl:Class ;
+                                                                                             owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                                             owl:onProperty <http://www.w3id.org/ecsel-dr-PMV#has_subordinate_VACD> ;
+                                                                                                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                             owl:onClass <http://www.w3id.org/ecsel-dr-PMV#Business_Process>
+                                                                                                           ]
+                                                                                                           [ rdf:type owl:Restriction ;
+                                                                                                             owl:onProperty <http://www.w3id.org/ecsel-dr-PMV#has_subordinate> ;
+                                                                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                             owl:onClass <http://www.w3id.org/ecsel-dr-PMV#Business_Process_Flow>
+                                                                                                           ]
+                                                                                                         )
+                                                                                           ]
+                                                                                         ) ;
+                                                                      rdf:type owl:Class
+                                                                    ] ;
+                                                    rdfs:comment "A Business Process (BP) consists of a series of value-creating activities that reach the performance expected by customers and fulfill goals derived from the business strategy." ;
+                                                    rdfs:label "Business Process" ;
+                                                    skos:altLabel "BP" ,
+                                                                  "busi process" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PMV#Business_Process_Flow
@@ -11611,13 +11668,42 @@ A Business Process Flow is a sequence of required tasks to create specified outp
                                                                        "busi process flow"@en .
 
 
+###  http://www.w3id.org/ecsel-dr-PMV#Business_Process_Landscape
+<http://www.w3id.org/ecsel-dr-PMV#Business_Process_Landscape> rdf:type owl:Class ;
+                                                              rdfs:subClassOf [ owl:intersectionOf ( <http://www.w3id.org/ecsel-dr-PMV#Value_Added_Chain_Diagram>
+                                                                                                     [ rdf:type owl:Class ;
+                                                                                                       owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                                                       owl:onProperty <http://www.w3id.org/ecsel-dr-PMV#has_subordinate_VACD> ;
+                                                                                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                                       owl:onClass [ rdf:type owl:Class ;
+                                                                                                                                     owl:unionOf ( <http://www.w3id.org/ecsel-dr-PMV#Business_Process>
+                                                                                                                                                   <http://www.w3id.org/ecsel-dr-PMV#Business_Process_Landscape>
+                                                                                                                                                 )
+                                                                                                                                   ]
+                                                                                                                     ]
+                                                                                                                     [ rdf:type owl:Restriction ;
+                                                                                                                       owl:onProperty <http://www.w3id.org/ecsel-dr-PMV#has_subordinate> ;
+                                                                                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                                       owl:onClass <http://www.w3id.org/ecsel-dr-PMV#Business_Process_Flow>
+                                                                                                                     ]
+                                                                                                                   )
+                                                                                                     ]
+                                                                                                   ) ;
+                                                                                rdf:type owl:Class
+                                                                              ] ;
+                                                              rdfs:comment "A Business Process Landscape (BP_Landscape) is a detailed overview of a specific Core- or Enabler Process." ;
+                                                              rdfs:label "Business Process Landscape" ;
+                                                              skos:altLabel "BP Landscape" ,
+                                                                            "busi process landscap" .
+
+
 ###  http://www.w3id.org/ecsel-dr-PMV#Company_Process_Framework
 <http://www.w3id.org/ecsel-dr-PMV#Company_Process_Framework> rdf:type owl:Class ;
-                                                             rdfs:subClassOf [ owl:intersectionOf ( <http://www.w3id.org/ecsel-dr-PMV#VACD>
+                                                             rdfs:subClassOf [ owl:intersectionOf ( <http://www.w3id.org/ecsel-dr-PMV#Value_Added_Chain_Diagram>
                                                                                                     [ rdf:type owl:Restriction ;
                                                                                                       owl:onProperty <http://www.w3id.org/ecsel-dr-PMV#has_subordinate_VACD> ;
                                                                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                                                      owl:onClass <http://www.w3id.org/ecsel-dr-PMV#BP_Landscape>
+                                                                                                      owl:onClass <http://www.w3id.org/ecsel-dr-PMV#Business_Process_Landscape>
                                                                                                     ]
                                                                                                   ) ;
                                                                                rdf:type owl:Class
@@ -12074,14 +12160,14 @@ Functionality: Jump function to next process (e.g. EPC, VAC), typically at the e
                                                                  skos:altLabel "technic term output element" .
 
 
-###  http://www.w3id.org/ecsel-dr-PMV#VACD
-<http://www.w3id.org/ecsel-dr-PMV#VACD> rdf:type owl:Class ;
-                                        rdfs:comment """A Value-Added Chain is a process that represents an element of the process chain. A process hierarchy can be realized by hierarchically structuring value chains, thus modeling business areas, process groups, business processes and business process variants using the sam notation.
+###  http://www.w3id.org/ecsel-dr-PMV#Value_Added_Chain_Diagram
+<http://www.w3id.org/ecsel-dr-PMV#Value_Added_Chain_Diagram> rdf:type owl:Class ;
+                                                             rdfs:comment """A Value-Added Chain is a process that represents an element of the process chain. A process hierarchy can be realized by hierarchically structuring value chains, thus modeling business areas, process groups, business processes and business process variants using the sam notation.
 House: represents enabler processes.""" ;
-                                        rdfs:isDefinedBy "https://wiki.scn.sap.com/wiki/pages/viewpage.action?pageId=156532992" ;
-                                        rdfs:label "Value-added chain diagram" ;
-                                        skos:altLabel "VACD" ,
-                                                      "valu - ad chain diagram" .
+                                                             rdfs:isDefinedBy "https://wiki.scn.sap.com/wiki/pages/viewpage.action?pageId=156532992" ;
+                                                             rdfs:label "Value-added chain diagram" ;
+                                                             skos:altLabel "VACD" ,
+                                                                           "valu - ad chain diagram" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PMV#XOR
@@ -12524,6 +12610,13 @@ https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#InformationObject\"""" ;
                                                            rdfs:label "N-Channel Configuration" .
 
 
+###  http://www.w3id.org/ecsel-dr-PWR#Negative
+<http://www.w3id.org/ecsel-dr-PWR#Negative> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Voltage> ;
+                                            rdfs:comment "Is the negative difference in electric potential between two points"@en ;
+                                            rdfs:label "Negative (-)" .
+
+
 ###  http://www.w3id.org/ecsel-dr-PWR#Object
 <http://www.w3id.org/ecsel-dr-PWR#Object> rdf:type owl:Class ;
                                           rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Entity> ;
@@ -12565,7 +12658,7 @@ https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Object\"""" ;
                                                                                                ]
                                                                                                [ rdf:type owl:Restriction ;
                                                                                                  owl:onProperty <http://www.w3id.org/ecsel-dr-PWR#has_voltage> ;
-                                                                                                 owl:allValuesFrom <http://www.w3id.org/ecsel-dr-PWR#Postive_(+)>
+                                                                                                 owl:allValuesFrom <http://www.w3id.org/ecsel-dr-PWR#Postive>
                                                                                                ]
                                                                                              ) ;
                                                                           rdf:type owl:Class
@@ -12576,7 +12669,7 @@ https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Object\"""" ;
                                                                                                ]
                                                                                                [ rdf:type owl:Restriction ;
                                                                                                  owl:onProperty <http://www.w3id.org/ecsel-dr-PWR#has_voltage> ;
-                                                                                                 owl:allValuesFrom <http://www.w3id.org/ecsel-dr-PWR#Negative_(-)>
+                                                                                                 owl:allValuesFrom <http://www.w3id.org/ecsel-dr-PWR#Negative>
                                                                                                ]
                                                                                              ) ;
                                                                           rdf:type owl:Class
@@ -12626,6 +12719,13 @@ Example: A post might act as the platform, a body might act as a platform for an
                                             rdfs:isDefinedBy """rdfs:isDefinedBy \"World Wide Web Consortium SSN
 http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Platform\"""" ;
                                             rdfs:label "Platform" .
+
+
+###  http://www.w3id.org/ecsel-dr-PWR#Postive
+<http://www.w3id.org/ecsel-dr-PWR#Postive> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Voltage> ;
+                                           rdfs:comment "Is the positive difference in electric potential between two points"@en ;
+                                           rdfs:label "Positive (+)" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Power_Converter
@@ -12868,7 +12968,8 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Sensing""" ;
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Voltage
 <http://www.w3id.org/ecsel-dr-PWR#Voltage> rdf:type owl:Class ;
-                                           rdfs:comment "Is the difference in electric potential between two points"@en .
+                                           rdfs:comment "Is the difference in electric potential between two points"@en ;
+                                           rdfs:label "Voltage"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Voltage_Controlled
@@ -12897,20 +12998,6 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Sensing""" ;
                                                                                rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Technology_Hardware&Equipment> ;
                                                                                rdfs:comment "Industrial sector of Electronic Equipment, Instruments and Components"@en ;
                                                                                rdfs:label "ElectronicEquipment,Instruments&Components" .
-
-
-###  http://www.w3id.org/ecsel-dr-PWR#Negative_(-)
-<http://www.w3id.org/ecsel-dr-PWR#Negative_(-)> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Voltage> ;
-                                                rdfs:comment "Is the negative difference in electric potential between two points"@en ;
-                                                rdfs:label "Negative (-)" .
-
-
-###  http://www.w3id.org/ecsel-dr-PWR#Postive_(+)
-<http://www.w3id.org/ecsel-dr-PWR#Postive_(+)> rdf:type owl:Class ;
-                                               rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Voltage> ;
-                                               rdfs:comment "Is the positive difference in electric potential between two points"@en ;
-                                               rdfs:label "Positive (+)" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Semiconductors&Semiconductor_Equipment
@@ -12964,7 +13051,8 @@ ecsel-dr-RAMI40:Dimension rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Energy_Efficiency
 ecsel-dr-RAMI40:Energy_Efficiency rdf:type owl:Class ;
-                                  rdfs:subClassOf ecsel-dr-RAMI40:Submodel .
+                                  rdfs:subClassOf ecsel-dr-RAMI40:Submodel ;
+                                  rdfs:label "Energy Efficiency"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#I4.0_Component
@@ -12976,7 +13064,8 @@ ecsel-dr-RAMI40:I4.0_Component rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#MES_Connection
 ecsel-dr-RAMI40:MES_Connection rdf:type owl:Class ;
-                               rdfs:subClassOf ecsel-dr-RAMI40:Submodel .
+                               rdfs:subClassOf ecsel-dr-RAMI40:Submodel ;
+                               rdfs:label "MES Connection"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Machine
@@ -13060,7 +13149,8 @@ ecsel-dr-RAMI40:Sensor rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Sensor_Measurement
 ecsel-dr-RAMI40:Sensor_Measurement rdf:type owl:Class ;
                                    rdfs:subClassOf ecsel-dr-RAMI40:Submodel ;
-                                   rdfs:comment "Measurement performed by a sensor"@en .
+                                   rdfs:comment "Measurement performed by a sensor"@en ;
+                                   rdfs:label "Sensor Measurement"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Standard
@@ -13071,8 +13161,8 @@ ecsel-dr-RAMI40:Standard rdf:type owl:Class ;
                          skos:preLabel "Standard"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-RAMI40#Standard_Organisation
-ecsel-dr-RAMI40:Standard_Organisation rdf:type owl:Class ;
+###  http://www.w3id.org/ecsel-dr-RAMI40#Standard_Organization
+ecsel-dr-RAMI40:Standard_Organization rdf:type owl:Class ;
                                       rdfs:comment "Standards organisations that prepares and publishes International Standards for all electrical, electronic and related technologies"@en ;
                                       rdfs:label "Standard Organization"@en ;
                                       skos:example "IEC (International Electrotechnical Commission)"@en .
@@ -13080,13 +13170,15 @@ ecsel-dr-RAMI40:Standard_Organisation rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Standard_Version
 ecsel-dr-RAMI40:Standard_Version rdf:type owl:Class ;
-                                 rdfs:subClassOf ecsel-dr-RAMI40:Version .
+                                 rdfs:subClassOf ecsel-dr-RAMI40:Version ;
+                                 rdfs:label "Standard Version"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Structure
 ecsel-dr-RAMI40:Structure rdf:type owl:Class ;
                           rdfs:subClassOf ecsel-dr-RAMI40:Submodel ;
-                          rdfs:comment "The way in which the parts of a system or object are arranged or organized, or a system arranged in this way"@en .
+                          rdfs:comment "The way in which the parts of a system or object are arranged or organized, or a system arranged in this way"@en ;
+                          rdfs:label "Structure"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Submodel
@@ -13098,7 +13190,8 @@ ecsel-dr-RAMI40:Submodel rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Transport_Interface
 ecsel-dr-RAMI40:Transport_Interface rdf:type owl:Class ;
-                                    rdfs:subClassOf ecsel-dr-RAMI40:Submodel .
+                                    rdfs:subClassOf ecsel-dr-RAMI40:Submodel ;
+                                    rdfs:label "Transport Interface"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Used_Date
@@ -13109,7 +13202,8 @@ ecsel-dr-RAMI40:Used_Date rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Version
 ecsel-dr-RAMI40:Version rdf:type owl:Class ;
-                        rdfs:comment "A particular form of something that is slightly different from other forms of the same thing"@en .
+                        rdfs:comment "A particular form of something that is slightly different from other forms of the same thing"@en ;
+                        rdfs:label "Version"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#View
@@ -13204,7 +13298,7 @@ The supplier (Vendor) is responsible to maintain his stock within a defined min/
 <http://www.w3id.org/ecsel-dr-SCP#DB> rdf:type owl:Class ;
                                       rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SCP#Stocks> ;
                                       rdfs:comment "A die bank is an area in production where (usually) tested wafers are stored waiting for disposition and further production."@en ;
-                                      rdfs:label "DB"@en .
+                                      rdfs:label "Die Bank"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#DC
@@ -13385,25 +13479,25 @@ The supplier (Vendor) is responsible to maintain his stock within a defined min/
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Supply_Demand_Match
 <http://www.w3id.org/ecsel-dr-SCP#Supply_Demand_Match> rdf:type owl:Class ;
-                                                       rdfs:label "SupplyDemandMatch"@en .
+                                                       rdfs:label "Supply Demand Match"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Supply_Picture
 <http://www.w3id.org/ecsel-dr-SCP#Supply_Picture> rdf:type owl:Class ;
-                                                  rdfs:label "SupplyPicture"@en .
+                                                  rdfs:label "Supply Picture"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Target_Allocation
 <http://www.w3id.org/ecsel-dr-SCP#Target_Allocation> rdf:type owl:Class ;
-                                                     rdfs:label "TargetAllocation"@en .
+                                                     rdfs:label "Target Allocation"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#WIP
 <http://www.w3id.org/ecsel-dr-SCP#WIP> rdf:type owl:Class ;
                                        rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SCP#Stocks> ;
-                                       rdfs:comment """WIP includes the unfinished items for products in a production process. 
+                                       rdfs:comment """Work In Progress (WIP) includes the unfinished items for products in a production process. 
 These items are not yet completed but either just being fabricated or waiting in a queue for further processing."""@en ;
-                                       rdfs:label "WIP"@en .
+                                       rdfs:label "Work In Progress"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Bottleneck
@@ -13775,7 +13869,7 @@ because the mid capacity planning is done on this first aggregated product level
 
 ###  http://www.w3id.org/ecsel-dr-SO#Target_Costs
 <http://www.w3id.org/ecsel-dr-SO#Target_Costs> rdf:type owl:Class ;
-                                               rdfs:comment "The \"target costs\" entity is the final cost of a product or service that must be achieved in order to generate the desired level of sales revenue and income or due to contractual agreements."@en ;
+                                               rdfs:comment "The Target Costs entity is the final cost of a product or service that must be achieved in order to generate the desired level of sales revenue and income or due to contractual agreements."@en ;
                                                rdfs:label "Target Costs"@en .
 
 
@@ -13824,17 +13918,17 @@ because the mid capacity planning is done on this first aggregated product level
                                        rdfs:label "Tool"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SO#WIP_Station
-<http://www.w3id.org/ecsel-dr-SO#WIP_Station> rdf:type owl:Class ;
-                                              rdfs:comment "Work in Progress (WIP) processing occurs here. WIP refers to the units of production that have been released into the factory, but have not yet been scrapped, have not been sent our for external rework, and have not finished processing through all of the production steps."@en ;
-                                              rdfs:label "Work In Progress Station"@en .
-
-
 ###  http://www.w3id.org/ecsel-dr-SO#Wet_Etching
 <http://www.w3id.org/ecsel-dr-SO#Wet_Etching> rdf:type owl:Class ;
                                               rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SO#Workshop> ;
                                               rdfs:comment "Wet Etching is the process of removing material-etching, through the use of chemical activity."@en ;
                                               rdfs:label "Wet Etching"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-SO#Work_In_Progress_Station
+<http://www.w3id.org/ecsel-dr-SO#Work_In_Progress_Station> rdf:type owl:Class ;
+                                                           rdfs:comment "Work in Progress (WIP) processing occurs here. WIP refers to the units of production that have been released into the factory, but have not yet been scrapped, have not been sent our for external rework, and have not finished processing through all of the production steps."@en ;
+                                                           rdfs:label "Work In Progress Station"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Workshop
@@ -14194,8 +14288,8 @@ ecsel-dr-RAMI40:Work_Center rdf:type owl:NamedIndividual .
 #    Annotations
 #################################################################
 
-ecsel-dr-OOSMP:Completely_Lead_Free_Status skos:prefLabel "Completely Lead Free Status"@en ;
-                                            rdfs:label "Completely Lead Free Status"@en ;
+ecsel-dr-OOSMP:Completely_Lead_Free_Status rdfs:label "Completely Lead Free Status"@en ;
+                                            skos:prefLabel "Completely Lead Free Status"@en ;
                                             rdfs:comment "This status determines whether a semiconductor product is lead free or not."@en .
 
 

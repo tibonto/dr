@@ -1316,6 +1316,29 @@ org:unit_of rdf:type owl:ObjectProperty ,
                                                 skos:example "Used for example to say that a Sensor has a particular accuracy in particular Conditions." .
 
 
+###  http://www.w3id.org/ecsel-dr#fulfilled_by_demand_fulfillement
+:fulfilled_by_demand_fulfillement rdf:type owl:ObjectProperty ;
+                                  rdfs:subPropertyOf owl:topObjectProperty ;
+                                  owl:inverseOf :fulfills_demand_snapshot ;
+                                  rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Demand_Snapshot> ;
+                                  rdfs:range <http://www.w3id.org/ecsel-dr-OM#Demand_Fulfillement> .
+
+
+###  http://www.w3id.org/ecsel-dr#fulfills_demand_snapshot
+:fulfills_demand_snapshot rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf owl:topObjectProperty ;
+                          rdfs:domain <http://www.w3id.org/ecsel-dr-OM#Demand_Fulfillement> ;
+                          rdfs:range <http://www.w3id.org/ecsel-dr-SO#Demand_Snapshot> .
+
+
+###  http://www.w3id.org/ecsel-dr#has_data_model
+:has_data_model rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                owl:inverseOf :is_data_model_of ;
+                rdfs:domain ecsel-dr-AH:Service ;
+                rdfs:range ecsel-dr-AH:Data_Model .
+
+
 ###  http://www.w3id.org/ecsel-dr#has_date_time_interval
 :has_date_time_interval rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf owl:topObjectProperty ;
@@ -1352,6 +1375,37 @@ org:unit_of rdf:type owl:ObjectProperty ,
                     rdfs:label "has public holiday"@en .
 
 
+###  http://www.w3id.org/ecsel-dr#has_relationship_nature
+:has_relationship_nature rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf owl:topObjectProperty ;
+                         owl:inverseOf :is_relationship_nature_of ;
+                         rdfs:domain <http://www.w3.org/ns/sosa/sampling/Sample_Relationship> ;
+                         rdfs:range <http://www.w3.org/ns/sosa/sampling/Relationship_Nature> .
+
+
+###  http://www.w3id.org/ecsel-dr#has_view
+:has_view rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          owl:inverseOf :is_view_of ;
+          rdfs:domain ecsel-dr-RAMI40:Submodel ;
+          rdfs:range ecsel-dr-RAMI40:View .
+
+
+###  http://www.w3id.org/ecsel-dr#implements_service_oriented_architecture
+:implements_service_oriented_architecture rdf:type owl:ObjectProperty ;
+                                          rdfs:subPropertyOf owl:topObjectProperty ;
+                                          owl:inverseOf :is_implemented_by_serivce_oriented_architecture_implementation ;
+                                          rdfs:domain ecsel-dr-AT:Service_Oriented_Architecture_Implementation ;
+                                          rdfs:range ecsel-dr-AH:Service_Oriented_Architecture .
+
+
+###  http://www.w3id.org/ecsel-dr#is_data_model_of
+:is_data_model_of rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  rdfs:domain ecsel-dr-AH:Data_Model ;
+                  rdfs:range ecsel-dr-AH:Service .
+
+
 ###  http://www.w3id.org/ecsel-dr#is_date_time_interval_of
 :is_date_time_interval_of rdf:type owl:ObjectProperty ;
                           rdfs:subPropertyOf owl:topObjectProperty ;
@@ -1368,6 +1422,13 @@ org:unit_of rdf:type owl:ObjectProperty ,
                             rdfs:label "is geographical location of"@en .
 
 
+###  http://www.w3id.org/ecsel-dr#is_implemented_by_serivce_oriented_architecture_implementation
+:is_implemented_by_serivce_oriented_architecture_implementation rdf:type owl:ObjectProperty ;
+                                                                rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                rdfs:domain ecsel-dr-AH:Service_Oriented_Architecture ;
+                                                                rdfs:range ecsel-dr-AT:Service_Oriented_Architecture_Implementation .
+
+
 ###  http://www.w3id.org/ecsel-dr#is_in_event_calendar
 :is_in_event_calendar rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf owl:topObjectProperty ;
@@ -1382,6 +1443,20 @@ org:unit_of rdf:type owl:ObjectProperty ,
                       rdfs:domain :Geographical_Location ;
                       rdfs:range :Public_Holiday ;
                       rdfs:label "is public holiday in"@en .
+
+
+###  http://www.w3id.org/ecsel-dr#is_relationship_nature_of
+:is_relationship_nature_of rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf owl:topObjectProperty ;
+                           rdfs:domain <http://www.w3.org/ns/sosa/sampling/Relationship_Nature> ;
+                           rdfs:range <http://www.w3.org/ns/sosa/sampling/Sample_Relationship> .
+
+
+###  http://www.w3id.org/ecsel-dr#is_view_of
+:is_view_of rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain ecsel-dr-RAMI40:View ;
+            rdfs:range ecsel-dr-RAMI40:Submodel .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#contains_device
@@ -8244,7 +8319,8 @@ A Sample is intended to sample some FatureOfInterest, so there is an expectation
 
 ###  http://www.w3.org/ns/sosa/Sensor
 <http://www.w3.org/ns/sosa/Sensor> rdf:type owl:Class ;
-                                   owl:equivalentClass ecsel-dr-OOSMP:Sensor ;
+                                   owl:equivalentClass ecsel-dr-OOSMP:Sensor ,
+                                                       ecsel-dr-RAMI40:Sensor ;
                                    rdfs:subClassOf <http://www.w3.org/ns/ssn/System> ,
                                                    [ rdf:type owl:Restriction ;
                                                      owl:onProperty <http://www.w3.org/ns/sosa/makes_observation> ;
@@ -11775,6 +11851,7 @@ ecsel-dr-OOSMP:Sensing_Type rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Sensor
 ecsel-dr-OOSMP:Sensor rdf:type owl:Class ;
+                      owl:equivalentClass ecsel-dr-RAMI40:Sensor ;
                       rdfs:subClassOf ecsel-dr-OOSMP:Semiconductor_Product ;
                       rdfs:comment "A semiconductor product which is used as sensor"@en ;
                       rdfs:label "Sensor"@en ;
@@ -14350,6 +14427,7 @@ foaf:Document rdf:type owl:Class ;
 
 ###  http://xmlns.com/foaf/0.1/Person
 foaf:Person rdf:type owl:Class ;
+            rdfs:subClassOf foaf:Agent ;
             rdfs:comment "The Person class represents people. Something is a Person if it is a person. We don't nitpic about whether they're alive, dead, real, or imaginary. The Person class is a sub-class of the Agent class, since all people are considered 'agents' in FOAF."@en ;
             rdfs:label "Person"@en .
 

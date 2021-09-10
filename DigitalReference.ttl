@@ -4121,7 +4121,7 @@ ecsel-dr-PROD:substitute_product rdf:type owl:ObjectProperty ;
 <http://www.w3id.org/ecsel-dr-PWR#has_element> rdf:type owl:ObjectProperty ;
                                                rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Amplication_Switching_Device> ;
                                                rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Device_Element> ;
-                                               rdfs:label "has an element" .
+                                               rdfs:label "has element" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#has_industry_sector
@@ -14781,8 +14781,8 @@ ecsel-dr-RAMI40:Work_Center rdf:type owl:NamedIndividual .
 #    Annotations
 #################################################################
 
-ecsel-dr-OOSMP:Completely_Lead_Free_Status rdfs:label "Completely Lead Free Status"@en ;
-                                            skos:prefLabel "Completely Lead Free Status"@en ;
+ecsel-dr-OOSMP:Completely_Lead_Free_Status skos:prefLabel "Completely Lead Free Status"@en ;
+                                            rdfs:label "Completely Lead Free Status"@en ;
                                             rdfs:comment "This status determines whether a semiconductor product is lead free or not."@en .
 
 

@@ -2159,6 +2159,8 @@ ecsel-dr-AT:used_in_ISA_95_layer rdf:type owl:ObjectProperty ;
 <http://www.w3id.org/ecsel-dr-OM#consits_of_open_order> rdf:type owl:ObjectProperty ;
                                                         rdfs:subPropertyOf owl:topObjectProperty ;
                                                         owl:inverseOf <http://www.w3id.org/ecsel-dr-OM#is_part_of_open_order_book> ;
+                                                        rdfs:domain <http://www.w3id.org/ecsel-dr-OM#Open_Order_Book> ;
+                                                        rdfs:range <http://www.w3id.org/ecsel-dr-OM#Open_Order> ;
                                                         rdfs:label "consists of open order" .
 
 
@@ -2290,6 +2292,8 @@ ecsel-dr-AT:used_in_ISA_95_layer rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-OM#is_part_of_open_order
 <http://www.w3id.org/ecsel-dr-OM#is_part_of_open_order> rdf:type owl:ObjectProperty ;
                                                         rdfs:subPropertyOf owl:topObjectProperty ;
+                                                        rdfs:domain <http://www.w3id.org/ecsel-dr-OM#Order_Line_Item> ;
+                                                        rdfs:range <http://www.w3id.org/ecsel-dr-OM#Open_Order> ;
                                                         rdfs:label "is part of open order"@en .
 
 
@@ -3440,6 +3444,21 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                 skos:altLabel "input" .
 
 
+###  http://www.w3id.org/ecsel-dr-PMV#has_as_output
+<http://www.w3id.org/ecsel-dr-PMV#has_as_output> rdf:type owl:ObjectProperty ;
+                                                 owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#is_output_of> ;
+                                                 rdf:type owl:InverseFunctionalProperty ;
+                                                 rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Function> ,
+                                                             <http://www.w3id.org/ecsel-dr-PMV#Task> ;
+                                                 rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Output> ,
+                                                            <http://www.w3id.org/ecsel-dr-PMV#Technical_Term> ;
+                                                 rdfs:comment "A function in a process flow produces a physical or non-physical output." ,
+                                                              "A process step can have technical term(s) as output." ;
+                                                 rdfs:label "has as output" ,
+                                                            "hasOutput" ;
+                                                 skos:altLabel "output" .
+
+
 ###  http://www.w3id.org/ecsel-dr-PMV#has_next_model
 <http://www.w3id.org/ecsel-dr-PMV#has_next_model> rdf:type owl:ObjectProperty ;
                                                   owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#has_previous_model> ;
@@ -3448,21 +3467,6 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                   rdfs:comment "An EPC can have another EPC following which is dependent on the result. The connector is used to represent the chronological order in a VACD." ;
                                                   rdfs:label "has next model" ;
                                                   skos:altLabel "model" .
-
-
-###  http://www.w3id.org/ecsel-dr-PMV#has_output
-<http://www.w3id.org/ecsel-dr-PMV#has_output> rdf:type owl:ObjectProperty ;
-                                              owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#is_output_of> ;
-                                              rdf:type owl:InverseFunctionalProperty ;
-                                              rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Function> ,
-                                                          <http://www.w3id.org/ecsel-dr-PMV#Task> ;
-                                              rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Output> ,
-                                                         <http://www.w3id.org/ecsel-dr-PMV#Technical_Term> ;
-                                              rdfs:comment "A function in a process flow produces a physical or non-physical output." ,
-                                                           "A process step can have technical term(s) as output." ;
-                                              rdfs:label "has as output" ,
-                                                         "hasOutput" ;
-                                              skos:altLabel "output" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PMV#has_previous_model
@@ -3958,14 +3962,6 @@ ecsel-dr-PROD:has_FPOS rdf:type owl:ObjectProperty ,
                        rdfs:label "has fabric position" .
 
 
-###  http://www.w3id.org/ecsel-dr-PROD#has_RfP
-ecsel-dr-PROD:has_RfP rdf:type owl:ObjectProperty ,
-                               owl:InverseFunctionalProperty ;
-                      rdfs:domain ecsel-dr-PROD:Plan_Position ;
-                      rdfs:range ecsel-dr-PROD:Required_For_Plan ;
-                      rdfs:label "has RfP"@en .
-
-
 ###  http://www.w3id.org/ecsel-dr-PROD#has_SKU_PD
 ecsel-dr-PROD:has_SKU_PD rdf:type owl:ObjectProperty ,
                                   owl:InverseFunctionalProperty ;
@@ -3999,6 +3995,14 @@ ecsel-dr-PROD:has_finished_product rdf:type owl:ObjectProperty ,
                                    rdfs:range ecsel-dr-PROD:Finished_Product ;
                                    rdfs:comment "SalesProduct hasFinishedProduct FinishedProduct"@en ;
                                    rdfs:label "has finished product"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-PROD#has_required_for_plan
+ecsel-dr-PROD:has_required_for_plan rdf:type owl:ObjectProperty ,
+                                             owl:InverseFunctionalProperty ;
+                                    rdfs:domain ecsel-dr-PROD:Plan_Position ;
+                                    rdfs:range ecsel-dr-PROD:Required_For_Plan ;
+                                    rdfs:label "has RfP"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PROD#has_sales_product
@@ -4039,6 +4043,13 @@ ecsel-dr-PROD:substitute_product rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-PWR#acting_as
 <http://www.w3id.org/ecsel-dr-PWR#acting_as> rdf:type owl:ObjectProperty ;
                                              rdfs:label "acting as" .
+
+
+###  http://www.w3id.org/ecsel-dr-PWR#amplication_switching_device_has_property
+<http://www.w3id.org/ecsel-dr-PWR#amplication_switching_device_has_property> rdf:type owl:ObjectProperty ;
+                                                                             rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Amplication_Switching_Device> ;
+                                                                             rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Property> ;
+                                                                             rdfs:label "has property" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#amplified_by
@@ -4171,13 +4182,6 @@ ecsel-dr-PROD:substitute_product rdf:type owl:ObjectProperty ;
                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Semiconductor_Product_Data_Sheet> ;
                                                      rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Amplication_Switching_Device> ;
                                                      rdfs:label "has propeties of" .
-
-
-###  http://www.w3id.org/ecsel-dr-PWR#has_property
-<http://www.w3id.org/ecsel-dr-PWR#has_property> rdf:type owl:ObjectProperty ;
-                                                rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Amplication_Switching_Device> ;
-                                                rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Property> ;
-                                                rdfs:label "has property" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#has_voltage
@@ -4827,7 +4831,7 @@ ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-SO#has_part_simulation_part
 <http://www.w3id.org/ecsel-dr-SO#has_part_simulation_part> rdf:type owl:ObjectProperty ;
-                                                           owl:inverseOf <http://www.w3id.org/ecsel-dr-SO#is_part_of> ;
+                                                           owl:inverseOf <http://www.w3id.org/ecsel-dr-SO#simulation_part_is_part_of> ;
                                                            rdfs:domain [ rdf:type owl:Class ;
                                                                          owl:unionOf ( <http://www.w3id.org/ecsel-dr-SO#Process_Line>
                                                                                        <http://www.w3id.org/ecsel-dr-SO#Simulation_Route>
@@ -4974,11 +4978,21 @@ ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-SO#is_bottleneck_of
 <http://www.w3id.org/ecsel-dr-SO#is_bottleneck_of> rdf:type owl:ObjectProperty ;
+                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Bottleneck> ;
                                                    rdfs:label "is bottleneck of"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#is_current_WIP
 <http://www.w3id.org/ecsel-dr-SO#is_current_WIP> rdf:type owl:ObjectProperty ;
+                                                 rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Current_WIP> ;
+                                                 rdfs:range [ rdf:type owl:Class ;
+                                                              owl:unionOf ( <http://www.w3id.org/ecsel-dr-SO#Bottleneck>
+                                                                            <http://www.w3id.org/ecsel-dr-SO#Equipment_Group>
+                                                                            <http://www.w3id.org/ecsel-dr-SO#Event_Calendar>
+                                                                            <http://www.w3id.org/ecsel-dr-SO#Lot_Size>
+                                                                            <http://www.w3id.org/ecsel-dr-SO#Operation>
+                                                                          )
+                                                            ] ;
                                                  rdfs:label "is current WIP"@en .
 
 
@@ -4991,6 +5005,8 @@ ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-SO#is_delivery_commitment_of
 <http://www.w3id.org/ecsel-dr-SO#is_delivery_commitment_of> rdf:type owl:ObjectProperty ;
+                                                            rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Delivery_Commitment> ;
+                                                            rdfs:range <http://www.w3id.org/ecsel-dr-SO#Release_Plan> ;
                                                             rdfs:label "is delivery commitment of"@en .
 
 
@@ -5056,11 +5072,6 @@ ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
                                               rdfs:label "is owned by"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SO#is_part_of
-<http://www.w3id.org/ecsel-dr-SO#is_part_of> rdf:type owl:ObjectProperty ;
-                                             rdfs:label "is part of"@en .
-
-
 ###  http://www.w3id.org/ecsel-dr-SO#is_plant_of
 <http://www.w3id.org/ecsel-dr-SO#is_plant_of> rdf:type owl:ObjectProperty ;
                                               rdfs:label "is plant of"@en .
@@ -5076,6 +5087,8 @@ ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-SO#is_priority_class_of
 <http://www.w3id.org/ecsel-dr-SO#is_priority_class_of> rdf:type owl:ObjectProperty ;
+                                                       rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Priority_Class> ;
+                                                       rdfs:range <http://www.w3id.org/ecsel-dr-SO#EPA> ;
                                                        rdfs:label "is priority class of"@en .
 
 
@@ -5195,6 +5208,11 @@ ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
                                                     rdfs:range <http://www.w3id.org/ecsel-dr-SO#Tool> ;
                                                     rdfs:comment "the operator will load the wafer into the wip station and then the robot will load the wafers from the wip station to the tool" ;
                                                     rdfs:label "robotically loads"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-SO#simulation_part_is_part_of
+<http://www.w3id.org/ecsel-dr-SO#simulation_part_is_part_of> rdf:type owl:ObjectProperty ;
+                                                             rdfs:label "is part of"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#unloads
@@ -9467,7 +9485,7 @@ ecsel-dr-AT:AMQP rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#ANSI
 ecsel-dr-AT:ANSI rdf:type owl:Class ;
-                 rdfs:subClassOf ecsel-dr-AT:Standardisation_Organization ;
+                 rdfs:subClassOf ecsel-dr-AT:Standardization_Organization ;
                  rdfs:comment "Is a private non-profit organization that oversees the development of voluntary consensus standards for products, services, processes, systems, and personnel in the United States."@en ;
                  rdfs:label "ANSI"@en .
 
@@ -10046,7 +10064,7 @@ ecsel-dr-AT:Hub rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#IEC
 ecsel-dr-AT:IEC rdf:type owl:Class ;
-                rdfs:subClassOf ecsel-dr-AT:Standardisation_Organization ;
+                rdfs:subClassOf ecsel-dr-AT:Standardization_Organization ;
                 rdfs:label "IEC"@en .
 
 
@@ -10059,7 +10077,7 @@ ecsel-dr-AT:IEC_Standard rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#IEEE
 ecsel-dr-AT:IEEE rdf:type owl:Class ;
-                 rdfs:subClassOf ecsel-dr-AT:Standardisation_Organization ;
+                 rdfs:subClassOf ecsel-dr-AT:Standardization_Organization ;
                  rdfs:label "IEEE"@en .
 
 
@@ -10072,7 +10090,7 @@ ecsel-dr-AT:IEEE_Standard rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#IETF
 ecsel-dr-AT:IETF rdf:type owl:Class ;
-                 rdfs:subClassOf ecsel-dr-AT:Standardisation_Organization ;
+                 rdfs:subClassOf ecsel-dr-AT:Standardization_Organization ;
                  rdfs:comment "Is an open standards organization, which develops and promotes voluntary Internet standards, in particular the standards that comprise the Internet protocol suite"@en ;
                  rdfs:label "IETF"@en .
 
@@ -10092,7 +10110,7 @@ ecsel-dr-AT:IMAP rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#ISA
 ecsel-dr-AT:ISA rdf:type owl:Class ;
-                rdfs:subClassOf ecsel-dr-AT:Standardisation_Organization ;
+                rdfs:subClassOf ecsel-dr-AT:Standardization_Organization ;
                 rdfs:label "ISA"@en .
 
 
@@ -10217,7 +10235,7 @@ ecsel-dr-AT:ISA_Standard rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#ISO
 ecsel-dr-AT:ISO rdf:type owl:Class ;
-                rdfs:subClassOf ecsel-dr-AT:Standardisation_Organization ;
+                rdfs:subClassOf ecsel-dr-AT:Standardization_Organization ;
                 rdfs:label "ISO"@en .
 
 
@@ -10297,7 +10315,7 @@ ecsel-dr-AT:MES rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#MESA
 ecsel-dr-AT:MESA rdf:type owl:Class ;
-                 rdfs:subClassOf ecsel-dr-AT:Standardisation_Organization ;
+                 rdfs:subClassOf ecsel-dr-AT:Standardization_Organization ;
                  rdfs:comment "Is a worldwide not-for-profit community of manufacturing companies, information technology hardware and software suppliers, system integrators, consulting service providers, analysts, editors, academics, and students."@en ,
                               "especially MESA XML Committee"@en ;
                  rdfs:label "MESA"@en .
@@ -10425,7 +10443,7 @@ ecsel-dr-AT:Network_Layer_Model rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#OASIS
 ecsel-dr-AT:OASIS rdf:type owl:Class ;
-                  rdfs:subClassOf ecsel-dr-AT:Standardisation_Organization ;
+                  rdfs:subClassOf ecsel-dr-AT:Standardization_Organization ;
                   rdfs:label "OASIS"@en .
 
 
@@ -10438,7 +10456,7 @@ ecsel-dr-AT:OASIS_Standard rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#OCF
 ecsel-dr-AT:OCF rdf:type owl:Class ;
-                rdfs:subClassOf ecsel-dr-AT:Standardisation_Organization ;
+                rdfs:subClassOf ecsel-dr-AT:Standardization_Organization ;
                 rdfs:comment "Is an industry organization having as its stated mission is to develop specification standards, promote a set of interoperability guidelines, and provide a certification program for devices involved in the Internet of Things (IoT)."@en ;
                 rdfs:label "Open Connectivity Foundation"@en .
 
@@ -10452,7 +10470,7 @@ ecsel-dr-AT:OCF_Standard rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#OMG
 ecsel-dr-AT:OMG rdf:type owl:Class ;
-                rdfs:subClassOf ecsel-dr-AT:Standardisation_Organization ;
+                rdfs:subClassOf ecsel-dr-AT:Standardization_Organization ;
                 rdfs:comment "Is a computer industry standards consortium. OMG Task Forces develop enterprise integration standards for a range of technologies."@en ;
                 rdfs:label "Object Management Group"@en .
 
@@ -11004,8 +11022,8 @@ ecsel-dr-AT:Standard rdf:type owl:Class ;
                      rdfs:label "Standard"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#Standardisation_Organization
-ecsel-dr-AT:Standardisation_Organization rdf:type owl:Class ;
+###  http://www.w3id.org/ecsel-dr-AT#Standardization_Organization
+ecsel-dr-AT:Standardization_Organization rdf:type owl:Class ;
                                          rdfs:comment "Is an organization whose primary activities are developing, coordinating, promulgating, revising, amending, reissuing, interpreting, or otherwise producing technical standards that are intended to address the needs of a group of affected adopters."@en ;
                                          rdfs:label "Standardization Organization"@en .
 
@@ -11102,7 +11120,7 @@ ecsel-dr-AT:UPnP rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#W3C
 ecsel-dr-AT:W3C rdf:type owl:Class ;
-                rdfs:subClassOf ecsel-dr-AT:Standardisation_Organization ;
+                rdfs:subClassOf ecsel-dr-AT:Standardization_Organization ;
                 rdfs:label "W3C"@en .
 
 

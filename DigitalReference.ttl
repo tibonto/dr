@@ -30,6 +30,7 @@
                                 terms:isVersionOf <http://www.w3id.org/ecsel-dr> ;
                                 terms:modified "2020-09-18"@en ;
                                 terms:title "Digital Reference"@en ;
+                                vann:preferredNamespacePrefix "ecsel-dr" ;
                                 vann:preferredNamespaceUri <http://www.w3id.org/ecsel-dr/> ;
                                 rdfs:label "Digital Reference"@en ;
                                 owl:versionInfo "Version 1.1"@en .

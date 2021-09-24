@@ -1441,7 +1441,7 @@ time:has_TRS rdf:type owl:ObjectProperty ,
                          ] ;
              rdfs:range time:TRS ;
              rdfs:comment "The temporal reference system used by a temporal position or extent description. "@en ;
-             rdfs:label "temporal reference system used"@en ;
+             rdfs:label "has temporal reference system used"@en ;
              skos:definition "The temporal reference system used by a temporal position or extent description. "@en .
 
 
@@ -2128,14 +2128,14 @@ org:unit_of rdf:type owl:ObjectProperty ,
                                            skos:definition "Relation between a Deployment and a deployed System."@en .
 
 
-###  http://www.w3.org/ns/ssn/detects
-<http://www.w3.org/ns/ssn/detects> rdf:type owl:ObjectProperty ;
-                                   rdfs:domain <http://www.w3.org/ns/sosa/Sensor> ;
-                                   rdfs:range <http://www.w3.org/ns/ssn/Stimulus> ;
-                                   rdfs:comment "A relation from a Sensor to the Stimulus that the Sensor detects. The Stimulus itself will be serving as a proxy for some ObservableProperty."@en ;
-                                   rdfs:isDefinedBy <http://www.w3.org/ns/ssn/> ;
-                                   rdfs:label "detects"@en ;
-                                   skos:definition "A relation from a Sensor to the Stimulus that the Sensor detects. The Stimulus itself will be serving as a proxy for some ObservableProperty."@en .
+###  http://www.w3.org/ns/ssn/detects_stimulus
+<http://www.w3.org/ns/ssn/detects_stimulus> rdf:type owl:ObjectProperty ;
+                                            rdfs:domain <http://www.w3.org/ns/sosa/Sensor> ;
+                                            rdfs:range <http://www.w3.org/ns/ssn/Stimulus> ;
+                                            rdfs:comment "A relation from a Sensor to the Stimulus that the Sensor detects. The Stimulus itself will be serving as a proxy for some ObservableProperty."@en ;
+                                            rdfs:isDefinedBy <http://www.w3.org/ns/ssn/> ;
+                                            rdfs:label "detects stimulus"@en ;
+                                            skos:definition "A relation from a Sensor to the Stimulus that the Sensor detects. The Stimulus itself will be serving as a proxy for some ObservableProperty."@en .
 
 
 ###  http://www.w3.org/ns/ssn/for_property
@@ -2258,15 +2258,15 @@ org:unit_of rdf:type owl:ObjectProperty ,
                                              rdfs:label "oversampling used" .
 
 
-###  http://www.w3.org/ns/ssn/was_originated_by
-<http://www.w3.org/ns/ssn/was_originated_by> rdf:type owl:ObjectProperty ,
-                                                      owl:FunctionalProperty ;
-                                             rdfs:domain <http://www.w3.org/ns/sosa/Observation> ;
-                                             rdfs:range <http://www.w3.org/ns/ssn/Stimulus> ;
-                                             rdfs:comment "Relation between an Observation and the Stimulus that originated it."@en ;
-                                             rdfs:isDefinedBy <http://www.w3.org/ns/ssn/> ;
-                                             rdfs:label "was originated by"@en ;
-                                             skos:definition "Relation between an Observation and the Stimulus that originated it."@en .
+###  http://www.w3.org/ns/ssn/was_originated_by_stimulus
+<http://www.w3.org/ns/ssn/was_originated_by_stimulus> rdf:type owl:ObjectProperty ,
+                                                               owl:FunctionalProperty ;
+                                                      rdfs:domain <http://www.w3.org/ns/sosa/Observation> ;
+                                                      rdfs:range <http://www.w3.org/ns/ssn/Stimulus> ;
+                                                      rdfs:comment "Relation between an Observation and the Stimulus that originated it."@en ;
+                                                      rdfs:isDefinedBy <http://www.w3.org/ns/ssn/> ;
+                                                      rdfs:label "was originated by stimulus"@en ;
+                                                      skos:definition "Relation between an Observation and the Stimulus that originated it."@en .
 
 
 ###  http://www.w3.org/ns/ssn/systems/has_operating_property
@@ -2515,14 +2515,14 @@ ecsel-dr-AH:defines_compliant_documentation rdf:type owl:ObjectProperty ;
                                                                        ecsel-dr-AH:System_Documentation
                                                                      )
                                                        ] ;
-                                            rdfs:label "defines" .
+                                            rdfs:label "defines compliant documentation" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#defines_compliant_service
 ecsel-dr-AH:defines_compliant_service rdf:type owl:ObjectProperty ;
                                       rdfs:domain ecsel-dr-AH:Service_Oriented_Architecture ;
                                       rdfs:range ecsel-dr-AH:Service ;
-                                      rdfs:label "defines" .
+                                      rdfs:label "defines compliant service" .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#defines_compliant_system
@@ -2536,7 +2536,7 @@ ecsel-dr-AH:defines_compliant_system rdf:type owl:ObjectProperty ;
 ecsel-dr-AH:defines_compliant_system_architecture rdf:type owl:ObjectProperty ;
                                                   rdfs:domain ecsel-dr-AH:Service_Oriented_Architecture ;
                                                   rdfs:range ecsel-dr-AH:System_Of_Systems ;
-                                                  rdfs:label "defines" .
+                                                  rdfs:label "defines compliant system architecture"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#documents
@@ -3150,8 +3150,8 @@ ecsel-dr-AT:used_in_ISA_95_communication rdf:type owl:ObjectProperty ;
                                                                    )
                                                      ] ;
                                          rdfs:range [ rdf:type owl:Class ;
-                                                      owl:unionOf ( ecsel-dr-AT:ISA-95_Communication
-                                                                    ecsel-dr-AT:ISA-95_Cross_Layer_Communication
+                                                      owl:unionOf ( ecsel-dr-AT:ISA_95_Communication
+                                                                    ecsel-dr-AT:ISA_95_Cross_Layer_Communication
                                                                   )
                                                     ] ;
                                          rdfs:label "used in ISA-95 communication" .
@@ -3246,7 +3246,7 @@ ecsel-dr-AT:used_in_ISA_95_layer rdf:type owl:ObjectProperty ;
                                                      rdf:type owl:FunctionalProperty ;
                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-OM#Customer_Data> ;
                                                      rdfs:range <http://www.w3id.org/ecsel-dr-OM#Customer> ;
-                                                     rdfs:label "describes" .
+                                                     rdfs:label "describes customer"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#describes_customer_plant
@@ -3256,7 +3256,7 @@ ecsel-dr-AT:used_in_ISA_95_layer rdf:type owl:ObjectProperty ;
                                                            rdf:type owl:FunctionalProperty ;
                                                            rdfs:domain <http://www.w3id.org/ecsel-dr-OM#Customer_Plant_Data> ;
                                                            rdfs:range <http://www.w3id.org/ecsel-dr-OM#Customer_Plant> ;
-                                                           rdfs:label "describes" .
+                                                           rdfs:label "describes customer plant" .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#describes_supplier
@@ -3266,7 +3266,7 @@ ecsel-dr-AT:used_in_ISA_95_layer rdf:type owl:ObjectProperty ;
                                                      rdf:type owl:FunctionalProperty ;
                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-OM#Supplier_Data> ;
                                                      rdfs:range <http://www.w3id.org/ecsel-dr-OM#Supplier> ;
-                                                     rdfs:label "describes" .
+                                                     rdfs:label "describes supplier"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#has_allocated
@@ -4043,21 +4043,21 @@ ecsel-dr-OOSMP:is_topology_of rdf:type owl:ObjectProperty ;
                               rdfs:label "is topology of"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#owned_by
-ecsel-dr-OOSMP:owned_by rdf:type owl:ObjectProperty ;
-                        owl:inverseOf ecsel-dr-OOSMP:owns ;
-                        rdf:type owl:FunctionalProperty ;
-                        rdfs:domain ecsel-dr-OOSMP:Product ;
-                        rdfs:range org:Organizational_Unit ;
-                        rdfs:label "owned by"@en .
+###  http://www.w3id.org/ecsel-dr-OOSMP#owned_by_organizational_unit
+ecsel-dr-OOSMP:owned_by_organizational_unit rdf:type owl:ObjectProperty ;
+                                            owl:inverseOf ecsel-dr-OOSMP:owns_product ;
+                                            rdf:type owl:FunctionalProperty ;
+                                            rdfs:domain ecsel-dr-OOSMP:Product ;
+                                            rdfs:range org:Organizational_Unit ;
+                                            rdfs:label "owned by"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#owns
-ecsel-dr-OOSMP:owns rdf:type owl:ObjectProperty ,
-                             owl:InverseFunctionalProperty ;
-                    rdfs:domain org:Organizational_Unit ;
-                    rdfs:range ecsel-dr-OOSMP:Product ;
-                    rdfs:label "owns"@en .
+###  http://www.w3id.org/ecsel-dr-OOSMP#owns_product
+ecsel-dr-OOSMP:owns_product rdf:type owl:ObjectProperty ,
+                                     owl:InverseFunctionalProperty ;
+                            rdfs:domain org:Organizational_Unit ;
+                            rdfs:range ecsel-dr-OOSMP:Product ;
+                            rdfs:label "owns product"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#responsible_for_application_area
@@ -4321,19 +4321,19 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                     skos:altLabel "belong" .
 
 
-###  http://www.w3id.org/ecsel-dr-PMV#carries_out
-<http://www.w3id.org/ecsel-dr-PMV#carries_out> rdf:type owl:ObjectProperty ;
-                                               owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#is_carried_out_by> ;
-                                               rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Role> ,
-                                                           [ rdf:type owl:Class ;
-                                                             owl:unionOf ( org:Organizational_Unit
-                                                                           <http://www.w3id.org/ecsel-dr-PMV#Role>
-                                                                         )
-                                                           ] ;
-                                               rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Task> ;
-                                               rdfs:comment "Role(s) or Organizational unit(s) that carrries (carry) out the process step (equivalent to R in RACI notation)" ;
-                                               rdfs:label "carries out" ;
-                                               skos:altLabel "carri" .
+###  http://www.w3id.org/ecsel-dr-PMV#carries_out_task
+<http://www.w3id.org/ecsel-dr-PMV#carries_out_task> rdf:type owl:ObjectProperty ;
+                                                    owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#is_carried_out_by> ;
+                                                    rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Role> ,
+                                                                [ rdf:type owl:Class ;
+                                                                  owl:unionOf ( org:Organizational_Unit
+                                                                                <http://www.w3id.org/ecsel-dr-PMV#Role>
+                                                                              )
+                                                                ] ;
+                                                    rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Task> ;
+                                                    rdfs:comment "Role(s) or Organizational unit(s) that carrries (carry) out the process step (equivalent to R in RACI notation)" ;
+                                                    rdfs:label "carries out task" ;
+                                                    skos:altLabel "carri" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PMV#connected_to
@@ -4349,7 +4349,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
 
 ###  http://www.w3id.org/ecsel-dr-PMV#contains
 <http://www.w3id.org/ecsel-dr-PMV#contains> rdf:type owl:ObjectProperty ;
-                                            owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#diagramed_on> ;
+                                            owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#diagramed_on_model> ;
                                             rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Model> ;
                                             rdfs:range [ rdf:type owl:Class ;
                                                          owl:unionOf ( <http://www.w3id.org/ecsel-dr-PMV#Function_Object>
@@ -4371,15 +4371,15 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                        skos:altLabel "contribut" .
 
 
-###  http://www.w3id.org/ecsel-dr-PMV#controls
-<http://www.w3id.org/ecsel-dr-PMV#controls> rdf:type owl:ObjectProperty ;
-                                            owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#is_controlled_by> ;
-                                            rdf:type owl:InverseFunctionalProperty ;
-                                            rdfs:domain <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal> ;
-                                            rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Function> ;
-                                            rdfs:comment "A goal controls the outcome of a function in a process flow." ;
-                                            rdfs:label "controls" ;
-                                            skos:altLabel "control" .
+###  http://www.w3id.org/ecsel-dr-PMV#controls_function
+<http://www.w3id.org/ecsel-dr-PMV#controls_function> rdf:type owl:ObjectProperty ;
+                                                     owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#is_controlled_by_goal> ;
+                                                     rdf:type owl:InverseFunctionalProperty ;
+                                                     rdfs:domain <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal> ;
+                                                     rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Function> ;
+                                                     rdfs:comment "A goal controls the outcome of a function in a process flow." ;
+                                                     rdfs:label "controls" ;
+                                                     skos:altLabel "control" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PMV#creates_event
@@ -4393,21 +4393,21 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                              ] ;
                                                  rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Event> ;
                                                  rdfs:comment "A process step creates an event. The connector is used to represent the chronological order in an EPC." ;
-                                                 rdfs:label "creates" ;
+                                                 rdfs:label "creates event"@en ;
                                                  skos:altLabel "creat" .
 
 
-###  http://www.w3id.org/ecsel-dr-PMV#diagramed_on
-<http://www.w3id.org/ecsel-dr-PMV#diagramed_on> rdf:type owl:ObjectProperty ;
-                                                rdfs:domain [ rdf:type owl:Class ;
-                                                              owl:unionOf ( <http://www.w3id.org/ecsel-dr-PMV#Function_Object>
-                                                                            <http://www.w3id.org/ecsel-dr-PMV#Model_Element>
-                                                                          )
-                                                            ] ;
-                                                rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Model> ;
-                                                rdfs:comment "Links a FuncitonObject or a ModelElement with the Model that it's represented in."@en ;
-                                                rdfs:label "diagramed on" ;
-                                                skos:altLabel "diagram" .
+###  http://www.w3id.org/ecsel-dr-PMV#diagramed_on_model
+<http://www.w3id.org/ecsel-dr-PMV#diagramed_on_model> rdf:type owl:ObjectProperty ;
+                                                      rdfs:domain [ rdf:type owl:Class ;
+                                                                    owl:unionOf ( <http://www.w3id.org/ecsel-dr-PMV#Function_Object>
+                                                                                  <http://www.w3id.org/ecsel-dr-PMV#Model_Element>
+                                                                                )
+                                                                  ] ;
+                                                      rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Model> ;
+                                                      rdfs:comment "Links a FuncitonObject or a ModelElement with the Model that it's represented in."@en ;
+                                                      rdfs:label "diagramed on model"@en ;
+                                                      skos:altLabel "diagram" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PMV#evaluates
@@ -4420,14 +4420,14 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                              skos:altLabel "evalu" .
 
 
-###  http://www.w3id.org/ecsel-dr-PMV#executes
-<http://www.w3id.org/ecsel-dr-PMV#executes> rdf:type owl:ObjectProperty ;
-                                            owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#is_executed_by> ;
-                                            rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Function> ;
-                                            rdfs:range <http://purl.org/dc/dcmitype/Software> ;
-                                            rdfs:comment "A function in a process flow excutes software." ;
-                                            rdfs:label "executes" ;
-                                            skos:altLabel "execut" .
+###  http://www.w3id.org/ecsel-dr-PMV#executes_software
+<http://www.w3id.org/ecsel-dr-PMV#executes_software> rdf:type owl:ObjectProperty ;
+                                                     owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#is_executed_by_function> ;
+                                                     rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Function> ;
+                                                     rdfs:range <http://purl.org/dc/dcmitype/Software> ;
+                                                     rdfs:comment "A function in a process flow excutes software." ;
+                                                     rdfs:label "executes software"@en ;
+                                                     skos:altLabel "execut" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PMV#flow
@@ -4449,24 +4449,6 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                            rdfs:comment "A process step follows a process step. The connector is used to represent the chronological order in an EPC." ;
                                            rdfs:label "follows" ;
                                            skos:altLabel "follow" .
-
-
-###  http://www.w3id.org/ecsel-dr-PMV#has_Object
-<http://www.w3id.org/ecsel-dr-PMV#has_Object> rdf:type owl:ObjectProperty ;
-                                              owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#relevant_to> ;
-                                              rdfs:domain [ rdf:type owl:Class ;
-                                                            owl:unionOf ( <http://www.w3id.org/ecsel-dr-PMV#Business_Process_Flow>
-                                                                          <http://www.w3id.org/ecsel-dr-PMV#Value_Added_Chain_Diagram>
-                                                                        )
-                                                          ] ;
-                                              rdfs:range [ rdf:type owl:Class ;
-                                                           owl:unionOf ( <http://www.w3id.org/ecsel-dr-PMV#Function>
-                                                                         <http://www.w3id.org/ecsel-dr-PMV#Model_Element>
-                                                                       )
-                                                         ] ;
-                                              rdfs:comment "EPCs and Value-added chain diagrams consist of objects." ;
-                                              rdfs:label "hasObject" ;
-                                              skos:altLabel "object" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PMV#has_as_input
@@ -4502,6 +4484,24 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                   rdfs:comment "An EPC can have another EPC following which is dependent on the result. The connector is used to represent the chronological order in a VACD." ;
                                                   rdfs:label "has next model" ;
                                                   skos:altLabel "model" .
+
+
+###  http://www.w3id.org/ecsel-dr-PMV#has_object
+<http://www.w3id.org/ecsel-dr-PMV#has_object> rdf:type owl:ObjectProperty ;
+                                              owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#relevant_to> ;
+                                              rdfs:domain [ rdf:type owl:Class ;
+                                                            owl:unionOf ( <http://www.w3id.org/ecsel-dr-PMV#Business_Process_Flow>
+                                                                          <http://www.w3id.org/ecsel-dr-PMV#Value_Added_Chain_Diagram>
+                                                                        )
+                                                          ] ;
+                                              rdfs:range [ rdf:type owl:Class ;
+                                                           owl:unionOf ( <http://www.w3id.org/ecsel-dr-PMV#Function>
+                                                                         <http://www.w3id.org/ecsel-dr-PMV#Model_Element>
+                                                                       )
+                                                         ] ;
+                                              rdfs:comment "EPCs and Value-added chain diagrams consist of objects." ;
+                                              rdfs:label "has object"@en ;
+                                              skos:altLabel "object" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PMV#has_previous_model
@@ -4632,14 +4632,14 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                      skos:altLabel "carri" .
 
 
-###  http://www.w3id.org/ecsel-dr-PMV#is_controlled_by
-<http://www.w3id.org/ecsel-dr-PMV#is_controlled_by> rdf:type owl:ObjectProperty ,
-                                                             owl:FunctionalProperty ;
-                                                    rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Function> ;
-                                                    rdfs:range <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal> ;
-                                                    rdfs:comment "The result of a function in a process flow is controlled by a goal." ;
-                                                    rdfs:label "is controlled by" ;
-                                                    skos:altLabel "control" .
+###  http://www.w3id.org/ecsel-dr-PMV#is_controlled_by_goal
+<http://www.w3id.org/ecsel-dr-PMV#is_controlled_by_goal> rdf:type owl:ObjectProperty ,
+                                                                  owl:FunctionalProperty ;
+                                                         rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Function> ;
+                                                         rdfs:range <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal> ;
+                                                         rdfs:comment "The result of a function in a process flow is controlled by a goal." ;
+                                                         rdfs:label "is controlled by" ;
+                                                         skos:altLabel "control" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PMV#is_created_by
@@ -4675,13 +4675,13 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                    skos:altLabel "evalu" .
 
 
-###  http://www.w3id.org/ecsel-dr-PMV#is_executed_by
-<http://www.w3id.org/ecsel-dr-PMV#is_executed_by> rdf:type owl:ObjectProperty ;
-                                                  rdfs:domain <http://purl.org/dc/dcmitype/Software> ;
-                                                  rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Function> ;
-                                                  rdfs:comment "Software is executed by a function in a process flow." ;
-                                                  rdfs:label "is exectued by" ;
-                                                  skos:altLabel "exectu" .
+###  http://www.w3id.org/ecsel-dr-PMV#is_executed_by_function
+<http://www.w3id.org/ecsel-dr-PMV#is_executed_by_function> rdf:type owl:ObjectProperty ;
+                                                           rdfs:domain <http://purl.org/dc/dcmitype/Software> ;
+                                                           rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Function> ;
+                                                           rdfs:comment "Software is executed by a function in a process flow." ;
+                                                           rdfs:label "is exectued by function"@en ;
+                                                           skos:altLabel "exectu" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PMV#is_input_for
@@ -4785,7 +4785,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
 
 ###  http://www.w3id.org/ecsel-dr-PMV#is_supported_by
 <http://www.w3id.org/ecsel-dr-PMV#is_supported_by> rdf:type owl:ObjectProperty ;
-                                                   owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#supports> ;
+                                                   owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#supports_task> ;
                                                    rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Task> ;
                                                    rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Application_System_Type> ;
                                                    rdfs:comment "A process step is supported by an application system type." ;
@@ -4935,13 +4935,13 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                         skos:altLabel "result forward" .
 
 
-###  http://www.w3id.org/ecsel-dr-PMV#supports
-<http://www.w3id.org/ecsel-dr-PMV#supports> rdf:type owl:ObjectProperty ;
-                                            rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Application_System_Type> ;
-                                            rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Task> ;
-                                            rdfs:comment "A process step is supported by an Application system." ;
-                                            rdfs:label "supports" ;
-                                            skos:altLabel "support" .
+###  http://www.w3id.org/ecsel-dr-PMV#supports_task
+<http://www.w3id.org/ecsel-dr-PMV#supports_task> rdf:type owl:ObjectProperty ;
+                                                 rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Application_System_Type> ;
+                                                 rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Task> ;
+                                                 rdfs:comment "A process step is supported by an Application system." ;
+                                                 rdfs:label "supports task"@en ;
+                                                 skos:altLabel "support" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PMV#transforms
@@ -5299,7 +5299,7 @@ ecsel-dr-RAMI40:describes_asset rdf:type owl:ObjectProperty ;
                                 rdfs:domain ecsel-dr-RAMI40:Admin_Shell ;
                                 rdfs:range ecsel-dr-RAMI40:Asset ;
                                 rdfs:comment "Connect the Asset with the Administration Shell"@en ;
-                                rdfs:label "describes"@en .
+                                rdfs:label "describes asset"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#energy_efficiency_value
@@ -5479,7 +5479,7 @@ ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
 <http://www.w3id.org/ecsel-dr-SCP#creates_prioritized_order> rdf:type owl:ObjectProperty ;
                                                              rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Customer_Logistics_Management_Representative> ;
                                                              rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Prioritized_Orders> ;
-                                                             rdfs:label "creates"@en .
+                                                             rdfs:label "creates prioritized order"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#entered_to
@@ -5580,11 +5580,11 @@ ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
                                               rdfs:label "matches to"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SCP#obtained_from
-<http://www.w3id.org/ecsel-dr-SCP#obtained_from> rdf:type owl:ObjectProperty ;
-                                                 rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Forecast> ;
-                                                 rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Sales_Demand> ;
-                                                 rdfs:label "obtained from"@en .
+###  http://www.w3id.org/ecsel-dr-SCP#obtained_from_sales_demand
+<http://www.w3id.org/ecsel-dr-SCP#obtained_from_sales_demand> rdf:type owl:ObjectProperty ;
+                                                              rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Forecast> ;
+                                                              rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Sales_Demand> ;
+                                                              rdfs:label "obtained from sales demand"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#provides
@@ -5671,10 +5671,10 @@ ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
                                                    rdfs:label "consists of tool" .
 
 
-###  http://www.w3id.org/ecsel-dr-SO#dedicates
-<http://www.w3id.org/ecsel-dr-SO#dedicates> rdf:type owl:ObjectProperty ;
-                                            owl:inverseOf <http://www.w3id.org/ecsel-dr-SO#is_dedicated_to> ;
-                                            rdfs:label "dedicates" .
+###  http://www.w3id.org/ecsel-dr-SO#dedicates_epa
+<http://www.w3id.org/ecsel-dr-SO#dedicates_epa> rdf:type owl:ObjectProperty ;
+                                                owl:inverseOf <http://www.w3id.org/ecsel-dr-SO#is_dedicated_to_tool> ;
+                                                rdfs:label "dedicates" .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#has_WIP_station
@@ -5847,7 +5847,7 @@ ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
                                                                             <http://www.w3id.org/ecsel-dr-SO#Equipment_Group>
                                                                             <http://www.w3id.org/ecsel-dr-SO#Event_Calendar>
                                                                             <http://www.w3id.org/ecsel-dr-SO#Lot_Size>
-                                                                            <http://www.w3id.org/ecsel-dr-SO#Material_Transfer>
+                                                                            <http://www.w3id.org/ecsel-dr-SO#Material_Transfer_Matrix>
                                                                             <http://www.w3id.org/ecsel-dr-SO#Operation>
                                                                             <http://www.w3id.org/ecsel-dr-SO#Product_Level>
                                                                           )
@@ -6031,11 +6031,11 @@ ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
                                                  rdfs:label "is current WIP"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SO#is_dedicated_to
-<http://www.w3id.org/ecsel-dr-SO#is_dedicated_to> rdf:type owl:ObjectProperty ;
-                                                  rdfs:domain <http://www.w3id.org/ecsel-dr-SO#EPA> ;
-                                                  rdfs:range <http://www.w3id.org/ecsel-dr-SO#Tool> ;
-                                                  rdfs:label "is dedicated to"@en .
+###  http://www.w3id.org/ecsel-dr-SO#is_dedicated_to_tool
+<http://www.w3id.org/ecsel-dr-SO#is_dedicated_to_tool> rdf:type owl:ObjectProperty ;
+                                                       rdfs:domain <http://www.w3id.org/ecsel-dr-SO#EPA> ;
+                                                       rdfs:range <http://www.w3id.org/ecsel-dr-SO#Tool> ;
+                                                       rdfs:label "is dedicated to"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#is_delivery_commitment_of
@@ -6091,10 +6091,10 @@ ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
                                                         rdfs:label "is manually loaded by"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SO#is_needed_by
-<http://www.w3id.org/ecsel-dr-SO#is_needed_by> rdf:type owl:ObjectProperty ;
-                                               owl:inverseOf <http://www.w3id.org/ecsel-dr-SO#needs_purge> ;
-                                               rdfs:label "is needed by"@en .
+###  http://www.w3id.org/ecsel-dr-SO#is_needed_by_tool
+<http://www.w3id.org/ecsel-dr-SO#is_needed_by_tool> rdf:type owl:ObjectProperty ;
+                                                    owl:inverseOf <http://www.w3id.org/ecsel-dr-SO#needs_purge> ;
+                                                    rdfs:label "is needed by tool"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#is_operation_of
@@ -8018,7 +8018,7 @@ ecsel-dr-RAMI40:description rdf:type owl:DatatypeProperty ;
                                                                  <http://www.w3id.org/ecsel-dr-SO#Current_WIP> ,
                                                                  <http://www.w3id.org/ecsel-dr-SO#Equipment_Group> ,
                                                                  <http://www.w3id.org/ecsel-dr-SO#Lot_Size> ,
-                                                                 <http://www.w3id.org/ecsel-dr-SO#Material_Transfer> ,
+                                                                 <http://www.w3id.org/ecsel-dr-SO#Material_Transfer_Matrix> ,
                                                                  <http://www.w3id.org/ecsel-dr-SO#Operation> ;
                                                      rdfs:range xsd:string ;
                                                      rdfs:comment "Current WIP: PK; FK; Name of Equipment Group"@en ,
@@ -8619,7 +8619,7 @@ ecsel-dr-RAMI40:description rdf:type owl:DatatypeProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-SO#to_equipment_group_ID
 <http://www.w3id.org/ecsel-dr-SO#to_equipment_group_ID> rdf:type owl:DatatypeProperty ;
-                                                        rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Material_Transfer> ;
+                                                        rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Material_Transfer_Matrix> ;
                                                         rdfs:range xsd:string ;
                                                         rdfs:comment "Material Transfer: FK; target EquipmentGroup of transfer"@en ;
                                                         rdfs:label "to equipment group ID"@en .
@@ -8643,7 +8643,7 @@ ecsel-dr-RAMI40:description rdf:type owl:DatatypeProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-SO#transfer_mode
 <http://www.w3id.org/ecsel-dr-SO#transfer_mode> rdf:type owl:DatatypeProperty ;
-                                                rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Material_Transfer> ;
+                                                rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Material_Transfer_Matrix> ;
                                                 rdfs:range xsd:string ;
                                                 rdfs:comment "Transfer Mode: Automation, AGV, milkrun or manual"@en ;
                                                 rdfs:label "transfer mode"@en .
@@ -8651,7 +8651,7 @@ ecsel-dr-RAMI40:description rdf:type owl:DatatypeProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-SO#transfer_time
 <http://www.w3id.org/ecsel-dr-SO#transfer_time> rdf:type owl:DatatypeProperty ;
-                                                rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Material_Transfer> ;
+                                                rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Material_Transfer_Matrix> ;
                                                 rdfs:range xsd:decimal ;
                                                 rdfs:comment "Material Transfer: Duration of transfer from on to the other equipment"@en ,
                                                              "length of, or element of the length of, a temporal extent expressed in seconds"@en ;
@@ -9957,7 +9957,7 @@ time:Date_Time_Description rdf:type owl:Class ;
                                              owl:allValuesFrom xsd:gYear
                                            ] ;
                            rdfs:comment "Description of date and time structured with separate values for the various elements of a calendar-clock system. The temporal reference system is fixed to Gregorian Calendar, and the range of year, month, day properties restricted to corresponding XML Schema types xsd:gYear, xsd:gMonth and xsd:gDay, respectively."@en ;
-                           rdfs:label "Date-Time description"@en ;
+                           rdfs:label "Date-Time Description"@en ;
                            skos:definition "Description of date and time structured with separate values for the various elements of a calendar-clock system. The temporal reference system is fixed to Gregorian Calendar, and the range of year, month, day properties restricted to corresponding XML Schema types xsd:gYear, xsd:gMonth and xsd:gDay, respectively."@en .
 
 
@@ -9965,7 +9965,7 @@ time:Date_Time_Description rdf:type owl:Class ;
 time:Date_Time_Interval rdf:type owl:Class ;
                         rdfs:subClassOf time:Proper_Interval ;
                         rdfs:comment "DateTimeInterval is a subclass of ProperInterval, defined using the multi-element DateTimeDescription."@en ;
-                        rdfs:label "Date-time Interval"@en ;
+                        rdfs:label "Date-Time Interval"@en ;
                         skos:definition "DateTimeInterval is a subclass of ProperInterval, defined using the multi-element DateTimeDescription."@en ;
                         skos:note ":DateTimeInterval can only be used for an interval whose limits coincide with a date-time element aligned to the calendar and timezone indicated. For example, while both have a duration of one day, the 24-hour interval beginning at midnight at the beginning of 8 May in Central Europe can be expressed as a :DateTimeInterval, but the 24-hour interval starting at 1:30pm cannot."@en .
 
@@ -10118,7 +10118,7 @@ time:General_Date_Time_Description rdf:type owl:Class ;
                                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                    ] ;
                                    rdfs:comment "Description of date and time structured with separate values for the various elements of a calendar-clock system"@en ;
-                                   rdfs:label "Generalized Date-time Description"@en ;
+                                   rdfs:label "Generalized Date-Time Description"@en ;
                                    skos:definition "Description of date and time structured with separate values for the various elements of a calendar-clock system"@en ;
                                    skos:note "Some combinations of properties are redundant - for example, within a specified :year if :dayOfYear is provided then :day and :month can be computed, and vice versa. Individual values should be consistent with each other and the calendar, indicated through the value of the :hasTRS property." .
 
@@ -10241,7 +10241,7 @@ time:Month_Of_Year rdf:type owl:Class ;
                                      owl:cardinality "0"^^xsd:nonNegativeInteger
                                    ] ;
                    rdfs:comment "The month of the year"@en ;
-                   rdfs:label "Month of year"@en ;
+                   rdfs:label "Month Of Year"@en ;
                    skos:definition "The month of the year"@en ;
                    skos:editorialNote "Feature at risk - added in 2017 revision, and not yet widely used. "@en ;
                    skos:note "Membership of the class :MonthOfYear is open, to allow for alternative annual calendars and different month names."@en .
@@ -10625,7 +10625,7 @@ org:Organizational_Unit rdf:type owl:Class ;
                                                           owl:allValuesFrom <http://www.w3.org/ns/sosa/Procedure>
                                                         ] ,
                                                         [ rdf:type owl:Restriction ;
-                                                          owl:onProperty <http://www.w3.org/ns/ssn/was_originated_by> ;
+                                                          owl:onProperty <http://www.w3.org/ns/ssn/was_originated_by_stimulus> ;
                                                           owl:allValuesFrom <http://www.w3.org/ns/ssn/Stimulus>
                                                         ] ,
                                                         [ rdf:type owl:Restriction ;
@@ -10649,7 +10649,7 @@ org:Organizational_Unit rdf:type owl:Class ;
                                                           owl:cardinality "1"^^xsd:nonNegativeInteger
                                                         ] ,
                                                         [ rdf:type owl:Restriction ;
-                                                          owl:onProperty <http://www.w3.org/ns/ssn/was_originated_by> ;
+                                                          owl:onProperty <http://www.w3.org/ns/ssn/was_originated_by_stimulus> ;
                                                           owl:cardinality "1"^^xsd:nonNegativeInteger
                                                         ] ,
                                                         [ rdf:type owl:Restriction ;
@@ -10832,7 +10832,7 @@ A Sample is intended to sample some FatureOfInterest, so there is an expectation
                                                      owl:allValuesFrom <http://www.w3.org/ns/sosa/Observable_Property>
                                                    ] ,
                                                    [ rdf:type owl:Restriction ;
-                                                     owl:onProperty <http://www.w3.org/ns/ssn/detects> ;
+                                                     owl:onProperty <http://www.w3.org/ns/ssn/detects_stimulus> ;
                                                      owl:allValuesFrom <http://www.w3.org/ns/ssn/Stimulus>
                                                    ] ,
                                                    [ rdf:type owl:Restriction ;
@@ -10865,7 +10865,7 @@ A Sample is intended to sample some FatureOfInterest, so there is an expectation
                                      rdfs:subClassOf <http://www.w3.org/ns/ssn/Property> ;
                                      rdfs:comment "Used to specify ranges for qualities that act as Condition on a Systems' operation." ;
                                      rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
-                                     rdfs:label "Condition" ;
+                                     rdfs:label "Condition"@en ;
                                      skos:example "For example, wind speed of 10-60m/s may be used as the Condition on a SystemProperty, for example, to state that a sensor has a particular Accuracy under that Condition." .
 
 
@@ -10952,12 +10952,12 @@ A Sample is intended to sample some FatureOfInterest, so there is an expectation
                                                       owl:allValuesFrom <http://www.w3.org/ns/sosa/Observable_Property>
                                                     ] ,
                                                     [ rdf:type owl:Restriction ;
-                                                      owl:onProperty [ owl:inverseOf <http://www.w3.org/ns/ssn/detects>
+                                                      owl:onProperty [ owl:inverseOf <http://www.w3.org/ns/ssn/detects_stimulus>
                                                                      ] ;
                                                       owl:allValuesFrom <http://www.w3.org/ns/sosa/Sensor>
                                                     ] ,
                                                     [ rdf:type owl:Restriction ;
-                                                      owl:onProperty [ owl:inverseOf <http://www.w3.org/ns/ssn/was_originated_by>
+                                                      owl:onProperty [ owl:inverseOf <http://www.w3.org/ns/ssn/was_originated_by_stimulus>
                                                                      ] ;
                                                       owl:allValuesFrom <http://www.w3.org/ns/sosa/Observation>
                                                     ] ;
@@ -11200,7 +11200,7 @@ In the absence of SurvivalProperties, simply describes the Conditions a System c
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Application_Servcice_IDD
 ecsel-dr-AH:AH_Application_Servcice_IDD rdf:type owl:Class ;
                                         rdfs:subClassOf ecsel-dr-AH:Interface_Design_Description_IDD ;
-                                        rdfs:label "AH Application Servcice IDD" .
+                                        rdfs:label "AH Application Servcice IDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Application_Service
@@ -11213,7 +11213,7 @@ ecsel-dr-AH:AH_Application_Service rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Application_Service_SD
 ecsel-dr-AH:AH_Application_Service_SD rdf:type owl:Class ;
                                       rdfs:subClassOf ecsel-dr-AH:Service_Description_SD ;
-                                      rdfs:label "AH Application Service SD" .
+                                      rdfs:label "AH Application Service SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Application_System
@@ -11227,13 +11227,13 @@ ecsel-dr-AH:AH_Application_System rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Application_System_Sy_SD
 ecsel-dr-AH:AH_Application_System_Sy_SD rdf:type owl:Class ;
                                         rdfs:subClassOf ecsel-dr-AH:System_Description_Sy_SD ;
-                                        rdfs:label "AH Application System Sy SD" .
+                                        rdfs:label "AH Application System Sy SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Application_System_Sy_SDD
 ecsel-dr-AH:AH_Application_System_Sy_SDD rdf:type owl:Class ;
                                          rdfs:subClassOf ecsel-dr-AH:System_Design_Description_Sy_SDD ;
-                                         rdfs:label "AH Application System Sy SDD" .
+                                         rdfs:label "AH Application System Sy SDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Authorization_Control_Service_IDD
@@ -11245,13 +11245,13 @@ ecsel-dr-AH:AH_Authorization_Control_Service_IDD rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Authorization_Control_Service_SD
 ecsel-dr-AH:AH_Authorization_Control_Service_SD rdf:type owl:Class ;
                                                 rdfs:subClassOf ecsel-dr-AH:AH_Mandatory_Core_Service_SD ;
-                                                rdfs:label "AH Authorization Control Service SD" .
+                                                rdfs:label "AH Authorization Control Service SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Authorization_System_Sy_SD
 ecsel-dr-AH:AH_Authorization_System_Sy_SD rdf:type owl:Class ;
                                           rdfs:subClassOf ecsel-dr-AH:AH_Mandatory_Core_System_Sy_SD ;
-                                          rdfs:label "AH Authorization System Sy SD" .
+                                          rdfs:label "AH Authorization System Sy SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Authorization_System_Sy_SDD
@@ -11263,7 +11263,7 @@ ecsel-dr-AH:AH_Authorization_System_Sy_SDD rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Authorization_System_WADL
 ecsel-dr-AH:AH_Authorization_System_WADL rdf:type owl:Class ;
                                          rdfs:subClassOf ecsel-dr-AH:System_Web_Application_Description_WADL ;
-                                         rdfs:label "AH Authorization System WADL" .
+                                         rdfs:label "AH Authorization System WADL"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Automation_Supporting_Service
@@ -11275,13 +11275,13 @@ ecsel-dr-AH:AH_Automation_Supporting_Service rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Automation_Supporting_Service_IDD
 ecsel-dr-AH:AH_Automation_Supporting_Service_IDD rdf:type owl:Class ;
                                                  rdfs:subClassOf ecsel-dr-AH:AH_Core_Service_IDD ;
-                                                 rdfs:label "AH Automation Supporting Service IDD" .
+                                                 rdfs:label "AH Automation Supporting Service IDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Automation_Supporting_Service_SD
 ecsel-dr-AH:AH_Automation_Supporting_Service_SD rdf:type owl:Class ;
                                                 rdfs:subClassOf ecsel-dr-AH:AH_Core_Service_SD ;
-                                                rdfs:label "AH Automation Supporting Service SD" .
+                                                rdfs:label "AH Automation Supporting Service SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Automation_Supporting_System
@@ -11294,13 +11294,13 @@ ecsel-dr-AH:AH_Automation_Supporting_System rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Automation_Supporting_System_Sy_SD
 ecsel-dr-AH:AH_Automation_Supporting_System_Sy_SD rdf:type owl:Class ;
                                                   rdfs:subClassOf ecsel-dr-AH:AH_Core_System_Sy_SD ;
-                                                  rdfs:label "AH Automation Supporting System Sy SD" .
+                                                  rdfs:label "AH Automation Supporting System Sy SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Automation_Supporting_System_Sy_SDD
 ecsel-dr-AH:AH_Automation_Supporting_System_Sy_SDD rdf:type owl:Class ;
                                                    rdfs:subClassOf ecsel-dr-AH:AH_Core_System_Sy_SDD ;
-                                                   rdfs:label "AH Automation Supporting System Sy SDD" .
+                                                   rdfs:label "AH Automation Supporting System Sy SDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Core_Service
@@ -11312,13 +11312,13 @@ ecsel-dr-AH:AH_Core_Service rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Core_Service_IDD
 ecsel-dr-AH:AH_Core_Service_IDD rdf:type owl:Class ;
                                 rdfs:subClassOf ecsel-dr-AH:Interface_Design_Description_IDD ;
-                                rdfs:label "AH Core Service IDD" .
+                                rdfs:label "AH Core Service IDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Core_Service_SD
 ecsel-dr-AH:AH_Core_Service_SD rdf:type owl:Class ;
                                rdfs:subClassOf ecsel-dr-AH:Service_Description_SD ;
-                               rdfs:label "AH Core Service SD" .
+                               rdfs:label "AH Core Service SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Core_System
@@ -11334,97 +11334,97 @@ Arriwhead Core Systems can be distinguished in Arrowhead Mandatory Core Systems 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Core_System_Sy_SD
 ecsel-dr-AH:AH_Core_System_Sy_SD rdf:type owl:Class ;
                                  rdfs:subClassOf ecsel-dr-AH:System_Description_Sy_SD ;
-                                 rdfs:label "AH Core System Sy SD" .
+                                 rdfs:label "AH Core System Sy SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Core_System_Sy_SDD
 ecsel-dr-AH:AH_Core_System_Sy_SDD rdf:type owl:Class ;
                                   rdfs:subClassOf ecsel-dr-AH:System_Design_Description_Sy_SDD ;
-                                  rdfs:label "AH Core System Sy SDD" .
+                                  rdfs:label "AH Core System Sy SDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Device_Discovery_Service_IDD
 ecsel-dr-AH:AH_Device_Discovery_Service_IDD rdf:type owl:Class ;
                                             rdfs:subClassOf ecsel-dr-AH:AH_Automation_Supporting_Service_IDD ;
-                                            rdfs:label "AH Device Discovery Service IDD" .
+                                            rdfs:label "AH Device Discovery Service IDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Device_Discovery_Service_SD
 ecsel-dr-AH:AH_Device_Discovery_Service_SD rdf:type owl:Class ;
                                            rdfs:subClassOf ecsel-dr-AH:AH_Automation_Supporting_Service_SD ;
-                                           rdfs:label "AH Device Discovery Service SD" .
+                                           rdfs:label "AH Device Discovery Service SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Device_Registry_System_Sy_SD
 ecsel-dr-AH:AH_Device_Registry_System_Sy_SD rdf:type owl:Class ;
                                             rdfs:subClassOf ecsel-dr-AH:AH_Automation_Supporting_System_Sy_SD ;
-                                            rdfs:label "AH Device Registry System Sy SD" .
+                                            rdfs:label "AH Device Registry System Sy SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Device_Registry_System_Sy_SDD
 ecsel-dr-AH:AH_Device_Registry_System_Sy_SDD rdf:type owl:Class ;
                                              rdfs:subClassOf ecsel-dr-AH:AH_Automation_Supporting_System_Sy_SDD ;
-                                             rdfs:label "AH Device Registry System Sy SDD" .
+                                             rdfs:label "AH Device Registry System Sy SDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Gatekeeper_System_Sy_SD
 ecsel-dr-AH:AH_Gatekeeper_System_Sy_SD rdf:type owl:Class ;
                                        rdfs:subClassOf ecsel-dr-AH:AH_Automation_Supporting_System_Sy_SD ;
-                                       rdfs:label "AH Gatekeeper System Sy SD" .
+                                       rdfs:label "AH Gatekeeper System Sy SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Gatekeeper_System_Sy_SDD
 ecsel-dr-AH:AH_Gatekeeper_System_Sy_SDD rdf:type owl:Class ;
                                         rdfs:subClassOf ecsel-dr-AH:AH_Automation_Supporting_System_Sy_SDD ;
-                                        rdfs:label "AH Gatekeeper System Sy SDD" .
+                                        rdfs:label "AH Gatekeeper System Sy SDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Gateway_System_Sy_SD
 ecsel-dr-AH:AH_Gateway_System_Sy_SD rdf:type owl:Class ;
                                     rdfs:subClassOf ecsel-dr-AH:AH_Automation_Supporting_System_Sy_SD ;
-                                    rdfs:label "AH Gateway System Sy SD" .
+                                    rdfs:label "AH Gateway System Sy SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Gateway_System_Sy_SDD
 ecsel-dr-AH:AH_Gateway_System_Sy_SDD rdf:type owl:Class ;
                                      rdfs:subClassOf ecsel-dr-AH:AH_Automation_Supporting_System_Sy_SDD ;
-                                     rdfs:label "AH Gateway System Sy SDD" .
+                                     rdfs:label "AH Gateway System Sy SDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Global_Service_Discovery_Service_IDD
 ecsel-dr-AH:AH_Global_Service_Discovery_Service_IDD rdf:type owl:Class ;
                                                     rdfs:subClassOf ecsel-dr-AH:AH_Automation_Supporting_Service_IDD ;
-                                                    rdfs:label "AH Global Service Discovery Service IDD" .
+                                                    rdfs:label "AH Global Service Discovery Service IDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Global_Service_Discovery_Service_SD
 ecsel-dr-AH:AH_Global_Service_Discovery_Service_SD rdf:type owl:Class ;
                                                    rdfs:subClassOf ecsel-dr-AH:AH_Automation_Supporting_Service_SD ;
-                                                   rdfs:label "AH Global Service Discovery Service SD" .
+                                                   rdfs:label "AH Global Service Discovery Service SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Historian_Sy_SD
 ecsel-dr-AH:AH_Historian_Sy_SD rdf:type owl:Class ;
                                rdfs:subClassOf ecsel-dr-AH:AH_Automation_Supporting_System_Sy_SD ;
-                               rdfs:label "AH Historian Sy SD" .
+                               rdfs:label "AH Historian Sy SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Historian_Sy_SDD
 ecsel-dr-AH:AH_Historian_Sy_SDD rdf:type owl:Class ;
                                 rdfs:subClassOf ecsel-dr-AH:AH_Automation_Supporting_System_Sy_SDD ;
-                                rdfs:label "AH Historian Sy SDD" .
+                                rdfs:label "AH Historian Sy SDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Inter_Cloud_Negotiations_Service_IDD
 ecsel-dr-AH:AH_Inter_Cloud_Negotiations_Service_IDD rdf:type owl:Class ;
                                                     rdfs:subClassOf ecsel-dr-AH:AH_Automation_Supporting_Service_IDD ;
-                                                    rdfs:label "AH Inter Cloud Negotiations Service IDD" .
+                                                    rdfs:label "AH Inter Cloud Negotiations Service IDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Inter_Cloud_Negotiations_Service_SD
 ecsel-dr-AH:AH_Inter_Cloud_Negotiations_Service_SD rdf:type owl:Class ;
                                                    rdfs:subClassOf ecsel-dr-AH:AH_Automation_Supporting_Service_SD ;
-                                                   rdfs:label "AH Inter Cloud Negotiations Service SD" .
+                                                   rdfs:label "AH Inter Cloud Negotiations Service SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Local_Cloud
@@ -11442,14 +11442,14 @@ ecsel-dr-AH:AH_Mandatory_Core_Service rdf:type owl:Class ;
 ecsel-dr-AH:AH_Mandatory_Core_Service_IDD rdf:type owl:Class ;
                                           rdfs:subClassOf ecsel-dr-AH:AH_Core_Service_IDD ;
                                           rdfs:comment """Class of all Interface Design Descriptions (IDDs) of mandatory Arrowwhead core services.
-While the class AH_mandatory_core_service contains the mandatory core services only as instances, this class contains classes of the IDDs of each single mandatory core service as subclasses (not only as instances). Since each AH Local Cloud runs one instance of each mandatory core service, each of these services has to be documented by an AH service documentation, i.e. at least by a SD and a IDD. So the IDD is an individual document for each mandatory core service in each single Local Cloud. Hence, all IDDs of a certain mandatory core service will be individuals of the corresponding IDD class."""@de ;
-                                          rdfs:label "AH Mandatory Core Service IDD" .
+While the class AH_mandatory_core_service contains the mandatory core services only as instances, this class contains classes of the IDDs of each single mandatory core service as subclasses (not only as instances). Since each AH Local Cloud runs one instance of each mandatory core service, each of these services has to be documented by an AH service documentation, i.e. at least by a SD and a IDD. So the IDD is an individual document for each mandatory core service in each single Local Cloud. Hence, all IDDs of a certain mandatory core service will be individuals of the corresponding IDD class."""@en ;
+                                          rdfs:label "AH Mandatory Core Service IDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Mandatory_Core_Service_SD
 ecsel-dr-AH:AH_Mandatory_Core_Service_SD rdf:type owl:Class ;
                                          rdfs:subClassOf ecsel-dr-AH:AH_Core_Service_SD ;
-                                         rdfs:label "AH Mandatory Core Service SD" .
+                                         rdfs:label "AH Mandatory Core Service SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Mandatory_Core_System
@@ -11461,13 +11461,13 @@ ecsel-dr-AH:AH_Mandatory_Core_System rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Mandatory_Core_System_Sy_SD
 ecsel-dr-AH:AH_Mandatory_Core_System_Sy_SD rdf:type owl:Class ;
                                            rdfs:subClassOf ecsel-dr-AH:AH_Core_System_Sy_SD ;
-                                           rdfs:label "AH Mandatory Core System Sy SD" .
+                                           rdfs:label "AH Mandatory Core System Sy SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Mandatory_Core_System_Sy_SDD
 ecsel-dr-AH:AH_Mandatory_Core_System_Sy_SDD rdf:type owl:Class ;
                                             rdfs:subClassOf ecsel-dr-AH:AH_Core_System_Sy_SDD ;
-                                            rdfs:label "AH Mandatory Core System Sy SDD" .
+                                            rdfs:label "AH Mandatory Core System Sy SDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Orchestration_Service_IDD
@@ -11479,13 +11479,13 @@ ecsel-dr-AH:AH_Orchestration_Service_IDD rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Orchestration_Service_SD
 ecsel-dr-AH:AH_Orchestration_Service_SD rdf:type owl:Class ;
                                         rdfs:subClassOf ecsel-dr-AH:AH_Mandatory_Core_Service_SD ;
-                                        rdfs:label "AH Orchestration Service SD" .
+                                        rdfs:label "AH Orchestration Service SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Orchestration_System_Sy_SD
 ecsel-dr-AH:AH_Orchestration_System_Sy_SD rdf:type owl:Class ;
                                           rdfs:subClassOf ecsel-dr-AH:AH_Mandatory_Core_System_Sy_SD ;
-                                          rdfs:label "AH Orchestration System Sy SD" .
+                                          rdfs:label "AH Orchestration System Sy SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Orchestration_System_Sy_SDD
@@ -11497,19 +11497,19 @@ ecsel-dr-AH:AH_Orchestration_System_Sy_SDD rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Orchestrator_WADL
 ecsel-dr-AH:AH_Orchestrator_WADL rdf:type owl:Class ;
                                  rdfs:subClassOf ecsel-dr-AH:System_Web_Application_Description_WADL ;
-                                 rdfs:label "AH Orchestrator WADL" .
+                                 rdfs:label "AH Orchestrator WADL"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_QoS_Manager_Sy_SD
 ecsel-dr-AH:AH_QoS_Manager_Sy_SD rdf:type owl:Class ;
                                  rdfs:subClassOf ecsel-dr-AH:AH_Automation_Supporting_System_Sy_SD ;
-                                 rdfs:label "AH QoS Manager Sy SD" .
+                                 rdfs:label "AH QoS Manager Sy SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_QoS_Manager_Sy_SDD
 ecsel-dr-AH:AH_QoS_Manager_Sy_SDD rdf:type owl:Class ;
                                   rdfs:subClassOf ecsel-dr-AH:AH_Automation_Supporting_System_Sy_SDD ;
-                                  rdfs:label "AH QoS Manager Sy SDD" .
+                                  rdfs:label "AH QoS Manager Sy SDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Service
@@ -11527,7 +11527,7 @@ ecsel-dr-AH:AH_Service_Discovery_Service_IDD rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Service_Discovery_Service_SD
 ecsel-dr-AH:AH_Service_Discovery_Service_SD rdf:type owl:Class ;
                                             rdfs:subClassOf ecsel-dr-AH:AH_Mandatory_Core_Service_SD ;
-                                            rdfs:label "AH Service Discovery Service SD" .
+                                            rdfs:label "AH Service Discovery Service SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Service_Documentation
@@ -11549,13 +11549,13 @@ The central documents are IDDs. They document the implementation of a certain se
 The Service Description contains a more general description of the service, without the link to a specific communication technology or information model. 
 Communication Profiles and Semantic Profiles are optional documents for a service documentation. They can be seen as modules of an IDD, since they can describe the communication technolopgy and the information model of a service implementation as external documents. If they exist, the IDD refers to them instead of declaring these contents by themselfes. 
 That is, CP and SP are useful if different service implementations use the same CP and SP - then their IDDs can refer to one and the same CP or SP document."""@de ;
-                                              rdfs:label "AH Service Documentation Document" .
+                                              rdfs:label "AH Service Documentation Document"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Service_Registry_System_Sy_SD
 ecsel-dr-AH:AH_Service_Registry_System_Sy_SD rdf:type owl:Class ;
                                              rdfs:subClassOf ecsel-dr-AH:AH_Mandatory_Core_System_Sy_SD ;
-                                             rdfs:label "AH Service Registry System Sy SD" .
+                                             rdfs:label "AH Service Registry System Sy SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Service_Registry_System_Sy_SDD
@@ -11567,31 +11567,31 @@ ecsel-dr-AH:AH_Service_Registry_System_Sy_SDD rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Service_Registry_WADL
 ecsel-dr-AH:AH_Service_Registry_WADL rdf:type owl:Class ;
                                      rdfs:subClassOf ecsel-dr-AH:System_Web_Application_Description_WADL ;
-                                     rdfs:label "AH Service Registry WADL" .
+                                     rdfs:label "AH Service Registry WADL"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Session_Establish_Service_IDD
 ecsel-dr-AH:AH_Session_Establish_Service_IDD rdf:type owl:Class ;
                                              rdfs:subClassOf ecsel-dr-AH:AH_Automation_Supporting_Service_IDD ;
-                                             rdfs:label "AH Session Establish Service IDD" .
+                                             rdfs:label "AH Session Establish Service IDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Session_Establish_Service_SD
 ecsel-dr-AH:AH_Session_Establish_Service_SD rdf:type owl:Class ;
                                             rdfs:subClassOf ecsel-dr-AH:AH_Automation_Supporting_Service_SD ;
-                                            rdfs:label "AH Session Establish Service SD" .
+                                            rdfs:label "AH Session Establish Service SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Session_Management_Service_IDD
 ecsel-dr-AH:AH_Session_Management_Service_IDD rdf:type owl:Class ;
                                               rdfs:subClassOf ecsel-dr-AH:AH_Automation_Supporting_Service_IDD ;
-                                              rdfs:label "AH Session Management Service IDD" .
+                                              rdfs:label "AH Session Management Service IDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Session_Management_Service_SD
 ecsel-dr-AH:AH_Session_Management_Service_SD rdf:type owl:Class ;
                                              rdfs:subClassOf ecsel-dr-AH:AH_Automation_Supporting_Service_SD ;
-                                             rdfs:label "AH Session Management Service SD" .
+                                             rdfs:label "AH Session Management Service SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Store_Management_Service_IDD
@@ -11603,7 +11603,7 @@ ecsel-dr-AH:AH_Store_Management_Service_IDD rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Store_Management_Service_SD
 ecsel-dr-AH:AH_Store_Management_Service_SD rdf:type owl:Class ;
                                            rdfs:subClassOf ecsel-dr-AH:AH_Mandatory_Core_Service_SD ;
-                                           rdfs:label "AH Store Management Service SD" .
+                                           rdfs:label "AH Store Management Service SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_System
@@ -11615,13 +11615,13 @@ ecsel-dr-AH:AH_System rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#AH_System_Discovery_Service_IDD
 ecsel-dr-AH:AH_System_Discovery_Service_IDD rdf:type owl:Class ;
                                             rdfs:subClassOf ecsel-dr-AH:AH_Automation_Supporting_Service_IDD ;
-                                            rdfs:label "AH System Discovery Service IDD" .
+                                            rdfs:label "AH System Discovery Service IDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_System_Discovery_Service_SD
 ecsel-dr-AH:AH_System_Discovery_Service_SD rdf:type owl:Class ;
                                            rdfs:subClassOf ecsel-dr-AH:AH_Automation_Supporting_Service_SD ;
-                                           rdfs:label "AH System Discovery Service SD" .
+                                           rdfs:label "AH System Discovery Service SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_System_Documentation
@@ -11633,37 +11633,37 @@ ecsel-dr-AH:AH_System_Documentation rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#AH_System_Documentation_Document
 ecsel-dr-AH:AH_System_Documentation_Document rdf:type owl:Class ;
                                              rdfs:subClassOf ecsel-dr-AH:Documentation_Document ;
-                                             rdfs:label "AH System Documentation Document" .
+                                             rdfs:label "AH System Documentation Document"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_System_Of_Systems_Documentation
 ecsel-dr-AH:AH_System_Of_Systems_Documentation rdf:type owl:Class ;
                                                rdfs:subClassOf ecsel-dr-AH:System_Documentation ;
-                                               rdfs:label "AH System of Systems Documentation"@en .
+                                               rdfs:label "AH System Of Systems Documentation"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_System_Of_Systems_Documentation_Document
 ecsel-dr-AH:AH_System_Of_Systems_Documentation_Document rdf:type owl:Class ;
                                                         rdfs:subClassOf ecsel-dr-AH:Documentation_Document ;
-                                                        rdfs:label "AH System Of Systems Documentation Document" .
+                                                        rdfs:label "AH System Of Systems Documentation Document"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_System_Registry_System_Sy_SD
 ecsel-dr-AH:AH_System_Registry_System_Sy_SD rdf:type owl:Class ;
                                             rdfs:subClassOf ecsel-dr-AH:AH_Automation_Supporting_System_Sy_SD ;
-                                            rdfs:label "AH System Registry System Sy SD" .
+                                            rdfs:label "AH System Registry System Sy SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_System_Registry_System_Sy_SDD
 ecsel-dr-AH:AH_System_Registry_System_Sy_SDD rdf:type owl:Class ;
                                              rdfs:subClassOf ecsel-dr-AH:AH_Automation_Supporting_System_Sy_SDD ;
-                                             rdfs:label "AH System Registry System Sy SDD" .
+                                             rdfs:label "AH System Registry System Sy SDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Token_Generation_Servcie_SD
 ecsel-dr-AH:AH_Token_Generation_Servcie_SD rdf:type owl:Class ;
                                            rdfs:subClassOf ecsel-dr-AH:AH_Mandatory_Core_Service_SD ;
-                                           rdfs:label "AH Token Generation Servcie SD" .
+                                           rdfs:label "AH Token Generation Servcie SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Token_Generation_Service_IDD
@@ -11682,7 +11682,7 @@ ecsel-dr-AH:Arrowhead rdf:type owl:Class ;
 ecsel-dr-AH:Communication_Profile_CP rdf:type owl:Class ;
                                      rdfs:subClassOf ecsel-dr-AH:AH_Service_Documentation_Document ;
                                      rdfs:comment "Communication Profile (CP)" ;
-                                     rdfs:label "Communication Profile" .
+                                     rdfs:label "Communication Profile"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Communication_Security_Mechanism
@@ -11738,7 +11738,7 @@ ecsel-dr-AH:Device rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#Documentation_Document
 ecsel-dr-AH:Documentation_Document rdf:type owl:Class ;
                                    rdfs:comment "A document that documents something"@en ;
-                                   rdfs:label "Documentation Document" .
+                                   rdfs:label "Documentation Document"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#End_To_End_Communication_Technology
@@ -11779,8 +11779,8 @@ ecsel-dr-AH:Information_Model rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#Interface_Design_Description_IDD
 ecsel-dr-AH:Interface_Design_Description_IDD rdf:type owl:Class ;
                                              rdfs:subClassOf ecsel-dr-AH:AH_Service_Documentation_Document ;
-                                             rdfs:comment "Interface Design Description (IDD)" ;
-                                             rdfs:label "Interface Design Description IDD" .
+                                             rdfs:comment "Interface Design Description (IDD)"@en ;
+                                             rdfs:label "Interface Design Description IDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Local_Network
@@ -11829,7 +11829,7 @@ ecsel-dr-AH:Raspberry_Pi rdf:type owl:Class ;
 ecsel-dr-AH:Semantic_Profile_SP rdf:type owl:Class ;
                                 rdfs:subClassOf ecsel-dr-AH:AH_Service_Documentation_Document ;
                                 rdfs:comment "Semantic Profile (SP)" ;
-                                rdfs:label "Semantic Profile" .
+                                rdfs:label "Semantic Profile"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Sensor_Device
@@ -11859,8 +11859,8 @@ ecsel-dr-AH:Service rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#Service_Description_SD
 ecsel-dr-AH:Service_Description_SD rdf:type owl:Class ;
                                    rdfs:subClassOf ecsel-dr-AH:AH_Service_Documentation_Document ;
-                                   rdfs:comment "Service Description (SD)" ;
-                                   rdfs:label "Service Description SD" .
+                                   rdfs:comment "Service Description (SD)"@en ;
+                                   rdfs:label "Service Description SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Service_Documentation
@@ -11904,13 +11904,13 @@ ecsel-dr-AH:Switch_Device rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#System_Description_Sy_SD
 ecsel-dr-AH:System_Description_Sy_SD rdf:type owl:Class ;
                                      rdfs:subClassOf ecsel-dr-AH:AH_System_Documentation_Document ;
-                                     rdfs:label "System Description Sy SD" .
+                                     rdfs:label "System Description Sy SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#System_Design_Description_Sy_SDD
 ecsel-dr-AH:System_Design_Description_Sy_SDD rdf:type owl:Class ;
                                              rdfs:subClassOf ecsel-dr-AH:AH_System_Documentation_Document ;
-                                             rdfs:label "System Design Description Sy SDD" .
+                                             rdfs:label "System Design Description Sy SDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#System_Documentation
@@ -11922,19 +11922,19 @@ ecsel-dr-AH:System_Documentation rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#System_Of_Systems
 ecsel-dr-AH:System_Of_Systems rdf:type owl:Class ;
                               rdfs:comment "System of systems is a collection of task-oriented or dedicated systems that pool their resources and capabilities together to create a new, more complex system which offers more functionality and performance than simply the sum of the constituent systems."@en ;
-                              rdfs:label "System of Systems"@en .
+                              rdfs:label "System Of Systems"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#System_Of_Systems_Description_So_SD
 ecsel-dr-AH:System_Of_Systems_Description_So_SD rdf:type owl:Class ;
                                                 rdfs:subClassOf ecsel-dr-AH:AH_System_Of_Systems_Documentation_Document ;
-                                                rdfs:label "System Of Systems Description So SD" .
+                                                rdfs:label "System Of Systems Description So SD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#System_Of_Systems_Design_Description_So_SDD
 ecsel-dr-AH:System_Of_Systems_Design_Description_So_SDD rdf:type owl:Class ;
                                                         rdfs:subClassOf ecsel-dr-AH:AH_System_Of_Systems_Documentation_Document ;
-                                                        rdfs:label "System Of Systems Design Description So SDD" .
+                                                        rdfs:label "System Of Systems Design Description So SDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#System_Web_Application_Description_WADL
@@ -11948,7 +11948,7 @@ https://en.wikipedia.org/wiki/Web_Application_Description_Language
  Sun Microsystems (31 August 2009). \"Web Application Description Language: W3C Member Submission 31 August 2009\". World Wide Web Consortium. Retrieved 12 August 2012.
 World Wide Web Consortium (14 October 2009). \"Team Comment on the \"Web Application Description Language\" Submission\". World Wide Web Consortium. Retrieved 12 August 2012.
 Lawrence Mandel (29 May 2008). \"Describe REST Web services with WSDL 2.0: A how-to guide\". IBM. Retrieved 12 August 2012."""@en ;
-                                                    rdfs:label "System Web Application Description WADL" .
+                                                    rdfs:label "System Web Application Description WADL"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Tablet_Computer
@@ -12342,7 +12342,7 @@ ecsel-dr-AT:Data_Language_Semantic_Web_Stack_Based rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#Data_Language_XML_Based
 ecsel-dr-AT:Data_Language_XML_Based rdf:type owl:Class ;
                                     rdfs:subClassOf ecsel-dr-AT:W3C_L3_Knowledge_Representation ;
-                                    rdfs:label "Data Language XML-based"@en .
+                                    rdfs:label "Data Language XML-Based"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Data_Transmission_Unit
@@ -12386,7 +12386,8 @@ Hartwig Baumgaertel, 2018-11-12"""@en ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#Digital_Factory_Twin
 ecsel-dr-AT:Digital_Factory_Twin rdf:type owl:Class ;
-                                 rdfs:subClassOf ecsel-dr-AT:PLM2_Module .
+                                 rdfs:subClassOf ecsel-dr-AT:PLM2_Module ;
+                                 rdfs:label "Digital Factory Twin"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Document_Type_Description
@@ -12602,116 +12603,117 @@ ecsel-dr-AT:ISA rdf:type owl:Class ;
                 rdfs:label "ISA"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#ISA-95_Automation_Hierarchy
-ecsel-dr-AT:ISA-95_Automation_Hierarchy rdf:type owl:Class ;
-                                        rdfs:subClassOf ecsel-dr-AT:Network_Layer_Model .
+###  http://www.w3id.org/ecsel-dr-AT#ISA_95_Automation_Hierarchy
+ecsel-dr-AT:ISA_95_Automation_Hierarchy rdf:type owl:Class ;
+                                        rdfs:subClassOf ecsel-dr-AT:Network_Layer_Model ;
+                                        rdfs:label "ISA 95 Automation Hierarchy"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#ISA-95_Comm_1_1
-ecsel-dr-AT:ISA-95_Comm_1_1 rdf:type owl:Class ;
-                            rdfs:subClassOf ecsel-dr-AT:ISA-95_Communication ;
+###  http://www.w3id.org/ecsel-dr-AT#ISA_95_Comm_1_1
+ecsel-dr-AT:ISA_95_Comm_1_1 rdf:type owl:Class ;
+                            rdfs:subClassOf ecsel-dr-AT:ISA_95_Communication ;
                             rdfs:label "ISA-95 Comm 1 1"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#ISA-95_Comm_1_2
-ecsel-dr-AT:ISA-95_Comm_1_2 rdf:type owl:Class ;
-                            rdfs:subClassOf ecsel-dr-AT:ISA-95_Communication ;
+###  http://www.w3id.org/ecsel-dr-AT#ISA_95_Comm_1_2
+ecsel-dr-AT:ISA_95_Comm_1_2 rdf:type owl:Class ;
+                            rdfs:subClassOf ecsel-dr-AT:ISA_95_Communication ;
                             rdfs:label "ISA-95 Comm 1 2"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#ISA-95_Comm_1_3
-ecsel-dr-AT:ISA-95_Comm_1_3 rdf:type owl:Class ;
-                            rdfs:subClassOf ecsel-dr-AT:ISA-95_Cross_Layer_Communication ;
+###  http://www.w3id.org/ecsel-dr-AT#ISA_95_Comm_1_3
+ecsel-dr-AT:ISA_95_Comm_1_3 rdf:type owl:Class ;
+                            rdfs:subClassOf ecsel-dr-AT:ISA_95_Cross_Layer_Communication ;
                             rdfs:label "ISA-95 Comm 1 3"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#ISA-95_Comm_1_4
-ecsel-dr-AT:ISA-95_Comm_1_4 rdf:type owl:Class ;
-                            rdfs:subClassOf ecsel-dr-AT:ISA-95_Cross_Layer_Communication ;
+###  http://www.w3id.org/ecsel-dr-AT#ISA_95_Comm_1_4
+ecsel-dr-AT:ISA_95_Comm_1_4 rdf:type owl:Class ;
+                            rdfs:subClassOf ecsel-dr-AT:ISA_95_Cross_Layer_Communication ;
                             rdfs:label "ISA-95 Comm 1 4"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#ISA-95_Comm_2_2
-ecsel-dr-AT:ISA-95_Comm_2_2 rdf:type owl:Class ;
-                            rdfs:subClassOf ecsel-dr-AT:ISA-95_Communication ;
+###  http://www.w3id.org/ecsel-dr-AT#ISA_95_Comm_2_2
+ecsel-dr-AT:ISA_95_Comm_2_2 rdf:type owl:Class ;
+                            rdfs:subClassOf ecsel-dr-AT:ISA_95_Communication ;
                             rdfs:label "ISA-95 Comm 2 2"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#ISA-95_Comm_2_3
-ecsel-dr-AT:ISA-95_Comm_2_3 rdf:type owl:Class ;
-                            rdfs:subClassOf ecsel-dr-AT:ISA-95_Communication ;
+###  http://www.w3id.org/ecsel-dr-AT#ISA_95_Comm_2_3
+ecsel-dr-AT:ISA_95_Comm_2_3 rdf:type owl:Class ;
+                            rdfs:subClassOf ecsel-dr-AT:ISA_95_Communication ;
                             rdfs:label "ISA-95 Comm 2 3"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#ISA-95_Comm_2_4
-ecsel-dr-AT:ISA-95_Comm_2_4 rdf:type owl:Class ;
-                            rdfs:subClassOf ecsel-dr-AT:ISA-95_Cross_Layer_Communication ;
+###  http://www.w3id.org/ecsel-dr-AT#ISA_95_Comm_2_4
+ecsel-dr-AT:ISA_95_Comm_2_4 rdf:type owl:Class ;
+                            rdfs:subClassOf ecsel-dr-AT:ISA_95_Cross_Layer_Communication ;
                             rdfs:label "ISA-95 Comm 2 4"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#ISA-95_Comm_3_3
-ecsel-dr-AT:ISA-95_Comm_3_3 rdf:type owl:Class ;
-                            rdfs:subClassOf ecsel-dr-AT:ISA-95_Communication ;
+###  http://www.w3id.org/ecsel-dr-AT#ISA_95_Comm_3_3
+ecsel-dr-AT:ISA_95_Comm_3_3 rdf:type owl:Class ;
+                            rdfs:subClassOf ecsel-dr-AT:ISA_95_Communication ;
                             rdfs:label "ISA-95 Comm 3 3"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#ISA-95_Comm_3_4
-ecsel-dr-AT:ISA-95_Comm_3_4 rdf:type owl:Class ;
-                            rdfs:subClassOf ecsel-dr-AT:ISA-95_Communication ;
+###  http://www.w3id.org/ecsel-dr-AT#ISA_95_Comm_3_4
+ecsel-dr-AT:ISA_95_Comm_3_4 rdf:type owl:Class ;
+                            rdfs:subClassOf ecsel-dr-AT:ISA_95_Communication ;
                             rdfs:label "ISA-95 Comm 3 4"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#ISA-95_Comm_4_4
-ecsel-dr-AT:ISA-95_Comm_4_4 rdf:type owl:Class ;
-                            rdfs:subClassOf ecsel-dr-AT:ISA-95_Communication ;
+###  http://www.w3id.org/ecsel-dr-AT#ISA_95_Comm_4_4
+ecsel-dr-AT:ISA_95_Comm_4_4 rdf:type owl:Class ;
+                            rdfs:subClassOf ecsel-dr-AT:ISA_95_Communication ;
                             rdfs:label "ISA-95 Comm 4 4"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#ISA-95_Communication
-ecsel-dr-AT:ISA-95_Communication rdf:type owl:Class ;
+###  http://www.w3id.org/ecsel-dr-AT#ISA_95_Communication
+ecsel-dr-AT:ISA_95_Communication rdf:type owl:Class ;
                                  rdfs:comment "ISA-95 is an international standard from the International Society of Automation for developing an automated interface between enterprise and control systems."@en ;
                                  rdfs:label "ISA-95 Communication"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AT#ISA-95_Cross_Layer_Communication
-ecsel-dr-AT:ISA-95_Cross_Layer_Communication rdf:type owl:Class ;
+###  http://www.w3id.org/ecsel-dr-AT#ISA_95_Cross_Layer_Communication
+ecsel-dr-AT:ISA_95_Cross_Layer_Communication rdf:type owl:Class ;
                                              rdfs:label "ISA-95 Cross Layer Communication"@en .
-
-
-###  http://www.w3id.org/ecsel-dr-AT#ISA-95_Layer_0_Physical_Process
-ecsel-dr-AT:ISA-95_Layer_0_Physical_Process rdf:type owl:Class ;
-                                            rdfs:subClassOf ecsel-dr-AT:ISA_95_Layer ;
-                                            rdfs:label "ISA-95 Layer 0 Physical Process"@en .
-
-
-###  http://www.w3id.org/ecsel-dr-AT#ISA-95_Layer_1_Sensors_Actuators
-ecsel-dr-AT:ISA-95_Layer_1_Sensors_Actuators rdf:type owl:Class ;
-                                             rdfs:subClassOf ecsel-dr-AT:ISA_95_Layer ;
-                                             rdfs:label "ISA-95 Layer 1 Sensors Actuators"@en .
-
-
-###  http://www.w3id.org/ecsel-dr-AT#ISA-95_Layer_2_Distributed_Control_SCADA
-ecsel-dr-AT:ISA-95_Layer_2_Distributed_Control_SCADA rdf:type owl:Class ;
-                                                     rdfs:subClassOf ecsel-dr-AT:ISA_95_Layer ;
-                                                     rdfs:label "ISA-95 Layer 2 Distributed Control SCADA"@en .
-
-
-###  http://www.w3id.org/ecsel-dr-AT#ISA-95_Layer_3_MES_LES
-ecsel-dr-AT:ISA-95_Layer_3_MES_LES rdf:type owl:Class ;
-                                   rdfs:subClassOf ecsel-dr-AT:ISA_95_Layer ;
-                                   rdfs:label "ISA-95 Layer 3 MES LES"@en .
-
-
-###  http://www.w3id.org/ecsel-dr-AT#ISA-95_Layer_4_ERP
-ecsel-dr-AT:ISA-95_Layer_4_ERP rdf:type owl:Class ;
-                               rdfs:subClassOf ecsel-dr-AT:ISA_95_Layer ;
-                               rdfs:comment "Defines the business-related activities needed to manage a manufacturing operation."@en ;
-                               rdfs:label "ISA-95 Layer 4 ERP"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#ISA_95_Layer
 ecsel-dr-AT:ISA_95_Layer rdf:type owl:Class ;
                          rdfs:label "ISA-95 Layer"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-AT#ISA_95_Layer_0_Physical_Process
+ecsel-dr-AT:ISA_95_Layer_0_Physical_Process rdf:type owl:Class ;
+                                            rdfs:subClassOf ecsel-dr-AT:ISA_95_Layer ;
+                                            rdfs:label "ISA-95 Layer 0 Physical Process"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-AT#ISA_95_Layer_1_Sensors_Actuators
+ecsel-dr-AT:ISA_95_Layer_1_Sensors_Actuators rdf:type owl:Class ;
+                                             rdfs:subClassOf ecsel-dr-AT:ISA_95_Layer ;
+                                             rdfs:label "ISA-95 Layer 1 Sensors Actuators"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-AT#ISA_95_Layer_2_Distributed_Control_SCADA
+ecsel-dr-AT:ISA_95_Layer_2_Distributed_Control_SCADA rdf:type owl:Class ;
+                                                     rdfs:subClassOf ecsel-dr-AT:ISA_95_Layer ;
+                                                     rdfs:label "ISA-95 Layer 2 Distributed Control SCADA"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-AT#ISA_95_Layer_3_MES_LES
+ecsel-dr-AT:ISA_95_Layer_3_MES_LES rdf:type owl:Class ;
+                                   rdfs:subClassOf ecsel-dr-AT:ISA_95_Layer ;
+                                   rdfs:label "ISA-95 Layer 3 MES LES"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-AT#ISA_95_Layer_4_ERP
+ecsel-dr-AT:ISA_95_Layer_4_ERP rdf:type owl:Class ;
+                               rdfs:subClassOf ecsel-dr-AT:ISA_95_Layer ;
+                               rdfs:comment "Defines the business-related activities needed to manage a manufacturing operation."@en ;
+                               rdfs:label "ISA-95 Layer 4 ERP"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#ISA_Standard
@@ -13089,12 +13091,14 @@ ecsel-dr-AT:OSI_L_7_Application_Layer rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#OSI_Layer_Model_Aggregated
 ecsel-dr-AT:OSI_Layer_Model_Aggregated rdf:type owl:Class ;
-                                       rdfs:subClassOf ecsel-dr-AT:Network_Layer_Model .
+                                       rdfs:subClassOf ecsel-dr-AT:Network_Layer_Model ;
+                                       rdfs:label "OSI Layer Model Aggregated"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#OSI_Layer_Model_Detailed
 ecsel-dr-AT:OSI_Layer_Model_Detailed rdf:type owl:Class ;
-                                     rdfs:subClassOf ecsel-dr-AT:Network_Layer_Model .
+                                     rdfs:subClassOf ecsel-dr-AT:Network_Layer_Model ;
+                                     rdfs:label "OSI Layer Model Detailed"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#OSI_Transport_Protocol
@@ -13114,11 +13118,6 @@ ecsel-dr-AT:Ontology rdf:type owl:Class ;
                      rdfs:subClassOf ecsel-dr-AT:W3C_L5_Data_Semantics ;
                      rdfs:comment "An ontology encompasses a representation, formal naming and definition of the categories, properties and relations between the concepts, data and entities that substantiate one, many or all domains of discourse."@en ;
                      rdfs:label "Ontology"@en .
-
-
-###  http://www.w3id.org/ecsel-dr-AT#PLM-System-Second_Generation
-ecsel-dr-AT:PLM-System-Second_Generation rdf:type owl:Class ;
-                                         rdfs:subClassOf ecsel-dr-AT:PLM_System .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#PLM1_Module
@@ -13141,17 +13140,20 @@ ecsel-dr-AT:PLM1_Vendor rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#PLM2_Module
 ecsel-dr-AT:PLM2_Module rdf:type owl:Class ;
-                        rdfs:subClassOf ecsel-dr-AT:PLM-System-Second_Generation .
+                        rdfs:subClassOf ecsel-dr-AT:PLM_System_Second_Generation ;
+                        rdfs:label "PLM2 Module"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#PLM2_System_Suite
 ecsel-dr-AT:PLM2_System_Suite rdf:type owl:Class ;
-                              rdfs:subClassOf ecsel-dr-AT:PLM-System-Second_Generation .
+                              rdfs:subClassOf ecsel-dr-AT:PLM_System_Second_Generation ;
+                              rdfs:label "PLM2 System Suite"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#PLM2_Vendor
 ecsel-dr-AT:PLM2_Vendor rdf:type owl:Class ;
-                        rdfs:subClassOf ecsel-dr-AT:PLM-System-Second_Generation .
+                        rdfs:subClassOf ecsel-dr-AT:PLM_System_Second_Generation ;
+                        rdfs:label "PLM2 Vendor"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#PLM_System
@@ -13164,6 +13166,12 @@ ecsel-dr-AT:PLM_System rdf:type owl:Class ;
 ecsel-dr-AT:PLM_System_First_Generation rdf:type owl:Class ;
                                         rdfs:subClassOf ecsel-dr-AT:PLM_System ;
                                         rdfs:label "PLM System First Generation"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-AT#PLM_System_Second_Generation
+ecsel-dr-AT:PLM_System_Second_Generation rdf:type owl:Class ;
+                                         rdfs:subClassOf ecsel-dr-AT:PLM_System ;
+                                         rdfs:label "PLM System Second Generation"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#PL_Phase_1_Development
@@ -13614,21 +13622,25 @@ ecsel-dr-AT:W3C rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#W3C_Data_Knowledge_Stack
 ecsel-dr-AT:W3C_Data_Knowledge_Stack rdf:type owl:Class ;
-                                     rdfs:subClassOf ecsel-dr-AT:Network_Layer_Model .
+                                     rdfs:subClassOf ecsel-dr-AT:Network_Layer_Model ;
+                                     rdfs:label "W3C Data Knowledge Stack"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#W3C_L1_Web_Platform
 ecsel-dr-AT:W3C_L1_Web_Platform rdf:type owl:Class ;
+                                rdfs:comment "W3C L1 Data Semantics Web Platform"@en ;
                                 rdfs:label "W3C L1 Data Semantics"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#W3C_L2_Data_Syntax
 ecsel-dr-AT:W3C_L2_Data_Syntax rdf:type owl:Class ;
+                               rdfs:comment "W3C L2 Data Semantics Data Syntax"@en ;
                                rdfs:label "W3C L2 Data Semantics"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#W3C_L3_Knowledge_Representation
 ecsel-dr-AT:W3C_L3_Knowledge_Representation rdf:type owl:Class ;
+                                            rdfs:comment "W3C L3 Data Semantics Knowledge Representation"@en ;
                                             rdfs:label "W3C L3 Data Semantics"@en .
 
 
@@ -14157,23 +14169,23 @@ ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution rdf:type owl:Class ;
 ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution_DC_Link_Voltage_155 rdf:type owl:Class ;
                                                                     rdfs:subClassOf ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution ;
                                                                     rdfs:comment "Motor control and drive solution with DC link voltage equal to 155.0."@en ;
-                                                                    rdfs:label "Motor Control and Drive Solution With DC Link Voltage 155.0"@en ;
-                                                                    skos:prefLabel "Motor Control and Drive Solution With DC Link Voltage 155.0"@en .
+                                                                    rdfs:label "Motor Control And Drive Solution With DC Link Voltage 155.0"@en ;
+                                                                    skos:prefLabel "Motor Control And Drive Solution With DC Link Voltage 155.0"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Motor_Control_And_Drive_Solution_Electric_Power_Max_200
 ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution_Electric_Power_Max_200 rdf:type owl:Class ;
                                                                        rdfs:subClassOf ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution ;
                                                                        rdfs:comment "Motor control and drive solution with maximum electric power equal to 200.0."@en ;
-                                                                       rdfs:label "Motor Control and Drive Solution With Electric Power Max 200.0"@en ;
-                                                                       skos:prefLabel "Motor Control and Drive Solution With Electric Power Max 200.0"@en .
+                                                                       rdfs:label "Motor Control And Drive Solution With Electric Power Max 200.0"@en ;
+                                                                       skos:prefLabel "Motor Control And Drive Solution With Electric Power Max 200.0"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Motor_Control_And_Drive_Solution_Industrial_Qualification
 ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution_Industrial_Qualification rdf:type owl:Class ;
                                                                          rdfs:subClassOf ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution ;
                                                                          rdfs:comment "Motor control and drive solution with a industrial qualification."@en ;
-                                                                         rdfs:label "Motor Control and Drive Solution With Industrial Qualification"@en ;
+                                                                         rdfs:label "Motor Control And Drive Solution With Industrial Qualification"@en ;
                                                                          skos:prefLabel "Motor Control and Drive Solution With Industrial Qualification"@en .
 
 
@@ -14181,15 +14193,15 @@ ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution_Industrial_Qualification rdf:typ
 ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution_With_Sensor rdf:type owl:Class ;
                                                             rdfs:subClassOf ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution ;
                                                             rdfs:comment "Motor control and drive solution with sensor"@en ;
-                                                            rdfs:label "Motor Control and Drive Solution with Sensor"@en .
+                                                            rdfs:label "Motor Control And Drive Solution With Sensor"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Motor_Control_And_Drive_Solution_Without_Sensor
 ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution_Without_Sensor rdf:type owl:Class ;
                                                                rdfs:subClassOf ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution ;
                                                                rdfs:comment "Motor control and drive solution without a sensor"@en ;
-                                                               rdfs:label "Motor Control and Drive Solution Without Sensor"@en ;
-                                                               skos:prefLabel "Motor Control and Drive Solution Without Sensor"@en .
+                                                               rdfs:label "Motor Control And Drive Solution Without Sensor"@en ;
+                                                               skos:prefLabel "Motor Control And Drive Solution Without Sensor"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Motor_Type
@@ -14597,7 +14609,7 @@ Used to divide/rejoin tasks/flows which happen in parallel with another, rather 
                                                                       rdf:type owl:Class
                                                                     ] ;
                                                     rdfs:comment "A Business Process (BP) consists of a series of value-creating activities that reach the performance expected by customers and fulfill goals derived from the business strategy." ;
-                                                    rdfs:label "Business Process" ;
+                                                    rdfs:label "Business Process"@en ;
                                                     skos:altLabel "BP" ,
                                                                   "busi process" .
 
@@ -14644,7 +14656,7 @@ A Business Process Flow is a sequence of required tasks to create specified outp
                                                                                 rdf:type owl:Class
                                                                               ] ;
                                                               rdfs:comment "A Business Process Landscape (BP_Landscape) is a detailed overview of a specific Core- or Enabler Process." ;
-                                                              rdfs:label "Business Process Landscape" ;
+                                                              rdfs:label "Business Process Landscape"@en ;
                                                               skos:altLabel "BP Landscape" ,
                                                                             "busi process landscap" .
 
@@ -14661,7 +14673,7 @@ A Business Process Flow is a sequence of required tasks to create specified outp
                                                                                rdf:type owl:Class
                                                                              ] ;
                                                              rdfs:comment "IPF is the structured overview of all IFX Core and Enabler Processes. It contains 4 Core Processes and 6 Enabler Processes." ;
-                                                             rdfs:label "Company Process Framework" ;
+                                                             rdfs:label "Company Process Framework"@en ;
                                                              skos:altLabel "Company process framework" .
 
 
@@ -14696,8 +14708,8 @@ A Business Process Flow is a sequence of required tasks to create specified outp
 ###  http://www.w3id.org/ecsel-dr-PMV#Environmental_Data
 <http://www.w3id.org/ecsel-dr-PMV#Environmental_Data> rdf:type owl:Class ;
                                                       rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/informationrealization.owl#Information_Object> ;
-                                                      rdfs:comment "Additional information to a process like work schedule, production plans, etc." ;
-                                                      rdfs:label "Environmental Data" ;
+                                                      rdfs:comment "Additional information to a process like work schedule, production plans, etc."@en ;
+                                                      rdfs:label "Environmental Data"@en ;
                                                       skos:altLabel "environment data" .
 
 
@@ -14727,7 +14739,7 @@ A Business Process Flow is a sequence of required tasks to create specified outp
 
 ###  http://www.w3id.org/ecsel-dr-PMV#Function_Object
 <http://www.w3id.org/ecsel-dr-PMV#Function_Object> rdf:type owl:Class ;
-                                                   rdfs:comment "In IndustryPrint 5, function objects are used to model the decomposition of a process." ;
+                                                   rdfs:comment "In IndustryPrint 5, function objects are used to model the decomposition of a process."@en ;
                                                    rdfs:label "Function Object"@en ;
                                                    skos:altLabel "function object" .
 
@@ -14746,7 +14758,7 @@ A Business Process Flow is a sequence of required tasks to create specified outp
 <http://www.w3id.org/ecsel-dr-PMV#Input> rdf:type owl:Class ;
                                          rdfs:comment "Item external to a system (such as a process) that is transformed by the system (usually together with one or more other items) to become an output." ;
                                          rdfs:isDefinedBy "http://www.businessdictionary.com/definition/input.html" ;
-                                         rdfs:label "Input" ;
+                                         rdfs:label "Input"@en ;
                                          skos:altLabel "input" .
 
 
@@ -14818,7 +14830,7 @@ A Business Process Flow is a sequence of required tasks to create specified outp
                                                             <http://www.w3id.org/ecsel-dr-PMV#Output> ;
                                             rdfs:comment "The matter from which something can be made. Material can include but is not limited to raw and processed material, components, parts, assemblies, sub-assemblies, fuels, lubricants, coolants, cleaning agents, and small tools and accessories that may be consumed directly or indirectly." ;
                                             rdfs:isDefinedBy "http://www.businessdictionary.com/definition/material.html" ;
-                                            rdfs:label "Material" ;
+                                            rdfs:label "Material"@en ;
                                             skos:altLabel "materi" .
 
 
@@ -14837,15 +14849,14 @@ A Business Process Flow is a sequence of required tasks to create specified outp
                                                               "Represents an object in the EPC model. Includes all elements used in the modelling procedure of an EPC diagram." ,
                                                               "Represents process flow elements except for modelling function objects." ;
                                                  rdfs:isDefinedBy "https://www.epc-standard.org/collaborate/Process_element" ;
-                                                 rdfs:label "Model Element"@en ,
-                                                            "ModelElement" ;
+                                                 rdfs:label "Model Element"@en ;
                                                  skos:altLabel "model element" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PMV#Modelling_Function_Object
 <http://www.w3id.org/ecsel-dr-PMV#Modelling_Function_Object> rdf:type owl:Class ;
                                                              rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PMV#Function_Object> ;
-                                                             rdfs:comment "Function objects are used to model the decomposition of the process flow." ;
+                                                             rdfs:comment "Function objects are used to model the decomposition of the process flow."@en ;
                                                              rdfs:label "Modelling Function Object"@en ;
                                                              skos:altLabel "model function object" .
 
@@ -14873,7 +14884,7 @@ Has the weakest logic and should be used as sparingly as absolutely possible""" 
 <http://www.w3id.org/ecsel-dr-PMV#Other_Services> rdf:type owl:Class ;
                                                   rdfs:subClassOf <http://purl.org/dc/dcmitype/Service> ;
                                                   rdfs:comment "Collection of other services used as input to a production process or which are created during a production process." ;
-                                                  rdfs:label "Other Services" ;
+                                                  rdfs:label "Other Services"@en ;
                                                   skos:altLabel "service"@en .
 
 
@@ -14926,9 +14937,9 @@ Has the weakest logic and should be used as sparingly as absolutely possible""" 
                                                      rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PMV#Function> ,
                                                                      <http://www.w3id.org/ecsel-dr-PMV#Model_Element> ,
                                                                      <http://www.w3id.org/ecsel-dr-PMV#Modelling_Function_Object> ;
-                                                     rdfs:comment "Process Interfaces connect several process models on the same Process hierarchical levelby linking the EPCs according to their shared events (also known as \"horizontal navigation\"). They thus facilitate process structuring and navigation by keeping models concise" ,
+                                                     rdfs:comment "Process Interfaces connect several process models on the same Process hierarchical levelby linking the EPCs according to their shared events (also known as \"horizontal navigation\"). They thus facilitate process structuring and navigation by keeping models concise"@en ,
                                                                   """Process interfaces connect several process models on the same process hierarchical level by linking the EPCs according to their shared events (also known as \"horizontal navigation\"). They thus facilitate process structuring and navigation by keeping models concise and easy-to-read.
-Functionality: Jump function to next process (e.g. EPC, VAC), typically at the end of process branches. In the EPC flow there is an Event directly before.""" ;
+Functionality: Jump function to next process (e.g. EPC, VAC), typically at the end of process branches. In the EPC flow there is an Event directly before."""@en ;
                                                      rdfs:isDefinedBy "https://wiki.scn.sap.com/wiki/pages/viewpage.action?pageId=156532993" ;
                                                      rdfs:label "Process Interface"@en ;
                                                      skos:altLabel "Interface" ,
@@ -14957,7 +14968,7 @@ Functionality: Jump function to next process (e.g. EPC, VAC), typically at the e
                                         rdfs:subClassOf foaf:Person ;
                                         rdfs:comment "Business Role (Person) that performs task." ,
                                                      "Object to describe the role. Type of responsibility is defined by the linkage between function or activity and role. IFX options: carries out, contribute, must be informed." ;
-                                        rdfs:label "Role" ;
+                                        rdfs:label "Role"@en ;
                                         skos:altLabel "role" .
 
 
@@ -15067,8 +15078,8 @@ Functionality: Jump function to next process (e.g. EPC, VAC), typically at the e
                                         rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PMV#Function> ,
                                                         <http://www.w3id.org/ecsel-dr-PMV#Model_Element> ,
                                                         <http://www.w3id.org/ecsel-dr-PMV#Modelling_Function_Object> ;
-                                        rdfs:comment "A Task is an instruction of a work package to create the output." ,
-                                                     "The lowest level of detail, a task are the activities required to execute a subprocess. A single task within a subprocess can be manual or system supported. E.g. Create Purchase Order" ;
+                                        rdfs:comment "A Task is an instruction of a work package to create the output."@en ,
+                                                     "The lowest level of detail, a task are the activities required to execute a subprocess. A single task within a subprocess can be manual or system supported. E.g. Create Purchase Order"@en ;
                                         rdfs:label "Task"@en ;
                                         skos:altLabel "Process step" ,
                                                       "task" .
@@ -15077,7 +15088,7 @@ Functionality: Jump function to next process (e.g. EPC, VAC), typically at the e
 ###  http://www.w3id.org/ecsel-dr-PMV#Technical_Term
 <http://www.w3id.org/ecsel-dr-PMV#Technical_Term> rdf:type owl:Class ;
                                                   rdfs:subClassOf foaf:Document ;
-                                                  rdfs:comment "Set up with connection to a function or activity or VAC. It can be either input or output, where the direction of the arrow describes whether it is an input or an output. Set up of a connection is not mandatory." ;
+                                                  rdfs:comment "Set up with connection to a function or activity or VAC. It can be either input or output, where the direction of the arrow describes whether it is an input or an output. Set up of a connection is not mandatory."@en ;
                                                   rdfs:label "Technical Term"@en ;
                                                   skos:altLabel "technic term" .
 
@@ -15092,7 +15103,7 @@ Functionality: Jump function to next process (e.g. EPC, VAC), typically at the e
                                                                                                      ) ;
                                                                                   rdf:type owl:Class
                                                                                 ] ;
-                                                                rdfs:comment "Denotes the input element to a function in the process flow." ;
+                                                                rdfs:comment "Denotes the input element to a function in the process flow."@en ;
                                                                 rdfs:label "Technical Term Input Element"@en ;
                                                                 skos:altLabel "technic term input element" .
 
@@ -15107,7 +15118,7 @@ Functionality: Jump function to next process (e.g. EPC, VAC), typically at the e
                                                                                                       ) ;
                                                                                    rdf:type owl:Class
                                                                                  ] ;
-                                                                 rdfs:comment "Denotes the output element of a function in the process flow." ;
+                                                                 rdfs:comment "Denotes the output element of a function in the process flow."@en ;
                                                                  rdfs:label "Technical Term Output Element"@en ;
                                                                  skos:altLabel "technic term output element" .
 
@@ -15117,7 +15128,7 @@ Functionality: Jump function to next process (e.g. EPC, VAC), typically at the e
                                                              rdfs:comment """A Value-Added Chain is a process that represents an element of the process chain. A process hierarchy can be realized by hierarchically structuring value chains, thus modeling business areas, process groups, business processes and business process variants using the sam notation.
 House: represents enabler processes.""" ;
                                                              rdfs:isDefinedBy "https://wiki.scn.sap.com/wiki/pages/viewpage.action?pageId=156532992" ;
-                                                             rdfs:label "Value-added chain diagram" ;
+                                                             rdfs:label "Value-Added Chain Diagram"@en ;
                                                              skos:altLabel "VACD" ,
                                                                            "valu - ad chain diagram" .
 
@@ -15177,7 +15188,7 @@ ecsel-dr-PROD:Finished_Product rdf:type owl:Class ;
 ecsel-dr-PROD:Non_Shippable_Product rdf:type owl:Class ;
                                     rdfs:subClassOf ecsel-dr-PROD:Product ;
                                     rdfs:comment "NonShippableProduct are those finishedProductNumbers that are not allowed to be shipped to a given customer"@en ;
-                                    rdfs:label "Non-shippable Product"@en .
+                                    rdfs:label "Non-Shippable Product"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PROD#Not_Released_Product
@@ -15249,7 +15260,7 @@ ecsel-dr-PROD:Stock_Keeping_Unit rdf:type owl:Class ;
 Example: mathematical entities: formal semantics elements, regions within dimensional spaces, etc.\"""" ;
                                             rdfs:isDefinedBy """World Wide Web Consortium SSN DUL
 https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Abstract\"""" ;
-                                            rdfs:label "Abstract" .
+                                            rdfs:label "Abstract"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Amplication_Switching_Device
@@ -15329,20 +15340,20 @@ Then must be defined what the device it is, for exmaple:
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Deployment
 <http://www.w3id.org/ecsel-dr-PWR#Deployment> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Deployment-related_Process> ;
+                                              rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Deployment_Related_Process> ;
                                               rdfs:comment "The ongoing Process of Entities (for the purposes of this ontology, mainly the Infineon device) deployed for a particular purpose. For example, a particular Sensor deployed on a Platform, or a whole network of Sensors deployed for an observation campaign. The deployment may have sub processes, such as installation, maintenance, addition, and decomissioning and removal." ;
                                               rdfs:isDefinedBy """World Wide Web Consortium SSN
 http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Deployment""" ;
                                               rdfs:label "Deplyment"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-PWR#Deployment-related_Process
-<http://www.w3id.org/ecsel-dr-PWR#Deployment-related_Process> rdf:type owl:Class ;
+###  http://www.w3id.org/ecsel-dr-PWR#Deployment_Related_Process
+<http://www.w3id.org/ecsel-dr-PWR#Deployment_Related_Process> rdf:type owl:Class ;
                                                               rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Process> ;
                                                               rdfs:comment "Place to group all the various Processes related to Deployment. For example, as well as Deployment, installation, maintenance, deployment of the further devices and the like would all be classified under DeploymentRelatedProcess." ;
                                                               rdfs:isDefinedBy """World Wide Web Consortium SSN
 http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#DeploymentRelatedProcess""" ;
-                                                              rdfs:label "Deployment-related Process" .
+                                                              rdfs:label "Deployment-Related Process"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Device
@@ -15357,29 +15368,29 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Device\"""" ;
 ###  http://www.w3id.org/ecsel-dr-PWR#Device_Configuration
 <http://www.w3id.org/ecsel-dr-PWR#Device_Configuration> rdf:type owl:Class ;
                                                         rdfs:comment "Device configuration can refer to either hardware or software , or the combination of both."@en ;
-                                                        rdfs:label "Device Configuration" .
+                                                        rdfs:label "Device Configuration"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Device_Element
 <http://www.w3id.org/ecsel-dr-PWR#Device_Element> rdf:type owl:Class ;
                                                   rdfs:comment "Elements that are part of a device"@en ;
-                                                  rdfs:label "Device Element" .
+                                                  rdfs:label "Device Element"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Document
 <http://www.w3id.org/ecsel-dr-PWR#Document> rdf:type owl:Class ;
                                             owl:equivalentClass foaf:Document ;
                                             rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Information_Object> ;
-                                            rdfs:comment "The document class presents those things which are, broadly conceived, \"documents''. It should contain the manuals and the data sheet of the devices." ;
+                                            rdfs:comment "The document class presents those things which are, broadly conceived, \"documents''. It should contain the manuals and the data sheet of the devices."@en ;
                                             rdfs:isDefinedBy """Friend of a friend ontology
 http://xmlns.com/foaf/spec/#term_Document\"""" ;
-                                            rdfs:label "Document" .
+                                            rdfs:label "Document"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Drain
 <http://www.w3id.org/ecsel-dr-PWR#Drain> rdf:type owl:Class ;
                                          rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Device_Element> ;
-                                         rdfs:label "Drain" .
+                                         rdfs:label "Drain"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Drain_Current
@@ -15419,7 +15430,7 @@ http://xmlns.com/foaf/spec/#term_Document\"""" ;
 <http://www.w3id.org/ecsel-dr-PWR#Electronic_Equipment_Instruments_And_Components> rdf:type owl:Class ;
                                                                                    rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Technology_Hardware_And_Equipment> ;
                                                                                    rdfs:comment "Industrial sector of Electronic Equipment, Instruments and Components"@en ;
-                                                                                   rdfs:label "Electronic Equipment Instruments And Components" .
+                                                                                   rdfs:label "Electronic Equipment Instruments And Components"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Energy
@@ -15447,7 +15458,7 @@ http://xmlns.com/foaf/spec/#term_Document\"""" ;
                                           rdfs:comment "Anything: real, possible, or imaginary, which some modeller wants to talk about for some purpose." ;
                                           rdfs:isDefinedBy """World Wide Web Consortium SSN DUL
 https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Entity""" ;
-                                          rdfs:label "Entity" .
+                                          rdfs:label "Entity"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Financial
@@ -15460,7 +15471,7 @@ https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Entity""" ;
 ###  http://www.w3id.org/ecsel-dr-PWR#Gate
 <http://www.w3id.org/ecsel-dr-PWR#Gate> rdf:type owl:Class ;
                                         rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Device_Element> ;
-                                        rdfs:label "Gate" .
+                                        rdfs:label "Gate"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Gate_Driver
@@ -15473,7 +15484,7 @@ https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Entity""" ;
                                                        rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Information_Object> ;
                                                        rdfs:comment "\"Describes the Dimensions of any Physical Object (Length, Wisth, Height)\"" ;
                                                        rdfs:isDefinedBy "DefinedBy \"IFX\"" ;
-                                                       rdfs:label "Geometric Dimension" .
+                                                       rdfs:label "Geometric Dimension"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Healthcare
@@ -15512,16 +15523,16 @@ This classification is done by The Global Industry Classification Standard (GICS
                                                       rdfs:comment "A piece of information, be it concretely realized or not."@en ;
                                                       rdfs:isDefinedBy """World Wide Web Consortium SSN DUL
 https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#InformationEntity\"""" ;
-                                                      rdfs:label "Information Entity" .
+                                                      rdfs:label "Information Entity"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Information_Object
 <http://www.w3id.org/ecsel-dr-PWR#Information_Object> rdf:type owl:Class ;
                                                       rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Information_Entity> ;
-                                                      rdfs:comment "A piece of information, such as a musical composition, a text, a word, a picture, independently from how it is concretely realized." ;
+                                                      rdfs:comment "A piece of information, such as a musical composition, a text, a word, a picture, independently from how it is concretely realized."@en ;
                                                       rdfs:isDefinedBy """\"World Wide Web Consortium SSN DUL
 https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#InformationObject\"""" ;
-                                                      rdfs:label "Information Object" .
+                                                      rdfs:label "Information Object"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Information_Technology
@@ -15580,10 +15591,10 @@ https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#InformationObject\"""" ;
                                                    rdfs:label "Microcontroller"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-PWR#N-Channel_Configuration
-<http://www.w3id.org/ecsel-dr-PWR#N-Channel_Configuration> rdf:type owl:Class ;
+###  http://www.w3id.org/ecsel-dr-PWR#N_Channel_Configuration
+<http://www.w3id.org/ecsel-dr-PWR#N_Channel_Configuration> rdf:type owl:Class ;
                                                            rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Device_Configuration> ;
-                                                           owl:disjointWith <http://www.w3id.org/ecsel-dr-PWR#P-Channel_Configuration> ;
+                                                           owl:disjointWith <http://www.w3id.org/ecsel-dr-PWR#P_Channel_Configuration> ;
                                                            rdfs:label "N-Channel Configuration" .
 
 
@@ -15597,7 +15608,7 @@ https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#InformationObject\"""" ;
 ###  http://www.w3id.org/ecsel-dr-PWR#Object
 <http://www.w3id.org/ecsel-dr-PWR#Object> rdf:type owl:Class ;
                                           rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Entity> ;
-                                          rdfs:comment "Any physical, social, or mental object, or a substance" ;
+                                          rdfs:comment "Any physical, social, or mental object, or a substance"@en ;
                                           rdfs:isDefinedBy """World Wide Web Consortium SSN DUL
 https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Object\"""" ;
                                           rdfs:label "Object"@en .
@@ -15631,7 +15642,7 @@ https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Object\"""" ;
 <http://www.w3id.org/ecsel-dr-PWR#On_State_Voltage> rdf:type owl:Class ;
                                                     owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                  owl:onProperty <http://www.w3id.org/ecsel-dr-PWR#has_configuration> ;
-                                                                                                 owl:allValuesFrom <http://www.w3id.org/ecsel-dr-PWR#N-Channel_Configuration>
+                                                                                                 owl:allValuesFrom <http://www.w3id.org/ecsel-dr-PWR#N_Channel_Configuration>
                                                                                                ]
                                                                                                [ rdf:type owl:Restriction ;
                                                                                                  owl:onProperty <http://www.w3id.org/ecsel-dr-PWR#has_voltage> ;
@@ -15642,7 +15653,7 @@ https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Object\"""" ;
                                                                         ] ,
                                                                         [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                  owl:onProperty <http://www.w3id.org/ecsel-dr-PWR#has_configuration> ;
-                                                                                                 owl:allValuesFrom <http://www.w3id.org/ecsel-dr-PWR#P-Channel_Configuration>
+                                                                                                 owl:allValuesFrom <http://www.w3id.org/ecsel-dr-PWR#P_Channel_Configuration>
                                                                                                ]
                                                                                                [ rdf:type owl:Restriction ;
                                                                                                  owl:onProperty <http://www.w3id.org/ecsel-dr-PWR#has_voltage> ;
@@ -15666,8 +15677,8 @@ https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Object\"""" ;
                                                   rdfs:label "Operation Mode"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-PWR#P-Channel_Configuration
-<http://www.w3id.org/ecsel-dr-PWR#P-Channel_Configuration> rdf:type owl:Class ;
+###  http://www.w3id.org/ecsel-dr-PWR#P_Channel_Configuration
+<http://www.w3id.org/ecsel-dr-PWR#P_Channel_Configuration> rdf:type owl:Class ;
                                                            rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Device_Configuration> ;
                                                            rdfs:label "P-Channel Configuration" .
 
@@ -15716,7 +15727,7 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Platform\"""" ;
 <http://www.w3id.org/ecsel-dr-PWR#Price> rdf:type owl:Class ;
                                          rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Information_Object> ;
                                          rdfs:comment "The element of an entity"@en ;
-                                         rdfs:label "Price" .
+                                         rdfs:label "Price"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Process
@@ -15741,7 +15752,7 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#ProcessInput""" ;
                                                   rdfs:comment "Any information that is reported from a Procedure." ;
                                                   rdfs:isDefinedBy """World Wide Web Consortium SSN
 http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#ProcessOutput""" ;
-                                                  rdfs:label "Process Output" .
+                                                  rdfs:label "Process Output"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Product
@@ -15804,7 +15815,7 @@ https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Quality""" ;
 <http://www.w3id.org/ecsel-dr-PWR#Semiconductor_Product_Data_Sheet> rdf:type owl:Class ;
                                                                     rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Document> ;
                                                                     rdfs:comment "Data sheet of a semiconductor product (its name), SiC MOSFET Data Sheet"@en ;
-                                                                    rdfs:label "Semiconductor Product Data Sheet" .
+                                                                    rdfs:label "Semiconductor Product Data Sheet"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Semiconductors
@@ -15871,7 +15882,7 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Observation""" ;
 ###  http://www.w3id.org/ecsel-dr-PWR#Source
 <http://www.w3id.org/ecsel-dr-PWR#Source> rdf:type owl:Class ;
                                           rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Device_Element> ;
-                                          rdfs:label "Source" .
+                                          rdfs:label "Source"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Switcher
@@ -15893,7 +15904,7 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Observation""" ;
 For example:
 -If we consider the observation is the method used for sensing of the sensors, then the observation has a result which is the output of the sensor,
 -If -If we consider the amplification is the method used for boosting of the power converter, then the amplification has a result which is the output of the  power converter,""" ;
-                                                   rdfs:label "Switching Value" .
+                                                   rdfs:label "Switching Value"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#System
@@ -15915,13 +15926,13 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#System\"""" ;
 ###  http://www.w3id.org/ecsel-dr-PWR#The_Application_Voltage
 <http://www.w3id.org/ecsel-dr-PWR#The_Application_Voltage> rdf:type owl:Class ;
                                                            rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Process_Input> ;
-                                                           rdfs:label "The Application Voltage" .
+                                                           rdfs:label "The Application Voltage"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#The_Device_Output
 <http://www.w3id.org/ecsel-dr-PWR#The_Device_Output> rdf:type owl:Class ;
                                                      rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Information_Object> ;
-                                                     rdfs:comment "SiC MOSFET Output, the device output is a piece of information (value), the value itself being represented by an The device function value." ;
+                                                     rdfs:comment "SiC MOSFET Output, the device output is a piece of information (value), the value itself being represented by an The device function value."@en ;
                                                      rdfs:label "The Device Output"@en .
 
 
@@ -15948,7 +15959,7 @@ Sensor process: sensing: Sensing is a process that results in the estimation, or
 Boost Converter process: boosting: is a process that results in the estimation, or calculation, of the value of a amplified voltage.""" ;
                                                                            rdfs:isDefinedBy """Only the defintion of the Sensor process: sensing (Sensing is a process that results in the estimation, or calculation, of the value of a phenomenon.) is defined by W3C SSN 
 http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Sensing""" ;
-                                                                           rdfs:label "The Process used in the Device Function" .
+                                                                           rdfs:label "The Process used in the Device Function"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Threshold_Voltage
@@ -16027,7 +16038,7 @@ ecsel-dr-RAMI40:Date rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Dimension
 ecsel-dr-RAMI40:Dimension rdf:type owl:Class ;
                           rdfs:comment "Abstract class to describe the three different dimensions of RAMI4.0" ;
-                          rdfs:label "Dimension" .
+                          rdfs:label "Dimension"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Energy_Efficiency
@@ -16076,7 +16087,7 @@ ecsel-dr-RAMI40:RAMI_Hierarchy_Level_Dimension rdf:type owl:Class ;
                                                                                )
                                                                    ] ;
                                                rdfs:subClassOf ecsel-dr-RAMI40:Dimension ;
-                                               rdfs:label "RAMI Hierarchy Level Dimension" ;
+                                               rdfs:label "RAMI Hierarchy Level Dimension"@en ;
                                                rdfs:seeAlso <http://www.zvei.org/en/subjects/Industry-40/Pages/The-Reference-Architectural-Model-RAMI-40-and-the-Industrie-40-Component.aspx> ;
                                                skos:definition "It describes the functional classification of various circumstances within Industrie 4.0. For classification within a factory, this axis of the reference architecture(layers) follows the IEC 62264 Standard." .
 
@@ -16093,7 +16104,7 @@ ecsel-dr-RAMI40:RAMI_IT_Layer_Dimension rdf:type owl:Class ;
                                                                         )
                                                             ] ;
                                         rdfs:subClassOf ecsel-dr-RAMI40:Dimension ;
-                                        rdfs:label "RAMI IT Layer Dimension" .
+                                        rdfs:label "RAMI IT Layer Dimension"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#RAMI_Life_Cycle_Dimension
@@ -16104,7 +16115,7 @@ ecsel-dr-RAMI40:RAMI_Life_Cycle_Dimension rdf:type owl:Class ;
                                                                           )
                                                               ] ;
                                           rdfs:subClassOf ecsel-dr-RAMI40:Dimension ;
-                                          rdfs:label "RAMI Life Cycle Dimension" ;
+                                          rdfs:label "RAMI Life Cycle Dimension"@en ;
                                           rdfs:seeAlso "http://www.zvei.org/en/subjects/Industry-40/Pages/The-Reference-Architectural-Model-RAMI-40-and-the-Industrie-40-Component.aspx" ;
                                           skos:definition "It describes the different Life Cycle and Value Stream layers for the RAMI model according to the IEC 62890 Standard." ;
                                           skos:preLabel "RAMI Layer" ,
@@ -16642,10 +16653,10 @@ via the release plan. (strategy entity)"""@en ;
                                        rdfs:label "Mask"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SO#Material_Transfer
-<http://www.w3id.org/ecsel-dr-SO#Material_Transfer> rdf:type owl:Class ;
-                                                    rdfs:comment "A material transfer matrix estimates the duration of material from on to another equipment."@en ;
-                                                    rdfs:label "Material Transfer Matrix"@en .
+###  http://www.w3id.org/ecsel-dr-SO#Material_Transfer_Matrix
+<http://www.w3id.org/ecsel-dr-SO#Material_Transfer_Matrix> rdf:type owl:Class ;
+                                                           rdfs:comment "A material transfer matrix estimates the duration of material from on to another equipment."@en ;
+                                                           rdfs:label "Material Transfer Matrix"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Operation
@@ -17402,8 +17413,8 @@ ecsel-dr-RAMI40:Work_Center rdf:type owl:NamedIndividual .
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Wind_Turbine> rdfs:label "Wind Turbine"@en .
 
 
-ecsel-dr-OOSMP:Completely_Lead_Free_Status skos:prefLabel "Completely Lead Free Status"@en ;
-                                           rdfs:label "Completely Lead Free Status"@en ;
+ecsel-dr-OOSMP:Completely_Lead_Free_Status rdfs:label "Completely Lead Free Status"@en ;
+                                           skos:prefLabel "Completely Lead Free Status"@en ;
                                            rdfs:comment "This status determines whether a semiconductor product is lead free or not."@en .
 
 

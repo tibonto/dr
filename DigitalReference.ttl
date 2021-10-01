@@ -2418,14 +2418,6 @@ org:unit_of rdf:type owl:ObjectProperty ,
                          rdfs:range <http://www.w3.org/ns/sosa/sampling/Relationship_Nature> .
 
 
-###  http://www.w3id.org/ecsel-dr#has_view
-:has_view rdf:type owl:ObjectProperty ;
-          rdfs:subPropertyOf owl:topObjectProperty ;
-          owl:inverseOf :is_view_of ;
-          rdfs:domain ecsel-dr-RAMI40:Submodel ;
-          rdfs:range ecsel-dr-RAMI40:View .
-
-
 ###  http://www.w3id.org/ecsel-dr#implements_service_oriented_architecture
 :implements_service_oriented_architecture rdf:type owl:ObjectProperty ;
                                           rdfs:subPropertyOf owl:topObjectProperty ;
@@ -2487,11 +2479,18 @@ org:unit_of rdf:type owl:ObjectProperty ,
                            rdfs:range <http://www.w3.org/ns/sosa/sampling/Sample_Relationship> .
 
 
-###  http://www.w3id.org/ecsel-dr#is_view_of
-:is_view_of rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf owl:topObjectProperty ;
-            rdfs:domain ecsel-dr-RAMI40:View ;
-            rdfs:range ecsel-dr-RAMI40:Submodel .
+###  http://www.w3id.org/ecsel-dr#is_used_by_standard
+:is_used_by_standard rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     owl:inverseOf :uses_standardization_organization .
+
+
+###  http://www.w3id.org/ecsel-dr#uses_standardization_organization
+:uses_standardization_organization rdf:type owl:ObjectProperty ;
+                                   rdfs:subPropertyOf owl:topObjectProperty ;
+                                   rdfs:domain ecsel-dr-AT:Standard ;
+                                   rdfs:range ecsel-dr-AT:Standardization_Organization ;
+                                   rdfs:label "uses standardization organization"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#contains_device
@@ -5410,8 +5409,8 @@ ecsel-dr-RAMI40:is_part_of_asset rdf:type owl:ObjectProperty ;
                                  rdfs:label "is part of"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-RAMI40#is_used_by_standard_organisation
-ecsel-dr-RAMI40:is_used_by_standard_organisation rdf:type owl:ObjectProperty ;
+###  http://www.w3id.org/ecsel-dr-RAMI40#is_used_by_standard_organization
+ecsel-dr-RAMI40:is_used_by_standard_organization rdf:type owl:ObjectProperty ;
                                                  owl:inverseOf ecsel-dr-RAMI40:uses_standard ;
                                                  rdfs:domain ecsel-dr-RAMI40:Standard ;
                                                  rdfs:range ecsel-dr-RAMI40:Standard_Organization ;
@@ -13628,29 +13627,34 @@ ecsel-dr-AT:W3C_Data_Knowledge_Stack rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#W3C_L1_Web_Platform
 ecsel-dr-AT:W3C_L1_Web_Platform rdf:type owl:Class ;
+                                rdfs:subClassOf ecsel-dr-AT:W3C ;
                                 rdfs:comment "W3C L1 Data Semantics Web Platform"@en ;
                                 rdfs:label "W3C L1 Data Semantics"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#W3C_L2_Data_Syntax
 ecsel-dr-AT:W3C_L2_Data_Syntax rdf:type owl:Class ;
+                               rdfs:subClassOf ecsel-dr-AT:W3C ;
                                rdfs:comment "W3C L2 Data Semantics Data Syntax"@en ;
                                rdfs:label "W3C L2 Data Semantics"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#W3C_L3_Knowledge_Representation
 ecsel-dr-AT:W3C_L3_Knowledge_Representation rdf:type owl:Class ;
+                                            rdfs:subClassOf ecsel-dr-AT:W3C ;
                                             rdfs:comment "W3C L3 Data Semantics Knowledge Representation"@en ;
                                             rdfs:label "W3C L3 Data Semantics"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#W3C_L4_Semantics_Representation
 ecsel-dr-AT:W3C_L4_Semantics_Representation rdf:type owl:Class ;
+                                            rdfs:subClassOf ecsel-dr-AT:W3C ;
                                             rdfs:label "W3C L4 Data Semantics"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#W3C_L5_Data_Semantics
 ecsel-dr-AT:W3C_L5_Data_Semantics rdf:type owl:Class ;
+                                  rdfs:subClassOf ecsel-dr-AT:W3C ;
                                   rdfs:label "W3C L5 Data Semantics"@en .
 
 
@@ -15646,7 +15650,7 @@ https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Object\"""" ;
                                                                                                ]
                                                                                                [ rdf:type owl:Restriction ;
                                                                                                  owl:onProperty <http://www.w3id.org/ecsel-dr-PWR#has_voltage> ;
-                                                                                                 owl:allValuesFrom <http://www.w3id.org/ecsel-dr-PWR#Postive>
+                                                                                                 owl:allValuesFrom <http://www.w3id.org/ecsel-dr-PWR#Positive>
                                                                                                ]
                                                                                              ) ;
                                                                           rdf:type owl:Class
@@ -15709,11 +15713,11 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Platform\"""" ;
                                             rdfs:label "Platform"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-PWR#Postive
-<http://www.w3id.org/ecsel-dr-PWR#Postive> rdf:type owl:Class ;
-                                           rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Voltage> ;
-                                           rdfs:comment "Is the positive difference in electric potential between two points"@en ;
-                                           rdfs:label "Positive (+)"@en .
+###  http://www.w3id.org/ecsel-dr-PWR#Positive
+<http://www.w3id.org/ecsel-dr-PWR#Positive> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Voltage> ;
+                                            rdfs:comment "Is the positive difference in electric potential between two points"@en ;
+                                            rdfs:label "Positive (+)"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Power_Converter
@@ -17413,8 +17417,8 @@ ecsel-dr-RAMI40:Work_Center rdf:type owl:NamedIndividual .
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Wind_Turbine> rdfs:label "Wind Turbine"@en .
 
 
-ecsel-dr-OOSMP:Completely_Lead_Free_Status rdfs:label "Completely Lead Free Status"@en ;
-                                           skos:prefLabel "Completely Lead Free Status"@en ;
+ecsel-dr-OOSMP:Completely_Lead_Free_Status skos:prefLabel "Completely Lead Free Status"@en ;
+                                           rdfs:label "Completely Lead Free Status"@en ;
                                            rdfs:comment "This status determines whether a semiconductor product is lead free or not."@en .
 
 

@@ -2086,7 +2086,7 @@ org:unit_of rdf:type owl:ObjectProperty ,
                                                              rdfs:range <http://www.w3.org/ns/sosa/sampling/Sample_Relationship> ;
                                                              rdfs:comment "Links a sample to a Sample Relationship (which links to a related Sample)." ;
                                                              rdfs:isDefinedBy "http://www.w3.org/ns/sosa/sampling/" ;
-                                                             rdfs:label "has sample relationship" .
+                                                             rdfs:label "has sample relationship"@en .
 
 
 ###  http://www.w3.org/ns/sosa/sampling/nature_of_relationship
@@ -2094,7 +2094,7 @@ org:unit_of rdf:type owl:ObjectProperty ,
                                                             rdfs:domain <http://www.w3.org/ns/sosa/sampling/Sample_Relationship> ;
                                                             rdfs:range <http://www.w3.org/ns/sosa/sampling/Sample_Relationship> ;
                                                             rdfs:comment "Links a SampleRelationship to an indication of the nature of the relationship." ;
-                                                            rdfs:label "nature of relationship" .
+                                                            rdfs:label "nature of relationship"@en .
 
 
 ###  http://www.w3.org/ns/sosa/sampling/related_sample
@@ -2103,7 +2103,7 @@ org:unit_of rdf:type owl:ObjectProperty ,
                                                     rdfs:range <http://www.w3.org/ns/sosa/Sample> ;
                                                     rdfs:comment "Links a SampleRelationship to the related Sample." ;
                                                     rdfs:isDefinedBy "http://www.w3.org/ns/sosa/sampling/" ;
-                                                    rdfs:label "related sample" .
+                                                    rdfs:label "related sample"@en .
 
 
 ###  http://www.w3.org/ns/ssn/deployed_on_platform
@@ -2276,7 +2276,7 @@ org:unit_of rdf:type owl:ObjectProperty ,
                                                           rdfs:range <http://www.w3.org/ns/ssn/systems/Operating_Property> ;
                                                           rdfs:comment "Relation from an OperatingRange of a System to an OperatingProperty describing the operating range of the System." ;
                                                           rdfs:isDefinedBy <http://www.w3.org/ns/ssn/systems/> ;
-                                                          rdfs:label "has operating property" .
+                                                          rdfs:label "has operating property"@en .
 
 
 ###  http://www.w3.org/ns/ssn/systems/has_operating_range
@@ -2286,7 +2286,7 @@ org:unit_of rdf:type owl:ObjectProperty ,
                                                        rdfs:range <http://www.w3.org/ns/ssn/systems/Operating_Range> ;
                                                        rdfs:comment "Relation from a System to an OperatingRange describing the normal operating environment of the System." ;
                                                        rdfs:isDefinedBy <http://www.w3.org/ns/ssn/systems/> ;
-                                                       rdfs:label "has operating range" .
+                                                       rdfs:label "has operating range"@en .
 
 
 ###  http://www.w3.org/ns/ssn/systems/has_quality_of_observation
@@ -2296,7 +2296,7 @@ org:unit_of rdf:type owl:ObjectProperty ,
                                                               rdfs:range <http://www.w3.org/ns/sosa/Result> ;
                                                               rdfs:comment "Relation linking an Observation to the adjudged quality of the Result. This is complementary to the SystemCapability information recorded for the Sensor that made the Observation." ;
                                                               rdfs:isDefinedBy <http://www.w3.org/ns/ssn/systems/> ;
-                                                              rdfs:label "has quality of observation" .
+                                                              rdfs:label "has quality of observation"@en .
 
 
 ###  http://www.w3.org/ns/ssn/systems/has_survival_property
@@ -2306,7 +2306,7 @@ org:unit_of rdf:type owl:ObjectProperty ,
                                                          rdfs:range <http://www.w3.org/ns/ssn/systems/Survival_Property> ;
                                                          rdfs:comment "Relation from a SurvivalRange of a System to a SurvivalProperty describing the survival range of the System." ;
                                                          rdfs:isDefinedBy <http://www.w3.org/ns/ssn/systems/> ;
-                                                         rdfs:label "has survival property" .
+                                                         rdfs:label "has survival property"@en .
 
 
 ###  http://www.w3.org/ns/ssn/systems/has_survival_range
@@ -2316,7 +2316,7 @@ org:unit_of rdf:type owl:ObjectProperty ,
                                                       rdfs:range <http://www.w3.org/ns/ssn/systems/Survival_Range> ;
                                                       rdfs:comment "Relation from a System to SurvivalRange." ;
                                                       rdfs:isDefinedBy <http://www.w3.org/ns/ssn/systems/> ;
-                                                      rdfs:label "has survival range" .
+                                                      rdfs:label "has survival range"@en .
 
 
 ###  http://www.w3.org/ns/ssn/systems/has_system_capability
@@ -2326,7 +2326,7 @@ org:unit_of rdf:type owl:ObjectProperty ,
                                                          rdfs:range <http://www.w3.org/ns/ssn/systems/System_Capability> ;
                                                          rdfs:comment "Relation from a System to a SystemCapability describing the capabilities of the System under certain Conditions." ;
                                                          rdfs:isDefinedBy <http://www.w3.org/ns/ssn/systems/> ;
-                                                         rdfs:label "has system capability" .
+                                                         rdfs:label "has system capability"@en .
 
 
 ###  http://www.w3.org/ns/ssn/systems/has_system_property
@@ -2336,7 +2336,7 @@ org:unit_of rdf:type owl:ObjectProperty ,
                                                        rdfs:range <http://www.w3.org/ns/ssn/systems/System_Property> ;
                                                        rdfs:comment "Relation from a SystemCapability of a System to a SystemProperty describing the capabilities of the System." ;
                                                        rdfs:isDefinedBy <http://www.w3.org/ns/ssn/systems/> ;
-                                                       rdfs:label "has system property" .
+                                                       rdfs:label "has system property"@en .
 
 
 ###  http://www.w3.org/ns/ssn/systems/in_condition
@@ -2347,7 +2347,7 @@ org:unit_of rdf:type owl:ObjectProperty ,
                                                 rdfs:range <http://www.w3.org/ns/ssn/Condition> ;
                                                 rdfs:comment "Describes the prevailing environmental Conditions for SystemCapabilities, OperatingRanges and SurvivalRanges." ;
                                                 rdfs:isDefinedBy <http://www.w3.org/ns/ssn/systems/> ;
-                                                rdfs:label "in condition" ;
+                                                rdfs:label "in condition"@en ;
                                                 skos:example "Used for example to say that a Sensor has a particular accuracy in particular Conditions." .
 
 
@@ -2356,14 +2356,16 @@ org:unit_of rdf:type owl:ObjectProperty ,
                                   rdfs:subPropertyOf owl:topObjectProperty ;
                                   owl:inverseOf :fulfills_demand_snapshot ;
                                   rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Demand_Snapshot> ;
-                                  rdfs:range <http://www.w3id.org/ecsel-dr-OM#Demand_Fulfillement> .
+                                  rdfs:range <http://www.w3id.org/ecsel-dr-OM#Demand_Fulfillement> ;
+                                  rdfs:label "fulfilled by demand fulfillement"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr#fulfills_demand_snapshot
 :fulfills_demand_snapshot rdf:type owl:ObjectProperty ;
                           rdfs:subPropertyOf owl:topObjectProperty ;
                           rdfs:domain <http://www.w3id.org/ecsel-dr-OM#Demand_Fulfillement> ;
-                          rdfs:range <http://www.w3id.org/ecsel-dr-SO#Demand_Snapshot> .
+                          rdfs:range <http://www.w3id.org/ecsel-dr-SO#Demand_Snapshot> ;
+                          rdfs:label "fulfills demand snapshot"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr#has_data_model
@@ -2371,7 +2373,8 @@ org:unit_of rdf:type owl:ObjectProperty ,
                 rdfs:subPropertyOf owl:topObjectProperty ;
                 owl:inverseOf :is_data_model_of ;
                 rdfs:domain ecsel-dr-AH:Service ;
-                rdfs:range ecsel-dr-AH:Data_Model .
+                rdfs:range ecsel-dr-AH:Data_Model ;
+                rdfs:label "has data model"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr#has_date_time_interval
@@ -2380,7 +2383,7 @@ org:unit_of rdf:type owl:ObjectProperty ,
                         owl:inverseOf :is_date_time_interval_of ;
                         rdfs:domain :Public_Holiday ;
                         rdfs:range time:Date_Time_Interval ;
-                        rdfs:label "has date time interval" .
+                        rdfs:label "has date time interval"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr#has_event_public_holiday
@@ -2389,7 +2392,7 @@ org:unit_of rdf:type owl:ObjectProperty ,
                           owl:inverseOf :is_in_event_calendar ;
                           rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Event_Calendar> ;
                           rdfs:range :Public_Holiday ;
-                          rdfs:label "has event public holiday" .
+                          rdfs:label "has event public holiday"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr#has_geographical_location
@@ -2398,7 +2401,7 @@ org:unit_of rdf:type owl:ObjectProperty ,
                            owl:inverseOf :is_georaphical_location_of ;
                            rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Plant> ;
                            rdfs:range :Geographical_Location ;
-                           rdfs:label "has geographical location" .
+                           rdfs:label "has geographical location"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr#has_public_holiday
@@ -2415,7 +2418,8 @@ org:unit_of rdf:type owl:ObjectProperty ,
                          rdfs:subPropertyOf owl:topObjectProperty ;
                          owl:inverseOf :is_relationship_nature_of ;
                          rdfs:domain <http://www.w3.org/ns/sosa/sampling/Sample_Relationship> ;
-                         rdfs:range <http://www.w3.org/ns/sosa/sampling/Relationship_Nature> .
+                         rdfs:range <http://www.w3.org/ns/sosa/sampling/Relationship_Nature> ;
+                         rdfs:label "has relationship nature"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr#implements_service_oriented_architecture
@@ -2423,14 +2427,16 @@ org:unit_of rdf:type owl:ObjectProperty ,
                                           rdfs:subPropertyOf owl:topObjectProperty ;
                                           owl:inverseOf :is_implemented_by_serivce_oriented_architecture_implementation ;
                                           rdfs:domain ecsel-dr-AT:Service_Oriented_Architecture_Implementation ;
-                                          rdfs:range ecsel-dr-AH:Service_Oriented_Architecture .
+                                          rdfs:range ecsel-dr-AH:Service_Oriented_Architecture ;
+                                          rdfs:comment "implements sevice-oriented architecture"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr#is_data_model_of
 :is_data_model_of rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf owl:topObjectProperty ;
                   rdfs:domain ecsel-dr-AH:Data_Model ;
-                  rdfs:range ecsel-dr-AH:Service .
+                  rdfs:range ecsel-dr-AH:Service ;
+                  rdfs:comment "is data model of"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr#is_date_time_interval_of
@@ -2453,7 +2459,8 @@ org:unit_of rdf:type owl:ObjectProperty ,
 :is_implemented_by_serivce_oriented_architecture_implementation rdf:type owl:ObjectProperty ;
                                                                 rdfs:subPropertyOf owl:topObjectProperty ;
                                                                 rdfs:domain ecsel-dr-AH:Service_Oriented_Architecture ;
-                                                                rdfs:range ecsel-dr-AT:Service_Oriented_Architecture_Implementation .
+                                                                rdfs:range ecsel-dr-AT:Service_Oriented_Architecture_Implementation ;
+                                                                rdfs:comment "is implemented by service-oriented architecture implementation"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr#is_in_event_calendar
@@ -2476,13 +2483,15 @@ org:unit_of rdf:type owl:ObjectProperty ,
 :is_relationship_nature_of rdf:type owl:ObjectProperty ;
                            rdfs:subPropertyOf owl:topObjectProperty ;
                            rdfs:domain <http://www.w3.org/ns/sosa/sampling/Relationship_Nature> ;
-                           rdfs:range <http://www.w3.org/ns/sosa/sampling/Sample_Relationship> .
+                           rdfs:range <http://www.w3.org/ns/sosa/sampling/Sample_Relationship> ;
+                           rdfs:comment "is relationship nature of"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr#is_used_by_standard
 :is_used_by_standard rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf owl:topObjectProperty ;
-                     owl:inverseOf :uses_standardization_organization .
+                     owl:inverseOf :uses_standardization_organization ;
+                     rdfs:comment "is used by standard"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr#uses_standardization_organization
@@ -2503,7 +2512,7 @@ ecsel-dr-AH:contains_device rdf:type owl:ObjectProperty ;
                                                       )
                                         ] ;
                             rdfs:range ecsel-dr-AH:Device ;
-                            rdfs:label "contains device" .
+                            rdfs:label "contains device"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#defines_compliant_documentation
@@ -2514,21 +2523,21 @@ ecsel-dr-AH:defines_compliant_documentation rdf:type owl:ObjectProperty ;
                                                                        ecsel-dr-AH:System_Documentation
                                                                      )
                                                        ] ;
-                                            rdfs:label "defines compliant documentation" .
+                                            rdfs:label "defines compliant documentation"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#defines_compliant_service
 ecsel-dr-AH:defines_compliant_service rdf:type owl:ObjectProperty ;
                                       rdfs:domain ecsel-dr-AH:Service_Oriented_Architecture ;
                                       rdfs:range ecsel-dr-AH:Service ;
-                                      rdfs:label "defines compliant service" .
+                                      rdfs:label "defines compliant service"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#defines_compliant_system
 ecsel-dr-AH:defines_compliant_system rdf:type owl:ObjectProperty ;
                                      rdfs:domain ecsel-dr-AH:Service_Oriented_Architecture ;
                                      rdfs:range ecsel-dr-AH:Software_System ;
-                                     rdfs:label "defines" .
+                                     rdfs:label "defines compliant system"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#defines_compliant_system_architecture
@@ -2552,7 +2561,7 @@ ecsel-dr-AH:documents rdf:type owl:ObjectProperty ;
                                                  ecsel-dr-AH:System_Of_Systems
                                                )
                                  ] ;
-                      rdfs:label "documents" .
+                      rdfs:label "documents"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#documents_AH_service_comm_security_mechanism
@@ -2565,7 +2574,7 @@ ecsel-dr-AH:documents_AH_service_comm_security_mechanism rdf:type owl:ObjectProp
                                                                                    )
                                                                      ] ;
                                                          rdfs:range ecsel-dr-AH:Communication_Security_Mechanism ;
-                                                         rdfs:label "documents AH service comm security mechanism" .
+                                                         rdfs:label "documents AH service comm security mechanism"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#documents_AH_service_comm_tech
@@ -2582,7 +2591,7 @@ ecsel-dr-AH:documents_AH_service_comm_tech rdf:type owl:ObjectProperty ;
                                                                       ecsel-dr-AH:Transfer_Protocol
                                                                     )
                                                       ] ;
-                                           rdfs:label "documents AH service comm tech" .
+                                           rdfs:label "documents AH service comm tech"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#documents_AH_service_data_format
@@ -2595,7 +2604,7 @@ ecsel-dr-AH:documents_AH_service_data_format rdf:type owl:ObjectProperty ;
                                                                        )
                                                          ] ;
                                              rdfs:range ecsel-dr-AH:Data_Format ;
-                                             rdfs:label "documents AH service data format" .
+                                             rdfs:label "documents AH service data format"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#documents_AH_service_information_model
@@ -2607,7 +2616,7 @@ ecsel-dr-AH:documents_AH_service_information_model rdf:type owl:ObjectProperty ;
                                                                              )
                                                                ] ;
                                                    rdfs:range ecsel-dr-AH:Information_Model ;
-                                                   rdfs:label "documents AH service information model" .
+                                                   rdfs:label "documents AH service information model"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#documents_AH_service_method
@@ -2620,7 +2629,7 @@ The relation expresses that the IDD document documents the methods of the servic
 With this, a consistency check would be possible: 
 IF a service S has a method M AND the IDD IDD_S is part of the service documentation of S (i.e. IDD_S is the IDD of S) 
 THEN IDD_S should contain a documentation of M."""@en ;
-                                        rdfs:label "documents AH service method" .
+                                        rdfs:label "documents AH service method"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#documents_AH_service_transfer_protocol
@@ -2633,13 +2642,13 @@ ecsel-dr-AH:documents_AH_service_transfer_protocol rdf:type owl:ObjectProperty ;
                                                                              )
                                                                ] ;
                                                    rdfs:range ecsel-dr-AH:Transfer_Protocol ;
-                                                   rdfs:label "documents AH service transfer protocol" .
+                                                   rdfs:label "documents AH service transfer protocol"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#documents_service_part
 ecsel-dr-AH:documents_service_part rdf:type owl:ObjectProperty ;
                                    rdfs:domain ecsel-dr-AH:Documentation_Document ;
-                                   rdfs:label "documents service part" .
+                                   rdfs:label "documents service part"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#has_SoA_property
@@ -2653,7 +2662,7 @@ ecsel-dr-AH:has_SoA_property rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-AH#has_architectural_part
 ecsel-dr-AH:has_architectural_part rdf:type owl:ObjectProperty ;
                                    owl:inverseOf ecsel-dr-AH:is_architectural_part_of ;
-                                   rdfs:label "has architectural part" .
+                                   rdfs:label "has architectural part"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#has_information_model
@@ -2661,7 +2670,7 @@ ecsel-dr-AH:has_information_model rdf:type owl:ObjectProperty ;
                                   owl:inverseOf ecsel-dr-AH:is_information_model_of ;
                                   rdfs:domain ecsel-dr-AH:Service ;
                                   rdfs:range ecsel-dr-AH:Information_Model ;
-                                  rdfs:label "has information model" .
+                                  rdfs:label "has information model"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#has_method
@@ -2670,7 +2679,7 @@ ecsel-dr-AH:has_method rdf:type owl:ObjectProperty ;
                        owl:inverseOf ecsel-dr-AH:is_method_of ;
                        rdfs:domain ecsel-dr-AH:Service ;
                        rdfs:range ecsel-dr-AH:Method ;
-                       rdfs:label "has method" .
+                       rdfs:label "has method"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#has_part_documentation_document
@@ -2692,21 +2701,23 @@ ecsel-dr-AH:hosts rdf:type owl:ObjectProperty ;
                                 ecsel-dr-AH:runs_on ;
                   rdfs:domain ecsel-dr-AH:Device ;
                   rdfs:range ecsel-dr-AH:Software_System ;
-                  rdfs:label "hosts" .
+                  rdfs:label "hosts"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#is_AH_service_documented_by
 ecsel-dr-AH:is_AH_service_documented_by rdf:type owl:ObjectProperty ;
                                         rdfs:subPropertyOf ecsel-dr-AH:is_service_documented_by ;
                                         rdfs:domain ecsel-dr-AH:AH_Service ;
-                                        rdfs:range ecsel-dr-AH:AH_Service_Documentation .
+                                        rdfs:range ecsel-dr-AH:AH_Service_Documentation ;
+                                        rdfs:comment "is AH service documented by"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#is_AH_system_documented_by
 ecsel-dr-AH:is_AH_system_documented_by rdf:type owl:ObjectProperty ;
                                        rdfs:subPropertyOf ecsel-dr-AH:is_system_documented_by ;
                                        rdfs:domain ecsel-dr-AH:AH_System ;
-                                       rdfs:range ecsel-dr-AH:AH_System_Documentation .
+                                       rdfs:range ecsel-dr-AH:AH_System_Documentation ;
+                                       rdfs:comment "is AH system documented by"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#is_SoA_property_of
@@ -2718,7 +2729,7 @@ ecsel-dr-AH:is_SoA_property_of rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-AH#is_architectural_part_of
 ecsel-dr-AH:is_architectural_part_of rdf:type owl:ObjectProperty ;
-                                     rdfs:label "is an architectural part of" .
+                                     rdfs:label "is an architectural part of"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#is_device_in
@@ -2820,7 +2831,8 @@ ecsel-dr-AH:is_referred_to_by rdf:type owl:ObjectProperty ;
 ecsel-dr-AH:is_service_documented_by rdf:type owl:ObjectProperty ;
                                      rdfs:subPropertyOf ecsel-dr-AH:is_documented_by ;
                                      rdfs:domain ecsel-dr-AH:Service ;
-                                     rdfs:range ecsel-dr-AH:Service_Documentation .
+                                     rdfs:range ecsel-dr-AH:Service_Documentation ;
+                                     rdfs:comment "is service documented by"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#is_service_producer_of
@@ -2836,7 +2848,8 @@ ecsel-dr-AH:is_service_producer_of rdf:type owl:ObjectProperty ;
 ecsel-dr-AH:is_system_documented_by rdf:type owl:ObjectProperty ;
                                     rdfs:subPropertyOf ecsel-dr-AH:is_documented_by ;
                                     rdfs:domain ecsel-dr-AH:Software_System ;
-                                    rdfs:range ecsel-dr-AH:System_Documentation .
+                                    rdfs:range ecsel-dr-AH:System_Documentation ;
+                                    rdfs:comment "is system documented by"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#produced_by
@@ -2860,7 +2873,7 @@ Equivalent names for this relation include
 - isServiceProducerOf 
 Since Arrowhead uses the pair produce / consume and corresponding service producer / service consumer adressing the relations and the software systems, this ontology uses these names for the relations too. 
 If it is needed, object properties with other names can be added and stated to be equivalent to these ones."""@en ;
-                     rdfs:label "produces" .
+                     rdfs:label "produces"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#refers_to
@@ -2970,7 +2983,7 @@ ecsel-dr-AH:uses_comm_tech rdf:type owl:ObjectProperty ;
                                                       ecsel-dr-AH:Data_Format
                                                     )
                                       ] ;
-                           rdfs:label "uses comm tech" .
+                           rdfs:label "uses comm tech"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#uses_communication_security_mechanism
@@ -2978,7 +2991,7 @@ ecsel-dr-AH:uses_communication_security_mechanism rdf:type owl:ObjectProperty ;
                                                   rdfs:subPropertyOf ecsel-dr-AH:uses_comm_tech ;
                                                   rdfs:domain ecsel-dr-AH:Service ;
                                                   rdfs:range ecsel-dr-AH:Communication_Security_Mechanism ;
-                                                  rdfs:label "uses communication security mechanism" .
+                                                  rdfs:label "uses communication security mechanism"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#uses_data_format
@@ -2986,7 +2999,7 @@ ecsel-dr-AH:uses_data_format rdf:type owl:ObjectProperty ;
                              rdfs:subPropertyOf ecsel-dr-AH:uses_comm_tech ;
                              rdfs:domain ecsel-dr-AH:Service ;
                              rdfs:range ecsel-dr-AH:Data_Format ;
-                             rdfs:label "uses data format" .
+                             rdfs:label "uses data format"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#uses_transfer_protocol
@@ -2994,7 +3007,7 @@ ecsel-dr-AH:uses_transfer_protocol rdf:type owl:ObjectProperty ;
                                    rdfs:subPropertyOf ecsel-dr-AH:uses_comm_tech ;
                                    rdfs:domain ecsel-dr-AH:Service ;
                                    rdfs:range ecsel-dr-AH:Transfer_Protocol ;
-                                   rdfs:label "uses transfer protocol" .
+                                   rdfs:label "uses transfer protocol"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#belongs_to_ISA_95_layer
@@ -3008,7 +3021,7 @@ ecsel-dr-AT:belongs_to_ISA_95_layer rdf:type owl:ObjectProperty ;
 ecsel-dr-AT:contains_OSI_layer rdf:type owl:ObjectProperty ;
                                rdfs:domain ecsel-dr-AT:OSI_Aggregated_Layer ;
                                rdfs:range ecsel-dr-AT:OSI_Detailed_Layer ;
-                               rdfs:label "contains OSI layer" .
+                               rdfs:label "contains OSI layer"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#has_IT_module_or_part
@@ -3022,7 +3035,7 @@ ecsel-dr-AT:has_IT_module_or_part rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-AT#has_communication_device
 ecsel-dr-AT:has_communication_device rdf:type owl:ObjectProperty ;
                                      owl:inverseOf ecsel-dr-AT:is_device_of_OSI_layer ;
-                                     rdfs:label "has communication device" .
+                                     rdfs:label "has communication device"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#has_data_transmission_unit
@@ -3034,13 +3047,13 @@ ecsel-dr-AT:has_data_transmission_unit rdf:type owl:ObjectProperty ;
                                                                  )
                                                    ] ;
                                        rdfs:range ecsel-dr-AT:Data_Transmission_Unit ;
-                                       rdfs:label "has data transmission unit" .
+                                       rdfs:label "has data transmission unit"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#has_implementation_technology
 ecsel-dr-AT:has_implementation_technology rdf:type owl:ObjectProperty ;
                                           owl:inverseOf ecsel-dr-AT:implements_OSI_layer ;
-                                          rdfs:label "has implementation technology" .
+                                          rdfs:label "has implementation technology"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#has_service_description_language
@@ -3153,14 +3166,14 @@ ecsel-dr-AT:used_in_ISA_95_communication rdf:type owl:ObjectProperty ;
                                                                     ecsel-dr-AT:ISA_95_Cross_Layer_Communication
                                                                   )
                                                     ] ;
-                                         rdfs:label "used in ISA-95 communication" .
+                                         rdfs:label "used in ISA-95 communication"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#used_in_ISA_95_layer
 ecsel-dr-AT:used_in_ISA_95_layer rdf:type owl:ObjectProperty ;
                                  rdfs:domain ecsel-dr-AT:Device ;
                                  rdfs:range ecsel-dr-AT:ISA_95_Layer ;
-                                 rdfs:label "used in ISA-95 layer" .
+                                 rdfs:label "used in ISA-95 layer"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#allocates
@@ -3186,7 +3199,7 @@ ecsel-dr-AT:used_in_ISA_95_layer rdf:type owl:ObjectProperty ;
                                                               owl:inverseOf <http://www.w3id.org/ecsel-dr-OM#is_part_of_open_order> ;
                                                               rdfs:domain <http://www.w3id.org/ecsel-dr-OM#Open_Order> ;
                                                               rdfs:range <http://www.w3id.org/ecsel-dr-OM#Order_Line_Item> ;
-                                                              rdfs:label "consists of order line item" .
+                                                              rdfs:label "consists of order line item"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#consits_of_open_order
@@ -3195,7 +3208,7 @@ ecsel-dr-AT:used_in_ISA_95_layer rdf:type owl:ObjectProperty ;
                                                         owl:inverseOf <http://www.w3id.org/ecsel-dr-OM#is_part_of_open_order_book> ;
                                                         rdfs:domain <http://www.w3id.org/ecsel-dr-OM#Open_Order_Book> ;
                                                         rdfs:range <http://www.w3id.org/ecsel-dr-OM#Open_Order> ;
-                                                        rdfs:label "consists of open order" .
+                                                        rdfs:label "consists of open order"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#contains_contact_person_data
@@ -3203,7 +3216,7 @@ ecsel-dr-AT:used_in_ISA_95_layer rdf:type owl:ObjectProperty ;
                                                                rdfs:subPropertyOf owl:topObjectProperty ;
                                                                rdfs:domain <http://www.w3id.org/ecsel-dr-OM#Order_Confirmation> ;
                                                                rdfs:range <http://www.w3id.org/ecsel-dr-OM#Contact_Person_Data> ;
-                                                               rdfs:label "contains contact person data" .
+                                                               rdfs:label "contains contact person data"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#contains_customer_data
@@ -3211,7 +3224,7 @@ ecsel-dr-AT:used_in_ISA_95_layer rdf:type owl:ObjectProperty ;
                                                          rdfs:subPropertyOf owl:topObjectProperty ;
                                                          rdfs:domain <http://www.w3id.org/ecsel-dr-OM#Order_Confirmation> ;
                                                          rdfs:range <http://www.w3id.org/ecsel-dr-OM#Customer_Data> ;
-                                                         rdfs:label "contains customer data" .
+                                                         rdfs:label "contains customer data"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#contains_customer_plant_data
@@ -3219,7 +3232,7 @@ ecsel-dr-AT:used_in_ISA_95_layer rdf:type owl:ObjectProperty ;
                                                                rdfs:subPropertyOf owl:topObjectProperty ;
                                                                rdfs:domain <http://www.w3id.org/ecsel-dr-OM#Order_Confirmation> ;
                                                                rdfs:range <http://www.w3id.org/ecsel-dr-OM#Customer_Plant_Data> ;
-                                                               rdfs:label "contains customer plant data" .
+                                                               rdfs:label "contains customer plant data"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#contains_order_line_item
@@ -3227,7 +3240,7 @@ ecsel-dr-AT:used_in_ISA_95_layer rdf:type owl:ObjectProperty ;
                                                            rdfs:subPropertyOf owl:topObjectProperty ;
                                                            rdfs:domain <http://www.w3id.org/ecsel-dr-OM#Order_Confirmation> ;
                                                            rdfs:range <http://www.w3id.org/ecsel-dr-OM#Order_Line_Item> ;
-                                                           rdfs:label "contains order line item" .
+                                                           rdfs:label "contains order line item"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#contains_supplier_data
@@ -3235,7 +3248,7 @@ ecsel-dr-AT:used_in_ISA_95_layer rdf:type owl:ObjectProperty ;
                                                          rdfs:subPropertyOf owl:topObjectProperty ;
                                                          rdfs:domain <http://www.w3id.org/ecsel-dr-OM#Order_Confirmation> ;
                                                          rdfs:range <http://www.w3id.org/ecsel-dr-OM#Supplier_Data> ;
-                                                         rdfs:label "contains supplier data" .
+                                                         rdfs:label "contains supplier data"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#describes_customer
@@ -3255,7 +3268,7 @@ ecsel-dr-AT:used_in_ISA_95_layer rdf:type owl:ObjectProperty ;
                                                            rdf:type owl:FunctionalProperty ;
                                                            rdfs:domain <http://www.w3id.org/ecsel-dr-OM#Customer_Plant_Data> ;
                                                            rdfs:range <http://www.w3id.org/ecsel-dr-OM#Customer_Plant> ;
-                                                           rdfs:label "describes customer plant" .
+                                                           rdfs:label "describes customer plant"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#describes_supplier
@@ -3273,7 +3286,7 @@ ecsel-dr-AT:used_in_ISA_95_layer rdf:type owl:ObjectProperty ;
                                                 owl:inverseOf <http://www.w3id.org/ecsel-dr-OM#is_allocated_to> ;
                                                 rdfs:domain <http://www.w3id.org/ecsel-dr-OM#Order_Line_Item> ;
                                                 rdfs:range <http://www.w3id.org/ecsel-dr-OM#Supply> ;
-                                                rdfs:label "has allocated" .
+                                                rdfs:label "has allocated"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#is_allocated_by
@@ -3445,7 +3458,7 @@ ecsel-dr-OOSMP:contains_additional_power_management rdf:type owl:ObjectProperty 
                                                     owl:inverseOf ecsel-dr-OOSMP:is_part_of_as_additional_power_management ;
                                                     rdfs:domain ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution ;
                                                     rdfs:range ecsel-dr-OOSMP:Additional_Power_Management ;
-                                                    rdfs:label "contains additional power management" .
+                                                    rdfs:label "contains additional power management"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#contains_discrete_power_stage
@@ -3454,7 +3467,7 @@ ecsel-dr-OOSMP:contains_discrete_power_stage rdf:type owl:ObjectProperty ;
                                              owl:inverseOf ecsel-dr-OOSMP:is_part_of_as_discrete_power_stage ;
                                              rdfs:domain ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution ;
                                              rdfs:range ecsel-dr-OOSMP:Discrete_Power_Stage ;
-                                             rdfs:label "contains discrete power stage" .
+                                             rdfs:label "contains discrete power stage"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#contains_gate_driver
@@ -3463,7 +3476,7 @@ ecsel-dr-OOSMP:contains_gate_driver rdf:type owl:ObjectProperty ;
                                     owl:inverseOf ecsel-dr-OOSMP:is_part_of_as_gate_driver ;
                                     rdfs:domain ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution ;
                                     rdfs:range ecsel-dr-OOSMP:Gate_Driver ;
-                                    rdfs:label "contains gate driver" .
+                                    rdfs:label "contains gate driver"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#contains_intelligent_power_module
@@ -3472,7 +3485,7 @@ ecsel-dr-OOSMP:contains_intelligent_power_module rdf:type owl:ObjectProperty ;
                                                  owl:inverseOf ecsel-dr-OOSMP:is_part_of_as_intelligent_power_module ;
                                                  rdfs:domain ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution ;
                                                  rdfs:range ecsel-dr-OOSMP:Intelligent_Power_Module ;
-                                                 rdfs:label "contains intelligent power module" .
+                                                 rdfs:label "contains intelligent power module"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#contains_microcontroller
@@ -3481,7 +3494,7 @@ ecsel-dr-OOSMP:contains_microcontroller rdf:type owl:ObjectProperty ;
                                         owl:inverseOf ecsel-dr-OOSMP:is_part_of_as_microcontroller ;
                                         rdfs:domain ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution ;
                                         rdfs:range ecsel-dr-OOSMP:Microcontroller ;
-                                        rdfs:label "contains microcontroller" .
+                                        rdfs:label "contains microcontroller"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#contains_product
@@ -3489,7 +3502,7 @@ ecsel-dr-OOSMP:contains_product rdf:type owl:ObjectProperty ;
                                 owl:inverseOf ecsel-dr-OOSMP:is_part_of ;
                                 rdfs:domain ecsel-dr-OOSMP:Solution ;
                                 rdfs:range ecsel-dr-OOSMP:Product ;
-                                rdfs:label "contains product" .
+                                rdfs:label "contains product"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#contains_smart_driver
@@ -3498,7 +3511,7 @@ ecsel-dr-OOSMP:contains_smart_driver rdf:type owl:ObjectProperty ;
                                      owl:inverseOf ecsel-dr-OOSMP:is_part_of_as_smart_driver ;
                                      rdfs:domain ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution ;
                                      rdfs:range ecsel-dr-OOSMP:Smart_Driver ;
-                                     rdfs:label "contains smart driver" .
+                                     rdfs:label "contains smart driver"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#could_contain_sensor
@@ -3507,7 +3520,7 @@ ecsel-dr-OOSMP:could_contain_sensor rdf:type owl:ObjectProperty ;
                                     owl:inverseOf ecsel-dr-OOSMP:is_part_of_as_potential_sensor ;
                                     rdfs:domain ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution ;
                                     rdfs:range ecsel-dr-OOSMP:Sensor ;
-                                    rdfs:label "could contain sensor" .
+                                    rdfs:label "could contain sensor"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#finds_application_through
@@ -3518,7 +3531,7 @@ ecsel-dr-OOSMP:finds_application_through rdf:type owl:ObjectProperty ;
                                                                     ecsel-dr-OOSMP:Solution
                                                                   )
                                                     ] ;
-                                         rdfs:label "finds application through" .
+                                         rdfs:label "finds application through"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#has_OPN_status
@@ -3843,7 +3856,7 @@ ecsel-dr-OOSMP:is_packing_type_of rdf:type owl:ObjectProperty ,
 ecsel-dr-OOSMP:is_part_of rdf:type owl:ObjectProperty ;
                           rdfs:domain ecsel-dr-OOSMP:Product ;
                           rdfs:range ecsel-dr-OOSMP:Solution ;
-                          rdfs:comment "part of"@en .
+                          rdfs:comment "is part of"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#is_part_of_as_additional_power_management
@@ -3858,14 +3871,16 @@ ecsel-dr-OOSMP:is_part_of_as_additional_power_management rdf:type owl:ObjectProp
 ecsel-dr-OOSMP:is_part_of_as_discrete_power_stage rdf:type owl:ObjectProperty ;
                                                   rdfs:subPropertyOf ecsel-dr-OOSMP:is_part_of ;
                                                   rdfs:domain ecsel-dr-OOSMP:Discrete_Power_Stage ;
-                                                  rdfs:range ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution .
+                                                  rdfs:range ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution ;
+                                                  rdfs:comment "is part of as discrete power stage"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#is_part_of_as_gate_driver
 ecsel-dr-OOSMP:is_part_of_as_gate_driver rdf:type owl:ObjectProperty ;
                                          rdfs:subPropertyOf ecsel-dr-OOSMP:is_part_of ;
                                          rdfs:domain ecsel-dr-OOSMP:Gate_Driver ;
-                                         rdfs:range ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution .
+                                         rdfs:range ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution ;
+                                         rdfs:comment "is part od as gate driver"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#is_part_of_as_intelligent_power_module
@@ -4089,7 +4104,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                       rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#Company_Project> ;
                                                       rdfs:range <http://www.w3id.org/ecsel-dr-ORG#Category> ;
                                                       rdfs:comment "Relation between a project and its categories"@en ;
-                                                      rdfs:label "has category level" .
+                                                      rdfs:label "has category level"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-ORG#has_certification_level
@@ -4100,7 +4115,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                            rdfs:domain <http://www.w3id.org/ecsel-dr-ORG#Company_Project> ;
                                                            rdfs:range <http://www.w3id.org/ecsel-dr-ORG#Certification> ;
                                                            rdfs:comment "Relation between a project and the certification that it has"@en ;
-                                                           rdfs:label "has a certification level" .
+                                                           rdfs:label "has a certification level"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-ORG#has_contributor
@@ -4114,7 +4129,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                                             )
                                                               ] ;
                                                    rdfs:comment "A relation between a role and the funcionts it has, division and region it is part of."@en ;
-                                                   rdfs:label "has a contributor" .
+                                                   rdfs:label "has a contributor"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-ORG#has_project_status
@@ -4280,7 +4295,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                          ] ;
                                              rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Modelling_Function_Object> ;
                                              rdfs:comment "The connector is used to represent the chronological order in an EPC, where an Event or a Rule activate a Task or Process Interface. " ;
-                                             rdfs:label "activates" ;
+                                             rdfs:label "activates"@en ;
                                              skos:altLabel "activ" .
 
 
@@ -4295,7 +4310,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                                                )
                                                                  ] ;
                                                       rdfs:comment "Specialization of the activates property that links the class Event with Task and Process Interface in the course of the process flow." ;
-                                                      rdfs:label "activates function" ;
+                                                      rdfs:label "activates function"@en ;
                                                       skos:altLabel "activ function" .
 
 
@@ -4306,7 +4321,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Rule> ;
                                                   rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Task> ;
                                                   rdfs:comment "Specialization of the activates property that links the class Rule with Task in the course of the process flow." ;
-                                                  rdfs:label "activates task" ;
+                                                  rdfs:label "activates task"@en ;
                                                   skos:altLabel "activ task" .
 
 
@@ -4316,7 +4331,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                     rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Model_Element> ;
                                                     rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Model> ;
                                                     rdfs:comment "Denotes the connection between a \"Function\" and another \"Process\" as this process may deliver an output used in this function." ;
-                                                    rdfs:label "belongs to model" ;
+                                                    rdfs:label "belongs to model"@en ;
                                                     skos:altLabel "belong" .
 
 
@@ -4331,7 +4346,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                                 ] ;
                                                     rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Task> ;
                                                     rdfs:comment "Role(s) or Organizational unit(s) that carrries (carry) out the process step (equivalent to R in RACI notation)" ;
-                                                    rdfs:label "carries out task" ;
+                                                    rdfs:label "carries out task"@en ;
                                                     skos:altLabel "carri" .
 
 
@@ -4356,7 +4371,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                                      )
                                                        ] ;
                                             rdfs:comment "Links a Model with the elements represented by it."@en ;
-                                            rdfs:label "contains" ;
+                                            rdfs:label "contains"@en ;
                                             skos:altLabel "contain" .
 
 
@@ -4366,7 +4381,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                        rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Role> ;
                                                        rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Task> ;
                                                        rdfs:comment "Role(s) that contribute(s) to a process step during it is carried out." ;
-                                                       rdfs:label "contributes to task" ;
+                                                       rdfs:label "contributes to task"@en ;
                                                        skos:altLabel "contribut" .
 
 
@@ -4377,7 +4392,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                      rdfs:domain <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal> ;
                                                      rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Function> ;
                                                      rdfs:comment "A goal controls the outcome of a function in a process flow." ;
-                                                     rdfs:label "controls" ;
+                                                     rdfs:label "controls function"@en ;
                                                      skos:altLabel "control" .
 
 
@@ -4415,7 +4430,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                              rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Join_Rule> ;
                                              rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Event> ;
                                              rdfs:comment "A rule evaluates an event. The connector is used to represent the chronological order in an EPC." ;
-                                             rdfs:label "evaluates" ;
+                                             rdfs:label "evaluates"@en ;
                                              skos:altLabel "evalu" .
 
 
@@ -4434,7 +4449,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                         rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Model_Element> ;
                                         rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Model_Element> ;
                                         rdfs:comment "Enables the modelling of the process flow by logically connecting the different process elements. Therefore, the domain and the range are set to a \"Process Element\"." ;
-                                        rdfs:label "flow" ;
+                                        rdfs:label "flow"@en ;
                                         skos:altLabel "flow" .
 
 
@@ -4446,7 +4461,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                            rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Modelling_Function_Object> ,
                                                       <http://www.w3id.org/ecsel-dr-PMV#Task> ;
                                            rdfs:comment "A process step follows a process step. The connector is used to represent the chronological order in an EPC." ;
-                                           rdfs:label "follows" ;
+                                           rdfs:label "follows"@en ;
                                            skos:altLabel "follow" .
 
 
@@ -4456,7 +4471,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                 rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Task> ;
                                                 rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Technical_Term> ;
                                                 rdfs:comment "A process step can have technical term(s) as input." ;
-                                                rdfs:label "has as input" ;
+                                                rdfs:label "has as input"@en ;
                                                 skos:altLabel "input" .
 
 
@@ -4470,8 +4485,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                             <http://www.w3id.org/ecsel-dr-PMV#Technical_Term> ;
                                                  rdfs:comment "A function in a process flow produces a physical or non-physical output." ,
                                                               "A process step can have technical term(s) as output." ;
-                                                 rdfs:label "has as output" ,
-                                                            "hasOutput" ;
+                                                 rdfs:label "has as output"@en ;
                                                  skos:altLabel "output" .
 
 
@@ -4508,7 +4522,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                       rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Business_Process_Flow> ;
                                                       rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Business_Process_Flow> ;
                                                       rdfs:comment "An EPC can have another EPC previous to itself and is dependent on its results. The connector is used to represent the chronological order in a VACD." ;
-                                                      rdfs:label "has previous model" ;
+                                                      rdfs:label "has previous model"@en ;
                                                       skos:altLabel "previou model" .
 
 
@@ -4518,7 +4532,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                 rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Task> ;
                                                 rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Business_Process_Flow> ;
                                                 rdfs:comment "EPCs can have other EPCs as subordinates. The connector is used to represent the hierarchical order." ;
-                                                rdfs:label "has sub flow" ;
+                                                rdfs:label "has sub flow"@en ;
                                                 skos:altLabel "sub flow" .
 
 
@@ -4527,7 +4541,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                  rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Function> ;
                                                  rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Model> ;
                                                  rdfs:comment "Denotes to which instance of \"Process\" an instance of a \"Process Element\" belongs." ;
-                                                 rdfs:label "has sub model" ;
+                                                 rdfs:label "has sub model"@en ;
                                                  skos:altLabel "sub model" .
 
 
@@ -4613,7 +4627,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                   rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Modelling_Function_Object> ,
                                                              <http://www.w3id.org/ecsel-dr-PMV#Task> ;
                                                   rdfs:comment "A rule is assigned to a process step. The connector is used to represent the chronological order in an EPC." ;
-                                                  rdfs:label "is assigned to" ;
+                                                  rdfs:label "is assigned to"@en ;
                                                   skos:altLabel "assign" .
 
 
@@ -4627,7 +4641,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                                               )
                                                                 ] ;
                                                      rdfs:comment "A process step is carried out by role(s) or organizational unit(s) (equivalent to R in RACI notation)." ;
-                                                     rdfs:label "is carried out by" ;
+                                                     rdfs:label "is carried out by"@en ;
                                                      skos:altLabel "carri" .
 
 
@@ -4637,7 +4651,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                          rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Function> ;
                                                          rdfs:range <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal> ;
                                                          rdfs:comment "The result of a function in a process flow is controlled by a goal." ;
-                                                         rdfs:label "is controlled by" ;
+                                                         rdfs:label "is controlled by"@en ;
                                                          skos:altLabel "control" .
 
 
@@ -4651,7 +4665,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                                           )
                                                             ] ;
                                                  rdfs:comment "An event is created by a process step. The connector is used to represent the chronological order in an EPC." ;
-                                                 rdfs:label "is created by" ;
+                                                 rdfs:label "is created by"@en ;
                                                  skos:altLabel "creat" .
 
 
@@ -4661,7 +4675,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                    rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Event> ;
                                                    rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Rule> ;
                                                    rdfs:comment "An event is dependent on a rule. The connector is used to represent the chronological order in an EPC." ;
-                                                   rdfs:label "is dependent on" ;
+                                                   rdfs:label "is dependent on"@en ;
                                                    skos:altLabel "depend" .
 
 
@@ -4670,7 +4684,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                    rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Event> ;
                                                    rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Join_Rule> ;
                                                    rdfs:comment "An event is evaluated by a rule. The connector is used to represent the chronological order in an EPC." ;
-                                                   rdfs:label "is evaluated by" ;
+                                                   rdfs:label "is evaluated by"@en ;
                                                    skos:altLabel "evalu" .
 
 
@@ -4688,7 +4702,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                 rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Technical_Term> ;
                                                 rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Task> ;
                                                 rdfs:comment "A software independent business object or product/services may be input for a process step." ;
-                                                rdfs:label "is input for" ;
+                                                rdfs:label "is input for"@en ;
                                                 skos:altLabel "input" .
 
 
@@ -4698,7 +4712,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Input> ;
                                                rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Function> ;
                                                rdfs:comment "An external physical or non-physical input is used in a function in a process flow and is therefore input of it." ;
-                                               rdfs:label "is input of" ;
+                                               rdfs:label "is input of"@en ;
                                                skos:altLabel "isinput" .
 
 
@@ -4707,7 +4721,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                 owl:inverseOf <http://www.w3id.org/ecsel-dr-PMV#links> ;
                                                 rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Rule> ;
                                                 rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Rule> ;
-                                                rdfs:label "is linked by" ;
+                                                rdfs:label "is linked by"@en ;
                                                 skos:altLabel "link" .
 
 
@@ -4720,7 +4734,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                            <http://www.w3id.org/ecsel-dr-PMV#Task> ;
                                                 rdfs:comment "A software independent business object may be output of a process step." ,
                                                              "Physical or non-physical output is produced by a function in a process flow." ;
-                                                rdfs:label "is output of" ;
+                                                rdfs:label "is output of"@en ;
                                                 skos:altLabel "output" .
 
 
@@ -4731,7 +4745,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                      rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Modelling_Function_Object> ,
                                                                 <http://www.w3id.org/ecsel-dr-PMV#Task> ;
                                                      rdfs:comment "The connector is used to represent the chronological order of value chain elements." ;
-                                                     rdfs:label "is predecessor of" ;
+                                                     rdfs:label "is predecessor of"@en ;
                                                      skos:altLabel "predecessor" .
 
 
@@ -4743,7 +4757,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                                 rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Function> ;
                                                                 rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Human_Output> ;
                                                                 rdfs:comment "The execution of a function in a process flow is processed by a person (human output)." ;
-                                                                rdfs:label "is processed by" ;
+                                                                rdfs:label "is processed by"@en ;
                                                                 skos:altLabel "process" .
 
 
@@ -4769,7 +4783,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                               rdfs:domain org:Organizational_Unit ;
                                                               rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Function> ;
                                                               rdfs:comment "An organizational unit is responible for a function in a process flow." ;
-                                                              rdfs:label "is responsible for" ;
+                                                              rdfs:label "is responsible for"@en ;
                                                               skos:altLabel "respons" .
 
 
@@ -4778,7 +4792,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Business_Process_Flow> ;
                                                   rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Task> ;
                                                   rdfs:comment "EPCs can have other EPCs as superiors. The connector is used to represent the hierarchical order." ;
-                                                  rdfs:label "is sub flow of" ;
+                                                  rdfs:label "is sub flow of"@en ;
                                                   skos:altLabel "sub flow" .
 
 
@@ -4798,7 +4812,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Environmental_Data> ;
                                                      rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Function> ;
                                                      rdfs:comment "Environmental data is transformed by a function in a process flow." ;
-                                                     rdfs:label "is transformed by" ;
+                                                     rdfs:label "is transformed by"@en ;
                                                      skos:altLabel "transform" .
 
 
@@ -4808,7 +4822,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                               rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Function> ;
                                                               rdfs:range org:Organizational_Unit ;
                                                               rdfs:comment "The execution of a function in a process flow is under the responsibility of an organizational unit." ;
-                                                              rdfs:label "is under responsibility of" ;
+                                                              rdfs:label "is under responsibility of"@en ;
                                                               skos:altLabel "respons" .
 
 
@@ -4822,7 +4836,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                                    ] ;
                                                        rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Function> ;
                                                        rdfs:comment "An external resource is used by a function in a process flow." ;
-                                                       rdfs:label "is used by" ;
+                                                       rdfs:label "is used by function"@en ;
                                                        skos:altLabel "use" .
 
 
@@ -4832,14 +4846,14 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                                     rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Task> ;
                                                                     rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Role> ;
                                                                     rdfs:comment "A process step is worked on by collaboration of role(s)." ;
-                                                                    rdfs:label "is worked on by collaboration of" ;
+                                                                    rdfs:label "is worked on by collaboration of"@en ;
                                                                     skos:altLabel "work collabor" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PMV#leads_to
 <http://www.w3id.org/ecsel-dr-PMV#leads_to> rdf:type owl:ObjectProperty ;
                                             rdfs:comment "The connector is used to represent the chronological order in an EPC." ;
-                                            rdfs:label "leads to" ;
+                                            rdfs:label "leads to"@en ;
                                             skos:altLabel "lead" .
 
 
@@ -4849,7 +4863,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Rule> ;
                                                   rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Event> ;
                                                   rdfs:comment "A rule leads to an event. The connector is used to represent the chronological order in an EPC." ;
-                                                  rdfs:label "leads to event" ;
+                                                  rdfs:label "leads to event"@en ;
                                                   skos:altLabel "lead event" .
 
 
@@ -4860,7 +4874,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                              <http://www.w3id.org/ecsel-dr-PMV#Task> ;
                                                  rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Rule> ;
                                                  rdfs:comment "A process step leads to a rule. The connector is used to represent the chronological order in an EPC." ;
-                                                 rdfs:label "leads to rule" ;
+                                                 rdfs:label "leads to rule"@en ;
                                                  skos:altLabel "lead rule" .
 
 
@@ -4868,7 +4882,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
 <http://www.w3id.org/ecsel-dr-PMV#links> rdf:type owl:ObjectProperty ;
                                          rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Rule> ;
                                          rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Rule> ;
-                                         rdfs:label "links" ;
+                                         rdfs:label "links"@en ;
                                          skos:altLabel "link" .
 
 
@@ -4878,7 +4892,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                           rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Role> ;
                                                           rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Task> ;
                                                           rdfs:comment "Role(s) to be informed after/ during the process step is carried out (one-way-communication) (equivalent to I in RACI notation)" ;
-                                                          rdfs:label "must be informed about" ;
+                                                          rdfs:label "must be informed about"@en ;
                                                           skos:altLabel "inform" .
 
 
@@ -4906,7 +4920,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                                         )
                                                           ] ;
                                                rdfs:comment "An object is relevant for EPCs and value-added chain diagrams." ;
-                                               rdfs:label "relevant to" ;
+                                               rdfs:label "relevant to"@en ;
                                                skos:altLabel "relev" .
 
 
@@ -4921,7 +4935,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                                        )
                                                          ] ;
                                               rdfs:comment "A aris:BPActivity is the graphical representation of a aris:VACD or aris:BPFlow in a aris:VACD." ;
-                                              rdfs:label "represents" ;
+                                              rdfs:label "represents"@en ;
                                               skos:altLabel "repres" .
 
 
@@ -4930,7 +4944,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                         rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Task> ;
                                                         rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Role> ;
                                                         rdfs:comment "A result of a process step is forwarded to role(s)." ;
-                                                        rdfs:label "resultIs forwarded to" ;
+                                                        rdfs:label "resultIs forwarded to"@en ;
                                                         skos:altLabel "result forward" .
 
 
@@ -4948,7 +4962,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                               rdfs:domain <http://www.w3id.org/ecsel-dr-PMV#Function> ;
                                               rdfs:range <http://www.w3id.org/ecsel-dr-PMV#Environmental_Data> ;
                                               rdfs:comment "A function in a process flow transforms environmental data like work schedules." ;
-                                              rdfs:label "transforms" ;
+                                              rdfs:label "transforms"@en ;
                                               skos:altLabel "transform" .
 
 
@@ -4961,7 +4975,7 @@ ecsel-dr-OOSMP:responsible_for_application_level_3_division rdf:type owl:ObjectP
                                                                  )
                                                    ] ;
                                         rdfs:comment "A function in a process flow uses external resources like machines or computer hardware during its execution." ;
-                                        rdfs:label "uses" ;
+                                        rdfs:label "uses"@en ;
                                         skos:altLabel "use" .
 
 
@@ -4977,7 +4991,7 @@ ecsel-dr-PROD:alternate_product rdf:type owl:ObjectProperty ;
 ecsel-dr-PROD:customer rdf:type owl:ObjectProperty ;
                        rdfs:domain ecsel-dr-PROD:Customer_Part_Number_Specification ;
                        rdfs:range ecsel-dr-PROD:Organization ;
-                       rdfs:label "customer" .
+                       rdfs:label "customer"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PROD#has_DREP
@@ -4986,14 +5000,6 @@ ecsel-dr-PROD:has_DREP rdf:type owl:ObjectProperty ,
                        rdfs:domain ecsel-dr-PROD:Fabrication_Position ;
                        rdfs:range ecsel-dr-PROD:Die_Representative ;
                        rdfs:label "has DREP"@en .
-
-
-###  http://www.w3id.org/ecsel-dr-PROD#has_FPOS
-ecsel-dr-PROD:has_FPOS rdf:type owl:ObjectProperty ,
-                                owl:InverseFunctionalProperty ;
-                       rdfs:domain ecsel-dr-PROD:Plan_Position ;
-                       rdfs:range ecsel-dr-PROD:Fabrication_Position ;
-                       rdfs:label "has fabric position" .
 
 
 ###  http://www.w3id.org/ecsel-dr-PROD#has_SKU_PD
@@ -5022,6 +5028,14 @@ Several CPNs can be linked to the same SP number.
                                                      rdfs:label "has a customer part number specification"@en .
 
 
+###  http://www.w3id.org/ecsel-dr-PROD#has_fabric_position
+ecsel-dr-PROD:has_fabric_position rdf:type owl:ObjectProperty ,
+                                           owl:InverseFunctionalProperty ;
+                                  rdfs:domain ecsel-dr-PROD:Plan_Position ;
+                                  rdfs:range ecsel-dr-PROD:Fabrication_Position ;
+                                  rdfs:label "has fabric position"@en .
+
+
 ###  http://www.w3id.org/ecsel-dr-PROD#has_finished_product
 ecsel-dr-PROD:has_finished_product rdf:type owl:ObjectProperty ,
                                             owl:InverseFunctionalProperty ;
@@ -5036,7 +5050,7 @@ ecsel-dr-PROD:has_required_for_plan rdf:type owl:ObjectProperty ,
                                              owl:InverseFunctionalProperty ;
                                     rdfs:domain ecsel-dr-PROD:Plan_Position ;
                                     rdfs:range ecsel-dr-PROD:Required_For_Plan ;
-                                    rdfs:label "has RfP"@en .
+                                    rdfs:label "has required for plan  (RfP)"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PROD#has_sales_product
@@ -5076,14 +5090,14 @@ ecsel-dr-PROD:substitute_product rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-PWR#acting_as
 <http://www.w3id.org/ecsel-dr-PWR#acting_as> rdf:type owl:ObjectProperty ;
-                                             rdfs:label "acting as" .
+                                             rdfs:label "acting as"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#amplication_switching_device_has_property
 <http://www.w3id.org/ecsel-dr-PWR#amplication_switching_device_has_property> rdf:type owl:ObjectProperty ;
                                                                              rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Amplication_Switching_Device> ;
                                                                              rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Property> ;
-                                                                             rdfs:label "has property" .
+                                                                             rdfs:label "has property"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#amplified_by
@@ -5106,35 +5120,35 @@ ecsel-dr-PROD:substitute_product rdf:type owl:ObjectProperty ;
                                                                   rdfs:subPropertyOf <http://www.w3id.org/ecsel-dr-PWR#acting_as> ;
                                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Enhancement_Mode> ;
                                                                   rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Switcher> ;
-                                                                  rdfs:label "enhancement mode is working as" .
+                                                                  rdfs:label "enhancement mode is working as"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#has_an_output_current
 <http://www.w3id.org/ecsel-dr-PWR#has_an_output_current> rdf:type owl:ObjectProperty ;
                                                          rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#SiC_MOSFET> ;
                                                          rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Drain_Current> ;
-                                                         rdfs:label "has an output current" .
+                                                         rdfs:label "has an output current"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#has_application_area
 <http://www.w3id.org/ecsel-dr-PWR#has_application_area> rdf:type owl:ObjectProperty ;
                                                         rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Product> ;
                                                         rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Application_Area> ;
-                                                        rdfs:label "has application area" .
+                                                        rdfs:label "has application area"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#has_configuration
 <http://www.w3id.org/ecsel-dr-PWR#has_configuration> rdf:type owl:ObjectProperty ;
                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Amplication_Switching_Device> ;
                                                      rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Device_Configuration> ;
-                                                     rdfs:label "has a configuration" .
+                                                     rdfs:label "has a configuration"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#has_control_method
 <http://www.w3id.org/ecsel-dr-PWR#has_control_method> rdf:type owl:ObjectProperty ;
                                                       rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Amplication_Switching_Device> ;
                                                       rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Control_Method> ;
-                                                      rdfs:label "has a control method" .
+                                                      rdfs:label "has a control method"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#has_deployment
@@ -5155,7 +5169,7 @@ ecsel-dr-PROD:substitute_product rdf:type owl:ObjectProperty ;
 <http://www.w3id.org/ecsel-dr-PWR#has_element> rdf:type owl:ObjectProperty ;
                                                rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Amplication_Switching_Device> ;
                                                rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Device_Element> ;
-                                               rdfs:label "has element" .
+                                               rdfs:label "has element"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#has_industry_sector
@@ -5172,69 +5186,69 @@ ecsel-dr-PROD:substitute_product rdf:type owl:ObjectProperty ;
                                                           rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Semiconductor_Product_Data_Sheet> ;
                                                           rdfs:comment "States that the devices have ona or more information objects, which can be a sensor data sheet for the sensors." ;
                                                           rdfs:isDefinedBy "IFX" ;
-                                                          rdfs:label "has information object" .
+                                                          rdfs:label "has information object"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#has_operation_modes
 <http://www.w3id.org/ecsel-dr-PWR#has_operation_modes> rdf:type owl:ObjectProperty ;
                                                        rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Amplication_Switching_Device> ;
                                                        rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Enhancement_Mode> ;
-                                                       rdfs:label "has an operation modes" .
+                                                       rdfs:label "has an operation modes"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#has_operation_region
 <http://www.w3id.org/ecsel-dr-PWR#has_operation_region> rdf:type owl:ObjectProperty ;
                                                         rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Amplication_Switching_Device> ;
                                                         rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Region_Of_Operation> ;
-                                                        rdfs:label "has an operation region" .
+                                                        rdfs:label "has an operation region"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#has_power_loss_calculated_by_multiplication_of
 <http://www.w3id.org/ecsel-dr-PWR#has_power_loss_calculated_by_multiplication_of> rdf:type owl:ObjectProperty ;
-                                                                                  rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#On-State_Power_Loss> ;
+                                                                                  rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#On_State_Power_Loss> ;
                                                                                   rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Drain_Current> ,
-                                                                                             <http://www.w3id.org/ecsel-dr-PWR#On-State_Resistance> ;
-                                                                                  rdfs:label "has a power loss calculated by multiplicatoin of" .
+                                                                                             <http://www.w3id.org/ecsel-dr-PWR#On_State_Resistance> ;
+                                                                                  rdfs:label "has a power loss calculated by multiplicatoin of"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#has_process_input
 <http://www.w3id.org/ecsel-dr-PWR#has_process_input> rdf:type owl:ObjectProperty ;
                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Process> ;
                                                      rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Process_Input> ;
-                                                     rdfs:label "has input" .
+                                                     owl:maxCardinality "has process input"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#has_process_output
 <http://www.w3id.org/ecsel-dr-PWR#has_process_output> rdf:type owl:ObjectProperty ;
                                                       rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Process> ;
                                                       rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Process_Output> ;
-                                                      rdfs:label "has output" .
+                                                      rdfs:label "has process output"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#has_properties_of
 <http://www.w3id.org/ecsel-dr-PWR#has_properties_of> rdf:type owl:ObjectProperty ;
                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Semiconductor_Product_Data_Sheet> ;
                                                      rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Amplication_Switching_Device> ;
-                                                     rdfs:label "has propeties of" .
+                                                     rdfs:label "has propeties of"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#has_voltage
 <http://www.w3id.org/ecsel-dr-PWR#has_voltage> rdf:type owl:ObjectProperty ;
-                                               rdfs:label "has a voltage" .
+                                               rdfs:label "has a voltage"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#has_voltage_drain_voltage
 <http://www.w3id.org/ecsel-dr-PWR#has_voltage_drain_voltage> rdf:type owl:ObjectProperty ;
                                                              rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#The_Application_Voltage> ;
                                                              rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Drain_Voltage> ;
-                                                             rdfs:label "is a volatge of" .
+                                                             rdfs:label "is a volatge of"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#has_voltage_equals_or_greater_than
 <http://www.w3id.org/ecsel-dr-PWR#has_voltage_equals_or_greater_than> rdf:type owl:ObjectProperty ;
                                                                       rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#On_State_Voltage> ;
                                                                       rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Threshold_Voltage> ;
-                                                                      rdfs:label "has a voltage equals or greater than" .
+                                                                      rdfs:label "has a voltage equals or greater than"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#in_deployment
@@ -5244,14 +5258,14 @@ ecsel-dr-PROD:substitute_product rdf:type owl:ObjectProperty ;
                                                  rdfs:comment "Relation between a Platform and a Deployment, recording that the object was used as a platform for a system/ a device (sensor/power converter) for a particular deployment: as in this PhysicalObject is acting as a Platform inDeployment Deployment." ;
                                                  rdfs:isDefinedBy """World Wide Web Consortium SSN
 http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#inDeployment""" ;
-                                                 rdfs:label "in deployment" .
+                                                 rdfs:label "in deployment"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#is_a_product_of
 <http://www.w3id.org/ecsel-dr-PWR#is_a_product_of> rdf:type owl:ObjectProperty ;
                                                    rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#SiC_MOSFET> ;
                                                    rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Product> ;
-                                                   rdfs:label "is a product of" .
+                                                   rdfs:label "is a product of"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#is_produced_by
@@ -5266,8 +5280,8 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#inDeployment""" ;
                                                  rdfs:subPropertyOf <http://www.w3id.org/ecsel-dr-PWR#acting_as> ;
                                                  rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Depletion_Mode> ;
                                                  rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Variable_Resistance> ;
-                                                 rdfs:label "The Depletion Mode Is Working As" ,
-                                                            "is working as" .
+                                                 rdfs:label "The Depletion Mode Is Working As" ;
+                                                 skos:prefLabel "is working as"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#makes_switching
@@ -5275,14 +5289,14 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#inDeployment""" ;
                                                    rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Amplication_Switching_Device> ;
                                                    rdfs:range <http://www.w3id.org/ecsel-dr-PWR#The_Method_Of_The_Device_Function> ;
                                                    rdfs:comment "the method name, e.g.:observation and amlification"@en ;
-                                                   rdfs:label "makes switching" .
+                                                   rdfs:label "makes switching"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#the_temperature_must_not_exceed
 <http://www.w3id.org/ecsel-dr-PWR#the_temperature_must_not_exceed> rdf:type owl:ObjectProperty ;
                                                                    rdfs:domain <http://www.w3id.org/ecsel-dr-PWR#Amplication_Switching_Device> ;
                                                                    rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Maximum_Junction_Temperature> ;
-                                                                   rdfs:label "the temperature must not exceed" .
+                                                                   rdfs:label "the temperature must not exceed"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#contains_admin_shell
@@ -5406,7 +5420,7 @@ ecsel-dr-RAMI40:is_part_of_asset rdf:type owl:ObjectProperty ;
                                  rdfs:range ecsel-dr-RAMI40:Asset ;
                                  rdfs:comment "A relation between any entities, in this case, the Asset can be part of other Asset(s)."@en ;
                                  rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
-                                 rdfs:label "is part of"@en .
+                                 rdfs:label "is part of asset"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#is_used_by_standard_organization
@@ -5414,7 +5428,7 @@ ecsel-dr-RAMI40:is_used_by_standard_organization rdf:type owl:ObjectProperty ;
                                                  owl:inverseOf ecsel-dr-RAMI40:uses_standard ;
                                                  rdfs:domain ecsel-dr-RAMI40:Standard ;
                                                  rdfs:range ecsel-dr-RAMI40:Standard_Organization ;
-                                                 rdfs:label "is used by"@en .
+                                                 rdfs:label "is used by standard organization"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#uses_standard
@@ -5527,14 +5541,14 @@ ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
 <http://www.w3id.org/ecsel-dr-SCP#has_result_operational_demand> rdf:type owl:ObjectProperty ;
                                                                  rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Marketing_Demand> ;
                                                                  rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Operational_Demand> ;
-                                                                 rdfs:label "has result"@en .
+                                                                 rdfs:label "has result operational demand"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#is_part_of_operational_demand
 <http://www.w3id.org/ecsel-dr-SCP#is_part_of_operational_demand> rdf:type owl:ObjectProperty ;
                                                                  rdfs:domain <http://www.w3id.org/ecsel-dr-SCP#Forecast> ;
                                                                  rdfs:range <http://www.w3id.org/ecsel-dr-SCP#Operational_Demand> ;
-                                                                 rdfs:label "is part of"@en .
+                                                                 rdfs:label "is part of operational demand"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#is_place_orders
@@ -5660,20 +5674,20 @@ ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
 <http://www.w3id.org/ecsel-dr-SO#belongs_to_furnace_process> rdf:type owl:ObjectProperty ;
                                                              rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Planning_Work_Center> ;
                                                              rdfs:range <http://www.w3id.org/ecsel-dr-SO#Furnace_Process> ;
-                                                             rdfs:label "belongs to furnace process" .
+                                                             rdfs:label "belongs to furnace process"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#consists_of_tool
 <http://www.w3id.org/ecsel-dr-SO#consists_of_tool> rdf:type owl:ObjectProperty ;
                                                    rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Planning_Work_Center> ;
                                                    rdfs:range <http://www.w3id.org/ecsel-dr-SO#Tool> ;
-                                                   rdfs:label "consists of tool" .
+                                                   rdfs:label "consists of tool"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#dedicates_epa
 <http://www.w3id.org/ecsel-dr-SO#dedicates_epa> rdf:type owl:ObjectProperty ;
                                                 owl:inverseOf <http://www.w3id.org/ecsel-dr-SO#is_dedicated_to_tool> ;
-                                                rdfs:label "dedicates" .
+                                                rdfs:label "dedicates epa"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#has_WIP_station
@@ -5688,7 +5702,7 @@ ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
 <http://www.w3id.org/ecsel-dr-SO#has_bottleneck> rdf:type owl:ObjectProperty ;
                                                  owl:inverseOf <http://www.w3id.org/ecsel-dr-SO#is_bottleneck_of> ;
                                                  rdfs:range <http://www.w3id.org/ecsel-dr-SO#Bottleneck> ;
-                                                 rdfs:label "has bottleneck" .
+                                                 rdfs:label "has bottleneck"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#has_current_WIP
@@ -5703,7 +5717,7 @@ ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
                                                                             )
                                                               ] ;
                                                   rdfs:range <http://www.w3id.org/ecsel-dr-SO#Current_WIP> ;
-                                                  rdfs:label "has a current WIP" .
+                                                  rdfs:label "has a current WIP"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#has_delivery_commitment
@@ -5711,7 +5725,7 @@ ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
                                                           owl:inverseOf <http://www.w3id.org/ecsel-dr-SO#is_delivery_commitment_of> ;
                                                           rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Release_Plan> ;
                                                           rdfs:range <http://www.w3id.org/ecsel-dr-SO#Delivery_Commitment> ;
-                                                          rdfs:label "has delivery commitment" .
+                                                          rdfs:label "has delivery commitment"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#has_demand
@@ -5731,7 +5745,7 @@ ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
                                                          ] ;
                                              rdfs:range <http://www.w3id.org/ecsel-dr-SO#Demand_Snapshot> ,
                                                         <http://www.w3id.org/ecsel-dr-SO#Production_Request> ;
-                                             rdfs:label "has demand" .
+                                             rdfs:label "has demand"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#has_equipment
@@ -5740,7 +5754,7 @@ ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
                                                 rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Operation> ,
                                                             <http://www.w3id.org/ecsel-dr-SO#Tool> ;
                                                 rdfs:range <http://www.w3id.org/ecsel-dr-SO#Equipment> ;
-                                                rdfs:label "has equipment" .
+                                                rdfs:label "has equipment"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#has_equipment_group
@@ -5759,7 +5773,7 @@ ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
                                                                                 )
                                                                   ] ;
                                                       rdfs:range <http://www.w3id.org/ecsel-dr-SO#Equipment_Group> ;
-                                                      rdfs:label "has equipment group" .
+                                                      rdfs:label "has equipment group"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#has_event_calendar
@@ -5777,7 +5791,7 @@ ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
                                                                                )
                                                                  ] ;
                                                      rdfs:range <http://www.w3id.org/ecsel-dr-SO#Event_Calendar> ;
-                                                     rdfs:label "has event calendar" .
+                                                     rdfs:label "has event calendar"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#has_fab
@@ -5793,7 +5807,7 @@ ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
                                                                     )
                                                       ] ;
                                           rdfs:range <http://www.w3id.org/ecsel-dr-SO#Fab> ;
-                                          rdfs:label "has fab" .
+                                          rdfs:label "has fab"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#has_lot
@@ -6034,7 +6048,7 @@ ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
 <http://www.w3id.org/ecsel-dr-SO#is_dedicated_to_tool> rdf:type owl:ObjectProperty ;
                                                        rdfs:domain <http://www.w3id.org/ecsel-dr-SO#EPA> ;
                                                        rdfs:range <http://www.w3id.org/ecsel-dr-SO#Tool> ;
-                                                       rdfs:label "is dedicated to"@en .
+                                                       rdfs:label "is dedicated to tool"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#is_delivery_commitment_of
@@ -6253,14 +6267,14 @@ ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
 <http://www.w3id.org/ecsel-dr-SO#unloads> rdf:type owl:ObjectProperty ;
                                           rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Operator> ;
                                           rdfs:range <http://www.w3id.org/ecsel-dr-SO#Tool> ;
-                                          rdfs:label "unloads" .
+                                          rdfs:label "unloads"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#uses_one_or_more_technology
 <http://www.w3id.org/ecsel-dr-SO#uses_one_or_more_technology> rdf:type owl:ObjectProperty ;
                                                               rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Process> ;
                                                               rdfs:range <http://www.w3id.org/ecsel-dr-SO#Workshop> ;
-                                                              rdfs:label "uses one or more technology" .
+                                                              rdfs:label "uses one or more technology"@en .
 
 
 #################################################################
@@ -6975,13 +6989,13 @@ ecsel-dr-AH:device_name rdf:type owl:DatatypeProperty ;
                                       rdfs:label "fax" .
 
 
-###  http://www.w3id.org/ecsel-dr-OM#icoterms
-<http://www.w3id.org/ecsel-dr-OM#icoterms> rdf:type owl:DatatypeProperty ;
-                                           rdfs:subPropertyOf owl:topDataProperty ;
-                                           rdf:type owl:FunctionalProperty ;
-                                           rdfs:domain <http://www.w3id.org/ecsel-dr-OM#Order_Confirmation> ;
-                                           rdfs:range xsd:string ;
-                                           rdfs:label "icoterms" .
+###  http://www.w3id.org/ecsel-dr-OM#incoterms
+<http://www.w3id.org/ecsel-dr-OM#incoterms> rdf:type owl:DatatypeProperty ;
+                                            rdfs:subPropertyOf owl:topDataProperty ;
+                                            rdf:type owl:FunctionalProperty ;
+                                            rdfs:domain <http://www.w3id.org/ecsel-dr-OM#Order_Confirmation> ;
+                                            rdfs:range xsd:string ;
+                                            rdfs:label "icoterms" .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#item_number
@@ -11872,7 +11886,7 @@ ecsel-dr-AH:Service_Documentation rdf:type owl:Class ;
 ecsel-dr-AH:Service_Oriented_Architecture rdf:type owl:Class ;
                                           owl:equivalentClass ecsel-dr-AT:Service_Oriented_Architecture_Protocols ;
                                           rdfs:comment "Service-oriented architecture (SoA) is a style of software design where services are provided to the other components by application components, through a communication protocol over a network."@en ;
-                                          rdfs:label "Service-oriented Architecture"@en .
+                                          rdfs:label "Service-Oriented Architecture"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Smartphone
@@ -12060,7 +12074,7 @@ ecsel-dr-AT:Autonomously_Guided_Vehicle rdf:type owl:Class ;
 ecsel-dr-AT:B2MML_Based_Service rdf:type owl:Class ;
                                 rdfs:subClassOf ecsel-dr-AT:Service_Oriented_Architecture_Protocols ;
                                 rdfs:comment "B2MML consists of a set of XML schemas written using the World Wide Web Consortium's XML Schema language (XSD) that implement the data models in the ISA-95 standard."@en ;
-                                rdfs:label "B2MML-based Service"@en .
+                                rdfs:label "B2MML-Based Service"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#B2M_Markup_Language
@@ -13442,7 +13456,7 @@ ecsel-dr-AT:Service_Data_Language rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#Service_Oriented_Architecture_Function_Pattern
 ecsel-dr-AT:Service_Oriented_Architecture_Function_Pattern rdf:type owl:Class ;
-                                                           rdfs:label "Service-oriented Architecture Function Pattern"@en .
+                                                           rdfs:label "Service-Oriented Architecture Function Pattern"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Service_Oriented_Architecture_Implementation
@@ -13450,13 +13464,13 @@ ecsel-dr-AT:Service_Oriented_Architecture_Implementation rdf:type owl:Class ;
                                                          rdfs:comment """Implementations or Realizations of Service-oriented Architectures.
 
 This class contains existing implementations, i.e. software systems, which are designed as Service-oriented Architectures. That is, these systems realize service-oriented communication between their participants / components. (2018-08-04 HB)."""@en ;
-                                                         rdfs:label "Service-oriented Architecture Implementation"@en .
+                                                         rdfs:label "Service-Oriented Architecture Implementation"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Service_Oriented_Architecture_Protocols
 ecsel-dr-AT:Service_Oriented_Architecture_Protocols rdf:type owl:Class ;
                                                     rdfs:comment "Is a style of software design where services are provided to the other components by application components, through a communication protocol over a network."@en ;
-                                                    rdfs:label "Service-oriented Architecture Protocols"@en .
+                                                    rdfs:label "Service-Oriented Architecture Protocols"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Simulation_System
@@ -14165,8 +14179,8 @@ ecsel-dr-OOSMP:Microphone rdf:type owl:Class ;
 ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution rdf:type owl:Class ;
                                                 rdfs:subClassOf ecsel-dr-OOSMP:Semiconductor_Solution ;
                                                 rdfs:comment "A motor control and drive solution is a semiconductor solution which function is to drive and control a motor."@en ;
-                                                rdfs:label "Motor Control and Drive Solution"@en ;
-                                                skos:prefLabel "Motor Control and Drive Solution"@en .
+                                                rdfs:label "Motor Control And Drive Solution"@en ;
+                                                skos:prefLabel "Motor Control And Drive Solution"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Motor_Control_And_Drive_Solution_DC_Link_Voltage_155
@@ -14190,7 +14204,7 @@ ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution_Industrial_Qualification rdf:typ
                                                                          rdfs:subClassOf ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution ;
                                                                          rdfs:comment "Motor control and drive solution with a industrial qualification."@en ;
                                                                          rdfs:label "Motor Control And Drive Solution With Industrial Qualification"@en ;
-                                                                         skos:prefLabel "Motor Control and Drive Solution With Industrial Qualification"@en .
+                                                                         skos:prefLabel "Motor Control And Drive Solution With Industrial Qualification"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Motor_Control_And_Drive_Solution_With_Sensor
@@ -15624,22 +15638,22 @@ https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Object\"""" ;
                                                     rdfs:label "Off-State Region"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-PWR#On-State_Power_Loss
-<http://www.w3id.org/ecsel-dr-PWR#On-State_Power_Loss> rdf:type owl:Class ;
+###  http://www.w3id.org/ecsel-dr-PWR#On_State_Power_Loss
+<http://www.w3id.org/ecsel-dr-PWR#On_State_Power_Loss> rdf:type owl:Class ;
                                                        rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Property> ;
                                                        rdfs:label "On-State Power Loss"@en .
-
-
-###  http://www.w3id.org/ecsel-dr-PWR#On-State_Resistance
-<http://www.w3id.org/ecsel-dr-PWR#On-State_Resistance> rdf:type owl:Class ;
-                                                       rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Property> ;
-                                                       rdfs:label "On-State Resistance"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#On_State_Region
 <http://www.w3id.org/ecsel-dr-PWR#On_State_Region> rdf:type owl:Class ;
                                                    rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Region_Of_Operation> ;
                                                    rdfs:label "On-State Region"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-PWR#On_State_Resistance
+<http://www.w3id.org/ecsel-dr-PWR#On_State_Resistance> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Property> ;
+                                                       rdfs:label "On-State Resistance"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#On_State_Voltage
@@ -15963,7 +15977,7 @@ Sensor process: sensing: Sensing is a process that results in the estimation, or
 Boost Converter process: boosting: is a process that results in the estimation, or calculation, of the value of a amplified voltage.""" ;
                                                                            rdfs:isDefinedBy """Only the defintion of the Sensor process: sensing (Sensing is a process that results in the estimation, or calculation, of the value of a phenomenon.) is defined by W3C SSN 
 http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Sensing""" ;
-                                                                           rdfs:label "The Process used in the Device Function"@en .
+                                                                           rdfs:label "The Process Used In The Device Function"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Threshold_Voltage
@@ -17417,8 +17431,8 @@ ecsel-dr-RAMI40:Work_Center rdf:type owl:NamedIndividual .
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Wind_Turbine> rdfs:label "Wind Turbine"@en .
 
 
-ecsel-dr-OOSMP:Completely_Lead_Free_Status skos:prefLabel "Completely Lead Free Status"@en ;
-                                           rdfs:label "Completely Lead Free Status"@en ;
+ecsel-dr-OOSMP:Completely_Lead_Free_Status rdfs:label "Completely Lead Free Status"@en ;
+                                           skos:prefLabel "Completely Lead Free Status"@en ;
                                            rdfs:comment "This status determines whether a semiconductor product is lead free or not."@en .
 
 

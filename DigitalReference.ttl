@@ -12518,7 +12518,15 @@ ecsel-dr-AT:Fieldbus_Car_Airplane rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#Fieldbus_Communication_Profile_Family
 ecsel-dr-AT:Fieldbus_Communication_Profile_Family rdf:type owl:Class ;
-                                                  rdfs:comment """Beispiel für Feldbus der ersten Generation ist Profibus, 
+                                                  rdfs:comment """A field bus is a bus system that connects field devices such as sensors and actuators in a plant for the purpose of communication with an automation device. If several communication participants send their messages over the same line, then it must be specified who (identifier) says what (measured value, command) and when (initiative). There are standardized protocols for this.
+The first generation of fieldbus technology was developed in the 1980s to replace the parallel wiring of binary signals and analog signal transmission that had been common until then with digital transmission technology. Today, many different fieldbus systems with different characteristics are established on the market. Since 1999, fieldbuses have been standardized worldwide in the IEC 61158 standard (Digital data communication for measurement and control - Fieldbus for use in industrial control systems) and by the IEC 61784 standard.    
+The second generation of fieldbus technology is based on real-time Ethernet (Industrial Ethernet).
+
+A fieldbus defines a complete protocol stack over the 7 layers of the OSI layer model. If necessary, not all layers are occupied.
+
+Example for first generation fieldbus is Profibus, 
+Example for second generation fieldbus is ProfiNet."""@en ,
+                                                               """Beispiel für Feldbus der ersten Generation ist Profibus, 
 Beispiel für Feldbus der zweiten Generation ist ProfiNet."""@de ,
                                                                "Ein Feldbus definiert einen kompletten Protokoll-Stack über die 7 SChichten des OSI-Schichtenmodells. Ggf. werden nicht alle Schichten belegt." ,
                                                                """Ein Feldbus ist ein Bussystem, das in einer Anlage Feldgeräte wie Messfühler (Sensoren) und Stellglieder (Aktoren) zwecks Kommunikation mit einem Automatisierungsgerät verbindet. Wenn mehrere Kommunikationsteilnehmer ihre Nachrichten über dieselbe Leitung senden, dann muss festgelegt sein, wer (Kennung) was (Messwert, Befehl) wann (Initiative) sagt. Hierfür gibt es normierte Protokolle.
@@ -13011,7 +13019,8 @@ ecsel-dr-AT:OSI_1_2_Net_Access_Technology rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#OSI_3_4_Network_Technology
 ecsel-dr-AT:OSI_3_4_Network_Technology rdf:type owl:Class ;
-                                       rdfs:comment "Technologie, die die mittleren Schichten des OSI-Schichtenmodells abdeckt, z.B. TCP/IP, ZigBee, UDP usw."@de ;
+                                       rdfs:comment "Technologie, die die mittleren Schichten des OSI-Schichtenmodells abdeckt, z.B. TCP/IP, ZigBee, UDP usw."@de ,
+                                                    "Technology that covers the middle layers of the OSI layer models, e.g. TCP/IP, ZigBee, UDP, etc."@en ;
                                        rdfs:label "OSI 3 4 Network Technology"@en .
 
 
@@ -13289,7 +13298,8 @@ ecsel-dr-AT:RFID rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#Rack_Feeder
 ecsel-dr-AT:Rack_Feeder rdf:type owl:Class ;
                         rdfs:subClassOf ecsel-dr-AT:Actuator_Device ;
-                        rdfs:comment "Gerät zur Materialbewegung in einem automatisierten Hochregallager."@de ;
+                        rdfs:comment "Device for material movement in an automated high-bay warehouse."@en ,
+                                     "Gerät zur Materialbewegung in einem automatisierten Hochregallager."@de ;
                         rdfs:label "Rack Feeder"@en ,
                                    "Regalbediengerät"@de .
 
@@ -13351,7 +13361,23 @@ Ursprünglich wurde SCTP als Transportprotokoll definiert, um Zeichengabenachric
 
 SCTP verwendet für Fluss- und Überlastkontrolle ähnliche Algorithmen wie TCP, verhält sich also in einem gemischten Netz (SCTP und TCP) neutral.[1]
 
-Auch Java bietet seit Version 7 eine eigene API für SCTP an."""@de ;
+Auch Java bietet seit Version 7 eine eigene API für SCTP an."""@de ,
+                              """It was proposed by the Internet Engineering Task Force (IETF) as a new transport protocol and published in October 2000 in the standard document RFC 2960 and extended in September 2007 by RFC 4960. An introduction can also be found in RFC 3286. The responsible body at the IETF is the Signaling Transport Working Group, or SIGTRAN for short.
+
+As a transport protocol, SCTP is on the same level of the TCP/IP reference model as TCP and UDP (layer 4 of the OSI model).
+
+SCTP implements the concept of an association: A connection is set up in which several message data streams are transported in a sequence-preserving manner (but potentially non-sequence-preserving among themselves). In addition, individual datagrams, for example urgent datagrams, can be sent separately and out of sequence, possibly \"overtaking\" the in-order data streams.
+
+SCTP also knows multistreaming and multihoming (one host with several valid IP addresses). Heartbeats are used to actively test for connection failure.
+
+Unlike TCP, SCTP is resistant to SYN flooding, a denial-of-service attack in which half-open connections use up the server's resources. It uses a so-called four-way handshake for this purpose. Here, the server does not store any state information in a connection request (INIT packet), but sends it to the client in the form of a cookie (INIT-ACK packet). The client must include this cookie in its response (COOKIE-ECHO packet) and is thus recognized by the server as authorized to establish a connection, which the server confirms to it (COOKIE-ACK packet). A similar procedure is also possible with TCP, see SYN cookies.
+
+SCTP was originally defined as a transport protocol for transmitting signalling messages (SS7) from telephone networks over IP networks. During development, the reliability of the protocol was a particular focus. However, SCTP is also suitable for other applications because it combines the advantages of TCP and UDP. An important application based on SCTP is Reliable Server Pooling (RSerPool).
+
+SCTP uses similar algorithms as TCP for flow and congestion control, so it behaves neutrally in a mixed network (SCTP and TCP)[1].
+
+Java also provides its own API for SCTP since version 7."""@en ,
+                              "The Stream Control Transmission Protocol (SCTP) is a reliable, connection-oriented network protocol. It belongs to the transport layer and relies on a potentially unreliable connectionless packet service."@en ;
                  rdfs:label "SCTP"@en .
 
 
@@ -13595,7 +13621,10 @@ ecsel-dr-AT:Tooling_Machine rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#Transport_Robot
 ecsel-dr-AT:Transport_Robot rdf:type owl:Class ;
                             rdfs:subClassOf ecsel-dr-AT:Actuator_Device ;
-                            rdfs:comment """neuere Version von fahrerlosem Transportfahrzeug. 
+                            rdfs:comment """Newer version of driverless transport vehicle. 
+Unlike traditional FTFs, transport robots have the ability to navigate freely in space. 
+That means, they not only move along predefined physical (e.g., optimized or magnetic) or virtual lanes, but navigate freely in space using their own sensor technology for environment recognition and positioning."""@en ,
+                                         """neuere Version von fahrerlosem Transportfahrzeug. 
 Im Gegensatz zu traditionellen FTF verfügen Transportroboter über die Fähigkeit der freien Navigation im Raum. 
 D.h. sie bewegen sich nicht nur entlang vorgegebener physischer (z.B. optimscher oder magnetischer) oder virtueller Fahrspuren, sondern navigieren frei im Raum unter Nutzung eigener Sensorik zur Umgebungserkennung und Positionierung."""@de ;
                             rdfs:label "Transport Robot"@en ,
@@ -15205,14 +15234,14 @@ ecsel-dr-PROD:Finished_Product rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-PROD#Non_Shippable_Product
 ecsel-dr-PROD:Non_Shippable_Product rdf:type owl:Class ;
                                     rdfs:subClassOf ecsel-dr-PROD:Product ;
-                                    rdfs:comment "NonShippableProduct are those finishedProductNumbers that are not allowed to be shipped to a given customer"@en ;
+                                    rdfs:comment "Non-Shippable Products are those finished Product Numbers that are not allowed to be shipped to a given customer"@en ;
                                     rdfs:label "Non-Shippable Product"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PROD#Not_Released_Product
 ecsel-dr-PROD:Not_Released_Product rdf:type owl:Class ;
                                    rdfs:subClassOf ecsel-dr-PROD:Product ;
-                                   rdfs:comment "NotReleasedProduct are those finishedProductNumbers that are not allowed to be shipped to any customer"@en ;
+                                   rdfs:comment "Not Released Products are those finished Product Numbers that are not allowed to be shipped to any customer"@en ;
                                    rdfs:label "Not Released Product"@en .
 
 
@@ -17431,8 +17460,8 @@ ecsel-dr-RAMI40:Work_Center rdf:type owl:NamedIndividual .
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Wind_Turbine> rdfs:label "Wind Turbine"@en .
 
 
-ecsel-dr-OOSMP:Completely_Lead_Free_Status rdfs:label "Completely Lead Free Status"@en ;
-                                           skos:prefLabel "Completely Lead Free Status"@en ;
+ecsel-dr-OOSMP:Completely_Lead_Free_Status skos:prefLabel "Completely Lead Free Status"@en ;
+                                           rdfs:label "Completely Lead Free Status"@en ;
                                            rdfs:comment "This status determines whether a semiconductor product is lead free or not."@en .
 
 

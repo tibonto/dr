@@ -10478,8 +10478,7 @@ org:Organization rdf:type owl:Class ;
 org:Organizational_Unit rdf:type owl:Class ;
                         rdfs:comment "An Organization such as a department or support unit which is part of some larger Organization and only has full recognition within the context of that Organization. In particular the unit would not be regarded as a legal entity in its own right."@en ,
                                      "Usage: Units can be large and complex containing other Units."@en ;
-                        rdfs:label "Organizational Unit"@en ,
-                                   "OrganizationalUnit"@en ;
+                        rdfs:label "Organizational Unit"@en ;
                         skos:altLabel "Department"@en ,
                                       "Unit"@en ;
                         skos:prefLabel "Organizational Unit"@en .
@@ -11252,7 +11251,7 @@ ecsel-dr-AH:AH_Application_System_Sy_SDD rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Authorization_Control_Service_IDD
 ecsel-dr-AH:AH_Authorization_Control_Service_IDD rdf:type owl:Class ;
                                                  rdfs:subClassOf ecsel-dr-AH:AH_Mandatory_Core_Service_IDD ;
-                                                 rdfs:label "AH Authorization Control Service IDD" .
+                                                 rdfs:label "AH Authorization Control Service IDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Authorization_Control_Service_SD
@@ -11270,7 +11269,7 @@ ecsel-dr-AH:AH_Authorization_System_Sy_SD rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Authorization_System_Sy_SDD
 ecsel-dr-AH:AH_Authorization_System_Sy_SDD rdf:type owl:Class ;
                                            rdfs:subClassOf ecsel-dr-AH:AH_Mandatory_Core_System_Sy_SDD ;
-                                           rdfs:label "AH Authorization System Sy SDD" .
+                                           rdfs:label "AH Authorization System Sy SDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Authorization_System_WADL
@@ -11442,7 +11441,7 @@ ecsel-dr-AH:AH_Inter_Cloud_Negotiations_Service_SD rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Local_Cloud
 ecsel-dr-AH:AH_Local_Cloud rdf:type owl:Class ;
-                           rdfs:label "AH Local Cloud" .
+                           rdfs:label "AH Local Cloud"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Mandatory_Core_Service
@@ -11486,7 +11485,7 @@ ecsel-dr-AH:AH_Mandatory_Core_System_Sy_SDD rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Orchestration_Service_IDD
 ecsel-dr-AH:AH_Orchestration_Service_IDD rdf:type owl:Class ;
                                          rdfs:subClassOf ecsel-dr-AH:AH_Mandatory_Core_Service_IDD ;
-                                         rdfs:label "AH Orchestration Service IDD" .
+                                         rdfs:label "AH Orchestration Service IDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Orchestration_Service_SD
@@ -11504,7 +11503,7 @@ ecsel-dr-AH:AH_Orchestration_System_Sy_SD rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Orchestration_System_Sy_SDD
 ecsel-dr-AH:AH_Orchestration_System_Sy_SDD rdf:type owl:Class ;
                                            rdfs:subClassOf ecsel-dr-AH:AH_Mandatory_Core_System_Sy_SDD ;
-                                           rdfs:label "AH Orchestration System Sy SDD" .
+                                           rdfs:label "AH Orchestration System Sy SDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Orchestrator_WADL
@@ -11534,7 +11533,7 @@ ecsel-dr-AH:AH_Service rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Service_Discovery_Service_IDD
 ecsel-dr-AH:AH_Service_Discovery_Service_IDD rdf:type owl:Class ;
                                              rdfs:subClassOf ecsel-dr-AH:AH_Mandatory_Core_Service_IDD ;
-                                             rdfs:label "AH Service Discovery Service IDD" .
+                                             rdfs:label "AH Service Discovery Service IDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Service_Discovery_Service_SD
@@ -11574,7 +11573,7 @@ ecsel-dr-AH:AH_Service_Registry_System_Sy_SD rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Service_Registry_System_Sy_SDD
 ecsel-dr-AH:AH_Service_Registry_System_Sy_SDD rdf:type owl:Class ;
                                               rdfs:subClassOf ecsel-dr-AH:AH_Mandatory_Core_System_Sy_SDD ;
-                                              rdfs:label "AH Service Registry System Sy SDD" .
+                                              rdfs:label "AH Service Registry System Sy SDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Service_Registry_WADL
@@ -11610,7 +11609,7 @@ ecsel-dr-AH:AH_Session_Management_Service_SD rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Store_Management_Service_IDD
 ecsel-dr-AH:AH_Store_Management_Service_IDD rdf:type owl:Class ;
                                             rdfs:subClassOf ecsel-dr-AH:AH_Mandatory_Core_Service_IDD ;
-                                            rdfs:label "AH Store Management Service IDD" .
+                                            rdfs:label "AH Store Management Service IDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Store_Management_Service_SD
@@ -11682,7 +11681,7 @@ ecsel-dr-AH:AH_Token_Generation_Servcie_SD rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Token_Generation_Service_IDD
 ecsel-dr-AH:AH_Token_Generation_Service_IDD rdf:type owl:Class ;
                                             rdfs:subClassOf ecsel-dr-AH:AH_Mandatory_Core_Service_IDD ;
-                                            rdfs:label "AH Token Generation Service IDD" .
+                                            rdfs:label "AH Token Generation Service IDD"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Arrowhead
@@ -11702,13 +11701,13 @@ ecsel-dr-AH:Communication_Profile_CP rdf:type owl:Class ;
 ecsel-dr-AH:Communication_Security_Mechanism rdf:type owl:Class ;
                                              rdfs:subClassOf ecsel-dr-AH:Communication_Technology ;
                                              rdfs:comment "corresponds to a part of OSI layer 5" ;
-                                             rdfs:label "Communication Security Mechanism" .
+                                             rdfs:label "Communication Security Mechanism"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Communication_Technology
 ecsel-dr-AH:Communication_Technology rdf:type owl:Class ;
                                      rdfs:comment "Communications technology, also known as information technology, refers to all equipment and programs that are used to process and communicate information."@en ;
-                                     rdfs:label "Communication Technology" .
+                                     rdfs:label "Communication Technology"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Constrained_Device
@@ -11722,20 +11721,20 @@ The concept constrained device was introduced in the context of the Internet of 
 ###  http://www.w3id.org/ecsel-dr-AH#Data_Format
 ecsel-dr-AH:Data_Format rdf:type owl:Class ;
                         rdfs:comment "Data format in information technology may refer to: Data type, constraint placed upon the interpretation of data in a type system."@en ;
-                        rdfs:label "Data Format" .
+                        rdfs:label "Data Format"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Data_Link_Media_Access_Technology
 ecsel-dr-AH:Data_Link_Media_Access_Technology rdf:type owl:Class ;
                                               rdfs:subClassOf ecsel-dr-AH:Communication_Technology ;
                                               rdfs:comment "corresponds to OSI layer 1 and 2 technologies, like Ethernet, WLAN (802.11), WPAN (802.15.4), EtherCAT, ProfiNet, ..." ;
-                                              rdfs:label "Data Link Media Access Technology" .
+                                              rdfs:label "Data Link Media Access Technology"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Data_Model
 ecsel-dr-AH:Data_Model rdf:type owl:Class ;
                        rdfs:comment "A data model is an abstract model that organizes elements of data and standardizes how they relate to one another and to the properties of real-world entities."@en ;
-                       rdfs:label "Data Model" .
+                       rdfs:label "Data Model"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Device
@@ -11758,7 +11757,7 @@ ecsel-dr-AH:Documentation_Document rdf:type owl:Class ;
 ecsel-dr-AH:End_To_End_Communication_Technology rdf:type owl:Class ;
                                                 rdfs:subClassOf ecsel-dr-AH:Communication_Technology ;
                                                 rdfs:comment "The end-to-end principle is a design framework in computer networking. In networks designed according to this principle, application-specific features reside in the communicating end nodes of the network, rather than in intermediary nodes, such as gateways and routers, that exist to establish the network."@en ;
-                                                rdfs:label "End-to-End Communication Technology" .
+                                                rdfs:label "End-to-End Communication Technology"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Gateway
@@ -12065,9 +12064,9 @@ ecsel-dr-AT:Automation_Markup_Language rdf:type owl:Class ;
 ecsel-dr-AT:Autonomously_Guided_Vehicle rdf:type owl:Class ;
                                         rdfs:subClassOf ecsel-dr-AT:Actuator_Device ;
                                         rdfs:label "AGV"@en ,
-                                                   "Autonomously Guided Vehicle"@en ,
                                                    "FTF"@de ,
-                                                   "Fahrerloses Transportfahrzeug"@de .
+                                                   "Fahrerloses Transportfahrzeug"@de ;
+                                        skos:preLabel "Autonomously Guided Vehicle"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#B2MML_Based_Service
@@ -12098,7 +12097,7 @@ ecsel-dr-AT:Big_Data_Analytics_System rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#Bit
 ecsel-dr-AT:Bit rdf:type owl:Class ;
                 rdfs:subClassOf ecsel-dr-AT:Data_Transmission_Unit ;
-                rdfs:label "Bit" .
+                rdfs:label "Bit"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Bluetooth
@@ -12538,7 +12537,7 @@ Die zweite Generation der Feldbustechnik basiert auf Echtzeit-Ethernet (Industri
 ###  http://www.w3id.org/ecsel-dr-AT#Frame
 ecsel-dr-AT:Frame rdf:type owl:Class ;
                   rdfs:subClassOf ecsel-dr-AT:Data_Transmission_Unit ;
-                  rdfs:label "Frame" .
+                  rdfs:label "Frame"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Gateway
@@ -12921,7 +12920,7 @@ ecsel-dr-AT:Material_Flow_Simulation rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#Message
 ecsel-dr-AT:Message rdf:type owl:Class ;
                     rdfs:subClassOf ecsel-dr-AT:Data_Transmission_Unit ;
-                    rdfs:label "Message" .
+                    rdfs:label "Message"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Message_Broker_System
@@ -13223,7 +13222,7 @@ ecsel-dr-AT:PL_Phase_4_Usage_Maintenance rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#Packet
 ecsel-dr-AT:Packet rdf:type owl:Class ;
                    rdfs:subClassOf ecsel-dr-AT:Data_Transmission_Unit ;
-                   rdfs:label "Packet" .
+                   rdfs:label "Packet"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Product_Data_Management_Module
@@ -13453,7 +13452,7 @@ ecsel-dr-AT:STOMP rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#Segment
 ecsel-dr-AT:Segment rdf:type owl:Class ;
                     rdfs:subClassOf ecsel-dr-AT:Data_Transmission_Unit ;
-                    rdfs:label "Segment" .
+                    rdfs:label "Segment"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Sen_Markup_Language
@@ -13881,23 +13880,23 @@ ecsel-dr-AT:Zig_Bee_RF4CE rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-OM#Customer_Data
 <http://www.w3id.org/ecsel-dr-OM#Customer_Data> rdf:type owl:Class ;
-                                                rdfs:label "Customer Data" .
+                                                rdfs:label "Customer Data"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Customer_Plant
 <http://www.w3id.org/ecsel-dr-OM#Customer_Plant> rdf:type owl:Class ;
-                                                 rdfs:label "Customer Plant" .
+                                                 rdfs:label "Customer Plant"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Customer_Plant_Data
 <http://www.w3id.org/ecsel-dr-OM#Customer_Plant_Data> rdf:type owl:Class ;
-                                                      rdfs:label "Customer Plant Data" .
+                                                      rdfs:label "Customer Plant Data"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Demand_Fulfillement
 <http://www.w3id.org/ecsel-dr-OM#Demand_Fulfillement> rdf:type owl:Class ;
                                                       rdfs:comment "The process of meeting a customer’s demand for product or services by fulfilling their request."@en ;
-                                                      rdfs:label "Demand Fulfillement" .
+                                                      rdfs:label "Demand Fulfillement"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Open_Order
@@ -14729,7 +14728,7 @@ A Business Process Flow is a sequence of required tasks to create specified outp
                                                      rdfs:subClassOf terms:Physical_Resource ;
                                                      rdfs:comment "Physical equipment that makes up a computer system, such as circuit boards, keyboard and mouse, monitor, printer, power supply, storage devices. Contrasts with software." ;
                                                      rdfs:isDefinedBy "http://www.businessdictionary.com/definition/hardware.html" ;
-                                                     rdfs:label "Computer Hardware" ;
+                                                     rdfs:label "Computer Hardware"@en ;
                                                      skos:altLabel "comput hardwar" .
 
 
@@ -14866,7 +14865,7 @@ A Business Process Flow is a sequence of required tasks to create specified outp
                                                     rdfs:subClassOf terms:Physical_Resource ;
                                                     rdfs:comment "Semi or fully automated device that magnifies human physical and/or mental capabilities in performing one or more operations." ;
                                                     rdfs:isDefinedBy "http://www.businessdictionary.com/definition/machine.html" ;
-                                                    rdfs:label "Machine Resource" ;
+                                                    rdfs:label "Machine Resource"@en ;
                                                     skos:altLabel "machin resourc" .
 
 
@@ -14939,7 +14938,7 @@ Has the weakest logic and should be used as sparingly as absolutely possible""" 
 <http://www.w3id.org/ecsel-dr-PMV#Output> rdf:type owl:Class ;
                                           rdfs:comment "The amount of energy, work, goods, or services produced by a machine, factory, company, or an individual in a period." ;
                                           rdfs:isDefinedBy "http://www.businessdictionary.com/definition/output.html" ;
-                                          rdfs:label "Output" ;
+                                          rdfs:label "Output"@en ;
                                           skos:altLabel "output" .
 
 
@@ -15322,7 +15321,7 @@ https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Abstract\"""" ;
 
 Then must be defined what the device it is, for exmaple:
 -A sensing device is a device that implments sensing.""" ;
-                                                                rdfs:label "Amplication Switching Device" .
+                                                                rdfs:label "Amplication Switching Device"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Application_Area
@@ -15463,7 +15462,7 @@ http://xmlns.com/foaf/spec/#term_Document\"""" ;
 <http://www.w3id.org/ecsel-dr-PWR#Electric_Vehicle_Charging> rdf:type owl:Class ;
                                                              rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Application_Area> ;
                                                              rdfs:comment "Area that focuses on electric vehicles charging solutions"@en ;
-                                                             rdfs:label "Electric Vehicle Charging" .
+                                                             rdfs:label "Electric Vehicle Charging"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Electronic_Components
@@ -15491,7 +15490,7 @@ http://xmlns.com/foaf/spec/#term_Document\"""" ;
 <http://www.w3id.org/ecsel-dr-PWR#Energy_Storage> rdf:type owl:Class ;
                                                   rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Application_Area> ;
                                                   rdfs:comment "Area that focuses on energy storage solutions"@en ;
-                                                  rdfs:label "Energy Storage" .
+                                                  rdfs:label "Energy Storage"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Enhancement_Mode
@@ -15642,7 +15641,7 @@ https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#InformationObject\"""" ;
 <http://www.w3id.org/ecsel-dr-PWR#N_Channel_Configuration> rdf:type owl:Class ;
                                                            rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Device_Configuration> ;
                                                            owl:disjointWith <http://www.w3id.org/ecsel-dr-PWR#P_Channel_Configuration> ;
-                                                           rdfs:label "N-Channel Configuration" .
+                                                           rdfs:label "N-Channel Configuration"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Negative
@@ -15727,7 +15726,7 @@ https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Object\"""" ;
 ###  http://www.w3id.org/ecsel-dr-PWR#P_Channel_Configuration
 <http://www.w3id.org/ecsel-dr-PWR#P_Channel_Configuration> rdf:type owl:Class ;
                                                            rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Device_Configuration> ;
-                                                           rdfs:label "P-Channel Configuration" .
+                                                           rdfs:label "P-Channel Configuration"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Package
@@ -15923,7 +15922,7 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Observation""" ;
 <http://www.w3id.org/ecsel-dr-PWR#Solar_Energy> rdf:type owl:Class ;
                                                 rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Application_Area> ;
                                                 rdfs:comment "Area that focuses on solar energy solutions"@en ;
-                                                rdfs:label "Solar Energy" .
+                                                rdfs:label "Solar Energy"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Source
@@ -16069,7 +16068,7 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Sensing""" ;
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Admin_Shell
 ecsel-dr-RAMI40:Admin_Shell rdf:type owl:Class ;
-                            rdfs:label "Admin Shell" .
+                            rdfs:label "Admin Shell"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Asset
@@ -16079,7 +16078,7 @@ ecsel-dr-RAMI40:Asset rdf:type owl:Class .
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Date
 ecsel-dr-RAMI40:Date rdf:type owl:Class ;
                      rdfs:comment "A numbered day in a month, often given with a combination of the name of the day, the month, and the year"@en ;
-                     rdfs:label "Date" .
+                     rdfs:label "Date"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Dimension
@@ -16237,7 +16236,7 @@ ecsel-dr-RAMI40:Transport_Interface rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Used_Date
 ecsel-dr-RAMI40:Used_Date rdf:type owl:Class ;
                           rdfs:subClassOf ecsel-dr-RAMI40:Date ;
-                          rdfs:label "Used Date" .
+                          rdfs:label "Used Date"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Version
@@ -16758,7 +16757,7 @@ via the release plan. (strategy entity)"""@en ;
 ###  http://www.w3id.org/ecsel-dr-SO#Process_Flow
 <http://www.w3id.org/ecsel-dr-SO#Process_Flow> rdf:type owl:Class ;
                                                rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SO#Process> ;
-                                               rdfs:comment "\"A wafer technology is defined as a manufacturing process flow on wafer level including wafer test and pre-assembly which creates one device (discrete technology) or a set of different devices (IC technology) to be used in a product.\""@en ;
+                                               rdfs:comment "A wafer technology is defined as a manufacturing process flow on wafer level including wafer test and pre-assembly which creates one device (discrete technology) or a set of different devices (IC technology) to be used in a product."@en ;
                                                rdfs:label "Process Flow"@en .
 
 

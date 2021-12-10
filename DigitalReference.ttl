@@ -728,7 +728,7 @@ Note that the value-space is not defined, so a generic OWL2 processor cannot com
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#has_total_usage_time_of_solar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#has_total_usage_time_of_solar> rdf:type owl:ObjectProperty ;
-                                                                                                            rdfs:domain <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Usage_Time_Per_Year_Solar> ;
+                                                                                                            rdfs:domain <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Usage_Time_Per_Year_Solar_Panel> ;
                                                                                                             rdfs:range <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Usage_Time_Solar> ;
                                                                                                             rdfs:label "has total usage time of solar"@en .
 
@@ -954,7 +954,7 @@ Note that the value-space is not defined, so a generic OWL2 processor cannot com
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#leads_to_average_lifetime_solar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#leads_to_average_lifetime_solar> rdf:type owl:ObjectProperty ;
                                                                                                               rdfs:domain <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Solar_Panel> ;
-                                                                                                              rdfs:range <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Lifetime_Solar> ;
+                                                                                                              rdfs:range <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Lifetime_Solar_Panel> ;
                                                                                                               rdfs:label "leads to average lifetime solar"@en .
 
 
@@ -989,7 +989,7 @@ Note that the value-space is not defined, so a generic OWL2 processor cannot com
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#leads_to_average_usage_time_per_year_solar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#leads_to_average_usage_time_per_year_solar> rdf:type owl:ObjectProperty ;
                                                                                                                          rdfs:domain <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Solar_Panel> ;
-                                                                                                                         rdfs:range <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Usage_Time_Per_Year_Solar> ;
+                                                                                                                         rdfs:range <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Usage_Time_Per_Year_Solar_Panel> ;
                                                                                                                          rdfs:label "leads to average usage time per year solar"@en .
 
 
@@ -1376,7 +1376,7 @@ Note that the value-space is not defined, so a generic OWL2 processor cannot com
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#leads_to_total_usage_time_of_solar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#leads_to_total_usage_time_of_solar> rdf:type owl:ObjectProperty ;
-                                                                                                                 rdfs:domain <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Lifetime_Solar> ;
+                                                                                                                 rdfs:domain <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Lifetime_Solar_Panel> ;
                                                                                                                  rdfs:range <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Usage_Time_Solar> ;
                                                                                                                  rdfs:label "leads to total usage time of solar"@en .
 
@@ -5400,7 +5400,8 @@ ecsel-dr-RAMI40:in_accordance_with rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#is_connected_to
-ecsel-dr-RAMI40:is_connected_to rdf:type owl:ObjectProperty ;
+ecsel-dr-RAMI40:is_connected_to rdf:type owl:ObjectProperty ,
+                                         owl:FunctionalProperty ;
                                 rdfs:domain ecsel-dr-RAMI40:Admin_Shell ;
                                 rdfs:range ecsel-dr-RAMI40:Dimension ;
                                 rdfs:comment "Connects the Admin Shell with the different RAMI4.0 Dimensions"@en ;
@@ -8765,72 +8766,84 @@ terms:Physical_Resource rdf:type owl:Class ;
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Driven_Km_Per_Year_Ecar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Driven_Km_Per_Year_Ecar> rdf:type owl:Class ;
                                                                                                               rdfs:subClassOf :Application ;
+                                                                                                              rdfs:comment "Number of kilometers driven on average by an electric car per year"@en ;
                                                                                                               rdfs:label "Average Driven Km Per Year Ecar"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Driven_Km_Per_Year_Gcar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Driven_Km_Per_Year_Gcar> rdf:type owl:Class ;
                                                                                                               rdfs:subClassOf :Application ;
+                                                                                                              rdfs:comment "Number of kilometers driven on average by a gasoline car per year"@en ;
                                                                                                               rdfs:label "Average Driven Km Per Year Gcar"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Lifetime_Of_A_Gcar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Lifetime_Of_A_Gcar> rdf:type owl:Class ;
                                                                                                          rdfs:subClassOf :Application ;
+                                                                                                         rdfs:comment "Period of time during which a gasoline car is used on average expressed in years"@en ;
                                                                                                          rdfs:label "Average Lifetime Of A Gcar"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Lifetime_Of_A_Wind_Turbine
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Lifetime_Of_A_Wind_Turbine> rdf:type owl:Class ;
                                                                                                                  rdfs:subClassOf :Application ;
+                                                                                                                 rdfs:comment "Period of time during which a wind turbine is used on average expressed in years"@en ;
                                                                                                                  rdfs:label "Average Lifetime Of A Wind Turbine"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Lifetime_Of_An_Ecar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Lifetime_Of_An_Ecar> rdf:type owl:Class ;
                                                                                                           rdfs:subClassOf :Application ;
+                                                                                                          rdfs:comment "Period of time during which an electric car is used on average expressed in years"@en ;
                                                                                                           rdfs:label "Average Lifetime Of An Ecar"@en .
 
 
-###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Lifetime_Solar
-<http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Lifetime_Solar> rdf:type owl:Class ;
-                                                                                                     rdfs:subClassOf :Application ;
-                                                                                                     rdfs:label "Averag Lifetime Solar"@en .
+###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Lifetime_Solar_Panel
+<http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Lifetime_Solar_Panel> rdf:type owl:Class ;
+                                                                                                           rdfs:subClassOf :Application ;
+                                                                                                           rdfs:comment "Period of time during which a solar panel is used on average expressed in years"@en ;
+                                                                                                           rdfs:label "Averag Lifetime Solar Panel"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Speed_Of_A_Gcar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Speed_Of_A_Gcar> rdf:type owl:Class ;
                                                                                                       rdfs:subClassOf :Application ;
+                                                                                                      rdfs:comment "The speed at which a gasoline car travels on average in km/h"@en ;
                                                                                                       rdfs:label "Average Speed Of A Gcar"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Speed_Of_An_Ecar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Speed_Of_An_Ecar> rdf:type owl:Class ;
                                                                                                        rdfs:subClassOf :Application ;
+                                                                                                       rdfs:comment "The speed at which an electric car travels on average in km/h"@en ;
                                                                                                        rdfs:label "Average Speed Of An Ecar"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Usage_Time_Per_Year_Ecar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Usage_Time_Per_Year_Ecar> rdf:type owl:Class ;
                                                                                                                rdfs:subClassOf :Application ;
+                                                                                                               rdfs:comment "Describes for how many hours per year an electric car is used"@en ;
                                                                                                                rdfs:label "Average Usage Time Per Year Ecar"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Usage_Time_Per_Year_Gcar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Usage_Time_Per_Year_Gcar> rdf:type owl:Class ;
                                                                                                                rdfs:subClassOf :Application ;
+                                                                                                               rdfs:comment "Describes for how many hours per year a gasoline car is used"@en ;
                                                                                                                rdfs:label "Average Usage Time Per Year Gcar"@en .
 
 
-###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Usage_Time_Per_Year_Solar
-<http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Usage_Time_Per_Year_Solar> rdf:type owl:Class ;
-                                                                                                                rdfs:subClassOf :Application ;
-                                                                                                                rdfs:label "Average Usage Time Per Year Solar"@en .
+###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Usage_Time_Per_Year_Solar_Panel
+<http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Usage_Time_Per_Year_Solar_Panel> rdf:type owl:Class ;
+                                                                                                                      rdfs:subClassOf :Application ;
+                                                                                                                      rdfs:comment "Describes for how many hours per year a solar panel is used"@en ;
+                                                                                                                      rdfs:label "Average Usage Time Per Year Solar Panel"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Usage_Time_Per_Year_Wind_Turbine
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Usage_Time_Per_Year_Wind_Turbine> rdf:type owl:Class ;
                                                                                                                        rdfs:subClassOf :Application ;
+                                                                                                                       rdfs:comment "Describes for how many hours per year a wind turbine is used"@en ;
                                                                                                                        rdfs:label "Average Usage Time Per Year Wind Turbine"@en .
 
 
@@ -11192,6 +11205,7 @@ In the absence of SurvivalProperties, simply describes the Conditions a System c
 
 ###  http://www.w3id.org/ecsel-dr#Application
 :Application rdf:type owl:Class ;
+             rdfs:comment "A way in which something can be used for a particular purpose."@en ;
              rdfs:label "Application"@en .
 
 
@@ -13857,6 +13871,7 @@ ecsel-dr-AT:Zig_Bee_RF4CE rdf:type owl:Class ;
                                                                            <http://www.w3id.org/ecsel-dr-OM#Reconfirm>
                                                                          )
                                                              ] ;
+                                         rdfs:comment "The process of doing something."@en ;
                                          rdfs:label "Action"@en .
 
 
@@ -13973,7 +13988,7 @@ ecsel-dr-OOSMP:Angle_Sensor rdf:type owl:Class ;
 ecsel-dr-OOSMP:Application_Area rdf:type owl:Class ;
                                 owl:equivalentClass <http://www.w3id.org/ecsel-dr-PWR#Application_Area> ;
                                 rdfs:subClassOf :Application ;
-                                rdfs:comment "A way in which something can be used for a particular purpose"@en ;
+                                rdfs:comment "A way in which something can be used for a particular purpose."@en ;
                                 rdfs:label "Application Area"@en ;
                                 skos:prefLabel "Application Area"@en .
 
@@ -17474,7 +17489,8 @@ ecsel-dr-OOSMP:Ro_HS_Compliant_Status rdfs:label "RoHS Compliant Status"@en ;
                                       skos:prefLabel "RoHS Compliant Status"@en .
 
 
-ecsel-dr-RAMI40:Asset rdfs:label "Asset"@en .
+ecsel-dr-RAMI40:Asset rdfs:label "Asset"@en ;
+                      rdfs:comment "Valuable possession or property, that is owned by business, or organization"@en .
 
 
 #################################################################

@@ -312,59 +312,8 @@ foaf:name rdf:type owl:AnnotationProperty .
 #    Datatypes
 #################################################################
 
-###  http://www.w3.org/2001/XMLSchema#date
-xsd:date rdf:type rdfs:Datatype .
-
-
-###  http://www.w3.org/2001/XMLSchema#duration
-xsd:duration rdf:type rdfs:Datatype .
-
-
-###  http://www.w3.org/2001/XMLSchema#gDay
-xsd:gDay rdf:type rdfs:Datatype .
-
-
-###  http://www.w3.org/2001/XMLSchema#gMonth
-xsd:gMonth rdf:type rdfs:Datatype .
-
-
-###  http://www.w3.org/2001/XMLSchema#gYear
-xsd:gYear rdf:type rdfs:Datatype .
-
-
-###  http://www.w3.org/2001/XMLSchema#gYearMonth
-xsd:gYearMonth rdf:type rdfs:Datatype .
-
-
 ###  http://www.w3.org/2001/XMLSchema#negativeInteger
 xsd:negativeInteger owl:equivalentClass xsd:nonNegativeInteger .
-
-
-###  http://www.w3.org/2006/time#generalDay
-time:generalDay rdf:type rdfs:Datatype ;
-                rdfs:comment """Day of month - formulated as a text string with a pattern constraint to reproduce the same lexical form as gDay, except that values up to 99 are permitted, in order to support calendars with more than 31 days in a month. 
-Note that the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type."""@en ;
-                rdfs:label "Generalized day"@en ;
-                skos:definition """Day of month - formulated as a text string with a pattern constraint to reproduce the same lexical form as gDay, except that values up to 99 are permitted, in order to support calendars with more than 31 days in a month. 
-Note that the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type."""@en .
-
-
-###  http://www.w3.org/2006/time#generalMonth
-time:generalMonth rdf:type rdfs:Datatype ;
-                  rdfs:comment """Month of year - formulated as a text string with a pattern constraint to reproduce the same lexical form as gMonth, except that values up to 20 are permitted, in order to support calendars with more than 12 months in the year. 
-Note that the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type."""@en ;
-                  rdfs:label "Generalized month"@en ;
-                  skos:definition """Month of year - formulated as a text string with a pattern constraint to reproduce the same lexical form as gMonth, except that values up to 20 are permitted, in order to support calendars with more than 12 months in the year. 
-Note that the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type."""@en .
-
-
-###  http://www.w3.org/2006/time#generalYear
-time:generalYear rdf:type rdfs:Datatype ;
-                 rdfs:comment """Year number - formulated as a text string with a pattern constraint to reproduce the same lexical form as gYear, but not restricted to values from the Gregorian calendar. 
-Note that the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type."""@en ;
-                 rdfs:label "Generalized year"@en ;
-                 skos:definition """Year number - formulated as a text string with a pattern constraint to reproduce the same lexical form as gYear, but not restricted to values from the Gregorian calendar. 
-Note that the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type."""@en .
 
 
 #################################################################
@@ -6606,7 +6555,6 @@ time:fiscal_year rdf:type owl:DatatypeProperty ;
 ###  http://www.w3.org/2006/time#has_XSD_duration
 time:has_XSD_duration rdf:type owl:DatatypeProperty ;
                       rdfs:domain time:Temporal_Entity ;
-                      rdfs:range xsd:duration ;
                       rdfs:comment "Extent of a temporal entity, expressed using xsd:duration"@en ;
                       rdfs:label "has XSD duration"@en ;
                       skos:definition "Extent of a temporal entity, expressed using xsd:duration"@en ;
@@ -6645,7 +6593,7 @@ time:inXSDDateTime rdf:type owl:DatatypeProperty ;
 ###  http://www.w3.org/2006/time#in_XSD_date
 time:in_XSD_date rdf:type owl:DatatypeProperty ;
                  rdfs:domain time:Instant ;
-                 rdfs:range xsd:date ;
+                 rdfs:range xsd:dateTime ;
                  rdfs:comment "Position of an instant, expressed using xsd:date"@en ;
                  rdfs:label "in XSD date"@en ;
                  skos:definition "Position of an instant, expressed using xsd:date"@en .
@@ -6658,24 +6606,6 @@ time:in_XSD_date_time_stamp rdf:type owl:DatatypeProperty ;
                             rdfs:comment "Position of an instant, expressed using xsd:dateTimeStamp"@en ;
                             rdfs:label "in XSD date-time-stamp"@en ;
                             skos:definition "Position of an instant, expressed using xsd:dateTimeStamp"@en .
-
-
-###  http://www.w3.org/2006/time#in_XSD_g_year
-time:in_XSD_g_year rdf:type owl:DatatypeProperty ;
-                   rdfs:domain time:Instant ;
-                   rdfs:range xsd:gYear ;
-                   rdfs:comment "Position of an instant, expressed using xsd:gYear"@en ;
-                   rdfs:label "in XSD g-year"@en ;
-                   skos:definition "Position of an instant, expressed using xsd:gYear"@en .
-
-
-###  http://www.w3.org/2006/time#in_XSD_g_year_month
-time:in_XSD_g_year_month rdf:type owl:DatatypeProperty ;
-                         rdfs:domain time:Instant ;
-                         rdfs:range xsd:gYearMonth ;
-                         rdfs:comment "Position of an instant, expressed using xsd:gYearMonth"@en ;
-                         rdfs:label "in XSD g-year month"@en ;
-                         skos:definition "Position of an instant, expressed using xsd:gYearMonth"@en .
 
 
 ###  http://www.w3.org/2006/time#minute
@@ -7946,7 +7876,7 @@ ecsel-dr-RAMI40:description rdf:type owl:DatatypeProperty ;
 ###  http://www.w3id.org/ecsel-dr-SO#customer_wish_time
 <http://www.w3id.org/ecsel-dr-SO#customer_wish_time> rdf:type owl:DatatypeProperty ;
                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Demand_Snapshot> ;
-                                                     rdfs:range xsd:date ;
+                                                     rdfs:range xsd:dateTime ;
                                                      rdfs:comment "PK; customer wish time of the demand entry" ;
                                                      rdfs:label "customer wish time"@en .
 
@@ -7979,7 +7909,7 @@ ecsel-dr-RAMI40:description rdf:type owl:DatatypeProperty ;
 ###  http://www.w3id.org/ecsel-dr-SO#demand_due_date
 <http://www.w3id.org/ecsel-dr-SO#demand_due_date> rdf:type owl:DatatypeProperty ;
                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-SO#Demand_Snapshot> ;
-                                                  rdfs:range xsd:date ;
+                                                  rdfs:range xsd:dateTime ;
                                                   rdfs:comment "Demand: PK; Due Date of the demand entry"@en ;
                                                   rdfs:label "demand due date"@en .
 
@@ -9963,30 +9893,6 @@ terms:Physical_Resource rdf:type owl:Class ;
                                                                                                            ] .
 
 
-###  http://www.w3.org/2006/time#Date_Time_Description
-time:Date_Time_Description rdf:type owl:Class ;
-                           rdfs:subClassOf time:General_Date_Time_Description ,
-                                           [ rdf:type owl:Restriction ;
-                                             owl:onProperty time:has_TRS ;
-                                             owl:hasValue <http://www.opengis.net/def/uom/ISO-8601/0/Gregorian>
-                                           ] ,
-                                           [ rdf:type owl:Restriction ;
-                                             owl:onProperty time:day ;
-                                             owl:allValuesFrom xsd:gDay
-                                           ] ,
-                                           [ rdf:type owl:Restriction ;
-                                             owl:onProperty time:month ;
-                                             owl:allValuesFrom xsd:gMonth
-                                           ] ,
-                                           [ rdf:type owl:Restriction ;
-                                             owl:onProperty time:year ;
-                                             owl:allValuesFrom xsd:gYear
-                                           ] ;
-                           rdfs:comment "Description of date and time structured with separate values for the various elements of a calendar-clock system. The temporal reference system is fixed to Gregorian Calendar, and the range of year, month, day properties restricted to corresponding XML Schema types xsd:gYear, xsd:gMonth and xsd:gDay, respectively."@en ;
-                           rdfs:label "Date-Time Description"@en ;
-                           skos:definition "Description of date and time structured with separate values for the various elements of a calendar-clock system. The temporal reference system is fixed to Gregorian Calendar, and the range of year, month, day properties restricted to corresponding XML Schema types xsd:gYear, xsd:gMonth and xsd:gDay, respectively."@en .
-
-
 ###  http://www.w3.org/2006/time#Date_Time_Interval
 time:Date_Time_Interval rdf:type owl:Class ;
                         rdfs:subClassOf time:Proper_Interval ;
@@ -10207,70 +10113,8 @@ time:Interval rdf:type owl:Class ;
               skos:definition "A temporal entity with an extent or duration"@en .
 
 
-###  http://www.w3.org/2006/time#January
-time:January rdf:type owl:Class ;
-             rdfs:subClassOf time:Date_Time_Description ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty time:unit_type ;
-                               owl:hasValue time:Unit_Month
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty time:month ;
-                               owl:hasValue "--01"
-                             ] ;
-             rdfs:label "January" ;
-             owl:deprecated "true"^^xsd:boolean ;
-             skos:historyNote "This class was present in the 2006 version of OWL-Time. It was presented as an example of how DateTimeDescription could be specialized, but does not belong in the revised ontology. " .
-
-
 ###  http://www.w3.org/2006/time#Month_Of_Year
-time:Month_Of_Year rdf:type owl:Class ;
-                   rdfs:subClassOf time:Date_Time_Description ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty time:unit_type ;
-                                     owl:hasValue time:Unit_Month
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty time:day ;
-                                     owl:cardinality "0"^^xsd:nonNegativeInteger
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty time:fiscal_week ;
-                                     owl:cardinality "0"^^xsd:nonNegativeInteger
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty time:fiscal_year ;
-                                     owl:cardinality "0"^^xsd:nonNegativeInteger
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty time:hour ;
-                                     owl:cardinality "0"^^xsd:nonNegativeInteger
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty time:minute ;
-                                     owl:cardinality "0"^^xsd:nonNegativeInteger
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty time:month ;
-                                     owl:cardinality "1"^^xsd:nonNegativeInteger
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty time:second ;
-                                     owl:cardinality "0"^^xsd:nonNegativeInteger
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty time:week ;
-                                     owl:cardinality "0"^^xsd:nonNegativeInteger
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty time:year ;
-                                     owl:cardinality "0"^^xsd:nonNegativeInteger
-                                   ] ;
-                   rdfs:comment "The month of the year"@en ;
-                   rdfs:label "Month Of Year"@en ;
-                   skos:definition "The month of the year"@en ;
-                   skos:editorialNote "Feature at risk - added in 2017 revision, and not yet widely used. "@en ;
-                   skos:note "Membership of the class :MonthOfYear is open, to allow for alternative annual calendars and different month names."@en .
+time:Month_Of_Year rdf:type owl:Class .
 
 
 ###  http://www.w3.org/2006/time#Proper_Interval
@@ -17474,8 +17318,8 @@ ecsel-dr-RAMI40:Work_Center rdf:type owl:NamedIndividual .
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Wind_Turbine> rdfs:label "Wind Turbine"@en .
 
 
-ecsel-dr-OOSMP:Completely_Lead_Free_Status skos:prefLabel "Completely Lead Free Status"@en ;
-                                           rdfs:label "Completely Lead Free Status"@en ;
+ecsel-dr-OOSMP:Completely_Lead_Free_Status rdfs:label "Completely Lead Free Status"@en ;
+                                           skos:prefLabel "Completely Lead Free Status"@en ;
                                            rdfs:comment "This status determines whether a semiconductor product is lead free or not."@en .
 
 

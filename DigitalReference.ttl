@@ -11871,6 +11871,7 @@ ecsel-dr-AT:ANSI_X12_Specification rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#APS
 ecsel-dr-AT:APS rdf:type owl:Class ;
                 rdfs:subClassOf ecsel-dr-AT:IT_System ;
+                rdfs:comment "Advanced planning and scheduling system (APS) refers to a manufacturing management process by which raw materials and production capacity are optimally allocated to meet demand."@en ;
                 rdfs:label "APS"@en .
 
 
@@ -11943,6 +11944,7 @@ ecsel-dr-AT:B2M_Markup_Language rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#BI_System
 ecsel-dr-AT:BI_System rdf:type owl:Class ;
                       rdfs:subClassOf ecsel-dr-AT:IT_System ;
+                      rdfs:comment "Business intelligence system (BI) comprises the strategies and technologies used by enterprises for the data analysis and management of business information."@en ;
                       rdfs:label "BI System"@en .
 
 
@@ -11973,6 +11975,7 @@ ecsel-dr-AT:Bridge rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#CAD_System
 ecsel-dr-AT:CAD_System rdf:type owl:Class ;
                        rdfs:subClassOf ecsel-dr-AT:IT_System ;
+                       rdfs:comment "Computer-aided design system (CAD) is used for creation, modification, analysis, or optimization of a design."@en ;
                        rdfs:label "CAD System"@en .
 
 
@@ -12323,6 +12326,7 @@ ecsel-dr-AT:EDI_Specification rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#ERP_System
 ecsel-dr-AT:ERP_System rdf:type owl:Class ;
                        rdfs:subClassOf ecsel-dr-AT:IT_System ;
+                       rdfs:comment "Enterprise resource planning system (ERP) is a system for integrated management of main business processes."@en ;
                        rdfs:label "ERP System"@en .
 
 
@@ -12666,6 +12670,7 @@ ecsel-dr-AT:LES rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#LIMS
 ecsel-dr-AT:LIMS rdf:type owl:Class ;
                  rdfs:subClassOf ecsel-dr-AT:IT_System ;
+                 rdfs:comment "A laboratory information management system (LIMS)  is a software-based solution with features that support a modern laboratory's operations."@en ;
                  rdfs:label "LIMS"@en .
 
 
@@ -12678,6 +12683,7 @@ ecsel-dr-AT:Lo_Ra_WAN rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#MES
 ecsel-dr-AT:MES rdf:type owl:Class ;
                 rdfs:subClassOf ecsel-dr-AT:IT_System ;
+                rdfs:comment "Manufacturing execution system (MES) is a computerized systems used in manufacturing to track and document the transformation of raw materials to finished goods."@en ;
                 rdfs:label "MES"@en .
 
 
@@ -12699,6 +12705,7 @@ ecsel-dr-AT:MESA_Standard rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#MIS
 ecsel-dr-AT:MIS rdf:type owl:Class ;
                 rdfs:subClassOf ecsel-dr-AT:IT_System ;
+                rdfs:comment "A management information system (MIS) is an information system used for decision-making, coordination, control, analysis, and visualization of information in an organization."@en ;
                 rdfs:label "MIS"@en .
 
 
@@ -13038,6 +13045,7 @@ ecsel-dr-AT:PLM2_Vendor rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#PLM_System
 ecsel-dr-AT:PLM_System rdf:type owl:Class ;
                        rdfs:subClassOf ecsel-dr-AT:IT_System ;
+                       rdfs:comment "Product lifecycle management system (PLM) is a system for managing the entire lifecycle of a product"@en ;
                        rdfs:label "PLM System"@en .
 
 
@@ -13197,6 +13205,7 @@ ecsel-dr-AT:Router rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#SCADA_System
 ecsel-dr-AT:SCADA_System rdf:type owl:Class ;
                          rdfs:subClassOf ecsel-dr-AT:IT_System ;
+                         rdfs:comment "Supervisory control and data acquisition (SCADA) is a control system architecture comprising computers, networked data communications and graphical user interfaces for high-level supervision of machines and processes. It also covers sensors and other devices, such as programmable logic controllers, which interface with process plant or machinery."@en ;
                          rdfs:label "SCADA System"@en .
 
 
@@ -13715,7 +13724,7 @@ ecsel-dr-AT:Zig_Bee_RF4CE rdf:type owl:Class ;
                                                                            <http://www.w3id.org/ecsel-dr-OM#Reconfirm>
                                                                          )
                                                              ] ;
-                                         rdfs:comment "The process of doing something."@en ;
+                                         rdfs:comment "The process of doing something"@en ;
                                          rdfs:label "Action"@en .
 
 
@@ -13809,6 +13818,7 @@ ecsel-dr-AT:Zig_Bee_RF4CE rdf:type owl:Class ;
                                                                                 <http://www.w3id.org/ecsel-dr-OM#Rejected>
                                                                               )
                                                                   ] ;
+                                              rdfs:comment "Activity taken by user"@en ;
                                               rdfs:label "User Action"@en .
 
 
@@ -16069,6 +16079,7 @@ ecsel-dr-RAMI40:Standard_Organization rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Standard_Version
 ecsel-dr-RAMI40:Standard_Version rdf:type owl:Class ;
                                  rdfs:subClassOf ecsel-dr-RAMI40:Version ;
+                                 rdfs:comment "Most commonly used version"@en ;
                                  rdfs:label "Standard Version"@en .
 
 
@@ -16287,7 +16298,7 @@ The supplier (Vendor) is responsible to maintain his stock within a defined min/
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Order_Line_Item
 <http://www.w3id.org/ecsel-dr-SCP#Order_Line_Item> rdf:type owl:Class ;
-                                                   rdfs:comment "Every product on the order is referenced by a record that includes quantity and a reference to which order it belongs"@en ;
+                                                   rdfs:comment "Every product on the order is referenced by a record that includes quantity and a reference to which order it belongs."@en ;
                                                    rdfs:label "Order Line Item"@en .
 
 
@@ -16542,7 +16553,7 @@ via the release plan. (strategy entity)"""@en ;
 
 ###  http://www.w3id.org/ecsel-dr-SO#Lot_Event
 <http://www.w3id.org/ecsel-dr-SO#Lot_Event> rdf:type owl:Class ;
-                                            rdfs:comment "The “Lot Event” tracing entity gives the history of lot events. e.g. Hold events, Split events, Merge events, etc. (tracing entities)"@en ;
+                                            rdfs:comment "The Lot Event  tracing entity gives the history of lot events. e.g. Hold events, Split events, Merge events, etc. (tracing entities)."@en ;
                                             rdfs:label "Lot Event"@en .
 
 
@@ -16767,7 +16778,7 @@ because the mid capacity planning is done on this first aggregated product level
 
 ###  http://www.w3id.org/ecsel-dr-SO#Target_Costs
 <http://www.w3id.org/ecsel-dr-SO#Target_Costs> rdf:type owl:Class ;
-                                               rdfs:comment "The Target Costs entity is the final cost of a product or service that must be achieved in order to generate the desired level of sales revenue and income or due to contractual agreements."@en ;
+                                               rdfs:comment "The target costs entity is the final cost of a product or service that must be achieved in order to generate the desired level of sales revenue and income or due to contractual agreements."@en ;
                                                rdfs:label "Target Costs"@en .
 
 
@@ -16779,7 +16790,7 @@ because the mid capacity planning is done on this first aggregated product level
 
 ###  http://www.w3id.org/ecsel-dr-SO#Target_Service_Level
 <http://www.w3id.org/ecsel-dr-SO#Target_Service_Level> rdf:type owl:Class ;
-                                                       rdfs:comment "The target service level is a performance indicator expressing the percentage of orders satisfied"@en ;
+                                                       rdfs:comment "The target service level is a performance indicator expressing the percentage of orders satisfied."@en ;
                                                        rdfs:label "Target Service Level"@en .
 
 
@@ -16831,7 +16842,7 @@ because the mid capacity planning is done on this first aggregated product level
 
 ###  http://www.w3id.org/ecsel-dr-SO#Workshop
 <http://www.w3id.org/ecsel-dr-SO#Workshop> rdf:type owl:Class ;
-                                           rdfs:comment "The overall organizational working structures within the fabs is described in the entity “Workshop”. (master entity)"@en ;
+                                           rdfs:comment "The overall organizational working structures within the fabs is described in the entity “Workshop” (master entity)"@en ;
                                            rdfs:label "Workshop"@en .
 
 

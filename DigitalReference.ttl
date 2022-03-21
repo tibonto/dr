@@ -15214,7 +15214,7 @@ Then must be defined what the device it is, for exmaple:
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Communication_Services
 <http://www.w3id.org/ecsel-dr-PWR#Communication_Services> rdf:type owl:Class ;
-                                                          rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Indutrial_Sector> ;
+                                                          rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Industrial_Sector> ;
                                                           rdfs:comment "Industrial sector of Communication Services"@en ;
                                                           rdfs:label "Communication Services"@en .
 
@@ -15228,14 +15228,14 @@ Then must be defined what the device it is, for exmaple:
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Consumer_Discretionary
 <http://www.w3id.org/ecsel-dr-PWR#Consumer_Discretionary> rdf:type owl:Class ;
-                                                          rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Indutrial_Sector> ;
+                                                          rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Industrial_Sector> ;
                                                           rdfs:comment "Industrial sector of Consumer Discretionary"@en ;
                                                           rdfs:label "Consumer Discretionary"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Consumer_Staples
 <http://www.w3id.org/ecsel-dr-PWR#Consumer_Staples> rdf:type owl:Class ;
-                                                    rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Indutrial_Sector> ;
+                                                    rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Industrial_Sector> ;
                                                     rdfs:comment "Industrial sector of Consumer staples"@en ;
                                                     rdfs:label "Consumer Staples"@en .
 
@@ -15350,7 +15350,7 @@ http://xmlns.com/foaf/spec/#term_Document\"""" ;
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Energy
 <http://www.w3id.org/ecsel-dr-PWR#Energy> rdf:type owl:Class ;
-                                          rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Indutrial_Sector> ;
+                                          rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Industrial_Sector> ;
                                           rdfs:comment "Industrial sector of Energy"@en ;
                                           rdfs:label "Energy"@en .
 
@@ -15378,7 +15378,7 @@ https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Entity""" ;
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Financial
 <http://www.w3id.org/ecsel-dr-PWR#Financial> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Indutrial_Sector> ;
+                                             rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Industrial_Sector> ;
                                              rdfs:comment "Financial Sector"@en ;
                                              rdfs:label "Financial"@en .
 
@@ -15404,7 +15404,7 @@ https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Entity""" ;
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Healthcare
 <http://www.w3id.org/ecsel-dr-PWR#Healthcare> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Indutrial_Sector> ;
+                                              rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Industrial_Sector> ;
                                               rdfs:comment "Healthcare sector"@en ;
                                               rdfs:label "Healthcare"@en .
 
@@ -15416,20 +15416,20 @@ https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Entity""" ;
                                           rdfs:label "Height"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-PWR#Industrials
-<http://www.w3id.org/ecsel-dr-PWR#Industrials> rdf:type owl:Class ;
-                                               rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Indutrial_Sector> ;
-                                               rdfs:comment "Industrial sectors"@en ;
-                                               rdfs:label "Industrials"@en .
-
-
-###  http://www.w3id.org/ecsel-dr-PWR#Indutrial_Sector
-<http://www.w3id.org/ecsel-dr-PWR#Indutrial_Sector> rdf:type owl:Class ;
-                                                    rdfs:comment """The collection of all localized groups of enterprises that are producers of industrial commodities, in which each such group together forms the major industrial sector for the region. 'Industrial commodities' includes MechanicalDevices and basic industrial materials. Examples include 'the world industrial sector', the 'industrial sector of China'. The Chinese water pump industry would not be an exemplar of IndustrialEconomicSector but would rather be a sub-industry (see subIndustries) of it. On the other hand, chinese water pump manufacturers would be considered groupMembers of 'the industrial sector of China'.
+###  http://www.w3id.org/ecsel-dr-PWR#Industrial_Sector
+<http://www.w3id.org/ecsel-dr-PWR#Industrial_Sector> rdf:type owl:Class ;
+                                                     rdfs:comment """The collection of all localized groups of enterprises that are producers of industrial commodities, in which each such group together forms the major industrial sector for the region. 'Industrial commodities' includes MechanicalDevices and basic industrial materials. Examples include 'the world industrial sector', the 'industrial sector of China'. The Chinese water pump industry would not be an exemplar of IndustrialEconomicSector but would rather be a sub-industry (see subIndustries) of it. On the other hand, chinese water pump manufacturers would be considered groupMembers of 'the industrial sector of China'.
 
 This classification is done by The Global Industry Classification Standard (GICS) is an industry taxonomy developed in 1999 by MSCI and Standard & Poor's (S&P) for use by the global financial community. The GICS structure consists of 11 sectors, 24 industry groups, 68 industries and 157 sub-industries[1] into which S&P has categorized all major public companies""" ;
-                                                    rdfs:isDefinedBy "http://umbel.org/umbel/rc/" ;
-                                                    rdfs:label "Industrial Sector"@en .
+                                                     rdfs:isDefinedBy "http://umbel.org/umbel/rc/" ;
+                                                     rdfs:label "Industrial Sector"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-PWR#Industrials
+<http://www.w3id.org/ecsel-dr-PWR#Industrials> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Industrial_Sector> ;
+                                               rdfs:comment "Industrial sectors"@en ;
+                                               rdfs:label "Industrials"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Information_Entity
@@ -15452,7 +15452,7 @@ https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#InformationObject\"""" ;
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Information_Technology
 <http://www.w3id.org/ecsel-dr-PWR#Information_Technology> rdf:type owl:Class ;
-                                                          rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Indutrial_Sector> ;
+                                                          rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Industrial_Sector> ;
                                                           rdfs:comment "Industrial sector of Information Technology"@en ;
                                                           rdfs:label "Information Technology"@en .
 
@@ -15487,7 +15487,7 @@ https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#InformationObject\"""" ;
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Materials
 <http://www.w3id.org/ecsel-dr-PWR#Materials> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Indutrial_Sector> ;
+                                             rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Industrial_Sector> ;
                                              rdfs:comment "Industrial sector of Materials"@en ;
                                              rdfs:label "Materials"@en .
 
@@ -15702,7 +15702,7 @@ https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Quality""" ;
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Real_Estate
 <http://www.w3id.org/ecsel-dr-PWR#Real_Estate> rdf:type owl:Class ;
-                                               rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Indutrial_Sector> ;
+                                               rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Industrial_Sector> ;
                                                rdfs:comment "Real Estate sector"@en ;
                                                rdfs:label "Real Estate"@en .
 
@@ -15885,7 +15885,7 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Sensing""" ;
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Utilities
 <http://www.w3id.org/ecsel-dr-PWR#Utilities> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Indutrial_Sector> ;
+                                             rdfs:subClassOf <http://www.w3id.org/ecsel-dr-PWR#Industrial_Sector> ;
                                              rdfs:comment "Utilities sector"@en ;
                                              rdfs:label "Utilities"@en .
 
@@ -17329,8 +17329,8 @@ ecsel-dr-RAMI40:Work_Center rdf:type owl:NamedIndividual .
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Wind_Turbine> rdfs:label "Wind Turbine"@en .
 
 
-ecsel-dr-OOSMP:Completely_Lead_Free_Status rdfs:label "Completely Lead Free Status"@en ;
-                                           skos:prefLabel "Completely Lead Free Status"@en ;
+ecsel-dr-OOSMP:Completely_Lead_Free_Status skos:prefLabel "Completely Lead Free Status"@en ;
+                                           rdfs:label "Completely Lead Free Status"@en ;
                                            rdfs:comment "This status determines whether a semiconductor product is lead free or not."@en .
 
 

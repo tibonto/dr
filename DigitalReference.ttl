@@ -13802,11 +13802,13 @@ ecsel-dr-AT:Zig_Bee_RF4CE rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-OM#Supplier_Data
 <http://www.w3id.org/ecsel-dr-OM#Supplier_Data> rdf:type owl:Class ;
+                                                rdfs:comment "Information about supplier"@en ;
                                                 rdfs:label "Supplier Data"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Supply
 <http://www.w3id.org/ecsel-dr-OM#Supply> rdf:type owl:Class ;
+                                         rdfs:comment "The amount of goods that is available for use."@en ;
                                          rdfs:label "Supply"@en .
 
 
@@ -16316,11 +16318,13 @@ The supplier (Vendor) is responsible to maintain his stock within a defined min/
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Prioritized_Demand
 <http://www.w3id.org/ecsel-dr-SCP#Prioritized_Demand> rdf:type owl:Class ;
+                                                      rdfs:comment "The demand that should be covered first."@en ;
                                                       rdfs:label "Prioritized Demand"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Prioritized_Orders
 <http://www.w3id.org/ecsel-dr-SCP#Prioritized_Orders> rdf:type owl:Class ;
+                                                      rdfs:comment "Orders that should be completed first."@en ;
                                                       rdfs:label "Prioritized Orders"@en .
 
 
@@ -16388,6 +16392,7 @@ The supplier (Vendor) is responsible to maintain his stock within a defined min/
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Supply_Demand_Match
 <http://www.w3id.org/ecsel-dr-SCP#Supply_Demand_Match> rdf:type owl:Class ;
+                                                       rdfs:comment "Supply and demand match when sufficient materials exist to cover material demand while taking available capacity into account."@en ;
                                                        rdfs:label "Supply Demand Match"@en .
 
 
@@ -16398,6 +16403,7 @@ The supplier (Vendor) is responsible to maintain his stock within a defined min/
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Target_Allocation
 <http://www.w3id.org/ecsel-dr-SCP#Target_Allocation> rdf:type owl:Class ;
+                                                     rdfs:comment "The target allocation is the level of allocation planned by the company."@en ;
                                                      rdfs:label "Target Allocation"@en .
 
 

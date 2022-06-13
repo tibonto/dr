@@ -557,7 +557,6 @@ xsd:negativeInteger owl:equivalentClass xsd:nonNegativeInteger .
                                                                                                                       rdfs:subPropertyOf owl:topObjectProperty ;
                                                                                                                       rdfs:domain <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Back_End_Manufacturing> ,
                                                                                                                                   <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Contracter_Or_Outside_The_Company> ,
-                                                                                                                                  <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Miscellaneous> ,
                                                                                                                                   <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Infrastructure> ;
                                                                                                                       rdfs:range <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Electricity_Power_Consumption> ;
                                                                                                                       rdfs:label "has total electricity power consumption"@en .
@@ -6406,11 +6405,6 @@ ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
                                                                                                                     rdfs:label "metals in the front end manufacturing"@en .
 
 
-###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#miscellaneous
-<http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#miscellaneous> rdf:type owl:DatatypeProperty ;
-                                                                                            rdfs:label "miscellaneous"@en .
-
-
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#number_of_chips_produced_in_the_back_end_manufacturing
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#number_of_chips_produced_in_the_back_end_manufacturing> rdf:type owl:DatatypeProperty ;
                                                                                                                                      rdfs:label "number of chips produced in the back end manufacturing"@en .
@@ -8780,12 +8774,14 @@ terms:Physical_Resource rdf:type owl:Class ;
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Weight_Of_Used_Material_Per_Chip
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Weight_Of_Used_Material_Per_Chip> rdf:type owl:Class ;
                                                                                                                        rdfs:subClassOf :Application ;
+                                                                                                                       rdfs:comment "Defines weight of matrial required for production of a single chip"@en ;
                                                                                                                        rdfs:label "Average Weight Of Used Material Per Chip"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Back_End_Manufacturing
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Back_End_Manufacturing> rdf:type owl:Class ;
                                                                                                      rdfs:subClassOf :Application ;
+                                                                                                     rdfs:comment "The backend production is part of the semiconductor manufacturing process, which is initiated once the wafer has left the clean room. This process includes checking the chips on the wafer, potentially necessary repairs of the chips, sawing of the wafers and packaging of the individual chips."@en ;
                                                                                                      rdfs:label "Back End Manufacturing"@en .
 
 
@@ -8962,13 +8958,14 @@ terms:Physical_Resource rdf:type owl:Class ;
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Chemicals_In_The_Front_End_Manufacturing
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Chemicals_In_The_Front_End_Manufacturing> rdf:type owl:Class ;
                                                                                                                        rdfs:subClassOf :Application ;
-                                                                                                                       rdfs:comment "Chemicals In The Front End (FE) Manufacturing"@en ;
+                                                                                                                       rdfs:comment "Referes to types of chemicals used in the Front End (FE) manufacturing"@en ;
                                                                                                                        rdfs:label "Chemicals In The Front End  Manufacturing"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Chipcard_Manufacturing
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Chipcard_Manufacturing> rdf:type owl:Class ;
                                                                                                      rdfs:subClassOf :Application ;
+                                                                                                     rdfs:comment "The process of chipcard production"@en ;
                                                                                                      rdfs:label "Chipcard Manufacturing"@en .
 
 
@@ -9121,10 +9118,6 @@ terms:Physical_Resource rdf:type owl:Class ;
                                                                                                             owl:someValuesFrom xsd:float
                                                                                                           ] ,
                                                                                                           [ rdf:type owl:Restriction ;
-                                                                                                            owl:onProperty <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#miscellaneous> ;
-                                                                                                            owl:someValuesFrom xsd:float
-                                                                                                          ] ,
-                                                                                                          [ rdf:type owl:Restriction ;
                                                                                                             owl:onProperty <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#total_electricity_power_consumption> ;
                                                                                                             owl:someValuesFrom xsd:float
                                                                                                           ] ,
@@ -9193,7 +9186,7 @@ terms:Physical_Resource rdf:type owl:Class ;
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Front_End_Manufacturing
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Front_End_Manufacturing> rdf:type owl:Class ;
                                                                                                       rdfs:subClassOf :Application ;
-                                                                                                      rdfs:comment "Front End (FE) Manufacturing"@en ;
+                                                                                                      rdfs:comment "Front End Manufacturing refers to \"front\" or first part of a wafer manufacturing line. This is where all the wafer-based devices are formed, such as transistors, poly capacitors, non-metal resistors, and diodes."@en ;
                                                                                                       rdfs:label "Front End Manufacturing"@en .
 
 
@@ -9325,12 +9318,6 @@ terms:Physical_Resource rdf:type owl:Class ;
                                                                                                                     rdfs:subClassOf :Application ;
                                                                                                                     rdfs:comment "Metals In The Front End (FE) Manufacturing"@en ;
                                                                                                                     rdfs:label "Metals In The Front End Manufacturing"@en .
-
-
-###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Miscellaneous
-<http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Miscellaneous> rdf:type owl:Class ;
-                                                                                            rdfs:subClassOf :Application ;
-                                                                                            rdfs:label "Miscellaneous"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Number_Of_Chips_Produced_In_The_Back_End_Manufacturing
@@ -17335,8 +17322,8 @@ ecsel-dr-RAMI40:Work_Center rdf:type owl:NamedIndividual .
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Wind_Turbine> rdfs:label "Wind Turbine"@en .
 
 
-ecsel-dr-OOSMP:Completely_Lead_Free_Status skos:prefLabel "Completely Lead Free Status"@en ;
-                                           rdfs:label "Completely Lead Free Status"@en ;
+ecsel-dr-OOSMP:Completely_Lead_Free_Status rdfs:label "Completely Lead Free Status"@en ;
+                                           skos:prefLabel "Completely Lead Free Status"@en ;
                                            rdfs:comment "This status determines whether a semiconductor product is lead free or not."@en .
 
 

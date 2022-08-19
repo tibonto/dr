@@ -15926,6 +15926,7 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Sensing""" ;
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Admin_Shell
 ecsel-dr-RAMI40:Admin_Shell rdf:type owl:Class ;
+                            rdfs:comment "Andmin Shell represents and describes an asset elecrtonically in a standardized manner"@en ;
                             rdfs:label "Admin Shell"@en .
 
 
@@ -15948,6 +15949,7 @@ ecsel-dr-RAMI40:Dimension rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Energy_Efficiency
 ecsel-dr-RAMI40:Energy_Efficiency rdf:type owl:Class ;
                                   rdfs:subClassOf ecsel-dr-RAMI40:Submodel ;
+                                  rdfs:comment "Specifies some details regarding energy efficiency. These can also be supplied by sensors."@en ;
                                   rdfs:label "Energy Efficiency"@en .
 
 
@@ -15961,6 +15963,7 @@ ecsel-dr-RAMI40:I_4.0_Component rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-RAMI40#MES_Connection
 ecsel-dr-RAMI40:MES_Connection rdf:type owl:Class ;
                                rdfs:subClassOf ecsel-dr-RAMI40:Submodel ;
+                               rdfs:comment "Connects the station to a higher-level MES system via a small number of properties. Specifies whether the station is producing, ready for production, has a fault or is undergoing maintenance, for example."@en ;
                                rdfs:label "MES Connection"@en .
 
 
@@ -16008,6 +16011,7 @@ ecsel-dr-RAMI40:RAMI_IT_Layer_Dimension rdf:type owl:Class ;
                                                                         )
                                                             ] ;
                                         rdfs:subClassOf ecsel-dr-RAMI40:Dimension ;
+                                        rdfs:comment "The six layers on the vertical axis describe the decomposition of a machine into its properties, structured layer by layer, i.e., the virtual mapping of a machine. Such representations originate from information and communication technology, where properties of complex systems are commonly broken down into layers."@en ;
                                         rdfs:label "RAMI IT Layer Dimension"@en .
 
 
@@ -16082,7 +16086,7 @@ ecsel-dr-RAMI40:Structure rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Submodel
 ecsel-dr-RAMI40:Submodel rdf:type owl:Class ;
                          rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SCP#Stocks> ;
-                         rdfs:comment "Describe the different types of Data related to the I4.0 Asset"@en ;
+                         rdfs:comment "Describe the different types of data related to the I4.0 asset"@en ;
                          rdfs:label "Submodel"@en .
 
 
@@ -16095,6 +16099,7 @@ ecsel-dr-RAMI40:Transport_Interface rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Used_Date
 ecsel-dr-RAMI40:Used_Date rdf:type owl:Class ;
                           rdfs:subClassOf ecsel-dr-RAMI40:Date ;
+                          rdfs:comment "Date uded by particular standard"@en ;
                           rdfs:label "Used Date"@en .
 
 
@@ -17213,11 +17218,13 @@ ecsel-dr-RAMI40:Asset rdf:type owl:NamedIndividual .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Business
-ecsel-dr-RAMI40:Business rdf:type owl:NamedIndividual .
+ecsel-dr-RAMI40:Business rdf:type owl:NamedIndividual ;
+                         rdfs:comment "RAMI 4.0 business layer is composed of the business strategy, business environment, and business goals."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Communication
-ecsel-dr-RAMI40:Communication rdf:type owl:NamedIndividual .
+ecsel-dr-RAMI40:Communication rdf:type owl:NamedIndividual ;
+                              rdfs:comment "RAMI4.0 communication layer provides standardized communication between the integration and information layers (TCP/IP, HTTP/ FTP protocols,  LAN//WAN transmission, BLE (Bluetooth Low Energy) or Wi-Fi devices."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Confirmation
@@ -17253,7 +17260,8 @@ ecsel-dr-RAMI40:Functional rdf:type owl:NamedIndividual .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Information
-ecsel-dr-RAMI40:Information rdf:type owl:NamedIndividual .
+ecsel-dr-RAMI40:Information rdf:type owl:NamedIndividual ;
+                            rdfs:comment "The goal of RAMI 4.0 information layer is to hold in an organized way."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Instance
@@ -17261,7 +17269,8 @@ ecsel-dr-RAMI40:Instance rdf:type owl:NamedIndividual .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Integration
-ecsel-dr-RAMI40:Integration rdf:type owl:NamedIndividual .
+ecsel-dr-RAMI40:Integration rdf:type owl:NamedIndividual ;
+                            rdfs:comment "RAMI4.0 integration layer deals with processing of information and serves as a link between the physical and digital worlds."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Location
@@ -17337,8 +17346,8 @@ ecsel-dr-OOSMP:Ro_HS_Compliant_Status rdfs:label "RoHS Compliant Status"@en ;
                                       skos:prefLabel "RoHS Compliant Status"@en .
 
 
-ecsel-dr-RAMI40:Asset rdfs:label "Asset"@en ;
-                      rdfs:comment "Valuable possession or property, that is owned by business, or organization"@en .
+ecsel-dr-RAMI40:Asset rdfs:comment "Every I4.0-component has to represent an entity. The entity can be physical or digital asset. The definition makes it possible to classify assets without integrated and accessible computers as I4.0-component, if the digital representation of the asset is accessible on a separate computer."@en ;
+                      rdfs:label "Asset"@en .
 
 
 #################################################################

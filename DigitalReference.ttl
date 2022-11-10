@@ -31,6 +31,7 @@
                                 terms:modified "2020-09-18"@en ;
                                 terms:title "Digital Reference"@en ;
                                 vann:preferredNamespaceUri <http://www.w3id.org/ecsel-dr/> ;
+                                rdfs:comment "This ontology represents Incoterms 2020 starndards"@en ;
                                 rdfs:label "Digital Reference"@en ;
                                 owl:versionInfo "Version 1.1"@en .
 
@@ -319,6 +320,60 @@ xsd:negativeInteger owl:equivalentClass xsd:nonNegativeInteger .
 #################################################################
 #    Object Properties
 #################################################################
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#is_applied_to
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#is_applied_to> rdf:type owl:ObjectProperty ;
+                                                                                             rdfs:domain <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Exchange_Rate_Specification> ;
+                                                                                             rdfs:range <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Transfer_Action> .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#makes
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#makes> rdf:type owl:ObjectProperty ;
+                                                                                     rdfs:domain <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Seller> ;
+                                                                                     rdfs:range <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Offer> .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#provides
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#provides> rdf:type owl:ObjectProperty ;
+                                                                                        rdfs:domain <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Seller> ;
+                                                                                        rdfs:range <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Product> .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#purchases
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#purchases> rdf:type owl:ObjectProperty ;
+                                                                                         rdfs:domain <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Customer> ;
+                                                                                         rdfs:range <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Product> .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#receives
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#receives> rdf:type owl:ObjectProperty ;
+                                                                                        rdfs:domain <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Customer> ;
+                                                                                        rdfs:range <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Offer> .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#refers_to
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#refers_to> rdf:type owl:ObjectProperty ;
+                                                                                         rdfs:domain <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Transfer_Action> ;
+                                                                                         rdfs:range <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Product> .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#uses
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#uses> rdf:type owl:ObjectProperty ;
+                                                                                    rdfs:domain <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Transfer_Action> ;
+                                                                                    rdfs:range <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Incoterms_2020> .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#uses_from_location
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#uses_from_location> rdf:type owl:ObjectProperty ;
+                                                                                                  rdfs:domain <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Seller> ;
+                                                                                                  rdfs:range <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#From_Location> .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#uses_to_location
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#uses_to_location> rdf:type owl:ObjectProperty ;
+                                                                                                rdfs:domain <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Customer> ;
+                                                                                                rdfs:range <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#To_Location> .
+
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#has_CO2_burden_of_chemicals_in_the_front_end_manufacturing
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#has_CO2_burden_of_chemicals_in_the_front_end_manufacturing> rdf:type owl:ObjectProperty ;
@@ -8687,6 +8742,125 @@ terms:Physical_Resource rdf:type owl:Class ;
                                                              rdfs:label "Goal"@en .
 
 
+###  http://www.semanticweb.org/bonikmarta/ontologies/2022/10/Incoterms#ICC
+<http://www.semanticweb.org/bonikmarta/ontologies/2022/10/Incoterms#ICC> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf ecsel-dr-AT:Standardization_Organization ;
+                                                                         rdfs:comment "International Chamber of Commerce, the largest, most representative business organization in the world"@en .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#C_Main_Carriage_Paid
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#C_Main_Carriage_Paid> rdf:type owl:Class ;
+                                                                                                    rdfs:subClassOf <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Incoterms_Group> ;
+                                                                                                    rdfs:comment "An Incoterms rule of the group C." .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Customer
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Customer> rdf:type owl:Class ;
+                                                                                        owl:equivalentClass <http://www.w3id.org/ecsel-dr-OM#Customer> ,
+                                                                                                            <http://www.w3id.org/ecsel-dr-SCP#Customer> ;
+                                                                                        rdfs:comment "Customer is a person or organization that places order or pay the invoice." .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#D_Arrival
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#D_Arrival> rdf:type owl:Class ;
+                                                                                         rdfs:subClassOf <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Incoterms_Group> ;
+                                                                                         rdfs:comment "An Incoterms rule of the group D." .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#E_Departure
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#E_Departure> rdf:type owl:Class ;
+                                                                                           rdfs:subClassOf <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Incoterms_Group> ;
+                                                                                           rdfs:comment "An Incoterms rule of the group E." .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Exchange_Rate_Specification
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Exchange_Rate_Specification> rdf:type owl:Class ;
+                                                                                                           rdfs:comment "Exchange_Rate_Specification is structured value representing exchange rate." ;
+                                                                                                           rdfs:label "Exchange Rate Specification"@en .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#F_Main_Carriage_Unpaid
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#F_Main_Carriage_Unpaid> rdf:type owl:Class ;
+                                                                                                      rdfs:subClassOf <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Incoterms_Group> ;
+                                                                                                      rdfs:comment "An Incoterms rule of the group F." .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#From_Location
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#From_Location> rdf:type owl:Class ;
+                                                                                             rdfs:subClassOf <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Location> ;
+                                                                                             rdfs:comment "A sub property of location. The original location of the object or the agent before the action." .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Incoterms_2020
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Incoterms_2020> rdf:type owl:Class ;
+                                                                                              rdfs:subClassOf ecsel-dr-AT:Standard ;
+                                                                                              rdfs:comment """The Incoterms or International Commercial Terms are a series of pre-defined commercial terms published by the International Chamber of Commerce (ICC) relating to international commercial law. They are widely used in international commercial transactions or procurement processes and their use is encouraged by trade councils, courts and international lawyers.
+
+Incoterms 2020 is the ninth set of international contract terms published by the International Chamber of Commerce, with the first set having been published in 1936. Incoterms 2020 defines 11 rules, the same number as defined by Incoterms 2010.""" .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Incoterms_Application_Mode
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Incoterms_Application_Mode> rdf:type owl:Class ;
+                                                                                                          rdfs:subClassOf <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Incoterms_2020> ;
+                                                                                                          rdfs:comment "Incoterms_Application_Mode is about the method of delivery the incoterm uses. An incoterm could use only ship or non-ship transport." .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Incoterms_Clause
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Incoterms_Clause> rdf:type owl:Class ;
+                                                                                                rdfs:subClassOf <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Incoterms_2020> ;
+                                                                                                rdfs:comment "An Incoterms_Clause is a term of the 11 pre-defined incoterms." .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Incoterms_Group
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Incoterms_Group> rdf:type owl:Class ;
+                                                                                               rdfs:subClassOf <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Incoterms_2020> ;
+                                                                                               rdfs:comment "An Incoterms_Group is one of the four categories that describes incoterms rules." .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Location
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Location> rdf:type owl:Class ;
+                                                                                        rdfs:comment "Location is where an action takes place." .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Offer
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Offer> rdf:type owl:Class ;
+                                                                                     rdfs:comment "An offer is to transfer some rights to an item or to provide a service." .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Only_Ship_Transport_Clause
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Only_Ship_Transport_Clause> rdf:type owl:Class ;
+                                                                                                          rdfs:subClassOf <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Incoterms_Application_Mode> ;
+                                                                                                          owl:disjointWith <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Universal_Transport_Clause> ;
+                                                                                                          rdfs:comment "Incoterms that solely involve transportation by water." .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Product
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Product> rdf:type owl:Class ;
+                                                                                       rdfs:comment "Product is the object, upon which the tranfer action is carried out." .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Seller
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Seller> rdf:type owl:Class ;
+                                                                                      rdfs:comment "Seller is an entity which offers the services/goods." .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#To_Location
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#To_Location> rdf:type owl:Class ;
+                                                                                           rdfs:subClassOf <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Location> ;
+                                                                                           rdfs:comment "A sub property of location. The final location of the object or the agent after the action." .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Transfer_Action
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Transfer_Action> rdf:type owl:Class ;
+                                                                                               rdfs:comment "The act of transferring/moving objects from one place to another." .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Universal_Transport_Clause
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Universal_Transport_Clause> rdf:type owl:Class ;
+                                                                                                          rdfs:subClassOf <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Incoterms_Application_Mode> ;
+                                                                                                          rdfs:comment "Incoterms that may be used regardless of the method of transport." .
+
+
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Driven_Km_Per_Year_Ecar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Driven_Km_Per_Year_Ecar> rdf:type owl:Class ;
                                                                                                               rdfs:subClassOf :Application ;
@@ -11838,7 +12012,7 @@ ecsel-dr-AT:ANSI rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#ANSI_Standard
 ecsel-dr-AT:ANSI_Standard rdf:type owl:Class ;
                           rdfs:subClassOf ecsel-dr-AT:Standard ;
-                          rdfs:comment "Is a private non-profit organization that oversees the development of voluntary consensus standards for products, services, processes, systems, and personnel in the United States."@en ;
+                          rdfs:comment "American National Standards Institute is a private non-profit organization that oversees the development of voluntary consensus standards for products, services, processes, systems, and personnel in the United States."@en ;
                           rdfs:label "ANSI Standard"@en .
 
 
@@ -12429,7 +12603,7 @@ ecsel-dr-AT:IEC rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#IEC_Standard
 ecsel-dr-AT:IEC_Standard rdf:type owl:Class ;
                          rdfs:subClassOf ecsel-dr-AT:Standard ;
-                         rdfs:comment "standard maintained and published by IEC."@en ;
+                         rdfs:comment "Standard maintained and published by International Electrotechnical Commission"@en ;
                          rdfs:label "IEC Standard"@en .
 
 
@@ -12442,7 +12616,7 @@ ecsel-dr-AT:IEEE rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#IEEE_Standard
 ecsel-dr-AT:IEEE_Standard rdf:type owl:Class ;
                           rdfs:subClassOf ecsel-dr-AT:Standard ;
-                          rdfs:comment "Is an organization within IEEE that develops global standards in a broad range of industries"@en ;
+                          rdfs:comment "Is an organization within IEEE (Institute of Electrical and Electronics Engineers) that develops global standards in a broad range of industries."@en ;
                           rdfs:label "IEEE Standard"@en .
 
 
@@ -12456,7 +12630,7 @@ ecsel-dr-AT:IETF rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#IETF_Standard
 ecsel-dr-AT:IETF_Standard rdf:type owl:Class ;
                           rdfs:subClassOf ecsel-dr-AT:Standard ;
-                          rdfs:comment "Is an open standards organization, which develops and promotes voluntary Internet standards, in particular the standards that comprise the Internet protocol suite"@en ;
+                          rdfs:comment "Internet Engineering Task Forces is an open standards organization, which develops and promotes voluntary Internet standards, in particular the standards that comprise the Internet protocol suite."@en ;
                           rdfs:label "IETF Standard"@en .
 
 
@@ -12588,7 +12762,7 @@ ecsel-dr-AT:ISA_95_Layer_4_ERP rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#ISA_Standard
 ecsel-dr-AT:ISA_Standard rdf:type owl:Class ;
                          rdfs:subClassOf ecsel-dr-AT:Standard ;
-                         rdfs:comment "Is one of the foremost professional organizations in the world for setting standards and educating industry professionals in automation."@en ;
+                         rdfs:comment "Standards for Automation is one of the foremost professional organizations in the world for setting standards and educating industry professionals in automation."@en ;
                          rdfs:label "ISA Standard"@en .
 
 
@@ -12601,7 +12775,7 @@ ecsel-dr-AT:ISO rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#ISO_Standard
 ecsel-dr-AT:ISO_Standard rdf:type owl:Class ;
                          rdfs:subClassOf ecsel-dr-AT:Standard ;
-                         rdfs:comment "Is an international standard-setting body composed of representatives from various national standards organizations."@en ;
+                         rdfs:comment "International Organization for Standardization is an international standard-setting body composed of representatives from various national standards organizations."@en ;
                          rdfs:label "ISO Standard"@en .
 
 
@@ -12685,7 +12859,7 @@ ecsel-dr-AT:MESA rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#MESA_Standard
 ecsel-dr-AT:MESA_Standard rdf:type owl:Class ;
                           rdfs:subClassOf ecsel-dr-AT:Standard ;
-                          rdfs:comment "Is a worldwide not-for-profit community of manufacturing companies, information technology hardware and software suppliers, system integrators, consulting service providers, analysts, editors, academics, and students."@en ;
+                          rdfs:comment "Modular Energy System Architecture is a worldwide not-for-profit community of manufacturing companies, information technology hardware and software suppliers, system integrators, consulting service providers, analysts, editors, academics, and students."@en ;
                           rdfs:label "MESA Standard"@en .
 
 
@@ -12812,7 +12986,7 @@ ecsel-dr-AT:OASIS rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#OASIS_Standard
 ecsel-dr-AT:OASIS_Standard rdf:type owl:Class ;
                            rdfs:subClassOf ecsel-dr-AT:Standard ;
-                           rdfs:comment "Is a global nonprofit consortium that works on the development, convergence, and adoption of open standards for security, Internet of Things, energy, content technologies, emergency management, and other areas."@en ;
+                           rdfs:comment "Organization for the Advancement of Structured Information Standards is a global nonprofit consortium that works on the development, convergence, and adoption of open standards for security, Internet of Things, energy, content technologies, emergency management, and other areas."@en ;
                            rdfs:label "OASIS Standard"@en .
 
 
@@ -12826,7 +13000,7 @@ ecsel-dr-AT:OCF rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#OCF_Standard
 ecsel-dr-AT:OCF_Standard rdf:type owl:Class ;
                          rdfs:subClassOf ecsel-dr-AT:Standard ;
-                         rdfs:comment "Is an industry organization having as its stated mission is to develop specification standards, promote a set of interoperability guidelines, and provide a certification program for devices involved in the Internet of Things (IoT)."@en ;
+                         rdfs:comment "Open Connectivity Foundation is an industry organization having as its stated mission is to develop specification standards, promote a set of interoperability guidelines, and provide a certification program for devices involved in the Internet of Things (IoT)."@en ;
                          rdfs:label "OCF Standard"@en .
 
 
@@ -13523,34 +13697,34 @@ ecsel-dr-AT:W3C_Data_Knowledge_Stack rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#W3C_L1_Web_Platform
 ecsel-dr-AT:W3C_L1_Web_Platform rdf:type owl:Class ;
-                                rdfs:subClassOf ecsel-dr-AT:W3C ;
+                                rdfs:subClassOf ecsel-dr-AT:W3C_Standard ;
                                 rdfs:comment "W3C L1 Data Semantics Web Platform"@en ;
                                 rdfs:label "W3C L1 Data Semantics"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#W3C_L2_Data_Syntax
 ecsel-dr-AT:W3C_L2_Data_Syntax rdf:type owl:Class ;
-                               rdfs:subClassOf ecsel-dr-AT:W3C ;
+                               rdfs:subClassOf ecsel-dr-AT:W3C_Standard ;
                                rdfs:comment "W3C L2 Data Semantics Data Syntax"@en ;
                                rdfs:label "W3C L2 Data Semantics"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#W3C_L3_Knowledge_Representation
 ecsel-dr-AT:W3C_L3_Knowledge_Representation rdf:type owl:Class ;
-                                            rdfs:subClassOf ecsel-dr-AT:W3C ;
+                                            rdfs:subClassOf ecsel-dr-AT:W3C_Standard ;
                                             rdfs:comment "W3C L3 Data Semantics Knowledge Representation"@en ;
                                             rdfs:label "W3C L3 Data Semantics"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#W3C_L4_Semantics_Representation
 ecsel-dr-AT:W3C_L4_Semantics_Representation rdf:type owl:Class ;
-                                            rdfs:subClassOf ecsel-dr-AT:W3C ;
+                                            rdfs:subClassOf ecsel-dr-AT:W3C_Standard ;
                                             rdfs:label "W3C L4 Data Semantics"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#W3C_L5_Data_Semantics
 ecsel-dr-AT:W3C_L5_Data_Semantics rdf:type owl:Class ;
-                                  rdfs:subClassOf ecsel-dr-AT:W3C ;
+                                  rdfs:subClassOf ecsel-dr-AT:W3C_Standard ;
                                   rdfs:label "W3C L5 Data Semantics"@en .
 
 
@@ -16873,6 +17047,83 @@ foaf:Person rdf:type owl:Class ;
 <http://www.opengis.net/def/uom/ISO-8601/0/Gregorian> rdf:type owl:NamedIndividual .
 
 
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#CFR_Cost_And_Freight
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#CFR_Cost_And_Freight> rdf:type owl:NamedIndividual ,
+                                                                                                             <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#C_Main_Carriage_Paid> ,
+                                                                                                             <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Incoterms_Clause> ,
+                                                                                                             <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Only_Ship_Transport_Clause> .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#CIF_Cost_Insurance_And_Freight
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#CIF_Cost_Insurance_And_Freight> rdf:type owl:NamedIndividual ,
+                                                                                                                       <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#C_Main_Carriage_Paid> ,
+                                                                                                                       <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Incoterms_Clause> ,
+                                                                                                                       <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Only_Ship_Transport_Clause> .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#CIP_Carriage_And_Insurance_Paid_To
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#CIP_Carriage_And_Insurance_Paid_To> rdf:type owl:NamedIndividual ,
+                                                                                                                           <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#C_Main_Carriage_Paid> ,
+                                                                                                                           <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Incoterms_Clause> ,
+                                                                                                                           <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Universal_Transport_Clause> .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#CPT_Carriage_Paid_To
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#CPT_Carriage_Paid_To> rdf:type owl:NamedIndividual ,
+                                                                                                             <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#C_Main_Carriage_Paid> ,
+                                                                                                             <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Incoterms_Clause> ,
+                                                                                                             <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Universal_Transport_Clause> .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#DAP_Delivered_At_Place
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#DAP_Delivered_At_Place> rdf:type owl:NamedIndividual ,
+                                                                                                               <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#D_Arrival> ,
+                                                                                                               <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Incoterms_Clause> ,
+                                                                                                               <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Universal_Transport_Clause> .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#DDP_Delivered_Duty_Paid
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#DDP_Delivered_Duty_Paid> rdf:type owl:NamedIndividual ,
+                                                                                                                <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#D_Arrival> ,
+                                                                                                                <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Incoterms_Clause> ,
+                                                                                                                <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Universal_Transport_Clause> .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#DPU_Delivered_At_Place_Unloaded
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#DPU_Delivered_At_Place_Unloaded> rdf:type owl:NamedIndividual ,
+                                                                                                                        <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#D_Arrival> ,
+                                                                                                                        <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Incoterms_Clause> ,
+                                                                                                                        <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Universal_Transport_Clause> .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#EXW_Ex_Works
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#EXW_Ex_Works> rdf:type owl:NamedIndividual ,
+                                                                                                     <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#E_Departure> ,
+                                                                                                     <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Incoterms_Clause> ,
+                                                                                                     <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Universal_Transport_Clause> .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#FAS_Free_Alongside_Ship
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#FAS_Free_Alongside_Ship> rdf:type owl:NamedIndividual ,
+                                                                                                                <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#F_Main_Carriage_Unpaid> ,
+                                                                                                                <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Incoterms_Clause> ,
+                                                                                                                <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Only_Ship_Transport_Clause> .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#FCA_Free_Carrier
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#FCA_Free_Carrier> rdf:type owl:NamedIndividual ,
+                                                                                                         <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#F_Main_Carriage_Unpaid> ,
+                                                                                                         <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Incoterms_Clause> ,
+                                                                                                         <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Universal_Transport_Clause> .
+
+
+###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#FOB_Free_On_Board
+<http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#FOB_Free_On_Board> rdf:type owl:NamedIndividual ,
+                                                                                                          <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#F_Main_Carriage_Unpaid> ,
+                                                                                                          <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Incoterms_Clause> ,
+                                                                                                          <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Only_Ship_Transport_Clause> .
+
+
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Electric_Car
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Electric_Car> rdf:type owl:NamedIndividual ,
                                                                                                     <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Electric_Car> ,
@@ -17348,6 +17599,19 @@ ecsel-dr-OOSMP:Ro_HS_Compliant_Status rdfs:label "RoHS Compliant Status"@en ;
 
 ecsel-dr-RAMI40:Asset rdfs:comment "Every I4.0-component has to represent an entity. The entity can be physical or digital asset. The definition makes it possible to classify assets without integrated and accessible computers as I4.0-component, if the digital representation of the asset is accessible on a separate computer."@en ;
                       rdfs:label "Asset"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#C_Main_Carriage_Paid>
+                <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#D_Arrival>
+                <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#E_Departure>
+                <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#F_Main_Carriage_Unpaid>
+              )
+] .
 
 
 #################################################################

@@ -515,7 +515,7 @@ xsd:negativeInteger owl:equivalentClass xsd:nonNegativeInteger .
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#has_CO2_savings_of_one_solar_panel
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#has_CO2_savings_of_one_solar_panel> rdf:type owl:ObjectProperty ;
                                                                                                                  rdfs:domain <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Energy_Saving_Of_A_Solar_Panel> ;
-                                                                                                                 rdfs:range <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Saving_Of_One_Solar_Panel> ;
+                                                                                                                 rdfs:range <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_One_Solar_Panel> ;
                                                                                                                  rdfs:label "has CO2 savings of one solar panel"@en .
 
 
@@ -887,7 +887,7 @@ xsd:negativeInteger owl:equivalentClass xsd:nonNegativeInteger .
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#leads_to_CO2_savings_of_one_solar_panel
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#leads_to_CO2_savings_of_one_solar_panel> rdf:type owl:ObjectProperty ;
                                                                                                                       rdfs:domain <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Energy_Mix_Solar_Panel> ;
-                                                                                                                      rdfs:range <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Saving_Of_One_Solar_Panel> ;
+                                                                                                                      rdfs:range <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_One_Solar_Panel> ;
                                                                                                                       rdfs:label "leads to CO2 savings of one solar panel"@en .
 
 
@@ -8714,7 +8714,7 @@ ecsel-dr-RAMI40:description rdf:type owl:DatatypeProperty ;
 
 ###  http://purl.org/dc/terms/Physical_Resource
 terms:Physical_Resource rdf:type owl:Class ;
-                        rdfs:comment "A material thing."@en ;
+                        rdfs:comment "A material thing"@en ;
                         rdfs:label "Physical Resource"@en .
 
 
@@ -9033,12 +9033,6 @@ Incoterms 2020 is the ninth set of international contract terms published by the
                                                                                                         rdfs:label "CO2 Factor Transportation"@en .
 
 
-###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Saving_Of_One_Solar_Panel
-<http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Saving_Of_One_Solar_Panel> rdf:type owl:Class ;
-                                                                                                            rdfs:subClassOf :Application ;
-                                                                                                            rdfs:label "CO2 Saving Of One Solar Panel"@en .
-
-
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_A_Gcar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_A_Gcar> rdf:type owl:Class ;
                                                                                                     rdfs:subClassOf :Application ;
@@ -9103,6 +9097,12 @@ Incoterms 2020 is the ninth set of international contract terms published by the
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_One_Semiconductor_Wind_Turbine> rdf:type owl:Class ;
                                                                                                                             rdfs:subClassOf :Application ;
                                                                                                                             rdfs:label "CO2 Savings Of One Semiconductor Wind Turbine"@en .
+
+
+###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_One_Solar_Panel
+<http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_One_Solar_Panel> rdf:type owl:Class ;
+                                                                                                             rdfs:subClassOf :Application ;
+                                                                                                             rdfs:label "CO2 Savings Of One Solar Panel"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_Solar_Panel_In_Company_World
@@ -17582,8 +17582,8 @@ ecsel-dr-RAMI40:Work_Center rdf:type owl:NamedIndividual .
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Wind_Turbine> rdfs:label "Wind Turbine"@en .
 
 
-ecsel-dr-OOSMP:Completely_Lead_Free_Status rdfs:label "Completely Lead Free Status"@en ;
-                                           skos:prefLabel "Completely Lead Free Status"@en ;
+ecsel-dr-OOSMP:Completely_Lead_Free_Status skos:prefLabel "Completely Lead Free Status"@en ;
+                                           rdfs:label "Completely Lead Free Status"@en ;
                                            rdfs:comment "This status determines whether a semiconductor product is lead free or not."@en .
 
 

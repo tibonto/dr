@@ -375,6 +375,72 @@ xsd:negativeInteger owl:equivalentClass xsd:nonNegativeInteger .
                                                                                                 rdfs:range <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#To_Location> .
 
 
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#contributes_for_CO2_savings
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#contributes_for_CO2_savings> rdf:type owl:ObjectProperty ;
+                                                                                                          rdfs:domain <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Battery_Management_System> ;
+                                                                                                          rdfs:range <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Battery_CO2_Savings> .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#enables_CO2_savings
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#enables_CO2_savings> rdf:type owl:ObjectProperty ;
+                                                                                                  rdfs:domain <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Electric_Means_Transportation> ,
+                                                                                                              <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Longer_Lifespan> ,
+                                                                                                              <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Optimized_Charging> ;
+                                                                                                  rdfs:range <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Battery_CO2_Savings> .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#has_battery
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#has_battery> rdf:type owl:ObjectProperty ;
+                                                                                          rdfs:domain <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#E_Car> ;
+                                                                                          rdfs:range <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Lithium_Ion_Battery> .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#has_functional_block
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#has_functional_block> rdf:type owl:ObjectProperty ;
+                                                                                                   rdfs:domain <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Battery_Management_System> ;
+                                                                                                   rdfs:range <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Functional_Block> .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#has_semiconductor
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#has_semiconductor> rdf:type owl:ObjectProperty ;
+                                                                                                rdfs:domain <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Battery_Control_Unit> ,
+                                                                                                            <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Cell_Supervision> ,
+                                                                                                            <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Current_Sensing> ,
+                                                                                                            <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Isolated_Communication> ,
+                                                                                                            <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Pack_Monitoring> ;
+                                                                                                rdfs:range <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Semiconductor> .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#is_functional_block
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#is_functional_block> rdf:type owl:ObjectProperty ;
+                                                                                                  rdfs:domain <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Battery_Control_Unit> ,
+                                                                                                              <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Cell_Supervision> ,
+                                                                                                              <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Current_Sensing> ,
+                                                                                                              <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Isolated_Communication> ,
+                                                                                                              <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Pack_Monitoring> ;
+                                                                                                  rdfs:range <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Functional_Block> .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#is_part_of_battery
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#is_part_of_battery> rdf:type owl:ObjectProperty ;
+                                                                                                 rdfs:domain <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Battery_Management_System> ,
+                                                                                                             <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Cells> ,
+                                                                                                             <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Pack> ;
+                                                                                                 rdfs:range <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Lithium_Ion_Battery> .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#is_produced_by_semiconductor_company
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#is_produced_by_semiconductor_company> rdf:type owl:ObjectProperty ;
+                                                                                                                   rdfs:domain <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Semiconductor> ;
+                                                                                                                   rdfs:range <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Semiconductor_Company> .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#is_vehicle
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#is_vehicle> rdf:type owl:ObjectProperty ;
+                                                                                         rdfs:domain <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#E_Car> ;
+                                                                                         rdfs:range <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Vehicle> .
+
+
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#has_CO2_burden_of_chemicals_in_the_front_end_manufacturing
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#has_CO2_burden_of_chemicals_in_the_front_end_manufacturing> rdf:type owl:ObjectProperty ;
                                                                                                                                          rdfs:domain <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Chemicals_In_The_Front_End_Manufacturing> ;
@@ -6285,6 +6351,12 @@ ecsel-dr-RAMI40:uses_standard rdf:type owl:ObjectProperty ;
 #    Data properties
 #################################################################
 
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#model
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#model> rdf:type owl:DatatypeProperty ;
+                                                                                    rdfs:domain <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#E_Car> ;
+                                                                                    rdfs:range xsd:string .
+
+
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_burden_of_a_unit
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_burden_of_a_unit> rdf:type owl:DatatypeProperty ;
                                                                                                    rdfs:label "CO2 burden of a unit"@en .
@@ -8859,6 +8931,138 @@ Incoterms 2020 is the ninth set of international contract terms published by the
 <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Universal_Transport_Clause> rdf:type owl:Class ;
                                                                                                           rdfs:subClassOf <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Incoterms_Application_Mode> ;
                                                                                                           rdfs:comment "Incoterms that may be used regardless of the method of transport." .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Battery_CO2_Savings
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Battery_CO2_Savings> rdf:type owl:Class ;
+                                                                                                  rdfs:subClassOf :Application ;
+                                                                                                  rdfs:comment "CO2 Savings refers to several solutions that might reduce carbon emissions throughout the course of a Lithiu-Ion battery's lifespan." .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Battery_Control_Unit
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Battery_Control_Unit> rdf:type owl:Class ;
+                                                                                                   rdfs:subClassOf <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Functional_Block> .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Battery_Management_System
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Battery_Management_System> rdf:type owl:Class ;
+                                                                                                        rdfs:subClassOf :Application ;
+                                                                                                        rdfs:comment "A battery management system is, according to Infineon´s definition, a set of \"electronic control circuits that monitor and regulate the charging and discharge of batteries.\" It supervises parameters such as the temperature, voltages, capacity, state of charge, power consumption, charging cycles." .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Cell_Supervision
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Cell_Supervision> rdf:type owl:Class ;
+                                                                                               rdfs:subClassOf <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Functional_Block> .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Cells
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Cells> rdf:type owl:Class ;
+                                                                                    rdfs:subClassOf :Application ;
+                                                                                    rdfs:comment "Cells are fundamental electrochemical unit, or assembly of electrodes, separators, electrolyte, container, and terminals, that serves as a source of electrical energy by directly converting chemical energy. In this case, the cells are all of the type Li-Ion." .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Current_Sensing
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Current_Sensing> rdf:type owl:Class ;
+                                                                                              rdfs:subClassOf <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Functional_Block> .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Current_Sensor
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Current_Sensor> rdf:type owl:Class ;
+                                                                                             rdfs:subClassOf <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Semiconductor> .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#E_Car
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#E_Car> rdf:type owl:Class ;
+                                                                                    owl:equivalentClass <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Electric_Car> ;
+                                                                                    rdfs:subClassOf <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Vehicle> .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Electric_Means_Transportation
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Electric_Means_Transportation> rdf:type owl:Class ;
+                                                                                                            rdfs:subClassOf <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Battery_CO2_Savings> .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Functional_Block
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Functional_Block> rdf:type owl:Class ;
+                                                                                               rdfs:subClassOf :Application ;
+                                                                                               rdfs:comment "A Functional Block is a component of the battery management system." .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Isolated_Communication
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Isolated_Communication> rdf:type owl:Class ;
+                                                                                                     rdfs:subClassOf <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Functional_Block> .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Lithium_Ion_Battery
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Lithium_Ion_Battery> rdf:type owl:Class ;
+                                                                                                  rdfs:subClassOf :Application ;
+                                                                                                  rdfs:comment "The Lithium-Ion Battery represents the set of cells together, which is the battery pack, plus the battery management system."@en .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Longer_Lifespan
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Longer_Lifespan> rdf:type owl:Class ;
+                                                                                              rdfs:subClassOf <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Battery_CO2_Savings> ;
+                                                                                              rdfs:comment "Longer life cycle refers to the number of extra cycles of the battery due good handling throught its lifecycle. It is a way of CO2 savings."@en .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Microcontroller
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Microcontroller> rdf:type owl:Class ;
+                                                                                              rdfs:subClassOf <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Semiconductor> .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Multichannel_Controler_Integrated_Circuit
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Multichannel_Controler_Integrated_Circuit> rdf:type owl:Class ;
+                                                                                                                        rdfs:subClassOf <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Semiconductor> .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Optimized_Charging
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Optimized_Charging> rdf:type owl:Class ;
+                                                                                                 rdfs:subClassOf <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Battery_CO2_Savings> ;
+                                                                                                 rdfs:comment "Second life means that the Lithium-Ion battery has ceased its main activity, in this case powering an electric car, however, it is still able to be used for other purposes."@en .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Pack
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Pack> rdf:type owl:Class ;
+                                                                                   rdfs:subClassOf :Application ;
+                                                                                   rdfs:comment "A battery pack is a set of Lithium-Ion cells."@en .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Pack_Monitoring
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Pack_Monitoring> rdf:type owl:Class ;
+                                                                                              rdfs:subClassOf <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Functional_Block> .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Power_Management_Integrated_Circuit
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Power_Management_Integrated_Circuit> rdf:type owl:Class ;
+                                                                                                                  rdfs:subClassOf <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Semiconductor> .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Pressure_Sensor
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Pressure_Sensor> rdf:type owl:Class ;
+                                                                                              rdfs:subClassOf <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Semiconductor> .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Semiconductor
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Semiconductor> rdf:type owl:Class ;
+                                                                                            rdfs:subClassOf :Application ;
+                                                                                            rdfs:comment "Semiconductor is an eletronic device which electrical conductivity value is between an insulator and a conductor. In this case, constitutes the battery management system."@en .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Semiconductor_Company
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Semiconductor_Company> rdf:type owl:Class ;
+                                                                                                    rdfs:subClassOf :Application ;
+                                                                                                    rdfs:comment "Company responsible for the manufacturing of semiconductors." .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#UART_Transceiver_Integrated_Circuit
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#UART_Transceiver_Integrated_Circuit> rdf:type owl:Class ;
+                                                                                                                  rdfs:subClassOf <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Semiconductor> .
+
+
+###  http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Vehicle
+<http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Vehicle> rdf:type owl:Class ;
+                                                                                      rdfs:subClassOf :Application ;
+                                                                                      rdfs:comment "A vehicle is a machine with wheels and an engine, used for transporting people or goods."@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Average_Driven_Km_Per_Year_Ecar
@@ -14173,7 +14377,8 @@ Each product measures the vertical component of a magnetic field and outputs a s
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Magnetic_Current_Sensor
 ecsel-dr-OOSMP:Magnetic_Current_Sensor rdf:type owl:Class ;
-                                       rdfs:subClassOf ecsel-dr-OOSMP:Sensor ;
+                                       rdfs:subClassOf <http://www.semanticweb.org/salgadoan/ontologies/2022/8/untitled-ontology-17#Current_Sensor> ,
+                                                       ecsel-dr-OOSMP:Sensor ;
                                        rdfs:comment "A high-precision current sensor for industrial applications based on Infoneon proven Hall technology. The core-less concept significantly reduces footprint compared with existing solutions. Infineon´s TLI4970 is an easy-to-use, fully digital solution that does not require external calibration or additional parts such as A/D converters, 0 pAmps or reference voltage. It thus significantly reduces overall implementation effort as well as PCB space and cost."@en ,
                                                     "A magnetic current sensor is a sensor which measures magnetic current."@en ;
                                        rdfs:label "Magnetic Current Sensor"@en ;
@@ -17582,8 +17787,8 @@ ecsel-dr-RAMI40:Work_Center rdf:type owl:NamedIndividual .
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Wind_Turbine> rdfs:label "Wind Turbine"@en .
 
 
-ecsel-dr-OOSMP:Completely_Lead_Free_Status skos:prefLabel "Completely Lead Free Status"@en ;
-                                           rdfs:label "Completely Lead Free Status"@en ;
+ecsel-dr-OOSMP:Completely_Lead_Free_Status rdfs:label "Completely Lead Free Status"@en ;
+                                           skos:prefLabel "Completely Lead Free Status"@en ;
                                            rdfs:comment "This status determines whether a semiconductor product is lead free or not."@en .
 
 

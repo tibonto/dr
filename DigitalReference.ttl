@@ -8780,12 +8780,14 @@ ecsel-dr-RAMI40:description rdf:type owl:DatatypeProperty ;
 ###  http://purl.org/dc/dcmitype/Software
 <http://purl.org/dc/dcmitype/Software> rdf:type owl:Class ;
                                        owl:equivalentClass ecsel-dr-AH:Software_System ;
+                                       rdfs:subClassOf :Cloud_Lobe ;
                                        rdfs:comment "The class Software represents a series of computer instructions that tell the computer how to operate and execute specific tasks."@en ;
                                        rdfs:label "Software"@en .
 
 
 ###  http://purl.org/dc/terms/Physical_Resource
 terms:Physical_Resource rdf:type owl:Class ;
+                        rdfs:subClassOf :Semiconductor_Production_Lobe ;
                         rdfs:comment "A material thing"@en ;
                         rdfs:label "Physical Resource"@en .
 
@@ -8798,18 +8800,21 @@ terms:Physical_Resource rdf:type owl:Class ;
 
 ###  http://purl.org/vocommons/voaf#Vocabulary
 <http://purl.org/vocommons/voaf#Vocabulary> rdf:type owl:Class ;
+                                            rdfs:subClassOf :Wired_Communication_Lobe ;
                                             rdfs:label "Vocabulary"@en .
 
 
 ###  http://www.ontologydesignpatterns.org/cp/owl/informationrealization.owl#Information_Object
 <http://www.ontologydesignpatterns.org/cp/owl/informationrealization.owl#Information_Object> rdf:type owl:Class ;
                                                                                              owl:equivalentClass <http://www.w3id.org/ecsel-dr-PWR#Information_Object> ;
+                                                                                             rdfs:subClassOf :Power_Lobe ;
                                                                                              rdfs:comment "Additional information to a process, like work schedule production plans, etc."@en ;
                                                                                              rdfs:label "Information Object"@en .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal
 <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal> rdf:type owl:Class ;
+                                                             rdfs:subClassOf :Process_Lobe ;
                                                              rdfs:comment "The class Goal represents the desired outcome of a Function"@en ;
                                                              rdfs:label "Goal"@en .
 
@@ -8830,6 +8835,7 @@ terms:Physical_Resource rdf:type owl:Class ;
 <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Customer> rdf:type owl:Class ;
                                                                                         owl:equivalentClass <http://www.w3id.org/ecsel-dr-OM#Customer> ,
                                                                                                             <http://www.w3id.org/ecsel-dr-SCP#Customer> ;
+                                                                                        rdfs:subClassOf :Supply_Chain_Lobe ;
                                                                                         rdfs:comment "Customer is a person or organization that places order or pay the invoice." .
 
 
@@ -8847,6 +8853,7 @@ terms:Physical_Resource rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Exchange_Rate_Specification
 <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Exchange_Rate_Specification> rdf:type owl:Class ;
+                                                                                                           rdfs:subClassOf :Supply_Chain_Lobe ;
                                                                                                            rdfs:comment "Exchange_Rate_Specification is structured value representing exchange rate." ;
                                                                                                            rdfs:label "Exchange Rate Specification"@en .
 
@@ -8891,11 +8898,13 @@ Incoterms 2020 is the ninth set of international contract terms published by the
 
 ###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Location
 <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Location> rdf:type owl:Class ;
+                                                                                        rdfs:subClassOf :Supply_Chain_Lobe ;
                                                                                         rdfs:comment "Location is where an action takes place." .
 
 
 ###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Offer
 <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Offer> rdf:type owl:Class ;
+                                                                                     rdfs:subClassOf :Supply_Chain_Lobe ;
                                                                                      rdfs:comment "An offer is to transfer some rights to an item or to provide a service." .
 
 
@@ -8908,11 +8917,13 @@ Incoterms 2020 is the ninth set of international contract terms published by the
 
 ###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Product
 <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Product> rdf:type owl:Class ;
+                                                                                       rdfs:subClassOf :Supply_Chain_Lobe ;
                                                                                        rdfs:comment "Product is the object, upon which the tranfer action is carried out." .
 
 
 ###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Seller
 <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Seller> rdf:type owl:Class ;
+                                                                                      rdfs:subClassOf :Supply_Chain_Lobe ;
                                                                                       rdfs:comment "Seller is an entity which offers the services/goods." .
 
 
@@ -8924,6 +8935,7 @@ Incoterms 2020 is the ninth set of international contract terms published by the
 
 ###  http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Transfer_Action
 <http://www.semanticweb.org/kohnenlaura/ontologies/2021/6/untitled-ontology-8#Transfer_Action> rdf:type owl:Class ;
+                                                                                               rdfs:subClassOf :Supply_Chain_Lobe ;
                                                                                                rdfs:comment "The act of transferring/moving objects from one place to another." .
 
 
@@ -10269,7 +10281,7 @@ time:Date_Time_Interval rdf:type owl:Class ;
 
 ###  http://www.w3.org/2006/time#Day_Of_Week
 time:Day_Of_Week rdf:type owl:Class ;
-                 rdfs:subClassOf owl:Thing ;
+                 rdfs:subClassOf :Time_Lobe ;
                  rdfs:comment "The day of week"@en ;
                  rdfs:label "Day Of Week"@en ;
                  skos:changeNote """Remove enumeration from definition, in order to allow other days to be used when required in other calendars. 
@@ -10479,7 +10491,8 @@ time:Interval rdf:type owl:Class ;
 
 
 ###  http://www.w3.org/2006/time#Month_Of_Year
-time:Month_Of_Year rdf:type owl:Class .
+time:Month_Of_Year rdf:type owl:Class ;
+                   rdfs:subClassOf :Time_Lobe .
 
 
 ###  http://www.w3.org/2006/time#Proper_Interval
@@ -10492,6 +10505,7 @@ time:Proper_Interval rdf:type owl:Class ;
 
 ###  http://www.w3.org/2006/time#TRS
 time:TRS rdf:type owl:Class ;
+         rdfs:subClassOf :Time_Lobe ;
          rdfs:comment """A temporal reference system, such as a temporal coordinate system (with an origin, direction, and scale), a calendar-clock combination, or a (possibly hierarchical) ordinal system. 
 
 This is a stub class, representing the set of all temporal reference systems."""@en ;
@@ -10504,6 +10518,7 @@ This is a stub class, representing the set of all temporal reference systems."""
 
 ###  http://www.w3.org/2006/time#Temporal_Duration
 time:Temporal_Duration rdf:type owl:Class ;
+                       rdfs:subClassOf :Time_Lobe ;
                        rdfs:comment "Time extent; duration of a time interval separate from its particular start position"@en ;
                        rdfs:label "Temporal Duration"@en ;
                        skos:definition "Time extent; duration of a time interval separate from its particular start position"@en .
@@ -10516,7 +10531,7 @@ time:Temporal_Entity rdf:type owl:Class ;
                                                          time:Interval
                                                        )
                                          ] ;
-                     rdfs:subClassOf owl:Thing ;
+                     rdfs:subClassOf :Time_Lobe ;
                      rdfs:comment "A temporal interval or instant." ,
                                   "A temporal interval or instant."@en ;
                      rdfs:isDefinedBy "http://www.w3.org/TR/owl-time/#time:TemporalEntity" ;
@@ -10527,7 +10542,8 @@ time:Temporal_Entity rdf:type owl:Class ;
 
 ###  http://www.w3.org/2006/time#Temporal_Position
 time:Temporal_Position rdf:type owl:Class ;
-                       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                       rdfs:subClassOf :Time_Lobe ,
+                                       [ rdf:type owl:Restriction ;
                                          owl:onProperty time:has_TRS ;
                                          owl:cardinality "1"^^xsd:nonNegativeInteger
                                        ] ;
@@ -10579,6 +10595,7 @@ time:Time_Position rdf:type owl:Class ;
 
 ###  http://www.w3.org/2006/time#Time_Zone
 time:Time_Zone rdf:type owl:Class ;
+               rdfs:subClassOf :Time_Lobe ;
                rdfs:comment """A Time Zone specifies the amount by which the local time is offset from UTC. 
 	A time zone is usually denoted geographically (e.g. Australian Eastern Daylight Time), with a constant value in a given region. 
 The region where it applies and the offset from UTC are specified by a locally recognised governing authority."""@en ;
@@ -10654,7 +10671,8 @@ It is deprecated in this edition of OWL-Time. """ ;
 
 ###  http://www.w3.org/TR/vocab-ssn-ext/Observation_Collection
 <http://www.w3.org/TR/vocab-ssn-ext/Observation_Collection> rdf:type owl:Class ;
-                                                            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                            rdfs:subClassOf :Sensor_Lobe ,
+                                                                            [ rdf:type owl:Restriction ;
                                                                               owl:onProperty <http://www.w3.org/TR/vocab-ssn-ext/has_member> ;
                                                                               owl:minCardinality "1"^^xsd:nonNegativeInteger
                                                                             ] ,
@@ -10690,7 +10708,8 @@ It is deprecated in this edition of OWL-Time. """ ;
 
 ###  http://www.w3.org/ns/org#Organization
 org:Organization rdf:type owl:Class ;
-                 owl:equivalentClass ecsel-dr-PROD:Organization ;
+                 owl:equivalentClass :Organization ;
+                 rdfs:subClassOf ecsel-dr-PROD:Organization ;
                  rdfs:comment "Represents a collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organizations are often decomposed into hierarchical structures."@en ;
                  rdfs:label "Organization"@en ;
                  skos:prefLabel "Organization"@en .
@@ -10698,6 +10717,7 @@ org:Organization rdf:type owl:Class ;
 
 ###  http://www.w3.org/ns/org#Organizational_Unit
 org:Organizational_Unit rdf:type owl:Class ;
+                        rdfs:subClassOf ecsel-dr-PROD:Organization ;
                         rdfs:comment "An Organization such as a department or support unit which is part of some larger Organization and only has full recognition within the context of that Organization. In particular the unit would not be regarded as a legal entity in its own right."@en ,
                                      "Usage: Units can be large and complex containing other Units."@en ;
                         rdfs:label "Organizational Unit"@en ;
@@ -10722,7 +10742,8 @@ org:Organizational_Unit rdf:type owl:Class ;
 
 ###  http://www.w3.org/ns/sosa/Actuation
 <http://www.w3.org/ns/sosa/Actuation> rdf:type owl:Class ;
-                                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      rdfs:subClassOf :Sensor_Lobe ,
+                                                      [ rdf:type owl:Restriction ;
                                                         owl:onProperty <http://www.w3.org/ns/sosa/acts_on_property> ;
                                                         owl:allValuesFrom <http://www.w3.org/ns/sosa/Actuatable_Property>
                                                       ] ,
@@ -10793,7 +10814,8 @@ org:Organizational_Unit rdf:type owl:Class ;
 
 ###  http://www.w3.org/ns/sosa/Feature_Of_Interest
 <http://www.w3.org/ns/sosa/Feature_Of_Interest> rdf:type owl:Class ;
-                                                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                rdfs:subClassOf :Sensor_Lobe ,
+                                                                [ rdf:type owl:Restriction ;
                                                                   owl:onProperty <http://www.w3.org/ns/sosa/has_sample> ;
                                                                   owl:allValuesFrom <http://www.w3.org/ns/sosa/Sample>
                                                                 ] ,
@@ -10838,7 +10860,8 @@ org:Organizational_Unit rdf:type owl:Class ;
 
 ###  http://www.w3.org/ns/sosa/Observation
 <http://www.w3.org/ns/sosa/Observation> rdf:type owl:Class ;
-                                        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                        rdfs:subClassOf :Sensor_Lobe ,
+                                                        [ rdf:type owl:Restriction ;
                                                           owl:onProperty <http://www.w3.org/ns/sosa/has_feature_of_interest> ;
                                                           owl:allValuesFrom <http://www.w3.org/ns/sosa/Feature_Of_Interest>
                                                         ] ,
@@ -10899,7 +10922,8 @@ org:Organizational_Unit rdf:type owl:Class ;
 
 ###  http://www.w3.org/ns/sosa/Platform
 <http://www.w3.org/ns/sosa/Platform> rdf:type owl:Class ;
-                                     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                     rdfs:subClassOf :Sensor_Lobe ,
+                                                     [ rdf:type owl:Restriction ;
                                                        owl:onProperty <http://www.w3.org/ns/sosa/hosts> ;
                                                        owl:allValuesFrom <http://www.w3.org/ns/ssn/System>
                                                      ] ,
@@ -10916,7 +10940,8 @@ org:Organizational_Unit rdf:type owl:Class ;
 
 ###  http://www.w3.org/ns/sosa/Procedure
 <http://www.w3.org/ns/sosa/Procedure> rdf:type owl:Class ;
-                                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      rdfs:subClassOf :Sensor_Lobe ,
+                                                      [ rdf:type owl:Restriction ;
                                                         owl:onProperty <http://www.w3.org/ns/ssn/has_input> ;
                                                         owl:allValuesFrom <http://www.w3.org/ns/ssn/Input>
                                                       ] ,
@@ -10938,7 +10963,8 @@ org:Organizational_Unit rdf:type owl:Class ;
 
 ###  http://www.w3.org/ns/sosa/Result
 <http://www.w3.org/ns/sosa/Result> rdf:type owl:Class ;
-                                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                   rdfs:subClassOf :Sensor_Lobe ,
+                                                   [ rdf:type owl:Restriction ;
                                                      owl:onProperty <http://www.w3.org/ns/sosa/is_result_of> ;
                                                      owl:minCardinality "1"^^xsd:nonNegativeInteger
                                                    ] ;
@@ -11003,7 +11029,8 @@ A Sample is intended to sample some FatureOfInterest, so there is an expectation
 
 ###  http://www.w3.org/ns/sosa/Sampling
 <http://www.w3.org/ns/sosa/Sampling> rdf:type owl:Class ;
-                                     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                     rdfs:subClassOf :Sensor_Lobe ,
+                                                     [ rdf:type owl:Restriction ;
                                                        owl:onProperty <http://www.w3.org/ns/sosa/has_feature_of_interest> ;
                                                        owl:allValuesFrom <http://www.w3.org/ns/sosa/Feature_Of_Interest>
                                                      ] ,
@@ -11082,6 +11109,7 @@ A Sample is intended to sample some FatureOfInterest, so there is an expectation
 
 ###  http://www.w3.org/ns/sosa/sampling/Relationship_Nature
 <http://www.w3.org/ns/sosa/sampling/Relationship_Nature> rdf:type owl:Class ;
+                                                         rdfs:subClassOf :Sensor_Lobe ;
                                                          rdfs:comment "Nature of a relationship (between samples) - Members of this class indicate the nature of a relationship between two samples."@en ;
                                                          rdfs:isDefinedBy "http://www.w3.org/ns/sosa/sampling/" ;
                                                          rdfs:label "Relationship Nature"@en .
@@ -11089,6 +11117,7 @@ A Sample is intended to sample some FatureOfInterest, so there is an expectation
 
 ###  http://www.w3.org/ns/sosa/sampling/Sample_Relationship
 <http://www.w3.org/ns/sosa/sampling/Sample_Relationship> rdf:type owl:Class ;
+                                                         rdfs:subClassOf :Sensor_Lobe ;
                                                          rdfs:comment "Members of this class represent a relationship between a sample and another."@en ;
                                                          rdfs:isDefinedBy "http://www.w3.org/ns/sosa/sampling/" ;
                                                          rdfs:label "Sample Relationship"@en .
@@ -11105,7 +11134,8 @@ A Sample is intended to sample some FatureOfInterest, so there is an expectation
 
 ###  http://www.w3.org/ns/ssn/Deployment
 <http://www.w3.org/ns/ssn/Deployment> rdf:type owl:Class ;
-                                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      rdfs:subClassOf :Sensor_Lobe ,
+                                                      [ rdf:type owl:Restriction ;
                                                         owl:onProperty <http://www.w3.org/ns/ssn/deployed_on_platform> ;
                                                         owl:allValuesFrom <http://www.w3.org/ns/sosa/Platform>
                                                       ] ,
@@ -11126,7 +11156,8 @@ A Sample is intended to sample some FatureOfInterest, so there is an expectation
 
 ###  http://www.w3.org/ns/ssn/Input
 <http://www.w3.org/ns/ssn/Input> rdf:type owl:Class ;
-                                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 rdfs:subClassOf :Sensor_Lobe ,
+                                                 [ rdf:type owl:Restriction ;
                                                    owl:onProperty [ owl:inverseOf <http://www.w3.org/ns/ssn/has_input>
                                                                   ] ;
                                                    owl:allValuesFrom <http://www.w3.org/ns/sosa/Procedure>
@@ -11144,7 +11175,8 @@ A Sample is intended to sample some FatureOfInterest, so there is an expectation
 
 ###  http://www.w3.org/ns/ssn/Output
 <http://www.w3.org/ns/ssn/Output> rdf:type owl:Class ;
-                                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  rdfs:subClassOf :Sensor_Lobe ,
+                                                  [ rdf:type owl:Restriction ;
                                                     owl:onProperty [ owl:inverseOf <http://www.w3.org/ns/ssn/has_output>
                                                                    ] ;
                                                     owl:allValuesFrom <http://www.w3.org/ns/sosa/Procedure>
@@ -11169,7 +11201,8 @@ A Sample is intended to sample some FatureOfInterest, so there is an expectation
 
 ###  http://www.w3.org/ns/ssn/Property
 <http://www.w3.org/ns/ssn/Property> rdf:type owl:Class ;
-                                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    rdfs:subClassOf :Sensor_Lobe ,
+                                                    [ rdf:type owl:Restriction ;
                                                       owl:onProperty <http://www.w3.org/ns/ssn/is_property_of> ;
                                                       owl:allValuesFrom <http://www.w3.org/ns/sosa/Feature_Of_Interest>
                                                     ] ;
@@ -11181,7 +11214,8 @@ A Sample is intended to sample some FatureOfInterest, so there is an expectation
 
 ###  http://www.w3.org/ns/ssn/Stimulus
 <http://www.w3.org/ns/ssn/Stimulus> rdf:type owl:Class ;
-                                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    rdfs:subClassOf :Sensor_Lobe ,
+                                                    [ rdf:type owl:Restriction ;
                                                       owl:onProperty <http://www.w3.org/ns/ssn/is_proxy_for> ;
                                                       owl:allValuesFrom <http://www.w3.org/ns/sosa/Observable_Property>
                                                     ] ,
@@ -11203,7 +11237,8 @@ A Sample is intended to sample some FatureOfInterest, so there is an expectation
 
 ###  http://www.w3.org/ns/ssn/System
 <http://www.w3.org/ns/ssn/System> rdf:type owl:Class ;
-                                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  rdfs:subClassOf :Sensor_Lobe ,
+                                                  [ rdf:type owl:Restriction ;
                                                     owl:onProperty <http://www.w3.org/ns/sosa/is_hosted_by> ;
                                                     owl:allValuesFrom <http://www.w3.org/ns/sosa/Platform>
                                                   ] ,
@@ -11414,14 +11449,56 @@ In the absence of SurvivalProperties, simply describes the Conditions a System c
 
 ###  http://www.w3id.org/ecsel-dr#Application
 :Application rdf:type owl:Class ;
+             rdfs:subClassOf :Sustainability_Lobe ;
              rdfs:comment "A way in which something can be used for a particular purpose."@en ;
              rdfs:label "Application"@en .
 
 
+###  http://www.w3id.org/ecsel-dr#Cloud_Lobe
+:Cloud_Lobe rdf:type owl:Class ;
+            rdfs:comment """Cloud refers to a network of remote servers that store, manage, and process data and applications, providing on-demand access and scalable computing resources over the internet.
+
+The Cloud lobe of the Digital Reference ontology models AH Local Cloud, Communication Technology, Data Format and Model, Device, and Documentation Document.
+It also maps the topics of Information Model, Local Network, Method, SoA Property, Software and Software System, system Documentation and System of Systems.
+It represents the notion of  Service, Service Documentation, Service-Oriented Architecture and Architecture Protocols."""@en .
+
+
 ###  http://www.w3id.org/ecsel-dr#Geographical_Location
 :Geographical_Location rdf:type owl:Class ;
+                       rdfs:subClassOf ecsel-dr-PROD:Organization ;
                        rdfs:comment "Name of country or region" ;
                        rdfs:label "Geographical Location"@en .
+
+
+###  http://www.w3id.org/ecsel-dr#Organization
+:Organization rdf:type owl:Class ;
+              rdfs:subClassOf ecsel-dr-PROD:Organization .
+
+
+###  http://www.w3id.org/ecsel-dr#Power_Lobe
+:Power_Lobe rdf:type owl:Class ;
+            rdfs:comment """Power refers to the electrical energy consumed or dissipated by electronic devices or components during their operation, and is a crucial consideration for efficiency and performance optimization.
+
+The Power lobe models the Amplication Switching Device, Control Method, Device Configuration and Element, Document, Entity, and Gate Driver.
+It also represents the notions of Industrial Sector, Information Object, Operation Mode, Process, Process Input and Output.
+It maps the topics of Product, Resistance, SiC MOSFET, switcher, and Voltage."""@en .
+
+
+###  http://www.w3id.org/ecsel-dr#Process_Lobe
+:Process_Lobe rdf:type owl:Class ;
+              rdfs:comment "Lobe owner: Marta Bonik"@en ,
+                           """Process refers to a series of interconnected and sequential actions, steps, or operations designed to achieve a specific outcome or goal within a system or organization.
+
+The Process lobe of the Digital Reference ontology represents the topics of Agent, Business Process Flow, Function and Function Object. 
+It also maps the notions of Goal, Input, Model and Model Element, Output, Screen, and Value-added Chain Diagram."""@en .
+
+
+###  http://www.w3id.org/ecsel-dr#Product_Lobe
+:Product_Lobe rdf:type owl:Class ;
+              rdfs:comment """A product is a tangible or intangible item or service that is created, manufactured, or offered to fulfill a need or desire of customers.
+
+The Product Lobe maps the notions of Customer Part Number Specification, Design Target, Integration Level, Main Power Device Type, Motor Type and Organization.
+It also models Packing Type, Planning Element, Price Indication, Product, Qualification, Semiconductor Product Status, Solution, and Topology."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr#Public_Holiday
@@ -11430,6 +11507,77 @@ In the absence of SurvivalProperties, simply describes the Conditions a System c
                                 <http://www.w3id.org/ecsel-dr-SO#Event_Calendar> ;
                 rdfs:comment "Special period of time when some processes may not take place or some constrains may occure" ;
                 rdfs:label "Public Holiday"@en .
+
+
+###  http://www.w3id.org/ecsel-dr#Semiconductor_Development_Lobe
+:Semiconductor_Development_Lobe rdf:type owl:Class ;
+                                rdfs:comment """Semiconductor development refers to the process of researching, designing, and creating semiconductor devices to meet technological avancements and inductry demands.
+
+The Semiconductor Development lobe of the Digital Reference models the Current Work In Progress, Cycle Time and Delivery Commitment, EPA, Equipment and Equipent Group, and Event Calendar.
+It reprensents the notions of Mask, Material Transfer Matrix, Operation, Operator, Owner, Planning Work Center, Plant,  and Process.
+It also maps the topics of Product Level, Target Revenue and Service Level, Technology, Time Constraints, Tool, and Workshop."""@en .
+
+
+###  http://www.w3id.org/ecsel-dr#Semiconductor_Production_Lobe
+:Semiconductor_Production_Lobe rdf:type owl:Class ;
+                               rdfs:comment """Semiconductor production refers to the manufacturing process of creating integrated circuits and other semiconductor devices by deposing, patterning, and doping various materials on a substrate to form electronic components.
+
+The Semiconductor Production lobe represents the notions of Bottleneck, Capacity, Demand Snapshot, Fabrication, Furnace Process, Lot, Lot Event and Size.
+It also maps the topics of Physical Resource, Priority Class, Product, Production Request, Purge, Release Plan, and Robot.
+It models Route, Shift, Simulation Part and Route, Supply Chain, Target Costs and Work In Progress Station."""@en .
+
+
+###  http://www.w3id.org/ecsel-dr#Sensor_Lobe
+:Sensor_Lobe rdf:type owl:Class ;
+             rdfs:comment """A sensor is a device or component that detects and measures physical, chemical or environmental parameters and converts them into electrical signals for futher analysis or use.
+
+The Sensor lobes models the notion of a System and its Deployment.
+It maps the topics of Actuation, Feature of Interest, Input, Mounting Style, Observation and Observation Collection, and  Output.
+It also represents Platform, Procedure, Property, Relationship Nature, Result, Sample Relationship, Sampling, Sensing Type, and Stimulus."""@en .
+
+
+###  http://www.w3id.org/ecsel-dr#Supply_Chain_Lobe
+:Supply_Chain_Lobe rdf:type owl:Class ;
+                   rdfs:comment "Lobe owner: Hans Ehm"@en ,
+                                """Supply chain refers to a network of interconnected organizations, activities, resources, and technologies involved in the production, distribution, and delivery of goods or services from the source to end consumer.
+
+The Supply Chain lobe models the Aggregated Capacity Group.
+
+ It represents the notions of Action, Allocated Available To Promise, Allocation, Available To Promise, Confirmation, Capacity Bottleneck, Contact Person Data, Location, Marketing Demand, nEWs, Offer, Open Oder and Open Order Book.
+
+It depicts the Order and its Change Request, Confirmation, Line Item, Reschedule, Schedule Line.
+
+It represents the General Customers, the notion of Customer and its Data, Logistics Management Representative, Plant, Plant Data.
+It also maps the topics of Prioritized Demand and Orders, Products, Promise, Sales Supplier, Seller, Supplier and its Data, Supply, Supply Demand Match and Picture, Target Allocation, Transfer Action, and User Action."""@en .
+
+
+###  http://www.w3id.org/ecsel-dr#Sustainability_Lobe
+:Sustainability_Lobe rdf:type owl:Class ;
+                     rdfs:comment """Sustainability refers to the practice of meeting present needs without compromising the ability of future generations to meet their own needs, balancing environmental, social, and economic considerations.
+
+This lobes models Application."""@en .
+
+
+###  http://www.w3id.org/ecsel-dr#System_Lobe
+:System_Lobe rdf:type owl:Class ;
+             rdfs:comment """A system is a collection of interconnected components or elements that work together to perform a specific function or achieve a particular objective.
+
+This lobe of the Digital Reference models the I 4.0 Component, the Asset it represents, the Admin Shell and its differents Views, Standard and Standard Organization. It also represents the notions of Date, Dimension, Measures, Semantic Expresison and Version."""@en .
+
+
+###  http://www.w3id.org/ecsel-dr#Time_Lobe
+:Time_Lobe rdf:type owl:Class ;
+           rdfs:comment "Lobe owner: Philipp Ulrich"@en ,
+                        """Time refers to a measurable dimension in which events occur sequentially and can be used to qualify the duration between occurences.
+
+This lobe of the digital reference represents the topics of Temporal Duration, Position and Reference Position, the Time Zone, Months and Days of the week."""@en .
+
+
+###  http://www.w3id.org/ecsel-dr#Wired_Communication_Lobe
+:Wired_Communication_Lobe rdf:type owl:Class ;
+                          rdfs:comment """Wired communication refers to the transmission of data or signals through physical connections such as cables or wires.
+
+This lobe represents the units of technical data transfer, product lifecycle phase, standard unit and vocabulary. It models Fieldbus and its 7 OSI layers, ISA-95, IT system and vendor, the service-oriented architecture and the standardization organisation."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Application_Servcice_IDD
@@ -11664,6 +11812,7 @@ ecsel-dr-AH:AH_Inter_Cloud_Negotiations_Service_SD rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Local_Cloud
 ecsel-dr-AH:AH_Local_Cloud rdf:type owl:Class ;
+                           rdfs:subClassOf :Cloud_Lobe ;
                            rdfs:label "AH Local Cloud"@en .
 
 
@@ -11929,6 +12078,7 @@ ecsel-dr-AH:Communication_Security_Mechanism rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AH#Communication_Technology
 ecsel-dr-AH:Communication_Technology rdf:type owl:Class ;
+                                     rdfs:subClassOf :Cloud_Lobe ;
                                      rdfs:comment "Communications technology, also known as information technology, refers to all equipment and programs that are used to process and communicate information."@en ;
                                      rdfs:label "Communication Technology"@en .
 
@@ -11943,6 +12093,7 @@ The concept constrained device was introduced in the context of the Internet of 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Data_Format
 ecsel-dr-AH:Data_Format rdf:type owl:Class ;
+                        rdfs:subClassOf :Cloud_Lobe ;
                         rdfs:comment "Data format in information technology may refer to: Data type, constraint placed upon the interpretation of data in a type system."@en ;
                         rdfs:label "Data Format"@en .
 
@@ -11956,6 +12107,7 @@ ecsel-dr-AH:Data_Link_Media_Access_Technology rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AH#Data_Model
 ecsel-dr-AH:Data_Model rdf:type owl:Class ;
+                       rdfs:subClassOf :Cloud_Lobe ;
                        rdfs:comment "A data model is an abstract model that organizes elements of data and standardizes how they relate to one another and to the properties of real-world entities."@en ;
                        rdfs:label "Data Model"@en .
 
@@ -11964,6 +12116,7 @@ ecsel-dr-AH:Data_Model rdf:type owl:Class ;
 ecsel-dr-AH:Device rdf:type owl:Class ;
                    owl:equivalentClass ecsel-dr-AT:Device ,
                                        <http://www.w3id.org/ecsel-dr-PWR#Device> ;
+                   rdfs:subClassOf :Cloud_Lobe ;
                    rdfs:comment """A device in the context of Arrowhead framework is a piece of equipment, machine, hardware, etc. with computational, memory, and communication capabilities which hosts one or several Arrowhead Framework systems. 
 (Source: Arrowhead)"""@en ,
                                 "A device in the context of Service-oriented architectures (that is, in the context of Information Technology (IT) and Automation / Operations Technology (OT)) is an technical artefact that fulfills the basic definition of a \"computer\". That is, a device must be able to host (run) software systems. For this, it needs at least a processing unit (processor), a memory and a communication interface, which can be either wired or wireless."@en ;
@@ -11972,6 +12125,7 @@ ecsel-dr-AH:Device rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AH#Documentation_Document
 ecsel-dr-AH:Documentation_Document rdf:type owl:Class ;
+                                   rdfs:subClassOf :Cloud_Lobe ;
                                    rdfs:comment "A document that documents something"@en ;
                                    rdfs:label "Documentation Document"@en .
 
@@ -12007,6 +12161,7 @@ ecsel-dr-AH:Industrial_Personal_Computer rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AH#Information_Model
 ecsel-dr-AH:Information_Model rdf:type owl:Class ;
+                              rdfs:subClassOf :Cloud_Lobe ;
                               rdfs:comment "An information model in software engineering is a representation of concepts and the relationships, constraints, rules, and operations to specify data semantics for a chosen domain of discourse. Typically it specifies relations between kinds of things, but may also include relations with individual things."@en ;
                               rdfs:label "Information Model"@en .
 
@@ -12020,12 +12175,14 @@ ecsel-dr-AH:Interface_Design_Description_IDD rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AH#Local_Network
 ecsel-dr-AH:Local_Network rdf:type owl:Class ;
+                          rdfs:subClassOf :Cloud_Lobe ;
                           rdfs:comment "A local area network is a computer network that interconnects computers within a limited area"@en ;
                           rdfs:label "Local Network"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Method
 ecsel-dr-AH:Method rdf:type owl:Class ;
+                   rdfs:subClassOf :Cloud_Lobe ;
                    rdfs:comment "Method of a service: method that is provided by a service within a SoA."@en ;
                    rdfs:label "Method"@en .
 
@@ -12077,6 +12234,7 @@ ecsel-dr-AH:Sensor_Device rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AH#Service
 ecsel-dr-AH:Service rdf:type owl:Class ;
+                    rdfs:subClassOf :Cloud_Lobe ;
                     owl:disjointWith ecsel-dr-AH:Software_System ;
                     rdfs:comment """In the context of the Arrowhead Framework a Service is the information exchanged from a providing system to a consuming system.
 • is based on a number of service orientation principles derived from high level objectives and properties of the Arrowhead framework 
@@ -12100,6 +12258,7 @@ ecsel-dr-AH:Service_Description_SD rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AH#Service_Documentation
 ecsel-dr-AH:Service_Documentation rdf:type owl:Class ;
+                                  rdfs:subClassOf :Cloud_Lobe ;
                                   rdfs:comment "Service documentation is any communicable material that is used to describe, explain or instruct regarding some attributes of a service"@en ;
                                   rdfs:label "Service Documentation"@en .
 
@@ -12107,6 +12266,7 @@ ecsel-dr-AH:Service_Documentation rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#Service_Oriented_Architecture
 ecsel-dr-AH:Service_Oriented_Architecture rdf:type owl:Class ;
                                           owl:equivalentClass ecsel-dr-AT:Service_Oriented_Architecture_Protocols ;
+                                          rdfs:subClassOf :Cloud_Lobe ;
                                           rdfs:comment "Service-oriented architecture (SoA) is a style of software design where services are provided to the other components by application components, through a communication protocol over a network."@en ;
                                           rdfs:label "Service-Oriented Architecture"@en .
 
@@ -12120,11 +12280,13 @@ ecsel-dr-AH:Smartphone rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AH#SoA_Property
 ecsel-dr-AH:SoA_Property rdf:type owl:Class ;
+                         rdfs:subClassOf :Cloud_Lobe ;
                          rdfs:label "SoA Property"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#Software_System
 ecsel-dr-AH:Software_System rdf:type owl:Class ;
+                            rdfs:subClassOf :Cloud_Lobe ;
                             rdfs:comment "System software is software designed to provide a platform for other software."@en ;
                             rdfs:label "Software System"@en .
 
@@ -12150,12 +12312,14 @@ ecsel-dr-AH:System_Design_Description_Sy_SDD rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AH#System_Documentation
 ecsel-dr-AH:System_Documentation rdf:type owl:Class ;
+                                 rdfs:subClassOf :Cloud_Lobe ;
                                  rdfs:comment "System documentation is any communicable material that is used to describe, explain or instruct regarding some attributes of a system"@en ;
                                  rdfs:label "System Documentation"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AH#System_Of_Systems
 ecsel-dr-AH:System_Of_Systems rdf:type owl:Class ;
+                              rdfs:subClassOf :Cloud_Lobe ;
                               rdfs:comment "System of systems is a collection of task-oriented or dedicated systems that pool their resources and capabilities together to create a new, more complex system which offers more functionality and performance than simply the sum of the constituent systems."@en ;
                               rdfs:label "System Of Systems"@en .
 
@@ -12585,6 +12749,7 @@ ecsel-dr-AT:Data_Language_XML_Based rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#Data_Transmission_Unit
 ecsel-dr-AT:Data_Transmission_Unit rdf:type owl:Class ;
+                                   rdfs:subClassOf :Wired_Communication_Lobe ;
                                    rdfs:comment "Units of technical data transfer. Shows the different data groupings at the  ISO/OSI communication layers, e.g. bits on the physical link layer and packets at the network layer."@en ;
                                    rdfs:label "Data Transmission Unit"@en .
 
@@ -12599,6 +12764,7 @@ ecsel-dr-AT:Database_System rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#Device
 ecsel-dr-AT:Device rdf:type owl:Class ;
                    owl:equivalentClass <http://www.w3id.org/ecsel-dr-PWR#Device> ;
+                   rdfs:subClassOf :Wired_Communication_Lobe ;
                    rdfs:label "Device"@en .
 
 
@@ -12739,11 +12905,13 @@ ecsel-dr-AT:Factory_Simulation_System rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#Fieldbus_Car_Airplane
 ecsel-dr-AT:Fieldbus_Car_Airplane rdf:type owl:Class ;
+                                  rdfs:subClassOf :Wired_Communication_Lobe ;
                                   rdfs:label "Fieldbus Car Airplane"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Fieldbus_Communication_Profile_Family
 ecsel-dr-AT:Fieldbus_Communication_Profile_Family rdf:type owl:Class ;
+                                                  rdfs:subClassOf :Wired_Communication_Lobe ;
                                                   rdfs:comment """A field bus is a bus system that connects field devices such as sensors and actuators in a plant for the purpose of communication with an automation device. If several communication participants send their messages over the same line, then it must be specified who (identifier) says what (measured value, command) and when (initiative). There are standardized protocols for this.
 The first generation of fieldbus technology was developed in the 1980s to replace the parallel wiring of binary signals and analog signal transmission that had been common until then with digital transmission technology. Today, many different fieldbus systems with different characteristics are established on the market. Since 1999, fieldbuses have been standardized worldwide in the IEC 61158 standard (Digital data communication for measurement and control - Fieldbus for use in industrial control systems) and by the IEC 61784 standard.    
 The second generation of fieldbus technology is based on real-time Ethernet (Industrial Ethernet).
@@ -12918,17 +13086,20 @@ ecsel-dr-AT:ISA_95_Comm_4_4 rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#ISA_95_Communication
 ecsel-dr-AT:ISA_95_Communication rdf:type owl:Class ;
+                                 rdfs:subClassOf :Wired_Communication_Lobe ;
                                  rdfs:comment "ISA-95 is an international standard from the International Society of Automation for developing an automated interface between enterprise and control systems."@en ;
                                  rdfs:label "ISA-95 Communication"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#ISA_95_Cross_Layer_Communication
 ecsel-dr-AT:ISA_95_Cross_Layer_Communication rdf:type owl:Class ;
+                                             rdfs:subClassOf :Wired_Communication_Lobe ;
                                              rdfs:label "ISA-95 Cross Layer Communication"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#ISA_95_Layer
 ecsel-dr-AT:ISA_95_Layer rdf:type owl:Class ;
+                         rdfs:subClassOf :Wired_Communication_Lobe ;
                          rdfs:label "ISA-95 Layer"@en .
 
 
@@ -12985,12 +13156,14 @@ ecsel-dr-AT:ISO_Standard rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#IT_System
 ecsel-dr-AT:IT_System rdf:type owl:Class ;
+                      rdfs:subClassOf :Wired_Communication_Lobe ;
                       rdfs:comment "An information system is a formal, sociotechnical, organizational system designed to collect, process, store, and distribute information."@en ;
                       rdfs:label "IT System"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#IT_Vendor
 ecsel-dr-AT:IT_Vendor rdf:type owl:Class ;
+                      rdfs:subClassOf :Wired_Communication_Lobe ;
                       rdfs:comment "A provider of IT systems and services"@en ;
                       rdfs:label "IT Vendor"@en .
 
@@ -13177,6 +13350,7 @@ ecsel-dr-AT:N3_TURTLE rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#Network_Layer_Model
 ecsel-dr-AT:Network_Layer_Model rdf:type owl:Class ;
+                                rdfs:subClassOf :Wired_Communication_Lobe ;
                                 rdfs:comment "Conceptual models that characterize and standardize communication functions in layers"@en ;
                                 rdfs:label "Network Layer Model"@en .
 
@@ -13242,12 +13416,14 @@ ecsel-dr-AT:OPC_UA_Binary_Protocol rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#OSI_1_2_Net_Access_Technology
 ecsel-dr-AT:OSI_1_2_Net_Access_Technology rdf:type owl:Class ;
+                                          rdfs:subClassOf :Wired_Communication_Lobe ;
                                           rdfs:comment "A net access technology provides the physical link layer and the data link layer  of the OSI layer model (i.e. OSI layer 1 and 2)."@en ;
                                           rdfs:label "OSI 1 2 Net Access Technology"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#OSI_3_4_Network_Technology
 ecsel-dr-AT:OSI_3_4_Network_Technology rdf:type owl:Class ;
+                                       rdfs:subClassOf :Wired_Communication_Lobe ;
                                        rdfs:comment "Technologie, die die mittleren Schichten des OSI-Schichtenmodells abdeckt, z.B. TCP/IP, ZigBee, UDP usw."@de ,
                                                     "Technology that covers the middle layers of the OSI layer models, e.g. TCP/IP, ZigBee, UDP, etc."@en ;
                                        rdfs:label "OSI 3 4 Network Technology"@en .
@@ -13255,6 +13431,7 @@ ecsel-dr-AT:OSI_3_4_Network_Technology rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#OSI_5_7_Application_Protocol
 ecsel-dr-AT:OSI_5_7_Application_Protocol rdf:type owl:Class ;
+                                         rdfs:subClassOf :Wired_Communication_Lobe ;
                                          rdfs:comment "Is the OSI layer closest to the end user, which means both the OSI application layer and the user interact directly with the software application."@en ;
                                          rdfs:label "OSI 5 7 Application Protocol"@en .
 
@@ -13290,11 +13467,13 @@ ecsel-dr-AT:OSI_AL_4_Application_Layer rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#OSI_Aggregated_Layer
 ecsel-dr-AT:OSI_Aggregated_Layer rdf:type owl:Class ;
+                                 rdfs:subClassOf :Wired_Communication_Lobe ;
                                  rdfs:label "OSI Aggregated Layer"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#OSI_Detailed_Layer
 ecsel-dr-AT:OSI_Detailed_Layer rdf:type owl:Class ;
+                               rdfs:subClassOf :Wired_Communication_Lobe ;
                                rdfs:label "OSI Detailed Layer"@en .
 
 
@@ -13354,6 +13533,7 @@ ecsel-dr-AT:OSI_Layer_Model_Detailed rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#OSI_Transport_Protocol
 ecsel-dr-AT:OSI_Transport_Protocol rdf:type owl:Class ;
+                                   rdfs:subClassOf :Wired_Communication_Lobe ;
                                    rdfs:label "OSI Transport Protocol"@en .
 
 
@@ -13464,6 +13644,7 @@ ecsel-dr-AT:Product_Data_Management_Module rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#Product_Lifecycle_Phase
 ecsel-dr-AT:Product_Lifecycle_Phase rdf:type owl:Class ;
+                                    rdfs:subClassOf :Wired_Communication_Lobe ;
                                     rdfs:label "Product Lifecycle Phase"@en .
 
 
@@ -13713,11 +13894,13 @@ ecsel-dr-AT:Service_Data_Language rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-AT#Service_Oriented_Architecture_Function_Pattern
 ecsel-dr-AT:Service_Oriented_Architecture_Function_Pattern rdf:type owl:Class ;
+                                                           rdfs:subClassOf :Wired_Communication_Lobe ;
                                                            rdfs:label "Service-Oriented Architecture Function Pattern"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Service_Oriented_Architecture_Implementation
 ecsel-dr-AT:Service_Oriented_Architecture_Implementation rdf:type owl:Class ;
+                                                         rdfs:subClassOf :Wired_Communication_Lobe ;
                                                          rdfs:comment """Implementations or Realizations of Service-oriented Architectures.
 
 This class contains existing implementations, i.e. software systems, which are designed as Service-oriented Architectures. That is, these systems realize service-oriented communication between their participants / components. (2018-08-04 HB)."""@en ;
@@ -13726,6 +13909,7 @@ This class contains existing implementations, i.e. software systems, which are d
 
 ###  http://www.w3id.org/ecsel-dr-AT#Service_Oriented_Architecture_Protocols
 ecsel-dr-AT:Service_Oriented_Architecture_Protocols rdf:type owl:Class ;
+                                                    rdfs:subClassOf :Wired_Communication_Lobe ;
                                                     rdfs:comment "Is a style of software design where services are provided to the other components by application components, through a communication protocol over a network."@en ;
                                                     rdfs:label "Service-Oriented Architecture Protocols"@en .
 
@@ -13784,12 +13968,14 @@ ecsel-dr-AT:SoA_Subscriber rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#Standard
 ecsel-dr-AT:Standard rdf:type owl:Class ;
                      owl:equivalentClass ecsel-dr-RAMI40:Standard ;
+                     rdfs:subClassOf :Wired_Communication_Lobe ;
                      rdfs:comment "An official rule, unit of measurement, or way of operating that is used in a particular area of manufacturing or services"@en ;
                      rdfs:label "Standard"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Standardization_Organization
 ecsel-dr-AT:Standardization_Organization rdf:type owl:Class ;
+                                         rdfs:subClassOf :Wired_Communication_Lobe ;
                                          rdfs:comment "Is an organization whose primary activities are developing, coordinating, promulgating, revising, amending, reissuing, interpreting, or otherwise producing technical standards that are intended to address the needs of a group of affected adopters."@en ;
                                          rdfs:label "Standardization Organization"@en .
 
@@ -14089,90 +14275,106 @@ ecsel-dr-AT:Zig_Bee_RF4CE rdf:type owl:Class ;
                                                                            <http://www.w3id.org/ecsel-dr-OM#Reconfirm>
                                                                          )
                                                              ] ;
+                                         rdfs:subClassOf :Supply_Chain_Lobe ;
                                          rdfs:comment "The process of doing something"@en ;
                                          rdfs:label "Action"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Allocation
 <http://www.w3id.org/ecsel-dr-OM#Allocation> rdf:type owl:Class ;
+                                             rdfs:subClassOf :Supply_Chain_Lobe ;
                                              rdfs:comment "Allocation is a process used in order management in times when demand exceeds available supply."@en ;
                                              rdfs:label "Allocation"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Contact_Person_Data
 <http://www.w3id.org/ecsel-dr-OM#Contact_Person_Data> rdf:type owl:Class ;
+                                                      rdfs:subClassOf :Supply_Chain_Lobe ;
                                                       rdfs:label "Contact Person Data" .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Customer
 <http://www.w3id.org/ecsel-dr-OM#Customer> rdf:type owl:Class ;
                                            owl:equivalentClass <http://www.w3id.org/ecsel-dr-SCP#Customer> ;
+                                           rdfs:subClassOf :Supply_Chain_Lobe ;
                                            rdfs:comment "A customer is an business that purchases another company's goods or services."@en ;
                                            rdfs:label "Customer"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Customer_Data
 <http://www.w3id.org/ecsel-dr-OM#Customer_Data> rdf:type owl:Class ;
+                                                rdfs:subClassOf :Supply_Chain_Lobe ;
                                                 rdfs:label "Customer Data"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Customer_Plant
 <http://www.w3id.org/ecsel-dr-OM#Customer_Plant> rdf:type owl:Class ;
+                                                 rdfs:subClassOf :Supply_Chain_Lobe ;
                                                  rdfs:label "Customer Plant"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Customer_Plant_Data
 <http://www.w3id.org/ecsel-dr-OM#Customer_Plant_Data> rdf:type owl:Class ;
+                                                      rdfs:subClassOf :Supply_Chain_Lobe ;
                                                       rdfs:label "Customer Plant Data"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Demand_Fulfillement
 <http://www.w3id.org/ecsel-dr-OM#Demand_Fulfillement> rdf:type owl:Class ;
+                                                      rdfs:subClassOf :Supply_Chain_Lobe ;
                                                       rdfs:comment "The process of meeting a customer’s demand for product or services by fulfilling their request."@en ;
                                                       rdfs:label "Demand Fulfillement"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Open_Order
 <http://www.w3id.org/ecsel-dr-OM#Open_Order> rdf:type owl:Class ;
+                                             rdfs:subClassOf :Supply_Chain_Lobe ;
                                              rdfs:label "Open Order"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Open_Order_Book
 <http://www.w3id.org/ecsel-dr-OM#Open_Order_Book> rdf:type owl:Class ;
                                                   owl:equivalentClass <http://www.w3id.org/ecsel-dr-SCP#Open_Order_Book> ;
+                                                  rdfs:subClassOf :Supply_Chain_Lobe ;
                                                   rdfs:label "Open Order Book"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Order_Change_Request
 <http://www.w3id.org/ecsel-dr-OM#Order_Change_Request> rdf:type owl:Class ;
+                                                       rdfs:subClassOf :Supply_Chain_Lobe ;
                                                        rdfs:label "Order Change Request"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Order_Confirmation
 <http://www.w3id.org/ecsel-dr-OM#Order_Confirmation> rdf:type owl:Class ;
+                                                     rdfs:subClassOf :Supply_Chain_Lobe ;
                                                      rdfs:label "Order Confirmation"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Order_Line_Item
 <http://www.w3id.org/ecsel-dr-OM#Order_Line_Item> rdf:type owl:Class ;
                                                   owl:equivalentClass <http://www.w3id.org/ecsel-dr-SCP#Order_Line_Item> ;
+                                                  rdfs:subClassOf :Supply_Chain_Lobe ;
                                                   rdfs:label "Order Line Item"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Supplier
 <http://www.w3id.org/ecsel-dr-OM#Supplier> rdf:type owl:Class ;
+                                           rdfs:subClassOf :Supply_Chain_Lobe ;
                                            rdfs:comment "Organization that provides something needed such as a product or service."@en ;
                                            rdfs:label "Supplier"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Supplier_Data
 <http://www.w3id.org/ecsel-dr-OM#Supplier_Data> rdf:type owl:Class ;
+                                                rdfs:subClassOf :Supply_Chain_Lobe ;
                                                 rdfs:comment "Information about supplier"@en ;
                                                 rdfs:label "Supplier Data"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Supply
 <http://www.w3id.org/ecsel-dr-OM#Supply> rdf:type owl:Class ;
+                                         rdfs:subClassOf :Supply_Chain_Lobe ;
                                          rdfs:comment "The amount of goods that is available for use."@en ;
                                          rdfs:label "Supply"@en .
 
@@ -14185,6 +14387,7 @@ ecsel-dr-AT:Zig_Bee_RF4CE rdf:type owl:Class ;
                                                                                 <http://www.w3id.org/ecsel-dr-OM#Rejected>
                                                                               )
                                                                   ] ;
+                                              rdfs:subClassOf :Supply_Chain_Lobe ;
                                               rdfs:comment "Activity taken by user"@en ;
                                               rdfs:label "User Action"@en .
 
@@ -14267,6 +14470,7 @@ ecsel-dr-OOSMP:Design_Target rdf:type owl:Class ;
                                                                ecsel-dr-OOSMP:Flexible_To_Design_Design_Target
                                                              )
                                                  ] ;
+                             rdfs:subClassOf :Product_Lobe ;
                              rdfs:comment "Semiconductor solutions are design for different purposes, with different design goals respectively. Design targets comprise \"flexible to design\", \"easy to design\" and \"allrounder\"."@en ;
                              rdfs:label "Design Target"@en ;
                              skos:prefLabel "Design Target"@en .
@@ -14291,7 +14495,7 @@ ecsel-dr-OOSMP:Discrete_Power_Stage rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Division
 ecsel-dr-OOSMP:Division rdf:type owl:Class ;
                         owl:equivalentClass <http://www.w3id.org/ecsel-dr-ORG#Division> ;
-                        rdfs:subClassOf org:Organizational_Unit ;
+                        rdfs:subClassOf ecsel-dr-PROD:Organization ;
                         rdfs:comment "A division is a administrative business unit that is smaller than the whole company, but it is self-contained and most often responsible for its own revenue, cost, and profit. It has one or more business lines."@en ;
                         rdfs:label "Division"@en ;
                         skos:altLabel "Lead Division"@en ;
@@ -14353,6 +14557,7 @@ ecsel-dr-OOSMP:Integration_Level rdf:type owl:Class ;
                                                                    ecsel-dr-OOSMP:Integrated_Power_Stage_Solution_Integration_Level
                                                                  )
                                                      ] ;
+                                 rdfs:subClassOf :Product_Lobe ;
                                  rdfs:comment "Each motor control and drive solution has an integration level which states if the different stage are built in an integrated or discrete way. The stages of a motor control and drive solution are \"Controller\", \"Driver\", \"Power Stage\". Following this, the different integration levels are \"discrete\" (not integrated), \"fully integrated\", \"integrated controller driver\", \"integrated driver power stage\", \"integrated power stage\"."@en ;
                                  rdfs:label "Integration Level"@en ;
                                  skos:prefLabel "Integration Level"@en .
@@ -14418,6 +14623,7 @@ ecsel-dr-OOSMP:Main_Power_Device_Type rdf:type owl:Class ;
                                                                         ecsel-dr-OOSMP:Relay_Main_Power_Device_Type
                                                                       )
                                                           ] ;
+                                      rdfs:subClassOf :Product_Lobe ;
                                       rdfs:comment "Each motor control and drive solution has a main power device type. Main power device type can be an \"IGBT\", \"MOSFET\" or \"Relay\"."@en ;
                                       rdfs:label "Main Power Device Type"@en ;
                                       skos:prefLabel "Main Power Device Type"@en .
@@ -14497,6 +14703,7 @@ ecsel-dr-OOSMP:Motor_Type rdf:type owl:Class ;
                                                             ecsel-dr-OOSMP:Switched_Reluctance_Motor_Type
                                                           )
                                               ] ;
+                          rdfs:subClassOf :Product_Lobe ;
                           rdfs:comment "Each motor control and drive solution has a motor type. The different motor types that exist are \"brushed DC\", \"induction\", \"permanent magnet stepper\", \"PMSM BLDC\" and \"switched reluctance\"."@en ;
                           rdfs:label "Motor Type"@en ;
                           skos:prefLabel "Motor Type"@en .
@@ -14509,6 +14716,7 @@ ecsel-dr-OOSMP:Mounting_Style rdf:type owl:Class ;
                                                                 ecsel-dr-OOSMP:Through_Hole_Mounting_Style
                                                               )
                                                   ] ;
+                              rdfs:subClassOf :Sensor_Lobe ;
                               rdfs:comment "Each sensor has a specific mounting style. A mounting style can either be a \"SMDSMT\" or \"Through Hole\"."@en ;
                               rdfs:label "Mounting Style"@en ;
                               skos:prefLabel "Mounting Style"@en .
@@ -14531,6 +14739,7 @@ ecsel-dr-OOSMP:OPN_Status rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Packing_Type
 ecsel-dr-OOSMP:Packing_Type rdf:type owl:Class ;
+                            rdfs:subClassOf :Product_Lobe ;
                             rdfs:comment "A packing type describes how products/solutions are packed for shipping. There are different packing types, like \"Ammo Pack\", \"Tape and Reel\", \"Tray\" and \"Tube\"."@en ;
                             rdfs:label "Packing Type"@en ;
                             skos:prefLabel "Packing Type"@en .
@@ -14560,6 +14769,7 @@ ecsel-dr-OOSMP:Price_Indication rdf:type owl:Class ;
                                                                   ecsel-dr-OOSMP:Medium_Price_Price_Indication
                                                                 )
                                                     ] ;
+                                rdfs:subClassOf :Product_Lobe ;
                                 rdfs:comment "A price indication helps the customer to evaluate the price of an item. A price indication can be \"high\", \"low\", or \"medium\"."@en ;
                                 rdfs:label "Price Indication"@en ;
                                 skos:prefLabel "Price Indication"@en .
@@ -14570,6 +14780,7 @@ ecsel-dr-OOSMP:Product rdf:type owl:Class ;
                        owl:equivalentClass ecsel-dr-PROD:Product ,
                                            <http://www.w3id.org/ecsel-dr-PWR#Product> ,
                                            <http://www.w3id.org/ecsel-dr-SO#Product> ;
+                       rdfs:subClassOf :Product_Lobe ;
                        rdfs:comment "A product is something that is produced with effort (e.g. by mechanical or industrial processes) and sold to a customer. A product is either tangible (physical product) or intangible (service)."@en ,
                                     "A solution is a combination of products which is sold to a customer. Thereby, a solution solves a problem or fulfills a customer need."@en ;
                        rdfs:label "Product"@en ;
@@ -14593,6 +14804,7 @@ ecsel-dr-OOSMP:Qualification rdf:type owl:Class ;
                                                                ecsel-dr-OOSMP:Industrial_Qualification
                                                              )
                                                  ] ;
+                             rdfs:subClassOf :Product_Lobe ;
                              rdfs:comment "If a product/solution has a certain qualification, the product/solution fulfills the standards of this certain industry."@en ;
                              rdfs:label "Qualification"@en ;
                              skos:prefLabel "Qualification"@en .
@@ -14626,6 +14838,7 @@ ecsel-dr-OOSMP:Semiconductor_Product rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Semiconductor_Product_Status
 ecsel-dr-OOSMP:Semiconductor_Product_Status rdf:type owl:Class ;
+                                            rdfs:subClassOf :Product_Lobe ;
                                             rdfs:comment "A semiconductor product can have different product states which describe the product characteristics more closely."@en ;
                                             rdfs:label "Semiconductor Product Status"@en ;
                                             skos:prefLabel "Semiconductor Product Status"@en .
@@ -14646,6 +14859,7 @@ ecsel-dr-OOSMP:Sensing_Type rdf:type owl:Class ;
                                                               ecsel-dr-OOSMP:Without_Sensor_Sensing_Type
                                                             )
                                                 ] ;
+                            rdfs:subClassOf :Sensor_Lobe ;
                             rdfs:comment "The sensing type of a semiconductor solution determines whether a semiconductor solution contains a sensor (\"WithSensor\") or not (\"WithoutSensor)."@en ;
                             rdfs:label "Sensing Type"@en ;
                             skos:prefLabel "Sensing Type"@en .
@@ -14688,6 +14902,7 @@ ecsel-dr-OOSMP:Smart_Driver rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Solution
 ecsel-dr-OOSMP:Solution rdf:type owl:Class ;
+                        rdfs:subClassOf :Product_Lobe ;
                         rdfs:comment "A solution is a combination of products which is produced or assembled by an organization. Further, a solution is sold to a customer and solves a specific problem / fulfills a specific need."@en ;
                         rdfs:label "Solution"@en ;
                         skos:prefLabel "Solution"@en .
@@ -14713,6 +14928,7 @@ ecsel-dr-OOSMP:Topology rdf:type owl:Class ;
                                                           <http://www.w3id.org/ecsel-dr-OOSMP#3Phase_Topology>
                                                         )
                                             ] ;
+                        rdfs:subClassOf :Product_Lobe ;
                         rdfs:comment "Topology describes the arrangement and the amount of chips in a semiconductor solution. A toplogy can be \"3 phase\", \"half bridge\", \"h-bridge\", \"high side\", \"low side\" and \"relay\"."@en ;
                         rdfs:label "Topology"@en ;
                         skos:prefLabel "Topology"@en .
@@ -14735,18 +14951,21 @@ of linear, rotation or 3 dimensional movements."""@en ;
                                                                               <http://www.w3id.org/ecsel-dr-ORG#Mission>
                                                                             )
                                                                 ] ;
+                                            rdfs:subClassOf ecsel-dr-PROD:Organization ;
                                             rdfs:comment "Categorizes the project in a big, medium or small project. Usually according the project size."@en ;
                                             rdfs:label "Category"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-ORG#Central_Function
 <http://www.w3id.org/ecsel-dr-ORG#Central_Function> rdf:type owl:Class ;
+                                                    rdfs:subClassOf ecsel-dr-PROD:Organization ;
                                                     rdfs:comment "Large companies have central fuctions like the Finance or corporate suppyl chain department."@en ;
                                                     rdfs:label "Central Function"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-ORG#Certification
 <http://www.w3id.org/ecsel-dr-ORG#Certification> rdf:type owl:Class ;
+                                                 rdfs:subClassOf ecsel-dr-PROD:Organization ;
                                                  rdfs:comment "An official document, as proof that something has happened or been done"@en ;
                                                  rdfs:label "Certification"@en .
 
@@ -14760,12 +14979,14 @@ of linear, rotation or 3 dimensional movements."""@en ;
 
 ###  http://www.w3id.org/ecsel-dr-ORG#Division
 <http://www.w3id.org/ecsel-dr-ORG#Division> rdf:type owl:Class ;
+                                            rdfs:subClassOf ecsel-dr-PROD:Organization ;
                                             rdfs:comment "Hierarchical structure of an organization. For example ATV, DDS, ICP..."@en ;
                                             rdfs:label "Division"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-ORG#Project
 <http://www.w3id.org/ecsel-dr-ORG#Project> rdf:type owl:Class ;
+                                           rdfs:subClassOf ecsel-dr-PROD:Organization ;
                                            rdfs:comment "Achievement of the project objective requires these deliverables to conform to specific requirements, including multiple constraints such as time, cost, resources and quality standards or requirements."@en ,
                                                         "​Projects are a way to deliver value to an organization. A project is defined as a unique, temporary, multi-disciplinary and organized endeavor to realize agreed deliverables within predefined requirements and constraints."@en ;
                                            rdfs:label "Project"@en .
@@ -14796,6 +15017,7 @@ of linear, rotation or 3 dimensional movements."""@en ;
                                                                                     <http://www.w3id.org/ecsel-dr-ORG#Withdrawn>
                                                                                   )
                                                                       ] ;
+                                                  rdfs:subClassOf ecsel-dr-PROD:Organization ;
                                                   rdfs:comment "The current status of the project"@en ;
                                                   rdfs:label "Project Status"@en .
 
@@ -14809,6 +15031,7 @@ of linear, rotation or 3 dimensional movements."""@en ;
 
 ###  http://www.w3id.org/ecsel-dr-ORG#Region
 <http://www.w3id.org/ecsel-dr-ORG#Region> rdf:type owl:Class ;
+                                          rdfs:subClassOf ecsel-dr-PROD:Organization ;
                                           rdfs:comment "Large companies divide their activites in regions, like in America, Greater China, SEA (South East Asia), Europe and ROW (rest of World)."@en ;
                                           rdfs:label "Region"@en .
 
@@ -14816,12 +15039,14 @@ of linear, rotation or 3 dimensional movements."""@en ;
 ###  http://www.w3id.org/ecsel-dr-ORG#Role
 <http://www.w3id.org/ecsel-dr-ORG#Role> rdf:type owl:Class ;
                                         owl:equivalentClass <http://www.w3id.org/ecsel-dr-PMV#Role> ;
+                                        rdfs:subClassOf ecsel-dr-PROD:Organization ;
                                         rdfs:comment "Defines the responsibilities assumed by an individual."@en ;
                                         rdfs:label "Role"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-ORG#Sub_Project
 <http://www.w3id.org/ecsel-dr-ORG#Sub_Project> rdf:type owl:Class ;
+                                               rdfs:subClassOf ecsel-dr-PROD:Organization ;
                                                rdfs:comment "A project within a larger project."@en ;
                                                rdfs:label "Sub Project"@en .
 
@@ -14829,18 +15054,21 @@ of linear, rotation or 3 dimensional movements."""@en ;
 ###  http://www.w3id.org/ecsel-dr-ORG#Task
 <http://www.w3id.org/ecsel-dr-ORG#Task> rdf:type owl:Class ;
                                         owl:equivalentClass <http://www.w3id.org/ecsel-dr-PMV#Task> ;
+                                        rdfs:subClassOf ecsel-dr-PROD:Organization ;
                                         rdfs:comment "A piece of work to be done or undertaken."@en ;
                                         rdfs:label "Task"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-ORG#Training
 <http://www.w3id.org/ecsel-dr-ORG#Training> rdf:type owl:Class ;
+                                            rdfs:subClassOf ecsel-dr-PROD:Organization ;
                                             rdfs:comment "The process of learning the skills you need to do a particular job or activity"@en ;
                                             rdfs:label "Training"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-ORG#Work_Package
 <http://www.w3id.org/ecsel-dr-ORG#Work_Package> rdf:type owl:Class ;
+                                                rdfs:subClassOf ecsel-dr-PROD:Organization ;
                                                 rdfs:comment "A work package is a group of related tasks within a project."@en ;
                                                 rdfs:label "Work Package"@en .
 
@@ -14908,6 +15136,7 @@ Used to divide/rejoin tasks/flows which happen in parallel with another, rather 
 
 ###  http://www.w3id.org/ecsel-dr-PMV#Business_Process_Flow
 <http://www.w3id.org/ecsel-dr-PMV#Business_Process_Flow> rdf:type owl:Class ;
+                                                         rdfs:subClassOf :Process_Lobe ;
                                                          rdfs:comment """An EPC describes a Business Process Flow, which is a sequence of required tasks to create specified outputs using defined inputs.
 A Business Process Flow is a sequence of required tasks to create specified outputs using defined inputs."""@en ;
                                                          rdfs:label "Business Process Flow"@en ;
@@ -15022,6 +15251,7 @@ A Business Process Flow is a sequence of required tasks to create specified outp
 
 ###  http://www.w3id.org/ecsel-dr-PMV#Function_Object
 <http://www.w3id.org/ecsel-dr-PMV#Function_Object> rdf:type owl:Class ;
+                                                   rdfs:subClassOf :Process_Lobe ;
                                                    rdfs:comment "In IndustryPrint 5, function objects are used to model the decomposition of a process."@en ;
                                                    rdfs:label "Function Object"@en ;
                                                    skos:altLabel "function object" .
@@ -15039,6 +15269,7 @@ A Business Process Flow is a sequence of required tasks to create specified outp
 
 ###  http://www.w3id.org/ecsel-dr-PMV#Input
 <http://www.w3id.org/ecsel-dr-PMV#Input> rdf:type owl:Class ;
+                                         rdfs:subClassOf :Process_Lobe ;
                                          rdfs:comment "Item external to a system (such as a process) that is transformed by the system (usually together with one or more other items) to become an output." ;
                                          rdfs:isDefinedBy "http://www.businessdictionary.com/definition/input.html" ;
                                          rdfs:label "Input"@en ;
@@ -15119,6 +15350,7 @@ A Business Process Flow is a sequence of required tasks to create specified outp
 
 ###  http://www.w3id.org/ecsel-dr-PMV#Model
 <http://www.w3id.org/ecsel-dr-PMV#Model> rdf:type owl:Class ;
+                                         rdfs:subClassOf :Process_Lobe ;
                                          rdfs:comment "One striking commonality between EPC meta models is the Process. One process may contain an unlimited number of elements, but a process element is always linked to a specific process. If a process contains an interface, it is always linked to one specific process and represents a refinement of a normal function." ,
                                                       "To graphically depict functional and process decomposition, function objects are diagramed on models in IndustryPrint 5." ;
                                          rdfs:isDefinedBy "https://www.epc-standard.org/collaborate/Process" ;
@@ -15128,6 +15360,7 @@ A Business Process Flow is a sequence of required tasks to create specified outp
 
 ###  http://www.w3id.org/ecsel-dr-PMV#Model_Element
 <http://www.w3id.org/ecsel-dr-PMV#Model_Element> rdf:type owl:Class ;
+                                                 rdfs:subClassOf :Process_Lobe ;
                                                  rdfs:comment "An EPC model element is part of the EPC meta model and can be represented by a Function, an Event, an Operator, a Process Interface." ,
                                                               "Represents an object in the EPC model. Includes all elements used in the modelling procedure of an EPC diagram." ,
                                                               "Represents process flow elements except for modelling function objects." ;
@@ -15173,6 +15406,7 @@ Has the weakest logic and should be used as sparingly as absolutely possible""" 
 
 ###  http://www.w3id.org/ecsel-dr-PMV#Output
 <http://www.w3id.org/ecsel-dr-PMV#Output> rdf:type owl:Class ;
+                                          rdfs:subClassOf :Process_Lobe ;
                                           rdfs:comment "The amount of energy, work, goods, or services produced by a machine, factory, company, or an individual in a period." ;
                                           rdfs:isDefinedBy "http://www.businessdictionary.com/definition/output.html" ;
                                           rdfs:label "Output"@en ;
@@ -15267,6 +15501,7 @@ Functionality: Jump function to next process (e.g. EPC, VAC), typically at the e
 
 ###  http://www.w3id.org/ecsel-dr-PMV#Screen
 <http://www.w3id.org/ecsel-dr-PMV#Screen> rdf:type owl:Class ;
+                                          rdfs:subClassOf :Process_Lobe ;
                                           rdfs:comment "A transaction in SAP is described as a screen. Here, they represent the actions undertaken in the application SAP to perform a function in a process flow." ;
                                           rdfs:label "Screen"@en ;
                                           skos:altLabel "Transaction" ,
@@ -15408,6 +15643,7 @@ Functionality: Jump function to next process (e.g. EPC, VAC), typically at the e
 
 ###  http://www.w3id.org/ecsel-dr-PMV#Value_Added_Chain_Diagram
 <http://www.w3id.org/ecsel-dr-PMV#Value_Added_Chain_Diagram> rdf:type owl:Class ;
+                                                             rdfs:subClassOf :Process_Lobe ;
                                                              rdfs:comment """A Value-Added Chain is a process that represents an element of the process chain. A process hierarchy can be realized by hierarchically structuring value chains, thus modeling business areas, process groups, business processes and business process variants using the sam notation.
 House: represents enabler processes.""" ;
                                                              rdfs:isDefinedBy "https://wiki.scn.sap.com/wiki/pages/viewpage.action?pageId=156532992" ;
@@ -15438,7 +15674,7 @@ Gateway must therefore be named with this Yes/No question""" ;
 
 ###  http://www.w3id.org/ecsel-dr-PROD#Customer_Part_Number_Specification
 ecsel-dr-PROD:Customer_Part_Number_Specification rdf:type owl:Class ;
-                                                 rdfs:subClassOf owl:Thing ;
+                                                 rdfs:subClassOf :Product_Lobe ;
                                                  rdfs:comment "A Customer Part Number (CPN) is the product identifier used by the customer to identify one IFX product."@en ,
                                                               "In general, one CPN is equal to one Sales Product Name. Each customer will use a different CPN."@en ;
                                                  rdfs:label "Customer Part Number Specification"@en .
@@ -15483,7 +15719,7 @@ ecsel-dr-PROD:Not_Released_Product rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-PROD#Organization
 ecsel-dr-PROD:Organization rdf:type owl:Class ;
-                           rdfs:subClassOf owl:Thing ;
+                           rdfs:subClassOf :Product_Lobe ;
                            rdfs:comment "An organization is en entity comprising multiple people. In SSC, this class mainly refers to businesses."@en ;
                            rdfs:isDefinedBy "http://www.example.org/semanticSupplyChain/" ;
                            rdfs:label "Organization"@en .
@@ -15498,7 +15734,7 @@ ecsel-dr-PROD:Plan_Position rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-PROD#Planning_Element
 ecsel-dr-PROD:Planning_Element rdf:type owl:Class ;
-                               rdfs:subClassOf owl:Thing ;
+                               rdfs:subClassOf :Product_Lobe ;
                                owl:disjointWith ecsel-dr-PROD:Product ;
                                rdfs:label "Planning Element"@en .
 
@@ -15507,7 +15743,7 @@ ecsel-dr-PROD:Planning_Element rdf:type owl:Class ;
 ecsel-dr-PROD:Product rdf:type owl:Class ;
                       owl:equivalentClass <http://www.w3id.org/ecsel-dr-PWR#Product> ,
                                           <http://www.w3id.org/ecsel-dr-SO#Product> ;
-                      rdfs:subClassOf owl:Thing ;
+                      rdfs:subClassOf :Product_Lobe ;
                       rdfs:comment "A product is a work product that is delivered to the customer."@en ,
                                    "Any tangible output or service that is a result of a process and that is intended for delivery to a customer or end user."@en ;
                       rdfs:label "Product"@en .
@@ -15610,6 +15846,7 @@ Then must be defined what the device it is, for exmaple:
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Control_Method
 <http://www.w3id.org/ecsel-dr-PWR#Control_Method> rdf:type owl:Class ;
+                                                  rdfs:subClassOf :Power_Lobe ;
                                                   rdfs:comment "It is the method used to turn on, turn off , increaseing, and decreasing output current/voltage." ;
                                                   rdfs:isDefinedBy "Power Electronic book" ;
                                                   rdfs:label "Control Method" .
@@ -15650,12 +15887,14 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Device\"""" ;
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Device_Configuration
 <http://www.w3id.org/ecsel-dr-PWR#Device_Configuration> rdf:type owl:Class ;
+                                                        rdfs:subClassOf :Power_Lobe ;
                                                         rdfs:comment "Device configuration can refer to either hardware or software , or the combination of both."@en ;
                                                         rdfs:label "Device Configuration"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Device_Element
 <http://www.w3id.org/ecsel-dr-PWR#Device_Element> rdf:type owl:Class ;
+                                                  rdfs:subClassOf :Power_Lobe ;
                                                   rdfs:comment "Elements that are part of a device"@en ;
                                                   rdfs:label "Device Element"@en .
 
@@ -15738,6 +15977,7 @@ http://xmlns.com/foaf/spec/#term_Document\"""" ;
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Entity
 <http://www.w3id.org/ecsel-dr-PWR#Entity> rdf:type owl:Class ;
+                                          rdfs:subClassOf :Power_Lobe ;
                                           rdfs:comment "Anything: real, possible, or imaginary, which some modeller wants to talk about for some purpose." ;
                                           rdfs:isDefinedBy """World Wide Web Consortium SSN DUL
 https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Entity""" ;
@@ -15759,6 +15999,7 @@ https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Entity""" ;
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Gate_Driver
 <http://www.w3id.org/ecsel-dr-PWR#Gate_Driver> rdf:type owl:Class ;
+                                               rdfs:subClassOf :Power_Lobe ;
                                                rdfs:label "Gate Driver"@en .
 
 
@@ -15786,6 +16027,7 @@ https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Entity""" ;
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Industrial_Sector
 <http://www.w3id.org/ecsel-dr-PWR#Industrial_Sector> rdf:type owl:Class ;
+                                                     rdfs:subClassOf :Power_Lobe ;
                                                      rdfs:comment """The collection of all localized groups of enterprises that are producers of industrial commodities, in which each such group together forms the major industrial sector for the region. 'Industrial commodities' includes MechanicalDevices and basic industrial materials. Examples include 'the world industrial sector', the 'industrial sector of China'. The Chinese water pump industry would not be an exemplar of IndustrialEconomicSector but would rather be a sub-industry (see subIndustries) of it. On the other hand, chinese water pump manufacturers would be considered groupMembers of 'the industrial sector of China'.
 
 This classification is done by The Global Industry Classification Standard (GICS) is an industry taxonomy developed in 1999 by MSCI and Standard & Poor's (S&P) for use by the global financial community. The GICS structure consists of 11 sectors, 24 industry groups, 68 industries and 157 sub-industries[1] into which S&P has categorized all major public companies""" ;
@@ -15957,6 +16199,7 @@ https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Object\"""" ;
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Operation_Mode
 <http://www.w3id.org/ecsel-dr-PWR#Operation_Mode> rdf:type owl:Class ;
+                                                  rdfs:subClassOf :Power_Lobe ;
                                                   rdfs:label "Operation Mode"@en .
 
 
@@ -16016,6 +16259,7 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Platform\"""" ;
 ###  http://www.w3id.org/ecsel-dr-PWR#Process
 <http://www.w3id.org/ecsel-dr-PWR#Process> rdf:type owl:Class ;
                                            owl:equivalentClass <http://www.w3id.org/ecsel-dr-SO#Process> ;
+                                           rdfs:subClassOf :Power_Lobe ;
                                            rdfs:comment "A process has an output and possibly inputs, and for a compositive process, describes the temporal and dataflow dependencies and relationships amongst its parts." ;
                                            rdfs:isDefinedBy """World Wide Web Consortium SSN
 http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Process""" ;
@@ -16024,6 +16268,7 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Process""" ;
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Process_Input
 <http://www.w3id.org/ecsel-dr-PWR#Process_Input> rdf:type owl:Class ;
+                                                 rdfs:subClassOf :Power_Lobe ;
                                                  rdfs:comment "Any information that is provided a Procedure for its use." ;
                                                  rdfs:isDefinedBy """World Wide Web Consortium SSN
 http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#ProcessInput""" ;
@@ -16032,6 +16277,7 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#ProcessInput""" ;
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Process_Output
 <http://www.w3id.org/ecsel-dr-PWR#Process_Output> rdf:type owl:Class ;
+                                                  rdfs:subClassOf :Power_Lobe ;
                                                   rdfs:comment "Any information that is reported from a Procedure." ;
                                                   rdfs:isDefinedBy """World Wide Web Consortium SSN
 http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#ProcessOutput""" ;
@@ -16041,6 +16287,7 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#ProcessOutput""" ;
 ###  http://www.w3id.org/ecsel-dr-PWR#Product
 <http://www.w3id.org/ecsel-dr-PWR#Product> rdf:type owl:Class ;
                                            owl:equivalentClass <http://www.w3id.org/ecsel-dr-SO#Product> ;
+                                           rdfs:subClassOf :Power_Lobe ;
                                            rdfs:comment """The superclass of all classes describing products or services types, either by nature or purpose. Examples for such subclasses are \"TV set\", \"vacuum cleaner\", etc. An instance of this class can be either an actual product or service (gr:Individual), a placeholder instance for unknown instances of a mass-produced commodity (gr:SomeItems), or a model / prototype specification (gr:ProductOrServiceModel). When in doubt, use gr:SomeItems.
 
 Examples: 
@@ -16083,6 +16330,7 @@ https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Quality""" ;
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Resistance
 <http://www.w3id.org/ecsel-dr-PWR#Resistance> rdf:type owl:Class ;
+                                              rdfs:subClassOf :Power_Lobe ;
                                               rdfs:comment "The degree to which a substance prevents the flow of an electric current through it"@en ;
                                               rdfs:label "Resistance"@en .
 
@@ -16124,6 +16372,7 @@ https://www.w3.org/2005/Incubator/ssn/wiki/DUL_ssn#Quality""" ;
 
 ###  http://www.w3id.org/ecsel-dr-PWR#SiC_MOSFET
 <http://www.w3id.org/ecsel-dr-PWR#SiC_MOSFET> rdf:type owl:Class ;
+                                              rdfs:subClassOf :Power_Lobe ;
                                               rdfs:comment "Silicon Carbide Metal Oxide Semiconductor Field Effect Transistor (SiC MOSFET): It is a transistor: It is used for switching or amplifying the electronics signals or electric power." ;
                                               rdfs:label "SiC MOSFET"@en .
 
@@ -16170,6 +16419,7 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Observation""" ;
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Switcher
 <http://www.w3id.org/ecsel-dr-PWR#Switcher> rdf:type owl:Class ;
+                                            rdfs:subClassOf :Power_Lobe ;
                                             rdfs:comment "Switchers rapidly switch a series device on and off."@en ;
                                             rdfs:label "Switcher" .
 
@@ -16267,6 +16517,7 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Sensing""" ;
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Voltage
 <http://www.w3id.org/ecsel-dr-PWR#Voltage> rdf:type owl:Class ;
+                                           rdfs:subClassOf :Power_Lobe ;
                                            rdfs:comment "Is the difference in electric potential between two points"@en ;
                                            rdfs:label "Voltage"@en .
 
@@ -16305,22 +16556,26 @@ http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Sensing""" ;
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Admin_Shell
 ecsel-dr-RAMI40:Admin_Shell rdf:type owl:Class ;
+                            rdfs:subClassOf :System_Lobe ;
                             rdfs:comment "Andmin Shell represents and describes an asset elecrtonically in a standardized manner"@en ;
                             rdfs:label "Admin Shell"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Asset
-ecsel-dr-RAMI40:Asset rdf:type owl:Class .
+ecsel-dr-RAMI40:Asset rdf:type owl:Class ;
+                      rdfs:subClassOf :System_Lobe .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Date
 ecsel-dr-RAMI40:Date rdf:type owl:Class ;
+                     rdfs:subClassOf :System_Lobe ;
                      rdfs:comment "A numbered day in a month, often given with a combination of the name of the day, the month, and the year"@en ;
                      rdfs:label "Date"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Dimension
 ecsel-dr-RAMI40:Dimension rdf:type owl:Class ;
+                          rdfs:subClassOf :System_Lobe ;
                           rdfs:comment "Abstract class to describe the three different dimensions of RAMI4.0" ;
                           rdfs:label "Dimension"@en .
 
@@ -16334,6 +16589,7 @@ ecsel-dr-RAMI40:Energy_Efficiency rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#I_4.0_Component
 ecsel-dr-RAMI40:I_4.0_Component rdf:type owl:Class ;
+                                rdfs:subClassOf :System_Lobe ;
                                 dc:source "Industrie 4.0 – Begriffe/Terms, VDI Statusreport Industrie 4.0 (April 2017)"@en ;
                                 rdfs:comment "Globally uniquely identifiable participant with communication capability consisting of administration shell and asset within an I4.0 system."@en ;
                                 rdfs:label "I 4.0 Component"@en .
@@ -16356,6 +16612,7 @@ ecsel-dr-RAMI40:Machine rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Measure
 ecsel-dr-RAMI40:Measure rdf:type owl:Class ;
+                        rdfs:subClassOf :System_Lobe ;
                         rdfs:comment "To discover the exact size or amount of something"@en ;
                         rdfs:label "Measure"@en .
 
@@ -16417,11 +16674,13 @@ ecsel-dr-RAMI40:Semantic_Expression rdf:type owl:Class ;
                                                                       ecsel-dr-RAMI40:Requirement
                                                                     )
                                                         ] ;
+                                    rdfs:subClassOf :System_Lobe ;
                                     rdfs:label "Semantic Expression"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Sensor
 ecsel-dr-RAMI40:Sensor rdf:type owl:Class ;
+                       rdfs:subClassOf :System_Lobe ;
                        rdfs:comment "Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms."@en ;
                        rdfs:label "Sensor"@en .
 
@@ -16435,6 +16694,7 @@ ecsel-dr-RAMI40:Sensor_Measurement rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Standard
 ecsel-dr-RAMI40:Standard rdf:type owl:Class ;
+                         rdfs:subClassOf :System_Lobe ;
                          rdfs:isDefinedBy <https://w3id.org/i40/sto/#Standard> ;
                          rdfs:label "Standard"@en ;
                          skos:definition "Standards that are used to describe the actual I4.0 Asset. Defined in the STO ontology"@en ;
@@ -16443,6 +16703,7 @@ ecsel-dr-RAMI40:Standard rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Standard_Organization
 ecsel-dr-RAMI40:Standard_Organization rdf:type owl:Class ;
+                                      rdfs:subClassOf :System_Lobe ;
                                       rdfs:comment "Standards organisations that prepares and publishes International Standards for all electrical, electronic and related technologies"@en ;
                                       rdfs:label "Standard Organization"@en ;
                                       skos:example "IEC (International Electrotechnical Commission)"@en .
@@ -16484,6 +16745,7 @@ ecsel-dr-RAMI40:Used_Date rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Version
 ecsel-dr-RAMI40:Version rdf:type owl:Class ;
+                        rdfs:subClassOf :System_Lobe ;
                         rdfs:comment "A particular form of something that is slightly different from other forms of the same thing"@en ;
                         rdfs:label "Version"@en .
 
@@ -16498,6 +16760,7 @@ ecsel-dr-RAMI40:View rdf:type owl:Class ;
                                                        ecsel-dr-RAMI40:Performance
                                                      )
                                          ] ;
+                     rdfs:subClassOf :System_Lobe ;
                      rdfs:comment "Different views associated to the Administration Shell via the Submodels"@en ;
                      rdfs:isDefinedBy "https://www.plattform-i40.de/I40/Redaktion/DE/Downloads/Publikation/hm-2018-trilaterale-coop.html"@de ;
                      rdfs:label "View"@en .
@@ -16511,12 +16774,14 @@ ecsel-dr-RAMI40:View rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Aggregated_Capacity
 <http://www.w3id.org/ecsel-dr-SCP#Aggregated_Capacity> rdf:type owl:Class ;
+                                                       rdfs:subClassOf :Supply_Chain_Lobe ;
                                                        rdfs:comment "(restricted) The Aggregated Capacity Group combines products that are interchangeable in production resources (e.g. can be produced on the same equipment) and having the same capacity consumption. Using an ACG provides flexibility in a way of switching demands of this products within this ACG."@en ;
                                                        rdfs:label "Aggregated Capacity"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Allocated_Available_To_Promise
 <http://www.w3id.org/ecsel-dr-SCP#Allocated_Available_To_Promise> rdf:type owl:Class ;
+                                                                  rdfs:subClassOf :Supply_Chain_Lobe ;
                                                                   rdfs:comment """AATP  is a data mart  that shows data from GOAL AATP process, combining data from 3 sources: SAP, I2 Applications and LogDB. 
 
 The universe provides access to the fact tables delivered by GOAL like Availability / Allocation Planning / Seller Mapping / Coverage."""@en ;
@@ -16525,6 +16790,7 @@ The universe provides access to the fact tables delivered by GOAL like Availabil
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Available_To_Promise
 <http://www.w3id.org/ecsel-dr-SCP#Available_To_Promise> rdf:type owl:Class ;
+                                                        rdfs:subClassOf :Supply_Chain_Lobe ;
                                                         rdfs:comment "Available to promise is a business function that provides a response to customer order inquiries, based on resource availability. It generates available quantities of the requested product, and delivery due dates."@en ;
                                                         rdfs:label "Available To Promise"@en .
 
@@ -16544,11 +16810,13 @@ The universe provides access to the fact tables delivered by GOAL like Availabil
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Capacity_Bottleneck
 <http://www.w3id.org/ecsel-dr-SCP#Capacity_Bottleneck> rdf:type owl:Class ;
+                                                       rdfs:subClassOf :Supply_Chain_Lobe ;
                                                        rdfs:label "Capacity Bottleneck"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Confirmation
 <http://www.w3id.org/ecsel-dr-SCP#Confirmation> rdf:type owl:Class ;
+                                                rdfs:subClassOf :Supply_Chain_Lobe ;
                                                 rdfs:comment "Order acknowledgement"@en ;
                                                 rdfs:label "Confirmation"@en .
 
@@ -16564,13 +16832,15 @@ The supplier (Vendor) is responsible to maintain his stock within a defined min/
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Customer
 <http://www.w3id.org/ecsel-dr-SCP#Customer> rdf:type owl:Class ;
-                                            rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SCP#General_Customer> ;
+                                            rdfs:subClassOf :Supply_Chain_Lobe ,
+                                                            <http://www.w3id.org/ecsel-dr-SCP#General_Customer> ;
                                             rdfs:comment "A person or entity that buys goods or services  from a shop or business."@en ;
                                             rdfs:label "Customer"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Customer_Logistics_Management_Representative
 <http://www.w3id.org/ecsel-dr-SCP#Customer_Logistics_Management_Representative> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf :Supply_Chain_Lobe ;
                                                                                 rdfs:comment "A Customer Logistics Management Representative (CLM) is the “one face to our customers” that takes care of all customers’ supply chain topics. He or she channels all customer logistic requirements into Infineon’s organization and balances the needs against our capabilities."@en ,
                                                                                              "Being the main interface between Customer, Sales and the Supply Chain Planner he is responsible for the demand fulfilment process. It is his task to ensure in-time delivery to customers based on orders and forecasts and to achieve high customer satisfaction."@en ;
                                                                                 rdfs:label "Customer Logistics Management Representative"@en .
@@ -16606,7 +16876,8 @@ The supplier (Vendor) is responsible to maintain his stock within a defined min/
 
 ###  http://www.w3id.org/ecsel-dr-SCP#General_Customer
 <http://www.w3id.org/ecsel-dr-SCP#General_Customer> rdf:type owl:Class ;
-                                                    rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SCP#Customer> ;
+                                                    rdfs:subClassOf :Supply_Chain_Lobe ,
+                                                                    <http://www.w3id.org/ecsel-dr-SCP#Customer> ;
                                                     rdfs:label "General Customers"@en .
 
 
@@ -16618,6 +16889,7 @@ The supplier (Vendor) is responsible to maintain his stock within a defined min/
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Marketing_Demand
 <http://www.w3id.org/ecsel-dr-SCP#Marketing_Demand> rdf:type owl:Class ;
+                                                    rdfs:subClassOf :Supply_Chain_Lobe ;
                                                     rdfs:label "Marketing Demand"@en .
 
 
@@ -16638,6 +16910,7 @@ The supplier (Vendor) is responsible to maintain his stock within a defined min/
 
 ###  http://www.w3id.org/ecsel-dr-SCP#NEWs
 <http://www.w3id.org/ecsel-dr-SCP#NEWs> rdf:type owl:Class ;
+                                        rdfs:subClassOf :Supply_Chain_Lobe ;
                                         rdfs:label "nEWs"@en .
 
 
@@ -16655,46 +16928,54 @@ The supplier (Vendor) is responsible to maintain his stock within a defined min/
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Open_Order_Book
 <http://www.w3id.org/ecsel-dr-SCP#Open_Order_Book> rdf:type owl:Class ;
+                                                   rdfs:subClassOf :Supply_Chain_Lobe ;
                                                    rdfs:comment "An order book is a business's list of open, unshipped, customer orders, normally time-phased and valued at actual individual order prices, that may include margin and profitability analysis."@en ;
                                                    rdfs:label "Open Order Book"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Operational_Demand
 <http://www.w3id.org/ecsel-dr-SCP#Operational_Demand> rdf:type owl:Class ;
+                                                      rdfs:subClassOf :Supply_Chain_Lobe ;
                                                       rdfs:label "Operational Demand"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Order
 <http://www.w3id.org/ecsel-dr-SCP#Order> rdf:type owl:Class ;
+                                         rdfs:subClassOf :Supply_Chain_Lobe ;
                                          rdfs:label "Order"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Order_Line_Item
 <http://www.w3id.org/ecsel-dr-SCP#Order_Line_Item> rdf:type owl:Class ;
+                                                   rdfs:subClassOf :Supply_Chain_Lobe ;
                                                    rdfs:comment "Every product on the order is referenced by a record that includes quantity and a reference to which order it belongs."@en ;
                                                    rdfs:label "Order Line Item"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Order_Reschedule
 <http://www.w3id.org/ecsel-dr-SCP#Order_Reschedule> rdf:type owl:Class ;
+                                                    rdfs:subClassOf :Supply_Chain_Lobe ;
                                                     rdfs:comment "Any change in the requested order delivery date in an order line is referred to as an order rescheduling."@en ;
                                                     rdfs:label "Order Reschedule"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Order_Schedule_Line
 <http://www.w3id.org/ecsel-dr-SCP#Order_Schedule_Line> rdf:type owl:Class ;
+                                                       rdfs:subClassOf :Supply_Chain_Lobe ;
                                                        rdfs:comment "Schedule lines contain all the delivery related information"@en ;
                                                        rdfs:label "Order Schedule Line"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Prioritized_Demand
 <http://www.w3id.org/ecsel-dr-SCP#Prioritized_Demand> rdf:type owl:Class ;
+                                                      rdfs:subClassOf :Supply_Chain_Lobe ;
                                                       rdfs:comment "The demand that should be covered first."@en ;
                                                       rdfs:label "Prioritized Demand"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Prioritized_Orders
 <http://www.w3id.org/ecsel-dr-SCP#Prioritized_Orders> rdf:type owl:Class ;
+                                                      rdfs:subClassOf :Supply_Chain_Lobe ;
                                                       rdfs:comment "Orders that should be completed first."@en ;
                                                       rdfs:label "Prioritized Orders"@en .
 
@@ -16707,6 +16988,7 @@ The supplier (Vendor) is responsible to maintain his stock within a defined min/
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Promise
 <http://www.w3id.org/ecsel-dr-SCP#Promise> rdf:type owl:Class ;
+                                           rdfs:subClassOf :Supply_Chain_Lobe ;
                                            rdfs:comment "Is the uncommitted portion of supply by the master production schedule and material plan"@en ;
                                            rdfs:label "Promise"@en .
 
@@ -16745,6 +17027,7 @@ The supplier (Vendor) is responsible to maintain his stock within a defined min/
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Sales_Demand
 <http://www.w3id.org/ecsel-dr-SCP#Sales_Demand> rdf:type owl:Class ;
+                                                rdfs:subClassOf :Supply_Chain_Lobe ;
                                                 rdfs:label "Sales Demand"@en .
 
 
@@ -16763,17 +17046,20 @@ The supplier (Vendor) is responsible to maintain his stock within a defined min/
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Supply_Demand_Match
 <http://www.w3id.org/ecsel-dr-SCP#Supply_Demand_Match> rdf:type owl:Class ;
+                                                       rdfs:subClassOf :Supply_Chain_Lobe ;
                                                        rdfs:comment "Supply and demand match when sufficient materials exist to cover material demand while taking available capacity into account."@en ;
                                                        rdfs:label "Supply Demand Match"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Supply_Picture
 <http://www.w3id.org/ecsel-dr-SCP#Supply_Picture> rdf:type owl:Class ;
+                                                  rdfs:subClassOf :Supply_Chain_Lobe ;
                                                   rdfs:label "Supply Picture"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Target_Allocation
 <http://www.w3id.org/ecsel-dr-SCP#Target_Allocation> rdf:type owl:Class ;
+                                                     rdfs:subClassOf :Supply_Chain_Lobe ;
                                                      rdfs:comment "The target allocation is the level of allocation planned by the company."@en ;
                                                      rdfs:label "Target Allocation"@en .
 
@@ -16788,12 +17074,14 @@ These items are not yet completed but either just being fabricated or waiting in
 
 ###  http://www.w3id.org/ecsel-dr-SO#Bottleneck
 <http://www.w3id.org/ecsel-dr-SO#Bottleneck> rdf:type owl:Class ;
+                                             rdfs:subClassOf :Semiconductor_Production_Lobe ;
                                              rdfs:comment "A capacity Bottleneck is defined as an equipment or multiple equipment that reflect the capacity of the whole line (either a dedicated Line or Pool sharing)."@en ;
                                              rdfs:label "Bottleneck"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Capacity
 <http://www.w3id.org/ecsel-dr-SO#Capacity> rdf:type owl:Class ;
+                                           rdfs:subClassOf :Semiconductor_Production_Lobe ;
                                            rdfs:comment "As soon as a machine has free capacity: 1. all lots which belong to a priority class have to be dispatched imediately accordung to their priority  rank."@en ;
                                            rdfs:label "Capacity"@en .
 
@@ -16807,12 +17095,14 @@ These items are not yet completed but either just being fabricated or waiting in
 
 ###  http://www.w3id.org/ecsel-dr-SO#Current_WIP
 <http://www.w3id.org/ecsel-dr-SO#Current_WIP> rdf:type owl:Class ;
+                                              rdfs:subClassOf :Semiconductor_Development_Lobe ;
                                               rdfs:comment "“Current WIP” entity describes the actual material distribution in the supply chain. (snapshot entity)"@en ;
                                               rdfs:label "Current Work In Progress"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Cycle_Time_Committment
 <http://www.w3id.org/ecsel-dr-SO#Cycle_Time_Committment> rdf:type owl:Class ;
+                                                         rdfs:subClassOf :Semiconductor_Development_Lobe ;
                                                          rdfs:comment """The “Cycle Time Commitment” entity helps controlling the WIP
 via the release plan. (strategy entity)"""@en ;
                                                          rdfs:label "Cycle Time Commitment"@en .
@@ -16820,12 +17110,14 @@ via the release plan. (strategy entity)"""@en ;
 
 ###  http://www.w3id.org/ecsel-dr-SO#Delivery_Commitment
 <http://www.w3id.org/ecsel-dr-SO#Delivery_Commitment> rdf:type owl:Class ;
+                                                      rdfs:subClassOf :Semiconductor_Development_Lobe ;
                                                       rdfs:comment "The \"Delivery Commitment\" directly corresponds to the release plans and cycle time commitments introduced in the corresponding entities."@en ;
                                                       rdfs:label "Delivery Commitment"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Demand_Snapshot
 <http://www.w3id.org/ecsel-dr-SO#Demand_Snapshot> rdf:type owl:Class ;
+                                                  rdfs:subClassOf :Semiconductor_Production_Lobe ;
                                                   rdfs:comment "The “Demand” entity stores redundant demand at every product level. (snapshot entity)"@en ;
                                                   rdfs:label "Demand Snapshot"@en .
 
@@ -16860,30 +17152,35 @@ via the release plan. (strategy entity)"""@en ;
 
 ###  http://www.w3id.org/ecsel-dr-SO#EPA
 <http://www.w3id.org/ecsel-dr-SO#EPA> rdf:type owl:Class ;
+                                      rdfs:subClassOf :Semiconductor_Development_Lobe ;
                                       rdfs:comment "The EPA is a product identifier referring to the associated process."@en ;
                                       rdfs:label "EPA"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Equipment
 <http://www.w3id.org/ecsel-dr-SO#Equipment> rdf:type owl:Class ;
+                                            rdfs:subClassOf :Semiconductor_Development_Lobe ;
                                             rdfs:comment "The entity “Equipment” describes the semiconductor equipment of any equipment model. It allocates it to higher level entities and describes the behavior of the equipment. (master entity)"@en ;
                                             rdfs:label "Equipment"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Equipment_Group
 <http://www.w3id.org/ecsel-dr-SO#Equipment_Group> rdf:type owl:Class ;
+                                                  rdfs:subClassOf :Semiconductor_Development_Lobe ;
                                                   rdfs:comment "Each machine is allocated to a group of machines doing similar processes. The equipment groups are described and allocated in the master entity “Equipment Group”. (master entity)"@en ;
                                                   rdfs:label "Equipment Group"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Event_Calendar
 <http://www.w3id.org/ecsel-dr-SO#Event_Calendar> rdf:type owl:Class ;
+                                                 rdfs:subClassOf :Semiconductor_Development_Lobe ;
                                                  rdfs:comment "In the “Event Calendar” tracing entity, certain events like planned facility shutdowns, etc. can be scheduled"@en ;
                                                  rdfs:label "Event Calendar"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Fab
 <http://www.w3id.org/ecsel-dr-SO#Fab> rdf:type owl:Class ;
+                                      rdfs:subClassOf :Semiconductor_Production_Lobe ;
                                       rdfs:comment "The “Fab” entity depicts the fab as a technological and physical production unit. (master entity)"@en ;
                                       rdfs:label "Fabrication"@en .
 
@@ -16897,6 +17194,7 @@ via the release plan. (strategy entity)"""@en ;
 
 ###  http://www.w3id.org/ecsel-dr-SO#Furnace_Process
 <http://www.w3id.org/ecsel-dr-SO#Furnace_Process> rdf:type owl:Class ;
+                                                  rdfs:subClassOf :Semiconductor_Production_Lobe ;
                                                   rdfs:comment "Sequence of interdependent and linked procedures which, at every stage, consume one or more resources (employee time, energy, machines, money) to convert inputs (data, material, parts, etc.) into outputs. These outputs then serve as inputs for the next stage until a known goal or end result is reached."@en ;
                                                   rdfs:label "Furnace Process"@en .
 
@@ -16924,72 +17222,84 @@ via the release plan. (strategy entity)"""@en ;
 
 ###  http://www.w3id.org/ecsel-dr-SO#Lot
 <http://www.w3id.org/ecsel-dr-SO#Lot> rdf:type owl:Class ;
+                                      rdfs:subClassOf :Semiconductor_Production_Lobe ;
                                       rdfs:comment "The Lot represents manufacturing unit (e.g. in the semicondutor industry in Frontend this often consists of 25 or 50 wafers)."@en ;
                                       rdfs:label "Lot"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Lot_Event
 <http://www.w3id.org/ecsel-dr-SO#Lot_Event> rdf:type owl:Class ;
+                                            rdfs:subClassOf :Semiconductor_Production_Lobe ;
                                             rdfs:comment "The Lot Event  tracing entity gives the history of lot events. e.g. Hold events, Split events, Merge events, etc. (tracing entities)."@en ;
                                             rdfs:label "Lot Event"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Lot_Size
 <http://www.w3id.org/ecsel-dr-SO#Lot_Size> rdf:type owl:Class ;
+                                           rdfs:subClassOf :Semiconductor_Production_Lobe ;
                                            rdfs:comment "A measure or quantity increment acceptable to or specified by the party offering to buy or sell. Used also as an alternative term for lot quantity."@en ;
                                            rdfs:label "Lot Size"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Mask
 <http://www.w3id.org/ecsel-dr-SO#Mask> rdf:type owl:Class ;
+                                       rdfs:subClassOf :Semiconductor_Development_Lobe ;
                                        rdfs:comment "A transparent (glass or quartz) plate covered with an array of patterns used in making an IC. Each pattern consists of opaque and transparent areas that define the size and shape of all circuit and device elements. The mask is used to expose selected areas, and defines the areas to be processed. Masks may use emulsion, chrome, iron oxide, silicon or other material to produce the opaque areas."@en ;
                                        rdfs:label "Mask"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Material_Transfer_Matrix
 <http://www.w3id.org/ecsel-dr-SO#Material_Transfer_Matrix> rdf:type owl:Class ;
+                                                           rdfs:subClassOf :Semiconductor_Development_Lobe ;
                                                            rdfs:comment "A material transfer matrix estimates the duration of material from on to another equipment."@en ;
                                                            rdfs:label "Material Transfer Matrix"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Operation
 <http://www.w3id.org/ecsel-dr-SO#Operation> rdf:type owl:Class ;
+                                            rdfs:subClassOf :Semiconductor_Development_Lobe ;
                                             rdfs:comment "The master entity “Operation” depicts the generic behavior of a single process step. Each operation has a foreign key relation to equipment and to route which means that the operation is required by the specific routes and requires a specific equipment. (workflow descriptive master entity)"@en ;
                                             rdfs:label "Operation"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Operator
 <http://www.w3id.org/ecsel-dr-SO#Operator> rdf:type owl:Class ;
+                                           rdfs:subClassOf :Semiconductor_Development_Lobe ;
                                            rdfs:comment "A user that interacts with the equipment only to the degree necessary for the equipment to perform its intended function."@en ;
                                            rdfs:label "Operator"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Owner
 <http://www.w3id.org/ecsel-dr-SO#Owner> rdf:type owl:Class ;
+                                        rdfs:subClassOf :Semiconductor_Development_Lobe ;
                                         rdfs:comment "An owner is the entity that has the highest level of access authority or legal right to a system or equipment."@en ;
                                         rdfs:label "Owner"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Planning_Work_Center
 <http://www.w3id.org/ecsel-dr-SO#Planning_Work_Center> rdf:type owl:Class ;
+                                                       rdfs:subClassOf :Semiconductor_Development_Lobe ;
                                                        rdfs:comment "Semiconductor wafers arrive at the planning work center according to a Poisson process in lots with a certain unit size. The planning work center X48- can process three different products which arrive in four different classes."@en ;
                                                        rdfs:label "Planning Work Center"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Plant
 <http://www.w3id.org/ecsel-dr-SO#Plant> rdf:type owl:Class ;
+                                        rdfs:subClassOf :Semiconductor_Development_Lobe ;
                                         rdfs:comment "The “Plant” entity describes the plant as a physical location of one or more fabs. The Plant belongs to a supply chain and can either be internal or external. (master entity)"@en ;
                                         rdfs:label "Plant"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Priority_Class
 <http://www.w3id.org/ecsel-dr-SO#Priority_Class> rdf:type owl:Class ;
+                                                 rdfs:subClassOf :Semiconductor_Production_Lobe ;
                                                  rdfs:comment "Each lot is characterized by a product type and a priority class. The priority classes are listed as follows: development, hot, productive, rocket and timecoupling."@en ;
                                                  rdfs:label "Priority Class"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Process
 <http://www.w3id.org/ecsel-dr-SO#Process> rdf:type owl:Class ;
+                                          rdfs:subClassOf :Semiconductor_Development_Lobe ;
                                           rdfs:comment "Sequence of interdependent and linked procedures which, at every stage, consume one or more resources (employee time, energy, machines, money) to convert inputs (data, material, parts, etc.) into outputs. These outputs then serve as inputs for the next stage until a known goal or end result is reached."@en ;
                                           rdfs:label "Process"@en .
 
@@ -17024,6 +17334,7 @@ via the release plan. (strategy entity)"""@en ;
 
 ###  http://www.w3id.org/ecsel-dr-SO#Product
 <http://www.w3id.org/ecsel-dr-SO#Product> rdf:type owl:Class ;
+                                          rdfs:subClassOf :Semiconductor_Production_Lobe ;
                                           rdfs:comment "A product is a work product that is delivered to the customer."@en ,
                                                        "A product is any tangible output or service that is a result of a process and that is intended for delivery to a customer or end user."@en ;
                                           rdfs:label "Product"@en .
@@ -17045,6 +17356,7 @@ via the release plan. (strategy entity)"""@en ;
 
 ###  http://www.w3id.org/ecsel-dr-SO#Product_Level
 <http://www.w3id.org/ecsel-dr-SO#Product_Level> rdf:type owl:Class ;
+                                                rdfs:subClassOf :Semiconductor_Development_Lobe ;
                                                 rdfs:comment "In the \"product level\" entity, the aggregation of elements enables the grouping of products and defines the relationship between products and groups at different hierarchy levels. This supports planning, logistics, modeling, forecasting and reporting."@en ;
                                                 rdfs:label "Product Level"@en .
 
@@ -17080,6 +17392,7 @@ because the mid capacity planning is done on this first aggregated product level
 
 ###  http://www.w3id.org/ecsel-dr-SO#Production_Request
 <http://www.w3id.org/ecsel-dr-SO#Production_Request> rdf:type owl:Class ;
+                                                     rdfs:subClassOf :Semiconductor_Production_Lobe ;
                                                      rdfs:comment "Production requests definte what the facilities need to produce when and in what quantity."@en ;
                                                      rdfs:label "Production Request"@en .
 
@@ -17093,18 +17406,21 @@ because the mid capacity planning is done on this first aggregated product level
 
 ###  http://www.w3id.org/ecsel-dr-SO#Purge
 <http://www.w3id.org/ecsel-dr-SO#Purge> rdf:type owl:Class ;
+                                        rdfs:subClassOf :Semiconductor_Production_Lobe ;
                                         rdfs:comment "purge' is the application of an intert gas, or gas mixture, to the OD or ID surface of the weld joint to displace non-inert atmospheric gases. A block purge is a non-flowing purge with positive pressure."@en ;
                                         rdfs:label "Purge"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Release_Plan
 <http://www.w3id.org/ecsel-dr-SO#Release_Plan> rdf:type owl:Class ;
+                                               rdfs:subClassOf :Semiconductor_Production_Lobe ;
                                                rdfs:comment "The “Release Plan” entity shows the quantity planned to be released to a fab or facility. (strategy entity)"@en ;
                                                rdfs:label "Release Plan"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Robot
 <http://www.w3id.org/ecsel-dr-SO#Robot> rdf:type owl:Class ;
+                                        rdfs:subClassOf :Semiconductor_Production_Lobe ;
                                         rdfs:comment "The robot loads and unloads the lots from the WIP station into the furnace. Robot can load the furnace while another boat is processd by the tool."@en ;
                                         rdfs:label "Robot"@en .
 
@@ -17118,24 +17434,28 @@ because the mid capacity planning is done on this first aggregated product level
 
 ###  http://www.w3id.org/ecsel-dr-SO#Route
 <http://www.w3id.org/ecsel-dr-SO#Route> rdf:type owl:Class ;
+                                        rdfs:subClassOf :Semiconductor_Production_Lobe ;
                                         rdfs:comment "The master entity “Route” describes the structure of a workflow out of operations. Every product uses a specific route in its value stream, i.e. the complete sequence of operations with all mandatory and optional operations necessary to complete the product. A route makes use of the single operations. (workflow descriptive master entity)"@en ;
                                         rdfs:label "Route"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Shift
 <http://www.w3id.org/ecsel-dr-SO#Shift> rdf:type owl:Class ;
+                                        rdfs:subClassOf :Semiconductor_Production_Lobe ;
                                         rdfs:comment "Each workshop has a certain technical and operational workforce organized in shifts described in the “Shift” entity."@en ;
                                         rdfs:label "Shift"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Simulation_Part
 <http://www.w3id.org/ecsel-dr-SO#Simulation_Part> rdf:type owl:Class ;
+                                                  rdfs:subClassOf :Semiconductor_Production_Lobe ;
                                                   rdfs:comment "A simulation part helps to identify the same product in different locations. They are visible in Product Structures. This is a simulation entity and not a form of production/planning."@en ;
                                                   rdfs:label "Simulation Part"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Simulation_Route
 <http://www.w3id.org/ecsel-dr-SO#Simulation_Route> rdf:type owl:Class ;
+                                                   rdfs:subClassOf :Semiconductor_Production_Lobe ;
                                                    rdfs:comment "A simulation route (AKA workroute) represents a sequence of process steps in manufacutring (mainly at wafer fab). This is a simulation entity and not a form of production/planning."@en ;
                                                    rdfs:label "Simulation Route"@en .
 
@@ -17149,31 +17469,36 @@ because the mid capacity planning is done on this first aggregated product level
 
 ###  http://www.w3id.org/ecsel-dr-SO#Supply_Chain
 <http://www.w3id.org/ecsel-dr-SO#Supply_Chain> rdf:type owl:Class ;
+                                               rdfs:subClassOf :Semiconductor_Production_Lobe ;
                                                rdfs:comment "The entity “Supply Chain” describes the supply chain from the topmost level with all possible material flow edges, referring on the FabIDs (master entity)"@en ;
                                                rdfs:label "Supply Chain"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Target_Costs
 <http://www.w3id.org/ecsel-dr-SO#Target_Costs> rdf:type owl:Class ;
+                                               rdfs:subClassOf :Semiconductor_Production_Lobe ;
                                                rdfs:comment "The target costs entity is the final cost of a product or service that must be achieved in order to generate the desired level of sales revenue and income or due to contractual agreements."@en ;
                                                rdfs:label "Target Costs"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Target_Revenue
 <http://www.w3id.org/ecsel-dr-SO#Target_Revenue> rdf:type owl:Class ;
+                                                 rdfs:subClassOf :Semiconductor_Development_Lobe ;
                                                  rdfs:comment "The target revenue is the amount of income a company wants to generate for the current accounting period."@en ;
                                                  rdfs:label "Target Revenue"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Target_Service_Level
 <http://www.w3id.org/ecsel-dr-SO#Target_Service_Level> rdf:type owl:Class ;
+                                                       rdfs:subClassOf :Semiconductor_Development_Lobe ;
                                                        rdfs:comment "The target service level is a performance indicator expressing the percentage of orders satisfied."@en ;
                                                        rdfs:label "Target Service Level"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Technology
 <http://www.w3id.org/ecsel-dr-SO#Technology> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://www.w3id.org/ecsel-dr-SO#Technology> ;
+                                             rdfs:subClassOf :Semiconductor_Development_Lobe ,
+                                                             <http://www.w3id.org/ecsel-dr-SO#Technology> ;
                                              rdfs:comment "A semiconductor technology is a set of equipment, processes, manufacturing techniques and the related methods and procedures to enable the design & production of components, sub-components and modules."@en ;
                                              rdfs:label "Technology"@en .
 
@@ -17187,6 +17512,7 @@ because the mid capacity planning is done on this first aggregated product level
 
 ###  http://www.w3id.org/ecsel-dr-SO#Time_Constraints
 <http://www.w3id.org/ecsel-dr-SO#Time_Constraints> rdf:type owl:Class ;
+                                                   rdfs:subClassOf :Semiconductor_Development_Lobe ;
                                                    rdfs:comment "As single operations can set the lot to a time-critical state, time constraints can ensure that the operation setting it to an uncritical state is not delayed. Also the other case where certain time has to be spent between two operations can be covered with this master entity. (workflow deswcriptive master entities)"@en ;
                                                    rdfs:label "Time Constraints"@en .
 
@@ -17200,6 +17526,7 @@ because the mid capacity planning is done on this first aggregated product level
 
 ###  http://www.w3id.org/ecsel-dr-SO#Tool
 <http://www.w3id.org/ecsel-dr-SO#Tool> rdf:type owl:Class ;
+                                       rdfs:subClassOf :Semiconductor_Development_Lobe ;
                                        rdfs:comment "A tool is any pieve of semiconductor fabrication or inspection equipment designed to process wafers. Often used synonymously with equipment in the silicon wafer processing industry."@en ;
                                        rdfs:label "Tool"@en .
 
@@ -17213,18 +17540,21 @@ because the mid capacity planning is done on this first aggregated product level
 
 ###  http://www.w3id.org/ecsel-dr-SO#Work_In_Progress_Station
 <http://www.w3id.org/ecsel-dr-SO#Work_In_Progress_Station> rdf:type owl:Class ;
+                                                           rdfs:subClassOf :Semiconductor_Production_Lobe ;
                                                            rdfs:comment "Work in Progress (WIP) processing occurs here. WIP refers to the units of production that have been released into the factory, but have not yet been scrapped, have not been sent our for external rework, and have not finished processing through all of the production steps."@en ;
                                                            rdfs:label "Work In Progress Station"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#Workshop
 <http://www.w3id.org/ecsel-dr-SO#Workshop> rdf:type owl:Class ;
+                                           rdfs:subClassOf :Semiconductor_Development_Lobe ;
                                            rdfs:comment "The overall organizational working structures within the fabs is described in the entity “Workshop” (master entity)"@en ;
                                            rdfs:label "Workshop"@en .
 
 
 ###  http://xmlns.com/foaf/0.1/Agent
 foaf:Agent rdf:type owl:Class ;
+           rdfs:subClassOf :Process_Lobe ;
            rdfs:comment """\"The Agent class is the class of agents; things that do stuff. A well known sub-class is Person, representing people. Other kinds of agents include Organization and Group.
 
 The Agent class is useful in a few places in FOAF where Person would have been overly specific. For example, the IM chat ID properties such as jabberID are typically associated with people, but sometimes belong to software bots.\"""" ;
@@ -17233,6 +17563,7 @@ The Agent class is useful in a few places in FOAF where Person would have been o
 
 ###  http://xmlns.com/foaf/0.1/Document
 foaf:Document rdf:type owl:Class ;
+              rdfs:subClassOf :Power_Lobe ;
               rdfs:comment "The foaf:Document class represents those things which are, broadly conceived, 'documents'"@en ;
               rdfs:label "Document"@en .
 

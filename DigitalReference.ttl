@@ -19,7 +19,7 @@
 @prefix ecsel-dr-PROD: <http://www.w3id.org/ecsel-dr-PROD#> .
 @prefix ecsel-dr-OOSMP: <http://www.w3id.org/ecsel-dr-OOSMP#> .
 @prefix ecsel-dr-RAMI40: <http://www.w3id.org/ecsel-dr-RAMI40#> .
-@base <http://www.w3id.org/ecsel-dr> .
+@base <http://www.w3id.org/ecsel-dr#> .
 
 <http://www.w3id.org/ecsel-dr> rdf:type owl:Ontology ;
                                 dc:description "Holistic Ontology for semiconductor manufacturing and development, products and systems containing semiconductors and connected supply chains."@en ;
@@ -9178,12 +9178,14 @@ Incoterms 2020 is the ninth set of international contract terms published by the
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Burden_Of_Chemicals_In_The_Front_End_Manufacturing
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Burden_Of_Chemicals_In_The_Front_End_Manufacturing> rdf:type owl:Class ;
                                                                                                                                      rdfs:subClassOf :Application ;
+                                                                                                                                     rdfs:comment "Represents the amount of carbon dioxide (CO2) emitted or burdened by the chemicals used in the front end manufacturing of semiconductors." ;
                                                                                                                                      rdfs:label "CO2 Burden Of Chemicals In The Front End Manufacturing"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Burden_Of_Electricity
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Burden_Of_Electricity> rdf:type owl:Class ;
                                                                                                         rdfs:subClassOf :Application ;
+                                                                                                        rdfs:comment "The carbon dioxide (CO2) emissions or environmental impact associated with electricity consumption." ;
                                                                                                         rdfs:label "CO2 Burden Of Electricity"@en .
 
 
@@ -9204,144 +9206,168 @@ Incoterms 2020 is the ninth set of international contract terms published by the
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Burden_Of_Process_Material
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Burden_Of_Process_Material> rdf:type owl:Class ;
                                                                                                              rdfs:subClassOf :Application ;
+                                                                                                             rdfs:comment "The carbon dioxide (CO2) emissions or environmental impact associated with the process material used in manufacturing." ;
                                                                                                              rdfs:label "CO2 Burden Of Process Material"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Burden_Of_Raw_Material
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Burden_Of_Raw_Material> rdf:type owl:Class ;
                                                                                                          rdfs:subClassOf :Application ;
+                                                                                                         rdfs:comment "The carbon dioxide (CO2) emissions or environmental impact associated with the raw material used in manufacturing." ;
                                                                                                          rdfs:label "CO2 Burden Of Raw Material"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Burden_Of_Transportation
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Burden_Of_Transportation> rdf:type owl:Class ;
                                                                                                            rdfs:subClassOf :Application ;
+                                                                                                           rdfs:comment "The carbon dioxide (CO2) emissions or environmental impact associated with transportation." ;
                                                                                                            rdfs:label "CO2 Burden Of Transportation"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Equivalent_Per_Chemical
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Equivalent_Per_Chemical> rdf:type owl:Class ;
                                                                                                           rdfs:subClassOf :Application ;
+                                                                                                          rdfs:comment "Indicates the carbon dioxide (CO2) equivalent emissions or burden associated with a specific chemical compound." ;
                                                                                                           rdfs:label "CO2 Equivalent Per Chemical"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Equivalent_Per_Gas
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Equivalent_Per_Gas> rdf:type owl:Class ;
                                                                                                      rdfs:subClassOf :Application ;
+                                                                                                     rdfs:comment "Indicates the carbon dioxide (CO2) equivalent emissions or burden associated with a specific gas or gaseous substance." ;
                                                                                                      rdfs:label "CO2 Equivalent Per Gas"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Equivalent_Per_Material
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Equivalent_Per_Material> rdf:type owl:Class ;
                                                                                                           rdfs:subClassOf :Application ;
+                                                                                                          rdfs:comment "Indicates the carbon dioxide (CO2) equivalent emissions or burden associated with a specific material." ;
                                                                                                           rdfs:label "CO2 Equivalent Per Material"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Equivalent_Per_Metal
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Equivalent_Per_Metal> rdf:type owl:Class ;
                                                                                                        rdfs:subClassOf :Application ;
+                                                                                                       rdfs:comment "Indicates the carbon dioxide (CO2) equivalent emissions or burden associated with a specific metal or metallic element." ;
                                                                                                        rdfs:label "CO2 Equivalent Per Metal"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Factor_Transportation
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Factor_Transportation> rdf:type owl:Class ;
                                                                                                         rdfs:subClassOf :Application ;
+                                                                                                        rdfs:comment "The carbon dioxide (CO2) emissions factor or conversion factor associated with transportation." ;
                                                                                                         rdfs:label "CO2 Factor Transportation"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_A_Gcar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_A_Gcar> rdf:type owl:Class ;
                                                                                                     rdfs:subClassOf :Application ;
+                                                                                                    rdfs:comment "The carbon dioxide (CO2) emissions saved by a gasoline car (gcar) compared to a baseline or standard." ;
                                                                                                     rdfs:label "CO2 Savings Of A Gcar"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_A_Wind_Turbine
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_A_Wind_Turbine> rdf:type owl:Class ;
                                                                                                             rdfs:subClassOf :Application ;
+                                                                                                            rdfs:comment "The carbon dioxide (CO2) emissions saved by a wind turbine compared to a baseline or standard." ;
                                                                                                             rdfs:label "CO2 Savings Of A Wind Turbine"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_An_Ecar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_An_Ecar> rdf:type owl:Class ;
                                                                                                      rdfs:subClassOf :Application ;
+                                                                                                     rdfs:comment "The carbon dioxide (CO2) emissions saved by an electric car (ecar) compared to a baseline or standard." ;
                                                                                                      rdfs:label "CO2 Savings Of An Ecar"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_Ecars_In_Company_Products
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_Ecars_In_Company_Products> rdf:type owl:Class ;
                                                                                                                        rdfs:subClassOf :Application ;
+                                                                                                                       rdfs:comment "The carbon dioxide (CO2) emissions saved by electric cars (ecars) in company products." ;
                                                                                                                        rdfs:label "CO2 Savings Of Ecars In Company Products"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_Ecars_Sold_Worldwide_In_A_Year
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_Ecars_Sold_Worldwide_In_A_Year> rdf:type owl:Class ;
                                                                                                                             rdfs:subClassOf :Application ;
+                                                                                                                            rdfs:comment "The carbon dioxide (CO2) emissions saved by electric cars (ecars) sold worldwide in a year." ;
                                                                                                                             rdfs:label "CO2 Savings Of Ecars Sold Worldwide In A Year"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_Gcars_In_Company_Products
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_Gcars_In_Company_Products> rdf:type owl:Class ;
                                                                                                                        rdfs:subClassOf :Application ;
+                                                                                                                       rdfs:comment "The carbon dioxide (CO2) emissions saved by gasoline cars (gcars) in company products." ;
                                                                                                                        rdfs:label "CO2 Savings Of Gcars In Company Products"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_Gcars_Sold_Worldwide_In_A_Year
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_Gcars_Sold_Worldwide_In_A_Year> rdf:type owl:Class ;
                                                                                                                             rdfs:subClassOf :Application ;
+                                                                                                                            rdfs:comment "The carbon dioxide (CO2) emissions saved by gasoline cars (gcars) sold worldwide in a year." ;
                                                                                                                             rdfs:label "CO2 Savings Of Gcars Sold Worldwide In A Year"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_One_Semiconductor_Ecar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_One_Semiconductor_Ecar> rdf:type owl:Class ;
                                                                                                                     rdfs:subClassOf :Application ;
+                                                                                                                    rdfs:comment "The carbon dioxide (CO2) emissions saved by one semiconductor in an electric car (ecar)." ;
                                                                                                                     rdfs:label "CO2 Savings Of One Semiconductor Ecar"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_One_Semiconductor_Gcar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_One_Semiconductor_Gcar> rdf:type owl:Class ;
                                                                                                                     rdfs:subClassOf :Application ;
+                                                                                                                    rdfs:comment "The carbon dioxide (CO2) emissions saved by one semiconductor in a gasoline car (gcar)." ;
                                                                                                                     rdfs:label "CO2 Savings Of One Semiconductor Gcar"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_One_Semiconductor_Solar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_One_Semiconductor_Solar> rdf:type owl:Class ;
                                                                                                                      rdfs:subClassOf :Application ;
+                                                                                                                     rdfs:comment "The carbon dioxide (CO2) emissions saved by one semiconductor in a solar panel." ;
                                                                                                                      rdfs:label "CO2 Savings Of One Semiconductor Solar"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_One_Semiconductor_Wind_Turbine
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_One_Semiconductor_Wind_Turbine> rdf:type owl:Class ;
                                                                                                                             rdfs:subClassOf :Application ;
+                                                                                                                            rdfs:comment "The carbon dioxide (CO2) emissions saved by one semiconductor in a wind turbine." ;
                                                                                                                             rdfs:label "CO2 Savings Of One Semiconductor Wind Turbine"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_One_Solar_Panel
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_One_Solar_Panel> rdf:type owl:Class ;
                                                                                                              rdfs:subClassOf :Application ;
+                                                                                                             rdfs:comment "The carbon dioxide (CO2) emissions saved by one solar panel." ;
                                                                                                              rdfs:label "CO2 Savings Of One Solar Panel"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_Solar_Panel_In_Company_World
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_Solar_Panel_In_Company_World> rdf:type owl:Class ;
-                                                                                                                          rdfs:subClassOf :Application ;
+                                                                                                                          rdfs:subClassOf <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_Solar_Panels_Sold_Worldwide_In_A_Year> ;
+                                                                                                                          rdfs:comment "The carbon dioxide (CO2) emissions saved by solar panels in the company's operations or products." ;
                                                                                                                           rdfs:label "CO2 Savings Of Solar Panel In Company World"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_Solar_Panels_Sold_Worldwide_In_A_Year
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_Solar_Panels_Sold_Worldwide_In_A_Year> rdf:type owl:Class ;
                                                                                                                                    rdfs:subClassOf :Application ;
+                                                                                                                                   rdfs:comment "The carbon dioxide (CO2) emissions saved by solar panels sold worldwide in a year." ;
                                                                                                                                    rdfs:label "CO2 Savings Of Solar Panels Sold Worldwide In A Year"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_Wind_Turbines_In_Company_Products
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_Wind_Turbines_In_Company_Products> rdf:type owl:Class ;
                                                                                                                                rdfs:subClassOf :Application ;
+                                                                                                                               rdfs:comment "The carbon dioxide (CO2) emissions saved by wind turbines in the company's operations or products." ;
                                                                                                                                rdfs:label "CO2 Savings Of Wind Turbines In Company Products"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_Wind_Turbines_Sold_Worldwide_In_A_Year
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#CO2_Savings_Of_Wind_Turbines_Sold_Worldwide_In_A_Year> rdf:type owl:Class ;
                                                                                                                                     rdfs:subClassOf :Application ;
+                                                                                                                                    rdfs:comment "The carbon dioxide (CO2) emissions saved by wind turbines sold worldwide in a year." ;
                                                                                                                                     rdfs:label "CO2 Savings Of Wind Turbines Sold Worldwide In A Year"@en .
 
 
@@ -9362,36 +9388,42 @@ Incoterms 2020 is the ninth set of international contract terms published by the
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Contracter_Or_Outside_The_Company
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Contracter_Or_Outside_The_Company> rdf:type owl:Class ;
                                                                                                                 rdfs:subClassOf :Application ;
+                                                                                                                rdfs:comment "Referring to work done by a contractor or outside the company." ;
                                                                                                                 rdfs:label "Contracter Or Outside The Company"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Data_From_50_Reference_Products
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Data_From_50_Reference_Products> rdf:type owl:Class ;
                                                                                                               rdfs:subClassOf :Application ;
+                                                                                                              rdfs:comment "Data obtained from 50 reference products used for comparison or analysis." ;
                                                                                                               rdfs:label "Data From 50 Reference Products"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Delivery_Gross_Weight
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Delivery_Gross_Weight> rdf:type owl:Class ;
                                                                                                     rdfs:subClassOf :Application ;
+                                                                                                    rdfs:comment "The total weight of a delivery, including the packaging and contents." ;
                                                                                                     rdfs:label "Delivery Gross Weight"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Distance_Between_Sender_And_Receipent_Km
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Distance_Between_Sender_And_Receipent_Km> rdf:type owl:Class ;
                                                                                                                        rdfs:subClassOf :Application ;
+                                                                                                                       rdfs:comment "The distance in kilometers between the sender and recipient of a shipment." ;
                                                                                                                        rdfs:label "Distance Between Sender And Receipent Km"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Distance_Between_Sender_And_Reciepent
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Distance_Between_Sender_And_Reciepent> rdf:type owl:Class ;
                                                                                                                     rdfs:subClassOf :Application ;
+                                                                                                                    rdfs:comment "The distance between the sender and recipient of a shipment." ;
                                                                                                                     rdfs:label "Distance Between Sender And Reciepent"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Distribution_Losses
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Distribution_Losses> rdf:type owl:Class ;
                                                                                                   rdfs:subClassOf :Application ;
+                                                                                                  rdfs:comment "Losses that occur during the distribution or transmission of electricity." ;
                                                                                                   rdfs:label "Distribution Losses"@en .
 
 
@@ -9515,54 +9547,63 @@ Incoterms 2020 is the ninth set of international contract terms published by the
                                                                                                             owl:onProperty <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#total_infrastructure> ;
                                                                                                             owl:someValuesFrom xsd:float
                                                                                                           ] ;
+                                                                                          rdfs:comment "Electricity as an energy source." ;
                                                                                           rdfs:label "Electricity"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Energy_Mix_Ecar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Energy_Mix_Ecar> rdf:type owl:Class ;
                                                                                               rdfs:subClassOf :Application ;
+                                                                                              rdfs:comment "The energy mix or proportion of different energy sources used in electric cars (ecars)." ;
                                                                                               rdfs:label "Energy Mix Ecar"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Energy_Mix_Electricity
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Energy_Mix_Electricity> rdf:type owl:Class ;
                                                                                                      rdfs:subClassOf :Application ;
+                                                                                                     rdfs:comment "The energy mix or proportion of different energy sources used in electricity generation." ;
                                                                                                      rdfs:label "Energy Mix Electricity"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Energy_Mix_Gcar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Energy_Mix_Gcar> rdf:type owl:Class ;
                                                                                               rdfs:subClassOf :Application ;
+                                                                                              rdfs:comment "The energy mix or proportion of different energy sources used in gasoline cars (gcars)." ;
                                                                                               rdfs:label "Energy Mix Gcar"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Energy_Mix_Solar_Panel
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Energy_Mix_Solar_Panel> rdf:type owl:Class ;
                                                                                                      rdfs:subClassOf :Application ;
+                                                                                                     rdfs:comment "The energy mix or proportion of different energy sources used in solar panels." ;
                                                                                                      rdfs:label "Energy Mix Solar Panel"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Energy_Mix_Wind_Turbine
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Energy_Mix_Wind_Turbine> rdf:type owl:Class ;
                                                                                                       rdfs:subClassOf :Application ;
+                                                                                                      rdfs:comment "The energy mix or proportion of different energy sources used in wind turbines." ;
                                                                                                       rdfs:label "Energy Mix Wind Turbine"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Existence_Of_Fitting_CO2_Equivalent_Chemical
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Existence_Of_Fitting_CO2_Equivalent_Chemical> rdf:type owl:Class ;
                                                                                                                            rdfs:subClassOf :Application ;
+                                                                                                                           rdfs:comment "The presence or availability of a suitable chemical compound that can be used as a carbon dioxide (CO2) equivalent for measurement or comparison purposes." ;
                                                                                                                            rdfs:label "Existence Of Fitting CO2 Equivalent Chemical"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Existence_Of_Fitting_CO2_Equivalent_Gas
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Existence_Of_Fitting_CO2_Equivalent_Gas> rdf:type owl:Class ;
                                                                                                                       rdfs:subClassOf :Application ;
+                                                                                                                      rdfs:comment "The presence or availability of a suitable gaseous substance that can be used as a carbon dioxide (CO2) equivalent for measurement or comparison purposes." ;
                                                                                                                       rdfs:label "Existence Of Fitting CO2 Equivalent Gas"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Existence_Of_Fitting_CO2_Equivalent_Metal
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Existence_Of_Fitting_CO2_Equivalent_Metal> rdf:type owl:Class ;
                                                                                                                         rdfs:subClassOf :Application ;
+                                                                                                                        rdfs:comment "The presence or availability of a suitable metallic element or compound that can be used as a carbon dioxide (CO2) equivalent for measurement or comparison purposes." ;
                                                                                                                         rdfs:label "Existence Of Fitting CO2 Equivalent Metal"@en .
 
 
@@ -9675,24 +9716,28 @@ Incoterms 2020 is the ninth set of international contract terms published by the
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Market_Share_Of_Company_In_Ecar_World
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Market_Share_Of_Company_In_Ecar_World> rdf:type owl:Class ;
                                                                                                                     rdfs:subClassOf :Application ;
+                                                                                                                    rdfs:comment "The market share or percentage of the total electric car (ecar) market held by a specific company." ;
                                                                                                                     rdfs:label "Market Share Of Company In Ecar World"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Market_Share_Of_Company_In_Gcar_World
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Market_Share_Of_Company_In_Gcar_World> rdf:type owl:Class ;
                                                                                                                     rdfs:subClassOf :Application ;
+                                                                                                                    rdfs:comment "The market share or percentage of the total gasoline car (gcar) market held by a specific company." ;
                                                                                                                     rdfs:label "Market Share Of Company In Gcar World"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Market_Share_Of_Company_In_Solar_Panel_World
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Market_Share_Of_Company_In_Solar_Panel_World> rdf:type owl:Class ;
                                                                                                                            rdfs:subClassOf :Application ;
+                                                                                                                           rdfs:comment "The market share or percentage of the total solar panel market held by a specific company." ;
                                                                                                                            rdfs:label "Market Share Of Company In Solar Panel World"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Market_Share_Of_Company_In_Wind_Turbine_World
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Market_Share_Of_Company_In_Wind_Turbine_World> rdf:type owl:Class ;
                                                                                                                             rdfs:subClassOf :Application ;
+                                                                                                                            rdfs:comment "The market share or percentage of the total wind turbine market held by a specific company." ;
                                                                                                                             rdfs:label "Market Share Of Company In Wind Turbine World"@en .
 
 
@@ -9727,72 +9772,84 @@ Incoterms 2020 is the ninth set of international contract terms published by the
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Number_Of_Company_Products_Sold_Wordlwide_Wind_Turbine
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Number_Of_Company_Products_Sold_Wordlwide_Wind_Turbine> rdf:type owl:Class ;
                                                                                                                                      rdfs:subClassOf :Application ;
+                                                                                                                                     rdfs:comment "The number of company products, including wind turbines, sold worldwide in a specific market." ;
                                                                                                                                      rdfs:label "Number Of Company Products Sold Wordlwide Wind Turbine"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Number_Of_Company_Products_Sold_Worldwide_Ecar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Number_Of_Company_Products_Sold_Worldwide_Ecar> rdf:type owl:Class ;
                                                                                                                              rdfs:subClassOf :Application ;
+                                                                                                                             rdfs:comment "The number of company products, including electric cars (ecars), sold worldwide in a specific market." ;
                                                                                                                              rdfs:label "Number Of Company Products Sold Worldwide Ecar"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Number_Of_Company_Products_Sold_Worldwide_Gcar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Number_Of_Company_Products_Sold_Worldwide_Gcar> rdf:type owl:Class ;
                                                                                                                              rdfs:subClassOf :Application ;
+                                                                                                                             rdfs:comment "The number of company products, including gasoline cars (gcars), sold worldwide in a specific market." ;
                                                                                                                              rdfs:label "Number Of Company Products Sold Worldwide Gcar"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Number_Of_Company_Products_Sold_Worldwide_Solar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Number_Of_Company_Products_Sold_Worldwide_Solar> rdf:type owl:Class ;
                                                                                                                               rdfs:subClassOf :Application ;
+                                                                                                                              rdfs:comment "The number of company products, including solar panels, sold worldwide in a specific market." ;
                                                                                                                               rdfs:label "Number Of Company Products Sold Worldwide Solar"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Number_Of_Ecars_Sold_Worldwide_Per_Year
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Number_Of_Ecars_Sold_Worldwide_Per_Year> rdf:type owl:Class ;
-                                                                                                                      rdfs:subClassOf :Application ;
+                                                                                                                      rdfs:subClassOf <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Number_Of_Company_Products_Sold_Worldwide_Solar> ;
+                                                                                                                      rdfs:comment "The number of electric cars (ecars) sold worldwide in a year." ;
                                                                                                                       rdfs:label "Number Of Ecars Sold Worldwide Per Year"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Number_Of_Gcars_Sold_Worldwide_Per_Year
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Number_Of_Gcars_Sold_Worldwide_Per_Year> rdf:type owl:Class ;
                                                                                                                       rdfs:subClassOf :Application ;
+                                                                                                                      rdfs:comment "The number of gasoline cars (gcars) sold worldwide in a year." ;
                                                                                                                       rdfs:label "Number Of Gcars Sold Worldwide Per Year"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Number_Of_Semiconductors_Per_Ecar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Number_Of_Semiconductors_Per_Ecar> rdf:type owl:Class ;
                                                                                                                 rdfs:subClassOf :Application ;
+                                                                                                                rdfs:comment "The number of semiconductors used in an electric car (ecar)." ;
                                                                                                                 rdfs:label "Number Of Semiconductors Per Ecar"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Number_Of_Semiconductors_Per_Gcar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Number_Of_Semiconductors_Per_Gcar> rdf:type owl:Class ;
                                                                                                                 rdfs:subClassOf :Application ;
+                                                                                                                rdfs:comment "The number of semiconductors used in a gasoline car (gcar)." ;
                                                                                                                 rdfs:label "Number Of Semiconductors Per Gcar"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Number_Of_Semiconductors_Per_Solar_Panel
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Number_Of_Semiconductors_Per_Solar_Panel> rdf:type owl:Class ;
                                                                                                                        rdfs:subClassOf :Application ;
+                                                                                                                       rdfs:comment "The number of semiconductors used in a solar panel." ;
                                                                                                                        rdfs:label "Number Of Semiconductors Per Solar Panel"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Number_Of_Semiconductors_Per_Wind_Turbine
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Number_Of_Semiconductors_Per_Wind_Turbine> rdf:type owl:Class ;
                                                                                                                         rdfs:subClassOf :Application ;
+                                                                                                                        rdfs:comment "The number of semiconductors used in a wind turbine." ;
                                                                                                                         rdfs:label "Number Of Semiconductors Per Wind Turbine"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Number_Of_Solar_Panels_Sold_Worldwide_In_A_Year
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Number_Of_Solar_Panels_Sold_Worldwide_In_A_Year> rdf:type owl:Class ;
                                                                                                                               rdfs:subClassOf :Application ;
+                                                                                                                              rdfs:comment "The number of solar panels sold worldwide in a year." ;
                                                                                                                               rdfs:label "Number Of Solar Panels Sold Worldwide In A Year"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Number_Of_Wind_Turbines_Installed_Worldwide_In_A_Year
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Number_Of_Wind_Turbines_Installed_Worldwide_In_A_Year> rdf:type owl:Class ;
                                                                                                                                     rdfs:subClassOf :Application ;
+                                                                                                                                    rdfs:comment "The number of wind turbines installed worldwide in a year." ;
                                                                                                                                     rdfs:label "Number Of Wind Turbines Installed Worldwide In A Year"@en .
 
 
@@ -9889,12 +9946,14 @@ Incoterms 2020 is the ninth set of international contract terms published by the
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Saving_Rate_Ecar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Saving_Rate_Ecar> rdf:type owl:Class ;
                                                                                                rdfs:subClassOf :Application ;
+                                                                                               rdfs:comment "The energy savings rate or percentage achieved by an electric car (ecar)." ;
                                                                                                rdfs:label "Saving Rate Ecar"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Saving_Rate_Gcar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Saving_Rate_Gcar> rdf:type owl:Class ;
                                                                                                rdfs:subClassOf :Application ;
+                                                                                               rdfs:comment "The energy savings rate or percentage achieved by a gasoline car (gcar)." ;
                                                                                                rdfs:label "Saving Rate Gcar"@en .
 
 
@@ -9986,174 +10045,203 @@ Incoterms 2020 is the ninth set of international contract terms published by the
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#System_CO2
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#System_CO2> rdf:type owl:Class ;
                                                                                          rdfs:subClassOf :Application ;
+                                                                                         rdfs:comment "The carbon dioxide (CO2) emissions associated with the entire system or process." ;
                                                                                          rdfs:label "System (CO2)"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Electricity_Power_Consumption
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Electricity_Power_Consumption> rdf:type owl:Class ;
                                                                                                                   rdfs:subClassOf :Application ;
+                                                                                                                  rdfs:comment "The total electricity power consumed." ;
                                                                                                                   rdfs:label "Total Electricity Power Consumption"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Energy_Consumption_Per_Hour_Ecar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Energy_Consumption_Per_Hour_Ecar> rdf:type owl:Class ;
                                                                                                                      rdfs:subClassOf :Application ;
+                                                                                                                     rdfs:comment "The total energy consumption per hour for an electric car (ecar)." ;
                                                                                                                      rdfs:label "Total Energy Consumption Per Hour Ecar"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Energy_Consumption_Per_Hour_Gcar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Energy_Consumption_Per_Hour_Gcar> rdf:type owl:Class ;
                                                                                                                      rdfs:subClassOf :Application ;
+                                                                                                                     rdfs:comment "The total energy consumption per hour for a gasoline car (gcar)." ;
                                                                                                                      rdfs:label "Total Energy Consumption Per Hour Gcar"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Energy_Saving_Of_A_Gcar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Energy_Saving_Of_A_Gcar> rdf:type owl:Class ;
                                                                                                             rdfs:subClassOf :Application ;
+                                                                                                            rdfs:comment "The total energy savings achieved by a gasoline car (gcar)." ;
                                                                                                             rdfs:label "Total Energy Saving Of A Gcar"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Energy_Saving_Of_A_Solar_Panel
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Energy_Saving_Of_A_Solar_Panel> rdf:type owl:Class ;
                                                                                                                    rdfs:subClassOf :Application ;
+                                                                                                                   rdfs:comment "The total energy savings achieved by a solar panel." ;
                                                                                                                    rdfs:label "Total Energy Saving Of A Solar Panel"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Energy_Saving_Of_A_Wind_Turbine
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Energy_Saving_Of_A_Wind_Turbine> rdf:type owl:Class ;
                                                                                                                     rdfs:subClassOf :Application ;
+                                                                                                                    rdfs:comment "The total energy savings achieved by a wind turbine." ;
                                                                                                                     rdfs:label "Total Energy Saving Of A Wind Turbine"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Energy_Saving_Of_An_Ecar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Energy_Saving_Of_An_Ecar> rdf:type owl:Class ;
                                                                                                              rdfs:subClassOf :Application ;
+                                                                                                             rdfs:comment "The total energy savings achieved by an electric car (ecar)." ;
                                                                                                              rdfs:label "Total Energy Saving Of An Ecar"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Energy_Saving_Of_Ecars_Sold_Worldwide_In_A_Year
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Energy_Saving_Of_Ecars_Sold_Worldwide_In_A_Year> rdf:type owl:Class ;
                                                                                                                                     rdfs:subClassOf :Application ;
+                                                                                                                                    rdfs:comment "The total energy savings achieved by electric cars (ecars) sold worldwide in a year." ;
                                                                                                                                     rdfs:label "Total Energy Saving Of Ecars Sold Worldwide In A Year"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Energy_Saving_Of_Gcars_Sold_Worldwide_In_A_Year
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Energy_Saving_Of_Gcars_Sold_Worldwide_In_A_Year> rdf:type owl:Class ;
                                                                                                                                     rdfs:subClassOf :Application ;
+                                                                                                                                    rdfs:comment "The total energy savings achieved by gasoline cars (gcars) sold worldwide in a year." ;
                                                                                                                                     rdfs:label "Total Energy Saving Of Gcars Sold Worldwide In A Year"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Energy_Saving_Of_Solar_Panels_Sold_Worldwide_In_A_Year
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Energy_Saving_Of_Solar_Panels_Sold_Worldwide_In_A_Year> rdf:type owl:Class ;
                                                                                                                                            rdfs:subClassOf :Application ;
+                                                                                                                                           rdfs:comment "The total energy savings achieved by solar panels sold worldwide in a year." ;
                                                                                                                                            rdfs:label "Total Energy Saving Of Solar Panels Sold Worldwide In A Year"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Energy_Savings_Of_Wind_Turbines_Sold_Worldwide_In_A_Year
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Energy_Savings_Of_Wind_Turbines_Sold_Worldwide_In_A_Year> rdf:type owl:Class ;
                                                                                                                                              rdfs:subClassOf :Application ;
+                                                                                                                                             rdfs:comment "The total energy savings achieved by wind turbines sold worldwide in a year." ;
                                                                                                                                              rdfs:label "Total Energy Savings Of Wind Turbines Sold Worldwide In A Year"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Generated_Energy_From_Last_Year_Solar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Generated_Energy_From_Last_Year_Solar> rdf:type owl:Class ;
                                                                                                                           rdfs:subClassOf :Application ;
+                                                                                                                          rdfs:comment "The total generated energy from solar sources during the previous year." ;
                                                                                                                           rdfs:label "Total Generated Energy From Last Year Solar"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Generated_Energy_From_Last_Year_Wind_Turbine
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Generated_Energy_From_Last_Year_Wind_Turbine> rdf:type owl:Class ;
                                                                                                                                  rdfs:subClassOf :Application ;
+                                                                                                                                 rdfs:comment "the cumulative amount of electrical energy generated by a wind turbine during the previous year. It represents the total power output produced by the wind turbine over a specific period, typically measured in kilowatt-hours (kWh) or megawatt-hours (MWh)" ;
                                                                                                                                  rdfs:label "Total Generated Energy From Last Year Wind Turbine"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Generated_Energy_From_This_Year_Solar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Generated_Energy_From_This_Year_Solar> rdf:type owl:Class ;
                                                                                                                           rdfs:subClassOf :Application ;
+                                                                                                                          rdfs:comment "The total generated energy from solar sources during the current year." ;
                                                                                                                           rdfs:label "Total Generated Energy From This Year Solar"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Generated_Energy_From_This_Year_Wind_Turbine
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Generated_Energy_From_This_Year_Wind_Turbine> rdf:type owl:Class ;
                                                                                                                                  rdfs:subClassOf :Application ;
+                                                                                                                                 rdfs:comment "the cumulative amount of electrical energy generated by a wind turbine during the current year. It represents the total power output produced by the wind turbine over a specific period, typically measured in kilowatt-hours (kWh) or megawatt-hours (MWh)" ;
                                                                                                                                  rdfs:label "Total Generated Energy From This Year Wind Turbine"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Infrastructure
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Infrastructure> rdf:type owl:Class ;
                                                                                                    rdfs:subClassOf :Application ;
+                                                                                                   rdfs:comment "The infrastructure or facilities required for the operation or functioning of a unit." ;
                                                                                                    rdfs:label "Total Infrastructure"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Saved_Energy_Per_Hour_Ecar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Saved_Energy_Per_Hour_Ecar> rdf:type owl:Class ;
                                                                                                                rdfs:subClassOf :Application ;
+                                                                                                               rdfs:comment "The total energy savings per hour for an electric car (ecar)." ;
                                                                                                                rdfs:label "Total Saved Energy Per Hour Ecar"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Saved_Energy_Per_Hour_Gcar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Saved_Energy_Per_Hour_Gcar> rdf:type owl:Class ;
                                                                                                                rdfs:subClassOf :Application ;
+                                                                                                               rdfs:comment "The total energy savings per hour for a gasoline car (gcar)." ;
                                                                                                                rdfs:label "Total Saved Energy Per Hour Gcar"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Saved_Energy_Per_Hour_Solar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Saved_Energy_Per_Hour_Solar> rdf:type owl:Class ;
                                                                                                                 rdfs:subClassOf :Application ;
+                                                                                                                rdfs:comment "The total energy savings per hour for solar panels." ;
                                                                                                                 rdfs:label "Total Saved Energy Per Hour Solar"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Saved_Energy_Per_Hour_Wind_Turbine
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Saved_Energy_Per_Hour_Wind_Turbine> rdf:type owl:Class ;
                                                                                                                        rdfs:subClassOf :Application ;
+                                                                                                                       rdfs:comment "The total energy savings per hour for wind turbines." ;
                                                                                                                        rdfs:label "Total Saved Energy Per Hour Wind Turbine"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Usage_Time_Of_A_Gcar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Usage_Time_Of_A_Gcar> rdf:type owl:Class ;
                                                                                                          rdfs:subClassOf :Application ;
+                                                                                                         rdfs:comment "The total usage time of a gasoline car (gcar)." ;
                                                                                                          rdfs:label "Total Usage Time Of A Gcar"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Usage_Time_Of_A_Wind_Turbine
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Usage_Time_Of_A_Wind_Turbine> rdf:type owl:Class ;
                                                                                                                  rdfs:subClassOf :Application ;
+                                                                                                                 rdfs:comment "The total usage time of a wind turbine." ;
                                                                                                                  rdfs:label "Total Usage Time Of A Wind Turbine"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Usage_Time_Of_An_Ecar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Usage_Time_Of_An_Ecar> rdf:type owl:Class ;
                                                                                                           rdfs:subClassOf :Application ;
+                                                                                                          rdfs:comment "The total usage time of an electric car (ecar)." ;
                                                                                                           rdfs:label "Total Usage Time Of An Ecar"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Usage_Time_Of_Ecars_Sold_Worldwide_In_A_Year
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Usage_Time_Of_Ecars_Sold_Worldwide_In_A_Year> rdf:type owl:Class ;
                                                                                                                                  rdfs:subClassOf :Application ;
+                                                                                                                                 rdfs:comment "The total usage time of electric cars (ecars) sold worldwide in a year." ;
                                                                                                                                  rdfs:label "Total Usage Time Of Ecars Sold Worldwide In A Year"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Usage_Time_Of_Gcars_Sold_Worldwide_In_A_Year
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Usage_Time_Of_Gcars_Sold_Worldwide_In_A_Year> rdf:type owl:Class ;
                                                                                                                                  rdfs:subClassOf :Application ;
+                                                                                                                                 rdfs:comment "The total usage time of gasoline cars (gcars) sold worldwide in a year." ;
                                                                                                                                  rdfs:label "Total Usage Time Of Gcars Sold Worldwide In A Year"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Usage_Time_Of_Solar_Panels_Sold_Worldwide_Per_Year
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Usage_Time_Of_Solar_Panels_Sold_Worldwide_Per_Year> rdf:type owl:Class ;
                                                                                                                                        rdfs:subClassOf :Application ;
+                                                                                                                                       rdfs:comment "The total usage time of solar panels sold worldwide per year." ;
                                                                                                                                        rdfs:label "Total Usage Time Of Solar Panels Sold Worldwide Per Year"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Usage_Time_Of_Wind_Turbines_Sold_Worldwide_In_A_Year
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Usage_Time_Of_Wind_Turbines_Sold_Worldwide_In_A_Year> rdf:type owl:Class ;
                                                                                                                                          rdfs:subClassOf :Application ;
+                                                                                                                                         rdfs:comment "The total usage time of wind turbines sold worldwide in a year." ;
                                                                                                                                          rdfs:label "Total Usage Time Of Wind Turbines Sold Worldwide In A Year"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Usage_Time_Solar
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Total_Usage_Time_Solar> rdf:type owl:Class ;
                                                                                                      rdfs:subClassOf :Application ;
+                                                                                                     rdfs:comment "The total usage time of solar energy." ;
                                                                                                      rdfs:label "Total Usage Time Solar"@en .
 
 
@@ -10176,12 +10264,14 @@ Incoterms 2020 is the ninth set of international contract terms published by the
                                                                                                                owl:onProperty <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#distance_between_sender_and_receipent> ;
                                                                                                                owl:someValuesFrom xsd:float
                                                                                                              ] ;
+                                                                                             rdfs:comment "The various modes or means of transportation." ;
                                                                                              rdfs:label "Transportation"@en .
 
 
 ###  http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Type_Of_The_Transportation
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Type_Of_The_Transportation> rdf:type owl:Class ;
                                                                                                          rdfs:subClassOf :Application ;
+                                                                                                         rdfs:comment "The type or category of transportation, such as road, air, rail, or water." ;
                                                                                                          rdfs:label "Type Of The Transportation"@en .
 
 
@@ -10532,11 +10622,11 @@ time:Temporal_Entity rdf:type owl:Class ;
                                                        )
                                          ] ;
                      rdfs:subClassOf :Time_Lobe ;
-                     rdfs:comment "A temporal interval or instant." ,
-                                  "A temporal interval or instant."@en ;
+                     rdfs:comment "A temporal interval or instant."@en ,
+                                  "A temporal interval or instant." ;
                      rdfs:isDefinedBy "http://www.w3.org/TR/owl-time/#time:TemporalEntity" ;
-                     rdfs:label "Temporal Entity" ,
-                                "Temporal Entity"@en ;
+                     rdfs:label "Temporal Entity"@en ,
+                                "Temporal Entity" ;
                      skos:definition "A temporal interval or instant."@en .
 
 
@@ -11555,7 +11645,8 @@ It also maps the topics of Prioritized Demand and Orders, Products, Promise, Sal
 :Sustainability_Lobe rdf:type owl:Class ;
                      rdfs:comment """Sustainability refers to the practice of meeting present needs without compromising the ability of future generations to meet their own needs, balancing environmental, social, and economic considerations.
 
-This lobes models Application."""@en .
+This lobes models Application."""@en ,
+                                  "Lobe Owner: Marta Bonik" .
 
 
 ###  http://www.w3id.org/ecsel-dr#System_Lobe
@@ -12922,10 +13013,10 @@ Example for first generation fieldbus is Profibus,
 Example for second generation fieldbus is ProfiNet."""@en ,
                                                                """Beispiel für Feldbus der ersten Generation ist Profibus, 
 Beispiel für Feldbus der zweiten Generation ist ProfiNet."""@de ,
-                                                               "Ein Feldbus definiert einen kompletten Protokoll-Stack über die 7 SChichten des OSI-Schichtenmodells. Ggf. werden nicht alle Schichten belegt." ,
                                                                """Ein Feldbus ist ein Bussystem, das in einer Anlage Feldgeräte wie Messfühler (Sensoren) und Stellglieder (Aktoren) zwecks Kommunikation mit einem Automatisierungsgerät verbindet. Wenn mehrere Kommunikationsteilnehmer ihre Nachrichten über dieselbe Leitung senden, dann muss festgelegt sein, wer (Kennung) was (Messwert, Befehl) wann (Initiative) sagt. Hierfür gibt es normierte Protokolle.
 Die erste Generation der Feldbustechnik wurde in den 1980er Jahren entwickelt, um die bis dahin übliche Parallelverdrahtung binärer Signale sowie die analoge Signalübertragung durch digitale Übertragungstechnik zu ersetzen. Heute sind viele unterschiedliche Feldbussysteme mit unterschiedlichen Eigenschaften am Markt etabliert. Seit 1999 werden Feldbusse in der Norm IEC 61158 (Digital data communication for measurement and control - Fieldbus for use in industrial control systems) sowie durch die Norm IEC 61784 weltweit standardisiert.    
-Die zweite Generation der Feldbustechnik basiert auf Echtzeit-Ethernet (Industrial Ethernet)."""@de ;
+Die zweite Generation der Feldbustechnik basiert auf Echtzeit-Ethernet (Industrial Ethernet)."""@de ,
+                                                               "Ein Feldbus definiert einen kompletten Protokoll-Stack über die 7 SChichten des OSI-Schichtenmodells. Ggf. werden nicht alle Schichten belegt." ;
                                                   rdfs:label "Fieldbus Communication Profile Family"@en .
 
 
@@ -18099,37 +18190,42 @@ ecsel-dr-RAMI40:Work_Center rdf:type owl:NamedIndividual .
 #    Annotations
 #################################################################
 
-<http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Electric_Car> rdfs:label "Electric Car"@en .
+<http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Electric_Car> rdfs:comment "An electric car powered by electricity as an energy source." ;
+                                                                                            rdfs:label "Electric Car"@en .
 
 
 <http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Gasoline_Car> rdfs:comment "Gasoline Car (Gcar)"@en ;
                                                                                            rdfs:label "Gasoline Car"@en .
 
 
-<http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Process_Material> rdfs:label "Process Material"@en .
+<http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Process_Material> rdfs:comment "The materials used or involved in the manufacturing process." ;
+                                                                                               rdfs:label "Process Material"@en .
 
 
-<http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Raw_Material> rdfs:label "Raw Material"@en .
+<http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Raw_Material> rdfs:comment "The raw materials used or involved in the manufacturing process." ;
+                                                                                           rdfs:label "Raw Material"@en .
 
 
-<http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Solar_Panel> rdfs:label "Solar Panel"@en .
+<http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Solar_Panel> rdfs:comment "A panel or device that converts sunlight into electricity." ;
+                                                                                          rdfs:label "Solar Panel"@en .
 
 
-<http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Wind_Turbine> rdfs:label "Wind Turbine"@en .
+<http://www.semanticweb.org/thomasir/ontologies/2020/9/CO2SavingsElectriccar#Wind_Turbine> rdfs:comment "A device that converts wind energy into electricity." ;
+                                                                                           rdfs:label "Wind Turbine"@en .
 
 
-ecsel-dr-OOSMP:Completely_Lead_Free_Status rdfs:label "Completely Lead Free Status"@en ;
-                                           skos:prefLabel "Completely Lead Free Status"@en ;
-                                           rdfs:comment "This status determines whether a semiconductor product is lead free or not."@en .
+ecsel-dr-OOSMP:Completely_Lead_Free_Status rdfs:comment "This status determines whether a semiconductor product is lead free or not."@en ;
+                                           rdfs:label "Completely Lead Free Status"@en ;
+                                           skos:prefLabel "Completely Lead Free Status"@en .
 
 
 ecsel-dr-OOSMP:Halogen_Free_Status rdfs:comment "This status determines whether a semiconductor product is halogen free or not."@en ;
-                                   skos:prefLabel "Halogen Free Status"@en ;
-                                   rdfs:label "Halogen Free Status"@en .
+                                   rdfs:label "Halogen Free Status"@en ;
+                                   skos:prefLabel "Halogen Free Status"@en .
 
 
-ecsel-dr-OOSMP:Ro_HS_Compliant_Status rdfs:label "RoHS Compliant Status"@en ;
-                                      rdfs:comment "This status determines whether a product is RoHS compliant or not."@en ;
+ecsel-dr-OOSMP:Ro_HS_Compliant_Status rdfs:comment "This status determines whether a product is RoHS compliant or not."@en ;
+                                      rdfs:label "RoHS Compliant Status"@en ;
                                       skos:prefLabel "RoHS Compliant Status"@en .
 
 
@@ -18416,4 +18512,4 @@ ecsel-dr-RAMI40:Asset rdfs:comment "Every I4.0-component has to represent an ent
              ]
  ] .
 
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi

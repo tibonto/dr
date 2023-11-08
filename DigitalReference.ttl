@@ -10034,7 +10034,8 @@ dr:Organization_Lobe rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr#Planning_Lobe
 dr:Planning_Lobe rdf:type owl:Class ;
-                 rdfs:comment "The Planning Lobe is about making strategic decisions and creating comprehensive plans to ensure the efficient and effective flow of materials, products, and information throughout the manufacturing and distribution process. In includes information about marketing and sales demans, demand march, aggregated capacity, capacity bottlenecks, orders and customers."@en ;
+                 rdfs:comment "Lobe owner: Hans Ehm"@en ,
+                              "The Planning Lobe is about making strategic decisions and creating comprehensive plans to ensure the efficient and effective flow of materials, products, and information throughout the manufacturing and distribution process. In includes information about marketing and sales demans, demand march, aggregated capacity, capacity bottlenecks, orders and customers."@en ;
                  rdfs:label "Planning Lobe"@en .
 
 
@@ -10077,7 +10078,8 @@ dr:Public_Holiday rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr#Semiconductor_Development_Lobe
 dr:Semiconductor_Development_Lobe rdf:type owl:Class ;
-                                  rdfs:comment """Semiconductor development refers to the process of researching, designing, and creating semiconductor devices to meet technological avancements and inductry demands.
+                                  rdfs:comment "Lobe owner: Marta Bonik"@en ,
+                                               """Semiconductor development refers to the process of researching, designing, and creating semiconductor devices to meet technological avancements and inductry demands.
 
 The Semiconductor Development lobe of the Digital Reference models the Current Work In Progress, Cycle Time and Delivery Commitment, EPA, Equipment and Equipent Group, and Event Calendar.
 It reprensents the notions of Mask, Material Transfer Matrix, Operation, Operator, Owner, Planning Work Center, Plant,  and Process.
@@ -10087,7 +10089,8 @@ It also maps the topics of Product Level, Target Revenue and Service Level, Tech
 
 ###  http://www.w3id.org/ecsel-dr#Semiconductor_Production_Lobe
 dr:Semiconductor_Production_Lobe rdf:type owl:Class ;
-                                 rdfs:comment """Semiconductor production refers to the manufacturing process of creating integrated circuits and other semiconductor devices by deposing, patterning, and doping various materials on a substrate to form electronic components.
+                                 rdfs:comment "Lobe owner: Philipp Ulrich"@en ,
+                                              """Semiconductor production refers to the manufacturing process of creating integrated circuits and other semiconductor devices by deposing, patterning, and doping various materials on a substrate to form electronic components.
 
 The Semiconductor Production lobe represents the notions of Bottleneck, Capacity, Demand Snapshot, Fabrication, Furnace Process, Lot, Lot Event and Size.
 It also maps the topics of Physical Resource, Priority Class, Product, Production Request, Purge, Release Plan, and Robot.

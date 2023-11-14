@@ -32,9 +32,11 @@
                                 terms:modified "2020-09-18"@en ;
                                 terms:title "Digital Reference"@en ;
                                 vann:preferredNamespaceUri <http://www.w3id.org/ecsel-dr/> ;
-                                rdfs:comment "This ontology represents Incoterms 2020 starndards"@en ;
+                                rdfs:comment "13.06.2019"^^rdfs:Literal ,
+                                             "This ontology represents Incoterms 2020 starndards"@en ;
                                 rdfs:label "Digital Reference"@en ;
-                                owl:versionInfo "Version 1.1"@en .
+                                owl:versionInfo "1.0"^^rdfs:Literal ,
+                                                "Version 1.1"@en .
 
 #################################################################
 #    Annotation properties
@@ -200,6 +202,10 @@ skos:semanticRelation rdf:type owl:AnnotationProperty .
 <http://www.w3id.org/ecsel-dr-CO2Savings#isRuleEnabled> rdf:type owl:AnnotationProperty .
 
 
+###  http://www.w3id.org/ecsel-dr-DF#Author
+<http://www.w3id.org/ecsel-dr-DF#Author> rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.w3id.org/ecsel-dr-OOSMP#abbreviation
 ecsel-dr-OOSMP:abbreviation rdf:type owl:AnnotationProperty ;
                             rdfs:comment "Any abbreviation of a concept"@en ;
@@ -321,6 +327,12 @@ xsd:negativeInteger owl:equivalentClass xsd:nonNegativeInteger .
 #################################################################
 #    Object Properties
 #################################################################
+
+###  http://www.w3.org/2002/07/owl#topObjectProperty
+owl:topObjectProperty rdf:type owl:FunctionalProperty ;
+                      rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Customer> ;
+                      rdfs:range <http://www.w3id.org/ecsel-dr-DF#Supply_Contract> .
+
 
 ###  http://www.w3.org/2006/time#after
 time:after rdf:type owl:ObjectProperty ;
@@ -3187,6 +3199,360 @@ ecsel-dr-AT:used_in_ISA_95_layer rdf:type owl:ObjectProperty ;
                                                                               rdfs:domain <http://www.w3id.org/ecsel-dr-CO2Savings#Transportation> ;
                                                                               rdfs:range <http://www.w3id.org/ecsel-dr-CO2Savings#Type_Of_The_Transportation> ;
                                                                               rdfs:label "leads to type of the transportation"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#assigns_ATP_to
+<http://www.w3id.org/ecsel-dr-DF#assigns_ATP_to> rdf:type owl:ObjectProperty ;
+                                                 rdfs:subPropertyOf owl:topObjectProperty ;
+                                                 rdf:type owl:FunctionalProperty ;
+                                                 rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Allocation_Plan> ;
+                                                 rdfs:range <http://www.w3id.org/ecsel-dr-DF#Customer> ;
+                                                 rdfs:label "assigns ATP to"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#belongs_to
+<http://www.w3id.org/ecsel-dr-DF#belongs_to> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf owl:topObjectProperty ;
+                                             rdf:type owl:FunctionalProperty ;
+                                             rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Demand> ;
+                                             rdfs:range <http://www.w3id.org/ecsel-dr-DF#Order> ;
+                                             rdfs:label "belongs to"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#calculates_promised_delivery_date_for
+<http://www.w3id.org/ecsel-dr-DF#calculates_promised_delivery_date_for> rdf:type owl:ObjectProperty ;
+                                                                        rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                        rdf:type owl:FunctionalProperty ;
+                                                                        rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Order_Delivery_Plan> ;
+                                                                        rdfs:range <http://www.w3id.org/ecsel-dr-DF#Order> ;
+                                                                        rdfs:label "calculates promised delivery date for"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#consists_of
+<http://www.w3id.org/ecsel-dr-DF#consists_of> rdf:type owl:ObjectProperty ;
+                                              rdfs:subPropertyOf owl:topObjectProperty ;
+                                              rdf:type owl:FunctionalProperty ;
+                                              rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Product_Hierarchy> ;
+                                              rdfs:range <http://www.w3id.org/ecsel-dr-DF#Product> ;
+                                              rdfs:label "consists of"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#defines
+<http://www.w3id.org/ecsel-dr-DF#defines> rdf:type owl:ObjectProperty ;
+                                          rdfs:subPropertyOf owl:topObjectProperty ;
+                                          rdf:type owl:FunctionalProperty ;
+                                          rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Planning_Purpose> ;
+                                          rdfs:range <http://www.w3id.org/ecsel-dr-DF#Product_Aggregate> .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_AATP
+<http://www.w3id.org/ecsel-dr-DF#has_AATP> rdf:type owl:ObjectProperty ;
+                                           rdfs:subPropertyOf owl:topObjectProperty ;
+                                           rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Master_Plan> ;
+                                           rdfs:range <http://www.w3id.org/ecsel-dr-DF#Allocated_Available_To_Promise> ;
+                                           rdfs:label "has AATP"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_ATP
+<http://www.w3id.org/ecsel-dr-DF#has_ATP> rdf:type owl:ObjectProperty ;
+                                          rdfs:subPropertyOf owl:topObjectProperty ;
+                                          rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Allocation_Plan> ;
+                                          rdfs:range <http://www.w3id.org/ecsel-dr-DF#Available_To_Promise> ;
+                                          rdfs:label "has ATP"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_BOM
+<http://www.w3id.org/ecsel-dr-DF#has_BOM> rdf:type owl:ObjectProperty ;
+                                          rdfs:subPropertyOf owl:topObjectProperty ;
+                                          rdf:type owl:FunctionalProperty ;
+                                          rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Product> ;
+                                          rdfs:range <http://www.w3id.org/ecsel-dr-DF#Bill_Of_Material_(BOM)> ;
+                                          rdfs:label "has BOM"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_alternative_BOM
+<http://www.w3id.org/ecsel-dr-DF#has_alternative_BOM> rdf:type owl:ObjectProperty ;
+                                                      rdfs:subPropertyOf owl:topObjectProperty ;
+                                                      rdf:type owl:FunctionalProperty ;
+                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Product> ;
+                                                      rdfs:range <http://www.w3id.org/ecsel-dr-DF#Bill_Of_Material_(BOM)> ;
+                                                      rdfs:label "has alternative BOM"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_availability_date
+<http://www.w3id.org/ecsel-dr-DF#has_availability_date> rdf:type owl:ObjectProperty ;
+                                                        rdfs:subPropertyOf owl:topObjectProperty ;
+                                                        rdf:type owl:FunctionalProperty ;
+                                                        rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Supply> ;
+                                                        rdfs:range <http://www.w3id.org/ecsel-dr-DF#Date> ;
+                                                        rdfs:label "has availability date"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_bill_of_material
+<http://www.w3id.org/ecsel-dr-DF#has_bill_of_material> rdf:type owl:ObjectProperty ;
+                                                       rdfs:subPropertyOf owl:topObjectProperty ;
+                                                       rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Product> ;
+                                                       rdfs:range <http://www.w3id.org/ecsel-dr-DF#Bill_Of_Material_(BOM)> ;
+                                                       rdfs:label "has bill of material"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_contract
+<http://www.w3id.org/ecsel-dr-DF#has_contract> rdf:type owl:ObjectProperty ;
+                                               rdfs:subPropertyOf owl:topObjectProperty ;
+                                               rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Supply_Chain> ;
+                                               rdfs:range <http://www.w3id.org/ecsel-dr-DF#Supply_Contract> ;
+                                               rdfs:label "has contract"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_customer
+<http://www.w3id.org/ecsel-dr-DF#has_customer> rdf:type owl:ObjectProperty ;
+                                               rdfs:subPropertyOf owl:topObjectProperty ;
+                                               rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Customer_Order> ;
+                                               rdfs:range <http://www.w3id.org/ecsel-dr-DF#Customer> ;
+                                               rdfs:label "has customer"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_customer_class
+<http://www.w3id.org/ecsel-dr-DF#has_customer_class> rdf:type owl:ObjectProperty ;
+                                                     rdfs:subPropertyOf owl:topObjectProperty ;
+                                                     rdf:type owl:FunctionalProperty ;
+                                                     rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Customer> ;
+                                                     rdfs:range <http://www.w3id.org/ecsel-dr-DF#Customer_Class> ;
+                                                     rdfs:label "has customer class"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_delivey_concept
+<http://www.w3id.org/ecsel-dr-DF#has_delivey_concept> rdf:type owl:ObjectProperty ;
+                                                      rdfs:subPropertyOf owl:topObjectProperty ;
+                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Order> ;
+                                                      rdfs:range <http://www.w3id.org/ecsel-dr-DF#Delivery_Concept> ;
+                                                      rdfs:label "has delivey concept"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_locations
+<http://www.w3id.org/ecsel-dr-DF#has_locations> rdf:type owl:ObjectProperty ;
+                                                rdfs:subPropertyOf owl:topObjectProperty ;
+                                                rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Supply_Chain> ;
+                                                rdfs:range <http://www.w3id.org/ecsel-dr-DF#Location> ;
+                                                rdfs:label "has locations"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_lots
+<http://www.w3id.org/ecsel-dr-DF#has_lots> rdf:type owl:ObjectProperty ;
+                                           rdfs:subPropertyOf owl:topObjectProperty ;
+                                           rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Location> ,
+                                                       <http://www.w3id.org/ecsel-dr-DF#Product> ,
+                                                       <http://www.w3id.org/ecsel-dr-DF#Supply_Chain> ;
+                                           rdfs:range <http://www.w3id.org/ecsel-dr-DF#Lot> ;
+                                           rdfs:label "has lots"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_order_class
+<http://www.w3id.org/ecsel-dr-DF#has_order_class> rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf owl:topObjectProperty ;
+                                                  rdf:type owl:FunctionalProperty ;
+                                                  rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Order> ;
+                                                  rdfs:label "has order class"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_order_demand
+<http://www.w3id.org/ecsel-dr-DF#has_order_demand> rdf:type owl:ObjectProperty ;
+                                                   rdfs:subPropertyOf owl:topObjectProperty ;
+                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Order> ;
+                                                   rdfs:range <http://www.w3id.org/ecsel-dr-DF#Demand> ;
+                                                   rdfs:label "has order demand"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_order_position
+<http://www.w3id.org/ecsel-dr-DF#has_order_position> rdf:type owl:ObjectProperty ;
+                                                     rdfs:subPropertyOf owl:topObjectProperty ;
+                                                     rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Order> ;
+                                                     rdfs:range <http://www.w3id.org/ecsel-dr-DF#Order_Position> .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_periods
+<http://www.w3id.org/ecsel-dr-DF#has_periods> rdf:type owl:ObjectProperty ;
+                                              rdfs:subPropertyOf owl:topObjectProperty ;
+                                              rdf:type owl:FunctionalProperty ;
+                                              rdfs:range <http://www.w3id.org/ecsel-dr-DF#Period> ;
+                                              rdfs:label "has periods"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_plan
+<http://www.w3id.org/ecsel-dr-DF#has_plan> rdf:type owl:ObjectProperty ;
+                                           rdfs:subPropertyOf owl:topObjectProperty ;
+                                           rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Supply_Chain> ;
+                                           rdfs:range <http://www.w3id.org/ecsel-dr-DF#Plan> ;
+                                           rdfs:label "has plan"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_planning_horizon
+<http://www.w3id.org/ecsel-dr-DF#has_planning_horizon> rdf:type owl:ObjectProperty ;
+                                                       rdfs:subPropertyOf owl:topObjectProperty ;
+                                                       rdf:type owl:FunctionalProperty ;
+                                                       rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Plan> ;
+                                                       rdfs:label "has planning horizon"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_planning_purpose
+<http://www.w3id.org/ecsel-dr-DF#has_planning_purpose> rdf:type owl:ObjectProperty ;
+                                                       rdfs:subPropertyOf owl:topObjectProperty ;
+                                                       rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Product_Aggregate> ;
+                                                       rdfs:range <http://www.w3id.org/ecsel-dr-DF#Planning_Purpose> ;
+                                                       rdfs:label "has planning purpose"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_product
+<http://www.w3id.org/ecsel-dr-DF#has_product> rdf:type owl:ObjectProperty ;
+                                              rdfs:subPropertyOf owl:topObjectProperty ;
+                                              rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Order_Position> ;
+                                              rdfs:range <http://www.w3id.org/ecsel-dr-DF#Product> ;
+                                              rdfs:label "has product"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_product_aggregates
+<http://www.w3id.org/ecsel-dr-DF#has_product_aggregates> rdf:type owl:ObjectProperty ;
+                                                         rdfs:subPropertyOf owl:topObjectProperty ;
+                                                         rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Product> ;
+                                                         rdfs:range <http://www.w3id.org/ecsel-dr-DF#Product_Aggregate> ,
+                                                                    <http://www.w3id.org/ecsel-dr-DF#Supply_Chain> ;
+                                                         rdfs:label "has product aggregates"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_product_type
+<http://www.w3id.org/ecsel-dr-DF#has_product_type> rdf:type owl:ObjectProperty ;
+                                                   rdfs:subPropertyOf owl:topObjectProperty ;
+                                                   rdf:type owl:FunctionalProperty ;
+                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Lot> ;
+                                                   rdfs:range <http://www.w3id.org/ecsel-dr-DF#Product> ;
+                                                   rdfs:label "has product type"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_production_strategy
+<http://www.w3id.org/ecsel-dr-DF#has_production_strategy> rdf:type owl:ObjectProperty ;
+                                                          rdfs:subPropertyOf owl:topObjectProperty ;
+                                                          rdf:type owl:FunctionalProperty ;
+                                                          rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Plan> ;
+                                                          rdfs:range <http://www.w3id.org/ecsel-dr-DF#Production_Strategy> ;
+                                                          rdfs:label "has production strategy"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_route
+<http://www.w3id.org/ecsel-dr-DF#has_route> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                            rdf:type owl:FunctionalProperty ;
+                                            rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Product> ;
+                                            rdfs:range <http://www.w3id.org/ecsel-dr-DF#Route> ;
+                                            rdfs:label "has route"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_sub_bill_of_material
+<http://www.w3id.org/ecsel-dr-DF#has_sub_bill_of_material> rdf:type owl:ObjectProperty ;
+                                                           rdfs:subPropertyOf owl:topObjectProperty ;
+                                                           rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Bill_Of_Material_(BOM)> ;
+                                                           rdfs:range <http://www.w3id.org/ecsel-dr-DF#Bill_Of_Material_(BOM)> ;
+                                                           rdfs:label "has sub-bill of material"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_supply_status
+<http://www.w3id.org/ecsel-dr-DF#has_supply_status> rdf:type owl:ObjectProperty ;
+                                                    rdfs:subPropertyOf owl:topObjectProperty ;
+                                                    rdf:type owl:FunctionalProperty ;
+                                                    rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Supply> ;
+                                                    rdfs:label "has supply status"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_supply_type
+<http://www.w3id.org/ecsel-dr-DF#has_supply_type> rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf owl:topObjectProperty ;
+                                                  rdf:type owl:FunctionalProperty ;
+                                                  rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Supply> ;
+                                                  rdfs:range <http://www.w3id.org/ecsel-dr-DF#Master_Plan> ;
+                                                  rdfs:label "has supply type"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#is_allocated_to_customer
+<http://www.w3id.org/ecsel-dr-DF#is_allocated_to_customer> rdf:type owl:ObjectProperty ;
+                                                           rdfs:subPropertyOf owl:topObjectProperty ;
+                                                           rdf:type owl:FunctionalProperty ;
+                                                           rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Allocated_Available_To_Promise> ;
+                                                           rdfs:range <http://www.w3id.org/ecsel-dr-DF#Customer> ;
+                                                           rdfs:label "is allocated to customer"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#is_available_to
+<http://www.w3id.org/ecsel-dr-DF#is_available_to> rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf owl:topObjectProperty ;
+                                                  rdf:type owl:FunctionalProperty ;
+                                                  rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Demand> ;
+                                                  rdfs:range <http://www.w3id.org/ecsel-dr-DF#Customer> ;
+                                                  rdfs:label "is available to"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#is_changed_by
+<http://www.w3id.org/ecsel-dr-DF#is_changed_by> rdf:type owl:ObjectProperty ;
+                                                rdfs:subPropertyOf owl:topObjectProperty ;
+                                                rdf:type owl:FunctionalProperty ;
+                                                rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Promised_Delivery_Date> ;
+                                                rdfs:range <http://www.w3id.org/ecsel-dr-DF#Order_Promising> ;
+                                                rdfs:label "is changed by"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#is_communicated_to
+<http://www.w3id.org/ecsel-dr-DF#is_communicated_to> rdf:type owl:ObjectProperty ;
+                                                     rdfs:subPropertyOf owl:topObjectProperty ;
+                                                     rdf:type owl:FunctionalProperty ;
+                                                     rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Confirmed_Delivery_Date> ;
+                                                     rdfs:range <http://www.w3id.org/ecsel-dr-DF#Customer> ;
+                                                     rdfs:label "is communicated to"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#is_fulfilled_by
+<http://www.w3id.org/ecsel-dr-DF#is_fulfilled_by> rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf owl:topObjectProperty ;
+                                                  rdf:type owl:FunctionalProperty ;
+                                                  rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Order> ;
+                                                  rdfs:range <http://www.w3id.org/ecsel-dr-DF#Lot> ;
+                                                  rdfs:label "is fulfilled by"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#is_performed_by
+<http://www.w3id.org/ecsel-dr-DF#is_performed_by> rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf owl:topObjectProperty ;
+                                                  rdf:type owl:FunctionalProperty ;
+                                                  rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Confirmed_Delivery_Date> ,
+                                                              <http://www.w3id.org/ecsel-dr-DF#Delivery_Date> ,
+                                                              <http://www.w3id.org/ecsel-dr-DF#First_Promised_Delivery_Date> ,
+                                                              <http://www.w3id.org/ecsel-dr-DF#Promised_Delivery_Date> ;
+                                                  rdfs:range <http://www.w3id.org/ecsel-dr-DF#Supplier> ;
+                                                  rdfs:label "is performed by"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#is_requested_by
+<http://www.w3id.org/ecsel-dr-DF#is_requested_by> rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf owl:topObjectProperty ;
+                                                  rdf:type owl:FunctionalProperty ;
+                                                  rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Requested_Delivery_Date> ;
+                                                  rdfs:range <http://www.w3id.org/ecsel-dr-DF#Customer> ;
+                                                  rdfs:label "is requested by"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#requires_delivery_date_information
+<http://www.w3id.org/ecsel-dr-DF#requires_delivery_date_information> rdf:type owl:ObjectProperty ;
+                                                                     rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                     rdf:type owl:FunctionalProperty ;
+                                                                     rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Requested_Delivery_Date> ;
+                                                                     rdfs:range <http://www.w3id.org/ecsel-dr-DF#Order_Promising> ;
+                                                                     rdfs:label "requires delivery date information"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#view_based_on
+<http://www.w3id.org/ecsel-dr-DF#view_based_on> rdf:type owl:ObjectProperty ;
+                                                rdfs:subPropertyOf owl:topObjectProperty ;
+                                                rdf:type owl:FunctionalProperty ;
+                                                rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Product_Aggregate> ;
+                                                rdfs:range <http://www.w3id.org/ecsel-dr-DF#Product_Hierarchy> ;
+                                                rdfs:label "view based on"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Incoterms#is_applied_to
@@ -6920,6 +7286,329 @@ ecsel-dr-AH:device_name rdf:type owl:DatatypeProperty ;
 ###  http://www.w3id.org/ecsel-dr-CO2Savings#total_usage_time_of_units_sold_worldwide_in_a_year
 <http://www.w3id.org/ecsel-dr-CO2Savings#total_usage_time_of_units_sold_worldwide_in_a_year> rdf:type owl:DatatypeProperty ;
                                                                                              rdfs:label "total usage time of units sold worldwide in a year"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_ATP_information
+<http://www.w3id.org/ecsel-dr-DF#has_ATP_information> rdf:type owl:DatatypeProperty ;
+                                                      rdfs:subPropertyOf owl:topDataProperty ;
+                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Allocation_Plan> ;
+                                                      rdfs:range rdfs:Literal ;
+                                                      rdfs:label "has ATP information"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_BOM_position
+<http://www.w3id.org/ecsel-dr-DF#has_BOM_position> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:subPropertyOf owl:topDataProperty ;
+                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Bill_Of_Material_(BOM)> ;
+                                                   rdfs:range rdfs:Literal ;
+                                                   rdfs:label "has BOM position"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_BOM_status
+<http://www.w3id.org/ecsel-dr-DF#has_BOM_status> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:subPropertyOf owl:topDataProperty ;
+                                                 rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Bill_Of_Material_(BOM)> ;
+                                                 rdfs:range rdfs:Literal ;
+                                                 rdfs:label "has BOM status"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_BOM_version
+<http://www.w3id.org/ecsel-dr-DF#has_BOM_version> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:subPropertyOf owl:topDataProperty ;
+                                                  rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Bill_Of_Material_(BOM)> ;
+                                                  rdfs:range rdfs:Literal ;
+                                                  rdfs:label "has BOM version"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_batching_interval
+<http://www.w3id.org/ecsel-dr-DF#has_batching_interval> rdf:type owl:DatatypeProperty ;
+                                                        rdfs:subPropertyOf owl:topDataProperty ;
+                                                        rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Order> ;
+                                                        rdfs:range rdfs:Literal ;
+                                                        rdfs:comment "This is the time span for which arriving orders are collected to derive for all of them jointly a first promised delivery date." ;
+                                                        rdfs:label "has batching interval"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_customer_class_information
+<http://www.w3id.org/ecsel-dr-DF#has_customer_class_information> rdf:type owl:DatatypeProperty ;
+                                                                 rdfs:subPropertyOf owl:topDataProperty ;
+                                                                 rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Allocation_Plan> ;
+                                                                 rdfs:range rdfs:Literal ;
+                                                                 rdfs:label "has customer class information"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_customer_identifier
+<http://www.w3id.org/ecsel-dr-DF#has_customer_identifier> rdf:type owl:DatatypeProperty ;
+                                                          rdfs:subPropertyOf owl:topDataProperty ;
+                                                          rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Customer> ;
+                                                          rdfs:range rdfs:Literal ;
+                                                          rdfs:label "has customer identifier"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_customer_information
+<http://www.w3id.org/ecsel-dr-DF#has_customer_information> rdf:type owl:DatatypeProperty ;
+                                                           rdfs:subPropertyOf owl:topDataProperty ;
+                                                           rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Allocation_Plan> ;
+                                                           rdfs:range rdfs:Literal ;
+                                                           rdfs:label "has customer information"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_customer_name
+<http://www.w3id.org/ecsel-dr-DF#has_customer_name> rdf:type owl:DatatypeProperty ;
+                                                    rdfs:subPropertyOf owl:topDataProperty ;
+                                                    rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Customer> ;
+                                                    rdfs:range rdfs:Literal ;
+                                                    rdfs:label "has customer name"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_customer_priority
+<http://www.w3id.org/ecsel-dr-DF#has_customer_priority> rdf:type owl:DatatypeProperty ;
+                                                        rdfs:subPropertyOf owl:topDataProperty ;
+                                                        rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Customer> ;
+                                                        rdfs:range rdfs:Literal ;
+                                                        rdfs:label "has customer priority"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_delivery_product
+<http://www.w3id.org/ecsel-dr-DF#has_delivery_product> rdf:type owl:DatatypeProperty ;
+                                                       rdfs:subPropertyOf <http://www.w3id.org/ecsel-dr-DF#has_batching_interval> ;
+                                                       rdfs:label "has delivery product"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_delivery_quantity
+<http://www.w3id.org/ecsel-dr-DF#has_delivery_quantity> rdf:type owl:DatatypeProperty ;
+                                                        rdfs:subPropertyOf <http://www.w3id.org/ecsel-dr-DF#has_batching_interval> ;
+                                                        rdfs:label "has delivery quantity"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_demand_date
+<http://www.w3id.org/ecsel-dr-DF#has_demand_date> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:subPropertyOf owl:topDataProperty ;
+                                                  rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Demand> ;
+                                                  rdfs:range xsd:dateTime ;
+                                                  rdfs:label "has demand date"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_demand_name
+<http://www.w3id.org/ecsel-dr-DF#has_demand_name> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:subPropertyOf owl:topDataProperty ;
+                                                  rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Demand> ;
+                                                  rdfs:range rdfs:Literal ;
+                                                  rdfs:label "has demand name"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_demand_priority
+<http://www.w3id.org/ecsel-dr-DF#has_demand_priority> rdf:type owl:DatatypeProperty ;
+                                                      rdfs:subPropertyOf owl:topDataProperty ;
+                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Demand> ;
+                                                      rdfs:range rdfs:Literal ;
+                                                      rdfs:comment "This concept is used to describe the different importance level of a demand. The demand priority can be independently assigned from the demand class." ;
+                                                      rdfs:label "has demand priority"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_lot_ID
+<http://www.w3id.org/ecsel-dr-DF#has_lot_ID> rdf:type owl:DatatypeProperty ;
+                                             rdfs:subPropertyOf owl:topDataProperty ;
+                                             rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Lot> ;
+                                             rdfs:range rdfs:Literal ;
+                                             rdfs:label "has lot ID"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_lot_end_date
+<http://www.w3id.org/ecsel-dr-DF#has_lot_end_date> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:subPropertyOf owl:topDataProperty ;
+                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Lot> ;
+                                                   rdfs:range xsd:dateTime .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_lot_name
+<http://www.w3id.org/ecsel-dr-DF#has_lot_name> rdf:type owl:DatatypeProperty ;
+                                               rdfs:subPropertyOf owl:topDataProperty ;
+                                               rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Lot> ;
+                                               rdfs:range rdfs:Literal ;
+                                               rdfs:label "has lot name"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_lot_start_date
+<http://www.w3id.org/ecsel-dr-DF#has_lot_start_date> rdf:type owl:DatatypeProperty ;
+                                                     rdfs:subPropertyOf owl:topDataProperty ;
+                                                     rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Lot> ;
+                                                     rdfs:range xsd:dateTime ;
+                                                     rdfs:label "has lot start date"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_order_date
+<http://www.w3id.org/ecsel-dr-DF#has_order_date> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:subPropertyOf owl:topDataProperty ;
+                                                 rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Order> ;
+                                                 rdfs:range xsd:dateTime ;
+                                                 rdfs:label "has order date"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_order_information
+<http://www.w3id.org/ecsel-dr-DF#has_order_information> rdf:type owl:DatatypeProperty ;
+                                                        rdfs:subPropertyOf owl:topDataProperty ;
+                                                        rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Order_Delivery_Plan> ;
+                                                        rdfs:range rdfs:Literal ;
+                                                        rdfs:label "has order information"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_order_name
+<http://www.w3id.org/ecsel-dr-DF#has_order_name> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:subPropertyOf owl:topDataProperty ;
+                                                 rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Order> ;
+                                                 rdfs:range rdfs:Literal ;
+                                                 rdfs:label "has order name"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_order_position
+<http://www.w3id.org/ecsel-dr-DF#has_order_position> rdf:type owl:DatatypeProperty ;
+                                                     rdfs:subPropertyOf owl:topDataProperty ;
+                                                     rdfs:range rdfs:Literal .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_order_priority
+<http://www.w3id.org/ecsel-dr-DF#has_order_priority> rdf:type owl:DatatypeProperty ;
+                                                     rdfs:subPropertyOf owl:topDataProperty ;
+                                                     rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Order> ;
+                                                     rdfs:range rdfs:Literal ;
+                                                     rdfs:label "has order priority"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_period_length
+<http://www.w3id.org/ecsel-dr-DF#has_period_length> rdf:type owl:DatatypeProperty ;
+                                                    rdfs:subPropertyOf owl:topDataProperty ;
+                                                    rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Period> ;
+                                                    rdfs:range rdfs:Literal ;
+                                                    rdfs:label "has period length"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_period_name
+<http://www.w3id.org/ecsel-dr-DF#has_period_name> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:subPropertyOf owl:topDataProperty ;
+                                                  rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Period> ;
+                                                  rdfs:range rdfs:Literal ;
+                                                  rdfs:label "has period name"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_plan_for_outsourcing
+<http://www.w3id.org/ecsel-dr-DF#has_plan_for_outsourcing> rdf:type owl:DatatypeProperty ;
+                                                           rdfs:subPropertyOf owl:topDataProperty ;
+                                                           rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Master_Plan> ;
+                                                           rdfs:range rdfs:Literal ;
+                                                           rdfs:label "has plan for outsourcing"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_plan_locations
+<http://www.w3id.org/ecsel-dr-DF#has_plan_locations> rdf:type owl:DatatypeProperty ;
+                                                     rdfs:subPropertyOf owl:topDataProperty ;
+                                                     rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Master_Plan> ;
+                                                     rdfs:range rdfs:Literal ;
+                                                     rdfs:label "has plan locations"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_plan_period
+<http://www.w3id.org/ecsel-dr-DF#has_plan_period> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:subPropertyOf owl:topDataProperty ;
+                                                  rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Plan> ;
+                                                  rdfs:range rdfs:Literal ;
+                                                  rdfs:label "has plan period"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_plan_quantities
+<http://www.w3id.org/ecsel-dr-DF#has_plan_quantities> rdf:type owl:DatatypeProperty ;
+                                                      rdfs:subPropertyOf owl:topDataProperty ;
+                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Plan> ;
+                                                      rdfs:range rdfs:Literal ;
+                                                      rdfs:label "has plan quantities"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_planning_criteria
+<http://www.w3id.org/ecsel-dr-DF#has_planning_criteria> rdf:type owl:DatatypeProperty ;
+                                                        rdfs:subPropertyOf owl:topDataProperty ;
+                                                        rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Planning_Purpose> ;
+                                                        rdfs:range rdfs:Literal ;
+                                                        rdfs:label "has planning criteria"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_product_milestone_status
+<http://www.w3id.org/ecsel-dr-DF#has_product_milestone_status> rdf:type owl:DatatypeProperty ;
+                                                               rdfs:subPropertyOf owl:topDataProperty ;
+                                                               rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Product> ;
+                                                               rdfs:range rdfs:Literal ;
+                                                               rdfs:label "has product milestone status"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_product_name
+<http://www.w3id.org/ecsel-dr-DF#has_product_name> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:subPropertyOf owl:topDataProperty ;
+                                                   rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Product> ;
+                                                   rdfs:range rdfs:Literal ;
+                                                   rdfs:label "has product name"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_product_number
+<http://www.w3id.org/ecsel-dr-DF#has_product_number> rdf:type owl:DatatypeProperty ;
+                                                     rdfs:subPropertyOf owl:topDataProperty ;
+                                                     rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Product> ;
+                                                     rdfs:range rdfs:Literal ;
+                                                     rdfs:label "has product number"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_product_type_description
+<http://www.w3id.org/ecsel-dr-DF#has_product_type_description> rdf:type owl:DatatypeProperty ;
+                                                               rdfs:subPropertyOf owl:topDataProperty ;
+                                                               rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Product> ;
+                                                               rdfs:range rdfs:Literal ;
+                                                               rdfs:label "has product type description"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_promised_delivery_date_per_order
+<http://www.w3id.org/ecsel-dr-DF#has_promised_delivery_date_per_order> rdf:type owl:DatatypeProperty ;
+                                                                       rdfs:subPropertyOf owl:topDataProperty ;
+                                                                       rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Order_Delivery_Plan> ;
+                                                                       rdfs:range rdfs:Literal ;
+                                                                       rdfs:label "has promised delivery date per order"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_requested_delivery_date
+<http://www.w3id.org/ecsel-dr-DF#has_requested_delivery_date> rdf:type owl:DatatypeProperty ;
+                                                              rdfs:subPropertyOf owl:topDataProperty ;
+                                                              rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Confirmed_Delivery_Date> ;
+                                                              rdfs:range xsd:dateTime ;
+                                                              rdfs:label "has requested delivery date"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_supply_location
+<http://www.w3id.org/ecsel-dr-DF#has_supply_location> rdf:type owl:DatatypeProperty ;
+                                                      rdfs:subPropertyOf owl:topDataProperty ;
+                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Supply> ;
+                                                      rdfs:range rdfs:Literal ;
+                                                      rdfs:label "has supply location"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_supply_product
+<http://www.w3id.org/ecsel-dr-DF#has_supply_product> rdf:type owl:DatatypeProperty ;
+                                                     rdfs:subPropertyOf owl:topDataProperty ;
+                                                     rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Supply> ;
+                                                     rdfs:range rdfs:Literal ;
+                                                     rdfs:label "has supply product"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_supply_quantity
+<http://www.w3id.org/ecsel-dr-DF#has_supply_quantity> rdf:type owl:DatatypeProperty ;
+                                                      rdfs:subPropertyOf owl:topDataProperty ;
+                                                      rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Supply> ;
+                                                      rdfs:range xsd:int ;
+                                                      rdfs:label "has supply quantity"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#has_supply_time
+<http://www.w3id.org/ecsel-dr-DF#has_supply_time> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:subPropertyOf owl:topDataProperty ;
+                                                  rdfs:domain <http://www.w3id.org/ecsel-dr-DF#Supply> ;
+                                                  rdfs:range rdfs:Literal ;
+                                                  rdfs:label "has supply time"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#PO_number_OCR
@@ -14255,6 +14944,440 @@ ecsel-dr-AT:Zig_Bee_RF4CE rdf:type owl:Class ;
                                                                        ] .
 
 
+###  http://www.w3id.org/ecsel-dr-DF#Activity
+<http://www.w3id.org/ecsel-dr-DF#Activity> rdf:type owl:Class ;
+                                           rdfs:subClassOf dr:Process_Lobe ;
+                                           rdfs:comment "Additional lobes: Time"@en ,
+                                                        "An activity is something carried out over a specific time interval." .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Allocated_Available_To_Promise
+<http://www.w3id.org/ecsel-dr-DF#Allocated_Available_To_Promise> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf dr:Supply_Chain_Lobe ;
+                                                                 rdfs:comment "When scarce ATP quantities are allocated to different customer classes or customers, the resulting supply reservations are called allocated ATP (AATP) quantities." ;
+                                                                 rdfs:label "Allocated Available To Promise"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Allocation_Plan
+<http://www.w3id.org/ecsel-dr-DF#Allocation_Plan> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Plan> ;
+                                                  owl:disjointWith <http://www.w3id.org/ecsel-dr-DF#Master_Plan> ;
+                                                  rdfs:comment "An allocation plan is a special plan, which deals with assigning ATP quantities to a customer or a customer class."^^rdfs:Literal ;
+                                                  rdfs:label "Allocation Plan"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Allocation_Planning
+<http://www.w3id.org/ecsel-dr-DF#Allocation_Planning> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Planning> ;
+                                                      rdfs:label "Allocation Planning"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Available_To_Promise
+<http://www.w3id.org/ecsel-dr-DF#Available_To_Promise> rdf:type owl:Class ;
+                                                       rdfs:subClassOf dr:Supply_Chain_Lobe ;
+                                                       rdfs:comment "The part of the inventory and projected supply that can be used to fulfill customer orders is called ATP." ;
+                                                       rdfs:label "Available To Promise"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Batch_Interval
+<http://www.w3id.org/ecsel-dr-DF#Batch_Interval> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Time_Interval> ;
+                                                 rdfs:comment "This is the time span for which arriving orders are collected to derive for all of them jointly a first promised delivery date." ;
+                                                 rdfs:label "Batch Interval"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Best_Promised_Delivery_Date
+<http://www.w3id.org/ecsel-dr-DF#Best_Promised_Delivery_Date> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Date> ;
+                                                              rdfs:comment "This is the best delivery date the supplier ever promised to the customer. It represents the best delivery date the supplier submitted to the customer. Thus every later commitment or delivery is a de-commitment from the supplier." ;
+                                                              rdfs:label "Best Promised Delivery Date"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Complete_Delivery
+<http://www.w3id.org/ecsel-dr-DF#Complete_Delivery> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Delivery_Concept> ;
+                                                    rdfs:comment "The normal case is that an order is completely delivered."^^rdfs:Literal ;
+                                                    rdfs:label "Complete Delivery"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Confirmed_Delivery_Date
+<http://www.w3id.org/ecsel-dr-DF#Confirmed_Delivery_Date> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Date> ;
+                                                          rdfs:comment "The CDD is the committed date for order delivery that is communicated to the costumer. It depends on the communication strategy between manufacturer and customer. For instance, the CDD is the PDD if order repromising takes place in the same frequency as the update interval of the CDD."^^rdfs:Literal ;
+                                                          rdfs:label "Confirmed Delivery Date"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Customer
+<http://www.w3id.org/ecsel-dr-DF#Customer> rdf:type owl:Class ;
+                                           owl:equivalentClass <http://www.w3id.org/ecsel-dr-OM#Customer> ;
+                                           rdfs:subClassOf dr:Supply_Chain_Lobe ;
+                                           rdfs:comment "A customer can place orders. He raises a demand for a specific product or service. Internal and external customer demand can be distinguished."^^rdfs:Literal .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Customer_Class
+<http://www.w3id.org/ecsel-dr-DF#Customer_Class> rdf:type owl:Class ;
+                                                 rdfs:subClassOf dr:Supply_Chain_Lobe ;
+                                                 rdfs:comment "The set of all customers is divided into different priority classes or segments based on certain criteria like profitability or importance of customer."^^rdfs:Literal ;
+                                                 rdfs:label "Customer Class"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Customer_Order
+<http://www.w3id.org/ecsel-dr-DF#Customer_Order> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Order> ;
+                                                 owl:disjointWith <http://www.w3id.org/ecsel-dr-DF#Replenishment_Order> ;
+                                                 rdfs:comment "This is an order that is initiated by a customer."^^rdfs:Literal ;
+                                                 rdfs:label "Customer Order"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Date
+<http://www.w3id.org/ecsel-dr-DF#Date> rdf:type owl:Class ;
+                                       rdfs:subClassOf dr:Time_Lobe ;
+                                       rdfs:comment "Additional lobe: Supply Chain"@en ,
+                                                    "The availability date defines the point in time when the supply is available to the customer. It can be distinguished between different availability dates. Not all availability dates are communicated to the customer."^^rdfs:Literal .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Delivery_Concept
+<http://www.w3id.org/ecsel-dr-DF#Delivery_Concept> rdf:type owl:Class ;
+                                                   rdfs:subClassOf dr:Supply_Chain_Lobe ;
+                                                   rdfs:comment "The deliver concept defines the terms and conditions for delivering an order to the customer. Especially partial and split delivery has to be taken into account."^^rdfs:Literal ;
+                                                   rdfs:label "Delivery Concept"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Delivery_Date
+<http://www.w3id.org/ecsel-dr-DF#Delivery_Date> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Date> ;
+                                                rdfs:comment "This is the point in time when the customer received the requested order."^^rdfs:Literal ;
+                                                rdfs:label "Delivery Date"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Demand
+<http://www.w3id.org/ecsel-dr-DF#Demand> rdf:type owl:Class ;
+                                         rdfs:subClassOf dr:Supply_Chain_Lobe ;
+                                         rdfs:comment "Demand is a production request for a specific product or service that can have different triggers. Either demand exists explicitly in form of customer orders or implicitly as expected customer need that have to be fulfilled by the semiconductor supply chain."^^rdfs:Literal .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Demand_Class
+<http://www.w3id.org/ecsel-dr-DF#Demand_Class> rdf:type owl:Class ;
+                                               rdfs:subClassOf dr:Supply_Chain_Lobe ;
+                                               rdfs:comment "This concept is used for dividing the total forecast for a given product into several priority classes." ;
+                                               rdfs:label "Demand Class"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Demand_Priority
+<http://www.w3id.org/ecsel-dr-DF#Demand_Priority> rdf:type owl:Class ;
+                                                  rdfs:subClassOf dr:Supply_Chain_Lobe ;
+                                                  rdfs:comment "This concept is used to describe the different importance level of a demand. The demand priority can be assigned independently from the demand class." ;
+                                                  rdfs:label "Demand Priority"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Engineering_Lot
+<http://www.w3id.org/ecsel-dr-DF#Engineering_Lot> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Lot> ;
+                                                  owl:disjointWith <http://www.w3id.org/ecsel-dr-DF#Productive_Lot> ;
+                                                  rdfs:comment "An engineering lot requires additional process development efforts and special attention during the production flow. Engineering lots have various functions, thus several engineering lot types can be differentiated."^^rdfs:Literal ;
+                                                  rdfs:label "Engineering Lot"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#External_Customer
+<http://www.w3id.org/ecsel-dr-DF#External_Customer> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Customer_Class> ;
+                                                    owl:disjointWith <http://www.w3id.org/ecsel-dr-DF#Internal_Customer> ;
+                                                    rdfs:label "External Customer"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Firm_Order_Demand
+<http://www.w3id.org/ecsel-dr-DF#Firm_Order_Demand> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Demand_Class> ;
+                                                    rdfs:comment "This is a special demand class that is used for demand that is required to fulfill already committed/accepted orders."^^rdfs:Literal ;
+                                                    rdfs:label "Firm Order Demand"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#First_Promised_Delivery_Date
+<http://www.w3id.org/ecsel-dr-DF#First_Promised_Delivery_Date> rdf:type owl:Class ;
+                                                               rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Date> ;
+                                                               rdfs:comment "Initially, the FPD is set for an order delivery within the online order confirmation process."^^rdfs:Literal ;
+                                                               rdfs:label "First Promised Delivery Date"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Forecasted_Demand
+<http://www.w3id.org/ecsel-dr-DF#Forecasted_Demand> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Demand_Class> ;
+                                                    rdfs:comment "This is a special demand class that is used for the projection of future demand."^^rdfs:Literal ;
+                                                    rdfs:label "Forecasted Demand"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Internal_Customer
+<http://www.w3id.org/ecsel-dr-DF#Internal_Customer> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Customer_Class> ;
+                                                    rdfs:label "Internal Customer"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Inventory_Replenishment_Demand
+<http://www.w3id.org/ecsel-dr-DF#Inventory_Replenishment_Demand> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Demand_Class> ;
+                                                                 rdfs:comment "This is a special demand class that is used for replenishment of safety stock."^^rdfs:Literal ;
+                                                                 rdfs:label "Inventory Replenishment Demand"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Last_Promised_Delivery_Date
+<http://www.w3id.org/ecsel-dr-DF#Last_Promised_Delivery_Date> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Date> ;
+                                                              rdfs:comment "This is the last commitment the supplier has given to the customer" ;
+                                                              rdfs:label "Last Promised Delivery Date"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Location
+<http://www.w3id.org/ecsel-dr-DF#Location> rdf:type owl:Class ;
+                                           owl:equivalentClass <http://www.w3id.org/ecsel-dr-Incoterms#Location> ;
+                                           rdfs:subClassOf dr:Supply_Chain_Lobe .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Lot
+<http://www.w3id.org/ecsel-dr-DF#Lot> rdf:type owl:Class ;
+                                      owl:equivalentClass <http://www.w3id.org/ecsel-dr-SO#Lot> ;
+                                      rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
+                                      rdfs:comment "A lot is a set of wafers, substrates or modules that travel together through the FE or BE fab in order to fulfill a certain order."^^rdfs:Literal .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Master_Plan
+<http://www.w3id.org/ecsel-dr-DF#Master_Plan> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Plan> ;
+                                              rdfs:comment "A master plan is a specific plan which determines which quantity resulting from confirmed orders and from forecasted demand should be completed in which location in which period of the planning horizon. Moreover, outsourcing decisions have to be represented in master plans."^^rdfs:Literal ;
+                                              rdfs:label "Master Plan"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Master_Planning
+<http://www.w3id.org/ecsel-dr-DF#Master_Planning> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Planning> ;
+                                                  rdfs:label "Master Planning"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Online_Order_Promising_Plan
+<http://www.w3id.org/ecsel-dr-DF#Online_Order_Promising_Plan> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Order_Delivery_Plan> ;
+                                                              rdfs:label "Online Order Promising Plan"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Order
+<http://www.w3id.org/ecsel-dr-DF#Order> rdf:type owl:Class ;
+                                        rdfs:subClassOf dr:Supply_Chain_Lobe ;
+                                        rdfs:comment "An order contains at least one order position. An order has an order type and is associated to demand"^^rdfs:Literal .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Order_Delivery_Plan
+<http://www.w3id.org/ecsel-dr-DF#Order_Delivery_Plan> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Plan> ;
+                                                      rdfs:comment "This is the result of the order promise or repromise process for different sets of orders taking into account an allocation policy and the supply and allocation situation. Different order promising variants can be distinguished, for instance online order promising, batch order promising, and hybrid order promising. The same is true of repromising."^^rdfs:Literal ;
+                                                      rdfs:label "Order Delivery Plan"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Order_Position
+<http://www.w3id.org/ecsel-dr-DF#Order_Position> rdf:type owl:Class ;
+                                                 rdfs:subClassOf dr:Supply_Chain_Lobe ;
+                                                 rdfs:comment "An order position refers to a product specification, a product quantity, and a desired delivery date. Each order position has a status and belongs to an order." ;
+                                                 rdfs:label "Order Position"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Order_Promising
+<http://www.w3id.org/ecsel-dr-DF#Order_Promising> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Planning> ;
+                                                  rdfs:comment "This concept describes the process to promise an order considering allocation policy as well as supply and allocation situation. The order promising can be distinguished between different variants, for instance online order promising and batch order promising."^^rdfs:Literal ;
+                                                  rdfs:label "Order Promising"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Order_Repromising_Plan
+<http://www.w3id.org/ecsel-dr-DF#Order_Repromising_Plan> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Order_Delivery_Plan> ;
+                                                         rdfs:label "Order Repromising Plan"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Partial_Delivery
+<http://www.w3id.org/ecsel-dr-DF#Partial_Delivery> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Delivery_Concept> ;
+                                                   owl:disjointWith <http://www.w3id.org/ecsel-dr-DF#Split_Delivery> ;
+                                                   rdfs:comment "It can be allowed that only parts of an order position of an order are delivered. Therefore, the customer is willing to waive parts of quantity belonging to an order position."^^rdfs:Literal ;
+                                                   rdfs:label "Partial Delivery"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Period
+<http://www.w3id.org/ecsel-dr-DF#Period> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Time_Interval> ;
+                                         rdfs:comment "The concept period displays the sub unit of the planning horizon."^^rdfs:Literal .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Plan
+<http://www.w3id.org/ecsel-dr-DF#Plan> rdf:type owl:Class ;
+                                       rdfs:subClassOf dr:Planning_Lobe ;
+                                       rdfs:comment "A plan is an activity specification with an intended purpose. Planning is an activity with the purpose to determine a plan. Planning is associated with goals, in the present situation represented by objective functions to be optimized."^^rdfs:Literal .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Planning
+<http://www.w3id.org/ecsel-dr-DF#Planning> rdf:type owl:Class ;
+                                           rdfs:subClassOf dr:Planning_Lobe .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Planning_Period
+<http://www.w3id.org/ecsel-dr-DF#Planning_Period> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Time_Interval> ;
+                                                  rdfs:comment "A planning period is a specific DateTimeInterval from the time ontology (Time Ontology 2020). It belongs to a planning window. It has a temporal duration." ;
+                                                  rdfs:label "Planning Period"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Planning_Purpose
+<http://www.w3id.org/ecsel-dr-DF#Planning_Purpose> rdf:type owl:Class ;
+                                                   rdfs:subClassOf dr:Planning_Lobe ;
+                                                   rdfs:comment "The planning purpose describes a set of criteria that influence other concepts, e.g. product aggregate."^^rdfs:Literal ;
+                                                   rdfs:label "Planning Purpose"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Planning_Window
+<http://www.w3id.org/ecsel-dr-DF#Planning_Window> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Time_Interval> ;
+                                                  rdfs:comment "Planning in supply chains is associated with a planning window which is formed by a set of consecutive planning periods." ;
+                                                  rdfs:label "Planning Window"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Product
+<http://www.w3id.org/ecsel-dr-DF#Product> rdf:type owl:Class ;
+                                          owl:equivalentClass ecsel-dr-OOSMP:Product ;
+                                          rdfs:subClassOf dr:Product_Lobe ;
+                                          rdfs:comment "A product is a good that fulfills a prescribed set of requirements (for instance, form, fit, and function). A set of alternative BOMs might be associated with each product. The manufacturing process is complicated by binning and substitution (in production). Binning refers to the process that an item can become one of several products based on tested levels of performance, for instance, speed."^^rdfs:Literal .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Product_Aggregate
+<http://www.w3id.org/ecsel-dr-DF#Product_Aggregate> rdf:type owl:Class ;
+                                                    rdfs:subClassOf dr:Product_Lobe ;
+                                                    rdfs:comment "The concept product aggregate is used to group different products based on certain criteria. The grouping criteria depend on the planning purpose (e.g. controlling, production). It is a certain view (external or internal) on a set of products."^^rdfs:Literal ;
+                                                    rdfs:label "Product Aggregate"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Product_Hierarchy
+<http://www.w3id.org/ecsel-dr-DF#Product_Hierarchy> rdf:type owl:Class ;
+                                                    rdfs:subClassOf dr:Product_Lobe ;
+                                                    rdfs:comment "The concept characterizes the top-down and bottom-up relationship between different product aggregates. It organizes the product aggregates according to defined criteria."^^rdfs:Literal ;
+                                                    rdfs:label "Product Hierarchy"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Production_Strategy
+<http://www.w3id.org/ecsel-dr-DF#Production_Strategy> rdf:type owl:Class ;
+                                                      rdfs:subClassOf dr:Supply_Chain_Lobe ;
+                                                      rdfs:comment "The production strategy determining which portions of a supply chain should operate in make to stock (MTS) mode, where production is driven by the replenishment of inventories at specific locations, and which in make to order (MTO) mode, where production is initiated to fulfill specific customer orders. The production strategy is related to the question where the customer order decoupling point (CODP), also referred to as the push-pull interface (or boundary) has to be placed. The CODP denotes the point in the supply chain where material is dedicated to a specific customer order to the degree that it cannot be used for another."^^rdfs:Literal ,
+                                                                   "additional lobes: Semiaconductor Production"@en ;
+                                                      rdfs:label "Production Strategy"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Productive_Lot
+<http://www.w3id.org/ecsel-dr-DF#Productive_Lot> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Lot> ;
+                                                 rdfs:comment "A productive lot is created to fulfill a customer demand. The production process is carried out as it is defined during the production development phase."^^rdfs:Literal ;
+                                                 rdfs:label "Productive Lot"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Promised_Delivery_Date
+<http://www.w3id.org/ecsel-dr-DF#Promised_Delivery_Date> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Date> ;
+                                                         rdfs:comment "This is the date for which eventually partial order delivery is confirmed. The PDD date can be changed over time. Within the repromising process there are typically different PDDs available."^^rdfs:Literal ;
+                                                         rdfs:label "Promised Delivery Date"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Replenishment_Order
+<http://www.w3id.org/ecsel-dr-DF#Replenishment_Order> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Order> ;
+                                                      rdfs:comment "This is an order that is initiated by an internal request of the semiconductor manufacturer to produce the order according to a MTS strategy. The replenishment order can be divided into different sub order types, depending on the purpose of order creation."^^rdfs:Literal ;
+                                                      rdfs:label "Replenishment Order"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Requested_Delivery_Date
+<http://www.w3id.org/ecsel-dr-DF#Requested_Delivery_Date> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Date> ;
+                                                          rdfs:comment "The RDD is the point in time when the customer wants to get the order."^^rdfs:Literal ;
+                                                          rdfs:label "Requested Delivery Date"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Route
+<http://www.w3id.org/ecsel-dr-DF#Route> rdf:type owl:Class ;
+                                        owl:equivalentClass <http://www.w3id.org/ecsel-dr-SO#Route> ;
+                                        rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
+                                        rdfs:comment "Additional lobes: Semiconductor Production"@en ,
+                                                     "The term route can be considered on different levels. In the present situation, a route is associated with a product and describes its production flow on the production network level."^^rdfs:Literal .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Split_Delivery
+<http://www.w3id.org/ecsel-dr-DF#Split_Delivery> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Delivery_Concept> ;
+                                                 rdfs:comment "It can be allowed that order positions of an order are delivered in several portions."^^rdfs:Literal ;
+                                                 rdfs:label "Split Delivery"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Split_Order
+<http://www.w3id.org/ecsel-dr-DF#Split_Order> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Order> ;
+                                              rdfs:comment "This is an order that results from a split delivery. When an order position of an order is delivered in several portions, each portion starting from the second one is considered as a separate suborder which is called scheduled order position. The original order also exists after the split." ;
+                                              rdfs:label "Split Order"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Supplier
+<http://www.w3id.org/ecsel-dr-DF#Supplier> rdf:type owl:Class ;
+                                           owl:equivalentClass <http://www.w3id.org/ecsel-dr-OM#Supplier> ;
+                                           rdfs:subClassOf dr:Supply_Chain_Lobe ;
+                                           rdfs:comment "A Supplier fufills a demand for a specific product or service."^^rdfs:Literal .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Supply
+<http://www.w3id.org/ecsel-dr-DF#Supply> rdf:type owl:Class ;
+                                         owl:equivalentClass <http://www.w3id.org/ecsel-dr-OM#Supply> ;
+                                         rdfs:subClassOf dr:Supply_Chain_Lobe ;
+                                         rdfs:comment "This is the total amount of specific products that is available to customers. Supply has the dimensions quantity, time, location, product, including aggregation of all dimensions. Supply is defined as inventory or plan replenishment."^^rdfs:Literal .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Supply_Chain
+<http://www.w3id.org/ecsel-dr-DF#Supply_Chain> rdf:type owl:Class ;
+                                               owl:equivalentClass <http://www.w3id.org/ecsel-dr-SO#Supply_Chain> ;
+                                               rdfs:subClassOf dr:Supply_Chain_Lobe ;
+                                               rdfs:label "Supply Chain"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Supply_Contract
+<http://www.w3id.org/ecsel-dr-DF#Supply_Contract> rdf:type owl:Class ;
+                                                  rdfs:subClassOf dr:Supply_Chain_Lobe ;
+                                                  rdfs:label "Supply Contract"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Time_Interval
+<http://www.w3id.org/ecsel-dr-DF#Time_Interval> rdf:type owl:Class ;
+                                                rdfs:subClassOf dr:Time_Lobe ;
+                                                rdfs:comment "Additional lobe: Planning"@en ;
+                                                rdfs:label "Time Interval"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Assemble_To_Order_(ATO)
+<http://www.w3id.org/ecsel-dr-DF#Assemble_To_Order_(ATO)> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Production_Strategy> ;
+                                                          rdfs:comment "In the case of ATO, products are produced forecast-driven until the point right before it comes to the assembly. Starting from there, the production continues based on a customer order."^^rdfs:Literal ;
+                                                          rdfs:label "Assemble To Order"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Bill_Of_Material_(BOM)
+<http://www.w3id.org/ecsel-dr-DF#Bill_Of_Material_(BOM)> rdf:type owl:Class ;
+                                                         rdfs:subClassOf dr:Product_Lobe ;
+                                                         rdfs:comment "A BOM describes components or rather semi-finished products that are part of the finished product. Substitution, often associated with binning, is based on the possibility that alternative items might be used to finish a process step. This leads to the notion of alternative BOMs."^^rdfs:Literal ;
+                                                         rdfs:label "Bill Of Material (BOM)"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Make_To_Order_(MTO)
+<http://www.w3id.org/ecsel-dr-DF#Make_To_Order_(MTO)> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Production_Strategy> ;
+                                                      rdfs:comment "This is a strategy where production is initiated to fulfill specific customer orders. This strategy is characterized by an order-driven production."^^rdfs:Literal ;
+                                                      rdfs:label "Make To Order"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#Make_To_Stock_(MTS)
+<http://www.w3id.org/ecsel-dr-DF#Make_To_Stock_(MTS)> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://www.w3id.org/ecsel-dr-DF#Production_Strategy> ;
+                                                      rdfs:comment "This is a strategy where production is driven by the replenishment of inventories at specific locations. Products are produced forecast-driven until they are completely finished in the case of MTS."^^rdfs:Literal ;
+                                                      rdfs:label "Make To Stock"@en .
+
+
 ###  http://www.w3id.org/ecsel-dr-Incoterms#C_Main_Carriage_Paid
 <http://www.w3id.org/ecsel-dr-Incoterms#C_Main_Carriage_Paid> rdf:type owl:Class ;
                                                               rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Incoterms#Incoterms_Group> ;
@@ -18200,8 +19323,11 @@ ecsel-dr-RAMI40:Work_Center rdf:type owl:NamedIndividual .
                                                        rdfs:label "Wind Turbine"@en .
 
 
-ecsel-dr-OOSMP:Completely_Lead_Free_Status rdfs:label "Completely Lead Free Status"@en ;
-                                           skos:prefLabel "Completely Lead Free Status"@en ;
+<http://www.w3id.org/ecsel-dr-DF#has_order_position> rdfs:label "has order position"@en .
+
+
+ecsel-dr-OOSMP:Completely_Lead_Free_Status skos:prefLabel "Completely Lead Free Status"@en ;
+                                           rdfs:label "Completely Lead Free Status"@en ;
                                            rdfs:comment "This status determines whether a semiconductor product is lead free or not."@en .
 
 
@@ -18222,6 +19348,48 @@ ecsel-dr-RAMI40:Asset rdfs:comment "Every I4.0-component has to represent an ent
 #################################################################
 #    General axioms
 #################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.w3id.org/ecsel-dr-DF#Allocation_Plan>
+                <http://www.w3id.org/ecsel-dr-DF#Master_Plan>
+                <http://www.w3id.org/ecsel-dr-DF#Order_Delivery_Plan>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.w3id.org/ecsel-dr-DF#Complete_Delivery>
+                <http://www.w3id.org/ecsel-dr-DF#Partial_Delivery>
+                <http://www.w3id.org/ecsel-dr-DF#Split_Delivery>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.w3id.org/ecsel-dr-DF#Confirmed_Delivery_Date>
+                <http://www.w3id.org/ecsel-dr-DF#Delivery_Date>
+                <http://www.w3id.org/ecsel-dr-DF#First_Promised_Delivery_Date>
+                <http://www.w3id.org/ecsel-dr-DF#Promised_Delivery_Date>
+                <http://www.w3id.org/ecsel-dr-DF#Requested_Delivery_Date>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.w3id.org/ecsel-dr-DF#Firm_Order_Demand>
+                <http://www.w3id.org/ecsel-dr-DF#Forecasted_Demand>
+                <http://www.w3id.org/ecsel-dr-DF#Inventory_Replenishment_Demand>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.w3id.org/ecsel-dr-DF#Assemble_To_Order_(ATO)>
+                <http://www.w3id.org/ecsel-dr-DF#Make_To_Order_(MTO)>
+                <http://www.w3id.org/ecsel-dr-DF#Make_To_Stock_(MTS)>
+              )
+] .
+
 
 [ rdf:type owl:AllDisjointClasses ;
   owl:members ( <http://www.w3id.org/ecsel-dr-Incoterms#C_Main_Carriage_Paid>

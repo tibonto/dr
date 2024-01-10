@@ -2969,9 +2969,13 @@ ecsel-dr-DF:has_order_demand rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-DF#has_order_position
 ecsel-dr-DF:has_order_position rdf:type owl:ObjectProperty ;
-                               rdfs:subPropertyOf owl:topObjectProperty ;
                                rdfs:domain ecsel-dr-DF:Order ;
-                               rdfs:range ecsel-dr-DF:Order_Position .
+                               rdfs:range [ rdf:type owl:Class ;
+                                            owl:unionOf ( rdfs:Literal
+                                                          ecsel-dr-DF:Order_Position
+                                                        )
+                                          ] ;
+                               rdfs:label "has order position"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-DF#has_periods
@@ -7311,12 +7315,6 @@ ecsel-dr-DF:has_order_name rdf:type owl:DatatypeProperty ;
                            rdfs:domain ecsel-dr-DF:Order ;
                            rdfs:range rdfs:Literal ;
                            rdfs:label "has order name"@en .
-
-
-###  http://www.w3id.org/ecsel-dr-DF#has_order_position
-ecsel-dr-DF:has_order_position rdf:type owl:DatatypeProperty ;
-                               rdfs:subPropertyOf owl:topDataProperty ;
-                               rdfs:range rdfs:Literal .
 
 
 ###  http://www.w3id.org/ecsel-dr-DF#has_order_priority
@@ -20053,9 +20051,6 @@ ecsel-dr-CO2Savings:Solar_Panel rdfs:comment "A panel or device that converts su
 
 ecsel-dr-CO2Savings:Wind_Turbine rdfs:comment "A device that converts wind energy into electricity." ;
                                  rdfs:label "Wind Turbine"@en .
-
-
-ecsel-dr-DF:has_order_position rdfs:label "has order position"@en .
 
 
 ecsel-dr-OOSMP:Completely_Lead_Free_Status rdfs:comment "This status determines whether a semiconductor product is lead free or not."@en ;

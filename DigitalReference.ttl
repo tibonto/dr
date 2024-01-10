@@ -20022,12 +20022,13 @@ ecsel-dr-RAMI40:Type rdf:type owl:NamedIndividual .
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Work_Center
 ecsel-dr-RAMI40:Work_Center rdf:type owl:NamedIndividual .
 
+
 #################################################################
 #    Annotations
 #################################################################
 
 ecsel-dr-CO2Savings:Electric_Car rdfs:comment "An electric car powered by electricity as an energy source." ;
-                                  rdfs:label "Electric Car"@en .
+                                 rdfs:label "Electric Car"@en .
 
 
 ecsel-dr-CO2Savings:Gasoline_Car rdfs:comment "Gasoline Car (Gcar)"@en ;

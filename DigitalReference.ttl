@@ -82,10 +82,6 @@ terms:created rdf:type owl:AnnotationProperty .
 terms:creator rdf:type owl:AnnotationProperty .
 
 
-###  http://purl.org/dc/terms/description
-terms:description rdf:type owl:AnnotationProperty .
-
-
 ###  http://purl.org/dc/terms/isVersionOf
 terms:isVersionOf rdf:type owl:AnnotationProperty .
 
@@ -98,16 +94,8 @@ terms:license rdf:type owl:AnnotationProperty .
 terms:modified rdf:type owl:AnnotationProperty .
 
 
-###  http://purl.org/dc/terms/rights
-terms:rights rdf:type owl:AnnotationProperty .
-
-
 ###  http://purl.org/dc/terms/title
 terms:title rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/vocab/vann/preferredNamespacePrefix
-vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/vocab/vann/preferredNamespaceUri
@@ -122,27 +110,6 @@ schema:domainIncludes rdf:type owl:AnnotationProperty .
 schema:rangeIncludes rdf:type owl:AnnotationProperty .
 
 
-###  http://www.w3.org/2000/01/rdf-schema#comment
-rdfs:comment rdf:type owl:AnnotationProperty ;
-             rdfs:comment "The definition or description of a concept"@en ;
-             skos:prefLabel "Comment"@en ;
-             rdfs:range xsd:string .
-
-
-###  http://www.w3.org/2000/01/rdf-schema#isDefinedBy
-rdfs:isDefinedBy rdf:type owl:AnnotationProperty ;
-                 rdfs:comment "Indicates that an instance is defined by an organization"@en ,
-                              "Links an instance with an organization"@en ;
-                 skos:prefLabel "Is Defined By"@en ;
-                 rdfs:range org:Organization .
-
-
-###  http://www.w3.org/2000/01/rdf-schema#label
-rdfs:label rdfs:comment "Any name of a concept"@en ;
-           skos:prefLabel "Label"@en ;
-           rdfs:range xsd:string .
-
-
 ###  http://www.w3.org/2001/XMLSchema#pattern
 xsd:pattern rdf:type owl:AnnotationProperty .
 
@@ -152,41 +119,15 @@ owl:maxCardinality rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2004/02/skos/core#altLabel
-skos:altLabel rdf:type owl:AnnotationProperty ;
-              rdfs:comment "The alternative name of a conept, e.g. a misspelled name,  a concept can have one or more alternative names."@en ;
-              skos:prefLabel "Alternative Label"@en ;
-              ecsel-dr-OOSMP:abbreviation "altLabel"@en ;
-              rdfs:subPropertyOf rdfs:label ;
-              rdfs:range xsd:string .
-
-
-###  http://www.w3.org/2004/02/skos/core#changeNote
-skos:changeNote rdf:type owl:AnnotationProperty .
+skos:altLabel rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2004/02/skos/core#definition
 skos:definition rdf:type owl:AnnotationProperty .
 
 
-###  http://www.w3.org/2004/02/skos/core#editorialNote
-skos:editorialNote rdf:type owl:AnnotationProperty .
-
-
 ###  http://www.w3.org/2004/02/skos/core#example
 skos:example rdf:type owl:AnnotationProperty .
-
-
-###  http://www.w3.org/2004/02/skos/core#hiddenLabel
-skos:hiddenLabel rdf:type owl:AnnotationProperty ;
-                 skos:prefLabel "Hidden Label"@en ;
-                 ecsel-dr-OOSMP:abbreviation "The hidden name of a conept, e.g. a misspelled name,  a concept can have one or more hidden names."@en ,
-                                             "hiddenLabel"@en ;
-                 rdfs:subPropertyOf rdfs:label ;
-                 rdfs:range xsd:string .
-
-
-###  http://www.w3.org/2004/02/skos/core#historyNote
-skos:historyNote rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2004/02/skos/core#note
@@ -198,20 +139,19 @@ skos:preLabel rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2004/02/skos/core#prefLabel
-skos:prefLabel rdf:type owl:AnnotationProperty ;
-               rdfs:comment "The preferred and commonly used name of a conept, a concept can only have onepreferred name."@en ;
-               skos:prefLabel "Preferred Label"@en ;
-               ecsel-dr-OOSMP:abbreviation "prefLabel"@en ;
-               rdfs:subPropertyOf rdfs:label ;
-               rdfs:range xsd:string .
+skos:prefLabel rdf:type owl:AnnotationProperty .
 
 
-###  http://www.w3.org/2004/02/skos/core#scopeNote
-skos:scopeNote rdf:type owl:AnnotationProperty .
+###  http://www.w3.org/2006/time#day
+time:day rdf:type owl:AnnotationProperty .
 
 
-###  http://www.w3.org/2004/02/skos/core#semanticRelation
-skos:semanticRelation rdf:type owl:AnnotationProperty .
+###  http://www.w3.org/2006/time#days
+time:days rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2006/time#weeks
+time:weeks rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3id.org/ecsel-dr-CO2Savings#isRuleEnabled
@@ -333,8 +273,17 @@ ecsel-dr-RAMI40:latestStardardVersion rdf:type owl:AnnotationProperty .
 
 
 #################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
 #    Object Properties
 #################################################################
+
 ###  http://www.w3.org/TR/vocab-ssn-ext/has_member
 vocab-ssn-ext:has_member rdf:type owl:ObjectProperty ;
                          rdfs:domain vocab-ssn-ext:Observation_Collection ;
@@ -9879,6 +9828,21 @@ terms:Physical_Resource rdf:type owl:Class ;
                                                                          rdfs:subClassOf ecsel-dr-AT:Standardization_Organization ;
                                                                          rdfs:comment "International Chamber of Commerce, the largest, most representative business organization in the world"@en .
 
+
+###  http://www.w3.org/2006/time#Date_Time_Interval
+time:Date_Time_Interval rdf:type owl:Class .
+
+
+###  http://www.w3.org/2006/time#Duration
+time:Duration rdf:type owl:Class .
+
+
+###  http://www.w3.org/2006/time#Interval
+time:Interval rdf:type owl:Class .
+
+
+###  http://www.w3.org/2006/time#Temporal_Entity
+time:Temporal_Entity rdf:type owl:Class .
 
 
 ###  http://www.w3.org/TR/vocab-ssn-ext/Observation_Collection

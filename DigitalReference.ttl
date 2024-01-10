@@ -5490,13 +5490,6 @@ ecsel-dr-Planning:has_defined rdf:type owl:ObjectProperty ;
                               rdfs:label "has defined"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-Planning#has_earliest_release_date
-ecsel-dr-Planning:has_earliest_release_date rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf owl:topObjectProperty ;
-                                            rdfs:domain ecsel-dr-Planning:Part ,
-                                                        ecsel-dr-Planning:Planning_Object .
-
-
 ###  http://www.w3id.org/ecsel-dr-Planning#has_event_trigger
 ecsel-dr-Planning:has_event_trigger rdf:type owl:ObjectProperty ;
                                     rdfs:subPropertyOf owl:topObjectProperty ;
@@ -8560,7 +8553,11 @@ ecsel-dr-Planning:has_due_date rdf:type owl:DatatypeProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-Planning#has_earliest_release_date
 ecsel-dr-Planning:has_earliest_release_date rdf:type owl:DatatypeProperty ;
-                                            rdfs:range xsd:string .
+                                            rdfs:domain ecsel-dr-Planning:Part ,
+                                                        ecsel-dr-Planning:Planning_Object ;
+                                            rdfs:range xsd:string ;
+                                            rdfs:comment "This is the earliest time where the activities associated with a PLANNING OBJECT can start. Note that the parameter RELEASE DATE is exogenous, i.e. given, in contrast to the property TIME." ;
+                                            rdfs:label "has earliest release date"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#has_effective_date
@@ -20066,10 +20063,6 @@ ecsel-dr-OOSMP:Halogen_Free_Status rdfs:comment "This status determines whether 
 ecsel-dr-OOSMP:Ro_HS_Compliant_Status rdfs:comment "This status determines whether a product is RoHS compliant or not."@en ;
                                       rdfs:label "RoHS Compliant Status"@en ;
                                       skos:prefLabel "RoHS Compliant Status"@en .
-
-
-ecsel-dr-Planning:has_earliest_release_date rdfs:comment "This is the earliest time where the activities associated with a PLANNING OBJECT can start. Note that the parameter RELEASE DATE is exogenous, i.e. given, in contrast to the property TIME." ;
-                                            rdfs:label "has earliest release date"@en .
 
 
 ecsel-dr-RAMI40:Asset rdfs:comment "Every I4.0-component has to represent an entity. The entity can be physical or digital asset. The definition makes it possible to classify assets without integrated and accessible computers as I4.0-component, if the digital representation of the asset is accessible on a separate computer."@en ;

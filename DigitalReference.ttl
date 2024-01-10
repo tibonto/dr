@@ -20027,19 +20027,6 @@ ecsel-dr-RAMI40:Type rdf:type owl:NamedIndividual .
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Work_Center
 ecsel-dr-RAMI40:Work_Center rdf:type owl:NamedIndividual .
 
-
-[ owl:maxCardinality "1"^^xsd:nonNegativeInteger
-] .
-
-[ xsd:pattern "---(0[1-9]|[1-9][0-9])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
- ] .
-
-[ xsd:pattern "--(0[1-9]|1[0-9]|20)(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
- ] .
-
-[ xsd:pattern "-?([1-9][0-9]{3,}|0[0-9]{3})(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
- ] .
-
 #################################################################
 #    Annotations
 #################################################################

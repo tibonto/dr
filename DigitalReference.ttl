@@ -2970,11 +2970,7 @@ ecsel-dr-DF:has_order_demand rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-DF#has_order_position
 ecsel-dr-DF:has_order_position rdf:type owl:ObjectProperty ;
                                rdfs:domain ecsel-dr-DF:Order ;
-                               rdfs:range [ rdf:type owl:Class ;
-                                            owl:unionOf ( rdfs:Literal
-                                                          ecsel-dr-DF:Order_Position
-                                                        )
-                                          ] ;
+                               rdfs:range ecsel-dr-DF:Order_Position ;
                                rdfs:label "has order position"@en .
 
 

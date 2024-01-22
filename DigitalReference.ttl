@@ -6505,14 +6505,6 @@ ecsel-dr-PROD:substitute_product rdf:type owl:ObjectProperty ;
                                                                    rdfs:range <http://www.w3id.org/ecsel-dr-PWR#Maximum_Junction_Temperature> ;
                                                                    rdfs:label "the temperature must not exceed"@en .
 
-
-###  http://www.w3id.org/ecsel-dr-Planning#earliest_release_date
-<http://www.w3id.org/ecsel-dr-Planning#earliest_release_date> rdf:type owl:ObjectProperty ;
-                                                              rdfs:subPropertyOf owl:topObjectProperty ;
-                                                              rdfs:domain <http://www.w3id.org/ecsel-dr-Planning#Part> ,
-                                                                          <http://www.w3id.org/ecsel-dr-Planning#Planning_Object> .
-
-
 ###  http://www.w3id.org/ecsel-dr-Planning#has_DMUa
 <http://www.w3id.org/ecsel-dr-Planning#has_DMUa> rdf:type owl:ObjectProperty ;
                                                  rdfs:subPropertyOf owl:topObjectProperty ;
@@ -6665,6 +6657,10 @@ Moreover, there are additional parameters for most types of PLANNING OBJECTS."""
                                                     rdfs:comment "Values for certain PERFORMANCE MEASURES can be computed after a plan is executed. This always requires that the consequences of a PLAN are assessed in the base system." ;
                                                     rdfs:label "has defined"@en .
 
+###  http://www.w3id.org/ecsel-dr-Planning#has_earliest_release_date
+<http://www.w3id.org/ecsel-dr-Planning#has_earliest_release_date> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                  rdfs:domain <http://www.w3id.org/ecsel-dr-Planning#Planning_Object> .
 
 ###  http://www.w3id.org/ecsel-dr-Planning#has_event_trigger
 <http://www.w3id.org/ecsel-dr-Planning#has_event_trigger> rdf:type owl:ObjectProperty ;
@@ -11388,7 +11384,6 @@ ecsel-dr-PROD:sales_product_number rdf:type owl:DatatypeProperty ;
                                    rdfs:comment "A salesProductNumber is a unique identifier of a Sales Product"@en ;
                                    rdfs:label "sales product number"@en .
 
-
 ###  http://www.w3id.org/ecsel-dr-Planning#anticipation_capabilities
 <http://www.w3id.org/ecsel-dr-Planning#anticipation_capabilities> rdf:type owl:DatatypeProperty ;
                                                                   rdfs:subPropertyOf owl:topDataProperty ;
@@ -11643,7 +11638,6 @@ ecsel-dr-PROD:sales_product_number rdf:type owl:DatatypeProperty ;
                                                                               rdfs:range xsd:int ;
                                                                               rdfs:label "number of operations on same resource"@en .
 
-
 ###  http://www.w3id.org/ecsel-dr-Planning#offset_periods
 <http://www.w3id.org/ecsel-dr-Planning#offset_periods> rdf:type owl:DatatypeProperty ;
                                                        rdfs:domain <http://www.w3id.org/ecsel-dr-Planning#Required_Capacity> ;
@@ -11855,7 +11849,6 @@ ecsel-dr-PROD:sales_product_number rdf:type owl:DatatypeProperty ;
                                                 rdfs:range xsd:int ;
                                                 rdfs:comment "Weights can be used to express preferences of the decision makers among the different performance measures and related criteria. This is, for instance, useful if a lexicographic approach is used." ;
                                                 rdfs:label "weights"@en .
-
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#date
 ecsel-dr-RAMI40:date rdf:type owl:DatatypeProperty ;
@@ -23774,6 +23767,7 @@ WipCosts= $(hasCosts($wip));""" .
                                                <http://www.w3id.org/ecsel-dr-Planning#period> "" .
 
 
+
 ###  http://www.w3id.org/ecsel-dr-Planning#FE_X
 <http://www.w3id.org/ecsel-dr-Planning#FE_X> rdf:type owl:NamedIndividual ,
                                                       <http://www.w3id.org/ecsel-dr-Planning#Planning_Object> ;
@@ -23794,6 +23788,7 @@ WipCosts= $(hasCosts($wip));""" .
                                                                                                  <http://www.w3id.org/ecsel-dr-Planning#Product_2> ;
                                              time:day "" ;
                                              <http://www.w3id.org/ecsel-dr-Planning#period> "" .
+
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Frontend_1
@@ -23866,12 +23861,14 @@ LeadTime= Product($hasLeadTime);""" .
                                                         <http://www.w3id.org/ecsel-dr-Planning#due_date> "1 week" .
 
 
+
 ###  http://www.w3id.org/ecsel-dr-Planning#Part2_Product_1
 <http://www.w3id.org/ecsel-dr-Planning#Part2_Product_1> rdf:type owl:NamedIndividual ,
                                                                  <http://www.w3id.org/ecsel-dr-Planning#Part> ;
                                                         <http://www.w3id.org/ecsel-dr-Planning#has_planning_object> <http://www.w3id.org/ecsel-dr-Planning#Borderless_FE1_zu_FE2> ;
                                                         <http://www.w3id.org/ecsel-dr-Planning#has_product> <http://www.w3id.org/ecsel-dr-Planning#Product_1> ;
                                                         <http://www.w3id.org/ecsel-dr-Planning#due_date> "1 week" .
+
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Part3_Product_1
@@ -23893,6 +23890,7 @@ LeadTime= Product($hasLeadTime);""" .
                                                                  <http://www.w3id.org/ecsel-dr-Planning#Part> ;
                                                         <http://www.w3id.org/ecsel-dr-Planning#has_product> <http://www.w3id.org/ecsel-dr-Planning#Product_1> ;
                                                         <http://www.w3id.org/ecsel-dr-Planning#due_date> "5 weeks" .
+
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#PeriodLength
@@ -24175,7 +24173,6 @@ time:Wednesday skos:prefLabel "Среда"@ru ,
                               "星期三"@zh ;
                rdfs:label "Wednesday"@en ;
                skos:prefLabel "Mittwoch"@de ,
-                              "الأربعاء"@ar ,
                               "Miércoles"@es .
 
 

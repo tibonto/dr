@@ -52,7 +52,8 @@
                                 rdfs:label "Digital Reference"@en ;
                                 owl:priorVersion <http://www.w3.org/2006/time#2006> ;
                                 owl:versionInfo "1.0"^^rdfs:Literal ,
-                                                "1.1" .
+                                                "1.1" ;
+                                owl:imports time: , ssn: , sosa: , vocab-ssn-ext: .
 
 #################################################################
 #    Annotation properties

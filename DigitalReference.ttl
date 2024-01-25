@@ -47,13 +47,12 @@
                                               "Hans Ehm"@en ;
                                 terms:isVersionOf <http://www.w3id.org/ecsel-dr> ;
                                 terms:license <https://creativecommons.org/licenses/by/4.0/> ;
-                                terms:modified "2020-09-18"^^xsd:date ;
+                                terms:modified "2024-01-25"^^xsd:date ;
                                 terms:title "Digital Reference"@en ;
                                 vann:preferredNamespaceUri <http://www.w3id.org/ecsel-dr/> ;
                                 rdfs:comment "This ontology represents Incoterms 2020 starndards"@en ;
                                 rdfs:label "Digital Reference"@en ;
-                                owl:versionInfo "1.0"^^rdfs:Literal ,
-                                                "1.1" .
+                                owl:versionInfo "1.2.0" .
 
 #################################################################
 #    Annotation properties

@@ -1,0 +1,43 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix schema: <http://schema.org/> .
+
+<http://www.w3.org/ns/sosa/sampling/>
+    a owl:Ontology ;
+    owl:imports <http://www.w3.org/2004/02/skos/core>, <http://www.w3.org/ns/sosa/> .
+
+<http://www.w3.org/ns/sosa/sampling/RelationshipNature>
+    a rdfs:Class, owl:Class ;
+    rdfs:label "Nature of relationship (between samples)"@en ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "Members of this class indicate the nature of a relationship between two samples"@en ;
+    skos:example "Adjacent flight-line", "Females", "Juveniles", "Males", "Pixel within image or scene", "Probe spot on polished specimen", "Specimen taken from borehole", "Split of core sample", "Station along a traverse", "Sub-sample with grain size smaller than specified seive mesh" .
+
+<http://www.w3.org/ns/sosa/sampling/SampleRelationship>
+    a rdfs:Class, owl:Class ;
+    rdfs:label "Sample relationship"@en ;
+    skos:definition "Members of this class represent a relationship between a sample and another"@en .
+
+<http://www.w3.org/ns/sosa/sampling/hasSampleRelationship>
+    schema:domainIncludes <http://www.w3.org/ns/sosa/Sample> ;
+    schema:rangeIncludes <http://www.w3.org/ns/sosa/sampling/SampleRelationship> ;
+    a owl:ObjectProperty ;
+    rdfs:label "has sample relationship"@en ;
+    skos:definition "Links a sample to a sample relationship (which links to a related sample)"@en .
+
+<http://www.w3.org/ns/sosa/sampling/natureOfRelationship>
+    schema:domainIncludes <http://www.w3.org/ns/sosa/sampling/SampleRelationship> ;
+    schema:rangeIncludes <http://www.w3.org/ns/sosa/sampling/RelationshipNature> ;
+    a owl:ObjectProperty ;
+    rdfs:label "nature of (sample) relationship"@en ;
+    skos:definition "Links a SampleRelationship to an indication of the nature of the relationship"@en .
+
+<http://www.w3.org/ns/sosa/sampling/relatedSample>
+    schema:domainIncludes <http://www.w3.org/ns/sosa/sampling/SampleRelationship> ;
+    schema:rangeIncludes <http://www.w3.org/ns/sosa/Sample> ;
+    a owl:ObjectProperty ;
+    rdfs:label "related sample"@en ;
+    skos:definition "Links a sample relationship to the related sample"@en .
+

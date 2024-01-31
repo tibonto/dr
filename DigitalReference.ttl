@@ -26,6 +26,7 @@
 @prefix ecsel-dr-OM: <http://www.w3id.org/ecsel-dr-OM#> .
 @prefix ecsel-dr-SO: <http://www.w3id.org/ecsel-dr-SO#> .
 @prefix ecsel-dr-BMS: <http://www.w3id.org/ecsel-dr-BMS#> .
+@prefix ecsel-dr-GDM: <http://www.w3id.org/ecsel-dr-GDM#> .
 @prefix ecsel-dr-ORG: <http://www.w3id.org/ecsel-dr-ORG#> .
 @prefix ecsel-dr-PMV: <http://www.w3id.org/ecsel-dr-PMV#> .
 @prefix ecsel-dr-PWR: <http://www.w3id.org/ecsel-dr-PWR#> .
@@ -5506,7 +5507,7 @@ ecsel-dr-Planning:has_decision_making_unit_charcters rdf:type owl:ObjectProperty
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#has_defined
-<http://www.w3id.org/ecsel-dr-Planning:has_defined rdf:type owl:ObjectProperty ;
+ecsel-dr-Planning:has_defined rdf:type owl:ObjectProperty ;
                               rdfs:subPropertyOf owl:topObjectProperty ;
                               rdfs:domain ecsel-dr-Planning:Plan_Execution ;
                               rdfs:range ecsel-dr-Planning:Performance_Measure ;
@@ -20893,7 +20894,6 @@ ecsel-dr-Planning:FE_Y rdf:type owl:NamedIndividual ,
                                                      ecsel-dr-Planning:Product_2 ;
                        ecsel-dr-Planning:has_period "" ;
                        time:day "" .
->>>>>>> 23f5e6e7148712bab270801699fb95a72065f07d
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Frontend_1
@@ -20993,7 +20993,6 @@ ecsel-dr-Planning:Part5_Product_1 rdf:type owl:NamedIndividual ,
                                            ecsel-dr-Planning:Part ;
                                   ecsel-dr-Planning:has_product ecsel-dr-Planning:Product_1 ;
                                   ecsel-dr-Planning:has_due_date "5 weeks" .
->>>>>>> 23f5e6e7148712bab270801699fb95a72065f07d
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#PeriodLength
@@ -21284,7 +21283,7 @@ ecsel-dr-CO2Savings:Solar_Panel rdfs:comment "A panel or device that converts su
 ecsel-dr-CO2Savings:Wind_Turbine rdfs:comment "A device that converts wind energy into electricity." ;
                                  rdfs:label "Wind Turbine"@en .
 
-ecsel-dr-DF#order_position> rdfs:label "order position"@en .
+ecsel-dr-DF:order_position rdfs:label "order position"@en .
 
 
 ecsel-dr-OOSMP:Completely_Lead_Free_Status rdfs:comment "This status determines whether a semiconductor product is lead free or not."@en ;

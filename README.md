@@ -18,6 +18,7 @@ The ontology further involves the following namespaces
 @prefix ecsel-dr-BMS: <http://www.w3id.org/ecsel-dr-BMS#> .
 @prefix ecsel-dr-CO2Savings: <http://www.w3id.org/ecsel-dr-CO2Savings#> .
 @prefix ecsel-dr-DF: <http://www.w3id.org/ecsel-dr-DF#> .
+@prefix ecsel-dr-GDM: <http://www.w3id.org/ecsel-dr-GDM#> .
 @prefix ecsel-dr-Incoterms: <http://www.w3id.org/ecsel-dr-Incoterms#> .
 @prefix ecsel-dr-OM: <http://www.w3id.org/ecsel-dr-OM#> .
 @prefix ecsel-dr-OOSMP: <http://www.w3id.org/ecsel-dr-OOSMP#> .

@@ -8,8 +8,8 @@ autorFullName: Hans Ehm
 authorEmail: hans.ehm@infineon.com
 maintainerFullname: Nour Ramzy
 maintainerEmail: nour.ramzy@infineon.com
-keywords: semiconductor, supply chain, ecsel  
+keywords: semiconductor, supply chain, ecsel
 license: GNU General Public License v3.0 #Change if you have another license
-version: v0.0.1 #Change if you have already released the ontology under specific version
+version: v1.2.0
 repositoryURL: https://github.com/tibonto/dr
 releaseURL: https://github.com/tibonto/dr/releases/tag/v0.0.1

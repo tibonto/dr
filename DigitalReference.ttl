@@ -37,7 +37,7 @@
 @prefix ecsel-dr-Planning: <http://www.w3id.org/ecsel-dr-Planning#> .
 @prefix ecsel-dr-Incoterms: <http://www.w3id.org/ecsel-dr-Incoterms#> .
 @prefix ecsel-dr-CO2Savings: <http://www.w3id.org/ecsel-dr-CO2Savings#> .
-@base <http://www.w3id.org/ecsel-dr#> .
+@base <http://www.w3id.org/ecsel-dr> .
 
 <http://www.w3id.org/ecsel-dr> rdf:type owl:Ontology ;
                                 dc:description "Holistic Ontology for semiconductor manufacturing and development, products and systems containing semiconductors and connected supply chains."@en ;
@@ -53,7 +53,7 @@
                                 vann:preferredNamespaceUri <http://www.w3id.org/ecsel-dr/> ;
                                 rdfs:comment "This ontology represents Incoterms 2020 starndards"@en ;
                                 rdfs:label "Digital Reference"@en ;
-                                owl:versionInfo "1.2.0" .
+                                owl:versionInfo "1.2.1" .
 
 #################################################################
 #    Annotation properties
@@ -95,8 +95,16 @@ terms:license rdf:type owl:AnnotationProperty .
 terms:modified rdf:type owl:AnnotationProperty .
 
 
+###  http://purl.org/dc/terms/rights
+terms:rights rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/dc/terms/title
 terms:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/vocab/vann/preferredNamespaceUri
@@ -140,12 +148,25 @@ rdfs:label rdfs:comment "Any name of a concept"@en ;
 xsd:pattern rdf:type owl:AnnotationProperty .
 
 
+###  http://www.w3.org/2002/07/owl#cardinality
+owl:cardinality rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.w3.org/2002/07/owl#maxCardinality
 owl:maxCardinality rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2004/02/skos/core#altLabel
-skos:altLabel rdf:type owl:AnnotationProperty .
+skos:altLabel rdf:type owl:AnnotationProperty ;
+              rdfs:comment "The alternative name of a conept, e.g. a misspelled name,  a concept can have one or more alternative names."@en ;
+              skos:prefLabel "Alternative Label"@en ;
+              ecsel-dr-OOSMP:abbreviation "altLabel"@en ;
+              rdfs:subPropertyOf rdfs:label ;
+              rdfs:range xsd:string .
+
+
+###  http://www.w3.org/2004/02/skos/core#changeNote
+skos:changeNote rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2004/02/skos/core#definition
@@ -182,7 +203,20 @@ skos:preLabel rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2004/02/skos/core#prefLabel
-skos:prefLabel rdf:type owl:AnnotationProperty .
+skos:prefLabel rdf:type owl:AnnotationProperty ;
+               rdfs:comment "The preferred and commonly used name of a conept, a concept can only have onepreferred name."@en ;
+               skos:prefLabel "Preferred Label"@en ;
+               ecsel-dr-OOSMP:abbreviation "prefLabel"@en ;
+               rdfs:subPropertyOf rdfs:label ;
+               rdfs:range xsd:string .
+
+
+###  http://www.w3.org/2004/02/skos/core#scopeNote
+skos:scopeNote rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#semanticRelation
+skos:semanticRelation rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2006/time#day
@@ -331,6 +365,10 @@ ecsel-dr-Planning:sc3:formula rdf:type owl:AnnotationProperty .
 ecsel-dr-RAMI40:latestStardardVersion rdf:type owl:AnnotationProperty .
 
 
+###  http://xmlns.com/foaf/0.1/name
+foaf:name rdf:type owl:AnnotationProperty .
+
+
 #################################################################
 #    Datatypes
 #################################################################
@@ -339,12 +377,544 @@ ecsel-dr-RAMI40:latestStardardVersion rdf:type owl:AnnotationProperty .
 xsd:date rdf:type rdfs:Datatype .
 
 
+###  http://www.w3.org/2001/XMLSchema#duration
+xsd:duration rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#gYear
+xsd:gYear rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#gYearMonth
+xsd:gYearMonth rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#negativeInteger
+xsd:negativeInteger owl:equivalentClass xsd:nonNegativeInteger .
+
+
+###  http://www.w3.org/2006/time#generalDay
+time:generalDay rdf:type rdfs:Datatype ;
+                rdfs:comment """Day of month - formulated as a text string with a pattern constraint to reproduce the same lexical form as gDay, except that values up to 99 are permitted, in order to support calendars with more than 31 days in a month. 
+Note that the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type."""@en ,
+                             """Día del mes - formulado como una cadena de texto con una restricción patrón para reproducir la misma forma léxica que gDay, excepto que se permiten valores hasta el 99, con el propósito de proporcionar soporte a calendarios con meses con más de 31 días.
+            Nótese que el espacio de valores no está definido, por tanto, un procesador genérico de OWL2 no puede computar relaciones de orden de valores de este tipo."""@es ;
+                rdfs:label "Día generalizado"@es ,
+                           "Generalized day"@en ;
+                skos:definition """Day of month - formulated as a text string with a pattern constraint to reproduce the same lexical form as gDay, except that values up to 99 are permitted, in order to support calendars with more than 31 days in a month. 
+Note that the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type."""@en ,
+                                """Día del mes - formulado como una cadena de texto con una restricción patrón para reproducir la misma forma léxica que gDay, excepto que se permiten valores hasta el 99, con el propósito de proporcionar soporte a calendarios con meses con más de 31 días.
+            Nótese que el espacio de valores no está definido, por tanto, un procesador genérico de OWL2 no puede computar relaciones de orden de valores de este tipo."""@es .
+
+
+###  http://www.w3.org/2006/time#generalMonth
+time:generalMonth rdf:type rdfs:Datatype ;
+                  rdfs:comment """Mes del año - formulado como una cadena de texto con una restricción patrón para reproducir la misma forma léxica que gMonth, excepto que se permiten valores hasta el 20, con el propósito de proporcionar soporte a calendarios con años con más de 12 meses.
+            Nótese que el espacio de valores no está definido, por tanto, un procesador genérico de OWL2 no puede computar relaciones de orden de valores de este tipo."""@es ,
+                               """Month of year - formulated as a text string with a pattern constraint to reproduce the same lexical form as gMonth, except that values up to 20 are permitted, in order to support calendars with more than 12 months in the year. 
+Note that the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type."""@en ;
+                  rdfs:label "Generalized month"@en ,
+                             "Mes generalizado"@es ;
+                  skos:definition """Mes del año - formulado como una cadena de texto con una restricción patrón para reproducir la misma forma léxica que gMonth, excepto que se permiten valores hasta el 20, con el propósito de proporcionar soporte a calendarios con años con más de 12 meses.
+            Nótese que el espacio de valores no está definido, por tanto, un procesador genérico de OWL2 no puede computar relaciones de orden de valores de este tipo."""@es ,
+                                  """Month of year - formulated as a text string with a pattern constraint to reproduce the same lexical form as gMonth, except that values up to 20 are permitted, in order to support calendars with more than 12 months in the year. 
+Note that the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type."""@en .
+
+
+###  http://www.w3.org/2006/time#generalYear
+time:generalYear rdf:type rdfs:Datatype ;
+                 rdfs:comment """Número de año - formulado como una cadena de texto con una restricción patrón para reproducir la misma forma léxica que gYear, aunque no está restringido a valores del calendario gregoriano.
+            Nótese que el espacio de valores no está definido, por tanto, un procesador genérico de OWL2 no puede computar relaciones de orden de valores de este tipo."""@es ,
+                              """Year number - formulated as a text string with a pattern constraint to reproduce the same lexical form as gYear, but not restricted to values from the Gregorian calendar. 
+Note that the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type."""@en ;
+                 rdfs:label "Año generalizado"@es ,
+                            "Generalized year"@en ;
+                 skos:definition """Número de año - formulado como una cadena de texto con una restricción patrón para reproducir la misma forma léxica que gYear, aunque no está restringido a valores del calendario gregoriano.
+            Nótese que el espacio de valores no está definido, por tanto, un procesador genérico de OWL2 no puede computar relaciones de orden de valores de este tipo."""@es ,
+                                 """Year number - formulated as a text string with a pattern constraint to reproduce the same lexical form as gYear, but not restricted to values from the Gregorian calendar. 
+Note that the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type."""@en .
+
+
 #################################################################
 #    Object Properties
 #################################################################
 
+###  http://www.w3.org/2002/07/owl#topObjectProperty
+owl:topObjectProperty rdf:type owl:FunctionalProperty ;
+                      rdfs:domain ecsel-dr-DF:Customer ;
+                      rdfs:range ecsel-dr-DF:Supply_Contract .
+
+
+###  http://www.w3.org/2006/time#after
+time:after rdf:type owl:ObjectProperty ;
+           owl:inverseOf time:before ;
+           rdfs:domain time:Temporal_Entity ;
+           rdfs:range time:Temporal_Entity ;
+           rdfs:comment "Asume una dirección en el tiempo. Si una entidad temporal T1 está después de otra entidad temporal T2, entonces el principio de T1 está después del final de T2."@es ,
+                        "Gives directionality to time. If a temporal entity T1 is after another temporal entity T2, then the beginning of T1 is after the end of T2."@en ;
+           rdfs:label "after"@en ,
+                      "después"@es ;
+           skos:definition "Asume una dirección en el tiempo. Si una entidad temporal T1 está después de otra entidad temporal T2, entonces el principio de T1 está después del final de T2."@es ,
+                           "Gives directionality to time. If a temporal entity T1 is after another temporal entity T2, then the beginning of T1 is after the end of T2."@en .
+
+
+###  http://www.w3.org/2006/time#before
+time:before rdf:type owl:ObjectProperty ,
+                     owl:TransitiveProperty ;
+            rdfs:domain time:Temporal_Entity ;
+            rdfs:range time:Temporal_Entity ;
+            rdfs:comment "Asume una dirección en el tiempo. Si una entidad temporal T1 está antes que otra entidad temporal T2, entonces el final de T1 está antes que el principio de T2. Así, \"antes\" se puede considerar básica para instantes y derivada para intervalos."@es ,
+                         "Gives directionality to time. If a temporal entity T1 is before another temporal entity T2, then the end of T1 is before the beginning of T2. Thus, \"before\" can be considered to be basic to instants and derived for intervals."@en ;
+            rdfs:label "antes"@es ,
+                       "before"@en ;
+            skos:definition "Asume una dirección en el tiempo. Si una entidad temporal T1 está antes que otra entidad temporal T2, entonces el final de T1 está antes que el principio de T2. Así, \"antes\" se puede considerar básica para instantes y derivada para intervalos."@es ,
+                            "Gives directionality to time. If a temporal entity T1 is before another temporal entity T2, then the end of T1 is before the beginning of T2. Thus, \"before\" can be considered to be basic to instants and derived for intervals."@en .
+
+
+###  http://www.w3.org/2006/time#day_of_week
+time:day_of_week rdf:type owl:ObjectProperty ;
+                 rdfs:domain time:General_Date_Time_Description ;
+                 rdf:type owl:Class ;
+                 rdfs:range time:day_of_week .
+
+
+###  http://www.w3.org/2006/time#hasBeginning
+time:hasBeginning rdf:type owl:ObjectProperty ;
+                  rdfs:range time:Instant ;
+                  rdfs:comment "Beginning of a temporal entity"@en ,
+                               "Comienzo de una entidad temporal."@es ;
+                  rdfs:label "has beginning"@en ,
+                             "tiene principio"@es ;
+                  skos:definition "Beginning of a temporal entity."@en ,
+                                  "Comienzo de una entidad temporal."@es .
+
+
+###  http://www.w3.org/2006/time#hasDuration
+time:hasDuration rdf:type owl:ObjectProperty ;
+                 rdfs:range time:Duration ;
+                 rdfs:comment "Duración de una entidad temporal, expresada como un valor escalado o un valor nominal."@es ,
+                              "Duration of a temporal entity, expressed as a scaled value or nominal value"@en ;
+                 rdfs:label "has duration"@en ,
+                            "tiene duración"@es ;
+                 skos:definition "Duración de una entidad temporal, evento o actividad, o cosa, expresada como un valor escalado."@es ,
+                                 "Duration of a temporal entity, event or activity, or thing, expressed as a scaled value"@en .
+
+
+###  http://www.w3.org/2006/time#hasDurationDescription
+time:hasDurationDescription rdf:type owl:ObjectProperty ;
+                            rdfs:comment "Duración de una entidad temporal, expresada utilizando una descripción estructurada."@es ,
+                                         "Duration of a temporal entity, expressed using a structured description"@en ;
+                            rdfs:label "has duration description"@en ,
+                                       "tiene descripción de duración"@es ;
+                            skos:definition "Duración de una entidad temporal, expresada utilizando una descripción estructurada."@es ,
+                                            "Duration of a temporal entity, expressed using a structured description"@en .
+
+
+###  http://www.w3.org/2006/time#hasEnd
+time:hasEnd rdf:type owl:ObjectProperty ;
+            rdfs:range time:Instant ;
+            rdfs:comment "End of a temporal entity."@en ,
+                         "Final de una entidad temporal."@es ;
+            rdfs:label "has end"@en ,
+                       "tiene fin"@es ;
+            skos:definition "End of a temporal entity."@en ,
+                            "Final de una entidad temporal."@es .
+
+
+###  http://www.w3.org/2006/time#has_TRS
+time:has_TRS rdf:type owl:ObjectProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( time:General_Duration_Description
+                                         time:Temporal_Position
+                                       )
+                         ] ;
+             rdfs:range time:TRS ;
+             rdfs:comment "The temporal reference system used by a temporal position or extent description. "@en ;
+             rdfs:label "has temporal reference system used"@en ;
+             skos:definition "The temporal reference system used by a temporal position or extent description. "@en .
+
+
+###  http://www.w3.org/2006/time#has_beginning
+time:has_beginning rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf time:has_time ;
+                   rdfs:domain time:Temporal_Entity ;
+                   rdfs:range time:Instant ;
+                   rdfs:comment "Beginning of a temporal entity"@en ;
+                   rdfs:label "has beginning"@en ;
+                   skos:definition "Beginning of a temporal entity."@en .
+
+
+###  http://www.w3.org/2006/time#has_date_time_description
+time:has_date_time_description rdf:type owl:ObjectProperty ;
+                               rdfs:domain time:Date_Time_Interval ;
+                               rdfs:range time:General_Date_Time_Description ;
+                               rdfs:comment "Value of DateTimeInterval expressed as a structured value. The beginning and end of the interval coincide with the limits of the shortest element in the description."@en ;
+                               rdfs:label "has date-time description"@en ;
+                               skos:definition "Value of DateTimeInterval expressed as a structured value. The beginning and end of the interval coincide with the limits of the shortest element in the description."@en .
+
+
+###  http://www.w3.org/2006/time#has_duration
+time:has_duration rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf time:has_temporal_duration ;
+                  rdfs:range time:Duration ;
+                  rdfs:comment "Duration of a temporal entity, expressed as a scaled value or nominal value"@en ;
+                  rdfs:label "has duration"@en ;
+                  skos:definition "Duration of a temporal entity, event or activity, or thing, expressed as a scaled value"@en .
+
+
+###  http://www.w3.org/2006/time#has_duration_description
+time:has_duration_description rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf time:has_temporal_duration ;
+                              rdfs:range time:General_Duration_Description ;
+                              rdfs:comment "Duration of a temporal entity, expressed using a structured description"@en ;
+                              rdfs:label "has duration description"@en ;
+                              skos:definition "Duration of a temporal entity, expressed using a structured description"@en .
+
+
+###  http://www.w3.org/2006/time#has_end
+time:has_end rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf time:has_time ;
+             rdfs:domain time:Temporal_Entity ;
+             rdfs:range time:Instant ;
+             rdfs:comment "End of a temporal entity."@en ;
+             rdfs:label "has end"@en ;
+             skos:definition "End of a temporal entity."@en .
+
+
+###  http://www.w3.org/2006/time#has_temporal_duration
+time:has_temporal_duration rdf:type owl:ObjectProperty ;
+                           rdfs:domain time:Temporal_Entity ;
+                           rdfs:range time:Temporal_Duration ;
+                           rdfs:comment "Duration of a temporal entity."@en ;
+                           rdfs:label "has temporal duration"@en ;
+                           skos:definition "Duration of a temporal entity."@en .
+
+
+###  http://www.w3.org/2006/time#has_time
+time:has_time rdf:type owl:ObjectProperty ;
+              rdfs:range time:Temporal_Entity ;
+              rdfs:comment "Supports the association of a temporal entity (instant or interval) to any thing"@en ;
+              rdfs:label "has time"@en ;
+              skos:definition "Supports the association of a temporal entity (instant or interval) to any thing"@en ;
+              skos:editorialNote "Feature at risk - added in 2017 revision, and not yet widely used. "@en .
+
+
+###  http://www.w3.org/2006/time#inDateTime
+time:inDateTime rdf:type owl:ObjectProperty ;
+                rdfs:domain time:Instant ;
+                rdfs:comment "Posición de un instante, expresada utilizando una descripción estructurada."@es ,
+                             "Position of an instant, expressed using a structured description"@en ;
+                rdfs:label "en descripción de fecha-hora"@es ,
+                           "in date-time description"@en ;
+                skos:definition "Posición de un instante, expresada utilizando una descripción estructurada."@es ,
+                                "Position of an instant, expressed using a structured description"@en .
+
+
+###  http://www.w3.org/2006/time#inTimePosition
+time:inTimePosition rdf:type owl:ObjectProperty ;
+                    rdfs:domain time:Instant ;
+                    rdfs:comment "Posición de un instante, expresada como una coordenada temporal o un valor nominal."@es ,
+                                 "Position of an instant, expressed as a temporal coordinate or nominal value"@en ;
+                    rdfs:label "Time position"@en ,
+                               "posición de tiempo"@es ;
+                    skos:definition "Posición de un instante, expresada como una coordenada temporal o un valor nominal."@es ,
+                                    "Position of a time instant expressed as a TimePosition"@en .
+
+
+###  http://www.w3.org/2006/time#in_date_time
+time:in_date_time rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf time:in_temporal_position ;
+                  rdfs:domain time:Instant ;
+                  rdfs:range time:General_Date_Time_Description ;
+                  rdfs:comment "Position of an instant, expressed using a structured description"@en ;
+                  rdfs:label "in date-time description"@en ;
+                  skos:definition "Position of an instant, expressed using a structured description"@en .
+
+
+###  http://www.w3.org/2006/time#in_temporal_position
+time:in_temporal_position rdf:type owl:ObjectProperty ;
+                          rdfs:domain time:Instant ;
+                          rdfs:range time:Temporal_Position ;
+                          rdfs:comment "Position of a time instant"@en ;
+                          rdfs:label "in temporal position"@en ;
+                          skos:definition "Position of a time instant"@en .
+
+
+###  http://www.w3.org/2006/time#in_time_position
+time:in_time_position rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf time:in_temporal_position ;
+                      rdfs:domain time:Instant ;
+                      rdfs:range time:Time_Position ;
+                      rdfs:comment "Position of an instant, expressed as a temporal coordinate or nominal value"@en ;
+                      rdfs:label "time position"@en ;
+                      skos:definition "Position of a time instant expressed as a TimePosition"@en .
+
+
+###  http://www.w3.org/2006/time#inside
+time:inside rdf:type owl:ObjectProperty ;
+            rdfs:domain time:Interval ;
+            rdfs:range time:Instant ;
+            rdfs:comment "An instant that falls inside the interval. It is not intended to include beginnings and ends of intervals."@en ,
+                         "Un instante que cae dentro del intervalo. Se asume que no es ni el principio ni el final de ningún intervalo."@es ;
+            rdfs:label "has time instant inside"@en ,
+                       "tiene instante de tiempo dentro"@es ;
+            skos:definition "An instant that falls inside the interval. It is not intended to include beginnings and ends of intervals."@en ,
+                            "Un instante que cae dentro del intervalo. Se asume que no es ni el principio ni el final de ningún intervalo."@es .
+
+
+###  http://www.w3.org/2006/time#intervalAfter
+time:intervalAfter rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf time:after ;
+                   owl:inverseOf time:intervalBefore ;
+                   rdfs:domain time:ProperInterval ;
+                   rdfs:range time:ProperInterval ;
+                   rdfs:comment "If a proper interval T1 is intervalAfter another proper interval T2, then the beginning of T1 is after the end of T2."@en ,
+                                "Si un intervalo propio T1 es posterior a otro intervalo propio T2, entonces el principio de T1 está después que el final de T2." ;
+                   rdfs:label "interval after"@en ,
+                              "intervalo posterior"@es ;
+                   skos:definition "If a proper interval T1 is intervalAfter another proper interval T2, then the beginning of T1 is after the end of T2."@en ,
+                                   "Si un intervalo propio T1 es posterior a otro intervalo propio T2, entonces el principio de T1 está después que el final de T2."@es .
+
+
+###  http://www.w3.org/2006/time#intervalBefore
+time:intervalBefore rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf time:before ;
+                    rdfs:domain time:ProperInterval ;
+                    rdfs:range time:ProperInterval ;
+                    rdfs:comment "If a proper interval T1 is intervalBefore another proper interval T2, then the end of T1 is before the beginning of T2."@en ,
+                                 "Si un intervalo propio T1 está antes que otro intervalo propio T2, entonces el final de T1 está antes que el principio de T2."@es ;
+                    rdfs:label "interval before"@en ,
+                               "intervalo anterior"@es ;
+                    skos:definition "If a proper interval T1 is intervalBefore another proper interval T2, then the end of T1 is before the beginning of T2."@en ,
+                                    "Si un intervalo propio T1 está antes que otro intervalo propio T2, entonces el final de T1 está antes que el principio de T2."@es .
+
+
+###  http://www.w3.org/2006/time#intervalDuring
+time:intervalDuring rdf:type owl:ObjectProperty ;
+                    rdfs:domain time:ProperInterval ;
+                    rdfs:range time:ProperInterval ;
+                    rdfs:comment "If a proper interval T1 is intervalDuring another proper interval T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is before the end of T2."@en ,
+                                 "Si un intervalo propio T1 está durante otro intervalo propio T2, entonces del principio de T1 está después del principio de T2, y el final de T1 está antes que el final de T2."@es ;
+                    rdfs:label "interval during"@en ,
+                               "intervalo durante"@es ;
+                    skos:definition "If a proper interval T1 is intervalDuring another proper interval T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is before the end of T2."@en ,
+                                    "Si un intervalo propio T1 está durante otro intervalo propio T2, entonces del principio de T1 está después del principio de T2, y el final de T1 está antes que el final de T2."@es .
+
+
+###  http://www.w3.org/2006/time#intervalFinishes
+time:intervalFinishes rdf:type owl:ObjectProperty ;
+                      rdfs:domain time:ProperInterval ;
+                      rdfs:range time:ProperInterval ;
+                      rdfs:comment "If a proper interval T1 is intervalFinishes another proper interval T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is coincident with the end of T2."@en ,
+                                   "Si un intervalo propio T1 termina otro intervalo propio T2, entonces del principio de T1 está después del principio de T2, y el final de T1 coincide con el final de T2."@es ;
+                      rdfs:label "interval finishes"@en ,
+                                 "intervalo termina"@es ;
+                      skos:definition "If a proper interval T1 is intervalFinishes another proper interval T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is coincident with the end of T2."@en ,
+                                      "Si un intervalo propio T1 termina otro intervalo propio T2, entonces del principio de T1 está después del principio de T2, y el final de T1 coincide con el final de T2."@es .
+
+
+###  http://www.w3.org/2006/time#intervalStarts
+time:intervalStarts rdf:type owl:ObjectProperty ;
+                    rdfs:domain time:ProperInterval ;
+                    rdfs:range time:ProperInterval ;
+                    rdfs:comment "If a proper interval T1 is intervalStarts another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is before the end of T2."@en ,
+                                 "Si un intervalo propio T1 empieza otro intervalo propio T2, entonces del principio de T1 con el principio de T2, y el final de T1 es anterior al final de T2."@es ;
+                    rdfs:label "interval starts"@en ,
+                               "intervalo empieza"@es ;
+                    skos:definition "If a proper interval T1 is intervalStarts another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is before the end of T2."@en ,
+                                    "Si un intervalo propio T1 empieza otro intervalo propio T2, entonces del principio de T1 con el final de T2, y el final de T1 es anterior al final de T2."@es .
+
+
+###  http://www.w3.org/2006/time#interval_after
+time:interval_after rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf time:after ,
+                                       time:interval_disjoint ;
+                    owl:inverseOf time:interval_before ;
+                    rdfs:domain time:Proper_Interval ;
+                    rdfs:range time:Proper_Interval ;
+                    rdfs:comment "If a proper interval T1 is intervalAfter another proper interval T2, then the beginning of T1 is after the end of T2."@en ;
+                    rdfs:label "interval after"@en ;
+                    skos:definition "If a proper interval T1 is intervalAfter another proper interval T2, then the beginning of T1 is after the end of T2."@en .
+
+
+###  http://www.w3.org/2006/time#interval_before
+time:interval_before rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf time:before ,
+                                        time:interval_disjoint ;
+                     rdfs:domain time:Proper_Interval ;
+                     rdfs:range time:Proper_Interval ;
+                     rdfs:comment "If a proper interval T1 is intervalBefore another proper interval T2, then the end of T1 is before the beginning of T2."@en ;
+                     rdfs:label "interval before"@en ;
+                     skos:definition "If a proper interval T1 is intervalBefore another proper interval T2, then the end of T1 is before the beginning of T2."@en .
+
+
+###  http://www.w3.org/2006/time#interval_contains
+time:interval_contains rdf:type owl:ObjectProperty ;
+                       owl:inverseOf time:interval_during ;
+                       rdfs:domain time:Proper_Interval ;
+                       rdfs:range time:Proper_Interval ;
+                       rdfs:comment "If a proper interval T1 is intervalContains another proper interval T2, then the beginning of T1 is before the beginning of T2, and the end of T1 is after the end of T2."@en ;
+                       rdfs:label "interval contains"@en ;
+                       skos:definition "If a proper interval T1 is intervalContains another proper interval T2, then the beginning of T1 is before the beginning of T2, and the end of T1 is after the end of T2."@en .
+
+
+###  http://www.w3.org/2006/time#interval_disjoint
+time:interval_disjoint rdf:type owl:ObjectProperty ;
+                       rdfs:domain time:Proper_Interval ;
+                       rdfs:range time:Proper_Interval ;
+                       rdfs:comment "If a proper interval T1 is intervalDisjoint another proper interval T2, then the beginning of T1 is after the end of T2, or the end of T1 is before the beginning of T2, i.e. the intervals do not overlap in any way, but their ordering relationship is not known."@en ;
+                       rdfs:label "interval disjoint"@en ;
+                       skos:definition "If a proper interval T1 is intervalDisjoint another proper interval T2, then the beginning of T1 is after the end of T2, or the end of T1 is before the beginning of T2, i.e. the intervals do not overlap in any way, but their ordering relationship is not known."@en ;
+                       skos:note "This interval relation is not included in the 13 basic relationships defined in Allen (1984), but is defined in (T.3) as the union of :intervalBefore v :intervalAfter . However, that is outside OWL2 expressivity, so is implemented as an explicit property, with :intervalBefore , :intervalAfter as sub-properties"@en .
+
+
+###  http://www.w3.org/2006/time#interval_during
+time:interval_during rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf time:interval_in ;
+                     rdfs:domain time:Proper_Interval ;
+                     rdfs:range time:Proper_Interval ;
+                     rdfs:comment "If a proper interval T1 is intervalDuring another proper interval T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is before the end of T2."@en ;
+                     rdfs:label "interval during"@en ;
+                     skos:definition "If a proper interval T1 is intervalDuring another proper interval T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is before the end of T2."@en .
+
+
+###  http://www.w3.org/2006/time#interval_equals
+time:interval_equals rdf:type owl:ObjectProperty ;
+                     rdfs:domain time:Proper_Interval ;
+                     rdfs:range time:Proper_Interval ;
+                     owl:propertyDisjointWith time:interval_in ;
+                     rdfs:comment "If a proper interval T1 is intervalEquals another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is coincident with the end of T2."@en ;
+                     rdfs:label "interval equals"@en ;
+                     skos:definition "If a proper interval T1 is intervalEquals another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is coincident with the end of T2."@en .
+
+
+###  http://www.w3.org/2006/time#interval_finished_by
+time:interval_finished_by rdf:type owl:ObjectProperty ;
+                          owl:inverseOf time:interval_finishes ;
+                          rdfs:domain time:Proper_Interval ;
+                          rdfs:range time:Proper_Interval ;
+                          rdfs:comment "If a proper interval T1 is intervalFinishedBy another proper interval T2, then the beginning of T1 is before the beginning of T2, and the end of T1 is coincident with the end of T2."@en ;
+                          rdfs:label "interval finished by"@en ;
+                          skos:definition "If a proper interval T1 is intervalFinishedBy another proper interval T2, then the beginning of T1 is before the beginning of T2, and the end of T1 is coincident with the end of T2."@en .
+
+
+###  http://www.w3.org/2006/time#interval_finishes
+time:interval_finishes rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf time:interval_in ;
+                       rdfs:domain time:Proper_Interval ;
+                       rdfs:range time:Proper_Interval ;
+                       rdfs:comment "If a proper interval T1 is intervalFinishes another proper interval T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is coincident with the end of T2."@en ;
+                       rdfs:label "interval finishes"@en ;
+                       skos:definition "If a proper interval T1 is intervalFinishes another proper interval T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is coincident with the end of T2."@en .
+
+
+###  http://www.w3.org/2006/time#interval_in
+time:interval_in rdf:type owl:ObjectProperty ;
+                 rdfs:domain time:Proper_Interval ;
+                 rdfs:range time:Proper_Interval ;
+                 rdfs:comment "If a proper interval T1 is intervalIn another proper interval T2, then the beginning of T1 is after the beginning of T2 or is coincident with the beginning of T2, and the end of T1 is before the end of T2, or is coincident with the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2."@en ;
+                 rdfs:label "interval in"@en ;
+                 skos:definition "If a proper interval T1 is intervalIn another proper interval T2, then the beginning of T1 is after the beginning of T2 or is coincident with the beginning of T2, and the end of T1 is before the end of T2, or is coincident with the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2."@en ;
+                 skos:note "This interval relation is not included in the 13 basic relationships defined in Allen (1984), but is referred to as 'an important relationship' in Allen and Ferguson (1997). It is the disjoint union of :intervalStarts v :intervalDuring v :intervalFinishes . However, that is outside OWL2 expressivity, so is implemented as an explicit property, with :intervalStarts , :intervalDuring , :intervalFinishes as sub-properties"@en .
+
+
+###  http://www.w3.org/2006/time#interval_meets
+time:interval_meets rdf:type owl:ObjectProperty ;
+                    owl:inverseOf time:interval_met_by ;
+                    rdfs:domain time:Proper_Interval ;
+                    rdfs:range time:Proper_Interval ;
+                    rdfs:comment "If a proper interval T1 is intervalMeets another proper interval T2, then the end of T1 is coincident with the beginning of T2."@en ;
+                    rdfs:label "interval meets"@en ;
+                    skos:definition "If a proper interval T1 is intervalMeets another proper interval T2, then the end of T1 is coincident with the beginning of T2."@en .
+
+
+###  http://www.w3.org/2006/time#interval_met_by
+time:interval_met_by rdf:type owl:ObjectProperty ;
+                     rdfs:domain time:Proper_Interval ;
+                     rdfs:range time:Proper_Interval ;
+                     rdfs:comment "If a proper interval T1 is intervalMetBy another proper interval T2, then the beginning of T1 is coincident with the end of T2."@en ;
+                     rdfs:label "interval met by"@en ;
+                     skos:definition "If a proper interval T1 is intervalMetBy another proper interval T2, then the beginning of T1 is coincident with the end of T2."@en .
+
+
+###  http://www.w3.org/2006/time#interval_overlapped_by
+time:interval_overlapped_by rdf:type owl:ObjectProperty ;
+                            owl:inverseOf time:interval_overlaps ;
+                            rdfs:domain time:Proper_Interval ;
+                            rdfs:range time:Proper_Interval ;
+                            rdfs:comment "If a proper interval T1 is intervalOverlappedBy another proper interval T2, then the beginning of T1 is after the beginning of T2, the beginning of T1 is before the end of T2, and the end of T1 is after the end of T2."@en ;
+                            rdfs:label "interval overlapped by"@en ;
+                            skos:definition "If a proper interval T1 is intervalOverlappedBy another proper interval T2, then the beginning of T1 is after the beginning of T2, the beginning of T1 is before the end of T2, and the end of T1 is after the end of T2."@en .
+
+
+###  http://www.w3.org/2006/time#interval_overlaps
+time:interval_overlaps rdf:type owl:ObjectProperty ;
+                       rdfs:domain time:Proper_Interval ;
+                       rdfs:range time:Proper_Interval ;
+                       rdfs:comment "If a proper interval T1 is intervalOverlaps another proper interval T2, then the beginning of T1 is before the beginning of T2, the end of T1 is after the beginning of T2, and the end of T1 is before the end of T2."@en ;
+                       rdfs:label "interval overlaps"@en ;
+                       skos:definition "If a proper interval T1 is intervalOverlaps another proper interval T2, then the beginning of T1 is before the beginning of T2, the end of T1 is after the beginning of T2, and the end of T1 is before the end of T2."@en .
+
+
+###  http://www.w3.org/2006/time#interval_started_by
+time:interval_started_by rdf:type owl:ObjectProperty ;
+                         owl:inverseOf time:interval_starts ;
+                         rdfs:domain time:Proper_Interval ;
+                         rdfs:range time:Proper_Interval ;
+                         rdfs:comment "If a proper interval T1 is intervalStarted another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is after the end of T2."@en ;
+                         rdfs:label "interval started by"@en ;
+                         skos:definition "If a proper interval T1 is intervalStarted another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is after the end of T2."@en .
+
+
+###  http://www.w3.org/2006/time#interval_starts
+time:interval_starts rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf time:interval_in ;
+                     rdfs:domain time:Proper_Interval ;
+                     rdfs:range time:Proper_Interval ;
+                     rdfs:comment "If a proper interval T1 is intervalStarts another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is before the end of T2."@en ;
+                     rdfs:label "interval starts"@en ;
+                     skos:definition "If a proper interval T1 is intervalStarts another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is before the end of T2."@en .
+
+
+###  http://www.w3.org/2006/time#month_of_year
+time:month_of_year rdf:type owl:ObjectProperty ;
+                   rdfs:domain time:General_Date_Time_Description ;
+                   rdfs:range time:Month_Of_Year ;
+                   rdfs:comment "The month of the year, whose value is a member of the class time:MonthOfYear"@en ;
+                   rdfs:label "month of year"@en ;
+                   skos:definition "The month of the year, whose value is a member of the class time:MonthOfYear"@en ;
+                   skos:editorialNote "Feature at risk - added in 2017 revision, and not yet widely used. "@en .
+
+
+###  http://www.w3.org/2006/time#time_zone
+time:time_zone rdf:type owl:ObjectProperty ;
+               rdfs:domain time:General_Date_Time_Description ;
+               rdfs:range time:Time_Zone .
+
+
+###  http://www.w3.org/2006/time#unit_type
+time:unit_type rdf:type owl:ObjectProperty ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( time:Duration
+                                           time:General_Date_Time_Description
+                                         )
+                           ] ;
+               rdfs:range time:Temporal_Unit ;
+               rdfs:comment "The temporal unit which provides the precision of a date-time value or scale of a temporal extent"@en ;
+               rdfs:label "temporal unit type"@en .
+
+
 ###  http://www.w3.org/ns/sosa/hosts
 sosa:hosts rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/sosa/is_hosted_by
+sosa:is_hosted_by rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/sosa/is_observed_by
+sosa:is_observed_by rdf:type owl:ObjectProperty .
 
 
 ###  http://www.w3.org/ns/sosa/madeByActuator
@@ -359,6 +929,18 @@ sosa:madeBySampler rdf:type owl:ObjectProperty .
 sosa:madeBySensor rdf:type owl:ObjectProperty .
 
 
+###  http://www.w3.org/ns/sosa/makes_observation
+sosa:makes_observation rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/sosa/observed_property
+sosa:observed_property rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/sosa/observes
+sosa:observes rdf:type owl:ObjectProperty .
+
+
 ###  http://www.w3.org/ns/sosa/usedProcedure
 sosa:usedProcedure rdf:type owl:ObjectProperty .
 
@@ -367,12 +949,28 @@ sosa:usedProcedure rdf:type owl:ObjectProperty .
 ssn:deployedSystem rdf:type owl:ObjectProperty .
 
 
+###  http://www.w3.org/ns/ssn/detects_stimulus
+ssn:detects_stimulus rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/ssn/has_deployment
+ssn:has_deployment rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/ssn/has_sub_system
+ssn:has_sub_system rdf:type owl:ObjectProperty .
+
+
 ###  http://www.w3.org/ns/ssn/implements
 ssn:implements rdf:type owl:ObjectProperty .
 
 
 ###  http://www.w3.org/ns/ssn/inDeployment
 ssn:inDeployment rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/ssn/is_proxy_for
+ssn:is_proxy_for rdf:type owl:ObjectProperty .
 
 
 ###  http://www.w3.org/ns/ssn/oversampling_used
@@ -2471,9 +3069,9 @@ ecsel-dr-DF:has_order_demand rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-DF#has_order_position
 ecsel-dr-DF:has_order_position rdf:type owl:ObjectProperty ;
+                               rdfs:subPropertyOf owl:topObjectProperty ;
                                rdfs:domain ecsel-dr-DF:Order ;
-                               rdfs:range ecsel-dr-DF:Order_Position ;
-                               rdfs:label "has order position"@en .
+                               rdfs:range ecsel-dr-DF:Order_Position .
 
 
 ###  http://www.w3id.org/ecsel-dr-DF#has_periods
@@ -2641,13 +3239,6 @@ ecsel-dr-DF:is_requested_by rdf:type owl:ObjectProperty ;
                             rdfs:domain ecsel-dr-DF:Requested_Delivery_Date ;
                             rdfs:range ecsel-dr-DF:Customer ;
                             rdfs:label "is requested by"@en .
-
-
-###  http://www.w3id.org/ecsel-dr-DF#order_position
-ecsel-dr-DF:order_position rdf:type owl:ObjectProperty ;
-                           rdfs:subPropertyOf owl:topObjectProperty ;
-                           rdfs:domain ecsel-dr-DF:Order ;
-                           rdfs:range ecsel-dr-DF:Order_Position .
 
 
 ###  http://www.w3id.org/ecsel-dr-DF#requires_delivery_date_information
@@ -7277,6 +7868,12 @@ ecsel-dr-DF:demand_priority rdf:type owl:DatatypeProperty ;
                             rdfs:label "demand priority"@en .
 
 
+###  http://www.w3id.org/ecsel-dr-DF#has_order_position
+ecsel-dr-DF:has_order_position rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf owl:topDataProperty ;
+                               rdfs:range rdfs:Literal .
+
+
 ###  http://www.w3id.org/ecsel-dr-DF#lot_ID
 ecsel-dr-DF:lot_ID rdf:type owl:DatatypeProperty ;
                    rdfs:subPropertyOf owl:topDataProperty ;
@@ -7331,12 +7928,6 @@ ecsel-dr-DF:order_name rdf:type owl:DatatypeProperty ;
                        rdfs:domain ecsel-dr-DF:Order ;
                        rdfs:range rdfs:Literal ;
                        rdfs:label "order name"@en .
-
-
-###  http://www.w3id.org/ecsel-dr-DF#order_position
-ecsel-dr-DF:order_position rdf:type owl:DatatypeProperty ;
-                           rdfs:subPropertyOf owl:topDataProperty ;
-                           rdfs:range rdfs:Literal .
 
 
 ###  http://www.w3id.org/ecsel-dr-DF#order_priority
@@ -11193,19 +11784,156 @@ terms:Physical_Resource rdf:type owl:Class ;
 
 
 ###  http://www.w3.org/2006/time#Date_Time_Interval
-time:Date_Time_Interval rdf:type owl:Class .
+time:Date_Time_Interval rdf:type owl:Class ;
+                        rdfs:subClassOf dr:Time_Lobe .
 
 
 ###  http://www.w3.org/2006/time#Duration
-time:Duration rdf:type owl:Class .
+time:Duration rdf:type owl:Class ;
+              rdfs:subClassOf dr:Time_Lobe .
+
+
+###  http://www.w3.org/2006/time#General_Date_Time_Description
+time:General_Date_Time_Description rdf:type owl:Class ;
+                                   rdfs:subClassOf dr:Time_Lobe .
+
+
+###  http://www.w3.org/2006/time#General_Duration_Description
+time:General_Duration_Description rdf:type owl:Class ;
+                                  rdfs:subClassOf dr:Time_Lobe .
+
+
+###  http://www.w3.org/2006/time#Instant
+time:Instant rdf:type owl:Class ;
+             rdfs:subClassOf dr:Time_Lobe .
 
 
 ###  http://www.w3.org/2006/time#Interval
-time:Interval rdf:type owl:Class .
+time:Interval rdf:type owl:Class ;
+              rdfs:subClassOf dr:Time_Lobe .
+
+
+###  http://www.w3.org/2006/time#Month_Of_Year
+time:Month_Of_Year rdf:type owl:Class ;
+                   rdfs:subClassOf dr:Time_Lobe .
+
+
+###  http://www.w3.org/2006/time#ProperInterval
+time:ProperInterval rdf:type owl:Class ;
+                    rdfs:subClassOf dr:Time_Lobe .
+
+
+###  http://www.w3.org/2006/time#Proper_Interval
+time:Proper_Interval rdf:type owl:Class ;
+                     rdfs:subClassOf dr:Time_Lobe .
+
+
+###  http://www.w3.org/2006/time#TRS
+time:TRS rdf:type owl:Class ;
+         rdfs:subClassOf dr:Time_Lobe ;
+         rdfs:comment """A temporal reference system, such as a temporal coordinate system (with an origin, direction, and scale), a calendar-clock combination, or a (possibly hierarchical) ordinal system. 
+
+This is a stub class, representing the set of all temporal reference systems."""@en ,
+                      """Un sistema de referencia temporal, tal como un sistema de coordenadas temporales (con un origen, una dirección y una escala), una combinación calendario-reloj, o un sistema ordinal (posiblemente jerárquico).
+        Esta clase comodín representa el conjunto de todos los sistemas de referencia temporal."""@es ;
+         rdfs:label "Temporal Reference System"@en ,
+                    "sistema de referencia temporal"@es ;
+         skos:definition """A temporal reference system, such as a temporal coordinate system (with an origin, direction, and scale), a calendar-clock combination, or a (possibly hierarchical) ordinal system. 
+
+This is a stub class, representing the set of all temporal reference systems."""@en ,
+                         """Un sistema de referencia temporal, tal como un sistema de coordenadas temporales (con un origen, una dirección y una escala), una combinación calendario-reloj, o un sistema ordinal (posiblemente jerárquico).
+    Esta clase comodín representa el conjunto de todos los sistemas de referencia temporal."""@es ;
+         skos:note "A taxonomy of temporal reference systems is provided in ISO 19108:2002 [ISO19108], including (a) calendar + clock systems; (b) temporal coordinate systems (i.e. numeric offset from an epoch); (c) temporal ordinal reference systems (i.e. ordered sequence of named intervals, not necessarily of equal duration)."@en ,
+                   "En el ISO 19108:2002 [ISO19108] se proporciona una taxonomía de sistemas de referencia temporal, incluyendo (a) sistemas de calendario + reloj; (b) sistemas de coordenadas temporales (es decir, desplazamiento numérico a partir de una época); (c) sistemas de referencia ordinales temporales (es decir, secuencia ordenada de intervalos nombrados, no necesariamente de igual duración)."@es .
+
+
+###  http://www.w3.org/2006/time#Temporal_Duration
+time:Temporal_Duration rdf:type owl:Class ;
+                       rdfs:subClassOf dr:Time_Lobe ;
+                       rdfs:comment "Time extent; duration of a time interval separate from its particular start position"@en ;
+                       rdfs:label "Temporal Duration"@en ;
+                       skos:definition "Time extent; duration of a time interval separate from its particular start position"@en .
 
 
 ###  http://www.w3.org/2006/time#Temporal_Entity
-time:Temporal_Entity rdf:type owl:Class .
+time:Temporal_Entity rdf:type owl:Class ;
+                     rdfs:subClassOf dr:Time_Lobe .
+
+
+###  http://www.w3.org/2006/time#Temporal_Position
+time:Temporal_Position rdf:type owl:Class ;
+                       rdfs:subClassOf dr:Time_Lobe ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty time:has_TRS ;
+                                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                                       ] ;
+                       rdfs:comment "A position on a time-line"@en ;
+                       rdfs:label "Temporal Position"@en ;
+                       skos:definition "A position on a time-line"@en .
+
+
+###  http://www.w3.org/2006/time#Temporal_Unit
+time:Temporal_Unit rdf:type owl:Class ;
+                   rdfs:subClassOf time:Temporal_Duration ;
+                   rdfs:comment "A standard duration, which provides a scale factor for a time extent, or the granularity or precision for a time position."@en ;
+                   rdfs:label "Temporal Unit"@en ;
+                   skos:changeNote """Remove enumeration from definition, in order to allow other units to be used when required in other coordinate systems. 
+NOTE: existing units are still present as members of the class, but the class membership is now open. 
+
+In the original OWL-Time the following constraint appeared: 
+  owl:oneOf (
+      time:unitSecond
+      time:unitMinute
+      time:unitHour
+      time:unitDay
+      time:unitWeek
+      time:unitMonth
+      time:unitYear
+    ) ;"""@en ;
+                   skos:definition "A standard duration, which provides a scale factor for a time extent, or the granularity or precision for a time position."@en ;
+                   skos:note "Membership of the class TemporalUnit is open, to allow for other temporal units used in some technical applications (e.g. millions of years, Baha'i month)."@en .
+
+
+###  http://www.w3.org/2006/time#Time_Position
+time:Time_Position rdf:type owl:Class ;
+                   rdfs:subClassOf time:Temporal_Position ;
+                   rdfs:comment "A temporal position described using either a (nominal) value from an ordinal reference system, or a (numeric) value in a temporal coordinate system. "@en ;
+                   rdfs:label "Time Position"@en ;
+                   skos:definition "A temporal position described using either a (nominal) value from an ordinal reference system, or a (numeric) value in a temporal coordinate system. "@en .
+
+
+###  http://www.w3.org/2006/time#Time_Zone
+time:Time_Zone rdf:type owl:Class ;
+               rdfs:subClassOf dr:Time_Lobe ;
+               rdfs:comment """A Time Zone specifies the amount by which the local time is offset from UTC. 
+  A time zone is usually denoted geographically (e.g. Australian Eastern Daylight Time), with a constant value in a given region. 
+The region where it applies and the offset from UTC are specified by a locally recognised governing authority."""@en ;
+               rdfs:label "Time Zone"@en ;
+               skos:definition """A Time Zone specifies the amount by which the local time is offset from UTC. 
+  A time zone is usually denoted geographically (e.g. Australian Eastern Daylight Time), with a constant value in a given region. 
+The region where it applies and the offset from UTC are specified by a locally recognised governing authority."""@en ;
+               skos:historyNote """In the original 2006 version of OWL-Time, the TimeZone class, with several properties corresponding to a specific model of time-zones, was defined in a separate namespace \"http://www.w3.org/2006/timezone#\". 
+
+In the current version a class with same local name is put into the main OWL-Time namespace, removing the dependency on the external namespace. 
+
+An alignment axiom 
+  tzont:TimeZone rdfs:subClassOf time:TimeZone . 
+allows data encoded according to the previous version to be consistent with the updated ontology. """ ;
+               skos:note """A designated timezone is associated with a geographic region. However, for a particular region the offset from UTC often varies seasonally, and the dates of the changes may vary from year to year. The timezone designation usually changes for the different seasons (e.g. Australian Eastern Standard Time vs. Australian Eastern Daylight Time). Furthermore, the offset for a timezone may change over longer timescales, though its designation might not.  
+
+Detailed guidance about working with time zones is given in http://www.w3.org/TR/timezone/ ."""@en ,
+                         "An ontology for time zone descriptions was described in [owl-time-20060927] and provided as RDF in a separate namespace tzont:. However, that ontology was incomplete in scope, and the example datasets were selective. Furthermore, since the use of a class from an external ontology as the range of an ObjectProperty in OWL-Time creates a dependency, reference to the time zone class has been replaced with the 'stub' class in the normative part of this version of OWL-Time."@en ;
+               skos:scopeNote "In this implementation TimeZone has no properties defined. It should be thought of as an 'abstract' superclass of all specific timezone implementations." .
+
+
+###  http://www.w3.org/2006/time#day_of_week
+time:day_of_week rdf:type owl:Class ;
+                 rdfs:subClassOf dr:Time_Lobe .
+
+
+###  http://www.w3.org/2006/time#time_zone
+time:time_zone rdf:type owl:Class ;
+               rdfs:subClassOf dr:Time_Lobe .
 
 
 ###  http://www.w3.org/ns/org#Organization
@@ -11231,6 +11959,30 @@ org:Organizational_Unit rdf:type owl:Class ;
 ###  http://www.w3.org/ns/sosa/Actuation
 sosa:Actuation rdf:type owl:Class ;
                rdfs:subClassOf dr:Sensor_Lobe .
+
+
+###  http://www.w3.org/ns/sosa/Observable_Property
+sosa:Observable_Property rdf:type owl:Class ;
+                         rdfs:subClassOf ssn:Property ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty sosa:is_observed_by ;
+                                           owl:allValuesFrom sosa:Sensor
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty [ owl:inverseOf sosa:observed_property
+                                                          ] ;
+                                           owl:allValuesFrom sosa:Observation
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty [ owl:inverseOf ssn:is_proxy_for
+                                                          ] ;
+                                           owl:allValuesFrom ssn:Stimulus
+                                         ] ;
+                         rdfs:comment "An observable quality (property, characteristic) of a FeatureOfInterest."@en ;
+                         rdfs:isDefinedBy sosa: ;
+                         rdfs:label "Observable Property"@en ;
+                         skos:definition "An observable quality (property, characteristic) of a FeatureOfInterest."@en ;
+                         skos:example "The height of a tree, the depth of a water body, or the temperature of a surface are examples of observable properties, while the value of a classic car is not (directly) observable but asserted."@en .
 
 
 ###  http://www.w3.org/ns/sosa/Observation
@@ -11266,7 +12018,29 @@ sosa:Sampling rdf:type owl:Class ;
 ###  http://www.w3.org/ns/sosa/Sensor
 sosa:Sensor rdf:type owl:Class ;
             owl:equivalentClass ecsel-dr-OOSMP:Sensor ,
-                                ecsel-dr-RAMI40:Sensor .
+                                ecsel-dr-RAMI40:Sensor ;
+            rdfs:subClassOf ssn:System ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty sosa:makes_observation ;
+                              owl:allValuesFrom sosa:Observation
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty sosa:observes ;
+                              owl:allValuesFrom sosa:Observable_Property
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ssn:detects_stimulus ;
+                              owl:allValuesFrom ssn:Stimulus
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ssn:implements ;
+                              owl:minCardinality "1"^^xsd:nonNegativeInteger
+                            ] ;
+            rdfs:comment "Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms."@en ;
+            rdfs:isDefinedBy sosa: ;
+            rdfs:label "Sensor"@en ;
+            skos:definition "Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms."@en ;
+            skos:example "Accelerometers, gyroscopes, barometers, magnetometers, and so forth are Sensors that are typically mounted on a modern smart phone (which acts as Platform). Other examples of sensors include the human eyes."@en .
 
 
 ###  http://www.w3.org/ns/sosa/sampling/RelationshipNature
@@ -11297,11 +12071,50 @@ ssn:Property rdf:type owl:Class ;
 
 
 ###  http://www.w3.org/ns/ssn/Stimulus
-ssn:Stimulus rdf:type owl:Class .
+ssn:Stimulus rdf:type owl:Class ;
+             rdfs:subClassOf dr:Sensor_Lobe ;
+             rdfs:comment "An event in the real world that 'triggers' the Sensor. The properties associated to the Stimulus may be different to the eventual observed ObservableProperty. It is the event, not the object, that triggers the Sensor."@en ;
+             rdfs:isDefinedBy ssn: ;
+             rdfs:label "Stimulus"@en ;
+             skos:definition "An event in the real world that 'triggers' the Sensor. The properties associated to the Stimulus may be different to the eventual observed ObservableProperty. It is the event, not the object, that triggers the Sensor."@en .
+
+
+###  http://www.w3.org/ns/ssn/System
+ssn:System rdf:type owl:Class ;
+           rdfs:subClassOf dr:Sensor_Lobe ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sosa:is_hosted_by ;
+                             owl:allValuesFrom sosa:Platform
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ssn:has_deployment ;
+                             owl:allValuesFrom ssn:Deployment
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ssn:has_sub_system ;
+                             owl:allValuesFrom ssn:System
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ssn:implements ;
+                             owl:allValuesFrom sosa:Procedure
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty [ owl:inverseOf ssn:has_sub_system
+                                            ] ;
+                             owl:allValuesFrom ssn:System
+                           ] ;
+           rdfs:comment "System is a unit of abstraction for pieces of infrastructure that implement Procedures. A System may have components, its subsystems, which are other systems."@en ;
+           rdfs:isDefinedBy ssn: ;
+           rdfs:label "System"@en ;
+           skos:definition "System is a unit of abstraction for pieces of infrastructure that implement Procedures. A System may have components, its subsystems, which are other systems."@en .
 
 
 ###  http://www.w3.org/ns/ssn/systems/SystemProperty
-ssn-system:SystemProperty rdf:type owl:Class .
+ssn-system:SystemProperty rdf:type owl:Class ;
+                          rdfs:subClassOf ssn:Property ;
+                          rdfs:comment "An identifiable and observable characteristic that represents the system's ability to operate its primary purpose: a sensor to make Observations, an Actuator to make Actuations, or a Sampler to make Sampling." ;
+                          rdfs:isDefinedBy sosa: ;
+                          rdfs:label "System Property"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr#Application
@@ -11433,10 +12246,10 @@ It also maps the topics of Prioritized Demand and Orders, Products, Promise, Sal
 
 ###  http://www.w3id.org/ecsel-dr#Sustainability_Lobe
 dr:Sustainability_Lobe rdf:type owl:Class ;
-                       rdfs:comment """Sustainability refers to the practice of meeting present needs without compromising the ability of future generations to meet their own needs, balancing environmental, social, and economic considerations.
+                       rdfs:comment "Lobe Owner: Marta Bonik" ,
+                                    """Sustainability refers to the practice of meeting present needs without compromising the ability of future generations to meet their own needs, balancing environmental, social, and economic considerations.
 
-This lobes models Application."""@en ,
-                                    "Lobe Owner: Marta Bonik" ;
+This lobes models Application."""@en ;
                        rdfs:label "Sustainability Lobe"@en .
 
 
@@ -12804,10 +13617,10 @@ Example for first generation fieldbus is Profibus,
 Example for second generation fieldbus is ProfiNet."""@en ,
                                                                """Beispiel für Feldbus der ersten Generation ist Profibus,
 Beispiel für Feldbus der zweiten Generation ist ProfiNet."""@de ,
+                                                               "Ein Feldbus definiert einen kompletten Protokoll-Stack über die 7 SChichten des OSI-Schichtenmodells. Ggf. werden nicht alle Schichten belegt." ,
                                                                """Ein Feldbus ist ein Bussystem, das in einer Anlage Feldgeräte wie Messfühler (Sensoren) und Stellglieder (Aktoren) zwecks Kommunikation mit einem Automatisierungsgerät verbindet. Wenn mehrere Kommunikationsteilnehmer ihre Nachrichten über dieselbe Leitung senden, dann muss festgelegt sein, wer (Kennung) was (Messwert, Befehl) wann (Initiative) sagt. Hierfür gibt es normierte Protokolle.
 Die erste Generation der Feldbustechnik wurde in den 1980er Jahren entwickelt, um die bis dahin übliche Parallelverdrahtung binärer Signale sowie die analoge Signalübertragung durch digitale Übertragungstechnik zu ersetzen. Heute sind viele unterschiedliche Feldbussysteme mit unterschiedlichen Eigenschaften am Markt etabliert. Seit 1999 werden Feldbusse in der Norm IEC 61158 (Digital data communication for measurement and control - Fieldbus for use in industrial control systems) sowie durch die Norm IEC 61784 weltweit standardisiert.
-Die zweite Generation der Feldbustechnik basiert auf Echtzeit-Ethernet (Industrial Ethernet)."""@de ,
-                                                               "Ein Feldbus definiert einen kompletten Protokoll-Stack über die 7 SChichten des OSI-Schichtenmodells. Ggf. werden nicht alle Schichten belegt." ;
+Die zweite Generation der Feldbustechnik basiert auf Echtzeit-Ethernet (Industrial Ethernet)."""@de ;
                                                   rdfs:label "Fieldbus Communication Profile Family"@en .
 
 
@@ -15887,8 +16700,8 @@ ecsel-dr-DF:Product_Hierarchy rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-DF#Production_Strategy
 ecsel-dr-DF:Production_Strategy rdf:type owl:Class ;
                                 rdfs:subClassOf dr:Supply_Chain_Lobe ;
-                                rdfs:comment "additional lobes: Semiaconductor Production"@en ,
-                                             "The production strategy determining which portions of a supply chain should operate in make to stock (MTS) mode, where production is driven by the replenishment of inventories at specific locations, and which in make to order (MTO) mode, where production is initiated to fulfill specific customer orders. The production strategy is related to the question where the customer order decoupling point (CODP), also referred to as the push-pull interface (or boundary) has to be placed. The CODP denotes the point in the supply chain where material is dedicated to a specific customer order to the degree that it cannot be used for another."^^rdfs:Literal ;
+                                rdfs:comment "The production strategy determining which portions of a supply chain should operate in make to stock (MTS) mode, where production is driven by the replenishment of inventories at specific locations, and which in make to order (MTO) mode, where production is initiated to fulfill specific customer orders. The production strategy is related to the question where the customer order decoupling point (CODP), also referred to as the push-pull interface (or boundary) has to be placed. The CODP denotes the point in the supply chain where material is dedicated to a specific customer order to the degree that it cannot be used for another."^^rdfs:Literal ,
+                                             "additional lobes: Semiaconductor Production"@en ;
                                 rdfs:label "Production Strategy"@en .
 
 
@@ -18877,8 +19690,8 @@ ecsel-dr-Planning:Available_Capacity rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-Planning#Bill_Of_Material
 ecsel-dr-Planning:Bill_Of_Material rdf:type owl:Class ;
                                    rdfs:subClassOf dr:Product_Lobe ;
-                                   rdfs:comment "Additional lobe: Planning"@en ,
-                                                "A BILL OF MATERIALS (BOM) describes the component products used to make another product. Substitution, often associated with binning, is based on the possibility that alternative items might be used to finish a process step." ;
+                                   rdfs:comment "A BILL OF MATERIALS (BOM) describes the component products used to make another product. Substitution, often associated with binning, is based on the possibility that alternative items might be used to finish a process step." ,
+                                                "Additional lobe: Planning"@en ;
                                    rdfs:label "Bill Of Material"@en .
 
 
@@ -19019,8 +19832,8 @@ ecsel-dr-Planning:Location rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-Planning#Lot_Sizing_Rule
 ecsel-dr-Planning:Lot_Sizing_Rule rdf:type owl:Class ;
                                   rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                                  rdfs:comment "Additional lobe: Planning"@en ,
-                                               "A LOT SIZING RULE defines a rule to specify the lot size for a specific part. The lot size on the other hand defines the number of pieces belonging to a part. The lot size is the result of applying lot sizing rules." ;
+                                  rdfs:comment "A LOT SIZING RULE defines a rule to specify the lot size for a specific part. The lot size on the other hand defines the number of pieces belonging to a part. The lot size is the result of applying lot sizing rules." ,
+                                               "Additional lobe: Planning"@en ;
                                   rdfs:label "Lot Sizing Rule"@en .
 
 
@@ -19046,8 +19859,8 @@ ecsel-dr-Planning:Owner rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-Planning#Part
 ecsel-dr-Planning:Part rdf:type owl:Class ;
                        rdfs:subClassOf dr:Product_Lobe ;
-                       rdfs:comment "Additional lobe: Planning"@en ,
-                                    "A PART represents a physical instance of a product in the manufacturing process. It therefore realizes a product. A part moves through the system and is manufactured according to its product specification. A part is associated to exactly one product. During the production process it is typically tested several times. The binning rules of the associated product specification can be applied to the respective part. A part can be substituted by another part according to the associated product specification" .
+                       rdfs:comment "A PART represents a physical instance of a product in the manufacturing process. It therefore realizes a product. A part moves through the system and is manufactured according to its product specification. A part is associated to exactly one product. During the production process it is typically tested several times. The binning rules of the associated product specification can be applied to the respective part. A part can be substituted by another part according to the associated product specification" ,
+                                    "Additional lobe: Planning"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Performance_Measure
@@ -19148,16 +19961,16 @@ ecsel-dr-Planning:Product rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-Planning#Product_Aggregate
 ecsel-dr-Planning:Product_Aggregate rdf:type owl:Class ;
                                     rdfs:subClassOf dr:Planning_Lobe ;
-                                    rdfs:comment "Additional lobe: Product"@en ,
-                                                 "A PRODUCT AGGREGATE combines individual products into a few logical products groups. This results in a reduction of complexity, which enables a better overview." ;
+                                    rdfs:comment "A PRODUCT AGGREGATE combines individual products into a few logical products groups. This results in a reduction of complexity, which enables a better overview." ,
+                                                 "Additional lobe: Product"@en ;
                                     rdfs:label "Product Aggregate"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Product_Hierarchy
 ecsel-dr-Planning:Product_Hierarchy rdf:type owl:Class ;
                                     rdfs:subClassOf dr:Planning_Lobe ;
-                                    rdfs:comment "Additional lobe: Product"@en ,
-                                                 "A PRODUCT HIERARCHY characterizes the top-down and bottom-up relationship between different product aggregates. It organizes the product aggregates according to defined criteria. A product aggregate is used to group different products based on certain criteria. The grouping criteria depend on the planning purpose (e.g. controlling, production). It is a certain view on a set of products." ;
+                                    rdfs:comment "A PRODUCT HIERARCHY characterizes the top-down and bottom-up relationship between different product aggregates. It organizes the product aggregates according to defined criteria. A product aggregate is used to group different products based on certain criteria. The grouping criteria depend on the planning purpose (e.g. controlling, production). It is a certain view on a set of products." ,
+                                                 "Additional lobe: Product"@en ;
                                     rdfs:label "Product Hierarchy"@en .
 
 
@@ -19251,8 +20064,8 @@ ecsel-dr-Planning:Temporal-Constraints rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-Planning#Trigger
 ecsel-dr-Planning:Trigger rdf:type owl:Class ;
                           rdfs:subClassOf dr:Process_Lobe ;
-                          rdfs:comment "Additional lobe: Planning"@en ,
-                                       "A mechanism that initiates an action when an event occurs such as reaching a certain time or date or upon receiving some type of input. A trigger generally causes a program routine to be executed." .
+                          rdfs:comment "A mechanism that initiates an action when an event occurs such as reaching a certain time or date or upon receiving some type of input. A trigger generally causes a program routine to be executed." ,
+                                       "Additional lobe: Planning"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Vertex
@@ -21185,153 +21998,179 @@ ecsel-dr-RAMI40:Type rdf:type owl:NamedIndividual .
 ecsel-dr-RAMI40:Work_Center rdf:type owl:NamedIndividual .
 
 
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
+] .
+
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
 #################################################################
 #    Annotations
 #################################################################
 
-time:Friday rdfs:label "Friday"@en ;
-            skos:prefLabel "Freitag"@de ,
+xsd:dateTimeStamp rdfs:label "sello de tiempo"@es .
+
+
+time:Friday skos:prefLabel "星期五"@zh ,
                            "Friday"@en ,
-                           "Piątek"@pl ,
-                           "Sexta-feira"@pt ,
-                           "Vendredi"@fr ,
                            "Venerdì"@it ,
+                           "Freitag"@de ,
+                           "Sexta-feira"@pt ,
                            "Viernes"@es ,
-                           "Vrijdag"@nl ,
                            "Пятница"@ru ,
-                           "الجمعة"@ar ,
-                           "星期五"@zh ,
-                           "金曜日"@ja .
+                           "金曜日"@ja ,
+                           "Vendredi"@fr ,
+                           "Piątek"@pl ,
+                           "Vrijdag"@nl ;
+            rdfs:label "Friday"@en ;
+            skos:prefLabel "الجمعة"@ar .
 
 
-time:Monday rdfs:label "Monday"@en ;
-            skos:prefLabel "Lundi"@fr ,
-                           "Lunedì"@it ,
-                           "Lunes"@es ,
-                           "Maandag"@nl ,
+time:Monday skos:prefLabel "Montag"@de ,
+                           "月曜日"@ja ,
                            "Monday"@en ,
-                           "Montag"@de ,
+                           "Lundi"@fr ,
+                           "Lunes"@es ,
                            "Poniedziałek"@pl ,
                            "Segunda-feira"@pt ,
-                           "Понедельник"@ru ,
-                           "الاثنين"@ar ,
                            "星期一"@zh ,
-                           "月曜日"@ja .
+                           "الاثنين"@ar ,
+                           "Maandag"@nl ;
+            rdfs:label "Monday"@en ;
+            skos:prefLabel "Lunedì"@it ,
+                           "Понедельник"@ru .
 
 
-time:Saturday rdfs:label "Saturday"@en ;
-              skos:prefLabel "Sabato"@it ,
+time:Saturday skos:prefLabel "Zaterdag"@nl ,
+                             "Sobota"@pl ,
+                             "Суббота"@ru ,
+                             "Sábado"@pt ,
+                             "Saturday"@en ,
+                             "Sábado"@es ,
                              "Samedi"@fr ,
                              "Samstag"@de ,
-                             "Saturday"@en ,
-                             "Sobota"@pl ,
-                             "Sábado"@es ,
-                             "Sábado"@pt ,
-                             "Zaterdag"@nl ,
-                             "Суббота"@ru ,
+                             "土曜日"@ja ;
+              rdfs:label "Saturday"@en ;
+              skos:prefLabel "Sabato"@it ,
                              "السبت"@ar ,
-                             "土曜日"@ja ,
                              "星期六"@zh .
 
 
-time:Sunday rdfs:label "Sunday"@en ;
-            skos:prefLabel "Dimanche"@fr ,
-                           "Domenica"@it ,
+time:Sunday skos:prefLabel "Domenica"@it ,
                            "Domingo"@es ,
-                           "Domingo"@pt ,
-                           "Niedziela"@pl ,
-                           "Sonntag"@de ,
                            "Sunday"@en ,
-                           "Zondag"@nl ,
-                           "Воскресенье"@ru ,
                            "الأحد (يوم)"@ar ,
+                           "星期日"@zh ,
+                           "Dimanche"@fr ;
+            rdfs:label "Sunday"@en ;
+            skos:prefLabel "Sonntag"@de ,
                            "日曜日"@ja ,
-                           "星期日"@zh .
+                           "Воскресенье"@ru ,
+                           "Niedziela"@pl ,
+                           "Domingo"@pt ,
+                           "Zondag"@nl .
 
 
-time:Thursday rdfs:label "Thursday"@en ;
-              skos:prefLabel "Czwartek"@pl ,
-                             "Donderdag"@nl ,
-                             "Donnerstag"@de ,
-                             "Giovedì"@it ,
-                             "Jeudi"@fr ,
-                             "Jueves"@es ,
-                             "Quinta-feira"@pt ,
-                             "Thursday"@en ,
-                             "Четверг"@ru ,
-                             "الخميس"@ar ,
+time:Thursday skos:prefLabel "الخميس"@ar ,
                              "星期四"@zh ,
-                             "木曜日"@ja .
+                             "Quinta-feira"@pt ;
+              rdfs:label "Thursday"@en ;
+              skos:prefLabel "Thursday"@en ,
+                             "木曜日"@ja ,
+                             "Jeudi"@fr ,
+                             "Donderdag"@nl ,
+                             "Czwartek"@pl ,
+                             "Четверг"@ru ,
+                             "Giovedì"@it ,
+                             "Jueves"@es ,
+                             "Donnerstag"@de .
 
 
-time:Tuesday rdfs:label "Tuesday"@en ;
-             skos:prefLabel "Dienstag"@de ,
-                            "Dinsdag"@nl ,
-                            "Mardi"@fr ,
-                            "Martedì"@it ,
-                            "Martes"@es ,
-                            "Terça-feira"@pt ,
+time:Tuesday skos:prefLabel "Terça-feira"@pt ,
                             "Tuesday"@en ,
                             "Wtorek"@pl ,
+                            "Mardi"@fr ;
+             rdfs:label "Tuesday"@en ;
+             skos:prefLabel "Dinsdag"@nl ,
                             "Вторник"@ru ,
-                            "الثلاثاء"@ar ,
+                            "Martes"@es ,
+                            "Dienstag"@de ,
+                            "Martedì"@it ,
                             "星期二"@zh ,
-                            "火曜日"@ja .
+                            "火曜日"@ja ,
+                            "الثلاثاء"@ar .
 
 
-time:Wednesday rdfs:label "Wednesday"@en ;
-               skos:prefLabel "Mercoledì"@it ,
-                              "Mercredi"@fr ,
-                              "Mittwoch"@de ,
-                              "Miércoles"@es ,
-                              "Quarta-feira"@pt ,
+time:Wednesday skos:prefLabel "Среда"@ru ,
+                              "Mercoledì"@it ,
+                              "Środa"@pl ,
                               "Wednesday"@en ,
                               "Woensdag"@nl ,
-                              "Środa"@pl ,
-                              "Среда"@ru ,
+                              "Mercredi"@fr ,
                               "星期三"@zh ,
-                              "水曜日"@ja .
+                              "Mittwoch"@de ;
+               rdfs:label "Wednesday"@en ;
+               skos:prefLabel "Quarta-feira"@pt ,
+                              "水曜日"@ja ,
+                              "Miércoles"@es .
 
 
-ecsel-dr-CO2Savings:Electric_Car rdfs:comment "An electric car powered by electricity as an energy source." ;
-                                 rdfs:label "Electric Car"@en .
+time:day_of_week rdfs:comment "The day of week, whose value is a member of the class time:DayOfWeek"@en ;
+                 skos:definition "The day of week, whose value is a member of the class time:DayOfWeek"@en ;
+                 rdfs:label "day of week"@en .
 
 
-ecsel-dr-CO2Savings:Gasoline_Car rdfs:comment "Gasoline Car (Gcar)"@en ;
-                                 rdfs:label "Gasoline Car"@en .
+time:time_zone skos:note """IANA maintains a database of timezones. These are well maintained and generally considered authoritative, but individual items are not available at individual URIs, so cannot be used directly in data expressed using OWL-Time.
+
+DBPedia provides a set of resources corresponding to the IANA timezones, with a URI for each (e.g. http://dbpedia.org/resource/Australia/Eucla). The World Clock service also provides a list of time zones with the description of each available as an individual webpage with a convenient individual URI (e.g. https://www.timeanddate.com/time/zones/acwst). These or other, similar, resources might be used as a value of the time:timeZone property.""" ;
+               rdfs:comment "The time zone for clock elements in the temporal position"@en ;
+               rdfs:label "in time zone"@en ;
+               skos:historyNote """In the original 2006 version of OWL-Time, the range of time:timeZone was a TimeZone class in a separate namespace \"http://www.w3.org/2006/timezone#\". 
+An alignment axiom 
+  tzont:TimeZone rdfs:subClassOf time:TimeZone . 
+allows data encoded according to the previous version to be consistent with the updated ontology. """ .
+
+
+ecsel-dr-CO2Savings:Electric_Car rdfs:label "Electric Car"@en ;
+                                 rdfs:comment "An electric car powered by electricity as an energy source." .
+
+
+ecsel-dr-CO2Savings:Gasoline_Car rdfs:label "Gasoline Car"@en ;
+                                 rdfs:comment "Gasoline Car (Gcar)"@en .
 
 
 ecsel-dr-CO2Savings:Process_Material rdfs:comment "The materials used or involved in the manufacturing process." ;
                                      rdfs:label "Process Material"@en .
 
 
-ecsel-dr-CO2Savings:Raw_Material rdfs:comment "The raw materials used or involved in the manufacturing process." ;
-                                 rdfs:label "Raw Material"@en .
+ecsel-dr-CO2Savings:Raw_Material rdfs:label "Raw Material"@en ;
+                                 rdfs:comment "The raw materials used or involved in the manufacturing process." .
 
 
-ecsel-dr-CO2Savings:Solar_Panel rdfs:comment "A panel or device that converts sunlight into electricity." ;
-                                rdfs:label "Solar Panel"@en .
+ecsel-dr-CO2Savings:Solar_Panel rdfs:label "Solar Panel"@en ;
+                                rdfs:comment "A panel or device that converts sunlight into electricity." .
 
 
 ecsel-dr-CO2Savings:Wind_Turbine rdfs:comment "A device that converts wind energy into electricity." ;
                                  rdfs:label "Wind Turbine"@en .
 
 
-ecsel-dr-DF:order_position rdfs:label "order position"@en .
+ecsel-dr-DF:has_order_position rdfs:label "order position"@en ,
+                                          "has order position"@en .
 
 
-ecsel-dr-OOSMP:Completely_Lead_Free_Status rdfs:comment "This status determines whether a semiconductor product is lead free or not."@en ;
+ecsel-dr-OOSMP:Completely_Lead_Free_Status skos:prefLabel "Completely Lead Free Status"@en ;
                                            rdfs:label "Completely Lead Free Status"@en ;
-                                           skos:prefLabel "Completely Lead Free Status"@en .
+                                           rdfs:comment "This status determines whether a semiconductor product is lead free or not."@en .
 
 
 ecsel-dr-OOSMP:Halogen_Free_Status rdfs:comment "This status determines whether a semiconductor product is halogen free or not."@en ;
-                                   rdfs:label "Halogen Free Status"@en ;
-                                   skos:prefLabel "Halogen Free Status"@en .
+                                   skos:prefLabel "Halogen Free Status"@en ;
+                                   rdfs:label "Halogen Free Status"@en .
 
 
-ecsel-dr-OOSMP:Ro_HS_Compliant_Status rdfs:comment "This status determines whether a product is RoHS compliant or not."@en ;
-                                      rdfs:label "RoHS Compliant Status"@en ;
+ecsel-dr-OOSMP:Ro_HS_Compliant_Status rdfs:label "RoHS Compliant Status"@en ;
+                                      rdfs:comment "This status determines whether a product is RoHS compliant or not."@en ;
                                       skos:prefLabel "RoHS Compliant Status"@en .
 
 
@@ -21668,4 +22507,4 @@ ecsel-dr-RAMI40:Asset rdfs:comment "Every I4.0-component has to represent an ent
              ]
  ] .
 
-###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

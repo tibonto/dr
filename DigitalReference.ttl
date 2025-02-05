@@ -47,13 +47,11 @@
                                 terms:creator "George Dimitrakopoulos"@en ,
                                               "Hans Ehm"@en ;
                                 terms:isVersionOf <http://www.w3id.org/ecsel-dr> ;
-                                terms:license <https://creativecommons.org/licenses/by/4.0/> ;
-                                terms:modified "2024-01-25"^^xsd:date ;
+                                terms:modified "2025-02-05"^^xsd:date ;
                                 terms:title "Digital Reference"@en ;
                                 vann:preferredNamespaceUri <http://www.w3id.org/ecsel-dr/> ;
-                                rdfs:comment "This ontology represents Incoterms 2020 starndards"@en ;
                                 rdfs:label "Digital Reference"@en ;
-                                owl:versionInfo "1.2.1" .
+                                owl:versionInfo "1.2.2" .
 
 #################################################################
 #    Annotation properties
@@ -450,11 +448,6 @@ Note that the value-space is not defined, so a generic OWL2 processor cannot com
                                         rdfs:label "result time"@en ;
                                         skos:definition "The result time is the instant of time when the Observation, Actuation or Sampling activity was completed."@en .
 
-
-###  http://www.w3.org/2002/07/owl#topObjectProperty
-owl:topObjectProperty rdf:type owl:FunctionalProperty ;
-                      rdfs:domain ecsel-dr-DF:Customer ;
-                      rdfs:range ecsel-dr-DF:Supply_Contract .
 
 ###  http://www.w3.org/TR/vocab-ssn-ext/has_member
 <http://www.w3.org/TR/vocab-ssn-ext/has_member> rdf:type owl:ObjectProperty ;
@@ -10965,7 +10958,7 @@ ecsel-dr-Planning:due_date rdf:type owl:DatatypeProperty ;
                                        ecsel-dr-Planning:Part ,
                                        ecsel-dr-Planning:Planning_Object ,
                                        ecsel-dr-Planning:Supply_Information ;
-                           rdfs:range xsd:dateTime ;
+                           rdfs:range xsd:duration ;
                            rdfs:comment "This is the latest time where the activities associated with a PLANNING OBJECT have to be finished. Note that the parameter DUE DATE is exogenous, i.e. given, in contrast to the property TIME." ;
                            rdfs:label "due date"@en .
 
@@ -13004,7 +12997,7 @@ ssn:System rdf:type owl:Class ;
 <http://www.w3.org/ns/ssn/systems/Detection_Limit> rdf:type owl:Class ;
                                                    rdfs:subClassOf <http://www.w3.org/ns/ssn/systems/System_Property> ;
                                                    rdfs:comment "An observed value for which the probability of falsely claiming the absence of a component in a material is beta, given a probability alpha of falsely claiming its presence." ;
-                                                   rdfs:isDefinedBy <<http://www.w3.org/ns/ssn/systems/DetectionLimit> ;
+                                                   rdfs:isDefinedBy <http://www.w3.org/ns/ssn/systems/DetectionLimit> ;
                                                    rdfs:label "Detection Limit"@en .
 
 
@@ -22641,7 +22634,7 @@ ecsel-dr-Planning:Borderless_FE1_zu_FE2 rdf:type owl:NamedIndividual ,
                                         ecsel-dr-Planning:has_location ecsel-dr-Planning:Frontend_2 ;
                                         ecsel-dr-Planning:has_owner ecsel-dr-Planning:FE1 ;
                                         ecsel-dr-Planning:has_product ecsel-dr-Planning:Product_1 ;
-                                        ecsel-dr-Planning:due_date "1 week" ;
+                                        ecsel-dr-Planning:due_date "P7D" ;
                                         ecsel-dr-Planning:quantity 10 .
 
 

@@ -17758,7 +17758,10 @@ ecsel-dr-DF:Plan rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-DF#Planning
 ecsel-dr-DF:Planning rdf:type owl:Class ;
-                     rdfs:subClassOf dr:Planning_Lobe .
+                     rdfs:subClassOf dr:Planning_Lobe ;
+                     rdfs:comment "PLANNING is an activity with the purpose to determine a plan. Planning is associated with goals, represented by objective functions to be optimized." ;
+                     rdfs:label "Planning" ;
+                     skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-DF#Planning_Period
@@ -18525,7 +18528,8 @@ ecsel-dr-OM:Action rdf:type owl:Class ;
                                        ] ;
                    rdfs:subClassOf dr:Supply_Chain_Lobe ;
                    rdfs:comment "The process of doing something"@en ;
-                   rdfs:label "Action"@en .
+                   rdfs:label "Action"@en ;
+                   skos:altLabel "_DR sc" .
 
 
 ###  http://www.w3id.org/ecsel-dr-OM#Allocation
@@ -20789,7 +20793,7 @@ ecsel-dr-Planning:Autonomous rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Available_Capacity
 ecsel-dr-Planning:Available_Capacity rdf:type owl:Class ;
-                                     rdfs:subClassOf ecsel-dr-Planning:Capacity ;
+                                     rdfs:subClassOf ecsel-dr-Planning:Required_Capacity ;
                                      rdfs:comment ": The AVAILABLE CAPACITY describes the ability of a resource within a period of time to perform activities or processes. Elmaghraby (2011) refers to this as operational capacity, i.e. the productive capacity that is obtained from the nominal capacity by subtracting the anticipated and unavoidable loss in productivity, for instance, due to machine breakdowns in a wafer fab." ;
                                      rdfs:label "Available Capacity"@en .
 
@@ -20831,35 +20835,41 @@ ecsel-dr-Planning:Component_Part rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-Planning#Criteria
 ecsel-dr-Planning:Criteria rdf:type owl:Class ;
                            rdfs:subClassOf dr:Planning_Lobe ;
-                           rdfs:comment "Typical criteria are maximization, minimization, i.e. if an optimization problem is considered, or larger or smaller than a prescribed value of the certain performance measure, a so-called target, i.e. if a satisfaction problem is solved. In a multi-criteria setting, the dominance concept for plans is of interest." .
+                           rdfs:comment "Typical criteria are maximization, minimization, i.e. if an optimization problem is considered, or larger or smaller than a prescribed value of the certain performance measure, a so-called target, i.e. if a satisfaction problem is solved. In a multi-criteria setting, the dominance concept for plans is of interest." ;
+                           rdfs:label "Criteria" ;
+                           skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Decision_Maker_Type
 ecsel-dr-Planning:Decision_Maker_Type rdf:type owl:Class ;
                                       rdfs:subClassOf dr:Planning_Lobe ;
                                       rdfs:comment "We distinguish human decision-makers (human DECISION-MAKING UNITS) from fully automated DECISION-MAKING UNITS where computers make fully automated decisions. Between these two extremes there are semi-automated decisions, where a computer provides several decision alternatives and a human decision-maker chooses among them. Note that the decision-maker type can change over time." ;
-                                      rdfs:label "Decision Maker Type"@en .
+                                      rdfs:label "Decision Maker Type"@en ;
+                                      skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Decision_Making_Initiative
 ecsel-dr-Planning:Decision_Making_Initiative rdf:type owl:Class ;
                                              rdfs:subClassOf dr:Planning_Lobe ;
                                              rdfs:comment "We distinguish fully autonomous DECISION-MAKING UNITS from DECISION-MAKING UNITS where the decision-making activities are triggered by other DECISION-MAKING UNITS. Note that the decision-making initiative can change over time in a situation-dependent manner." ;
-                                             rdfs:label "Decision Making Initiative"@en .
+                                             rdfs:label "Decision Making Initiative"@en ;
+                                             skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Decision_Making_Unit
 ecsel-dr-Planning:Decision_Making_Unit rdf:type owl:Class ;
                                        rdfs:subClassOf dr:Planning_Lobe ;
                                        rdfs:comment "The DECISION-MAKING UNIT specifies an instance that makes decisions." ;
-                                       rdfs:label "Decision Making Unit"@en .
+                                       rdfs:label "Decision Making Unit"@en ;
+                                       skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Decison_Making_Unit_Character
 ecsel-dr-Planning:Decison_Making_Unit_Character rdf:type owl:Class ;
                                                 rdfs:subClassOf dr:Planning_Lobe ;
                                                 rdfs:comment "In an ANTAGO¬NISTIC SETTING, the different DECISION-MAKING UNITS try to meet their own objectives which are in conflict. In a non-antagonistic setting, the DECISION-MAKING UNITS do not exploit their private knowledge in an opportunistic way." ;
-                                                rdfs:label "Decison Making Unit Character"@en .
+                                                rdfs:label "Decison Making Unit Character"@en ;
+                                                skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Demand
@@ -20882,14 +20892,17 @@ ecsel-dr-Planning:Distributed_Hierarchical_Situation rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Edge
 ecsel-dr-Planning:Edge rdf:type owl:Class ;
-                       rdfs:subClassOf dr:Planning_Lobe .
+                       rdfs:subClassOf dr:Planning_Lobe ;
+                       rdfs:label "Edge" ;
+                       skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Frozen_Fence
 ecsel-dr-Planning:Frozen_Fence rdf:type owl:Class ;
                                rdfs:subClassOf dr:Planning_Lobe ;
-                               rdfs:comment "FROZEN FENCE is used to set a frozen interval  in which decision making is not allowed to change the previously determined values." ;
-                               rdfs:label "Frozen Fence"@en .
+                               rdfs:comment "FROZEN FENCE is used to set a frozen interval in which decision making is not allowed, or a defined exception, to change the previously determined values." ;
+                               rdfs:label "Frozen Fence"@en ;
+                               skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Heterarchical_Situation
@@ -20902,7 +20915,8 @@ ecsel-dr-Planning:Heterarchical_Situation rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-Planning#Hierarchical_Situation
 ecsel-dr-Planning:Hierarchical_Situation rdf:type owl:Class ;
                                          rdfs:subClassOf dr:Planning_Lobe ;
-                                         rdfs:label "Hierarchical Situation"@en .
+                                         rdfs:label "Hierarchical Situation"@en ;
+                                         skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Human
@@ -20973,8 +20987,10 @@ ecsel-dr-Planning:Part rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-Planning#Performance_Measure
 ecsel-dr-Planning:Performance_Measure rdf:type owl:Class ;
                                       rdfs:subClassOf dr:Planning_Lobe ;
-                                      rdfs:comment "Each measure is defined by a calculation procedure. Performance measures can be blended using weights to express the importance of the different measures." ;
-                                      rdfs:label "Performance Measure"@en .
+                                      rdfs:comment "A PERFORMANCE MEASURE is defined by a calculation procedure. Performance measures can be blended using weights to express the importance." ,
+                                                   "Each measure is defined by a calculation procedure. Performance measures can be blended using weights to express the importance of the different measures." ;
+                                      rdfs:label "Performance Measure"@en ;
+                                      skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Plan
@@ -20987,76 +21003,88 @@ ecsel-dr-Planning:Plan rdf:type owl:Class ;
 ecsel-dr-Planning:Plan_Execution rdf:type owl:Class ;
                                  rdfs:subClassOf dr:Planning_Lobe ;
                                  rdfs:comment "A PLAN EXECUTION is related to performing the activities according to a PLAN either directly in the base system, for instance, releasing lots into a wafer fab, or as instructions for another DECISION-MAKING UNIT." ;
-                                 rdfs:label "Plan Execution"@en .
+                                 rdfs:label "Plan Execution"@en ;
+                                 skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Planing_Purpose
 ecsel-dr-Planning:Planing_Purpose rdf:type owl:Class ;
                                   rdfs:subClassOf dr:Planning_Lobe ;
                                   rdfs:comment "The PLANNING PURPOSE specifies the objectives of a certain planning activity. It is given by a set of performance measures that are related to a set of PLANNING OBJECTS." ;
-                                  rdfs:label "Planing Purpose"@en .
+                                  rdfs:label "Planning Purpose" .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Planning_Approach
 ecsel-dr-Planning:Planning_Approach rdf:type owl:Class ;
                                     rdfs:subClassOf dr:Planning_Lobe ;
                                     rdfs:comment "Specific planning algorithm which is used in a deticated planning process" ;
-                                    rdfs:label "Planning Approach"@en .
+                                    rdfs:label "Planning Approach"@en ;
+                                    skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Planning_Constraint
 ecsel-dr-Planning:Planning_Constraint rdf:type owl:Class ;
                                       rdfs:subClassOf dr:Planning_Lobe ;
-                                      rdfs:comment "A PLANNING CONSTRAINT restricts the action space. This space is formed by alternative actions that are a result of the planning decisions (Schneeweis 2003). In the planning domain, PLANNING CONSTRAINTS, often the capacity offered by resources, limit the quantities that are assigned to the PLANNING OBJECTS or impact the temporal properties of PLANNING OBJECTS." ;
-                                      rdfs:label "Planning Constraint"@en .
+                                      rdfs:comment """In the planning domain a PLANNING CONSTRAINTS is often referred to capacity limitation, which limit the quantities that can be produced on an equipment or a fab for a certain product or product groups. Other Constraints can be workforce or material. Constraints can be temporary and can change. 
+Most popular academic definition: A PLANNING CONSTRAINT restricts the action space. This space is formed by alternative actions that are a result of the planning decisions (Schneeweis 2003).""" ;
+                                      rdfs:label "Planning Constraint"@en ;
+                                      skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Planning_Decision
 ecsel-dr-Planning:Planning_Decision rdf:type owl:Class ;
                                     rdfs:subClassOf dr:Planning_Lobe ;
-                                    rdfs:comment "Decisions determined by a Decision Making Unit" ;
-                                    rdfs:label "Planning Decision"@en .
+                                    rdfs:comment "The PLANNING DECISIONS is the best choice out of options, determined by the DECISION-MAKING UNIT." ;
+                                    rdfs:label "Planning Decision"@en ;
+                                    skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Planning_Function
 ecsel-dr-Planning:Planning_Function rdf:type owl:Class ;
                                     rdfs:subClassOf dr:Planning_Lobe ;
                                     rdfs:comment "Describes the different functions and its properies follwing the supply chain planning matrix." ;
-                                    rdfs:label "Planning Function"@en .
+                                    rdfs:label "Planning Function"@en ;
+                                    skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Planning_Instance
 ecsel-dr-Planning:Planning_Instance rdf:type owl:Class ;
                                     rdfs:subClassOf dr:Planning_Lobe ;
                                     rdfs:comment "A PLANNING INSTANCE specifies the PLANNING OBJECTS and the values of related PLANNING CONSTRAINTS that form the basis for a planning decision." ;
-                                    rdfs:label "Planning Instance"@en .
+                                    rdfs:label "Planning Instance"@en ;
+                                    skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Planning_Object
 ecsel-dr-Planning:Planning_Object rdf:type owl:Class ;
                                   rdfs:subClassOf dr:Planning_Lobe ;
                                   rdfs:comment "A PLANNING OBJECT specifies what has to be planned as an atomic unit. A single PLANNING OBJECT typically represents a quantity of a certain product or product aggregate to be released or completed within a certain period in a certain node of the semiconductor supply chain. Other PLANNING OBJECTS can be orders or lots. Values are assigned to the attributes of a PLANNING OBJECT as a result of a planning decision." ;
-                                  rdfs:label "Planning Object"@en .
+                                  rdfs:label "Planning Object"@en ;
+                                  skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Planning_Process
 ecsel-dr-Planning:Planning_Process rdf:type owl:Class ;
                                    rdfs:subClassOf dr:Planning_Lobe ;
                                    rdfs:comment "The PLANNING PROCESS specifies under which circumstances which (re)planning activities are performed by a DECISION-MAKING UNIT." ;
-                                   rdfs:label "Planning Process"@en .
+                                   rdfs:label "Planning Process"@en ;
+                                   skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Planning_Situation
 ecsel-dr-Planning:Planning_Situation rdf:type owl:Class ;
                                      rdfs:subClassOf dr:Planning_Lobe ;
                                      rdfs:comment "The PLANNING SITUATION describes the organization of several DECISION-MAKING UNITS and also its environment." ;
-                                     rdfs:label "Planning Situation"@en .
+                                     rdfs:label "Planning Situation"@en ;
+                                     skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Process
 ecsel-dr-Planning:Process rdf:type owl:Class ;
                           rdfs:subClassOf dr:Planning_Lobe ;
-                          rdfs:comment "A PROCESS specifies a method of making a product at a location. The process is expressed at a coarse level of granularity suitable for use in production planning." .
+                          rdfs:comment "A PROCESS is a collection of subprocesses that meet a specific business objective. E.g. Perform Sourcing or Purchase Materials and Services. A production PROCESS specifies a method of making a product at a location. The process is expressed at a coarse level of granularity suitable for use in production planning." ;
+                          rdfs:label "Process" ;
+                          skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Product
@@ -21069,16 +21097,18 @@ ecsel-dr-Planning:Product rdf:type owl:Class ;
 ecsel-dr-Planning:Product_Aggregate rdf:type owl:Class ;
                                     rdfs:subClassOf dr:Planning_Lobe ;
                                     rdfs:comment "Additional lobe: Product"@en ,
-                                                 "A PRODUCT AGGREGATE combines individual products into a few logical products groups. This results in a reduction of complexity, which enables a better overview." ;
-                                    rdfs:label "Product Aggregate"@en .
+                                                 "A PRODUCT AGGREGATE combines individual products into a product group, called a PRODUCT AGGREGATE. This results in a reduction of complexity, which enables a better overview." ;
+                                    rdfs:label "Product Aggregate"@en ;
+                                    skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Product_Hierarchy
 ecsel-dr-Planning:Product_Hierarchy rdf:type owl:Class ;
                                     rdfs:subClassOf dr:Planning_Lobe ;
                                     rdfs:comment "Additional lobe: Product"@en ,
-                                                 "A PRODUCT HIERARCHY characterizes the top-down and bottom-up relationship between different product aggregates. It organizes the product aggregates according to defined criteria. A product aggregate is used to group different products based on certain criteria. The grouping criteria depend on the planning purpose (e.g. controlling, production). It is a certain view on a set of products." ;
-                                    rdfs:label "Product Hierarchy"@en .
+                                                 "A PRODUCT HIERARCHY characterizes the top-down and bottom-up relationship between different product aggregates. It organizes the product aggregates according to defined criteria. A product aggregate is used to group different products based on certain criteria. The grouping criteria depends often on the planning purpose (e.g. controlling, production). It is a certain view on a set of products." ;
+                                    rdfs:label "Product Hierarchy"@en ;
+                                    skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Projected_WIP
@@ -21092,8 +21122,9 @@ ecsel-dr-Planning:Projected_WIP rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-Planning#Replanning_Degree
 ecsel-dr-Planning:Replanning_Degree rdf:type owl:Class ;
                                     rdfs:subClassOf dr:Planning_Lobe ;
-                                    rdfs:comment "The degree distinguishes replanning from scratch and repair of existing plans (Vieria et al. 2003)." ;
-                                    rdfs:label "Replanning Degree"@en .
+                                    rdfs:comment "The degree of change between an updated plan and a previous plan." ;
+                                    rdfs:label "Replanning Degree"@en ;
+                                    skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Required_Capacity
@@ -21159,7 +21190,9 @@ ecsel-dr-Planning:Supply_Information rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-Planning#Target
 ecsel-dr-Planning:Target rdf:type owl:Class ;
                          rdfs:subClassOf dr:Planning_Lobe ;
-                         rdfs:comment "Targets are prescribed values for the different performance measures." .
+                         rdfs:comment "Targets are prescribed values for the different performance measures." ;
+                         rdfs:label "Target" ;
+                         skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Temporal-Constraints
@@ -21177,7 +21210,9 @@ ecsel-dr-Planning:Trigger rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Vertex
 ecsel-dr-Planning:Vertex rdf:type owl:Class ;
-                         rdfs:subClassOf dr:Planning_Lobe .
+                         rdfs:subClassOf dr:Planning_Lobe ;
+                         rdfs:label "Vertex" ;
+                         skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Yield
@@ -21408,24 +21443,25 @@ ecsel-dr-SCP:AP_FCST rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-SCP#Aggregated_Capacity
 ecsel-dr-SCP:Aggregated_Capacity rdf:type owl:Class ;
                                  rdfs:subClassOf dr:Planning_Lobe ;
-                                 rdfs:comment "(restricted) The Aggregated Capacity Group combines products that are interchangeable in production resources (e.g. can be produced on the same equipment) and having the same capacity consumption. Using an ACG provides flexibility in a way of switching demands of this products within this ACG."@en ;
-                                 rdfs:label "Aggregated Capacity"@en .
+                                 rdfs:comment "The AGGREGATED CAPACITY GROUP (ACG) combines products that are interchangeable in production resources (e.g. can be produced on the same equipment) and having the same capacity consumption. Using an ACG provides flexibility in a way of switching demands of this products within this ACG." ;
+                                 rdfs:label "Aggregated Capacity"@en ;
+                                 skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Allocated_Available_To_Promise
 ecsel-dr-SCP:Allocated_Available_To_Promise rdf:type owl:Class ;
                                             rdfs:subClassOf dr:Planning_Lobe ;
-                                            rdfs:comment """AATP  is a data mart  that shows data from GOAL AATP process, combining data from 3 sources: SAP, I2 Applications and LogDB.
-
-The universe provides access to the fact tables delivered by GOAL like Availability / Allocation Planning / Seller Mapping / Coverage."""@en ;
-                                            rdfs:label "Allocated Available To Promise"@en .
+                                            rdfs:comment "The AATP (Allocated Available To Promise) is this part of the ATP (Available To Promise) which is already located to a certain customer(group) or a region." ;
+                                            rdfs:label "Allocated Available To Promise"@en ;
+                                            skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Available_To_Promise
 ecsel-dr-SCP:Available_To_Promise rdf:type owl:Class ;
                                   rdfs:subClassOf dr:Planning_Lobe ;
-                                  rdfs:comment "Available to promise is a business function that provides a response to customer order inquiries, based on resource availability. It generates available quantities of the requested product, and delivery due dates."@en ;
-                                  rdfs:label "Available To Promise"@en .
+                                  rdfs:comment "The ATP (Available to promise) is todays and upcoming Availability of products for demand fulfillment and order promising." ;
+                                  rdfs:label "Available To Promise"@en ;
+                                  skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Bottleneck_Resource
@@ -21444,14 +21480,17 @@ ecsel-dr-SCP:Buffer_Stock_Order rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-SCP#Capacity_Bottleneck
 ecsel-dr-SCP:Capacity_Bottleneck rdf:type owl:Class ;
                                  rdfs:subClassOf dr:Planning_Lobe ;
-                                 rdfs:label "Capacity Bottleneck"@en .
+                                 rdfs:comment "A CAPACITY BOTTLENECK describes a machine or another element, which constrains the flow of a product. The throughput of the Capacity Bottlenecks define the throughput of a production line." ;
+                                 rdfs:label "Capacity Bottleneck"@en ;
+                                 skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Confirmation
 ecsel-dr-SCP:Confirmation rdf:type owl:Class ;
                           rdfs:subClassOf dr:Planning_Lobe ;
-                          rdfs:comment "Order acknowledgement"@en ;
-                          rdfs:label "Confirmation"@en .
+                          rdfs:comment "Order acknowledgement with a due date from the supplier." ;
+                          rdfs:label "Confirmation"@en ;
+                          skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Consignment_Order
@@ -21476,7 +21515,8 @@ ecsel-dr-SCP:Customer_Logistics_Management_Representative rdf:type owl:Class ;
                                                           rdfs:subClassOf dr:Planning_Lobe ;
                                                           rdfs:comment "A Customer Logistics Management Representative (CLM) is the “one face to our customers” that takes care of all customers’ supply chain topics. He or she channels all customer logistic requirements into Infineon’s organization and balances the needs against our capabilities."@en ,
                                                                        "Being the main interface between Customer, Sales and the Supply Chain Planner he is responsible for the demand fulfilment process. It is his task to ensure in-time delivery to customers based on orders and forecasts and to achieve high customer satisfaction."@en ;
-                                                          rdfs:label "Customer Logistics Management Representative"@en .
+                                                          rdfs:label "Customer Logistics Management Representative"@en ;
+                                                          skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#DC
@@ -21511,7 +21551,8 @@ ecsel-dr-SCP:Forecast rdf:type owl:Class ;
 ecsel-dr-SCP:General_Customer rdf:type owl:Class ;
                               rdfs:subClassOf dr:Planning_Lobe ,
                                               ecsel-dr-SCP:Customer ;
-                              rdfs:label "General Customers"@en .
+                              rdfs:label "General Customers"@en ;
+                              skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#HP_Forecast
@@ -21523,7 +21564,9 @@ ecsel-dr-SCP:HP_Forecast rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-SCP#Marketing_Demand
 ecsel-dr-SCP:Marketing_Demand rdf:type owl:Class ;
                               rdfs:subClassOf dr:Planning_Lobe ;
-                              rdfs:label "Marketing Demand"@en .
+                              rdfs:comment "Marketing Demand is a supply chain or production request for a specific product, product group or service, coming from the market. Either demand exists explicitly in form of customer need (e.g. orders or EDI forecast) or implicitly as expected customer need." ;
+                              rdfs:label "Marketing Demand"@en ;
+                              skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Max_Stock
@@ -21544,7 +21587,9 @@ ecsel-dr-SCP:Min_Stock rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-SCP#NEWs
 ecsel-dr-SCP:NEWs rdf:type owl:Class ;
                   rdfs:subClassOf dr:Planning_Lobe ;
-                  rdfs:label "nEWs"@en .
+                  rdfs:comment "A nEW is a negative Early Warning and it means that a new customer order confirmation is worse (later order confirmation date) than the previous order confirmation. nEWs is the plural of nEW." ;
+                  rdfs:label "nEWs"@en ;
+                  skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#NP_Forecast
@@ -21563,54 +21608,63 @@ ecsel-dr-SCP:OP_Forecast rdf:type owl:Class ;
 ecsel-dr-SCP:Open_Order_Book rdf:type owl:Class ;
                              rdfs:subClassOf dr:Planning_Lobe ;
                              rdfs:comment "An order book is a business's list of open, unshipped, customer orders, normally time-phased and valued at actual individual order prices, that may include margin and profitability analysis."@en ;
-                             rdfs:label "Open Order Book"@en .
+                             rdfs:label "Open Order Book"@en ;
+                             skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Operational_Demand
 ecsel-dr-SCP:Operational_Demand rdf:type owl:Class ;
                                 rdfs:subClassOf dr:Planning_Lobe ;
-                                rdfs:label "Operational Demand"@en .
+                                rdfs:label "Operational Demand"@en ;
+                                skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Order
 ecsel-dr-SCP:Order rdf:type owl:Class ;
                    rdfs:subClassOf dr:Planning_Lobe ;
-                   rdfs:label "Order"@en .
+                   rdfs:comment "An order is a confirmation of a transaction (a receipt), which can contain multiple line items, each represented by an Offer that has been accepted by the customer." ;
+                   rdfs:label "Order"@en ;
+                   skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Order_Line_Item
 ecsel-dr-SCP:Order_Line_Item rdf:type owl:Class ;
                              rdfs:subClassOf dr:Planning_Lobe ;
-                             rdfs:comment "Every product on the order is referenced by a record that includes quantity and a reference to which order it belongs."@en ;
-                             rdfs:label "Order Line Item"@en .
+                             rdfs:comment "Every product on the order is referenced by a record that includes quantity and usually a customer delivery wish date, as well as a reference to which order it belongs." ;
+                             rdfs:label "Order Line Item"@en ;
+                             skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Order_Reschedule
 ecsel-dr-SCP:Order_Reschedule rdf:type owl:Class ;
                               rdfs:subClassOf dr:Planning_Lobe ;
-                              rdfs:comment "Any change in the requested order delivery date in an order line is referred to as an order rescheduling."@en ;
-                              rdfs:label "Order Reschedule"@en .
+                              rdfs:comment "Any change in the requested order delivery date or volume in an order line is referred to as an order rescheduling." ;
+                              rdfs:label "Order Reschedule"@en ;
+                              skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Order_Schedule_Line
 ecsel-dr-SCP:Order_Schedule_Line rdf:type owl:Class ;
                                  rdfs:subClassOf dr:Planning_Lobe ;
                                  rdfs:comment "Schedule lines contain all the delivery related information"@en ;
-                                 rdfs:label "Order Schedule Line"@en .
+                                 rdfs:label "Order Schedule Line"@en ;
+                                 skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Prioritized_Demand
 ecsel-dr-SCP:Prioritized_Demand rdf:type owl:Class ;
                                 rdfs:subClassOf dr:Planning_Lobe ;
                                 rdfs:comment "The demand that should be covered first."@en ;
-                                rdfs:label "Prioritized Demand"@en .
+                                rdfs:label "Prioritized Demand"@en ;
+                                skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Prioritized_Orders
 ecsel-dr-SCP:Prioritized_Orders rdf:type owl:Class ;
                                 rdfs:subClassOf dr:Planning_Lobe ;
                                 rdfs:comment "Orders that should be completed first."@en ;
-                                rdfs:label "Prioritized Orders"@en .
+                                rdfs:label "Prioritized Orders"@en ;
+                                skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Private_Customer
@@ -21622,8 +21676,9 @@ ecsel-dr-SCP:Private_Customer rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-SCP#Promise
 ecsel-dr-SCP:Promise rdf:type owl:Class ;
                      rdfs:subClassOf dr:Planning_Lobe ;
-                     rdfs:comment "Is the uncommitted portion of supply by the master production schedule and material plan"@en ;
-                     rdfs:label "Promise"@en .
+                     rdfs:comment "A PROMISE is the committed portion of supply by the master production schedule and material plan." ;
+                     rdfs:label "Promise"@en ;
+                     skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Ramp_Up_Stock
@@ -21661,7 +21716,9 @@ ecsel-dr-SCP:Safety_Stock rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-SCP#Sales_Demand
 ecsel-dr-SCP:Sales_Demand rdf:type owl:Class ;
                           rdfs:subClassOf dr:Planning_Lobe ;
-                          rdfs:label "Sales Demand"@en .
+                          rdfs:comment "A SALES DEMAND is a request for a specific product or service that can have different triggers. Either demand exists explicitly in form of customer orders or implicitly as expected customer need that have to be fulfilled by the semiconductor supply chain." ;
+                          rdfs:label "Sales Demand"@en ;
+                          skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Standard_Order
@@ -21681,20 +21738,24 @@ ecsel-dr-SCP:Stocks rdf:type owl:Class ;
 ecsel-dr-SCP:Supply_Demand_Match rdf:type owl:Class ;
                                  rdfs:subClassOf dr:Planning_Lobe ;
                                  rdfs:comment "Supply and demand match when sufficient materials exist to cover material demand while taking available capacity into account."@en ;
-                                 rdfs:label "Supply Demand Match"@en .
+                                 rdfs:label "Supply Demand Match"@en ;
+                                 skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Supply_Picture
 ecsel-dr-SCP:Supply_Picture rdf:type owl:Class ;
                             rdfs:subClassOf dr:Planning_Lobe ;
-                            rdfs:label "Supply Picture"@en .
+                            rdfs:comment "A SUPPLY PICTURE is a visualization of the supply in its dimensions. Supply is the total amount of specific products that is available to customers. Supply has the dimensions quantity, time, location, product, including aggregation of all dimensions. Supply is defined as inventory or plan replenishment." ;
+                            rdfs:label "Supply Picture"@en ;
+                            skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Target_Allocation
 ecsel-dr-SCP:Target_Allocation rdf:type owl:Class ;
                                rdfs:subClassOf dr:Planning_Lobe ;
                                rdfs:comment "The target allocation is the level of allocation planned by the company."@en ;
-                               rdfs:label "Target Allocation"@en .
+                               rdfs:label "Target Allocation"@en ;
+                               skos:altLabel "_DR pl" .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#WIP

@@ -47,11 +47,11 @@
                                               "Hans Ehm"@en ;
                                 terms:isVersionOf <http://www.w3id.org/ecsel-dr> ;
                                 terms:license "Apache License Version 2.0" ;
-                                terms:modified "2025-02-05"^^xsd:date ;
+                                terms:modified "2025-03-19" ;
                                 terms:title "Digital Reference"@en ;
                                 vann:preferredNamespaceUri <http://www.w3id.org/ecsel-dr/> ;
                                 rdfs:label "Digital Reference"@en ;
-                                owl:versionInfo "1.2.3" .
+                                owl:versionInfo "1.2.4" .
 
 #################################################################
 #    Annotation properties
@@ -13248,6 +13248,12 @@ dr:Geographical_Location rdf:type owl:Class ;
                          rdfs:label "Geographical Location"@en .
 
 
+###  http://www.w3id.org/ecsel-dr#Integrated_Device_Manufacturer
+dr:Integrated_Device_Manufacturer rdf:type owl:Class ;
+                                  rdfs:subClassOf ecsel-dr-BMS:Semiconductor_Company ;
+                                  rdfs:label "IDM" .
+
+
 ###  http://www.w3id.org/ecsel-dr#Organization
 dr:Organization rdf:type owl:Class ;
                 rdfs:subClassOf dr:Organization_Lobe .
@@ -13257,6 +13263,12 @@ dr:Organization rdf:type owl:Class ;
 dr:Organization_Lobe rdf:type owl:Class ;
                      rdfs:comment "The Organization Lobe refers to the structural and managerial aspects such as organizational structure, roles and responsibilities, efficient coordination and collaboration among various stakeholders within the semiconductor supply chains."@en ;
                      rdfs:label "Organization Lobe"@en .
+
+
+###  http://www.w3id.org/ecsel-dr#Outsourced_Semiconductor_Assembly_And_Test
+dr:Outsourced_Semiconductor_Assembly_And_Test rdf:type owl:Class ;
+                                              rdfs:subClassOf ecsel-dr-BMS:Semiconductor_Company ;
+                                              rdfs:label "OSAT" .
 
 
 ###  http://www.w3id.org/ecsel-dr#Planning_Lobe
@@ -13333,6 +13345,12 @@ The Sensor lobes models the notion of a System and its Deployment.
 It maps the topics of Actuation, Feature of Interest, Input, Mounting Style, Observation and Observation Collection, and  Output.
 It also represents Platform, Procedure, Property, Relationship Nature, Result, Sample Relationship, Sampling, Sensing Type, and Stimulus."""@en ;
                rdfs:label "Sensor Lobe"@en .
+
+
+###  http://www.w3id.org/ecsel-dr#Silicon_Foundry
+dr:Silicon_Foundry rdf:type owl:Class ;
+                   rdfs:subClassOf ecsel-dr-BMS:Semiconductor_Company ;
+                   rdfs:label "SiFo" .
 
 
 ###  http://www.w3id.org/ecsel-dr#Supply_Chain_Lobe
@@ -16186,7 +16204,8 @@ ecsel-dr-BMS:Semiconductor rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-BMS#Semiconductor_Company
 ecsel-dr-BMS:Semiconductor_Company rdf:type owl:Class ;
                                    rdfs:subClassOf dr:Application ;
-                                   rdfs:comment "Company responsible for the manufacturing of semiconductors." .
+                                   rdfs:comment "Company responsible for the manufacturing of semiconductors." ;
+                                   rdfs:label "Semiconductor Company" .
 
 
 ###  http://www.w3id.org/ecsel-dr-BMS#UART_Transceiver_Integrated_Circuit
@@ -22272,6 +22291,98 @@ foaf:Person rdf:type owl:Class ;
 #################################################################
 #    Individuals
 #################################################################
+
+###  http://www.w3id.org/ecsel-dr#AESEMI
+dr:AESEMI rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3id.org/ecsel-dr#Analog_Devices
+dr:Analog_Devices rdf:type owl:NamedIndividual ,
+                           dr:Integrated_Device_Manufacturer ;
+                  rdfs:label "Analog Devices" .
+
+
+###  http://www.w3id.org/ecsel-dr#China_Resources_Microelectronics
+dr:China_Resources_Microelectronics rdf:type owl:NamedIndividual ,
+                                             dr:Integrated_Device_Manufacturer ;
+                                    rdfs:label "China Resources Microelectronics" .
+
+
+###  http://www.w3id.org/ecsel-dr#Hua_Hong_Semiconductor
+dr:Hua_Hong_Semiconductor rdf:type owl:NamedIndividual ,
+                                   dr:Integrated_Device_Manufacturer ;
+                          rdfs:label "Hua Hong Semiconductor" .
+
+
+###  http://www.w3id.org/ecsel-dr#Infineon_Technologies
+dr:Infineon_Technologies rdf:type owl:NamedIndividual ,
+                                  dr:Integrated_Device_Manufacturer ;
+                         rdfs:label "Infineon Technologies" .
+
+
+###  http://www.w3id.org/ecsel-dr#Intel
+dr:Intel rdf:type owl:NamedIndividual ,
+                  dr:Integrated_Device_Manufacturer .
+
+
+###  http://www.w3id.org/ecsel-dr#Littelfuse
+dr:Littelfuse rdf:type owl:NamedIndividual ,
+                       dr:Integrated_Device_Manufacturer .
+
+
+###  http://www.w3id.org/ecsel-dr#Microchip_Technology
+dr:Microchip_Technology rdf:type owl:NamedIndividual ,
+                                 dr:Integrated_Device_Manufacturer ;
+                        rdfs:label "Microchip Technology" .
+
+
+###  http://www.w3id.org/ecsel-dr#Micron_Technology
+dr:Micron_Technology rdf:type owl:NamedIndividual ,
+                              dr:Integrated_Device_Manufacturer ;
+                     rdfs:label "Micron Technology" .
+
+
+###  http://www.w3id.org/ecsel-dr#NXP
+dr:NXP rdf:type owl:NamedIndividual ,
+                dr:Integrated_Device_Manufacturer .
+
+
+###  http://www.w3id.org/ecsel-dr#Renesas
+dr:Renesas rdf:type owl:NamedIndividual ,
+                    dr:Integrated_Device_Manufacturer .
+
+
+###  http://www.w3id.org/ecsel-dr#STMicroelectronics
+dr:STMicroelectronics rdf:type owl:NamedIndividual ,
+                               dr:Integrated_Device_Manufacturer .
+
+
+###  http://www.w3id.org/ecsel-dr#Samsung_Electronics
+dr:Samsung_Electronics rdf:type owl:NamedIndividual ,
+                                dr:Integrated_Device_Manufacturer ;
+                       rdfs:label "Samsung Electronics" .
+
+
+###  http://www.w3id.org/ecsel-dr#Skyworks
+dr:Skyworks rdf:type owl:NamedIndividual ,
+                     dr:Integrated_Device_Manufacturer .
+
+
+###  http://www.w3id.org/ecsel-dr#Texas_Instruments
+dr:Texas_Instruments rdf:type owl:NamedIndividual ,
+                              dr:Integrated_Device_Manufacturer ;
+                     rdfs:label "Texas Instruments" .
+
+
+###  http://www.w3id.org/ecsel-dr#Vishay
+dr:Vishay rdf:type owl:NamedIndividual ,
+                   dr:Integrated_Device_Manufacturer .
+
+
+###  http://www.w3id.org/ecsel-dr#onsemi
+dr:onsemi rdf:type owl:NamedIndividual ,
+                   dr:Integrated_Device_Manufacturer .
+
 
 ###  http://www.w3id.org/ecsel-dr-CO2Savings#Electric_Car
 ecsel-dr-CO2Savings:Electric_Car rdf:type owl:NamedIndividual ,

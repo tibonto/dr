@@ -47,11 +47,11 @@
                                               "Hans Ehm"@en ;
                                 terms:isVersionOf <http://www.w3id.org/ecsel-dr> ;
                                 terms:license "Apache License Version 2.0" ;
-                                terms:modified "2025-03-19" ;
+                                terms:modified "2025-04-04" ;
                                 terms:title "Digital Reference"@en ;
                                 vann:preferredNamespaceUri <http://www.w3id.org/ecsel-dr/> ;
                                 rdfs:label "Digital Reference"@en ;
-                                owl:versionInfo "1.2.4" .
+                                owl:versionInfo "1.2.5" .
 
 #################################################################
 #    Annotation properties
@@ -1479,19 +1479,19 @@ ssn-system:in_condition rdf:type owl:ObjectProperty ;
                         skos:example "Used for example to say that a Sensor has a particular accuracy in particular Conditions." .
 
 
-###  http://www.w3id.org/ecsel-dr#fulfilled_by_demand_fulfillement
-dr:fulfilled_by_demand_fulfillement rdf:type owl:ObjectProperty ;
+###  http://www.w3id.org/ecsel-dr#fulfilled_by_demand_fulfillment
+dr:fulfilled_by_demand_fulfillment rdf:type owl:ObjectProperty ;
                                     rdfs:subPropertyOf owl:topObjectProperty ;
                                     owl:inverseOf dr:fulfills_demand_snapshot ;
                                     rdfs:domain ecsel-dr-SO:Demand_Snapshot ;
-                                    rdfs:range ecsel-dr-OM:Demand_Fulfillement ;
+                                    rdfs:range ecsel-dr-OM:Demand_Fulfillment ;
                                     rdfs:label "fulfilled by demand fulfillement"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr#fulfills_demand_snapshot
 dr:fulfills_demand_snapshot rdf:type owl:ObjectProperty ;
                             rdfs:subPropertyOf owl:topObjectProperty ;
-                            rdfs:domain ecsel-dr-OM:Demand_Fulfillement ;
+                            rdfs:domain ecsel-dr-OM:Demand_Fulfillment ;
                             rdfs:range ecsel-dr-SO:Demand_Snapshot ;
                             rdfs:label "fulfills demand snapshot"@en .
 
@@ -1526,7 +1526,7 @@ dr:has_event_public_holiday rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr#has_geographical_location
 dr:has_geographical_location rdf:type owl:ObjectProperty ;
                              rdfs:subPropertyOf owl:topObjectProperty ;
-                             owl:inverseOf dr:is_georaphical_location_of ;
+                             owl:inverseOf dr:is_geographical_location_of ;
                              rdfs:domain ecsel-dr-SO:Plant ;
                              rdfs:range dr:Geographical_Location ;
                              rdfs:label "has geographical location"@en .
@@ -1575,8 +1575,8 @@ dr:is_date_time_interval_of rdf:type owl:ObjectProperty ;
                             rdfs:label "is date time interval of"@en .
 
 
-###  http://www.w3id.org/ecsel-dr#is_georaphical_location_of
-dr:is_georaphical_location_of rdf:type owl:ObjectProperty ;
+###  http://www.w3id.org/ecsel-dr#is_geographical_location_of
+dr:is_geographical_location_of rdf:type owl:ObjectProperty ;
                               rdfs:subPropertyOf owl:topObjectProperty ;
                               rdfs:domain dr:Geographical_Location ;
                               rdfs:range dr:Public_Holiday ;
@@ -2428,7 +2428,7 @@ ecsel-dr-CO2Savings:has_CO2_burden_of_transportation rdf:type owl:ObjectProperty
 
 ###  http://www.w3id.org/ecsel-dr-CO2Savings#has_CO2_factor_transportation
 ecsel-dr-CO2Savings:has_CO2_factor_transportation rdf:type owl:ObjectProperty ;
-                                                  rdfs:domain ecsel-dr-CO2Savings:Distance_Between_Sender_And_Reciepent ;
+                                                  rdfs:domain ecsel-dr-CO2Savings:Distance_Between_Sender_And_Recipient ;
                                                   rdfs:range ecsel-dr-CO2Savings:CO2_Factor_Transportation ;
                                                   rdfs:label "has CO2 factor transportation"@en .
 
@@ -2505,7 +2505,7 @@ ecsel-dr-CO2Savings:has_CO2_savings_of_one_semiconductor_solar rdf:type owl:Obje
 
 ###  http://www.w3id.org/ecsel-dr-CO2Savings#has_CO2_savings_of_one_semiconductor_wind_turbine
 ecsel-dr-CO2Savings:has_CO2_savings_of_one_semiconductor_wind_turbine rdf:type owl:ObjectProperty ;
-                                                                      rdfs:domain ecsel-dr-CO2Savings:Number_Of_Company_Products_Sold_Wordlwide_Wind_Turbine ;
+                                                                      rdfs:domain ecsel-dr-CO2Savings:Number_Of_Company_Products_Sold_Worldwide_Wind_Turbine ;
                                                                       rdfs:range ecsel-dr-CO2Savings:CO2_Savings_Of_One_Semiconductor_Wind_Turbine ;
                                                                       rdfs:label "has CO2 savings of one semiconductor wind turbine"@en .
 
@@ -2601,7 +2601,7 @@ ecsel-dr-CO2Savings:has_number_of_company_products_sold_worldwide_solar rdf:type
 ecsel-dr-CO2Savings:has_number_of_company_products_sold_worldwide_wind_turbine rdf:type owl:ObjectProperty ;
                                                                                rdfs:domain ecsel-dr-CO2Savings:Number_Of_Semiconductors_Per_Wind_Turbine ,
                                                                                            ecsel-dr-CO2Savings:Number_Of_Wind_Turbines_Installed_Worldwide_In_A_Year ;
-                                                                               rdfs:range ecsel-dr-CO2Savings:Number_Of_Company_Products_Sold_Wordlwide_Wind_Turbine ;
+                                                                               rdfs:range ecsel-dr-CO2Savings:Number_Of_Company_Products_Sold_Worldwide_Wind_Turbine ;
                                                                                rdfs:label "has number of company products sold worldwide wind turbine"@en .
 
 
@@ -2609,7 +2609,7 @@ ecsel-dr-CO2Savings:has_number_of_company_products_sold_worldwide_wind_turbine r
 ecsel-dr-CO2Savings:has_total_electricity_power_consumption rdf:type owl:ObjectProperty ;
                                                             rdfs:subPropertyOf owl:topObjectProperty ;
                                                             rdfs:domain ecsel-dr-CO2Savings:Back_End_Manufacturing ,
-                                                                        ecsel-dr-CO2Savings:Contracter_Or_Outside_The_Company ,
+                                                                        ecsel-dr-CO2Savings:Contractor_Or_Outside_The_Company ,
                                                                         ecsel-dr-CO2Savings:Total_Infrastructure ;
                                                             rdfs:range ecsel-dr-CO2Savings:Total_Electricity_Power_Consumption ;
                                                             rdfs:label "has total electricity power consumption"@en .
@@ -2793,7 +2793,7 @@ ecsel-dr-CO2Savings:leads_to_CO2_burden_of_raw_material rdf:type owl:ObjectPrope
 
 ###  http://www.w3id.org/ecsel-dr-CO2Savings#leads_to_CO2_burden_of_transportation
 ecsel-dr-CO2Savings:leads_to_CO2_burden_of_transportation rdf:type owl:ObjectProperty ;
-                                                          rdfs:domain ecsel-dr-CO2Savings:Distance_Between_Sender_And_Receipent_Km ;
+                                                          rdfs:domain ecsel-dr-CO2Savings:Distance_Between_Sender_And_Recipient_Km ;
                                                           rdfs:range ecsel-dr-CO2Savings:CO2_Burden_Of_Transportation ;
                                                           rdfs:label "leads to CO2 burden of transportation"@en .
 
@@ -2896,8 +2896,8 @@ ecsel-dr-CO2Savings:leads_to_CO2_savings_of_solar_panel_in_company_world rdf:typ
                                                                          rdfs:label "leads to CO2 savings of solar panel in company world"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-CO2Savings#leads_to_CO2_savings_of_solar_panels_sold_wordlwide_in_a_year
-ecsel-dr-CO2Savings:leads_to_CO2_savings_of_solar_panels_sold_wordlwide_in_a_year rdf:type owl:ObjectProperty ;
+###  http://www.w3id.org/ecsel-dr-CO2Savings#leads_to_CO2_savings_of_solar_panels_sold_worldwide_in_a_year
+ecsel-dr-CO2Savings:leads_to_CO2_savings_of_solar_panels_sold_worldwide_in_a_year rdf:type owl:ObjectProperty ;
                                                                                   rdfs:domain ecsel-dr-CO2Savings:Energy_Mix_Solar_Panel ;
                                                                                   rdfs:range ecsel-dr-CO2Savings:CO2_Savings_Of_Solar_Panels_Sold_Worldwide_In_A_Year ;
                                                                                   rdfs:label "leads to CO2 savings of solar panels sold wordlwide in a year"@en .
@@ -3032,7 +3032,7 @@ ecsel-dr-CO2Savings:leads_to_data_from_50_reference_products rdf:type owl:Object
 ###  http://www.w3id.org/ecsel-dr-CO2Savings#leads_to_distance_between_sender_and_recipient
 ecsel-dr-CO2Savings:leads_to_distance_between_sender_and_recipient rdf:type owl:ObjectProperty ;
                                                                    rdfs:domain ecsel-dr-CO2Savings:Transportation ;
-                                                                   rdfs:range ecsel-dr-CO2Savings:Distance_Between_Sender_And_Reciepent ;
+                                                                   rdfs:range ecsel-dr-CO2Savings:Distance_Between_Sender_And_Recipient ;
                                                                    rdfs:label "leads to distance between sender and recipient"@en .
 
 
@@ -3109,7 +3109,7 @@ ecsel-dr-CO2Savings:leads_to_market_share_of_company_in_gcar_world rdf:type owl:
 ###  http://www.w3id.org/ecsel-dr-CO2Savings#leads_to_material_existence_in_the_front_end_or_back_end_manufacturing
 ecsel-dr-CO2Savings:leads_to_material_existence_in_the_front_end_or_back_end_manufacturing rdf:type owl:ObjectProperty ;
                                                                                            rdfs:domain ecsel-dr-CO2Savings:Raw_Material ;
-                                                                                           rdfs:range ecsel-dr-CO2Savings:Material_Esixtence_In_The_Front_End_Or_Back_End_Manufacturing ;
+                                                                                           rdfs:range ecsel-dr-CO2Savings:Material_Existence_In_The_Front_End_Or_Back_End_Manufacturing ;
                                                                                            rdfs:comment "leads to material existence in the front end (FE) or back end (BE) manufacturing"@en ;
                                                                                            rdfs:label "leads to material existence in the front end or back end manufacturing"@en .
 
@@ -3124,14 +3124,14 @@ ecsel-dr-CO2Savings:leads_to_metals_in_the_front_end_manufacturing rdf:type owl:
 
 ###  http://www.w3id.org/ecsel-dr-CO2Savings#leads_to_number_of_chips_produced_in_the_back_end_manufacturing
 ecsel-dr-CO2Savings:leads_to_number_of_chips_produced_in_the_back_end_manufacturing rdf:type owl:ObjectProperty ;
-                                                                                    rdfs:domain ecsel-dr-CO2Savings:Material_Esixtence_In_The_Front_End_Or_Back_End_Manufacturing ;
+                                                                                    rdfs:domain ecsel-dr-CO2Savings:Material_Existence_In_The_Front_End_Or_Back_End_Manufacturing ;
                                                                                     rdfs:range ecsel-dr-CO2Savings:Number_Of_Chips_Produced_In_The_Back_End_Manufacturing ;
                                                                                     rdfs:label "leads to number of chips produced in the back end manufacturing"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-CO2Savings#leads_to_number_of_chips_produced_in_the_front_end_manufacturing
 ecsel-dr-CO2Savings:leads_to_number_of_chips_produced_in_the_front_end_manufacturing rdf:type owl:ObjectProperty ;
-                                                                                     rdfs:domain ecsel-dr-CO2Savings:Material_Esixtence_In_The_Front_End_Or_Back_End_Manufacturing ;
+                                                                                     rdfs:domain ecsel-dr-CO2Savings:Material_Existence_In_The_Front_End_Or_Back_End_Manufacturing ;
                                                                                      rdfs:range ecsel-dr-CO2Savings:Number_Of_Chips_Produced_In_The_Front_End_Manufacturing ;
                                                                                      rdfs:label "leads to number of chips produced in the front end manufacturing"@en .
 
@@ -3160,7 +3160,7 @@ ecsel-dr-CO2Savings:leads_to_number_of_company_products_sold_worldwide_solar rdf
 ###  http://www.w3id.org/ecsel-dr-CO2Savings#leads_to_number_of_company_products_sold_worldwide_wind_turbine
 ecsel-dr-CO2Savings:leads_to_number_of_company_products_sold_worldwide_wind_turbine rdf:type owl:ObjectProperty ;
                                                                                     rdfs:domain ecsel-dr-CO2Savings:Market_Share_Of_Company_In_Wind_Turbine_World ;
-                                                                                    rdfs:range ecsel-dr-CO2Savings:Number_Of_Company_Products_Sold_Wordlwide_Wind_Turbine ;
+                                                                                    rdfs:range ecsel-dr-CO2Savings:Number_Of_Company_Products_Sold_Worldwide_Wind_Turbine ;
                                                                                     rdfs:label "leads to number of company products sold worldwide wind turbine"@en .
 
 
@@ -3523,8 +3523,8 @@ ecsel-dr-DF:has_customer_class rdf:type owl:ObjectProperty ;
                                rdfs:label "has customer class"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-DF#has_delivey_concept
-ecsel-dr-DF:has_delivey_concept rdf:type owl:ObjectProperty ;
+###  http://www.w3id.org/ecsel-dr-DF#has_delivery_concept
+ecsel-dr-DF:has_delivery_concept rdf:type owl:ObjectProperty ;
                                 rdfs:subPropertyOf owl:topObjectProperty ;
                                 rdfs:domain ecsel-dr-DF:Order ;
                                 rdfs:range ecsel-dr-DF:Delivery_Concept ;
@@ -4008,13 +4008,13 @@ ecsel-dr-GDM:has_dedication rdf:type owl:ObjectProperty ;
                             rdfs:label "has dedication"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-GDM#has_delivery_committment
-ecsel-dr-GDM:has_delivery_committment rdf:type owl:ObjectProperty ;
+###  http://www.w3id.org/ecsel-dr-GDM#has_delivery_commitment
+ecsel-dr-GDM:has_delivery_commitment rdf:type owl:ObjectProperty ;
                                       rdfs:domain ecsel-dr-GDM:Fab ,
                                                   ecsel-dr-GDM:Product_Level_4 ,
                                                   ecsel-dr-GDM:Supply_Chain ;
-                                      rdfs:range ecsel-dr-GDM:Delivery_Committment ;
-                                      rdfs:label "has delivery committment"@en .
+                                      rdfs:range ecsel-dr-GDM:Delivery_Commitment ;
+                                      rdfs:label "has delivery commitment"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#has_demand_snapshot
@@ -4231,8 +4231,8 @@ ecsel-dr-GDM:isRequiredByRouteSequence rdf:type owl:ObjectProperty ;
                                        rdfs:range ecsel-dr-GDM:Route_Sequence .
 
 
-###  http://www.w3id.org/ecsel-dr-GDM#isRestricteByKanban
-ecsel-dr-GDM:isRestricteByKanban rdf:type owl:ObjectProperty ;
+###  http://www.w3id.org/ecsel-dr-GDM#is_restricted_by_kanban
+ecsel-dr-GDM:is_restricted_by_kanban rdf:type owl:ObjectProperty ;
                                  rdfs:domain ecsel-dr-GDM:Route_Sequence ;
                                  rdfs:range ecsel-dr-GDM:Kanban .
 
@@ -4378,8 +4378,8 @@ ecsel-dr-OM:consists_of_order_line_item rdf:type owl:ObjectProperty ;
                                         rdfs:label "consists of order line item"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-OM#consits_of_open_order
-ecsel-dr-OM:consits_of_open_order rdf:type owl:ObjectProperty ;
+###  http://www.w3id.org/ecsel-dr-OM#consists_of_open_order
+ecsel-dr-OM:consists_of_open_order rdf:type owl:ObjectProperty ;
                                   rdfs:subPropertyOf owl:topObjectProperty ;
                                   owl:inverseOf ecsel-dr-OM:is_part_of_open_order_book ;
                                   rdfs:domain ecsel-dr-OM:Open_Order_Book ;
@@ -6574,7 +6574,7 @@ ecsel-dr-Planning:has_constraint rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-Planning#has_criterias
 ecsel-dr-Planning:has_criterias rdf:type owl:ObjectProperty ;
-                                rdfs:domain ecsel-dr-Planning:Planing_Purpose ;
+                                rdfs:domain ecsel-dr-Planning:Planning_Purpose ;
                                 rdfs:range ecsel-dr-Planning:Criteria ;
                                 rdfs:comment "A criterion is assigned to each performance measure that belongs to a PLANNING PURPOSE. Typical criteria are maximization, minimization, i.e. if an optimization problem is considered, or larger or smaller than a prescribed value of the certain performance measure, a so-called target, i.e. if a satisfaction problem is solved. In a multi-criteria setting, the dominance concept for plans is of interest." ;
                                 rdfs:label "has criterias"@en .
@@ -6608,11 +6608,11 @@ ecsel-dr-Planning:has_decision_making_unit rdf:type owl:ObjectProperty ;
                                            rdfs:label "has decision making unit"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-Planning#has_decision_making_unit_charcters
-ecsel-dr-Planning:has_decision_making_unit_charcters rdf:type owl:ObjectProperty ;
+###  http://www.w3id.org/ecsel-dr-Planning#has_decision_making_unit_characters
+ecsel-dr-Planning:has_decision_making_unit_characters rdf:type owl:ObjectProperty ;
                                                      rdfs:subPropertyOf owl:topObjectProperty ;
                                                      rdfs:domain ecsel-dr-Planning:Planning_Situation ;
-                                                     rdfs:range ecsel-dr-Planning:Decison_Making_Unit_Character ;
+                                                     rdfs:range ecsel-dr-Planning:Decision_Making_Unit_Character ;
                                                      rdfs:label "has decision making unit charcters"@en .
 
 
@@ -6685,7 +6685,7 @@ ecsel-dr-Planning:has_location rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-Planning#has_objectives
 ecsel-dr-Planning:has_objectives rdf:type owl:ObjectProperty ;
                                  rdfs:domain ecsel-dr-Planning:Planning_Process ;
-                                 rdfs:range ecsel-dr-Planning:Planing_Purpose ;
+                                 rdfs:range ecsel-dr-Planning:Planning_Purpose ;
                                  rdfs:comment """: The property specifies the objectives of a certain planning activity.
 Moreover, there are additional parameters for most types of PLANNING PROCESS.""" ;
                                  rdfs:label "has objectives"@en .
@@ -6734,7 +6734,7 @@ ecsel-dr-Planning:has_part rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-Planning#has_performance_measures
 ecsel-dr-Planning:has_performance_measures rdf:type owl:ObjectProperty ;
                                            rdfs:subPropertyOf owl:topObjectProperty ;
-                                           rdfs:domain ecsel-dr-Planning:Planing_Purpose ;
+                                           rdfs:domain ecsel-dr-Planning:Planning_Purpose ;
                                            rdfs:range ecsel-dr-Planning:Performance_Measure ;
                                            rdfs:comment "Each PLANNING PURPOSE is determined by a set of performance measures. Each measure is defined by a calculation procedure. Performance measures can be blended using weights to express the importance of the different measures." ;
                                            rdfs:label "has performance measures"@en .
@@ -6787,7 +6787,7 @@ ecsel-dr-Planning:has_planning_object rdf:type owl:ObjectProperty ;
 ecsel-dr-Planning:has_planning_objects rdf:type owl:ObjectProperty ;
                                        rdfs:subPropertyOf owl:topObjectProperty ;
                                        rdfs:domain ecsel-dr-Planning:Part ,
-                                                   ecsel-dr-Planning:Planing_Purpose ;
+                                                   ecsel-dr-Planning:Planning_Purpose ;
                                        rdfs:range ecsel-dr-Planning:Planning_Object ;
                                        rdfs:comment "A set of planning objects is required to determine the performance measure values belonging to the PLANNING PURPOSE. The set of planning objects is often determined by the planning window." ;
                                        rdfs:label "has planning objects"@en .
@@ -6805,7 +6805,7 @@ ecsel-dr-Planning:has_planning_process rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-Planning#has_planning_purpose
 ecsel-dr-Planning:has_planning_purpose rdf:type owl:ObjectProperty ;
                                        rdfs:domain ecsel-dr-Planning:Planning_Process ;
-                                       rdfs:range ecsel-dr-Planning:Planing_Purpose ;
+                                       rdfs:range ecsel-dr-Planning:Planning_Purpose ;
                                        rdfs:label "has planning purpose"@en .
 
 
@@ -6922,7 +6922,7 @@ ecsel-dr-Planning:has_supplying_location rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-Planning#has_targets
 ecsel-dr-Planning:has_targets rdf:type owl:ObjectProperty ;
                               rdfs:subPropertyOf owl:topObjectProperty ;
-                              rdfs:domain ecsel-dr-Planning:Planing_Purpose ;
+                              rdfs:domain ecsel-dr-Planning:Planning_Purpose ;
                               rdfs:range ecsel-dr-Planning:Target ;
                               rdfs:label "has targets"@en .
 
@@ -8110,8 +8110,8 @@ ecsel-dr-CO2Savings:chipcard_manufacturing rdf:type owl:DatatypeProperty ;
                                            rdfs:label "chipcard manufacturing"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-CO2Savings#contracter_or_outside_the_company
-ecsel-dr-CO2Savings:contracter_or_outside_the_company rdf:type owl:DatatypeProperty ;
+###  http://www.w3id.org/ecsel-dr-CO2Savings#contractor_or_outside_the_company
+ecsel-dr-CO2Savings:contractor_or_outside_the_company rdf:type owl:DatatypeProperty ;
                                                       rdfs:label "contracter or outside the company"@en .
 
 
@@ -8125,8 +8125,8 @@ ecsel-dr-CO2Savings:delivery_gross_weight rdf:type owl:DatatypeProperty ;
                                           rdfs:label "delivery gross weight"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-CO2Savings#distance_between_sender_and_receipent
-ecsel-dr-CO2Savings:distance_between_sender_and_receipent rdf:type owl:DatatypeProperty ;
+###  http://www.w3id.org/ecsel-dr-CO2Savings#distance_between_sender_and_recipient
+ecsel-dr-CO2Savings:distance_between_sender_and_recipient rdf:type owl:DatatypeProperty ;
                                                           rdfs:label "distance between sender and receipent"@en .
 
 
@@ -8614,8 +8614,8 @@ ecsel-dr-GDM:an_equipment rdf:type owl:DatatypeProperty ;
                           rdfs:label "an equipment"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-GDM#ativity_ID
-ecsel-dr-GDM:ativity_ID rdf:type owl:DatatypeProperty ,
+###  http://www.w3id.org/ecsel-dr-GDM#activity_ID
+ecsel-dr-GDM:activity_ID rdf:type owl:DatatypeProperty ,
                                  owl:FunctionalProperty ;
                         rdfs:domain ecsel-dr-GDM:Activity ;
                         rdfs:range xsd:string ;
@@ -8749,11 +8749,11 @@ ecsel-dr-GDM:customer_due_date rdf:type owl:DatatypeProperty ;
                                rdfs:label "customer due date"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-GDM#cycle_time_committment
-ecsel-dr-GDM:cycle_time_committment rdf:type owl:DatatypeProperty ;
+###  http://www.w3id.org/ecsel-dr-GDM#cycle_time_commitment
+ecsel-dr-GDM:cycle_time_commitment rdf:type owl:DatatypeProperty ;
                                     rdfs:domain ecsel-dr-GDM:Cycle_Time_Commitment ;
                                     rdfs:range xsd:integer ;
-                                    rdfs:label "cycle time committment"@en .
+                                    rdfs:label "cycle time commitment"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#cycle_time_per_unit
@@ -8968,7 +8968,7 @@ ecsel-dr-GDM:fab_ID rdf:type owl:DatatypeProperty ,
                              owl:FunctionalProperty ;
                     rdfs:domain ecsel-dr-GDM:Calendar ,
                                 ecsel-dr-GDM:Cycle_Time_Commitment ,
-                                ecsel-dr-GDM:Delivery_Committment ,
+                                ecsel-dr-GDM:Delivery_Commitment ,
                                 ecsel-dr-GDM:Equipment_Group ,
                                 ecsel-dr-GDM:Fab ,
                                 ecsel-dr-GDM:Location ,
@@ -9289,7 +9289,7 @@ ecsel-dr-GDM:hasParentLotId rdf:type owl:DatatypeProperty ;
 ###  http://www.w3id.org/ecsel-dr-GDM#hasPeriodBegin
 ecsel-dr-GDM:hasPeriodBegin rdf:type owl:DatatypeProperty ;
                             rdfs:domain ecsel-dr-GDM:Cycle_Time_Commitment ,
-                                        ecsel-dr-GDM:Delivery_Committment ,
+                                        ecsel-dr-GDM:Delivery_Commitment ,
                                         ecsel-dr-GDM:Release_Plan ,
                                         ecsel-dr-GDM:Target_Costs ,
                                         ecsel-dr-GDM:Target_Revenue ,
@@ -9300,7 +9300,7 @@ ecsel-dr-GDM:hasPeriodBegin rdf:type owl:DatatypeProperty ;
 ###  http://www.w3id.org/ecsel-dr-GDM#hasPeriodEnd
 ecsel-dr-GDM:hasPeriodEnd rdf:type owl:DatatypeProperty ;
                           rdfs:domain ecsel-dr-GDM:Cycle_Time_Commitment ,
-                                      ecsel-dr-GDM:Delivery_Committment ,
+                                      ecsel-dr-GDM:Delivery_Commitment ,
                                       ecsel-dr-GDM:Release_Plan ,
                                       ecsel-dr-GDM:Target_Costs ,
                                       ecsel-dr-GDM:Target_Revenue ,
@@ -9447,7 +9447,7 @@ ecsel-dr-GDM:hasProductLevel4ID rdf:type owl:DatatypeProperty ,
                                 rdfs:domain ecsel-dr-GDM:Bill_Of_Materials ,
                                             ecsel-dr-GDM:Current_WIP ,
                                             ecsel-dr-GDM:Cycle_Time_Commitment ,
-                                            ecsel-dr-GDM:Delivery_Committment ,
+                                            ecsel-dr-GDM:Delivery_Commitment ,
                                             ecsel-dr-GDM:Demand_Snapshot ,
                                             ecsel-dr-GDM:Demand_Trace ,
                                             ecsel-dr-GDM:Lot_State ,
@@ -9638,7 +9638,7 @@ ecsel-dr-GDM:hasStockoutProbability rdf:type owl:DatatypeProperty ;
 ecsel-dr-GDM:hasSupplyChainID rdf:type owl:DatatypeProperty ,
                                        owl:FunctionalProperty ;
                               rdfs:domain ecsel-dr-GDM:Cycle_Time_Commitment ,
-                                          ecsel-dr-GDM:Delivery_Committment ,
+                                          ecsel-dr-GDM:Delivery_Commitment ,
                                           ecsel-dr-GDM:Plant ,
                                           ecsel-dr-GDM:Release_Plan ,
                                           ecsel-dr-GDM:Supply_Chain ,
@@ -9674,8 +9674,8 @@ ecsel-dr-GDM:hasTeamID rdf:type owl:DatatypeProperty ,
                        rdfs:range xsd:string .
 
 
-###  http://www.w3id.org/ecsel-dr-GDM#hasTechnicanRequirement
-ecsel-dr-GDM:hasTechnicanRequirement rdf:type owl:DatatypeProperty ;
+###  http://www.w3id.org/ecsel-dr-GDM#has_technician_requirement
+ecsel-dr-GDM:hhas_technician_requirement rdf:type owl:DatatypeProperty ;
                                      rdfs:domain ecsel-dr-GDM:Maintenance ;
                                      rdfs:range xsd:string ;
                                      rdfs:comment "number of technical workers required for the maintenance" .
@@ -9767,7 +9767,7 @@ ecsel-dr-GDM:hasUnit rdf:type owl:DatatypeProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-GDM#hasUnitsPerTimePeriod
 ecsel-dr-GDM:hasUnitsPerTimePeriod rdf:type owl:DatatypeProperty ;
-                                   rdfs:domain ecsel-dr-GDM:Delivery_Committment ,
+                                   rdfs:domain ecsel-dr-GDM:Delivery_Commitment ,
                                                ecsel-dr-GDM:Release_Plan ;
                                    rdfs:range xsd:integer .
 
@@ -10577,8 +10577,8 @@ ecsel-dr-OOSMP:target_application rdf:type owl:DatatypeProperty ;
                                   rdfs:label "target application"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-OOSMP#temperatue_max
-ecsel-dr-OOSMP:temperatue_max rdf:type owl:DatatypeProperty ;
+###  http://www.w3id.org/ecsel-dr-OOSMP#temperature_max
+ecsel-dr-OOSMP:temperature_max rdf:type owl:DatatypeProperty ;
                               rdfs:subPropertyOf ecsel-dr-OOSMP:temperature ;
                               rdf:type owl:FunctionalProperty ;
                               rdfs:domain ecsel-dr-OOSMP:Sensor ;
@@ -10964,7 +10964,7 @@ ecsel-dr-Planning:consumed_qantity rdf:type owl:DatatypeProperty ;
 ###  http://www.w3id.org/ecsel-dr-Planning#costs
 ecsel-dr-Planning:costs rdf:type owl:DatatypeProperty ;
                         rdfs:subPropertyOf owl:topDataProperty ;
-                        rdfs:domain ecsel-dr-Planning:Planing_Purpose ,
+                        rdfs:domain ecsel-dr-Planning:Planning_Purpose ,
                                     ecsel-dr-Planning:Substitution ;
                         rdfs:range xsd:string ;
                         rdfs:comment "Cost refers to the amount of money that is needed to do a certain action for a unit of a certain good, for instance, store or produce a unit of a product." ;
@@ -11198,7 +11198,7 @@ ecsel-dr-Planning:part_type rdf:type owl:DatatypeProperty ;
 ###  http://www.w3id.org/ecsel-dr-Planning#penality_costs
 ecsel-dr-Planning:penality_costs rdf:type owl:DatatypeProperty ;
                                  rdfs:subPropertyOf owl:topDataProperty ;
-                                 rdfs:domain ecsel-dr-Planning:Planing_Purpose ;
+                                 rdfs:domain ecsel-dr-Planning:Planning_Purpose ;
                                  rdfs:range xsd:string ;
                                  rdfs:comment "If CONSTRAINTS are violated by a plan penalties might be used to change the performance measure values to express that the violations are undesired." ;
                                  rdfs:label "penality costs"@en .
@@ -11206,14 +11206,14 @@ ecsel-dr-Planning:penality_costs rdf:type owl:DatatypeProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-Planning#performance_criteria
 ecsel-dr-Planning:performance_criteria rdf:type owl:DatatypeProperty ;
-                                       rdfs:domain ecsel-dr-Planning:Planing_Purpose ;
+                                       rdfs:domain ecsel-dr-Planning:Planning_Purpose ;
                                        rdfs:range xsd:string ;
                                        rdfs:label "performance criteria"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#performance_measure
 ecsel-dr-Planning:performance_measure rdf:type owl:DatatypeProperty ;
-                                      rdfs:domain ecsel-dr-Planning:Planing_Purpose ;
+                                      rdfs:domain ecsel-dr-Planning:Planning_Purpose ;
                                       rdfs:range xsd:string ;
                                       rdfs:label "performance measure"@en .
 
@@ -11236,7 +11236,7 @@ ecsel-dr-Planning:planning_period rdf:type owl:DatatypeProperty ;
 ###  http://www.w3id.org/ecsel-dr-Planning#planning_window
 ecsel-dr-Planning:planning_window rdf:type owl:DatatypeProperty ;
                                   rdfs:subPropertyOf owl:topDataProperty ;
-                                  rdfs:domain ecsel-dr-Planning:Planing_Purpose ,
+                                  rdfs:domain ecsel-dr-Planning:Planning_Purpose ,
                                               ecsel-dr-Planning:Planning_Instance ;
                                   rdfs:range xsd:int ;
                                   rdfs:comment "A planning window described for which amount of periods or which time span the performance measure values have to be calculated. In some situations, the planning window will determine the set of planning objects, for instance, lots completed within the planning window." ;
@@ -11297,7 +11297,7 @@ ecsel-dr-Planning:requested_date rdf:type owl:DatatypeProperty ;
 ###  http://www.w3id.org/ecsel-dr-Planning#revenue
 ecsel-dr-Planning:revenue rdf:type owl:DatatypeProperty ;
                           rdfs:subPropertyOf owl:topDataProperty ;
-                          rdfs:domain ecsel-dr-Planning:Planing_Purpose ;
+                          rdfs:domain ecsel-dr-Planning:Planning_Purpose ;
                           rdfs:range xsd:string ;
                           rdfs:comment "Revenue refers to the amount of income, earning generated by the sale of one unit of a certain good." ;
                           rdfs:label "revenue"@en .
@@ -11381,7 +11381,7 @@ ecsel-dr-Planning:type rdf:type owl:DatatypeProperty ;
 ###  http://www.w3id.org/ecsel-dr-Planning#weights
 ecsel-dr-Planning:weights rdf:type owl:DatatypeProperty ;
                           rdfs:subPropertyOf owl:topDataProperty ;
-                          rdfs:domain ecsel-dr-Planning:Planing_Purpose ;
+                          rdfs:domain ecsel-dr-Planning:Planning_Purpose ;
                           rdfs:range xsd:int ;
                           rdfs:comment "Weights can be used to express preferences of the decision makers among the different performance measures and related criteria. This is, for instance, useful if a lexicographic approach is used." ;
                           rdfs:label "weights"@en .
@@ -11472,19 +11472,19 @@ ecsel-dr-SO:customer_wish_time rdf:type owl:DatatypeProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-SO#cycle_time_commitment_ID
 ecsel-dr-SO:cycle_time_commitment_ID rdf:type owl:DatatypeProperty ;
-                                     rdfs:domain ecsel-dr-SO:Cycle_Time_Committment ;
+                                     rdfs:domain ecsel-dr-SO:Cycle_Time_Commitment ;
                                      rdfs:range xsd:string ;
                                      rdfs:comment "Cycle Time Commitment: FK; Name of the product level 3"@en ;
                                      rdfs:label "cycle time commitment ID"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SO#cycle_time_committment
-ecsel-dr-SO:cycle_time_committment rdf:type owl:DatatypeProperty ;
-                                   rdfs:domain ecsel-dr-SO:Cycle_Time_Committment ;
+###  http://www.w3id.org/ecsel-dr-SO#cycle_time_commitment
+ecsel-dr-SO:cycle_time_commitment rdf:type owl:DatatypeProperty ;
+                                   rdfs:domain ecsel-dr-SO:Cycle_Time_Commitment ;
                                    rdfs:range xsd:dateTime ;
                                    rdfs:comment "Cycle Time Commitment: Committed overall supply chain cycle time"@en ,
                                                 "length of, or element of the length of, a temporal extent expressed in seconds"@en ;
-                                   rdfs:label "cycle time committment"@en .
+                                   rdfs:label "cycle time commitment"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SO#delivery_commitment_ID
@@ -11917,7 +11917,7 @@ ecsel-dr-SO:product_level_3 rdf:type owl:DatatypeProperty ;
 ###  http://www.w3id.org/ecsel-dr-SO#product_level_3_pseudonym
 ecsel-dr-SO:product_level_3_pseudonym rdf:type owl:DatatypeProperty ;
                                       rdfs:domain ecsel-dr-SO:Bottleneck ,
-                                                  ecsel-dr-SO:Cycle_Time_Committment ,
+                                                  ecsel-dr-SO:Cycle_Time_Commitment ,
                                                   ecsel-dr-SO:Delivery_Commitment ,
                                                   ecsel-dr-SO:Demand_Snapshot ,
                                                   ecsel-dr-SO:Lot ,
@@ -13388,7 +13388,7 @@ This lobe of the Digital Reference models the I 4.0 Component, the Asset it repr
 
 ###  http://www.w3id.org/ecsel-dr#Time_Lobe
 dr:Time_Lobe rdf:type owl:Class ;
-             rdfs:comment "Lobe owner: Philipp Ulrich"@en ,
+             rdfs:comment "Lobe owner: Marta Bonik"@en ,
                           """Time refers to a measurable dimension in which events occur sequentially and can be used to qualify the duration between occurences.
 
 This lobe of the digital reference represents the topics of Temporal Duration, Position and Reference Position, the Time Zone, Months and Days of the week."""@en ;
@@ -13867,8 +13867,8 @@ ecsel-dr-AH:AH_System_Registry_System_Sy_SDD rdf:type owl:Class ;
                                              rdfs:label "AH System Registry System Sy SDD"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-AH#AH_Token_Generation_Servcie_SD
-ecsel-dr-AH:AH_Token_Generation_Servcie_SD rdf:type owl:Class ;
+###  http://www.w3id.org/ecsel-dr-AH#AH_Token_Generation_Service_SD
+ecsel-dr-AH:AH_Token_Generation_Service_SD rdf:type owl:Class ;
                                            rdfs:subClassOf ecsel-dr-AH:AH_Mandatory_Core_Service_SD ;
                                            rdfs:label "AH Token Generation Servcie SD"@en .
 
@@ -16163,8 +16163,8 @@ ecsel-dr-BMS:Microcontroller rdf:type owl:Class ;
                              rdfs:subClassOf ecsel-dr-BMS:Semiconductor .
 
 
-###  http://www.w3id.org/ecsel-dr-BMS#Multichannel_Controler_Integrated_Circuit
-ecsel-dr-BMS:Multichannel_Controler_Integrated_Circuit rdf:type owl:Class ;
+###  http://www.w3id.org/ecsel-dr-BMS#Multichannel_Controller_Integrated_Circuit
+ecsel-dr-BMS:Multichannel_Controller_Integrated_Circuit rdf:type owl:Class ;
                                                        rdfs:subClassOf ecsel-dr-BMS:Semiconductor .
 
 
@@ -16527,8 +16527,8 @@ ecsel-dr-CO2Savings:Chipcard_Manufacturing rdf:type owl:Class ;
                                            rdfs:label "Chipcard Manufacturing"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-CO2Savings#Contracter_Or_Outside_The_Company
-ecsel-dr-CO2Savings:Contracter_Or_Outside_The_Company rdf:type owl:Class ;
+###  http://www.w3id.org/ecsel-dr-CO2Savings#Contractor_Or_Outside_The_Company
+ecsel-dr-CO2Savings:Contractor_Or_Outside_The_Company rdf:type owl:Class ;
                                                       rdfs:subClassOf dr:Application ;
                                                       rdfs:comment "Referring to work done by a contractor or outside the company." ;
                                                       rdfs:label "Contracter Or Outside The Company"@en .
@@ -16548,15 +16548,15 @@ ecsel-dr-CO2Savings:Delivery_Gross_Weight rdf:type owl:Class ;
                                           rdfs:label "Delivery Gross Weight"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-CO2Savings#Distance_Between_Sender_And_Receipent_Km
-ecsel-dr-CO2Savings:Distance_Between_Sender_And_Receipent_Km rdf:type owl:Class ;
+###  http://www.w3id.org/ecsel-dr-CO2Savings#Distance_Between_Sender_And_Recipient_Km
+ecsel-dr-CO2Savings:Distance_Between_Sender_And_Recipient_Km rdf:type owl:Class ;
                                                              rdfs:subClassOf dr:Application ;
                                                              rdfs:comment "The distance in kilometers between the sender and recipient of a shipment." ;
                                                              rdfs:label "Distance Between Sender And Receipent Km"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-CO2Savings#Distance_Between_Sender_And_Reciepent
-ecsel-dr-CO2Savings:Distance_Between_Sender_And_Reciepent rdf:type owl:Class ;
+###  http://www.w3id.org/ecsel-dr-CO2Savings#Distance_Between_Sender_And_Recipient
+ecsel-dr-CO2Savings:Distance_Between_Sender_And_Recipient rdf:type owl:Class ;
                                                           rdfs:subClassOf dr:Application ;
                                                           rdfs:comment "The distance between the sender and recipient of a shipment." ;
                                                           rdfs:label "Distance Between Sender And Reciepent"@en .
@@ -16670,7 +16670,7 @@ ecsel-dr-CO2Savings:Electricity rdf:type owl:Class ;
                                                   owl:someValuesFrom xsd:float
                                                 ] ,
                                                 [ rdf:type owl:Restriction ;
-                                                  owl:onProperty ecsel-dr-CO2Savings:contracter_or_outside_the_company ;
+                                                  owl:onProperty ecsel-dr-CO2Savings:contractor_or_outside_the_company ;
                                                   owl:someValuesFrom xsd:float
                                                 ] ,
                                                 [ rdf:type owl:Restriction ;
@@ -16883,8 +16883,8 @@ ecsel-dr-CO2Savings:Market_Share_Of_Company_In_Wind_Turbine_World rdf:type owl:C
                                                                   rdfs:label "Market Share Of Company In Wind Turbine World"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-CO2Savings#Material_Esixtence_In_The_Front_End_Or_Back_End_Manufacturing
-ecsel-dr-CO2Savings:Material_Esixtence_In_The_Front_End_Or_Back_End_Manufacturing rdf:type owl:Class ;
+###  http://www.w3id.org/ecsel-dr-CO2Savings#Material_Existence_In_The_Front_End_Or_Back_End_Manufacturing
+ecsel-dr-CO2Savings:Material_Existence_In_The_Front_End_Or_Back_End_Manufacturing rdf:type owl:Class ;
                                                                                   rdfs:subClassOf dr:Application ;
                                                                                   rdfs:comment "Material Esixtence In The Front End (FE) Or Back End (BE) Manufacturing"@en ;
                                                                                   rdfs:label "Material Esixtence In The Front End Or Back End Manufacturing"@en .
@@ -16911,8 +16911,8 @@ ecsel-dr-CO2Savings:Number_Of_Chips_Produced_In_The_Front_End_Manufacturing rdf:
                                                                             rdfs:label "Number Of Chips Produced In The Front End Manufacturing"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-CO2Savings#Number_Of_Company_Products_Sold_Wordlwide_Wind_Turbine
-ecsel-dr-CO2Savings:Number_Of_Company_Products_Sold_Wordlwide_Wind_Turbine rdf:type owl:Class ;
+###  http://www.w3id.org/ecsel-dr-CO2Savings#Number_Of_Company_Products_Sold_Worldwide_Wind_Turbine
+ecsel-dr-CO2Savings:Number_Of_Company_Products_Sold_Worldwide_Wind_Turbine rdf:type owl:Class ;
                                                                            rdfs:subClassOf dr:Application ;
                                                                            rdfs:comment "The number of company products, including wind turbines, sold worldwide in a specific market." ;
                                                                            rdfs:label "Number Of Company Products Sold Wordlwide Wind Turbine"@en .
@@ -17402,7 +17402,7 @@ ecsel-dr-CO2Savings:Transportation rdf:type owl:Class ;
                                                      owl:someValuesFrom xsd:float
                                                    ] ,
                                                    [ rdf:type owl:Restriction ;
-                                                     owl:onProperty ecsel-dr-CO2Savings:distance_between_sender_and_receipent ;
+                                                     owl:onProperty ecsel-dr-CO2Savings:distance_between_sender_and_recipient ;
                                                      owl:someValuesFrom xsd:float
                                                    ] ;
                                    rdfs:comment "The various modes or means of transportation." ;
@@ -18059,10 +18059,10 @@ ecsel-dr-GDM:Cycle_Time_Commitment rdf:type owl:Class ;
                                    rdfs:label "Cycle Time Commitment"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-GDM#Delivery_Committment
-ecsel-dr-GDM:Delivery_Committment rdf:type owl:Class ;
+###  http://www.w3id.org/ecsel-dr-GDM#Delivery_Commitment
+ecsel-dr-GDM:Delivery_Commitment rdf:type owl:Class ;
                                   rdfs:subClassOf dr:Supply_Chain_Lobe ;
-                                  rdfs:label "Delivery Committment"@en .
+                                  rdfs:label "Delivery Commitment"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Demand_Snapshot
@@ -18158,9 +18158,9 @@ ecsel-dr-GDM:Fab rdf:type owl:Class ;
                                    owl:onClass ecsel-dr-GDM:Cycle_Time_Commitment
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ecsel-dr-GDM:has_delivery_committment ;
+                                   owl:onProperty ecsel-dr-GDM:has_delivery_commitment ;
                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onClass ecsel-dr-GDM:Delivery_Committment
+                                   owl:onClass ecsel-dr-GDM:Delivery_Commitment
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ecsel-dr-GDM:has_max_lot_size ;
@@ -18345,9 +18345,9 @@ ecsel-dr-GDM:Supply_Chain rdf:type owl:Class ;
                                             owl:onClass ecsel-dr-GDM:Cycle_Time_Commitment
                                           ] ,
                                           [ rdf:type owl:Restriction ;
-                                            owl:onProperty ecsel-dr-GDM:has_delivery_committment ;
+                                            owl:onProperty ecsel-dr-GDM:has_delivery_commitment ;
                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                            owl:onClass ecsel-dr-GDM:Delivery_Committment
+                                            owl:onClass ecsel-dr-GDM:Delivery_Commitment
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty ecsel-dr-GDM:has_release_plan ;
@@ -18590,8 +18590,8 @@ ecsel-dr-OM:Customer_Plant_Data rdf:type owl:Class ;
                                 rdfs:label "Customer Plant Data"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-OM#Demand_Fulfillement
-ecsel-dr-OM:Demand_Fulfillement rdf:type owl:Class ;
+###  http://www.w3id.org/ecsel-dr-OM#Demand_Fulfillment
+ecsel-dr-OM:Demand_Fulfillment rdf:type owl:Class ;
                                 rdfs:subClassOf dr:Supply_Chain_Lobe ;
                                 rdfs:comment "The process of meeting a customer’s demand for product or services by fulfilling their request."@en ;
                                 rdfs:label "Demand Fulfillement"@en .
@@ -20883,8 +20883,8 @@ ecsel-dr-Planning:Decision_Making_Unit rdf:type owl:Class ;
                                        skos:altLabel "_DR pl" .
 
 
-###  http://www.w3id.org/ecsel-dr-Planning#Decison_Making_Unit_Character
-ecsel-dr-Planning:Decison_Making_Unit_Character rdf:type owl:Class ;
+###  http://www.w3id.org/ecsel-dr-Planning#Decision_Making_Unit_Character
+ecsel-dr-Planning:Decision_Making_Unit_Character rdf:type owl:Class ;
                                                 rdfs:subClassOf dr:Planning_Lobe ;
                                                 rdfs:comment "In an ANTAGO¬NISTIC SETTING, the different DECISION-MAKING UNITS try to meet their own objectives which are in conflict. In a non-antagonistic setting, the DECISION-MAKING UNITS do not exploit their private knowledge in an opportunistic way." ;
                                                 rdfs:label "Decison Making Unit Character"@en ;
@@ -21026,8 +21026,8 @@ ecsel-dr-Planning:Plan_Execution rdf:type owl:Class ;
                                  skos:altLabel "_DR pl" .
 
 
-###  http://www.w3id.org/ecsel-dr-Planning#Planing_Purpose
-ecsel-dr-Planning:Planing_Purpose rdf:type owl:Class ;
+###  http://www.w3id.org/ecsel-dr-Planning#Planning_Purpose
+ecsel-dr-Planning:Planning_Purpose rdf:type owl:Class ;
                                   rdfs:subClassOf dr:Planning_Lobe ;
                                   rdfs:comment "The PLANNING PURPOSE specifies the objectives of a certain planning activity. It is given by a set of performance measures that are related to a set of PLANNING OBJECTS." ;
                                   rdfs:label "Planning Purpose" .
@@ -21813,8 +21813,8 @@ ecsel-dr-SO:Current_WIP rdf:type owl:Class ;
                         rdfs:label "Current Work In Progress"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SO#Cycle_Time_Committment
-ecsel-dr-SO:Cycle_Time_Committment rdf:type owl:Class ;
+###  http://www.w3id.org/ecsel-dr-SO#Cycle_Time_Commitment
+ecsel-dr-SO:Cycle_Time_Commitment rdf:type owl:Class ;
                                    rdfs:subClassOf dr:Semiconductor_Development_Lobe ;
                                    rdfs:comment """The “Cycle Time Commitment” entity helps controlling the WIP
 via the release plan. (strategy entity)"""@en ;
@@ -22905,7 +22905,7 @@ ecsel-dr-Planning:FE1 rdf:type owl:NamedIndividual ,
 
 ###  http://www.w3id.org/ecsel-dr-Planning#FE1_CostMinimization
 ecsel-dr-Planning:FE1_CostMinimization rdf:type owl:NamedIndividual ,
-                                                ecsel-dr-Planning:Planing_Purpose ;
+                                                ecsel-dr-Planning:Planning_Purpose ;
                                        ecsel-dr-Planning:has_criterias ecsel-dr-Planning:Minimization ;
                                        ecsel-dr-Planning:has_performance_measures ecsel-dr-Planning:MinimizeBacklog ,
                                                                                   ecsel-dr-Planning:MinimizeInventoryLevel ,

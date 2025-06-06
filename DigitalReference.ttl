@@ -339,6 +339,10 @@ ecsel-dr-OOSMP:uniformResourceLocator_productPicture rdf:type owl:AnnotationProp
                                                      rdfs:domain ecsel-dr-OOSMP:Product .
 
 
+###  http://www.w3id.org/ecsel-dr-Planning#formula
+ecsel-dr-Planning:formula rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.w3id.org/ecsel-dr-Planning#has_costs
 ecsel-dr-Planning:has_costs rdf:type owl:AnnotationProperty .
 
@@ -353,10 +357,6 @@ ecsel-dr-Planning:has_period rdf:type owl:AnnotationProperty .
 
 ###  http://www.w3id.org/ecsel-dr-Planning#has_planning_window
 ecsel-dr-Planning:has_planning_window rdf:type owl:AnnotationProperty .
-
-
-###  http://www.w3id.org/ecsel-dr-Planning#sc3:formula
-ecsel-dr-Planning:sc3:formula rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#latestStardardVersion
@@ -3565,13 +3565,6 @@ ecsel-dr-DF:has_order_demand rdf:type owl:ObjectProperty ;
                              rdfs:label "has order demand"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-DF#has_order_position
-ecsel-dr-DF:has_order_position rdf:type owl:ObjectProperty ;
-                               rdfs:subPropertyOf owl:topObjectProperty ;
-                               rdfs:domain ecsel-dr-DF:Order ;
-                               rdfs:range ecsel-dr-DF:Order_Position .
-
-
 ###  http://www.w3id.org/ecsel-dr-DF#has_periods
 ecsel-dr-DF:has_periods rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf owl:topObjectProperty ;
@@ -3737,6 +3730,13 @@ ecsel-dr-DF:is_requested_by rdf:type owl:ObjectProperty ;
                             rdfs:domain ecsel-dr-DF:Requested_Delivery_Date ;
                             rdfs:range ecsel-dr-DF:Customer ;
                             rdfs:label "is requested by"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#order_position
+ecsel-dr-DF:order_position rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf owl:topObjectProperty ;
+                           rdfs:domain ecsel-dr-DF:Order ;
+                           rdfs:range ecsel-dr-DF:Order_Position .
 
 
 ###  http://www.w3id.org/ecsel-dr-DF#requires_delivery_date_information
@@ -8378,12 +8378,6 @@ ecsel-dr-DF:demand_priority rdf:type owl:DatatypeProperty ;
                             rdfs:label "demand priority"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-DF#has_order_position
-ecsel-dr-DF:has_order_position rdf:type owl:DatatypeProperty ;
-                               rdfs:subPropertyOf owl:topDataProperty ;
-                               rdfs:range rdfs:Literal .
-
-
 ###  http://www.w3id.org/ecsel-dr-DF#lot_ID
 ecsel-dr-DF:lot_ID rdf:type owl:DatatypeProperty ;
                    rdfs:subPropertyOf owl:topDataProperty ;
@@ -8438,6 +8432,12 @@ ecsel-dr-DF:order_name rdf:type owl:DatatypeProperty ;
                        rdfs:domain ecsel-dr-DF:Order ;
                        rdfs:range rdfs:Literal ;
                        rdfs:label "order name"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-DF#order_position
+ecsel-dr-DF:order_position rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf owl:topDataProperty ;
+                           rdfs:range rdfs:Literal .
 
 
 ###  http://www.w3id.org/ecsel-dr-DF#order_priority
@@ -8582,6 +8582,12 @@ ecsel-dr-DF:supply_time rdf:type owl:DatatypeProperty ;
                         rdfs:domain ecsel-dr-DF:Supply ;
                         rdfs:range rdfs:Literal ;
                         rdfs:label "supply time"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#WIP_costs_per_unit_and_time_unit
+ecsel-dr-GDM:WIP_costs_per_unit_and_time_unit rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain ecsel-dr-GDM:Target_Costs ;
+                                              rdfs:range xsd:integer .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#activity_ID
@@ -9005,843 +9011,25 @@ ecsel-dr-GDM:frequency rdf:type owl:DatatypeProperty ;
                        rdfs:label "frequency"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-GDM#hasLocationID
-ecsel-dr-GDM:hasLocationID rdf:type owl:DatatypeProperty ,
-                                    owl:FunctionalProperty ;
-                           rdfs:domain ecsel-dr-GDM:Location ;
-                           rdfs:range xsd:string .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasLocationXY
-ecsel-dr-GDM:hasLocationXY rdf:type owl:DatatypeProperty ;
-                           rdfs:domain ecsel-dr-GDM:Equipment ;
-                           rdfs:range xsd:string ;
-                           rdfs:comment "Ideally (X,Y) coordinates but can be the name of a building, floor or area" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasLotID
-ecsel-dr-GDM:hasLotID rdf:type owl:DatatypeProperty ,
-                               owl:FunctionalProperty ;
-                      rdfs:domain ecsel-dr-GDM:Current_WIP ,
-                                  ecsel-dr-GDM:Lot_Event ,
-                                  ecsel-dr-GDM:Lot_State ,
-                                  ecsel-dr-GDM:Time_Constraint ;
-                      rdfs:range xsd:string .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasLotStateType
-ecsel-dr-GDM:hasLotStateType rdf:type owl:DatatypeProperty ;
-                             rdfs:domain ecsel-dr-GDM:Lot_State ;
-                             rdfs:range xsd:string .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasLotType
-ecsel-dr-GDM:hasLotType rdf:type owl:DatatypeProperty ;
-                        rdfs:domain ecsel-dr-GDM:Current_WIP ,
-                                    ecsel-dr-GDM:Lot_State ;
-                        rdfs:range xsd:string .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasMaintenanceCounter
-ecsel-dr-GDM:hasMaintenanceCounter rdf:type owl:DatatypeProperty ;
-                                   rdfs:domain ecsel-dr-GDM:Maintenance ;
-                                   rdfs:range xsd:integer ;
-                                   rdfs:comment "counter-based => number of wafer completed / time-based => number of machine hours" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasMaintenanceID
-ecsel-dr-GDM:hasMaintenanceID rdf:type owl:DatatypeProperty ,
-                                       owl:FunctionalProperty ;
-                              rdfs:domain ecsel-dr-GDM:Equipment ,
-                                          ecsel-dr-GDM:Equipment_State ,
-                                          ecsel-dr-GDM:Maintenance ,
-                                          ecsel-dr-GDM:Worker_Qualification ;
-                              rdfs:range xsd:string ;
-                              rdfs:comment "Name of the maintenance" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasMaintenanceScheduling
-ecsel-dr-GDM:hasMaintenanceScheduling rdf:type owl:DatatypeProperty ;
-                                      rdfs:domain ecsel-dr-GDM:Maintenance ;
-                                      rdfs:range xsd:string ;
-                                      rdfs:comment "counter-based or time-based" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasMaintenanceVolume
-ecsel-dr-GDM:hasMaintenanceVolume rdf:type owl:DatatypeProperty ;
-                                  rdfs:domain ecsel-dr-GDM:Maintenance ;
-                                  rdfs:range xsd:string ;
-                                  rdfs:comment "volume-based Maintenance" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasMaterialID
-ecsel-dr-GDM:hasMaterialID rdf:type owl:DatatypeProperty ,
-                                    owl:FunctionalProperty ;
-                           rdfs:domain ecsel-dr-GDM:Material ,
-                                       ecsel-dr-GDM:Material_Consumption ;
-                           rdfs:range xsd:string .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasMaterialTransferTime
-ecsel-dr-GDM:hasMaterialTransferTime rdf:type owl:DatatypeProperty ;
-                                     rdfs:domain ecsel-dr-GDM:Material_Transfer ;
-                                     rdfs:range xsd:dateTime ;
-                                     rdfs:comment "Duration of transfer from one to the other equipment" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasMaterialType
-ecsel-dr-GDM:hasMaterialType rdf:type owl:DatatypeProperty ;
-                             rdfs:domain ecsel-dr-GDM:Material ;
-                             rdfs:range xsd:string .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasMaxAmountOfClusteredSteps
-ecsel-dr-GDM:hasMaxAmountOfClusteredSteps rdf:type owl:DatatypeProperty ;
-                                          rdfs:domain ecsel-dr-GDM:Equipment ;
-                                          rdfs:range xsd:integer ;
-                                          rdfs:comment "If more than one step in a sequence is operated by same equipment, it is called cluster equipment with a number of clustered steps >1; else 1" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasMaxBatchSize
-ecsel-dr-GDM:hasMaxBatchSize rdf:type owl:DatatypeProperty ;
-                             rdfs:domain ecsel-dr-GDM:Equipment ,
-                                         ecsel-dr-GDM:Recipe_Equipment_Config ;
-                             rdfs:range xsd:integer ;
-                             rdfs:comment "maximum number of lots for a batch tool" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasMaxLotAmount
-ecsel-dr-GDM:hasMaxLotAmount rdf:type owl:DatatypeProperty ;
-                             rdfs:domain ecsel-dr-GDM:Kanban ;
-                             rdfs:range xsd:string .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasMaxLots
-ecsel-dr-GDM:hasMaxLots rdf:type owl:DatatypeProperty ;
-                        rdfs:domain ecsel-dr-GDM:Fab ;
-                        rdfs:range xsd:integer ;
-                        rdfs:comment "" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasMaxParallelization
-ecsel-dr-GDM:hasMaxParallelization rdf:type owl:DatatypeProperty ;
-                                   rdfs:domain ecsel-dr-GDM:Equipment ;
-                                   rdfs:range xsd:integer ;
-                                   rdfs:comment "Number of parallel used process chambers or max parallel used load ports" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasMaxStock
-ecsel-dr-GDM:hasMaxStock rdf:type owl:DatatypeProperty ;
-                         rdfs:domain ecsel-dr-GDM:Material ;
-                         rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasMaxUnitsPerWeek
-ecsel-dr-GDM:hasMaxUnitsPerWeek rdf:type owl:DatatypeProperty ;
-                                rdfs:domain ecsel-dr-GDM:Product_Level_3 ;
-                                rdfs:range xsd:integer ;
-                                rdfs:comment "Maximum of unit completes (Wafers / chips) per week on the bottleneck equipment group and thereby on the product" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasMaxWaferAmount
-ecsel-dr-GDM:hasMaxWaferAmount rdf:type owl:DatatypeProperty ;
-                               rdfs:domain ecsel-dr-GDM:Kanban ;
-                               rdfs:range xsd:string .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasMaxWip
-ecsel-dr-GDM:hasMaxWip rdf:type owl:DatatypeProperty ;
-                       rdfs:domain ecsel-dr-GDM:Fab ;
-                       rdfs:range xsd:integer ;
-                       rdfs:comment "capacity restriction of process units - 0 if no restriction" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasMaximumLotSize
-ecsel-dr-GDM:hasMaximumLotSize rdf:type owl:DatatypeProperty ;
-                               rdfs:domain ecsel-dr-GDM:Max_Lot_Size ;
-                               rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasMaximumTime
-ecsel-dr-GDM:hasMaximumTime rdf:type owl:DatatypeProperty ;
-                            rdfs:domain ecsel-dr-GDM:Time_Constraint ;
-                            rdfs:range xsd:dateTime ;
-                            rdfs:comment "duration" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasMinBatchSize
-ecsel-dr-GDM:hasMinBatchSize rdf:type owl:DatatypeProperty ;
-                             rdfs:domain ecsel-dr-GDM:Recipe_Equipment_Config ;
-                             rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasMinQuantity
-ecsel-dr-GDM:hasMinQuantity rdf:type owl:DatatypeProperty ;
-                            rdfs:domain ecsel-dr-GDM:Material_Consumption ;
-                            rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasMinStock
-ecsel-dr-GDM:hasMinStock rdf:type owl:DatatypeProperty ;
-                         rdfs:domain ecsel-dr-GDM:Material ;
-                         rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasMinimumLotSize
-ecsel-dr-GDM:hasMinimumLotSize rdf:type owl:DatatypeProperty ;
-                               rdfs:domain ecsel-dr-GDM:Max_Lot_Size ;
-                               rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasMinimumTime
-ecsel-dr-GDM:hasMinimumTime rdf:type owl:DatatypeProperty ;
-                            rdfs:domain ecsel-dr-GDM:Time_Constraint ;
-                            rdfs:range xsd:dateTime .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasMtbf
-ecsel-dr-GDM:hasMtbf rdf:type owl:DatatypeProperty ;
-                     rdfs:domain ecsel-dr-GDM:Equipment ;
-                     rdfs:range xsd:integer ;
-                     rdfs:label "hasMeanTimeBetweenFailure" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasMttr
-ecsel-dr-GDM:hasMttr rdf:type owl:DatatypeProperty ;
-                     rdfs:domain ecsel-dr-GDM:Equipment ;
-                     rdfs:range xsd:integer ;
-                     rdfs:label "hasMeanTimeToRepair" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasNextClusterOperation
-ecsel-dr-GDM:hasNextClusterOperation rdf:type owl:DatatypeProperty ;
-                                     rdfs:domain ecsel-dr-GDM:Operation ;
-                                     rdfs:range xsd:string ;
-                                     rdfs:comment "If operation is part of a cluster sequence, name of next cluster operation" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasNextState
-ecsel-dr-GDM:hasNextState rdf:type owl:DatatypeProperty ;
-                          rdfs:domain ecsel-dr-GDM:Current_Machine_State ;
-                          rdfs:range xsd:string ;
-                          rdfs:comment "Potential next state" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasNumberOfLoadports
-ecsel-dr-GDM:hasNumberOfLoadports rdf:type owl:DatatypeProperty ;
-                                  rdfs:domain ecsel-dr-GDM:Equipment ;
+###  http://www.w3id.org/ecsel-dr-GDM#has_maximum_lot_size
+ecsel-dr-GDM:has_maximum_lot_size rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain ecsel-dr-GDM:Max_Lot_Size ;
                                   rdfs:range xsd:integer .
 
 
-###  http://www.w3id.org/ecsel-dr-GDM#hasOperationID
-ecsel-dr-GDM:hasOperationID rdf:type owl:DatatypeProperty ,
-                                     owl:FunctionalProperty ;
-                            rdfs:domain ecsel-dr-GDM:Aux_Resource_Requirement ,
-                                        ecsel-dr-GDM:Current_WIP ,
-                                        ecsel-dr-GDM:Equipment_Capability ,
-                                        ecsel-dr-GDM:Lot_Event ,
-                                        ecsel-dr-GDM:Lot_State ,
-                                        ecsel-dr-GDM:Material_Consumption ,
-                                        ecsel-dr-GDM:Operation ,
-                                        ecsel-dr-GDM:Route_Sequence ;
-                            rdfs:range xsd:string ;
-                            rdfs:comment "Name of the operation / process step" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasOperationalDueDate
-ecsel-dr-GDM:hasOperationalDueDate rdf:type owl:DatatypeProperty ;
-                                   rdfs:domain ecsel-dr-GDM:Demand_Snapshot ,
-                                               ecsel-dr-GDM:Lot_State ;
-                                   rdfs:range xsd:dateTime .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasOriginalQuantity
-ecsel-dr-GDM:hasOriginalQuantity rdf:type owl:DatatypeProperty ;
-                                 rdfs:domain ecsel-dr-GDM:Demand_Snapshot ,
-                                             ecsel-dr-GDM:Demand_Trace ;
-                                 rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasOwner
-ecsel-dr-GDM:hasOwner rdf:type owl:DatatypeProperty ;
-                      rdfs:domain ecsel-dr-GDM:Lot_State ;
-                      rdfs:range xsd:string .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasPTime
-ecsel-dr-GDM:hasPTime rdf:type owl:DatatypeProperty ;
-                      rdfs:domain ecsel-dr-GDM:Recipe_Equipment_Config ;
-                      rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasParentLotId
-ecsel-dr-GDM:hasParentLotId rdf:type owl:DatatypeProperty ;
-                            rdfs:domain ecsel-dr-GDM:Lot_Event ,
-                                        ecsel-dr-GDM:Lot_State ;
-                            rdfs:range xsd:string .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasPeriodBegin
-ecsel-dr-GDM:hasPeriodBegin rdf:type owl:DatatypeProperty ;
-                            rdfs:domain ecsel-dr-GDM:Cycle_Time_Commitment ,
-                                        ecsel-dr-GDM:Delivery_Commitment ,
-                                        ecsel-dr-GDM:Release_Plan ,
-                                        ecsel-dr-GDM:Target_Costs ,
-                                        ecsel-dr-GDM:Target_Revenue ,
-                                        ecsel-dr-GDM:Target_Service_Level ;
-                            rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasPeriodEnd
-ecsel-dr-GDM:hasPeriodEnd rdf:type owl:DatatypeProperty ;
-                          rdfs:domain ecsel-dr-GDM:Cycle_Time_Commitment ,
-                                      ecsel-dr-GDM:Delivery_Commitment ,
-                                      ecsel-dr-GDM:Release_Plan ,
-                                      ecsel-dr-GDM:Target_Costs ,
-                                      ecsel-dr-GDM:Target_Revenue ,
-                                      ecsel-dr-GDM:Target_Service_Level ;
-                          rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasPhysicalCarrierInformation
-ecsel-dr-GDM:hasPhysicalCarrierInformation rdf:type owl:DatatypeProperty ;
-                                           rdfs:domain ecsel-dr-GDM:Current_WIP ;
-                                           rdfs:range xsd:string .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasPhysicalCarrierLocation
-ecsel-dr-GDM:hasPhysicalCarrierLocation rdf:type owl:DatatypeProperty ;
-                                        rdfs:domain ecsel-dr-GDM:Current_WIP ;
-                                        rdfs:range xsd:string .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasPhysicalLotState
-ecsel-dr-GDM:hasPhysicalLotState rdf:type owl:DatatypeProperty ;
-                                 rdfs:domain ecsel-dr-GDM:Current_WIP ,
-                                             ecsel-dr-GDM:Lot_State ;
-                                 rdfs:range xsd:integer ,
-                                            xsd:string .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasPlantID
-ecsel-dr-GDM:hasPlantID rdf:type owl:DatatypeProperty ,
-                                 owl:FunctionalProperty ;
-                        rdfs:domain ecsel-dr-GDM:Fab ,
-                                    ecsel-dr-GDM:Plant ;
-                        rdfs:range xsd:string ;
-                        rdfs:comment "Geographical location of the plant" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasPotentialEquipmentId
-ecsel-dr-GDM:hasPotentialEquipmentId rdf:type owl:DatatypeProperty ;
-                                     rdfs:domain ecsel-dr-GDM:Capability ;
-                                     rdfs:range xsd:string .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasPrevChangeDt
-ecsel-dr-GDM:hasPrevChangeDt rdf:type owl:DatatypeProperty ;
-                             rdfs:domain ecsel-dr-GDM:Current_Machine_State ;
-                             rdfs:range xsd:dateTime .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasPriority
-ecsel-dr-GDM:hasPriority rdf:type owl:DatatypeProperty ;
-                         rdfs:domain ecsel-dr-GDM:Current_WIP ,
-                                     ecsel-dr-GDM:Lot_State ;
-                         rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasProbability
-ecsel-dr-GDM:hasProbability rdf:type owl:DatatypeProperty ;
-                            rdfs:domain ecsel-dr-GDM:Activity_Edge ;
-                            rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasProcessUnit
-ecsel-dr-GDM:hasProcessUnit rdf:type owl:DatatypeProperty ;
-                            rdfs:domain ecsel-dr-GDM:Fab ;
-                            rdfs:range xsd:string ;
-                            rdfs:comment "smalles process unit in the fab - wafer/chip/device" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasProcessingTimePerUnit
-ecsel-dr-GDM:hasProcessingTimePerUnit rdf:type owl:DatatypeProperty ;
-                                      rdfs:domain ecsel-dr-GDM:Operation ;
-                                      rdfs:range xsd:dateTime ;
-                                      rdfs:comment "Capacity consuming / relevant equipment processing time" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasProductLevel2DueDate
-ecsel-dr-GDM:hasProductLevel2DueDate rdf:type owl:DatatypeProperty ;
-                                     rdfs:domain ecsel-dr-GDM:Demand_Snapshot ,
-                                                 ecsel-dr-GDM:Demand_Trace ;
-                                     rdfs:range xsd:dateTime .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasProductLevel2ID
-ecsel-dr-GDM:hasProductLevel2ID rdf:type owl:DatatypeProperty ,
-                                         owl:FunctionalProperty ;
-                                rdfs:domain ecsel-dr-GDM:Demand_Snapshot ,
-                                            ecsel-dr-GDM:Demand_Trace ,
-                                            ecsel-dr-GDM:Product_Level_2 ,
-                                            ecsel-dr-GDM:Product_Level_3 ;
-                                rdfs:range xsd:string ;
-                                rdfs:comment "Name of the product in level 2" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasProductLevel2IdDueDate
-ecsel-dr-GDM:hasProductLevel2IdDueDate rdf:type owl:DatatypeProperty ;
-                                       rdfs:domain ecsel-dr-GDM:Current_WIP ;
-                                       rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasProductLevel2Quantity
-ecsel-dr-GDM:hasProductLevel2Quantity rdf:type owl:DatatypeProperty ;
-                                      rdfs:domain ecsel-dr-GDM:Demand_Snapshot ,
-                                                  ecsel-dr-GDM:Demand_Trace ;
-                                      rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasProductLevel3DueDate
-ecsel-dr-GDM:hasProductLevel3DueDate rdf:type owl:DatatypeProperty ;
-                                     rdfs:domain ecsel-dr-GDM:Demand_Snapshot ,
-                                                 ecsel-dr-GDM:Demand_Trace ;
-                                     rdfs:range xsd:dateTime .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasProductLevel3ID
-ecsel-dr-GDM:hasProductLevel3ID rdf:type owl:DatatypeProperty ,
-                                         owl:FunctionalProperty ;
-                                rdfs:domain ecsel-dr-GDM:Demand_Snapshot ,
-                                            ecsel-dr-GDM:Demand_Trace ,
-                                            ecsel-dr-GDM:Equipment_Group ,
-                                            ecsel-dr-GDM:Max_Lot_Size ,
-                                            ecsel-dr-GDM:Product_Level_3 ,
-                                            ecsel-dr-GDM:Product_Level_4 ;
-                                rdfs:range xsd:string ;
-                                rdfs:comment "Name of the product in level 3" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasProductLevel3Quantity
-ecsel-dr-GDM:hasProductLevel3Quantity rdf:type owl:DatatypeProperty ;
-                                      rdfs:domain ecsel-dr-GDM:Demand_Snapshot ,
-                                                  ecsel-dr-GDM:Demand_Trace ;
-                                      rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasProductLevel4DueDate
-ecsel-dr-GDM:hasProductLevel4DueDate rdf:type owl:DatatypeProperty ;
-                                     rdfs:domain ecsel-dr-GDM:Demand_Snapshot ,
-                                                 ecsel-dr-GDM:Demand_Trace ;
-                                     rdfs:range xsd:dateTime .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasProductLevel4ID
-ecsel-dr-GDM:hasProductLevel4ID rdf:type owl:DatatypeProperty ,
-                                         owl:FunctionalProperty ;
-                                rdfs:domain ecsel-dr-GDM:Bill_Of_Materials ,
-                                            ecsel-dr-GDM:Current_WIP ,
-                                            ecsel-dr-GDM:Cycle_Time_Commitment ,
-                                            ecsel-dr-GDM:Delivery_Commitment ,
-                                            ecsel-dr-GDM:Demand_Snapshot ,
-                                            ecsel-dr-GDM:Demand_Trace ,
-                                            ecsel-dr-GDM:Lot_State ,
-                                            ecsel-dr-GDM:Product_Level_4 ,
-                                            ecsel-dr-GDM:Route ,
-                                            ecsel-dr-GDM:Target_WIP ;
-                                rdfs:range xsd:string ;
-                                rdfs:comment "Name of the product in the highest granularity" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasProductLevel4Quantity
-ecsel-dr-GDM:hasProductLevel4Quantity rdf:type owl:DatatypeProperty ;
-                                      rdfs:domain ecsel-dr-GDM:Demand_Snapshot ,
-                                                  ecsel-dr-GDM:Demand_Trace ;
-                                      rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasQualificationDt
-ecsel-dr-GDM:hasQualificationDt rdf:type owl:DatatypeProperty ;
-                                rdfs:domain ecsel-dr-GDM:Equipment_Capability ;
-                                rdfs:range xsd:dateTime ;
-                                rdfs:comment "Date operation is qualified on equipment" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasQuantity
-ecsel-dr-GDM:hasQuantity rdf:type owl:DatatypeProperty ;
-                         rdfs:domain ecsel-dr-GDM:Activity_Edge ,
-                                     ecsel-dr-GDM:Aux_Resource ,
-                                     ecsel-dr-GDM:Aux_Resource_Requirement ,
-                                     ecsel-dr-GDM:Material ,
-                                     ecsel-dr-GDM:Material_Consumption ;
-                         rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasRecipeChamberDedication
-ecsel-dr-GDM:hasRecipeChamberDedication rdf:type owl:DatatypeProperty ;
-                                        rdfs:domain ecsel-dr-GDM:Chamber_Dedication ;
-                                        rdfs:range xsd:string .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasRecipeChamberDedicationAlternate
-ecsel-dr-GDM:hasRecipeChamberDedicationAlternate rdf:type owl:DatatypeProperty ;
-                                                 rdfs:domain ecsel-dr-GDM:Chamber_Dedication ;
-                                                 rdfs:range xsd:string .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasRecipeGroupID
-ecsel-dr-GDM:hasRecipeGroupID rdf:type owl:DatatypeProperty ,
-                                       owl:FunctionalProperty ;
-                              rdfs:domain ecsel-dr-GDM:Recipe ,
-                                          ecsel-dr-GDM:Recipe_Group ,
-                                          ecsel-dr-GDM:Setup ;
-                              rdfs:range xsd:string .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasRecipeID
-ecsel-dr-GDM:hasRecipeID rdf:type owl:DatatypeProperty ,
-                                  owl:FunctionalProperty ;
-                         rdfs:domain ecsel-dr-GDM:Operation ,
-                                     ecsel-dr-GDM:Recipe ,
-                                     ecsel-dr-GDM:Recipe_Equipment_Config ;
-                         rdfs:range xsd:string .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasRecipeMax
-ecsel-dr-GDM:hasRecipeMax rdf:type owl:DatatypeProperty ;
-                          rdfs:domain ecsel-dr-GDM:Recipe_Equipment_Config ;
-                          rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasRecoveryTime
-ecsel-dr-GDM:hasRecoveryTime rdf:type owl:DatatypeProperty ;
-                             rdfs:domain ecsel-dr-GDM:Material ;
-                             rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasReleasePlanID
-ecsel-dr-GDM:hasReleasePlanID rdf:type owl:DatatypeProperty ,
-                                       owl:FunctionalProperty ;
-                              rdfs:domain ecsel-dr-GDM:Product_Level_4 ,
-                                          ecsel-dr-GDM:Release_Plan ;
-                              rdfs:range xsd:string .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasResidualQualificationPeriod
-ecsel-dr-GDM:hasResidualQualificationPeriod rdf:type owl:DatatypeProperty ;
-                                            rdfs:domain ecsel-dr-GDM:Equipment_Capability ;
-                                            rdfs:range xsd:dateTime ;
-                                            rdfs:comment "Time left until disqualification of operation " .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasResidualTimeInState
-ecsel-dr-GDM:hasResidualTimeInState rdf:type owl:DatatypeProperty ;
-                                    rdfs:domain ecsel-dr-GDM:Current_WIP ;
-                                    rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasRevenuePerUnit
-ecsel-dr-GDM:hasRevenuePerUnit rdf:type owl:DatatypeProperty ;
-                               rdfs:domain ecsel-dr-GDM:Target_Revenue ;
-                               rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasRouteID
-ecsel-dr-GDM:hasRouteID rdf:type owl:DatatypeProperty ,
-                                 owl:FunctionalProperty ;
-                        rdfs:domain ecsel-dr-GDM:Route ;
-                        rdfs:range xsd:string ;
-                        rdfs:comment "Name of route (usually equals product names requiring the route)" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasRouteSequenceID
-ecsel-dr-GDM:hasRouteSequenceID rdf:type owl:DatatypeProperty ,
-                                         owl:FunctionalProperty ;
-                                rdfs:domain ecsel-dr-GDM:Lot_State ,
-                                            ecsel-dr-GDM:Route ,
-                                            ecsel-dr-GDM:Route_Sequence ,
-                                            ecsel-dr-GDM:Time_Constraint ;
-                                rdfs:range xsd:integer ,
-                                           xsd:string ;
-                                rdfs:comment "Sequential number of operations along the route" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasSamplingRate
-ecsel-dr-GDM:hasSamplingRate rdf:type owl:DatatypeProperty ;
-                             rdfs:domain ecsel-dr-GDM:Operation ;
-                             rdfs:range xsd:integer ;
-                             rdfs:comment "Execution rate of operation If operation is mandatory sampling rate is 1 (1-sampling rate = skipping rate of optional operation)" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasSequenceNumber
-ecsel-dr-GDM:hasSequenceNumber rdf:type owl:DatatypeProperty ;
-                               rdfs:domain ecsel-dr-GDM:Lot_Event ,
-                                           ecsel-dr-GDM:Lot_State ,
-                                           ecsel-dr-GDM:Route_Sequence ;
-                               rdfs:range xsd:integer ;
-                               rdfs:comment "Sequential number of the operation lot has entered" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasSetupID
-ecsel-dr-GDM:hasSetupID rdf:type owl:DatatypeProperty ,
-                                 owl:FunctionalProperty ;
-                        rdfs:domain ecsel-dr-GDM:Setup ;
-                        rdfs:range xsd:string .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasShiftModel
-ecsel-dr-GDM:hasShiftModel rdf:type owl:DatatypeProperty ;
-                           rdfs:domain ecsel-dr-GDM:Workshop ;
-                           rdfs:range xsd:string .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasShiftStart
-ecsel-dr-GDM:hasShiftStart rdf:type owl:DatatypeProperty ;
-                           rdfs:domain ecsel-dr-GDM:Shift_Attendance ;
-                           rdfs:range xsd:dateTime ;
-                           rdfs:comment "Date and time when the shifts starts" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasSop
-ecsel-dr-GDM:hasSop rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ecsel-dr-GDM:Equipment ;
-                    rdfs:range xsd:dateTime ;
-                    rdfs:label "hasStartOfProduction" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasStartSequenceNumber
-ecsel-dr-GDM:hasStartSequenceNumber rdf:type owl:DatatypeProperty ;
-                                    rdfs:domain ecsel-dr-GDM:Time_Constraint ;
-                                    rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasState
-ecsel-dr-GDM:hasState rdf:type owl:DatatypeProperty ;
-                      rdfs:domain ecsel-dr-GDM:Equipment_State ,
-                                  ecsel-dr-GDM:Lot_State ;
-                      rdfs:range xsd:string ;
-                      rdfs:comment "Name of the equipment state (productive, standby, scheduled down)" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasStockoutProbability
-ecsel-dr-GDM:hasStockoutProbability rdf:type owl:DatatypeProperty ;
-                                    rdfs:domain ecsel-dr-GDM:Target_Service_Level ;
-                                    rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasSupplyChainID
-ecsel-dr-GDM:hasSupplyChainID rdf:type owl:DatatypeProperty ,
-                                       owl:FunctionalProperty ;
-                              rdfs:domain ecsel-dr-GDM:Cycle_Time_Commitment ,
-                                          ecsel-dr-GDM:Delivery_Commitment ,
-                                          ecsel-dr-GDM:Plant ,
-                                          ecsel-dr-GDM:Release_Plan ,
-                                          ecsel-dr-GDM:Supply_Chain ,
-                                          ecsel-dr-GDM:Technology ;
-                              rdfs:range xsd:string ;
-                              rdfs:comment "Assignment of technology to supply chain" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasTargetMaxAmountOfUnits
-ecsel-dr-GDM:hasTargetMaxAmountOfUnits rdf:type owl:DatatypeProperty ;
-                                       rdfs:domain ecsel-dr-GDM:Target_WIP ;
-                                       rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasTargetMinAmountOfUnits
-ecsel-dr-GDM:hasTargetMinAmountOfUnits rdf:type owl:DatatypeProperty ;
-                                       rdfs:domain ecsel-dr-GDM:Target_WIP ;
-                                       rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasTask
-ecsel-dr-GDM:hasTask rdf:type owl:DatatypeProperty ;
-                     rdfs:domain ecsel-dr-GDM:Current_WIP ;
-                     rdfs:range xsd:string .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasTeamID
-ecsel-dr-GDM:hasTeamID rdf:type owl:DatatypeProperty ,
-                                owl:FunctionalProperty ;
-                       rdfs:domain ecsel-dr-GDM:Calendar ,
-                                   ecsel-dr-GDM:Team ,
-                                   ecsel-dr-GDM:Worker_Qualification ;
-                       rdfs:range xsd:string .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasTechnologyID
-ecsel-dr-GDM:hasTechnologyID rdf:type owl:DatatypeProperty ,
-                                      owl:FunctionalProperty ;
-                             rdfs:domain ecsel-dr-GDM:Product_Level_2 ,
-                                         ecsel-dr-GDM:Target_Costs ,
-                                         ecsel-dr-GDM:Target_Revenue ,
-                                         ecsel-dr-GDM:Target_Service_Level ,
-                                         ecsel-dr-GDM:Technology ;
-                             rdfs:range xsd:string ;
-                             rdfs:comment "Name of the technology" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasTimeInState
-ecsel-dr-GDM:hasTimeInState rdf:type owl:DatatypeProperty ;
-                            rdfs:domain ecsel-dr-GDM:Current_WIP ;
-                            rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasTimestamp
-ecsel-dr-GDM:hasTimestamp rdf:type owl:DatatypeProperty ;
-                          rdfs:domain ecsel-dr-GDM:Demand_Trace ;
-                          rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasTrackingEquipment
-ecsel-dr-GDM:hasTrackingEquipment rdf:type owl:DatatypeProperty ;
-                                  rdfs:domain ecsel-dr-GDM:Equipment ;
-                                  rdfs:range xsd:string .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasTransferMode
-ecsel-dr-GDM:hasTransferMode rdf:type owl:DatatypeProperty ;
-                             rdfs:domain ecsel-dr-GDM:Material_Transfer ;
-                             rdfs:range xsd:string ;
-                             rdfs:comment "Automation, AGV, milkrun or manual" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasTransitTime
-ecsel-dr-GDM:hasTransitTime rdf:type owl:DatatypeProperty ;
-                            rdfs:domain ecsel-dr-GDM:Supply_Chain ;
-                            rdfs:range xsd:integer ;
-                            rdfs:comment "" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasTransitionTime
-ecsel-dr-GDM:hasTransitionTime rdf:type owl:DatatypeProperty ;
-                               rdfs:domain ecsel-dr-GDM:Activity_Edge ;
-                               rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasTransportFromLocation
-ecsel-dr-GDM:hasTransportFromLocation rdf:type owl:DatatypeProperty ;
-                                      rdfs:domain ecsel-dr-GDM:Material_Transfer ;
-                                      rdfs:range xsd:string .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasTransportMode
-ecsel-dr-GDM:hasTransportMode rdf:type owl:DatatypeProperty ;
-                              rdfs:domain ecsel-dr-GDM:Equipment ;
-                              rdfs:range xsd:string ;
-                              rdfs:comment "Refers to the transportation mean that is used to deliver products on the considered machine (i.e. AMHS, Operator, AGV, etc." .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasTransportToLocation
-ecsel-dr-GDM:hasTransportToLocation rdf:type owl:DatatypeProperty ;
-                                    rdfs:domain ecsel-dr-GDM:Material_Transfer ;
-                                    rdfs:range xsd:string .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasTypeOfDemand
-ecsel-dr-GDM:hasTypeOfDemand rdf:type owl:DatatypeProperty ;
-                             rdfs:domain ecsel-dr-GDM:Demand_Snapshot ,
-                                         ecsel-dr-GDM:Demand_Trace ;
-                             rdfs:range xsd:string .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasUnit
-ecsel-dr-GDM:hasUnit rdf:type owl:DatatypeProperty ;
-                     rdfs:domain ecsel-dr-GDM:Material ,
-                                 ecsel-dr-GDM:Material_Consumption ;
-                     rdfs:range xsd:integer ,
-                                xsd:string .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasUnitsPerTimePeriod
-ecsel-dr-GDM:hasUnitsPerTimePeriod rdf:type owl:DatatypeProperty ;
-                                   rdfs:domain ecsel-dr-GDM:Delivery_Commitment ,
-                                               ecsel-dr-GDM:Release_Plan ;
-                                   rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasVarianceCyclingTime
-ecsel-dr-GDM:hasVarianceCyclingTime rdf:type owl:DatatypeProperty ;
-                                    rdfs:domain ecsel-dr-GDM:Operation ;
-                                    rdfs:range xsd:dateTime ;
-                                    rdfs:comment "Variance of overall operation cycle time" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasVarianceProcessingTime
-ecsel-dr-GDM:hasVarianceProcessingTime rdf:type owl:DatatypeProperty ;
-                                       rdfs:domain ecsel-dr-GDM:Operation ;
-                                       rdfs:range xsd:dateTime ;
-                                       rdfs:comment "Variance of capacity relevant operation processing time" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasWipCostsPerUnitAndTimeUnit
-ecsel-dr-GDM:hasWipCostsPerUnitAndTimeUnit rdf:type owl:DatatypeProperty ;
-                                           rdfs:domain ecsel-dr-GDM:Target_Costs ;
-                                           rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasWorkDay
-ecsel-dr-GDM:hasWorkDay rdf:type owl:DatatypeProperty ;
-                        rdfs:domain ecsel-dr-GDM:Workshop ;
-                        rdfs:range xsd:integer ;
-                        rdfs:comment "Productive days per week" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasWorkforce
-ecsel-dr-GDM:hasWorkforce rdf:type owl:DatatypeProperty ;
-                          rdfs:domain ecsel-dr-GDM:Worker_Qualification ;
-                          rdfs:range xsd:integer .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasWorkforceOperational
-ecsel-dr-GDM:hasWorkforceOperational rdf:type owl:DatatypeProperty ;
-                                     rdfs:domain ecsel-dr-GDM:Shift_Attendance ,
-                                                 ecsel-dr-GDM:Team ;
-                                     rdfs:range xsd:integer ;
-                                     rdfs:comment "Overall number of operational workers assigned to the shift" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasWorkforceTechnical
-ecsel-dr-GDM:hasWorkforceTechnical rdf:type owl:DatatypeProperty ;
-                                   rdfs:domain ecsel-dr-GDM:Shift_Attendance ,
-                                               ecsel-dr-GDM:Team ;
-                                   rdfs:range xsd:integer ;
-                                   rdfs:comment "Overall number of technical workers assigned to the shift" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasWorkingHourPerDay
-ecsel-dr-GDM:hasWorkingHourPerDay rdf:type owl:DatatypeProperty ;
-                                  rdfs:domain ecsel-dr-GDM:Workshop ;
-                                  rdfs:range xsd:integer ;
-                                  rdfs:comment "Productive hours per day" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasWorkplanID
-ecsel-dr-GDM:hasWorkplanID rdf:type owl:DatatypeProperty ,
-                                    owl:FunctionalProperty ;
-                           rdfs:domain ecsel-dr-GDM:Activity ,
-                                       ecsel-dr-GDM:Activity_Edge ,
-                                       ecsel-dr-GDM:Product_Level_4 ,
-                                       ecsel-dr-GDM:Workplan ;
-                           rdfs:range xsd:string .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hasWorkshopID
-ecsel-dr-GDM:hasWorkshopID rdf:type owl:DatatypeProperty ,
-                                    owl:FunctionalProperty ;
-                           rdfs:domain ecsel-dr-GDM:Calendar ,
-                                       ecsel-dr-GDM:Equipment ,
-                                       ecsel-dr-GDM:Team ,
-                                       ecsel-dr-GDM:Workshop ;
-                           rdfs:range xsd:string ;
-                           rdfs:comment "Name of the Workshop" .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#hhas_technician_requirement
-ecsel-dr-GDM:hhas_technician_requirement rdf:type owl:DatatypeProperty ;
-                                         rdfs:domain ecsel-dr-GDM:Maintenance ;
-                                         rdfs:range xsd:string ;
-                                         rdfs:comment "number of technical workers required for the maintenance" .
+###  http://www.w3id.org/ecsel-dr-GDM#has_sop
+ecsel-dr-GDM:has_sop rdf:type owl:DatatypeProperty ;
+                     rdfs:domain ecsel-dr-GDM:Equipment ;
+                     rdfs:range xsd:dateTime ;
+                     rdfs:label "hasStartOfProduction" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#has_state
+ecsel-dr-GDM:has_state rdf:type owl:DatatypeProperty ;
+                       rdfs:domain ecsel-dr-GDM:Equipment_State ,
+                                   ecsel-dr-GDM:Lot_State ;
+                       rdfs:range xsd:string ;
+                       rdfs:comment "Name of the equipment state (productive, standby, scheduled down)" .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#internal_buffer_size
@@ -9902,6 +9090,818 @@ ecsel-dr-GDM:linked_sequence_number rdf:type owl:DatatypeProperty ;
                                     rdfs:domain ecsel-dr-GDM:Route_Sequence ;
                                     rdfs:range xsd:integer ;
                                     rdfs:label "linked sequence number"@en .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#location_ID
+ecsel-dr-GDM:location_ID rdf:type owl:DatatypeProperty ,
+                                  owl:FunctionalProperty ;
+                         rdfs:domain ecsel-dr-GDM:Location ;
+                         rdfs:range xsd:string .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#location_XY
+ecsel-dr-GDM:location_XY rdf:type owl:DatatypeProperty ;
+                         rdfs:domain ecsel-dr-GDM:Equipment ;
+                         rdfs:range xsd:string ;
+                         rdfs:comment "Ideally (X,Y) coordinates but can be the name of a building, floor or area" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#lot_ID
+ecsel-dr-GDM:lot_ID rdf:type owl:DatatypeProperty ,
+                             owl:FunctionalProperty ;
+                    rdfs:domain ecsel-dr-GDM:Current_WIP ,
+                                ecsel-dr-GDM:Lot_Event ,
+                                ecsel-dr-GDM:Lot_State ,
+                                ecsel-dr-GDM:Time_Constraint ;
+                    rdfs:range xsd:string .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#lot_state_type
+ecsel-dr-GDM:lot_state_type rdf:type owl:DatatypeProperty ;
+                            rdfs:domain ecsel-dr-GDM:Lot_State ;
+                            rdfs:range xsd:string .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#lot_type
+ecsel-dr-GDM:lot_type rdf:type owl:DatatypeProperty ;
+                      rdfs:domain ecsel-dr-GDM:Current_WIP ,
+                                  ecsel-dr-GDM:Lot_State ;
+                      rdfs:range xsd:string .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#maintenance_ID
+ecsel-dr-GDM:maintenance_ID rdf:type owl:DatatypeProperty ,
+                                     owl:FunctionalProperty ;
+                            rdfs:domain ecsel-dr-GDM:Equipment ,
+                                        ecsel-dr-GDM:Equipment_State ,
+                                        ecsel-dr-GDM:Maintenance ,
+                                        ecsel-dr-GDM:Worker_Qualification ;
+                            rdfs:range xsd:string ;
+                            rdfs:comment "Name of the maintenance" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#maintenance_counter
+ecsel-dr-GDM:maintenance_counter rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain ecsel-dr-GDM:Maintenance ;
+                                 rdfs:range xsd:integer ;
+                                 rdfs:comment "counter-based => number of wafer completed / time-based => number of machine hours" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#maintenance_scheduling
+ecsel-dr-GDM:maintenance_scheduling rdf:type owl:DatatypeProperty ;
+                                    rdfs:domain ecsel-dr-GDM:Maintenance ;
+                                    rdfs:range xsd:string ;
+                                    rdfs:comment "counter-based or time-based" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#maintenance_volume
+ecsel-dr-GDM:maintenance_volume rdf:type owl:DatatypeProperty ;
+                                rdfs:domain ecsel-dr-GDM:Maintenance ;
+                                rdfs:range xsd:string ;
+                                rdfs:comment "volume-based Maintenance" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#material_ID
+ecsel-dr-GDM:material_ID rdf:type owl:DatatypeProperty ,
+                                  owl:FunctionalProperty ;
+                         rdfs:domain ecsel-dr-GDM:Material ,
+                                     ecsel-dr-GDM:Material_Consumption ;
+                         rdfs:range xsd:string .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#material_transfer_time
+ecsel-dr-GDM:material_transfer_time rdf:type owl:DatatypeProperty ;
+                                    rdfs:domain ecsel-dr-GDM:Material_Transfer ;
+                                    rdfs:range xsd:dateTime ;
+                                    rdfs:comment "Duration of transfer from one to the other equipment" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#material_type
+ecsel-dr-GDM:material_type rdf:type owl:DatatypeProperty ;
+                           rdfs:domain ecsel-dr-GDM:Material ;
+                           rdfs:range xsd:string .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#max_WIP
+ecsel-dr-GDM:max_WIP rdf:type owl:DatatypeProperty ;
+                     rdfs:domain ecsel-dr-GDM:Fab ;
+                     rdfs:range xsd:integer ;
+                     rdfs:comment "capacity restriction of process units - 0 if no restriction" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#max_amount_of_clustered_steps
+ecsel-dr-GDM:max_amount_of_clustered_steps rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain ecsel-dr-GDM:Equipment ;
+                                           rdfs:range xsd:integer ;
+                                           rdfs:comment "If more than one step in a sequence is operated by same equipment, it is called cluster equipment with a number of clustered steps >1; else 1" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#max_batch_size
+ecsel-dr-GDM:max_batch_size rdf:type owl:DatatypeProperty ;
+                            rdfs:domain ecsel-dr-GDM:Equipment ,
+                                        ecsel-dr-GDM:Recipe_Equipment_Config ;
+                            rdfs:range xsd:integer ;
+                            rdfs:comment "maximum number of lots for a batch tool" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#max_lot_amount
+ecsel-dr-GDM:max_lot_amount rdf:type owl:DatatypeProperty ;
+                            rdfs:domain ecsel-dr-GDM:Kanban ;
+                            rdfs:range xsd:string .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#max_lots
+ecsel-dr-GDM:max_lots rdf:type owl:DatatypeProperty ;
+                      rdfs:domain ecsel-dr-GDM:Fab ;
+                      rdfs:range xsd:integer ;
+                      rdfs:comment "" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#max_parallelization
+ecsel-dr-GDM:max_parallelization rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain ecsel-dr-GDM:Equipment ;
+                                 rdfs:range xsd:integer ;
+                                 rdfs:comment "Number of parallel used process chambers or max parallel used load ports" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#max_stock
+ecsel-dr-GDM:max_stock rdf:type owl:DatatypeProperty ;
+                       rdfs:domain ecsel-dr-GDM:Material ;
+                       rdfs:range xsd:integer .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#max_units_per_week
+ecsel-dr-GDM:max_units_per_week rdf:type owl:DatatypeProperty ;
+                                rdfs:domain ecsel-dr-GDM:Product_Level_3 ;
+                                rdfs:range xsd:integer ;
+                                rdfs:comment "Maximum of unit completes (Wafers / chips) per week on the bottleneck equipment group and thereby on the product" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#max_wafer_amount
+ecsel-dr-GDM:max_wafer_amount rdf:type owl:DatatypeProperty ;
+                              rdfs:domain ecsel-dr-GDM:Kanban ;
+                              rdfs:range xsd:string .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#maximum_time
+ecsel-dr-GDM:maximum_time rdf:type owl:DatatypeProperty ;
+                          rdfs:domain ecsel-dr-GDM:Time_Constraint ;
+                          rdfs:range xsd:dateTime ;
+                          rdfs:comment "duration" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#mean_time_between_failure
+ecsel-dr-GDM:mean_time_between_failure rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain ecsel-dr-GDM:Equipment ;
+                                       rdfs:range xsd:integer ;
+                                       rdfs:label "hasMeanTimeBetweenFailure" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#mean_time_to_repair
+ecsel-dr-GDM:mean_time_to_repair rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain ecsel-dr-GDM:Equipment ;
+                                 rdfs:range xsd:integer ;
+                                 rdfs:label "hasMeanTimeToRepair" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#min_batch_size
+ecsel-dr-GDM:min_batch_size rdf:type owl:DatatypeProperty ;
+                            rdfs:domain ecsel-dr-GDM:Recipe_Equipment_Config ;
+                            rdfs:range xsd:integer .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#min_quantity
+ecsel-dr-GDM:min_quantity rdf:type owl:DatatypeProperty ;
+                          rdfs:domain ecsel-dr-GDM:Material_Consumption ;
+                          rdfs:range xsd:integer .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#min_stock
+ecsel-dr-GDM:min_stock rdf:type owl:DatatypeProperty ;
+                       rdfs:domain ecsel-dr-GDM:Material ;
+                       rdfs:range xsd:integer .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#minimum_lot_size
+ecsel-dr-GDM:minimum_lot_size rdf:type owl:DatatypeProperty ;
+                              rdfs:domain ecsel-dr-GDM:Max_Lot_Size ;
+                              rdfs:range xsd:integer .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#minimum_time
+ecsel-dr-GDM:minimum_time rdf:type owl:DatatypeProperty ;
+                          rdfs:domain ecsel-dr-GDM:Time_Constraint ;
+                          rdfs:range xsd:dateTime .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#next_cluster_operation
+ecsel-dr-GDM:next_cluster_operation rdf:type owl:DatatypeProperty ;
+                                    rdfs:domain ecsel-dr-GDM:Operation ;
+                                    rdfs:range xsd:string ;
+                                    rdfs:comment "If operation is part of a cluster sequence, name of next cluster operation" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#next_state
+ecsel-dr-GDM:next_state rdf:type owl:DatatypeProperty ;
+                        rdfs:domain ecsel-dr-GDM:Current_Machine_State ;
+                        rdfs:range xsd:string ;
+                        rdfs:comment "Potential next state" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#number_of_loadports
+ecsel-dr-GDM:number_of_loadports rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain ecsel-dr-GDM:Equipment ;
+                                 rdfs:range xsd:integer .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#operation_ID
+ecsel-dr-GDM:operation_ID rdf:type owl:DatatypeProperty ,
+                                   owl:FunctionalProperty ;
+                          rdfs:domain ecsel-dr-GDM:Aux_Resource_Requirement ,
+                                      ecsel-dr-GDM:Current_WIP ,
+                                      ecsel-dr-GDM:Equipment_Capability ,
+                                      ecsel-dr-GDM:Lot_Event ,
+                                      ecsel-dr-GDM:Lot_State ,
+                                      ecsel-dr-GDM:Material_Consumption ,
+                                      ecsel-dr-GDM:Operation ,
+                                      ecsel-dr-GDM:Route_Sequence ;
+                          rdfs:range xsd:string ;
+                          rdfs:comment "Name of the operation / process step" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#operational_due_date
+ecsel-dr-GDM:operational_due_date rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain ecsel-dr-GDM:Demand_Snapshot ,
+                                              ecsel-dr-GDM:Lot_State ;
+                                  rdfs:range xsd:dateTime .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#original_quantity
+ecsel-dr-GDM:original_quantity rdf:type owl:DatatypeProperty ;
+                               rdfs:domain ecsel-dr-GDM:Demand_Snapshot ,
+                                           ecsel-dr-GDM:Demand_Trace ;
+                               rdfs:range xsd:integer .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#owner
+ecsel-dr-GDM:owner rdf:type owl:DatatypeProperty ;
+                   rdfs:domain ecsel-dr-GDM:Lot_State ;
+                   rdfs:range xsd:string .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#p_time
+ecsel-dr-GDM:p_time rdf:type owl:DatatypeProperty ;
+                    rdfs:domain ecsel-dr-GDM:Recipe_Equipment_Config ;
+                    rdfs:range xsd:integer .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#parent_lot_ID
+ecsel-dr-GDM:parent_lot_ID rdf:type owl:DatatypeProperty ;
+                           rdfs:domain ecsel-dr-GDM:Lot_Event ,
+                                       ecsel-dr-GDM:Lot_State ;
+                           rdfs:range xsd:string .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#period_begin
+ecsel-dr-GDM:period_begin rdf:type owl:DatatypeProperty ;
+                          rdfs:domain ecsel-dr-GDM:Cycle_Time_Commitment ,
+                                      ecsel-dr-GDM:Delivery_Commitment ,
+                                      ecsel-dr-GDM:Release_Plan ,
+                                      ecsel-dr-GDM:Target_Costs ,
+                                      ecsel-dr-GDM:Target_Revenue ,
+                                      ecsel-dr-GDM:Target_Service_Level ;
+                          rdfs:range xsd:integer .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#period_end
+ecsel-dr-GDM:period_end rdf:type owl:DatatypeProperty ;
+                        rdfs:domain ecsel-dr-GDM:Cycle_Time_Commitment ,
+                                    ecsel-dr-GDM:Delivery_Commitment ,
+                                    ecsel-dr-GDM:Release_Plan ,
+                                    ecsel-dr-GDM:Target_Costs ,
+                                    ecsel-dr-GDM:Target_Revenue ,
+                                    ecsel-dr-GDM:Target_Service_Level ;
+                        rdfs:range xsd:integer .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#physical_carrier_information
+ecsel-dr-GDM:physical_carrier_information rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain ecsel-dr-GDM:Current_WIP ;
+                                          rdfs:range xsd:string .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#physical_carrier_location
+ecsel-dr-GDM:physical_carrier_location rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain ecsel-dr-GDM:Current_WIP ;
+                                       rdfs:range xsd:string .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#physical_lot_state
+ecsel-dr-GDM:physical_lot_state rdf:type owl:DatatypeProperty ;
+                                rdfs:domain ecsel-dr-GDM:Current_WIP ,
+                                            ecsel-dr-GDM:Lot_State ;
+                                rdfs:range xsd:integer ,
+                                           xsd:string .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#plant_ID
+ecsel-dr-GDM:plant_ID rdf:type owl:DatatypeProperty ,
+                               owl:FunctionalProperty ;
+                      rdfs:domain ecsel-dr-GDM:Fab ,
+                                  ecsel-dr-GDM:Plant ;
+                      rdfs:range xsd:string ;
+                      rdfs:comment "Geographical location of the plant" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#potential_equipment_ID
+ecsel-dr-GDM:potential_equipment_ID rdf:type owl:DatatypeProperty ;
+                                    rdfs:domain ecsel-dr-GDM:Capability ;
+                                    rdfs:range xsd:string .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#prev_change_date
+ecsel-dr-GDM:prev_change_date rdf:type owl:DatatypeProperty ;
+                              rdfs:domain ecsel-dr-GDM:Current_Machine_State ;
+                              rdfs:range xsd:dateTime .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#priority
+ecsel-dr-GDM:priority rdf:type owl:DatatypeProperty ;
+                      rdfs:domain ecsel-dr-GDM:Current_WIP ,
+                                  ecsel-dr-GDM:Lot_State ;
+                      rdfs:range xsd:integer .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#probability
+ecsel-dr-GDM:probability rdf:type owl:DatatypeProperty ;
+                         rdfs:domain ecsel-dr-GDM:Activity_Edge ;
+                         rdfs:range xsd:integer .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#process_unit
+ecsel-dr-GDM:process_unit rdf:type owl:DatatypeProperty ;
+                          rdfs:domain ecsel-dr-GDM:Fab ;
+                          rdfs:range xsd:string ;
+                          rdfs:comment "smalles process unit in the fab - wafer/chip/device" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#processing_time_per_unit
+ecsel-dr-GDM:processing_time_per_unit rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain ecsel-dr-GDM:Operation ;
+                                      rdfs:range xsd:dateTime ;
+                                      rdfs:comment "Capacity consuming / relevant equipment processing time" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#product_level_2_ID
+ecsel-dr-GDM:product_level_2_ID rdf:type owl:DatatypeProperty ,
+                                         owl:FunctionalProperty ;
+                                rdfs:domain ecsel-dr-GDM:Demand_Snapshot ,
+                                            ecsel-dr-GDM:Demand_Trace ,
+                                            ecsel-dr-GDM:Product_Level_2 ,
+                                            ecsel-dr-GDM:Product_Level_3 ;
+                                rdfs:range xsd:string ;
+                                rdfs:comment "Name of the product in level 2" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#product_level_2_ID_due_date
+ecsel-dr-GDM:product_level_2_ID_due_date rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain ecsel-dr-GDM:Current_WIP ;
+                                         rdfs:range xsd:integer .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#product_level_2_due_date
+ecsel-dr-GDM:product_level_2_due_date rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain ecsel-dr-GDM:Demand_Snapshot ,
+                                                  ecsel-dr-GDM:Demand_Trace ;
+                                      rdfs:range xsd:dateTime .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#product_level_2_quantity
+ecsel-dr-GDM:product_level_2_quantity rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain ecsel-dr-GDM:Demand_Snapshot ,
+                                                  ecsel-dr-GDM:Demand_Trace ;
+                                      rdfs:range xsd:integer .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#product_level_3_ID
+ecsel-dr-GDM:product_level_3_ID rdf:type owl:DatatypeProperty ,
+                                         owl:FunctionalProperty ;
+                                rdfs:domain ecsel-dr-GDM:Demand_Snapshot ,
+                                            ecsel-dr-GDM:Demand_Trace ,
+                                            ecsel-dr-GDM:Equipment_Group ,
+                                            ecsel-dr-GDM:Max_Lot_Size ,
+                                            ecsel-dr-GDM:Product_Level_3 ,
+                                            ecsel-dr-GDM:Product_Level_4 ;
+                                rdfs:range xsd:string ;
+                                rdfs:comment "Name of the product in level 3" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#product_level_3_due_date
+ecsel-dr-GDM:product_level_3_due_date rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain ecsel-dr-GDM:Demand_Snapshot ,
+                                                  ecsel-dr-GDM:Demand_Trace ;
+                                      rdfs:range xsd:dateTime .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#product_level_3_quantity
+ecsel-dr-GDM:product_level_3_quantity rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain ecsel-dr-GDM:Demand_Snapshot ,
+                                                  ecsel-dr-GDM:Demand_Trace ;
+                                      rdfs:range xsd:integer .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#product_level_4_ID
+ecsel-dr-GDM:product_level_4_ID rdf:type owl:DatatypeProperty ,
+                                         owl:FunctionalProperty ;
+                                rdfs:domain ecsel-dr-GDM:Bill_Of_Materials ,
+                                            ecsel-dr-GDM:Current_WIP ,
+                                            ecsel-dr-GDM:Cycle_Time_Commitment ,
+                                            ecsel-dr-GDM:Delivery_Commitment ,
+                                            ecsel-dr-GDM:Demand_Snapshot ,
+                                            ecsel-dr-GDM:Demand_Trace ,
+                                            ecsel-dr-GDM:Lot_State ,
+                                            ecsel-dr-GDM:Product_Level_4 ,
+                                            ecsel-dr-GDM:Route ,
+                                            ecsel-dr-GDM:Target_WIP ;
+                                rdfs:range xsd:string ;
+                                rdfs:comment "Name of the product in the highest granularity" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#product_level_4_due_date
+ecsel-dr-GDM:product_level_4_due_date rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain ecsel-dr-GDM:Demand_Snapshot ,
+                                                  ecsel-dr-GDM:Demand_Trace ;
+                                      rdfs:range xsd:dateTime .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#product_level_4_quantity
+ecsel-dr-GDM:product_level_4_quantity rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain ecsel-dr-GDM:Demand_Snapshot ,
+                                                  ecsel-dr-GDM:Demand_Trace ;
+                                      rdfs:range xsd:integer .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#qualification_date
+ecsel-dr-GDM:qualification_date rdf:type owl:DatatypeProperty ;
+                                rdfs:domain ecsel-dr-GDM:Equipment_Capability ;
+                                rdfs:range xsd:dateTime ;
+                                rdfs:comment "Date operation is qualified on equipment" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#quantity
+ecsel-dr-GDM:quantity rdf:type owl:DatatypeProperty ;
+                      rdfs:domain ecsel-dr-GDM:Activity_Edge ,
+                                  ecsel-dr-GDM:Aux_Resource ,
+                                  ecsel-dr-GDM:Aux_Resource_Requirement ,
+                                  ecsel-dr-GDM:Material ,
+                                  ecsel-dr-GDM:Material_Consumption ;
+                      rdfs:range xsd:integer .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#recipe_ID
+ecsel-dr-GDM:recipe_ID rdf:type owl:DatatypeProperty ,
+                                owl:FunctionalProperty ;
+                       rdfs:domain ecsel-dr-GDM:Operation ,
+                                   ecsel-dr-GDM:Recipe ,
+                                   ecsel-dr-GDM:Recipe_Equipment_Config ;
+                       rdfs:range xsd:string .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#recipe_chamber_dedication
+ecsel-dr-GDM:recipe_chamber_dedication rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain ecsel-dr-GDM:Chamber_Dedication ;
+                                       rdfs:range xsd:string .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#recipe_chamber_dedication_alternate
+ecsel-dr-GDM:recipe_chamber_dedication_alternate rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain ecsel-dr-GDM:Chamber_Dedication ;
+                                                 rdfs:range xsd:string .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#recipe_group_ID
+ecsel-dr-GDM:recipe_group_ID rdf:type owl:DatatypeProperty ,
+                                      owl:FunctionalProperty ;
+                             rdfs:domain ecsel-dr-GDM:Recipe ,
+                                         ecsel-dr-GDM:Recipe_Group ,
+                                         ecsel-dr-GDM:Setup ;
+                             rdfs:range xsd:string .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#recipe_max
+ecsel-dr-GDM:recipe_max rdf:type owl:DatatypeProperty ;
+                        rdfs:domain ecsel-dr-GDM:Recipe_Equipment_Config ;
+                        rdfs:range xsd:integer .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#recovery_time
+ecsel-dr-GDM:recovery_time rdf:type owl:DatatypeProperty ;
+                           rdfs:domain ecsel-dr-GDM:Material ;
+                           rdfs:range xsd:integer .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#release_plan_ID
+ecsel-dr-GDM:release_plan_ID rdf:type owl:DatatypeProperty ,
+                                      owl:FunctionalProperty ;
+                             rdfs:domain ecsel-dr-GDM:Product_Level_4 ,
+                                         ecsel-dr-GDM:Release_Plan ;
+                             rdfs:range xsd:string .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#residual_qualification_period
+ecsel-dr-GDM:residual_qualification_period rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain ecsel-dr-GDM:Equipment_Capability ;
+                                           rdfs:range xsd:dateTime ;
+                                           rdfs:comment "Time left until disqualification of operation " .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#residual_time_in_state
+ecsel-dr-GDM:residual_time_in_state rdf:type owl:DatatypeProperty ;
+                                    rdfs:domain ecsel-dr-GDM:Current_WIP ;
+                                    rdfs:range xsd:integer .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#revenue_per_unit
+ecsel-dr-GDM:revenue_per_unit rdf:type owl:DatatypeProperty ;
+                              rdfs:domain ecsel-dr-GDM:Target_Revenue ;
+                              rdfs:range xsd:integer .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#route_ID
+ecsel-dr-GDM:route_ID rdf:type owl:DatatypeProperty ,
+                               owl:FunctionalProperty ;
+                      rdfs:domain ecsel-dr-GDM:Route ;
+                      rdfs:range xsd:string ;
+                      rdfs:comment "Name of route (usually equals product names requiring the route)" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#route_sequence_ID
+ecsel-dr-GDM:route_sequence_ID rdf:type owl:DatatypeProperty ,
+                                        owl:FunctionalProperty ;
+                               rdfs:domain ecsel-dr-GDM:Lot_State ,
+                                           ecsel-dr-GDM:Route ,
+                                           ecsel-dr-GDM:Route_Sequence ,
+                                           ecsel-dr-GDM:Time_Constraint ;
+                               rdfs:range xsd:integer ,
+                                          xsd:string ;
+                               rdfs:comment "Sequential number of operations along the route" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#sampling_rate
+ecsel-dr-GDM:sampling_rate rdf:type owl:DatatypeProperty ;
+                           rdfs:domain ecsel-dr-GDM:Operation ;
+                           rdfs:range xsd:integer ;
+                           rdfs:comment "Execution rate of operation If operation is mandatory sampling rate is 1 (1-sampling rate = skipping rate of optional operation)" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#sequence_number
+ecsel-dr-GDM:sequence_number rdf:type owl:DatatypeProperty ;
+                             rdfs:domain ecsel-dr-GDM:Lot_Event ,
+                                         ecsel-dr-GDM:Lot_State ,
+                                         ecsel-dr-GDM:Route_Sequence ;
+                             rdfs:range xsd:integer ;
+                             rdfs:comment "Sequential number of the operation lot has entered" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#setup_ID
+ecsel-dr-GDM:setup_ID rdf:type owl:DatatypeProperty ,
+                               owl:FunctionalProperty ;
+                      rdfs:domain ecsel-dr-GDM:Setup ;
+                      rdfs:range xsd:string .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#shift_model
+ecsel-dr-GDM:shift_model rdf:type owl:DatatypeProperty ;
+                         rdfs:domain ecsel-dr-GDM:Workshop ;
+                         rdfs:range xsd:string .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#shift_start
+ecsel-dr-GDM:shift_start rdf:type owl:DatatypeProperty ;
+                         rdfs:domain ecsel-dr-GDM:Shift_Attendance ;
+                         rdfs:range xsd:dateTime ;
+                         rdfs:comment "Date and time when the shifts starts" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#start_sequence_number
+ecsel-dr-GDM:start_sequence_number rdf:type owl:DatatypeProperty ;
+                                   rdfs:domain ecsel-dr-GDM:Time_Constraint ;
+                                   rdfs:range xsd:integer .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#stockout_probability
+ecsel-dr-GDM:stockout_probability rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain ecsel-dr-GDM:Target_Service_Level ;
+                                  rdfs:range xsd:integer .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#supply_chain_ID
+ecsel-dr-GDM:supply_chain_ID rdf:type owl:DatatypeProperty ,
+                                      owl:FunctionalProperty ;
+                             rdfs:domain ecsel-dr-GDM:Cycle_Time_Commitment ,
+                                         ecsel-dr-GDM:Delivery_Commitment ,
+                                         ecsel-dr-GDM:Plant ,
+                                         ecsel-dr-GDM:Release_Plan ,
+                                         ecsel-dr-GDM:Supply_Chain ,
+                                         ecsel-dr-GDM:Technology ;
+                             rdfs:range xsd:string ;
+                             rdfs:comment "Assignment of technology to supply chain" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#target_max_amount_of_units
+ecsel-dr-GDM:target_max_amount_of_units rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain ecsel-dr-GDM:Target_WIP ;
+                                        rdfs:range xsd:integer .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#target_min_amount_of_units
+ecsel-dr-GDM:target_min_amount_of_units rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain ecsel-dr-GDM:Target_WIP ;
+                                        rdfs:range xsd:integer .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#task
+ecsel-dr-GDM:task rdf:type owl:DatatypeProperty ;
+                  rdfs:domain ecsel-dr-GDM:Current_WIP ;
+                  rdfs:range xsd:string .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#team_ID
+ecsel-dr-GDM:team_ID rdf:type owl:DatatypeProperty ,
+                              owl:FunctionalProperty ;
+                     rdfs:domain ecsel-dr-GDM:Calendar ,
+                                 ecsel-dr-GDM:Team ,
+                                 ecsel-dr-GDM:Worker_Qualification ;
+                     rdfs:range xsd:string .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#technician_requirement
+ecsel-dr-GDM:technician_requirement rdf:type owl:DatatypeProperty ;
+                                    rdfs:domain ecsel-dr-GDM:Maintenance ;
+                                    rdfs:range xsd:string ;
+                                    rdfs:comment "number of technical workers required for the maintenance" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#technology_ID
+ecsel-dr-GDM:technology_ID rdf:type owl:DatatypeProperty ,
+                                    owl:FunctionalProperty ;
+                           rdfs:domain ecsel-dr-GDM:Product_Level_2 ,
+                                       ecsel-dr-GDM:Target_Costs ,
+                                       ecsel-dr-GDM:Target_Revenue ,
+                                       ecsel-dr-GDM:Target_Service_Level ,
+                                       ecsel-dr-GDM:Technology ;
+                           rdfs:range xsd:string ;
+                           rdfs:comment "Name of the technology" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#time_in_state
+ecsel-dr-GDM:time_in_state rdf:type owl:DatatypeProperty ;
+                           rdfs:domain ecsel-dr-GDM:Current_WIP ;
+                           rdfs:range xsd:integer .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#timestamp
+ecsel-dr-GDM:timestamp rdf:type owl:DatatypeProperty ;
+                       rdfs:domain ecsel-dr-GDM:Demand_Trace ;
+                       rdfs:range xsd:integer .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#tracking_equipment
+ecsel-dr-GDM:tracking_equipment rdf:type owl:DatatypeProperty ;
+                                rdfs:domain ecsel-dr-GDM:Equipment ;
+                                rdfs:range xsd:string .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#transfer_mode
+ecsel-dr-GDM:transfer_mode rdf:type owl:DatatypeProperty ;
+                           rdfs:domain ecsel-dr-GDM:Material_Transfer ;
+                           rdfs:range xsd:string ;
+                           rdfs:comment "Automation, AGV, milkrun or manual" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#transit_time
+ecsel-dr-GDM:transit_time rdf:type owl:DatatypeProperty ;
+                          rdfs:domain ecsel-dr-GDM:Supply_Chain ;
+                          rdfs:range xsd:integer ;
+                          rdfs:comment "" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#transition_time
+ecsel-dr-GDM:transition_time rdf:type owl:DatatypeProperty ;
+                             rdfs:domain ecsel-dr-GDM:Activity_Edge ;
+                             rdfs:range xsd:integer .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#transport_from_location
+ecsel-dr-GDM:transport_from_location rdf:type owl:DatatypeProperty ;
+                                     rdfs:domain ecsel-dr-GDM:Material_Transfer ;
+                                     rdfs:range xsd:string .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#transport_mode
+ecsel-dr-GDM:transport_mode rdf:type owl:DatatypeProperty ;
+                            rdfs:domain ecsel-dr-GDM:Equipment ;
+                            rdfs:range xsd:string ;
+                            rdfs:comment "Refers to the transportation mean that is used to deliver products on the considered machine (i.e. AMHS, Operator, AGV, etc." .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#transport_to_location
+ecsel-dr-GDM:transport_to_location rdf:type owl:DatatypeProperty ;
+                                   rdfs:domain ecsel-dr-GDM:Material_Transfer ;
+                                   rdfs:range xsd:string .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#type_of_demand
+ecsel-dr-GDM:type_of_demand rdf:type owl:DatatypeProperty ;
+                            rdfs:domain ecsel-dr-GDM:Demand_Snapshot ,
+                                        ecsel-dr-GDM:Demand_Trace ;
+                            rdfs:range xsd:string .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#unit
+ecsel-dr-GDM:unit rdf:type owl:DatatypeProperty ;
+                  rdfs:domain ecsel-dr-GDM:Material ,
+                              ecsel-dr-GDM:Material_Consumption ;
+                  rdfs:range xsd:integer ,
+                             xsd:string .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#units_per_time_period
+ecsel-dr-GDM:units_per_time_period rdf:type owl:DatatypeProperty ;
+                                   rdfs:domain ecsel-dr-GDM:Delivery_Commitment ,
+                                               ecsel-dr-GDM:Release_Plan ;
+                                   rdfs:range xsd:integer .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#variance_cycling_time
+ecsel-dr-GDM:variance_cycling_time rdf:type owl:DatatypeProperty ;
+                                   rdfs:domain ecsel-dr-GDM:Operation ;
+                                   rdfs:range xsd:dateTime ;
+                                   rdfs:comment "Variance of overall operation cycle time" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#variance_processing_time
+ecsel-dr-GDM:variance_processing_time rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain ecsel-dr-GDM:Operation ;
+                                      rdfs:range xsd:dateTime ;
+                                      rdfs:comment "Variance of capacity relevant operation processing time" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#work_day
+ecsel-dr-GDM:work_day rdf:type owl:DatatypeProperty ;
+                      rdfs:domain ecsel-dr-GDM:Workshop ;
+                      rdfs:range xsd:integer ;
+                      rdfs:comment "Productive days per week" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#workforce
+ecsel-dr-GDM:workforce rdf:type owl:DatatypeProperty ;
+                       rdfs:domain ecsel-dr-GDM:Worker_Qualification ;
+                       rdfs:range xsd:integer .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#workforce_operational
+ecsel-dr-GDM:workforce_operational rdf:type owl:DatatypeProperty ;
+                                   rdfs:domain ecsel-dr-GDM:Shift_Attendance ,
+                                               ecsel-dr-GDM:Team ;
+                                   rdfs:range xsd:integer ;
+                                   rdfs:comment "Overall number of operational workers assigned to the shift" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#workforce_technical
+ecsel-dr-GDM:workforce_technical rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain ecsel-dr-GDM:Shift_Attendance ,
+                                             ecsel-dr-GDM:Team ;
+                                 rdfs:range xsd:integer ;
+                                 rdfs:comment "Overall number of technical workers assigned to the shift" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#working_hour_per_day
+ecsel-dr-GDM:working_hour_per_day rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain ecsel-dr-GDM:Workshop ;
+                                  rdfs:range xsd:integer ;
+                                  rdfs:comment "Productive hours per day" .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#workplan_ID
+ecsel-dr-GDM:workplan_ID rdf:type owl:DatatypeProperty ,
+                                  owl:FunctionalProperty ;
+                         rdfs:domain ecsel-dr-GDM:Activity ,
+                                     ecsel-dr-GDM:Activity_Edge ,
+                                     ecsel-dr-GDM:Product_Level_4 ,
+                                     ecsel-dr-GDM:Workplan ;
+                         rdfs:range xsd:string .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#workshop_ID
+ecsel-dr-GDM:workshop_ID rdf:type owl:DatatypeProperty ,
+                                  owl:FunctionalProperty ;
+                         rdfs:domain ecsel-dr-GDM:Calendar ,
+                                     ecsel-dr-GDM:Equipment ,
+                                     ecsel-dr-GDM:Team ,
+                                     ecsel-dr-GDM:Workshop ;
+                         rdfs:range xsd:string ;
+                         rdfs:comment "Name of the Workshop" .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#workshop_type
@@ -22845,7 +22845,7 @@ ecsel-dr-Planning:Activity_UV_Bake rdf:type owl:NamedIndividual ,
 ###  http://www.w3id.org/ecsel-dr-Planning#All_Planning_Objects_have_to_be_positive
 ecsel-dr-Planning:All_Planning_Objects_have_to_be_positive rdf:type owl:NamedIndividual ,
                                                                     ecsel-dr-Planning:Planning_Constraint ;
-                                                           ecsel-dr-Planning:sc3:formula """forall($g in Products, $t in PlanningHorizon, $j in Frontends) -> FE_Y($j, $g, $t) >= 0;
+                                                           ecsel-dr-Planning:formula """forall($g in Products, $t in PlanningHorizon, $j in Frontends) -> FE_Y($j, $g, $t) >= 0;
 forall($g in Products, $t in PlanningHorizon, $j in Frontends) -> FE_X($j, $g, $t) >= 0;
 forall($g in Products, $t in PlanningHorizon, $j in Frontends) -> FE_Wip($j, $g, $t) >= 0;
 forall($g in Products, $t in PlanningHorizon) -> FE_Inventory($g, $t) >= 0;
@@ -22898,7 +22898,7 @@ ecsel-dr-Planning:Borderless_FE1_zu_FE2 rdf:type owl:NamedIndividual ,
 ###  http://www.w3id.org/ecsel-dr-Planning#Capacity_Restriction_Equation
 ecsel-dr-Planning:Capacity_Restriction_Equation rdf:type owl:NamedIndividual ,
                                                          ecsel-dr-Planning:Planning_Constraint ;
-                                                ecsel-dr-Planning:sc3:formula """forall($k in WorkCenters, $j in Frontends, t in PlanningHorizon) sum($g in Products, $l in OperationCountOnWorkCenter($j, $k, $g) ->
+                                                ecsel-dr-Planning:formula """forall($k in WorkCenters, $j in Frontends, t in PlanningHorizon) sum($g in Products, $l in OperationCountOnWorkCenter($j, $k, $g) ->
 		FE_Y($j, $g, $t, OperationsOnWorkCenter($j, $k, $g, $l)) * alpha($j, $g, OperationsOnWorkCenter($j, $k, $g, $l)) <= WorkCenterCapacity($t, $j, $k);
 
 
@@ -22927,17 +22927,17 @@ ecsel-dr-Planning:FE1_CostMinimization rdf:type owl:NamedIndividual ,
                                                                               ecsel-dr-Planning:FE_Wip ,
                                                                               ecsel-dr-Planning:FE_X ,
                                                                               ecsel-dr-Planning:FE_Y ;
-                                       ecsel-dr-Planning:has_costs "backlog=150" ,
-                                                                   "inventory=15" ,
-                                                                   "wip=50" ;
-                                       ecsel-dr-Planning:has_planning_window "12 weeks" ;
-                                       ecsel-dr-Planning:sc3:formula """sum($g in Products, $t in PlanningHorizon)--> sum($j in Frontends) (WipCosts($g, $t) * FE_Wip($j, $g, $t)) + InventoryCosts($g, $t) * FE_Inventory($g, $t) + BacklogCosts($g, $t) * FE_Backlog($g, $t);
+                                       ecsel-dr-Planning:formula """sum($g in Products, $t in PlanningHorizon)--> sum($j in Frontends) (WipCosts($g, $t) * FE_Wip($j, $g, $t)) + InventoryCosts($g, $t) * FE_Inventory($g, $t) + BacklogCosts($g, $t) * FE_Backlog($g, $t);
 
 Frontends= Frontend_1, Frontend_2;
 Products= Product_1;
 InventoryCosts= $(hasCosts($inventory));
 BacklogCosts= $(hasCosts($backlog));
-WipCosts= $(hasCosts($wip));""" .
+WipCosts= $(hasCosts($wip));""" ;
+                                       ecsel-dr-Planning:has_costs "backlog=150" ,
+                                                                   "inventory=15" ,
+                                                                   "wip=50" ;
+                                       ecsel-dr-Planning:has_planning_window "12 weeks" .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#FE2
@@ -23043,7 +23043,7 @@ ecsel-dr-Planning:Frontend_2 rdf:type owl:NamedIndividual ,
 ###  http://www.w3id.org/ecsel-dr-Planning#Inventory_Balance_Equation
 ecsel-dr-Planning:Inventory_Balance_Equation rdf:type owl:NamedIndividual ,
                                                       ecsel-dr-Planning:Planning_Constraint ;
-                                             ecsel-dr-Planning:sc3:formula """forall($g in Products, $t in PlanningHorizon) -> FE_Inventory($p, $t) = FE_Inventory($g, $t-1) + sum(j in Frontends)(FE_Y($j,$g,$t) - FE_Backlog($g, $t-1) + FE_Backlog($g, $t) + sum(j in Frontends)(Inventory_DB($j, $g, $t) - Demand($g, $t);
+                                             ecsel-dr-Planning:formula """forall($g in Products, $t in PlanningHorizon) -> FE_Inventory($p, $t) = FE_Inventory($g, $t-1) + sum(j in Frontends)(FE_Y($j,$g,$t) - FE_Backlog($g, $t-1) + FE_Backlog($g, $t) + sum(j in Frontends)(Inventory_DB($j, $g, $t) - Demand($g, $t);
 
 Frontends= Frontend_1, Frontend_2;
 Products= Product_1;""" .
@@ -23063,7 +23063,7 @@ ecsel-dr-Planning:Inventory_DB rdf:type owl:NamedIndividual ,
 ###  http://www.w3id.org/ecsel-dr-Planning#Material_Flow_Equation
 ecsel-dr-Planning:Material_Flow_Equation rdf:type owl:NamedIndividual ,
                                                   ecsel-dr-Planning:Planning_Constraint ;
-                                         ecsel-dr-Planning:sc3:formula """forall($g in Products, $j in Frontends, $t in PlanningHorizon, $l in Steps($j, $g) -> FE_Y($j, $g, $t, $l) = FE_X($j, $g, $t - LeadTime($g, $l));
+                                         ecsel-dr-Planning:formula """forall($g in Products, $j in Frontends, $t in PlanningHorizon, $l in Steps($j, $g) -> FE_Y($j, $g, $t, $l) = FE_X($j, $g, $t - LeadTime($g, $l));
 
 
 Frontends= Frontend_1, Frontend_2;
@@ -23191,7 +23191,7 @@ ecsel-dr-Planning:SimulationHorizon rdf:type owl:NamedIndividual ,
 ###  http://www.w3id.org/ecsel-dr-Planning#Wip_Balance_Equation
 ecsel-dr-Planning:Wip_Balance_Equation rdf:type owl:NamedIndividual ,
                                                 ecsel-dr-Planning:Planning_Constraint ;
-                                       ecsel-dr-Planning:sc3:formula """forall($g in Products, $t in PlanningHorizon, $j in Frontends) -> FE_Wip($j, $g, $t) = FE_X($j, $g, $t) - FE_Y($j, $g, $t) + FE_Wip($j, $g, $t-1)
+                                       ecsel-dr-Planning:formula """forall($g in Products, $t in PlanningHorizon, $j in Frontends) -> FE_Wip($j, $g, $t) = FE_X($j, $g, $t) - FE_Y($j, $g, $t) + FE_Wip($j, $g, $t-1)
 
 Frontends= Frontend_1, Frontend_2;
 Products= Product_1;""" .
@@ -23446,8 +23446,8 @@ ecsel-dr-CO2Savings:Wind_Turbine rdfs:comment "A device that converts wind energ
                                  rdfs:label "Wind Turbine"@en .
 
 
-ecsel-dr-DF:has_order_position rdfs:label "has order position"@en ,
-                                          "order position"@en .
+ecsel-dr-DF:order_position rdfs:label "has order position"@en ,
+                                      "order position"@en .
 
 
 ecsel-dr-OOSMP:Completely_Lead_Free_Status rdfs:comment "This status determines whether a semiconductor product is lead free or not."@en ;

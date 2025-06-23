@@ -47,11 +47,11 @@
                                               "Hans Ehm"@en ;
                                 terms:isVersionOf <http://www.w3id.org/ecsel-dr> ;
                                 terms:license "Apache License Version 2.0" ;
-                                terms:modified "2025-05-14" ;
+                                terms:modified "2025-06-23" ;
                                 terms:title "Digital Reference"@en ;
                                 vann:preferredNamespaceUri <http://www.w3id.org/ecsel-dr/> ;
                                 rdfs:label "Digital Reference"@en ;
-                                owl:versionInfo "1.2.6" .
+                                owl:versionInfo "1.2.7" .
 
 #################################################################
 #    Annotation properties
@@ -13256,7 +13256,8 @@ dr:Organization rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr#Organization_Lobe
 dr:Organization_Lobe rdf:type owl:Class ;
-                     rdfs:comment "The Organization Lobe refers to the structural and managerial aspects such as organizational structure, roles and responsibilities, efficient coordination and collaboration among various stakeholders within the semiconductor supply chains."@en ;
+                     rdfs:comment "The Organization Lobe refers to the structural and managerial aspects such as organizational structure, roles and responsibilities, efficient coordination and collaboration among various stakeholders within the semiconductor supply chains."@en ,
+                                  "Lobe owner: Marta Bonik" ;
                      rdfs:label "Organization Lobe"@en .
 
 
@@ -13268,7 +13269,6 @@ dr:Outsourced_Semiconductor_Assembly_And_Test rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr#Planning_Lobe
 dr:Planning_Lobe rdf:type owl:Class ;
-                 rdfs:subClassOf ecsel-dr-SCP:Available_To_Promise ;
                  rdfs:comment "Lobe owner: Hans Ehm"@en ,
                               "The Planning Lobe is about making strategic decisions and creating comprehensive plans to ensure the efficient and effective flow of materials, products, and information throughout the manufacturing and distribution process. In includes information about marketing and sales demans, demand march, aggregated capacity, capacity bottlenecks, orders and customers."@en ;
                  rdfs:label "Planning Lobe"@en .
@@ -13280,17 +13280,18 @@ dr:Power_Lobe rdf:type owl:Class ;
 
 The Power lobe models the Amplication Switching Device, Control Method, Device Configuration and Element, Document, Entity, and Gate Driver.
 It also represents the notions of Industrial Sector, Information Object, Operation Mode, Process, Process Input and Output.
-It maps the topics of Product, Resistance, SiC MOSFET, switcher, and Voltage."""@en ;
+It maps the topics of Product, Resistance, SiC MOSFET, switcher, and Voltage."""@en ,
+                           "Lobe owner: Hans Ehm" ;
               rdfs:label "Power Lobe"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr#Process_Lobe
 dr:Process_Lobe rdf:type owl:Class ;
-                rdfs:comment "Lobe owner: Marta Bonik"@en ,
-                             """Process refers to a series of interconnected and sequential actions, steps, or operations designed to achieve a specific outcome or goal within a system or organization.
+                rdfs:comment """Process refers to a series of interconnected and sequential actions, steps, or operations designed to achieve a specific outcome or goal within a system or organization.
 
 The Process lobe of the Digital Reference ontology represents the topics of Agent, Business Process Flow, Function and Function Object.
-It also maps the notions of Goal, Input, Model and Model Element, Output, Screen, and Value-added Chain Diagram."""@en ;
+It also maps the notions of Goal, Input, Model and Model Element, Output, Screen, and Value-added Chain Diagram."""@en ,
+                             "Lobe owner: Hans Ehm" ;
                 rdfs:label "Process Lobe"@en .
 
 
@@ -13299,7 +13300,8 @@ dr:Product_Lobe rdf:type owl:Class ;
                 rdfs:comment """A product is a tangible or intangible item or service that is created, manufactured, or offered to fulfill a need or desire of customers.
 
 The Product Lobe maps the notions of Customer Part Number Specification, Design Target, Integration Level, Main Power Device Type, Motor Type and Organization.
-It also models Packing Type, Planning Element, Price Indication, Product, Qualification, Semiconductor Product Status, Solution, and Topology."""@en ;
+It also models Packing Type, Planning Element, Price Indication, Product, Qualification, Semiconductor Product Status, Solution, and Topology."""@en ,
+                             "Lobe owner: Marta Bonik" ;
                 rdfs:label "Product Lobe"@en .
 
 
@@ -13313,12 +13315,12 @@ dr:Public_Holiday rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr#Semiconductor_Development_Lobe
 dr:Semiconductor_Development_Lobe rdf:type owl:Class ;
-                                  rdfs:comment "Lobe owner: Marta Bonik"@en ,
-                                               """Semiconductor development refers to the process of researching, designing, and creating semiconductor devices to meet technological advancements and industry demands.
+                                  rdfs:comment """Semiconductor development refers to the process of researching, designing, and creating semiconductor devices to meet technological advancements and industry demands.
 
 The Semiconductor Development lobe of the Digital Reference models the Current Work In Progress, Cycle Time and Delivery Commitment, EPA, Equipment and Equipent Group, and Event Calendar.
 It reprensents the notions of Mask, Material Transfer Matrix, Operation, Operator, Owner, Planning Work Center, Plant,  and Process.
-It also maps the topics of Product Level, Target Revenue and Service Level, Technology, Time Constraints, Tool, and Workshop."""@en ;
+It also maps the topics of Product Level, Target Revenue and Service Level, Technology, Time Constraints, Tool, and Workshop."""@en ,
+                                               "Lobe owner: Hans Ehm" ;
                                   rdfs:label "Semiconductor Development Lobe"@en .
 
 
@@ -13339,7 +13341,8 @@ dr:Sensor_Lobe rdf:type owl:Class ;
 
 The Sensor lobes models the notion of a System and its Deployment.
 It maps the topics of Actuation, Feature of Interest, Input, Mounting Style, Observation and Observation Collection, and  Output.
-It also represents Platform, Procedure, Property, Relationship Nature, Result, Sample Relationship, Sampling, Sensing Type, and Stimulus."""@en ;
+It also represents Platform, Procedure, Property, Relationship Nature, Result, Sample Relationship, Sampling, Sensing Type, and Stimulus."""@en ,
+                            "Lobe owner: Marta Bonik" ;
                rdfs:label "Sensor Lobe"@en .
 
 
@@ -13351,8 +13354,7 @@ dr:Silicon_Foundry rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr#Supply_Chain_Lobe
 dr:Supply_Chain_Lobe rdf:type owl:Class ;
-                     rdfs:comment "Lobe owner: Hans Ehm"@en ,
-                                  """Supply chain refers to a network of interconnected organizations, activities, resources, and technologies involved in the production, distribution, and delivery of goods or services from the source to end consumer.
+                     rdfs:comment """Supply chain refers to a network of interconnected organizations, activities, resources, and technologies involved in the production, distribution, and delivery of goods or services from the source to end consumer.
 
 The Supply Chain lobe models the Aggregated Capacity Group.
 
@@ -13361,7 +13363,8 @@ The Supply Chain lobe models the Aggregated Capacity Group.
 It depicts the Order and its Change Request, Confirmation, Line Item, Reschedule, Schedule Line.
 
 It represents the General Customers, the notion of Customer and its Data, Logistics Management Representative, Plant, Plant Data.
-It also maps the topics of Prioritized Demand and Orders, Products, Promise, Sales Supplier, Seller, Supplier and its Data, Supply, Supply Demand Match and Picture, Target Allocation, Transfer Action, and User Action."""@en ;
+It also maps the topics of Prioritized Demand and Orders, Products, Promise, Sales Supplier, Seller, Supplier and its Data, Supply, Supply Demand Match and Picture, Target Allocation, Transfer Action, and User Action."""@en ,
+                                  "Lobe owner: Philipp Ulrich" ;
                      rdfs:label "Supply Chain Lobe"@en .
 
 
@@ -13370,7 +13373,7 @@ dr:Sustainability_Lobe rdf:type owl:Class ;
                        rdfs:comment """Sustainability refers to the practice of meeting present needs without compromising the ability of future generations to meet their own needs, balancing environmental, social, and economic considerations.
 
 This lobes models Application."""@en ,
-                                    "Lobe Owner: Marta Bonik" ;
+                                    "Lobe owner: Philipp Ulrich" ;
                        rdfs:label "Sustainability Lobe"@en .
 
 
@@ -13378,16 +13381,17 @@ This lobes models Application."""@en ,
 dr:System_Lobe rdf:type owl:Class ;
                rdfs:comment """A system is a collection of interconnected components or elements that work together to perform a specific function or achieve a particular objective.
 
-This lobe of the Digital Reference models the I 4.0 Component, the Asset it represents, the Admin Shell and its differents Views, Standard and Standard Organization. It also represents the notions of Date, Dimension, Measures, Semantic Expresison and Version."""@en ;
+This lobe of the Digital Reference models the I 4.0 Component, the Asset it represents, the Admin Shell and its differents Views, Standard and Standard Organization. It also represents the notions of Date, Dimension, Measures, Semantic Expresison and Version."""@en ,
+                            "Lobe owner: Marta Bonik" ;
                rdfs:label "System Lobe"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr#Time_Lobe
 dr:Time_Lobe rdf:type owl:Class ;
-             rdfs:comment "Lobe owner: Marta Bonik"@en ,
-                          """Time refers to a measurable dimension in which events occur sequentially and can be used to qualify the duration between occurences.
+             rdfs:comment """Time refers to a measurable dimension in which events occur sequentially and can be used to qualify the duration between occurences.
 
-This lobe of the digital reference represents the topics of Temporal Duration, Position and Reference Position, the Time Zone, Months and Days of the week."""@en ;
+This lobe of the digital reference represents the topics of Temporal Duration, Position and Reference Position, the Time Zone, Months and Days of the week."""@en ,
+                          "Lobe owner: Philipp Ulrich" ;
              rdfs:label "Time Lobe"@en .
 
 
@@ -20847,8 +20851,7 @@ ecsel-dr-Planning:Binning rdf:type owl:Class ;
 ecsel-dr-Planning:Capacity rdf:type owl:Class ;
                            owl:equivalentClass ecsel-dr-SO:Capacity ;
                            rdfs:subClassOf dr:Planning_Lobe ;
-                           rdfs:comment "Additional lobe: Semiconductor Production"@en ,
-                                        "delete?" ;
+                           rdfs:comment "Additional lobe: Semiconductor Production"@en ;
                            skos:altLabel "_DR pl" .
 
 
@@ -21486,7 +21489,7 @@ ecsel-dr-SCP:Allocated_Available_To_Promise rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Available_To_Promise
 ecsel-dr-SCP:Available_To_Promise rdf:type owl:Class ;
-                                  rdfs:subClassOf ecsel-dr-Planning:Capacity ;
+                                  rdfs:subClassOf dr:Planning_Lobe ;
                                   rdfs:comment "The ATP (Available to promise) is todays and upcoming Availability of products for demand fulfillment and order promising." ;
                                   rdfs:label "Available To Promise"@en ;
                                   skos:altLabel "_DR pl" .

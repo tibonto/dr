@@ -47,11 +47,11 @@
                                               "Hans Ehm"@en ;
                                 terms:isVersionOf <http://www.w3id.org/ecsel-dr> ;
                                 terms:license "Apache License Version 2.0" ;
-                                terms:modified "2025-10-01" ;
+                                terms:modified "2025-11-13" ;
                                 terms:title "Digital Reference"@en ;
                                 vann:preferredNamespaceUri <http://www.w3id.org/ecsel-dr/> ;
                                 rdfs:label "Digital Reference"@en ;
-                                owl:versionInfo "1.2.7" .
+                                owl:versionInfo "1.2.8" .
 
 #################################################################
 #    Annotation properties
@@ -656,69 +656,6 @@ time:inside rdf:type owl:ObjectProperty ;
                        "tiene instante de tiempo dentro"@es ;
             skos:definition "An instant that falls inside the interval. It is not intended to include beginnings and ends of intervals."@en ,
                             "Un instante que cae dentro del intervalo. Se asume que no es ni el principio ni el final de ningún intervalo."@es .
-
-
-###  http://www.w3.org/2006/time#intervalAfter
-time:intervalAfter rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf time:after ;
-                   owl:inverseOf time:intervalBefore ;
-                   rdfs:domain time:ProperInterval ;
-                   rdfs:range time:ProperInterval ;
-                   rdfs:comment "If a proper interval T1 is intervalAfter another proper interval T2, then the beginning of T1 is after the end of T2."@en ,
-                                "Si un intervalo propio T1 es posterior a otro intervalo propio T2, entonces el principio de T1 está después que el final de T2." ;
-                   rdfs:label "interval after"@en ,
-                              "intervalo posterior"@es ;
-                   skos:definition "If a proper interval T1 is intervalAfter another proper interval T2, then the beginning of T1 is after the end of T2."@en ,
-                                   "Si un intervalo propio T1 es posterior a otro intervalo propio T2, entonces el principio de T1 está después que el final de T2."@es .
-
-
-###  http://www.w3.org/2006/time#intervalBefore
-time:intervalBefore rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf time:before ;
-                    rdfs:domain time:ProperInterval ;
-                    rdfs:range time:ProperInterval ;
-                    rdfs:comment "If a proper interval T1 is intervalBefore another proper interval T2, then the end of T1 is before the beginning of T2."@en ,
-                                 "Si un intervalo propio T1 está antes que otro intervalo propio T2, entonces el final de T1 está antes que el principio de T2."@es ;
-                    rdfs:label "interval before"@en ,
-                               "intervalo anterior"@es ;
-                    skos:definition "If a proper interval T1 is intervalBefore another proper interval T2, then the end of T1 is before the beginning of T2."@en ,
-                                    "Si un intervalo propio T1 está antes que otro intervalo propio T2, entonces el final de T1 está antes que el principio de T2."@es .
-
-
-###  http://www.w3.org/2006/time#intervalDuring
-time:intervalDuring rdf:type owl:ObjectProperty ;
-                    rdfs:domain time:ProperInterval ;
-                    rdfs:range time:ProperInterval ;
-                    rdfs:comment "If a proper interval T1 is intervalDuring another proper interval T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is before the end of T2."@en ,
-                                 "Si un intervalo propio T1 está durante otro intervalo propio T2, entonces del principio de T1 está después del principio de T2, y el final de T1 está antes que el final de T2."@es ;
-                    rdfs:label "interval during"@en ,
-                               "intervalo durante"@es ;
-                    skos:definition "If a proper interval T1 is intervalDuring another proper interval T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is before the end of T2."@en ,
-                                    "Si un intervalo propio T1 está durante otro intervalo propio T2, entonces del principio de T1 está después del principio de T2, y el final de T1 está antes que el final de T2."@es .
-
-
-###  http://www.w3.org/2006/time#intervalFinishes
-time:intervalFinishes rdf:type owl:ObjectProperty ;
-                      rdfs:domain time:ProperInterval ;
-                      rdfs:range time:ProperInterval ;
-                      rdfs:comment "If a proper interval T1 is intervalFinishes another proper interval T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is coincident with the end of T2."@en ,
-                                   "Si un intervalo propio T1 termina otro intervalo propio T2, entonces del principio de T1 está después del principio de T2, y el final de T1 coincide con el final de T2."@es ;
-                      rdfs:label "interval finishes"@en ,
-                                 "intervalo termina"@es ;
-                      skos:definition "If a proper interval T1 is intervalFinishes another proper interval T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is coincident with the end of T2."@en ,
-                                      "Si un intervalo propio T1 termina otro intervalo propio T2, entonces del principio de T1 está después del principio de T2, y el final de T1 coincide con el final de T2."@es .
-
-
-###  http://www.w3.org/2006/time#intervalStarts
-time:intervalStarts rdf:type owl:ObjectProperty ;
-                    rdfs:domain time:ProperInterval ;
-                    rdfs:range time:ProperInterval ;
-                    rdfs:comment "If a proper interval T1 is intervalStarts another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is before the end of T2."@en ,
-                                 "Si un intervalo propio T1 empieza otro intervalo propio T2, entonces del principio de T1 con el principio de T2, y el final de T1 es anterior al final de T2."@es ;
-                    rdfs:label "interval starts"@en ,
-                               "intervalo empieza"@es ;
-                    skos:definition "If a proper interval T1 is intervalStarts another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is before the end of T2."@en ,
-                                    "Si un intervalo propio T1 empieza otro intervalo propio T2, entonces del principio de T1 con el final de T2, y el final de T1 es anterior al final de T2."@es .
 
 
 ###  http://www.w3.org/2006/time#interval_after
@@ -12923,14 +12860,11 @@ time:Month_Of_Year rdf:type owl:Class ;
                    rdfs:subClassOf dr:Time_Lobe .
 
 
-###  http://www.w3.org/2006/time#ProperInterval
-time:ProperInterval rdf:type owl:Class ;
-                    rdfs:subClassOf dr:Time_Lobe .
-
-
 ###  http://www.w3.org/2006/time#Proper_Interval
 time:Proper_Interval rdf:type owl:Class ;
-                     rdfs:subClassOf dr:Time_Lobe .
+                     rdfs:subClassOf dr:Time_Lobe ;
+                     rdfs:comment "A bounded, non-degenerate subsection of time along a timeline that has a clear start and end. It reflects a segment of temporal flow that is meaningful for tracking, scheduling, or defining specific processes." ;
+                     skos:definition "A bounded, non-degenerate subsection of time along a timeline that has a clear start and end. It reflects a segment of temporal flow that is meaningful for tracking, scheduling, or defining specific processes." .
 
 
 ###  http://www.w3.org/2006/time#TRS
@@ -18143,7 +18077,8 @@ ecsel-dr-DF:Allocation_Plan rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-DF#Allocation_Planning
 ecsel-dr-DF:Allocation_Planning rdf:type owl:Class ;
                                 rdfs:subClassOf ecsel-dr-DF:Planning ;
-                                rdfs:label "Allocation Planning"@en .
+                                rdfs:label "Allocation Planning"@en ;
+                                skos:definition "The process of distributing ATP (available to promise) to region or a customer group or a customer." .
 
 
 ###  http://www.w3id.org/ecsel-dr-DF#Available_To_Promise
@@ -18343,13 +18278,15 @@ ecsel-dr-DF:Master_Plan rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-DF#Master_Planning
 ecsel-dr-DF:Master_Planning rdf:type owl:Class ;
                             rdfs:subClassOf ecsel-dr-DF:Planning ;
-                            rdfs:label "Master Planning"@en .
+                            rdfs:label "Master Planning"@en ;
+                            skos:definition "Master Planning is the overarching, strategic process of balancing supply, demand, and capacity at a global level to ensure the optimized planning and execution of semiconductor supply chain operations. It involves the alignment of production schedules, inventory levels, and resource allocation across all stages of the supply chain—from wafer fabrication and assembly/testing to distribution—with the goal of meeting customer demands, minimizing costs, and maximizing efficiency." .
 
 
 ###  http://www.w3id.org/ecsel-dr-DF#Online_Order_Promising_Plan
 ecsel-dr-DF:Online_Order_Promising_Plan rdf:type owl:Class ;
                                         rdfs:subClassOf ecsel-dr-DF:Order_Delivery_Plan ;
-                                        rdfs:label "Online Order Promising Plan"@en .
+                                        rdfs:label "Online Order Promising Plan"@en ;
+                                        skos:definition "Online Order Promising Plan is a dynamic, real-time planning process that evaluates incoming customer orders against current supply chain data—such as inventory availability, production capacity, and supply constraints—to generate immediate and reliable delivery commitments. This plan balances customer demand with supply chain capabilities, ensuring optimized resource utilization and meeting order fulfillment timelines." .
 
 
 ###  http://www.w3id.org/ecsel-dr-DF#Order
@@ -18384,7 +18321,8 @@ ecsel-dr-DF:Order_Promising rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-DF#Order_Repromising_Plan
 ecsel-dr-DF:Order_Repromising_Plan rdf:type owl:Class ;
                                    rdfs:subClassOf ecsel-dr-DF:Order_Delivery_Plan ;
-                                   rdfs:label "Order Repromising Plan"@en .
+                                   rdfs:label "Order Repromising Plan"@en ;
+                                   skos:definition "Orde Repromising Plan is the (daily) updated or confirmation plan based on (daily) updated ATP and (daily) updated orders" .
 
 
 ###  http://www.w3id.org/ecsel-dr-DF#Partial_Delivery
@@ -18553,8 +18491,10 @@ ecsel-dr-DF:Supply_Contract rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-DF#Time_Interval
 ecsel-dr-DF:Time_Interval rdf:type owl:Class ;
                           rdfs:subClassOf dr:Time_Lobe ;
-                          rdfs:comment "Additional lobe: Planning"@en ;
-                          rdfs:label "Time Interval"@en .
+                          rdfs:comment "Additional lobe: Planning"@en ,
+                                       "A finite, measurable duration between two distinct temporal points in a defined reference system. It is often used to represent discrete periods in the semiconductor supply chain, such as processing times, transportation durations, or waiting intervals between stages. Formally, it represents start and end boundaries on a timeline, enabling temporal interpretation of events, activities, or states in the supply chain." ;
+                          rdfs:label "Time Interval"@en ;
+                          skos:definition "A finite, measurable duration between two distinct temporal points in a defined reference system. It is often used to represent discrete periods in the semiconductor supply chain, such as processing times, transportation durations, or waiting intervals between stages. Formally, it represents start and end boundaries on a timeline, enabling temporal interpretation of events, activities, or states in the supply chain." .
 
 
 ###  http://www.w3id.org/ecsel-dr-DF#Assemble_To_Order_(ATO)
@@ -18625,7 +18565,8 @@ ecsel-dr-GDM:Add_New_Dedication rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-GDM#Aux_Resource
 ecsel-dr-GDM:Aux_Resource rdf:type owl:Class ;
                           rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                          rdfs:label "Aux Resource"@en .
+                          rdfs:label "Aux Resource"@en ;
+                          skos:definition "Any secondary or supporting resource that indirectly facilitates or enhances the production, logistics, or overall operations of the semiconductor supply chain. These resources are not directly used to transform materials into finished products but play a critical role in ensuring the smooth functioning, quality, reliability, and efficiency of primary resources and processes." .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Aux_Resource_Requirement
@@ -18657,13 +18598,15 @@ ecsel-dr-GDM:Capability rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-GDM#Capability_Snapshot
 ecsel-dr-GDM:Capability_Snapshot rdf:type owl:Class ;
                                  rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                                 rdfs:label "Capability Snapshot"@en .
+                                 rdfs:label "Capability Snapshot"@en ;
+                                 skos:definition "A time-specific representation or assessment of the available manufacturing, operational, and logistical capacities within the semiconductor supply chain. It includes the current state of physical resources, production capacities, operational constraints, and system functionalities at a given moment, enabling decision-making, tracking, and alignment of activities in response to dynamic supply chain demands." .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Chamber
 ecsel-dr-GDM:Chamber rdf:type owl:Class ;
                      rdfs:subClassOf ecsel-dr-GDM:Equipment ;
-                     rdfs:label "Chamber"@en .
+                     rdfs:label "Chamber"@en ;
+                     skos:definition "An enclosed, controlled environment within semiconductor manufacturing equipment where specific process steps, such as chemical deposition, etching, cleaning, or other operations, are performed on wafers. Chambers are engineered to provide the precise conditions—such as temperature, pressure, gas flow, and plasma control—necessary to achieve the desired material and structural characteristics required in semiconductor device fabrication." .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Chamber_Dedication
@@ -18675,7 +18618,8 @@ ecsel-dr-GDM:Chamber_Dedication rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-GDM#Cluster
 ecsel-dr-GDM:Cluster rdf:type owl:Class ;
                      rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                     rdfs:label "Cluster"@en .
+                     rdfs:label "Cluster"@en ;
+                     skos:definition "A group of interconnected entities, resources, processes, machines in the semiconductor supply chain that are physically or logically grouped together to achieve specific objectives, such as enhanced operational efficiency, shared resource utilization, or collaborative manufacturing. A cluster can represent physical configurations (e.g., tool clusters), geographical groupings (e.g., regional semiconductor hubs), or logical groupings (e.g., functional or process-level clusters)." .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Current_Machine_State
@@ -18765,7 +18709,9 @@ ecsel-dr-GDM:Equipment_State rdf:type owl:Class ;
                                                owl:onProperty ecsel-dr-GDM:requiresEquipmentState ;
                                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                owl:onClass ecsel-dr-GDM:Maintenance
-                                             ] .
+                                             ] ;
+                             rdfs:label "Equipment State" ;
+                             skos:definition "The current operational condition or status of a specific piece of equipment within the semiconductor manufacturing or supply chain process at a given point in time. It captures the machine's functional state, availability, and readiness, providing essential information for decision-making, process control, and resource optimization. Equipment_State may include details about operational performance, maintenance requirements, or downtime." .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Fab
@@ -18881,7 +18827,8 @@ ecsel-dr-GDM:Material_Consumption rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-GDM#Material_Transfer
 ecsel-dr-GDM:Material_Transfer rdf:type owl:Class ;
                                rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                               rdfs:label "Material Transfer"@en .
+                               rdfs:label "Material Transfer"@en ;
+                               skos:definition "The process of physically moving materials, components, or finished semiconductor products between different locations, processes, or entities within the semiconductor supply chain. This process ensures the seamless, secure, and efficient flow of materials across various stages of the supply chain, including sourcing, manufacturing, assembly, testing, warehousing, and distribution." .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Max_Lot_Size
@@ -18955,7 +18902,8 @@ ecsel-dr-GDM:Release_Plan rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-GDM#Remove_Equipment
 ecsel-dr-GDM:Remove_Equipment rdf:type owl:Class ;
                               rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                              rdfs:label "Remove Equipment"@en .
+                              rdfs:label "Remove Equipment"@en ;
+                              skos:definition "The process of decommissioning, disassembling, relocating, or retiring a specific piece of equipment or machinery from its active role within the semiconductor supply chain. This process is typically conducted as part of equipment upgrades, capacity realignments, technology migrations, maintenance workflows, or end-of-life management to optimize operational efficiency, adapt to evolving technology requirements, or meet business objectives." .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Route
@@ -18981,7 +18929,8 @@ ecsel-dr-GDM:Setup rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-GDM#Shift_Attendance
 ecsel-dr-GDM:Shift_Attendance rdf:type owl:Class ;
                               rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                              rdfs:label "Shift Attendance"@en .
+                              rdfs:label "Shift Attendance"@en ;
+                              skos:definition "The presence, participation, and availability of scheduled workforce members during designated work shifts within the semiconductor supply chain." .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Supply_Chain
@@ -19034,14 +18983,16 @@ ecsel-dr-GDM:Target_WIP rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-GDM#Team
 ecsel-dr-GDM:Team rdf:type owl:Class ;
                   rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                  rdfs:label "Team"@en .
+                  rdfs:label "Team"@en ;
+                  skos:definition "A group of individuals, often with complementary skills and expertise, who are organized to collaborate and coordinate efforts to achieve common objectives, execute specific tasks, or perform functions within the semiconductor supply chain. Teams operate as functional units within organizations and may span multiple areas, including production, research, logistics, quality control, and customer support." .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Technology
 ecsel-dr-GDM:Technology rdf:type owl:Class ;
                         owl:equivalentClass ecsel-dr-SO:Technology ;
                         rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                        rdfs:label "Technology"@en .
+                        rdfs:label "Technology"@en ;
+                        skos:definition "Technology – in Semiconductor Production is a wafer technology containing general process data (min. feature size, shrink factor, litho steps)." .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Time_Constraint
@@ -21492,12 +21443,14 @@ ecsel-dr-Planning:Activity rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Automated
 ecsel-dr-Planning:Automated rdf:type owl:Class ;
-                            rdfs:subClassOf ecsel-dr-Planning:Decision_Maker_Type .
+                            rdfs:subClassOf ecsel-dr-Planning:Decision_Maker_Type ;
+                            skos:definition "The entities, processes, or systems designed to function autonomously within a defined scope of the semiconductor supply chain." .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Autonomous
 ecsel-dr-Planning:Autonomous rdf:type owl:Class ;
-                             rdfs:subClassOf ecsel-dr-Planning:Decision_Making_Initiative .
+                             rdfs:subClassOf ecsel-dr-Planning:Decision_Making_Initiative ;
+                             skos:definition "A self-governing or self-directed capability within a structured system that enables independent decision-making and action without requiring external human intervention." .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Available_Capacity
@@ -21586,7 +21539,8 @@ ecsel-dr-Planning:Demand rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Dependent
 ecsel-dr-Planning:Dependent rdf:type owl:Class ;
-                            rdfs:subClassOf ecsel-dr-Planning:Decision_Making_Initiative .
+                            rdfs:subClassOf ecsel-dr-Planning:Decision_Making_Initiative ;
+                            skos:definition "A subordinate decision-making initiative, where the decision or action relies on the outcome, approval, or input from another independent or external element. In this hierarchical structure, the dependent initiative lacks autonomy and reacts or adapts based on a superior or precursor initiative's information, timing, or directives." .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Distributed_Hierarchical_Situation
@@ -21613,8 +21567,8 @@ ecsel-dr-Planning:Frozen_Fence rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-Planning#Heterarchical_Situation
 ecsel-dr-Planning:Heterarchical_Situation rdf:type owl:Class ;
                                           rdfs:subClassOf ecsel-dr-Planning:Hierarchical_Situation ;
-                                          rdfs:comment "All the vertices have level 1." ;
-                                          rdfs:label "Heterarchical Situation"@en .
+                                          rdfs:label "Heterarchical Situation"@en ;
+                                          skos:definition "Heterarchical Situation is a type of hierarchical situation where all entities, represented as vertices within a structure, exist on the same hierarchical level (level 1). It describes a balanced, non-rank-based relationship among entities in a system, such that no entity dominates or is subordinate to another." .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Hierarchical_Situation
@@ -21626,7 +21580,8 @@ ecsel-dr-Planning:Hierarchical_Situation rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Human
 ecsel-dr-Planning:Human rdf:type owl:Class ;
-                        rdfs:subClassOf ecsel-dr-Planning:Decision_Maker_Type .
+                        rdfs:subClassOf ecsel-dr-Planning:Decision_Maker_Type ;
+                        skos:definition "Human - the decision-making agents that contribute to strategic planning, operational controls, problem-solving, and the execution of tasks across the supply chain lifecycle." .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#In_Transit_Inventory
@@ -21667,9 +21622,10 @@ LOCATIONS are fundamental to managing supply chain efficiency, tracking material
 ###  http://www.w3id.org/ecsel-dr-Planning#Lot_Sizing_Rule
 ecsel-dr-Planning:Lot_Sizing_Rule rdf:type owl:Class ;
                                   rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                                  rdfs:comment "Additional lobe: Planning"@en ,
-                                               "A LOT SIZING RULE defines a rule to specify the lot size for a specific part. The lot size on the other hand defines the number of pieces belonging to a part. The lot size is the result of applying lot sizing rules." ;
-                                  rdfs:label "Lot Sizing Rule"@en .
+                                  rdfs:comment "Additional lobe: Planning"@en ;
+                                  rdfs:label "Lot Sizing Rule"@en ;
+                                  skos:definition """A predetermined set of guidelines or methodologies used to determine the optimal lot or batch size for production or order planning within the semiconductor supply chain. These rules govern how much of a product or material should be produced, transferred, or ordered at a time to balance manufacturing efficiency, inventory levels, customer demand, and operational constraints. 
+Typical lot size 25 of 50 wafers is a lot in the Frontend.""" .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Macro_Operation
@@ -21831,13 +21787,15 @@ ecsel-dr-Planning:Replanning_Degree rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-Planning#Required_Capacity
 ecsel-dr-Planning:Required_Capacity rdf:type owl:Class ;
                                     rdfs:subClassOf ecsel-dr-Planning:Capacity ;
-                                    rdfs:label "Required Capacity"@en .
+                                    rdfs:label "Required Capacity"@en ;
+                                    skos:definition "The amount of production capability, such as machinery, that is needed at specific points in the supply chain to fulfill the anticipated demand for semiconductor products within a given timeframe." .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Resource
 ecsel-dr-Planning:Resource rdf:type owl:Class ;
                            rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                           rdfs:comment "Additional lobe: Planning"@en .
+                           rdfs:comment "Additional lobe: Planning"@en ;
+                           skos:definition "Any tangible or intangible entity utilized within the semiconductor supply chain to perform specific tasks, support production processes, enable decision-making, or deliver products and services. Resources encompass physical assets (e.g., tools, materials, and facilities), human expertise, digital assets, and data or information critical to the efficient functioning of the supply chain." .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Resource_Availability_Constraints
@@ -21894,10 +21852,11 @@ ecsel-dr-Planning:Target rdf:type owl:Class ;
                          rdfs:label "Target" .
 
 
-###  http://www.w3id.org/ecsel-dr-Planning#Temporal-Constraints
-ecsel-dr-Planning:Temporal-Constraints rdf:type owl:Class ;
+###  http://www.w3id.org/ecsel-dr-Planning#Temporal_Constraints
+ecsel-dr-Planning:Temporal_Constraints rdf:type owl:Class ;
                                        rdfs:subClassOf ecsel-dr-Planning:Planning_Constraint ;
-                                       rdfs:comment "This type of constraints restricts the values of temporal attributes, modeled by the property TIME, that belong to PLANNING OBJECTS. For instance, there might be a minimum amount of time between two consecutive operations of a certain product." .
+                                       rdfs:label "Temporal Constraints" ;
+                                       skos:definition "The time-based restrictions, limitations, or conditions that govern or influence the scheduling, sequencing, synchronization, or completion of processes, tasks, or resource allocations within the semiconductor supply chain." .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Trigger
@@ -22136,7 +22095,8 @@ ecsel-dr-RAMI40:View rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-SCP#AP_FCST
 ecsel-dr-SCP:AP_FCST rdf:type owl:Class ;
                      rdfs:subClassOf ecsel-dr-SCP:Forecast ;
-                     rdfs:label "AP FCST"@en .
+                     rdfs:label "AP FCST"@en ;
+                     skos:definition "Allocation Priority Forecast" .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Aggregated_Capacity
@@ -22304,7 +22264,8 @@ ecsel-dr-SCP:NP_Forecast rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-SCP#OP_Forecast
 ecsel-dr-SCP:OP_Forecast rdf:type owl:Class ;
                          rdfs:subClassOf ecsel-dr-SCP:Forecast ;
-                         rdfs:label "OP Forecast"@en .
+                         rdfs:label "OP Forecast"@en ;
+                         skos:definition "Order Priority Forecast" .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Open_Order_Book
@@ -22379,7 +22340,8 @@ ecsel-dr-SCP:Promise rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-SCP#Ramp_Up_Stock
 ecsel-dr-SCP:Ramp_Up_Stock rdf:type owl:Class ;
                            rdfs:subClassOf ecsel-dr-SCP:SSO_Stocks ;
-                           rdfs:label "Ramp Up Stock"@en .
+                           rdfs:label "Ramp Up Stock"@en ;
+                           skos:definition "Ramp up stock targets are used when ramping new products. Often there are no orders yet in the system, but the RSM already wants some chips on DIEBANK or finished goods on VKL." .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Resource_Capacity
@@ -22392,7 +22354,8 @@ ecsel-dr-SCP:Resource_Capacity rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-SCP#Retained_Stock
 ecsel-dr-SCP:Retained_Stock rdf:type owl:Class ;
                             rdfs:subClassOf ecsel-dr-SCP:SSO_Stocks ;
-                            rdfs:label "Retained Stock"@en .
+                            rdfs:label "Retained Stock"@en ;
+                            skos:definition "In allocation time, to compensate unplanned supply fluctuations e.g. short time demand increase or unexpected low deliveries from BE, an extra operational buffer is needed at DC. AP_FC targets defined by the SCP need to be produced regardless of the height of this operational buffer. This is enabled by hiding parts of the stock available in DC from the demand supply match. The operational buffer is called retain stock." .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#SSO_Stocks
@@ -22418,7 +22381,8 @@ ecsel-dr-SCP:Sales_Demand rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-SCP#Standard_Order
 ecsel-dr-SCP:Standard_Order rdf:type owl:Class ;
                             rdfs:subClassOf ecsel-dr-SCP:Order ;
-                            rdfs:label "Standard Order"@en .
+                            rdfs:label "Standard Order"@en ;
+                            skos:definition "EDI or manually entered, can be shipped, can contain several products." .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Stocks
@@ -24189,7 +24153,7 @@ ecsel-dr-RAMI40:Asset rdfs:comment "Every I4.0-component has to represent an ent
 [ rdf:type owl:AllDisjointClasses ;
   owl:members ( ecsel-dr-Planning:Resource_Availability_Constraints
                 ecsel-dr-Planning:Resource_Compatibility_Constraints
-                ecsel-dr-Planning:Temporal-Constraints
+                ecsel-dr-Planning:Temporal_Constraints
               )
 ] .
 

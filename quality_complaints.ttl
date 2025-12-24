@@ -1,0 +1,1497 @@
+@prefix : <http://www.w3id.org/digital-reference/quality/> .
+@prefix qc: <http://www.w3id.org/digital-reference/quality_complaint_management/> .
+@prefix sm: <http://www.w3id.org/digital-reference/shipment/> .
+@prefix qc8d: <http://www.w3id.org/digital-reference/quality_complaint8D/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qcli: <http://www.w3id.org/digital-reference/quality_complaint_line_item/> .
+@prefix sd1: <http://www.w3id.org/digital-reference/StepD1/> .
+@prefix sd2: <http://www.w3id.org/digital-reference/StepD2/> .
+@prefix sd3: <http://www.w3id.org/digital-reference/StepD3/> .
+@prefix sd4: <http://www.w3id.org/digital-reference/StepD4/> .
+@prefix sd5: <http://www.w3id.org/digital-reference/StepD5/> .
+@prefix sd6: <http://www.w3id.org/digital-reference/StepD6/> .
+@prefix sd7: <http://www.w3id.org/digital-reference/StepD7/> .
+@prefix sd8: <http://www.w3id.org/digital-reference/StepD8/> .
+@base <http://www.w3id.org/digital-reference/quality/> .
+
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2000/01/rdf-schema#description
+rdfs:description rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.w3id.org/digital-reference/quality/has
+:has rdf:type owl:ObjectProperty ;
+     rdfs:domain qc:QualityComplaint ;
+     rdfs:range qc:QualityComplaintLineItem .
+
+
+###  http://www.w3id.org/digital-reference/quality/isMarkedBy
+:isMarkedBy rdf:type owl:ObjectProperty ;
+            rdfs:domain qc:ProductInstance ;
+            rdfs:range qc:ProductMarking .
+
+
+###  http://www.w3id.org/digital-reference/quality/partOf
+:partOf rdf:type owl:ObjectProperty ;
+        rdfs:domain qc:ProductInstance ;
+        rdfs:range qc:Lot .
+
+
+###  http://www.w3id.org/digital-reference/quality/refersTo
+:refersTo rdf:type owl:ObjectProperty ;
+          rdfs:domain qc:QualityComplaintLineItem ;
+          rdfs:range qc:ProductInstance .
+
+
+###  http://www.w3id.org/digital-reference/quality/reportedVia
+:reportedVia rdf:type owl:ObjectProperty ;
+             rdfs:domain qc:QualityComplaint ;
+             rdfs:range qc:QualityComplaint8D .
+
+
+###  http://www.w3id.org/digital-reference/quality/wasShippedIn
+:wasShippedIn rdf:type owl:ObjectProperty ;
+              rdfs:domain qc:ProductInstance ;
+              rdfs:range qc:Shipment .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.w3id.org/digital-reference/quality_complaint_line_item/additionalPartMaterialNumber
+qcli:additionalPartMaterialNumber rdf:type owl:DatatypeProperty ;
+                              rdfs:domain qc:QualityComplaintLineItem ;
+                              rdfs:range xsd:string ;
+                              rdfs:description "BuyerProductItemIdentification, Supplier internal part number" ;
+                              rdfs:label "AdditionalPartMaterialNumber" .
+
+
+###  http://www.w3id.org/digital-reference/quality/assyBatchID
+:assyBatchID rdf:type owl:DatatypeProperty ;
+             rdfs:domain qc:Lot ;
+             rdfs:range xsd:string ;
+             rdfs:description "" ;
+             rdfs:label "AssyBatchID" .
+
+
+###  http://www.w3id.org/digital-reference/quality_complaint_line_item/attachmentReference
+qcli:attachmentReference rdf:type owl:DatatypeProperty ;
+                     rdfs:domain qc:QualityComplaintLineItem ;
+                     rdfs:range xsd:string ;
+                     rdfs:description "Reference to complaint attachments including Pictures, Measurement (Identifier)" ;
+                     rdfs:label "AttachmentReference" .
+
+
+###  http://www.w3id.org/digital-reference/quality/batchLotID
+:batchLotID rdf:type owl:DatatypeProperty ;
+            rdfs:domain qc:Lot ;
+            rdfs:range xsd:string ;
+            rdfs:description "" ;
+            rdfs:label "BatchLotID" .
+
+
+###  http://www.w3id.org/digital-reference/quality/batchMarked
+:batchMarked rdf:type owl:DatatypeProperty ;
+             rdfs:domain qc:Lot ;
+             rdfs:range xsd:string ;
+             rdfs:description "Manufacturing Batch" ;
+             rdfs:label "BatchMarked" .
+
+
+###  http://www.w3id.org/digital-reference/quality/comment_1
+:comment_1 rdf:type owl:DatatypeProperty ;
+           rdfs:domain qc:QualityComplaint ;
+           rdfs:range xsd:string ;
+           rdfs:description "Comment from customer regarding failure reproduction made by supplier" ;
+           rdfs:label "Comment_1" .
+
+
+###  http://www.w3id.org/digital-reference/quality/comment_2
+:comment_2 rdf:type owl:DatatypeProperty ;
+           rdfs:domain qc:QualityComplaint ;
+           rdfs:range xsd:string ;
+           rdfs:description "Area to provide flexible fields and their values" ;
+           rdfs:label "Comment_2" .
+
+
+###  http://www.w3id.org/digital-reference/quality_complaint_line_item/complainedQuantity
+qcli:complainedQuantity rdf:type owl:DatatypeProperty ;
+                    rdfs:domain qc:QualityComplaintLineItem ;
+                    rdfs:range xsd:double ;
+                    rdfs:description "ComplainedQuantity (Same as returned qty initially, may increase)" ;
+                    rdfs:label "ComplainedQuantity" .
+
+
+###  http://www.w3id.org/digital-reference/quality_complaint_line_item/complaintDescription
+qcli:complaintDescription rdf:type owl:DatatypeProperty ;
+                      rdfs:domain qc:QualityComplaintLineItem ;
+                      rdfs:range xsd:string ;
+                      rdfs:description "Description by Customer of the Complaint" ;
+                      rdfs:label "ComplaintDescription" .
+
+
+###  http://www.w3id.org/digital-reference/quality_complaint_line_item/complaintLineItem_ID
+qcli:complaintLineItem_ID rdf:type owl:DatatypeProperty ;
+                      rdfs:domain qc:QualityComplaintLineItem ;
+                      rdfs:range xsd:string ;
+                      rdfs:description "Complaint ID, unique for customer" ;
+                      rdfs:label "ComplaintLineItem_ID" .
+
+
+###  http://www.w3id.org/digital-reference/quality/creationDateTime
+:creationDateTime rdf:type owl:DatatypeProperty ;
+                  rdfs:domain qc:QualityComplaint ;
+                  rdfs:range xsd:dateTime ;
+                  rdfs:description "Case registration date" ;
+                  rdfs:label "CreationDateTime" .
+
+
+###  http://www.w3id.org/digital-reference/shipment/customerAddress
+sm:customerAddress rdf:type owl:DatatypeProperty ;
+                 rdfs:domain qc:shipment ;
+                 rdfs:range xsd:string ;
+                 rdfs:description "Customer Adress" ;
+                 rdfs:label "CustomerAddress" .
+
+
+###  http://www.w3id.org/digital-reference/quality_complaint_line_item/customerApplication_Description
+qcli:customerApplication_Description rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain qc:QualityComplaint ,
+                                             qc:QualityComplaintLineItem ;
+                                 rdfs:range xsd:string ;
+                                 rdfs:description "Customer Application Description" ,
+                                                  "Free Text" ;
+                                 rdfs:label "CustomerApplication_Description" .
+
+
+###  http://www.w3id.org/digital-reference/quality/customerApplication_ID
+:customerApplication_ID rdf:type owl:DatatypeProperty ;
+                        rdfs:domain qc:QualityComplaint ;
+                        rdfs:range xsd:string ;
+                        rdfs:description "Customer Application ID" ;
+                        rdfs:label "CustomerApplication_ID" .
+
+
+###  http://www.w3id.org/digital-reference/shipment/customerCity
+sm:customerCity rdf:type owl:DatatypeProperty ;
+              rdfs:domain qc:Shipment ;
+              rdfs:range xsd:string ;
+              rdfs:description "Customer City" ;
+              rdfs:label "CustomerCity" .
+
+
+###  http://www.w3id.org/digital-reference/quality/customerCityName
+:customerCityName rdf:type owl:DatatypeProperty ;
+                  rdfs:domain qc:QualityComplaint ;
+                  rdfs:range xsd:string ;
+                  rdfs:description "Customer City" ;
+                  rdfs:label "CustomerCityName" .
+
+
+###  http://www.w3id.org/digital-reference/quality/customerComplaint_ID
+:customerComplaint_ID rdf:type owl:DatatypeProperty ;
+                      rdfs:domain qc:QualityComplaint ;
+                      rdfs:range xsd:string ;
+                      rdfs:description "Complaint ID as used by the Customer" ;
+                      rdfs:label "CustomerComplaint_ID" .
+
+
+###  http://www.w3id.org/digital-reference/quality/customerContact_Email_Address
+:customerContact_Email_Address rdf:type owl:DatatypeProperty ;
+                               rdfs:domain qc:QualityComplaint ;
+                               rdfs:range xsd:string ;
+                               rdfs:description "Customer Contact Email Address" ;
+                               rdfs:label "CustomerContact_Email_Address" .
+
+
+###  http://www.w3id.org/digital-reference/quality/customerContact_ID
+:customerContact_ID rdf:type owl:DatatypeProperty ;
+                    rdfs:domain qc:QualityComplaint ;
+                    rdfs:range xsd:string ;
+                    rdfs:description "Customer Contact ID" ;
+                    rdfs:label "CustomerContact_ID" .
+
+
+###  http://www.w3id.org/digital-reference/quality/customerContact_Name
+:customerContact_Name rdf:type owl:DatatypeProperty ;
+                      rdfs:domain qc:QualityComplaint ;
+                      rdfs:range xsd:string ;
+                      rdfs:description "Customer Contact Name" ;
+                      rdfs:label "CustomerContact_Name" .
+
+
+###  http://www.w3id.org/digital-reference/quality/customerContact_PhoneNumber
+:customerContact_PhoneNumber rdf:type owl:DatatypeProperty ;
+                             rdfs:domain qc:QualityComplaint ;
+                             rdfs:range xsd:string ;
+                             rdfs:description "Customer Contact Phone Number" ;
+                             rdfs:label "CustomerContact_PhoneNumber" .
+
+
+###  http://www.w3id.org/digital-reference/quality/customerContact_Role
+:customerContact_Role rdf:type owl:DatatypeProperty ;
+                      rdfs:domain qc:QualityComplaint ;
+                      rdfs:range xsd:string ;
+                      rdfs:description "Customer Contact Role" ;
+                      rdfs:label "CustomerContact_Role" .
+
+
+###  http://www.w3id.org/digital-reference/shipment/customerCountry
+sm:customerCountry rdf:type owl:DatatypeProperty ;
+                 rdfs:domain qc:Shipment ;
+                 rdfs:range xsd:string ;
+                 rdfs:description "Customer Country" ;
+                 rdfs:label "CustomerCountry" .
+
+
+###  http://www.w3id.org/digital-reference/shipment/customerID
+sm:customerID rdf:type owl:DatatypeProperty ;
+            rdfs:domain qc:Shipment ;
+            rdfs:range xsd:string ;
+            rdfs:description "Customer ID" ;
+            rdfs:label "CustomerID" .
+
+
+###  http://www.w3id.org/digital-reference/quality/customerLocationName
+:customerLocationName rdf:type owl:DatatypeProperty ;
+                      rdfs:domain qc:QualityComplaint ;
+                      rdfs:range xsd:string ;
+                      rdfs:description "Customer Country" ;
+                      rdfs:label "CustomerLocationName" .
+
+
+###  http://www.w3id.org/digital-reference/quality/customerLocation_ID
+:customerLocation_ID rdf:type owl:DatatypeProperty ;
+                     rdfs:domain qc:QualityComplaint ;
+                     rdfs:range xsd:string ;
+                     rdfs:description "Customer Location ID" ;
+                     rdfs:label "CustomerLocation_ID" .
+
+
+###  http://www.w3id.org/digital-reference/quality/customerName
+:customerName rdf:type owl:DatatypeProperty ;
+              rdfs:domain qc:QualityComplaint ,
+                          qc:Shipment ;
+              rdfs:range xsd:string ;
+              rdfs:description "Customer Name" ;
+              rdfs:label "CustomerName" .
+
+
+###  http://www.w3id.org/digital-reference/quality_complaint_line_item/customerPartNumber
+qcli:customerPartNumber rdf:type owl:DatatypeProperty ;
+                    rdfs:domain qc:QualityComplaintLineItem ;
+                    rdfs:range xsd:string ;
+                    rdfs:description "Customer's part/material number" ;
+                    rdfs:label "CustomerPartNumber" .
+
+
+###  http://www.w3id.org/digital-reference/quality/customer_ID
+:customer_ID rdf:type owl:DatatypeProperty ;
+             rdfs:domain qc:QualityComplaint ;
+             rdfs:range xsd:string ;
+             rdfs:description "Customer ID" ;
+             rdfs:label "CustomerGlobal_ID" .
+
+
+###  http://www.w3id.org/digital-reference/quality/date
+:date rdf:type owl:DatatypeProperty ;
+      rdfs:domain qc:Lot ;
+      rdfs:range xsd:dateTime ;
+      rdfs:description "Date of Start" ;
+      rdfs:label "Date" .
+
+
+###  http://www.w3id.org/digital-reference/quality/dateCode
+:dateCode rdf:type owl:DatatypeProperty ;
+          rdfs:domain qc:Lot ;
+          rdfs:range xsd:string ;
+          rdfs:description "" ;
+          rdfs:label "DateCode" .
+
+
+###  http://www.w3id.org/digital-reference/quality_complaint_line_item/defectQuantity
+qcli:defectQuantity rdf:type owl:DatatypeProperty ;
+                rdfs:domain qc:QualityComplaintLineItem ;
+                rdfs:range xsd:double ;
+                rdfs:description "Complaint quantity (number of defective parts)" ;
+                rdfs:label "DefectQuantity" .
+
+
+###  http://www.w3id.org/digital-reference/quality_complaint_line_item/failurePreAnalysis
+qcli:failurePreAnalysis rdf:type owl:DatatypeProperty ;
+                    rdfs:domain qc:QualityComplaintLineItem ;
+                    rdfs:range xsd:string ;
+                    rdfs:description "1st verification result by supplier" ;
+                    rdfs:label "FailurePreAnalysis" .
+
+
+###  http://www.w3id.org/digital-reference/quality/manufacturingLocation
+:manufacturingLocation rdf:type owl:DatatypeProperty ;
+                       rdfs:domain qc:Lot ;
+                       rdfs:range xsd:string ;
+                       rdfs:description "" ;
+                       rdfs:label "ManufacturingLocation" .
+
+
+###  http://www.w3id.org/digital-reference/quality/manufacturingLocationName
+:manufacturingLocationName rdf:type owl:DatatypeProperty ;
+                           rdfs:domain qc:Lot ;
+                           rdfs:range xsd:string ;
+                           rdfs:description "" ;
+                           rdfs:label "ManufacturingLocationName" .
+
+
+###  http://www.w3id.org/digital-reference/quality/markingLineA
+:markingLineA rdf:type owl:DatatypeProperty ;
+              rdfs:domain qc:ProductInstance ,
+                          qc:ProductMarking ;
+              rdfs:range xsd:string ;
+              rdfs:description "Marking Line A details, Often the marking Line A identifies the Type as marked" ;
+              rdfs:label "MarkingLineA" .
+
+
+###  http://www.w3id.org/digital-reference/quality/markingLineB
+:markingLineB rdf:type owl:DatatypeProperty ;
+              rdfs:domain qc:ProductInstance ,
+                          qc:ProductMarking ;
+              rdfs:range xsd:string ;
+              rdfs:description "Marking Line B details, Often the marking Line B identifies the Batch / Lot as marked" ;
+              rdfs:label "MarkingLineB" .
+
+
+###  http://www.w3id.org/digital-reference/quality/markingLineC
+:markingLineC rdf:type owl:DatatypeProperty ;
+              rdfs:domain qc:ProductInstance ,
+                          qc:ProductMarking ;
+              rdfs:range xsd:string ;
+              rdfs:description "Marking Line C" ;
+              rdfs:label "MarkingLineC" .
+
+
+###  http://www.w3id.org/digital-reference/quality/markingLineD
+:markingLineD rdf:type owl:DatatypeProperty ;
+              rdfs:domain qc:ProductInstance ,
+                          qc:ProductMarking ;
+              rdfs:range xsd:string ;
+              rdfs:description "Marking Line D" ;
+              rdfs:label "MarkingLineD" .
+
+
+###  http://www.w3id.org/digital-reference/quality_complaint_line_item/markingLineDetails
+qcli:markingLineDetails rdf:type owl:DatatypeProperty ;
+                    rdfs:domain qc:QualityComplaintLineItem ;
+                    rdfs:range xsd:string ;
+                    rdfs:description "Marking Lines from the Device which was returned, All marking lines e.g., Product Name, Date Code, Batch ID" ;
+                    rdfs:label "MarkingLineDetails" .
+
+
+###  http://www.w3id.org/digital-reference/quality/markingLineE
+:markingLineE rdf:type owl:DatatypeProperty ;
+              rdfs:domain qc:ProductInstance ,
+                          qc:ProductMarking ;
+              rdfs:range xsd:string ;
+              rdfs:description "Marking Line E" ;
+              rdfs:label "MarkingLineE" .
+
+
+###  http://www.w3id.org/digital-reference/quality/markingLineF
+:markingLineF rdf:type owl:DatatypeProperty ;
+              rdfs:domain qc:ProductInstance ,
+                          qc:ProductMarking ;
+              rdfs:range xsd:string ;
+              rdfs:description "Marking Line F" ;
+              rdfs:label "MarkingLineF" .
+
+
+###  http://www.w3id.org/digital-reference/quality/markingLineG
+:markingLineG rdf:type owl:DatatypeProperty ;
+              rdfs:domain qc:ProductInstance ,
+                          qc:ProductMarking ;
+              rdfs:range xsd:string ;
+              rdfs:description "Marking Line G" ;
+              rdfs:label "MarkingLineG" .
+
+
+###  http://www.w3id.org/digital-reference/quality/markingLineH
+:markingLineH rdf:type owl:DatatypeProperty ;
+              rdfs:domain qc:ProductInstance ,
+                          qc:ProductMarking ;
+              rdfs:range xsd:string ;
+              rdfs:description "Marking Line H" ;
+              rdfs:label "MarkingLineH" .
+
+
+###  http://www.w3id.org/digital-reference/quality/markingLineI
+:markingLineI rdf:type owl:DatatypeProperty ;
+              rdfs:domain qc:ProductInstance ,
+                          qc:ProductMarking ;
+              rdfs:range xsd:string ;
+              rdfs:description "Marking Line I" ;
+              rdfs:label "MarkingLineI" .
+
+
+###  http://www.w3id.org/digital-reference/quality/markingLineJ
+:markingLineJ rdf:type owl:DatatypeProperty ;
+              rdfs:domain qc:ProductInstance ,
+                          qc:ProductMarking ;
+              rdfs:range xsd:string ;
+              rdfs:description "Marking Line J" ;
+              rdfs:label "MarkingLineJ" .
+
+
+###  http://www.w3id.org/digital-reference/quality/markingLineK
+:markingLineK rdf:type owl:DatatypeProperty ;
+              rdfs:domain qc:ProductInstance ,
+                          qc:ProductMarking ;
+              rdfs:range xsd:string ;
+              rdfs:description "Marking Line K" ;
+              rdfs:label "MarkingLineK" .
+
+
+###  http://www.w3id.org/digital-reference/shipment/masterCartonID
+sm:masterCartonID rdf:type owl:DatatypeProperty ;
+                rdfs:domain qc:shipment ;
+                rdfs:range xsd:string ;
+                rdfs:description "Ship Box identifier" ;
+                rdfs:label "MasterCartonID" .
+
+
+###  http://www.w3id.org/digital-reference/quality_complaint_line_item/nonconformanceReportNumber
+qcli:nonconformanceReportNumber rdf:type owl:DatatypeProperty ;
+                            rdfs:domain qc:QualityComplaintLineItem ;
+                            rdfs:range xsd:string ;
+                            rdfs:description "Non-conformance report number" ;
+                            rdfs:label "NonconformanceReportNumber" .
+
+
+###  http://www.w3id.org/digital-reference/quality_complaint_line_item/orderReference
+qcli:orderReference rdf:type owl:DatatypeProperty ;
+                rdfs:domain qc:QualityComplaintLineItem ;
+                rdfs:range xsd:string ;
+                rdfs:description "Order information for the delivery of these goods to the Customer" ;
+                rdfs:label "OrderReference" .
+
+
+###  http://www.w3id.org/digital-reference/quality/productCode
+:productCode rdf:type owl:DatatypeProperty ;
+             rdfs:domain qc:Lot ;
+             rdfs:range xsd:string ;
+             rdfs:description "Product Identifier" ;
+             rdfs:label "ProductCode" .
+
+
+###  http://www.w3id.org/digital-reference/quality/productIdentifier
+:productIdentifier rdf:type owl:DatatypeProperty ;
+                   rdfs:domain qc:ProductInstance ;
+                   rdfs:range xsd:string ;
+                   rdfs:description "" ;
+                   rdfs:label "ProductIdentifier" .
+
+
+###  http://www.w3id.org/digital-reference/quality/productType
+:productType rdf:type owl:DatatypeProperty ;
+             rdfs:domain qc:Lot ;
+             rdfs:range xsd:string ;
+             rdfs:description "Product Type" ;
+             rdfs:label "ProductType" .
+
+
+###  http://www.w3id.org/digital-reference/quality/qty
+:qty rdf:type owl:DatatypeProperty ;
+     rdfs:domain qc:Lot ;
+     rdfs:range xsd:double ;
+     rdfs:description "" ;
+     rdfs:label "Qty" .
+
+
+###  http://www.w3id.org/digital-reference/quality/qtyWafersTested
+:qtyWafersTested rdf:type owl:DatatypeProperty ;
+                 rdfs:domain qc:Lot ;
+                 rdfs:range xsd:double ;
+                 rdfs:description "" ;
+                 rdfs:label "QtyWafersTested" .
+
+
+###  http://www.w3id.org/digital-reference/quality/referenceData
+:referenceData rdf:type owl:DatatypeProperty ;
+               rdfs:domain qc:Lot ;
+               rdfs:range xsd:string ;
+               rdfs:description "General Reference Data, eg can be used for the Customer Purchase order" ;
+               rdfs:label "ReferenceData" .
+
+
+###  http://www.w3id.org/digital-reference/quality_complaint_line_item/remark
+qcli:remark rdf:type owl:DatatypeProperty ;
+        rdfs:domain qc:QualityComplaintLineItem ;
+        rdfs:range xsd:string ;
+        rdfs:description "Comment from customer regarding status change" ;
+        rdfs:label "Remark" .
+
+
+###  http://www.w3id.org/digital-reference/quality_complaint_line_item/requestedResponseType
+qcli:requestedResponseType rdf:type owl:DatatypeProperty ;
+                       rdfs:domain qc:QualityComplaintLineItem ;
+                       rdfs:range xsd:string ;
+                       rdfs:description "From Customer, value set to be agreed" ;
+                       rdfs:label "RequestedResponseType" .
+
+
+###  http://www.w3id.org/digital-reference/quality_complaint_line_item/returnedQuantity
+qcli:returnedQuantity rdf:type owl:DatatypeProperty ;
+                  rdfs:domain qc:QualityComplaintLineItem ;
+                  rdfs:range xsd:double ;
+                  rdfs:description "Physical Quantity returned to the supplier for investigation" ;
+                  rdfs:label "ReturnedQuantity" .
+
+
+###  http://www.w3id.org/digital-reference/quality/revisionDateTime
+:revisionDateTime rdf:type owl:DatatypeProperty ;
+                  rdfs:domain qc:QualityComplaint ;
+                  rdfs:range xsd:dateTime ;
+                  rdfs:description "Date when registered complaint case modified" ;
+                  rdfs:label "RevisionDateTime" .
+
+
+###  http://www.w3id.org/digital-reference/quality_complaint_line_item/riskDescription
+qcli:riskDescription rdf:type owl:DatatypeProperty ;
+                 rdfs:domain qc:QualityComplaintLineItem ;
+                 rdfs:range xsd:string ;
+                 rdfs:description "Inputs From customer" ;
+                 rdfs:label "RiskDescription" .
+
+
+###  http://www.w3id.org/digital-reference/quality/sapOrderNumber
+:sapOrderNumber rdf:type owl:DatatypeProperty ;
+                rdfs:domain qc:Lot ;
+                rdfs:range xsd:string ;
+                rdfs:description "SAP Order Number" ;
+                rdfs:label "SAPOrderNumber" .
+
+
+###  http://www.w3id.org/digital-reference/quality/shipToCountry
+:shipToCountry rdf:type owl:DatatypeProperty ;
+               rdfs:domain qc:Lot ;
+               rdfs:range xsd:string ;
+               rdfs:description "" ;
+               rdfs:label "ShipToCountry" .
+
+
+###  http://www.w3id.org/digital-reference/quality/shipToCustID
+:shipToCustID rdf:type owl:DatatypeProperty ;
+              rdfs:domain qc:Lot ;
+              rdfs:range xsd:string ;
+              rdfs:description "Ship To Custoner ID as used by the supplier" ;
+              rdfs:label "ShipToCustID" .
+
+
+###  http://www.w3id.org/digital-reference/quality/shipToCustLongName
+:shipToCustLongName rdf:type owl:DatatypeProperty ;
+                    rdfs:domain qc:Lot ;
+                    rdfs:range xsd:string ;
+                    rdfs:description "" ;
+                    rdfs:label "ShipToCustLongName" .
+
+
+###  http://www.w3id.org/digital-reference/quality/shipToCustShortName
+:shipToCustShortName rdf:type owl:DatatypeProperty ;
+                     rdfs:domain qc:Lot ;
+                     rdfs:range xsd:string ;
+                     rdfs:description "" ;
+                     rdfs:label "ShipToCustShortName" .
+
+
+###  http://www.w3id.org/digital-reference/quality/shipToRegion
+:shipToRegion rdf:type owl:DatatypeProperty ;
+              rdfs:domain qc:Lot ;
+              rdfs:range xsd:string ;
+              rdfs:description "" ;
+              rdfs:label "ShipToRegion" .
+
+
+###  http://www.w3id.org/digital-reference/quality_complaint_line_item/shipment
+qcli:shipment rdf:type owl:DatatypeProperty ;
+          rdfs:domain qc:QualityComplaintLineItem ;
+          rdfs:range xsd:string ;
+          rdfs:description "Reference to the Shipment_ID for the return of the 'defected goods'" ;
+          rdfs:label "Shipment" .
+
+
+###  http://www.w3id.org/digital-reference/shipment/shipmentID
+sm:shipmentID rdf:type owl:DatatypeProperty ;
+            rdfs:domain qc:Shipment ;
+            rdfs:range xsd:string ;
+            rdfs:description "Shipment ID" ;
+            rdfs:label "ShipmentID" .
+
+
+###  http://www.w3id.org/digital-reference/quality/stage
+:stage rdf:type owl:DatatypeProperty ;
+       rdfs:domain qc:Lot ;
+       rdfs:range xsd:string ;
+       rdfs:description "Manufacturing Stage e.g., Diffusion, Assembly" ;
+       rdfs:label "Stage" .
+
+
+###  http://www.w3id.org/digital-reference/quality/supplierComplaint_ID
+:supplierComplaint_ID rdf:type owl:DatatypeProperty ;
+                      rdfs:domain qc:QualityComplaint ;
+                      rdfs:range xsd:string ;
+                      rdfs:description "Complaint ID as used by the supplier" ;
+                      rdfs:label "SupplierComplaint_ID" .
+
+
+###  http://www.w3id.org/digital-reference/quality/supplierContact_Email_Address
+:supplierContact_Email_Address rdf:type owl:DatatypeProperty ;
+                               rdfs:domain qc:QualityComplaint ;
+                               rdfs:range xsd:string ;
+                               rdfs:description "Contact Email Address" ;
+                               rdfs:label "SupplierContact_Email_Address" .
+
+
+###  http://www.w3id.org/digital-reference/quality/supplierContact_ID
+:supplierContact_ID rdf:type owl:DatatypeProperty ;
+                    rdfs:domain qc:QualityComplaint ;
+                    rdfs:range xsd:string ;
+                    rdfs:description "Contact ID" ;
+                    rdfs:label "SupplierContact_ID" .
+
+
+###  http://www.w3id.org/digital-reference/quality/supplierContact_Name
+:supplierContact_Name rdf:type owl:DatatypeProperty ;
+                      rdfs:domain qc:QualityComplaint ;
+                      rdfs:range xsd:string ;
+                      rdfs:description "Contact Name" ;
+                      rdfs:label "SupplierContact_Name" .
+
+
+###  http://www.w3id.org/digital-reference/quality/supplierContact_Role
+:supplierContact_Role rdf:type owl:DatatypeProperty ;
+                      rdfs:domain qc:QualityComplaint ;
+                      rdfs:range xsd:string ;
+                      rdfs:description "Contact Role" ;
+                      rdfs:label "SupplierContact_Role" .
+
+
+###  http://www.w3id.org/digital-reference/quality/supplierName
+:supplierName rdf:type owl:DatatypeProperty ;
+              rdfs:domain qc:QualityComplaint ;
+              rdfs:range xsd:string ;
+              rdfs:description "Name of the supplier" ;
+              rdfs:label "Supplier_Name" .
+
+
+###  http://www.w3id.org/digital-reference/quality/supplier_ID
+:supplier_ID rdf:type owl:DatatypeProperty ;
+             rdfs:domain qc:QualityComplaint ;
+             rdfs:range xsd:string ;
+             rdfs:description "Identifier of the supplier" ;
+             rdfs:label "SupplierGlobal_ID" .
+
+
+###  http://www.w3id.org/digital-reference/shipment/transportLotID
+sm:transportLotID rdf:type owl:DatatypeProperty ;
+                rdfs:domain qc:Shipment ;
+                rdfs:range xsd:string ;
+                rdfs:description "" ;
+                rdfs:label "TransportLotID" .
+
+
+###  http://www.w3id.org/digital-reference/quality/typeMarked
+:typeMarked rdf:type owl:DatatypeProperty ;
+            rdfs:domain qc:Lot ;
+            rdfs:range xsd:string ;
+            rdfs:description "Product Type" ;
+            rdfs:label "TypeMarked" .
+
+
+###  http://www.w3id.org/digital-reference/quality/waferLotReference
+:waferLotReference rdf:type owl:DatatypeProperty ;
+                   rdfs:domain qc:Lot ;
+                   rdfs:range xsd:string ;
+                   rdfs:description "" ;
+                   rdfs:label "WaferLotReference" .
+
+
+#################################################################
+#    Data properties Quality Complaint 8D
+#################################################################
+
+qc8d:customerComplaint_ID rdf:type owl:DatatypeProperty ;
+        rdfs:description "Complaint ID as used by the Customer" ;
+        rdfs:label "CustomerComplaint_ID";
+        rdfs:domain qc:QualityComplaint8D;
+        rdfs:range xsd:string .
+
+qc8d:supplierComplaint_ID rdf:type owl:DatatypeProperty ;
+        rdfs:description "Complaint ID as used by the supplier" ;
+        rdfs:label "SupplierComplaint_ID";
+        rdfs:domain qc:QualityComplaint8D;
+        rdfs:range xsd:string .
+
+qc8d:startDateTime rdf:type owl:DatatypeProperty ;
+        rdfs:description "Physical Part arrived and investigation start date" ;
+        rdfs:label "StartDateTime";
+        rdfs:domain qc:QualityComplaint8D;
+        rdfs:range xsd:dateTime .
+
+qc8d:issueDateTime rdf:type owl:DatatypeProperty ;
+        rdfs:description "Date Time of each response including Acceptance of FA support, Interim report, 8D" ;
+        rdfs:label "IssueDateTime";
+        rdfs:domain qc:QualityComplaint8D;
+        rdfs:range xsd:dateTime .
+
+qc8d:revisionDateTime rdf:type owl:DatatypeProperty ;
+        rdfs:description "New report revision submission date" ;
+        rdfs:label "RevisionDateTime";
+        rdfs:domain qc:QualityComplaint8D;
+        rdfs:range xsd:dateTime .
+
+qc8d:documentStatusCode rdf:type owl:DatatypeProperty ;
+        rdfs:description "Fixed value set, eg 'In Progress', 'Final'" ;
+        rdfs:label "DocumentStatusCode";
+        rdfs:domain qc:QualityComplaint8D;
+        rdfs:range xsd:string .
+
+qc8d:supplierGlobal_ID rdf:type owl:DatatypeProperty ;
+        rdfs:description "Number" ;
+        rdfs:label "SupplierGlobal_ID";
+        rdfs:domain qc:QualityComplaint8D;
+        rdfs:range xsd:string .
+
+qc8d:supplierGlobal_Name rdf:type owl:DatatypeProperty ;
+        rdfs:description "Supplier name" ;
+        rdfs:label "SupplierGlobal_Name";
+        rdfs:domain qc:QualityComplaint8D;
+        rdfs:range xsd:string .
+
+qc8d:contact_ID rdf:type owl:DatatypeProperty ;
+        rdfs:description "Contact ID" ;
+        rdfs:label "Contact_ID";
+        rdfs:domain qc:QualityComplaint8D;
+        rdfs:range xsd:string .
+
+qc8d:contact_Name rdf:type owl:DatatypeProperty ;
+        rdfs:description "Contact name" ;
+        rdfs:label "Contact_Name";
+        rdfs:domain qc:QualityComplaint8D;
+        rdfs:range xsd:string .
+
+qc8d:contact_Role rdf:type owl:DatatypeProperty ;
+        rdfs:description "Contact role" ;
+        rdfs:label "Contact_Role";
+        rdfs:domain qc:QualityComplaint8D;
+        rdfs:range xsd:string .
+
+qc8d:contact_Email_Address rdf:type owl:DatatypeProperty ;
+        rdfs:description "Contact_Email_Address" ;
+        rdfs:label "Contact_Email_Address";
+        rdfs:domain qc:QualityComplaint8D;
+        rdfs:range xsd:string .
+
+qc8d:customerGlobal_ID rdf:type owl:DatatypeProperty ;
+        rdfs:description "Customer Number" ;
+        rdfs:label "CustomerGlobal_ID";
+        rdfs:domain qc:QualityComplaint8D;
+        rdfs:range xsd:string .
+
+qc8d:customerGlobal_Name rdf:type owl:DatatypeProperty ;
+        rdfs:description "Customer Name" ;
+        rdfs:label "CustomerGlobal_Name";
+        rdfs:domain qc:QualityComplaint8D;
+        rdfs:range xsd:string .
+
+qc8d:customerLocation_ID rdf:type owl:DatatypeProperty ;
+        rdfs:description "" ;
+        rdfs:label "CustomerLocation_ID";
+        rdfs:domain qc:QualityComplaint8D;
+        rdfs:range xsd:string .
+
+qc8d:customerLocationName rdf:type owl:DatatypeProperty ;
+        rdfs:description "Customer Country" ;
+        rdfs:label "CustomerLocationName";
+        rdfs:domain qc:QualityComplaint8D;
+        rdfs:range xsd:string .
+
+qc8d:customerCityName rdf:type owl:DatatypeProperty ;
+        rdfs:description "Customer City" ;
+        rdfs:label "CustomerCityName";
+        rdfs:domain qc:QualityComplaint8D;
+        rdfs:range xsd:string .
+
+qc8d:contact_Name rdf:type owl:DatatypeProperty ;
+        rdfs:description "" ;
+        rdfs:label "Contact_Name";
+        rdfs:domain qc:QualityComplaint8D;
+        rdfs:range xsd:string .
+
+qc8d:contact_Role rdf:type owl:DatatypeProperty ;
+        rdfs:description "" ;
+        rdfs:label "Contact_Role";
+        rdfs:domain qc:QualityComplaint8D;
+        rdfs:range xsd:string .
+
+qc8d:contact_Email_Address rdf:type owl:DatatypeProperty ;
+        rdfs:description "" ;
+        rdfs:label "Contact_Email_Address";
+        rdfs:domain qc:QualityComplaint8D;
+        rdfs:range xsd:string .
+
+qc8d:contact_PhoneNumber rdf:type owl:DatatypeProperty ;
+        rdfs:description "" ;
+        rdfs:label "Contact_PhoneNumber";
+        rdfs:domain qc:QualityComplaint8D;
+        rdfs:range xsd:string .
+
+
+
+
+sd1:coreTeam rdf:type owl:DatatypeProperty ;
+    rdfs:description "Champion / Team leader" ;
+    rdfs:label "CoreTeam" ;
+    rdfs:domain qc:StepD1 ;
+    rdfs:range xsd:string .
+
+sd1:keyContactReference rdf:type owl:DatatypeProperty ;
+    rdfs:description "Duplication of Supplier Contact" ;
+    rdfs:label "KeyContactReference" ;
+    rdfs:domain qc:StepD1 ;
+    rdfs:range xsd:string .
+
+sd1:partyID rdf:type owl:DatatypeProperty ;
+    rdfs:description "Duplication of Supplier Contact" ;
+    rdfs:label "PartyID" ;
+    rdfs:domain qc:StepD1 ;
+    rdfs:range xsd:string .
+
+sd1:contactID rdf:type owl:DatatypeProperty ;
+    rdfs:description "Duplication of Supplier Contact" ;
+    rdfs:label "ContactID" ;
+    rdfs:domain qc:StepD1 ;
+    rdfs:range xsd:string .
+
+sd1:teamMemberContactReference rdf:type owl:DatatypeProperty ;
+    rdfs:description "Team member contact" ;
+    rdfs:label "TeamMemberContactReference" ;
+    rdfs:domain qc:StepD1 ;
+    rdfs:range xsd:string .
+
+
+sd2:complaintItemID rdf:type owl:DatatypeProperty ;
+    rdfs:description "" ;
+    rdfs:label "ComplaintItemID" ;
+    rdfs:domain qc:StepD2 ;
+    rdfs:range xsd:string .
+
+sd2:complaintItemStatusCode rdf:type owl:DatatypeProperty ;
+    rdfs:description "General acceptance status from supplier";
+    rdfs:label "ComplaintItemStatusCode" ;
+    rdfs:domain qc:StepD2 ;
+    rdfs:range xsd:string .
+
+sd2:complaintItemName rdf:type owl:DatatypeProperty ;
+    rdfs:description "Problem Description from customer for Line Item" ;
+    rdfs:label "ComplaintItemName" ;
+    rdfs:domain qc:StepD2 ;
+    rdfs:range xsd:string .
+
+sd2:complaintItemDescription rdf:type owl:DatatypeProperty ;
+    rdfs:description "Recurring error information from customer, Our confirmation if recurring should be in D3 e.g., Event Evaluation" ;
+    rdfs:label "ComplaintItemDescription" ;
+    rdfs:domain qc:StepD2 ;
+    rdfs:range xsd:string .
+
+sd2:problemProfileDescription rdf:type owl:DatatypeProperty ;
+    rdfs:description "Problem description by the supplier, summary of FA" ;
+    rdfs:label "ProblemProfileDescription" ;
+    rdfs:domain qc:StepD2 ;
+    rdfs:range xsd:string .
+
+sd2:acceptedDefectiveQuantity rdf:type owl:DatatypeProperty ;
+    rdfs:description "Defective Qty received by supplier e.g., 5 out of 10 returned qty are accepted as failed" ;
+    rdfs:label "AcceptedDefectiveQuantity" ;
+    rdfs:domain qc:StepD2 ;
+    rdfs:range xsd:decimal .
+
+sd2:sellerProcessStatusCode rdf:type owl:DatatypeProperty ;
+    rdfs:description "8D status" ;
+    rdfs:label "SellerProcessStatusCode" ;
+    rdfs:domain qc:StepD2 ;
+    rdfs:range xsd:string .
+
+sd2:remark rdf:type owl:DatatypeProperty ;
+    rdfs:description "reason" ;
+    rdfs:label "Remark" ;
+    rdfs:domain qc:StepD2 ;
+    rdfs:range xsd:string .
+
+sd2:generalResponse rdf:type owl:DatatypeProperty ;
+    rdfs:description "Additional Information" ;
+    rdfs:label "GeneralResponse" ;
+    rdfs:domain qc:StepD2 ;
+    rdfs:range xsd:string .
+
+sd2:manufacturingDateCode rdf:type owl:DatatypeProperty ;
+    rdfs:description "Datecode - e.g., YYWW" ;
+    rdfs:label "ManufacturingDateCode" ;
+    rdfs:domain qc:StepD2 ;
+    rdfs:range xsd:dateTime .
+
+
+
+
+
+sd3:deliveryReference rdf:type owl:DatatypeProperty ;
+    rdfs:description "Information by when the first “clean”/correct parts are delivered to the customer, after implementing of containment action(s)." ;
+    rdfs:label "DeliveryReference" ;
+    rdfs:domain qc:StepD3 ;
+    rdfs:range xsd:string .
+
+sd3:deliveryNoteID rdf:type owl:DatatypeProperty ;
+    rdfs:description "" ;
+    rdfs:label "DeliveryNoteID" ;
+    rdfs:domain qc:StepD3 ;
+    rdfs:range xsd:string .
+
+sd3:lineItemID rdf:type owl:DatatypeProperty ;
+    rdfs:description "" ;
+    rdfs:label "LineItemID" ;
+    rdfs:domain qc:StepD3 ;
+    rdfs:range xsd:string .
+
+sd3:deliveryDate rdf:type owl:DatatypeProperty ;
+    rdfs:description "" ;
+    rdfs:label "DeliveryDate" ;
+    rdfs:domain qc:StepD3 ;
+    rdfs:range xsd:dateTime .
+
+sd3:startDateTime rdf:type owl:DatatypeProperty ;
+    rdfs:description "Date when the first “clean”/correct parts are delivered to the customer." ;
+    rdfs:label "StartDateTime" ;
+    rdfs:domain qc:StepD3 ;
+    rdfs:range xsd:dateTime .
+
+sd3:endDateTime rdf:type owl:DatatypeProperty ;
+    rdfs:description "" ;
+    rdfs:label "EndDateTime" ;
+    rdfs:domain qc:StepD3 ;
+    rdfs:range xsd:dateTime .
+
+sd3:deliveryTypeCode rdf:type owl:DatatypeProperty ;
+    rdfs:description "" ;
+    rdfs:label "DeliveryTypeCode" ;
+    rdfs:domain qc:StepD3 ;
+    rdfs:range xsd:string .
+
+sd3:containmentAction rdf:type owl:DatatypeProperty ;
+    rdfs:description "" ;
+    rdfs:label "containmentAction" ;
+    rdfs:domain qc:StepD3 ;
+    rdfs:range xsd:string .
+
+sd3:iD rdf:type owl:DatatypeProperty ;
+    rdfs:description "Contains unique supplier ID of action/root cause. Used for actions/root causes created in supplier's system." ;
+    rdfs:label "ID" ;
+    rdfs:domain qc:StepD3 ;
+    rdfs:range xsd:string .
+
+sd3:title rdf:type owl:DatatypeProperty ;
+    rdfs:description "Title/short description of action" ;
+    rdfs:label "Title" ;
+    rdfs:domain qc:StepD3 ;
+    rdfs:range xsd:string .
+
+sd3:description rdf:type owl:DatatypeProperty ;
+    rdfs:description "Description of action" ;
+    rdfs:label "Description" ;
+    rdfs:domain qc:StepD3 ;
+    rdfs:range xsd:string .
+
+sd3:actionStatusCode rdf:type owl:DatatypeProperty ;
+    rdfs:description "Has value 'cancelled' if action or root cause has been cancelled by supplier; otherwise 'valid'." ;
+    rdfs:label "ActionStatusCode" ;
+    rdfs:domain qc:StepD3 ;
+    rdfs:range xsd:string .
+
+sd3:startDateTime rdf:type owl:DatatypeProperty ;
+    rdfs:description "" ;
+    rdfs:label "StartDateTime" ;
+    rdfs:domain qc:StepD3 ;
+    rdfs:range xsd:dateTime .
+
+sd3:dueDateTime rdf:type owl:DatatypeProperty ;
+    rdfs:description "By when the action is planned to be implemented by the supplier." ;
+    rdfs:label "DueDateTime" ;
+    rdfs:domain qc:StepD3 ;
+    rdfs:range xsd:dateTime .
+
+sd3:actualFinishDateTime rdf:type owl:DatatypeProperty ;
+    rdfs:description "Date/time the action was actually implemented." ;
+    rdfs:label "ActualFinishDateTime" ;
+    rdfs:domain qc:StepD3 ;
+    rdfs:range xsd:dateTime .
+
+sd3:estimatedEndDateTime rdf:type owl:DatatypeProperty ;
+    rdfs:description "Same value as element DueDateTime" ;
+    rdfs:label "EstimatedEndDateTime" ;
+    rdfs:domain qc:StepD3 ;
+    rdfs:range xsd:dateTime .
+
+sd3:effectivenessDescription rdf:type owl:DatatypeProperty ;
+    rdfs:description "Description of the validation of the effect of the action" ;
+    rdfs:label "EffectivenessDescription" ;
+    rdfs:domain qc:StepD3 ;
+    rdfs:range xsd:string .
+
+sd3:effectivenessDegreeNumeric rdf:type owl:DatatypeProperty ;
+    rdfs:description "Expected effectiveness of action (% / 100)" ;
+    rdfs:label "EffectivenessDegreeNumeric" ;
+    rdfs:domain qc:StepD3 ;
+    rdfs:range xsd:decimal .
+
+sd3:responsibleContactReference rdf:type owl:ObjectProperty ;
+    rdfs:description "" ;
+    rdfs:label "ResponsibleContactReference" ;
+    rdfs:domain qc:StepD3 ;
+    rdfs:range :group .
+
+sd3:partyID rdf:type owl:DatatypeProperty ;
+    rdfs:description "" ;
+    rdfs:label "PartyID" ;
+    rdfs:domain qc:StepD3 ;
+    rdfs:range xsd:string .
+
+sd3:contactID rdf:type owl:DatatypeProperty ;
+    rdfs:description "Unique ID of contact" ;
+    rdfs:label "ContactID" ;
+    rdfs:domain qc:StepD3 ;
+    rdfs:range xsd:string .
+
+
+
+sd4:rootCauseAnalysis rdf:type owl:DatatypeProperty ;
+    rdfs:description "" ;
+    rdfs:label "RootCauseAnalysis" ;
+    rdfs:domain qc:StepD4 ;
+    rdfs:range xsd:string .
+
+sd4:rootCause rdf:type owl:DatatypeProperty ;
+    rdfs:description "" ;
+    rdfs:label "RootCause" ;
+    rdfs:domain qc:StepD4 ;
+    rdfs:range xsd:string .
+
+sd4:iD rdf:type owl:DatatypeProperty ;
+    rdfs:description "Contains unique supplier ID of action/root cause. Used for actions/root causes created in supplier's system." ;
+    rdfs:label "ID" ;
+    rdfs:domain qc:StepD4 ;
+    rdfs:range xsd:string .
+
+sd4:title rdf:type owl:DatatypeProperty ;
+    rdfs:description "Title/short description of root cause" ;
+    rdfs:label "Title" ;
+    rdfs:domain qc:StepD4 ;
+    rdfs:range xsd:string .
+
+sd4:description rdf:type owl:DatatypeProperty ;
+    rdfs:description "Description of root cause" ;
+    rdfs:label "Description" ;
+    rdfs:domain qc:StepD4 ;
+    rdfs:range xsd:string .
+
+sd4:rootCauseStatusCode rdf:type owl:DatatypeProperty ;
+    rdfs:description "Has value 'cancelled' if action or root cause has been cancelled by supplier; otherwise 'valid'." ;
+    rdfs:label "RootCauseStatusCode" ;
+    rdfs:domain qc:StepD4 ;
+    rdfs:range xsd:string .
+
+sd4:contributionDegreeNumeric rdf:type owl:DatatypeProperty ;
+    rdfs:description "Contribution of root cause to Problem (in % / 100)" ;
+    rdfs:label "ContributionDegreeNumeric" ;
+    rdfs:domain qc:StepD4 ;
+    rdfs:range xsd:decimal .
+
+
+
+
+
+
+sd4:plannedCorrectiveAction rdf:type owl:DatatypeProperty ;
+    rdfs:description "" ;
+    rdfs:label "PlannedCorrectiveAction" ;
+    rdfs:domain qc:StepD5 ;
+    rdfs:range xsd:string .
+
+sd4:actionID rdf:type owl:DatatypeProperty ;
+    rdfs:description "Contains unique supplier ID of action/root cause. Used for actions/root causes created in supplier's system." ;
+    rdfs:label "ActionID" ;
+    rdfs:domain qc:StepD5 ;
+    rdfs:range xsd:string .
+
+sd4:title rdf:type owl:DatatypeProperty ;
+    rdfs:description "Title/short description of action" ;
+    rdfs:label "Title" ;
+    rdfs:domain qc:StepD5 ;
+    rdfs:range xsd:string .
+
+sd4:description rdf:type owl:DatatypeProperty ;
+    rdfs:description "Description of action" ;
+    rdfs:label "Description" ;
+    rdfs:domain qc:StepD5 ;
+    rdfs:range xsd:string .
+
+sd4:actionStatusCode rdf:type owl:DatatypeProperty ;
+    rdfs:description "Has value 'cancelled' if action or root cause has been cancelled by supplier; otherwise 'valid'." ;
+    rdfs:label "ActionStatusCode" ;
+    rdfs:domain qc:StepD5 ;
+    rdfs:range xsd:string .
+
+sd4:plannedEndDateTime rdf:type owl:DatatypeProperty ;
+    rdfs:description "By when the action is planned to be implemented by the supplier." ;
+    rdfs:label "PlannedEndDateTime" ;
+    rdfs:domain qc:StepD5 ;
+    rdfs:range xsd:dateTime .
+
+sd4:effectivenessDegreeNumeric rdf:type owl:DatatypeProperty ;
+    rdfs:description "Expected effectiveness of action (% / 100)" ;
+    rdfs:label "EffectivenessDegreeNumeric" ;
+    rdfs:domain qc:StepD5 ;
+    rdfs:range xsd:decimal .
+
+sd4:verificationDescription rdf:type owl:DatatypeProperty ;
+    rdfs:description "" ;
+    rdfs:label "VerificationDescription" ;
+    rdfs:domain qc:StepD5 ;
+    rdfs:range xsd:string .
+
+
+
+
+sd6:returnDeliveryReferenceDocument rdf:type owl:DatatypeProperty ;
+    rdfs:description "Information by when the first “clean”/correct parts are delivered to the customer, after implementing of implemented corrective action(s)." ;
+    rdfs:label "ReturnDeliveryReferenceDocument" ;
+    rdfs:domain qc:StepD6 ;
+    rdfs:range xsd:string .
+
+sd6:issueDateTime rdf:type owl:DatatypeProperty ;
+    rdfs:description "Date when the first “clean”/correct parts are delivered to the customer." ;
+    rdfs:label "IssueDateTime" ;
+    rdfs:domain qc:StepD6 ;
+    rdfs:range xsd:dateTime .
+
+sd6:takenCorrectiveAction rdf:type owl:DatatypeProperty ;
+    rdfs:description "" ;
+    rdfs:label "TakenCorrectiveAction" ;
+    rdfs:domain qc:StepD6 ;
+    rdfs:range xsd:string .
+
+sd6:actionID rdf:type owl:DatatypeProperty ;
+    rdfs:description "Contains unique supplier ID of action/root cause. Used for actions/root causes created in supplier's system." ;
+    rdfs:label "ActionID" ;
+    rdfs:domain qc:StepD6 ;
+    rdfs:range xsd:string .
+
+sd6:title rdf:type owl:DatatypeProperty ;
+    rdfs:description "Title/short description of action" ;
+    rdfs:label "Title" ;
+    rdfs:domain qc:StepD6 ;
+    rdfs:range xsd:string .
+
+sd6:description rdf:type owl:DatatypeProperty ;
+    rdfs:description "Description of action" ;
+    rdfs:label "Description" ;
+    rdfs:domain qc:StepD6 ;
+    rdfs:range xsd:string .
+
+sd6:actionStatusCode rdf:type owl:DatatypeProperty ;
+    rdfs:description "Has value 'cancelled' if action or root cause has been cancelled by supplier; otherwise 'valid'." ;
+    rdfs:label "ActionStatusCode" ;
+    rdfs:domain qc:StepD6 ;
+    rdfs:range xsd:string .
+
+sd6:startDateTime rdf:type owl:DatatypeProperty ;
+    rdfs:description "" ;
+    rdfs:label "StartDateTime" ;
+    rdfs:domain qc:StepD6 ;
+    rdfs:range xsd:dateTime .
+
+sd6:plannedEndDateTime rdf:type owl:DatatypeProperty ;
+    rdfs:description "By when the action is planned to be implemented by the supplier." ;
+    rdfs:label "PlannedEndDateTime" ;
+    rdfs:domain qc:StepD6 ;
+    rdfs:range xsd:dateTime .
+
+sd6:finalizedEndDateTime rdf:type owl:DatatypeProperty ;
+    rdfs:description "Date/time the action was actually implemented." ;
+    rdfs:label "FinalizedEndDateTime" ;
+    rdfs:domain qc:StepD6 ;
+    rdfs:range xsd:dateTime .
+
+sd6:effectivenessDegreeNumeric rdf:type owl:DatatypeProperty ;
+    rdfs:description "Measured effectiveness of action (% / 100). If element provided, ValidationDescription and ValidationDateTime also need to be provided." ;
+    rdfs:label "EffectivenessDegreeNumeric" ;
+    rdfs:domain qc:StepD6 ;
+    rdfs:range xsd:decimal .
+
+sd6:validationDescription rdf:type owl:DatatypeProperty ;
+    rdfs:description "If element provided, EffectivenessDegreeNumeric and ValidationDateTime also need to be provided." ;
+    rdfs:label "ValidationDescription" ;
+    rdfs:domain qc:StepD6 ;
+    rdfs:range xsd:string .
+
+sd6:validationDateTime rdf:type owl:DatatypeProperty ;
+    rdfs:description "Date/time validation was performed.  If element provided, EffectivenessDegreeNumeric and ValidationDescription also need to be provided." ;
+    rdfs:label "ValidationDateTime" ;
+    rdfs:domain qc:StepD6 ;
+    rdfs:range xsd:dateTime .
+
+sd6:responsibleContactReference rdf:type owl:DatatypeProperty ;
+    rdfs:description "" ;
+    rdfs:label "ResponsibleContactReference" ;
+    rdfs:domain qc:StepD6 ;
+    rdfs:range xsd:string .
+
+sd6:partyID rdf:type owl:DatatypeProperty ;
+    rdfs:description "Ignored by Problem Solver; can be set equal to Header.SellerParty.ID" ;
+    rdfs:label "PartyID" ;
+    rdfs:domain qc:StepD6 ;
+    rdfs:range xsd:string .
+
+sd6:contactID rdf:type owl:DatatypeProperty ;
+    rdfs:description "Unique ID of contact, equal to SellerParty.Organization.Contact.ID" ;
+    rdfs:label "ContactID" ;
+    rdfs:domain qc:StepD6 ;
+    rdfs:range xsd:string .
+
+sd6:riskAssessment rdf:type owl:DatatypeProperty ;
+    rdfs:description "Information on the risk assessment done by supplier" ;
+    rdfs:label "RiskAssessment" ;
+    rdfs:domain qc:StepD6 ;
+    rdfs:range xsd:string .
+
+sd6:id rdf:type owl:DatatypeProperty ;
+    rdfs:description "Contains unique ID of specific risk assessment" ;
+    rdfs:label "ID" ;
+    rdfs:domain qc:StepD6 ;
+    rdfs:range xsd:string .
+
+sd6:startDateTimeProduction rdf:type owl:DatatypeProperty ;
+    rdfs:description "Start date of affected production" ;
+    rdfs:label "StartDateTimeProduction" ;
+    rdfs:domain qc:StepD6 ;
+    rdfs:range xsd:dateTime .
+
+sd6:endDateTimeProduction rdf:type owl:DatatypeProperty ;
+    rdfs:description "End date of affected production" ;
+    rdfs:label "EndDateTimeProduction" ;
+    rdfs:domain qc:StepD6 ;
+    rdfs:range xsd:dateTime .
+
+sd6:startDateTimeDelivery rdf:type owl:DatatypeProperty ;
+    rdfs:description "Start date of affected delivery" ;
+    rdfs:label "StartDateTimeDelivery" ;
+    rdfs:domain qc:StepD6 ;
+    rdfs:range xsd:dateTime .
+
+sd6:endDateTimeDelivery rdf:type owl:DatatypeProperty ;
+    rdfs:description "End date of affected delivery" ;
+    rdfs:label "EndDateTimeDelivery" ;
+    rdfs:domain qc:StepD6 ;
+    rdfs:range xsd:dateTime .
+
+sd6:riskDescription rdf:type owl:DatatypeProperty ;
+    rdfs:description "Description of the risk" ;
+    rdfs:label "RiskDescription" ;
+    rdfs:domain qc:StepD6 ;
+    rdfs:range xsd:string .
+
+
+
+qc:StepD7 rdf:type owl:Class ;
+    rdfs:label "StepD7" .
+
+sd7:preventRecurrenceCorrectiveAction rdf:type owl:DatatypeProperty ;
+    rdfs:description "" ;
+    rdfs:label "PreventRecurrenceCorrectiveAction" ;
+    rdfs:domain qc:StepD7 ;
+    rdfs:range xsd:string .
+
+sd7:actionID rdf:type owl:DatatypeProperty ;
+    rdfs:description "Contains unique supplier ID of action/root cause. Used for actions/root causes created in supplier's system." ;
+    rdfs:label "ActionID" ;
+    rdfs:domain qc:StepD7 ;
+    rdfs:range xsd:string .
+
+sd7:title rdf:type owl:DatatypeProperty ;
+    rdfs:description "Title/short description of action" ;
+    rdfs:label "Title" ;
+    rdfs:domain qc:StepD7 ;
+    rdfs:range xsd:string .
+
+sd7:description rdf:type owl:DatatypeProperty ;
+    rdfs:description "Description of action" ;
+    rdfs:label "Description" ;
+    rdfs:domain qc:StepD7 ;
+    rdfs:range xsd:string .
+
+sd7:actionStatusCode rdf:type owl:DatatypeProperty ;
+    rdfs:description "Has value 'cancelled' if action or root cause has been cancelled by supplier; otherwise 'valid'." ;
+    rdfs:label "ActionStatusCode" ;
+    rdfs:domain qc:StepD7 ;
+    rdfs:range xsd:string .
+
+sd7:startDateTime rdf:type owl:DatatypeProperty ;
+    rdfs:description "" ;
+    rdfs:label "StartDateTime" ;
+    rdfs:domain qc:StepD7 ;
+    rdfs:range xsd:dateTime .
+
+sd7:plannedEndDateTime rdf:type owl:DatatypeProperty ;
+    rdfs:description "By when the action is planned to be implemented by the supplier." ;
+    rdfs:label "PlannedEndDateTime" ;
+    rdfs:domain qc:StepD7 ;
+    rdfs:range xsd:dateTime .
+
+sd7:finalizedEndDateTime rdf:type owl:DatatypeProperty ;
+    rdfs:description "Date/time the action was actually implemented." ;
+    rdfs:label "FinalizedEndDateTime" ;
+    rdfs:domain qc:StepD7 ;
+    rdfs:range xsd:dateTime .
+
+sd7:responsibleContactReference rdf:type owl:DatatypeProperty ;
+    rdfs:description "" ;
+    rdfs:label "ResponsibleContactReference" ;
+    rdfs:domain qc:StepD7 ;
+    rdfs:range xsd:string .
+
+sd7:partyID rdf:type owl:DatatypeProperty ;
+    rdfs:description "" ;
+    rdfs:label "PartyID" ;
+    rdfs:domain qc:StepD7 ;
+    rdfs:range xsd:string .
+
+sd7:contactID rdf:type owl:DatatypeProperty ;
+    rdfs:description "Unique ID of contact" ;
+    rdfs:label "ContactID" ;
+    rdfs:domain qc:StepD7 ;
+    rdfs:range xsd:string .
+
+
+
+
+
+
+sd8:closure rdf:type owl:DatatypeProperty ;
+    rdfs:description "" ;
+    rdfs:label "Closure" ;
+    rdfs:domain qc:StepD8 ;
+    rdfs:range xsd:string .
+
+sd8:finalizedEndDateTime rdf:type owl:DatatypeProperty ;
+    rdfs:description "Timestamp of actual closure of 8D report" ;
+    rdfs:label "FinalizedEndDateTime" ;
+    rdfs:domain qc:StepD8 ;
+    rdfs:range xsd:dateTime .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3id.org/quality_complaint/Lot
+qc:Lot rdf:type owl:Class ;
+       rdfs:description "Manufacturing lot details" ;
+       rdfs:label "Lot" .
+
+
+###  http://www.w3id.org/quality_complaint/ProductInstance
+qc:ProductInstance rdf:type owl:Class ;
+                    rdfs:description "Device / product, as identified by its marking details" ;
+                    rdfs:label "Product Instance" .
+
+
+###  http://www.w3id.org/quality_complaint/ProductMarking
+qc:ProductMarking rdf:type owl:Class ;
+                   rdfs:description "Marking details of a product / device. These marking details are used to identify the product and its manufacturing lot details" ;
+                   rdfs:label "Product Marking" .
+
+
+###  http://www.w3id.org/quality_complaint/QualityComplaint
+qc:QualityComplaint rdf:type owl:Class ;
+                     rdfs:description "Technical complaint or Issue as reported by a customer about a (or more than 1) product / device. Helping to solve the customer issue whoever caused it and aligning to critical customer needs helps to drive positive customer scorecard results and enables future business growth." ;
+                     rdfs:label "Quality Complaint" .
+
+
+###  http://www.w3id.org/quality_complaint/QualityComplaint8D
+qc:QualityComplaint8D rdf:type owl:Class ;
+                        rdfs:description "Report out to the Customer on the technical complaint or Issue as reported by a customer." ;
+                        rdfs:label "Quality Complaint 8D" .
+
+
+###  http://www.w3id.org/quality_complaint/quality_complaint_line_item
+qc:QualityComplaintLineItem rdf:type owl:Class ;
+                               rdfs:description "Item details of the technical complaint or Issue as reported by a customer about 1 product / device." ;
+                               rdfs:label "Quality Complaint Line Item" .
+
+
+###  http://www.w3id.org/quality_complaint/Shipment
+qc:Shipment rdf:type owl:Class ;
+            rdfs:description "Shipment from the supplier to the customer of the device / product or a pack unit of equal devices / products." ;
+            rdfs:label "Shipment" .
+
+
+###  http://www.w3id.org/quality_complaint/StepD1
+qc:StepD1 rdf:type owl:Class ;
+        rdfs:subClassOf qc:QualityComplaint8D .
+
+
+###  http://www.w3id.org/quality_complaint/StepD2
+qc:StepD2 rdf:type owl:Class ;
+        rdfs:subClassOf qc:QualityComplaint8D .
+
+
+###  http://www.w3id.org/quality_complaint/StepD3
+qc:StepD3 rdf:type owl:Class ;
+        rdfs:subClassOf qc:QualityComplaint8D .
+
+
+###  http://www.w3id.org/quality_complaint/StepD4
+qc:StepD4 rdf:type owl:Class ;
+        rdfs:subClassOf qc:QualityComplaint8D .
+
+
+###  http://www.w3id.org/quality_complaint/StepD5
+qc:StepD5 rdf:type owl:Class ;
+        rdfs:subClassOf qc:QualityComplaint8D .
+
+
+###  http://www.w3id.org/quality_complaint/StepD6
+qc:StepD6 rdf:type owl:Class ;
+        rdfs:subClassOf qc:QualityComplaint8D .
+
+
+###  http://www.w3id.org/quality_complaint/StepD7
+qc:StepD7 rdf:type owl:Class ;
+        rdfs:subClassOf qc:QualityComplaint8D .
+
+
+###  http://www.w3id.org/quality_complaint/StepD8
+qc:StepD8 rdf:type owl:Class ;
+        rdfs:subClassOf qc:QualityComplaint8D .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

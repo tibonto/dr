@@ -47,11 +47,11 @@
                                               "Hans Ehm"@en ;
                                 terms:isVersionOf <http://www.w3id.org/ecsel-dr> ;
                                 terms:license "Apache License Version 2.0" ;
-                                terms:modified "2025-12-15" ;
+                                terms:modified "2026-03-09" ;
                                 terms:title "Digital Reference"@en ;
                                 vann:preferredNamespaceUri <http://www.w3id.org/ecsel-dr/> ;
                                 rdfs:label "Digital Reference"@en ;
-                                owl:versionInfo "1.2.9" .
+                                owl:versionInfo "1.2.10" .
 
 #################################################################
 #    Annotation properties
@@ -3553,6 +3553,13 @@ ecsel-dr-DF:has_order_demand rdf:type owl:ObjectProperty ;
                              rdfs:label "has order demand"@en .
 
 
+###  http://www.w3id.org/ecsel-dr-DF#has_order_position
+ecsel-dr-DF:has_order_position rdf:type owl:ObjectProperty ;
+                               rdfs:subPropertyOf owl:topObjectProperty ;
+                               rdfs:domain ecsel-dr-DF:Order ;
+                               rdfs:range ecsel-dr-DF:Order_Position .
+
+
 ###  http://www.w3id.org/ecsel-dr-DF#has_periods
 ecsel-dr-DF:has_periods rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf owl:topObjectProperty ;
@@ -3718,13 +3725,6 @@ ecsel-dr-DF:is_requested_by rdf:type owl:ObjectProperty ;
                             rdfs:domain ecsel-dr-DF:Requested_Delivery_Date ;
                             rdfs:range ecsel-dr-DF:Customer ;
                             rdfs:label "is requested by"@en .
-
-
-###  http://www.w3id.org/ecsel-dr-DF#order_position
-ecsel-dr-DF:order_position rdf:type owl:ObjectProperty ;
-                           rdfs:subPropertyOf owl:topObjectProperty ;
-                           rdfs:domain ecsel-dr-DF:Order ;
-                           rdfs:range ecsel-dr-DF:Order_Position .
 
 
 ###  http://www.w3id.org/ecsel-dr-DF#requires_delivery_date_information
@@ -3968,8 +3968,7 @@ ecsel-dr-GDM:has_current_WIP rdf:type owl:ObjectProperty ;
                              rdfs:domain ecsel-dr-GDM:Demand_Snapshot ,
                                          ecsel-dr-GDM:Equipment ,
                                          ecsel-dr-GDM:Equipment_State ,
-                                         ecsel-dr-GDM:Operation ,
-                                         ecsel-dr-GDM:Product_Level_4 ;
+                                         ecsel-dr-GDM:Operation ;
                              rdfs:range ecsel-dr-GDM:Current_WIP ;
                              rdfs:label "has current WIP"@en .
 
@@ -3984,7 +3983,6 @@ ecsel-dr-GDM:has_current_machine_state rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-GDM#has_cycle_time_commitment
 ecsel-dr-GDM:has_cycle_time_commitment rdf:type owl:ObjectProperty ;
                                        rdfs:domain ecsel-dr-GDM:Fab ,
-                                                   ecsel-dr-GDM:Product_Level_4 ,
                                                    ecsel-dr-GDM:Supply_Chain ;
                                        rdfs:range ecsel-dr-GDM:Cycle_Time_Commitment ;
                                        rdfs:label "has cycle time commitment"@en .
@@ -3999,7 +3997,6 @@ ecsel-dr-GDM:has_dedication rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-GDM#has_delivery_commitment
 ecsel-dr-GDM:has_delivery_commitment rdf:type owl:ObjectProperty ;
                                      rdfs:domain ecsel-dr-GDM:Fab ,
-                                                 ecsel-dr-GDM:Product_Level_4 ,
                                                  ecsel-dr-GDM:Supply_Chain ;
                                      rdfs:range ecsel-dr-GDM:Delivery_Commitment ;
                                      rdfs:label "has delivery commitment"@en .
@@ -4008,8 +4005,7 @@ ecsel-dr-GDM:has_delivery_commitment rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-GDM#has_demand_snapshot
 ecsel-dr-GDM:has_demand_snapshot rdf:type owl:ObjectProperty ;
                                  rdfs:domain ecsel-dr-GDM:Product_Level_2 ,
-                                             ecsel-dr-GDM:Product_Level_3 ,
-                                             ecsel-dr-GDM:Product_Level_4 ;
+                                             ecsel-dr-GDM:Product_Level_3 ;
                                  rdfs:range ecsel-dr-GDM:Demand_Snapshot ;
                                  rdfs:label "has demand snapshot"@en .
 
@@ -4017,8 +4013,7 @@ ecsel-dr-GDM:has_demand_snapshot rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-GDM#has_demand_trace
 ecsel-dr-GDM:has_demand_trace rdf:type owl:ObjectProperty ;
                               rdfs:domain ecsel-dr-GDM:Product_Level_2 ,
-                                          ecsel-dr-GDM:Product_Level_3 ,
-                                          ecsel-dr-GDM:Product_Level_4 ;
+                                          ecsel-dr-GDM:Product_Level_3 ;
                               rdfs:range ecsel-dr-GDM:Demand_Trace ;
                               rdfs:label "has demand trace"@en .
 
@@ -4032,7 +4027,6 @@ ecsel-dr-GDM:has_equipment_capability rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-GDM#has_lot_state
 ecsel-dr-GDM:has_lot_state rdf:type owl:ObjectProperty ;
-                           rdfs:domain ecsel-dr-GDM:Product_Level_4 ;
                            rdfs:range ecsel-dr-GDM:Lot_State ;
                            rdfs:label "has lot state"@en .
 
@@ -4079,7 +4073,6 @@ ecsel-dr-GDM:has_product_level_2 rdf:type owl:ObjectProperty ;
 ecsel-dr-GDM:has_product_level_4 rdf:type owl:ObjectProperty ;
                                  rdfs:domain ecsel-dr-GDM:Product_Level_3 ,
                                              ecsel-dr-GDM:Workplan ;
-                                 rdfs:range ecsel-dr-GDM:Product_Level_4 ;
                                  rdfs:label "has product level 4"@en .
 
 
@@ -4099,7 +4092,6 @@ ecsel-dr-GDM:has_setup rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-GDM#has_target_WIP
 ecsel-dr-GDM:has_target_WIP rdf:type owl:ObjectProperty ;
-                            rdfs:domain ecsel-dr-GDM:Product_Level_4 ;
                             rdfs:range ecsel-dr-GDM:Target_WIP ;
                             rdfs:label "has target WIP"@en .
 
@@ -4149,7 +4141,6 @@ ecsel-dr-GDM:has_worker_qualification rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-GDM#isAssembledByBillOfMaterials
 ecsel-dr-GDM:isAssembledByBillOfMaterials rdf:type owl:ObjectProperty ;
-                                          rdfs:domain ecsel-dr-GDM:Product_Level_4 ;
                                           rdfs:range ecsel-dr-GDM:Bill_Of_Materials .
 
 
@@ -4197,8 +4188,7 @@ ecsel-dr-GDM:isQualifiedByWorkerQualification rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-GDM#isReleasingProductLevel4
 ecsel-dr-GDM:isReleasingProductLevel4 rdf:type owl:ObjectProperty ;
-                                      rdfs:domain ecsel-dr-GDM:Release_Plan ;
-                                      rdfs:range ecsel-dr-GDM:Product_Level_4 .
+                                      rdfs:domain ecsel-dr-GDM:Release_Plan .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#isRequiredByEquipment
@@ -4227,7 +4217,6 @@ ecsel-dr-GDM:isSpecifiedByRouteSequence rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-GDM#isUsingRoute
 ecsel-dr-GDM:isUsingRoute rdf:type owl:ObjectProperty ;
-                          rdfs:domain ecsel-dr-GDM:Product_Level_4 ;
                           rdfs:range ecsel-dr-GDM:Route .
 
 
@@ -9599,6 +9588,12 @@ ecsel-dr-DF:demand_priority rdf:type owl:DatatypeProperty ;
                             rdfs:label "demand priority"@en .
 
 
+###  http://www.w3id.org/ecsel-dr-DF#has_order_position
+ecsel-dr-DF:has_order_position rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf owl:topDataProperty ;
+                               rdfs:range rdfs:Literal .
+
+
 ###  http://www.w3id.org/ecsel-dr-DF#lot_ID
 ecsel-dr-DF:lot_ID rdf:type owl:DatatypeProperty ;
                    rdfs:subPropertyOf owl:topDataProperty ;
@@ -9653,12 +9648,6 @@ ecsel-dr-DF:order_name rdf:type owl:DatatypeProperty ;
                        rdfs:domain ecsel-dr-DF:Order ;
                        rdfs:range rdfs:Literal ;
                        rdfs:label "order name"@en .
-
-
-###  http://www.w3id.org/ecsel-dr-DF#order_position
-ecsel-dr-DF:order_position rdf:type owl:DatatypeProperty ;
-                           rdfs:subPropertyOf owl:topDataProperty ;
-                           rdfs:range rdfs:Literal .
 
 
 ###  http://www.w3id.org/ecsel-dr-DF#order_priority
@@ -9932,7 +9921,6 @@ ecsel-dr-GDM:change_date rdf:type owl:DatatypeProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-GDM#chips_per_wafer
 ecsel-dr-GDM:chips_per_wafer rdf:type owl:DatatypeProperty ;
-                             rdfs:domain ecsel-dr-GDM:Product_Level_4 ;
                              rdfs:range xsd:integer ;
                              rdfs:comment "number of chips on a wafer" ;
                              rdfs:label "chips per wafer"@en .
@@ -10415,8 +10403,7 @@ ecsel-dr-GDM:hasProductLevel3ID rdf:type owl:DatatypeProperty ,
                                             ecsel-dr-GDM:Demand_Trace ,
                                             ecsel-dr-GDM:Equipment_Group ,
                                             ecsel-dr-GDM:Max_Lot_Size ,
-                                            ecsel-dr-GDM:Product_Level_3 ,
-                                            ecsel-dr-GDM:Product_Level_4 ;
+                                            ecsel-dr-GDM:Product_Level_3 ;
                                 rdfs:range xsd:string ;
                                 rdfs:comment "Name of the product in level 3" .
 
@@ -10445,7 +10432,6 @@ ecsel-dr-GDM:hasProductLevel4ID rdf:type owl:DatatypeProperty ,
                                             ecsel-dr-GDM:Demand_Snapshot ,
                                             ecsel-dr-GDM:Demand_Trace ,
                                             ecsel-dr-GDM:Lot_State ,
-                                            ecsel-dr-GDM:Product_Level_4 ,
                                             ecsel-dr-GDM:Route ,
                                             ecsel-dr-GDM:Target_WIP ;
                                 rdfs:range xsd:string ;
@@ -10521,8 +10507,7 @@ ecsel-dr-GDM:hasRecoveryTime rdf:type owl:DatatypeProperty ;
 ###  http://www.w3id.org/ecsel-dr-GDM#hasReleasePlanID
 ecsel-dr-GDM:hasReleasePlanID rdf:type owl:DatatypeProperty ,
                                        owl:FunctionalProperty ;
-                              rdfs:domain ecsel-dr-GDM:Product_Level_4 ,
-                                          ecsel-dr-GDM:Release_Plan ;
+                              rdfs:domain ecsel-dr-GDM:Release_Plan ;
                               rdfs:range xsd:string .
 
 
@@ -10820,7 +10805,6 @@ ecsel-dr-GDM:hasWorkplanID rdf:type owl:DatatypeProperty ,
                                     owl:FunctionalProperty ;
                            rdfs:domain ecsel-dr-GDM:Activity ,
                                        ecsel-dr-GDM:Activity_Edge ,
-                                       ecsel-dr-GDM:Product_Level_4 ,
                                        ecsel-dr-GDM:Workplan ;
                            rdfs:range xsd:string .
 
@@ -11307,8 +11291,7 @@ ecsel-dr-GDM:product_level_3_ID rdf:type owl:DatatypeProperty ,
                                             ecsel-dr-GDM:Demand_Trace ,
                                             ecsel-dr-GDM:Equipment_Group ,
                                             ecsel-dr-GDM:Max_Lot_Size ,
-                                            ecsel-dr-GDM:Product_Level_3 ,
-                                            ecsel-dr-GDM:Product_Level_4 ;
+                                            ecsel-dr-GDM:Product_Level_3 ;
                                 rdfs:range xsd:string ;
                                 rdfs:comment "Name of the product in level 3" .
 
@@ -11337,7 +11320,6 @@ ecsel-dr-GDM:product_level_4_ID rdf:type owl:DatatypeProperty ,
                                             ecsel-dr-GDM:Demand_Snapshot ,
                                             ecsel-dr-GDM:Demand_Trace ,
                                             ecsel-dr-GDM:Lot_State ,
-                                            ecsel-dr-GDM:Product_Level_4 ,
                                             ecsel-dr-GDM:Route ,
                                             ecsel-dr-GDM:Target_WIP ;
                                 rdfs:range xsd:string ;
@@ -11420,8 +11402,7 @@ ecsel-dr-GDM:recovery_time rdf:type owl:DatatypeProperty ;
 ###  http://www.w3id.org/ecsel-dr-GDM#release_plan_ID
 ecsel-dr-GDM:release_plan_ID rdf:type owl:DatatypeProperty ,
                                       owl:FunctionalProperty ;
-                             rdfs:domain ecsel-dr-GDM:Product_Level_4 ,
-                                         ecsel-dr-GDM:Release_Plan ;
+                             rdfs:domain ecsel-dr-GDM:Release_Plan ;
                              rdfs:range xsd:string .
 
 
@@ -11705,7 +11686,6 @@ ecsel-dr-GDM:workplan_ID rdf:type owl:DatatypeProperty ,
                                   owl:FunctionalProperty ;
                          rdfs:domain ecsel-dr-GDM:Activity ,
                                      ecsel-dr-GDM:Activity_Edge ,
-                                     ecsel-dr-GDM:Product_Level_4 ,
                                      ecsel-dr-GDM:Workplan ;
                          rdfs:range xsd:string .
 
@@ -15595,7 +15575,7 @@ ecsel-dr-AH:AH_Mandatory_Core_Service rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AH#AH_Mandatory_Core_Service_IDD
 ecsel-dr-AH:AH_Mandatory_Core_Service_IDD rdf:type owl:Class ;
                                           rdfs:subClassOf ecsel-dr-AH:AH_Core_Service_IDD ;
-                                          rdfs:comment """Class of all Interface Design Descriptions (IDDs) of mandatory Arrowwhead core services.
+                                          rdfs:comment """Class of all Interface Design Descriptions (IDDs) of mandatory Arrowhead core services.
 While the class AH_mandatory_core_service contains the mandatory core services only as instances, this class contains classes of the IDDs of each single mandatory core service as subclasses (not only as instances). Since each AH Local Cloud runs one instance of each mandatory core service, each of these services has to be documented by an AH service documentation, i.e. at least by a SD and a IDD. So the IDD is an individual document for each mandatory core service in each single Local Cloud. Hence, all IDDs of a certain mandatory core service will be individuals of the corresponding IDD class."""@en ;
                                           rdfs:label "AH Mandatory Core Service IDD"@en .
 
@@ -16186,7 +16166,8 @@ ecsel-dr-AT:AS2 rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#Actuator_Device
 ecsel-dr-AT:Actuator_Device rdf:type owl:Class ;
                             rdfs:subClassOf ecsel-dr-AT:Device ;
-                            rdfs:label "Acutator Device"@en .
+                            rdfs:label "Acutator Device"@en ;
+                            skos:definition "Actuator_Device - converts control signals into physical actions which alter power flow, electrical state, or mechanical motion within a power system."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Apple_Talk
@@ -16221,6 +16202,7 @@ ecsel-dr-AT:Autonomously_Guided_Vehicle rdf:type owl:Class ;
                                         rdfs:label "AGV"@en ,
                                                    "FTF"@de ,
                                                    "Fahrerloses Transportfahrzeug"@de ;
+                                        skos:definition "Autonomously_Guided_Vehicle - a mobile actuation unit capable of navigating and performing material handling or transport tasks without continuous human control. It comprises propulsion and power systems, onboard sensors and guidance/control software, and interfaces for tasking, telemetry and safety. This class is used to represent actuation, motion control, power consumption/management (e.g., battery, charging), and safety interlocks of autonomous vehicles in supply chain contexts."@en ;
                                         skos:preLabel "Autonomously Guided Vehicle"@en .
 
 
@@ -16265,7 +16247,8 @@ ecsel-dr-AT:Bluetooth rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#Bridge
 ecsel-dr-AT:Bridge rdf:type owl:Class ;
                    rdfs:subClassOf ecsel-dr-AT:Communication_Device ;
-                   rdfs:label "Bridge"@en .
+                   rdfs:label "Bridge"@en ;
+                   skos:definition "Bridge - connects two or more network segments or communication domains to enable reliable data exchange for power-system control, monitoring and management. It may operate at link or network layers to forward, filter or translate frames/packets, provide protocol conversion or gateway functions, buffer and aggregate data, and offer galvanic isolation, timing/synchronization and security features."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#CAD_System
@@ -16631,7 +16614,8 @@ ecsel-dr-AT:ERP_System rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#Electric_Drive
 ecsel-dr-AT:Electric_Drive rdf:type owl:Class ;
                            rdfs:subClassOf ecsel-dr-AT:Actuator_Device ;
-                           rdfs:label "Electric Drive"@en .
+                           rdfs:label "Electric Drive"@en ;
+                           skos:definition "Electric_Drive - converts electrical energy into controlled mechanical motion or torque. It typically comprises an electric motor, power electronics (driver/inverter), control electronics and often feedback sensors, and supports functions such as speed, position or torque control, start/stop and regenerative operation. It is characterized by electrical input (voltage, current, power), mechanical output (torque, speed), control signals and operational limits, and is used to model actuation, motion control and energy management in power-aware asset models."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Enocean
@@ -16730,7 +16714,8 @@ ecsel-dr-AT:HTTPS rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#Hub
 ecsel-dr-AT:Hub rdf:type owl:Class ;
                 rdfs:subClassOf ecsel-dr-AT:Communication_Device ;
-                rdfs:label "Hub"@en .
+                rdfs:label "Hub"@en ;
+                skos:definition "Hub - concentrates multiple communication links into a single physical or logical point to enable data distribution and aggregation among connected devices within a power-domain network."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#IEC
@@ -16950,7 +16935,8 @@ ecsel-dr-AT:Industrial_WLAN rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#Industry_PC
 ecsel-dr-AT:Industry_PC rdf:type owl:Class ;
                         rdfs:subClassOf ecsel-dr-AT:Control_Device ;
-                        rdfs:label "Industry PC"@en .
+                        rdfs:label "Industry PC"@en ;
+                        skos:definition "Industry_PC - representing an industrial grade programmable computing system used to execute control logic, supervise power processes, and interface with sensors, actuators and fieldbus or networked devices."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#JSON
@@ -17429,7 +17415,8 @@ ecsel-dr-AT:Programmable_Logic_Controller rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#Proxy
 ecsel-dr-AT:Proxy rdf:type owl:Class ;
                   rdfs:subClassOf ecsel-dr-AT:Communication_Device ;
-                  rdfs:label "Proxy"@en .
+                  rdfs:label "Proxy"@en ;
+                  skos:definition "Proxy - an intermediary between devices, networks or services to forward, mediate, translate or control communications for power-system monitoring, control and management."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#RDF
@@ -17749,7 +17736,8 @@ ecsel-dr-AT:Standardization_Organization rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#Stationary_Robot
 ecsel-dr-AT:Stationary_Robot rdf:type owl:Class ;
                              rdfs:subClassOf ecsel-dr-AT:Actuator_Device ;
-                             rdfs:label "Stationary Robot"@en .
+                             rdfs:label "Stationary Robot"@en ;
+                             skos:definition "Stationary_Robot - performs mechanical manipulation or handling tasks from a fixed mounting or installation point; it is permanently or semi-permanently installed at a site and lacks autonomous locomotion. Typical functions include pick and place, palletizing, assembly, packaging and end of line handling."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Supply_Chain_Simulation_System
@@ -17761,7 +17749,8 @@ ecsel-dr-AT:Supply_Chain_Simulation_System rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#Switch
 ecsel-dr-AT:Switch rdf:type owl:Class ;
                    rdfs:subClassOf ecsel-dr-AT:Communication_Device ;
-                   rdfs:label "Switch"@en .
+                   rdfs:label "Switch"@en ;
+                   skos:definition "Switch - is a communications device that connects multiple devices within a network and forwards data between them by examining frame or packet addressing."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#TCP
@@ -17798,7 +17787,8 @@ ecsel-dr-AT:Token_Ring rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#Tooling_Machine
 ecsel-dr-AT:Tooling_Machine rdf:type owl:Class ;
                             rdfs:subClassOf ecsel-dr-AT:Actuator_Device ;
-                            rdfs:label "Tooling Machine"@en .
+                            rdfs:label "Tooling Machine"@en ;
+                            skos:definition "Tooling_Machine - is an actuator device that performs physical manufacturing, fabrication, or assembly operations on workpieces by converting control signals into mechanical action."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Transport_Robot
@@ -18041,18 +18031,21 @@ ecsel-dr-BMS:Battery_CO2_Savings rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-BMS#Battery_Control_Unit
 ecsel-dr-BMS:Battery_Control_Unit rdf:type owl:Class ;
-                                  rdfs:subClassOf ecsel-dr-BMS:Functional_Block .
+                                  rdfs:subClassOf ecsel-dr-BMS:Functional_Block ;
+                                  rdfs:label "Battery Control Unit"@en ;
+                                  skos:definition "Battery_Control_Unit - is a specialized subclass of Functional_Block, forming a crucial component in systems that manage and control battery performance for sustainable applications. It is an embedded system component responsible for ensuring the safe, efficient, and optimized operation of battery systems, particularly in semiconductor-driven applications."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-BMS#Battery_Management_System
 ecsel-dr-BMS:Battery_Management_System rdf:type owl:Class ;
                                        rdfs:subClassOf dr:Application ;
-                                       rdfs:comment "A battery management system is, according to Infineon´s definition, a set of \"electronic control circuits that monitor and regulate the charging and discharge of batteries.\" It supervises parameters such as the temperature, voltages, capacity, state of charge, power consumption, charging cycles." .
+                                       rdfs:comment "A battery management system is a set of \"electronic control circuits that monitor and regulate the charging and discharge of batteries.\" It supervises parameters such as the temperature, voltages, capacity, state of charge, power consumption, charging cycles." .
 
 
 ###  http://www.w3id.org/ecsel-dr-BMS#Cell_Supervision
 ecsel-dr-BMS:Cell_Supervision rdf:type owl:Class ;
-                              rdfs:subClassOf ecsel-dr-BMS:Functional_Block .
+                              rdfs:subClassOf ecsel-dr-BMS:Functional_Block ;
+                              skos:definition "Cell_Supervision - is a Functional Block within a battery management system responsible for monitoring individual battery cells' parameters, ensuring their safe operation, and contributing to overall system performance by managing data related to voltage, temperature, and balancing of the cells."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-BMS#Cells
@@ -18063,23 +18056,32 @@ ecsel-dr-BMS:Cells rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-BMS#Current_Sensing
 ecsel-dr-BMS:Current_Sensing rdf:type owl:Class ;
-                             rdfs:subClassOf ecsel-dr-BMS:Functional_Block .
+                             rdfs:subClassOf ecsel-dr-BMS:Functional_Block ;
+                             rdfs:label "Current Sensing" ;
+                             skos:definition "Current_Sensing - is a Functional Block that refers to the process and implementation of measuring electrical current to monitor, regulate, and optimize the performance of an electronic system in a semiconductor supply chain environment."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-BMS#Current_Sensor
 ecsel-dr-BMS:Current_Sensor rdf:type owl:Class ;
-                            rdfs:subClassOf ecsel-dr-BMS:Semiconductor .
+                            rdfs:subClassOf ecsel-dr-BMS:Semiconductor ;
+                            rdfs:label "Current Sensor" ;
+                            skos:definition "Current_Sensor - is a type of semiconductor device used to measure and monitor electrical current flow in a circuit. It is an essential component in the battery management system for ensuring operational efficiency, safety, and sustainability by enabling effective energy flow management and fault detection."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-BMS#E_Car
 ecsel-dr-BMS:E_Car rdf:type owl:Class ;
                    owl:equivalentClass ecsel-dr-CO2Savings:Electric_Car ;
-                   rdfs:subClassOf ecsel-dr-BMS:Vehicle .
+                   rdfs:subClassOf ecsel-dr-BMS:Vehicle ;
+                   rdfs:label "E Car" ;
+                   skos:altLabel "BEV" ;
+                   skos:definition "E_Car - is a vehicle equipped with an electric drivetrain and powered primarily by rechargeable batteries or similar energy storage technologies. It operates without the use of internal combustion engines and is considered a sustainable alternative for reducing carbon emissions in transportation"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-BMS#Electric_Means_Transportation
 ecsel-dr-BMS:Electric_Means_Transportation rdf:type owl:Class ;
-                                           rdfs:subClassOf ecsel-dr-BMS:Battery_CO2_Savings .
+                                           rdfs:subClassOf ecsel-dr-BMS:Battery_CO2_Savings ;
+                                           rdfs:label "Electric Means of Transportation" ;
+                                           skos:definition "Electric_Means_Transportation - refers to vehicles or transportation solutions that leverage electric power systems, predominantly fueled by battery technologies, such as lithium-ion batteries. These systems play a significant role in reducing carbon dioxide (CO2) emissions by eliminating or minimizing the reliance on internal combustion engines (ICEs). With the integration of energy-efficient semiconductors and battery systems, Electric Means Transportation enhances the sustainability of the broader technology and automotive ecosystems."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-BMS#Functional_Block
@@ -18090,7 +18092,9 @@ ecsel-dr-BMS:Functional_Block rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-BMS#Isolated_Communication
 ecsel-dr-BMS:Isolated_Communication rdf:type owl:Class ;
-                                    rdfs:subClassOf ecsel-dr-BMS:Functional_Block .
+                                    rdfs:subClassOf ecsel-dr-BMS:Functional_Block ;
+                                    rdfs:label "Isolated Communication" ;
+                                    skos:definition "Isolated_Communication - is a Functional Block that enables signal transmission between subsystems while maintaining electrical isolation. It is designed for safety, sustainability, and interference resistance in semiconductor-based battery management systems."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-BMS#Lithium_Ion_Battery
@@ -18129,12 +18133,16 @@ ecsel-dr-BMS:Pack rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-BMS#Pack_Monitoring
 ecsel-dr-BMS:Pack_Monitoring rdf:type owl:Class ;
-                             rdfs:subClassOf ecsel-dr-BMS:Functional_Block .
+                             rdfs:subClassOf ecsel-dr-BMS:Functional_Block ;
+                             rdfs:label "Pack Monitoring" ;
+                             skos:definition "Pack_Monitoring - a critical role in the semiconductor supply chain as a specialized sustainability feature, enabling real-time tracking and management of battery pack conditions, including temperature distribution, voltage, current, and state-of-health, supporting efficient energy utilization and prolonged battery lifespan."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-BMS#Power_Management_Integrated_Circuit
 ecsel-dr-BMS:Power_Management_Integrated_Circuit rdf:type owl:Class ;
-                                                 rdfs:subClassOf ecsel-dr-BMS:Semiconductor .
+                                                 rdfs:subClassOf ecsel-dr-BMS:Semiconductor ;
+                                                 rdfs:label "Power Management Integrated Circuit" ;
+                                                 skos:definition "Power_Management_Integrated_Circuit - is a type of semiconductor designed specifically for managing power distribution and energy efficiency in electronic devices or systems. It is integral to battery management, voltage regulation, and the efficient power conversion processes crucial for sustainable and low-energy designs in modern electronics. PMICs play a vital role in the battery management systems by optimizing energy usage and enhancing the lifespan of batteries in portable or renewable energy applications."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-BMS#Pressure_Sensor
@@ -18157,7 +18165,9 @@ ecsel-dr-BMS:Semiconductor_Company rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-BMS#UART_Transceiver_Integrated_Circuit
 ecsel-dr-BMS:UART_Transceiver_Integrated_Circuit rdf:type owl:Class ;
-                                                 rdfs:subClassOf ecsel-dr-BMS:Semiconductor .
+                                                 rdfs:subClassOf ecsel-dr-BMS:Semiconductor ;
+                                                 rdfs:label "UART Transceiver Integrated Circuit" ;
+                                                 skos:definition "UART_Transceiver_Integrated_Circuit - is a semiconductor device specifically designed for transmitting and receiving serial data using the Universal Asynchronous Receiver-Transmitter (UART) protocol. It operates in battery management systems, facilitating communication between various components, and thereby enhancing the efficiency and reliability of energy management in electronic devices."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-BMS#Vehicle
@@ -19204,7 +19214,8 @@ ecsel-dr-CO2Savings:Total_Energy_Saving_Of_Gcars_Sold_Worldwide_In_A_Year rdf:ty
 ###  http://www.w3id.org/ecsel-dr-CO2Savings#Total_Energy_Saving_Of_Solar_Panels_Sold_Worldwide_In_A_Year
 ecsel-dr-CO2Savings:Total_Energy_Saving_Of_Solar_Panels_Sold_Worldwide_In_A_Year rdf:type owl:Class ;
                                                                                  rdfs:subClassOf dr:Application ;
-                                                                                 rdfs:label "Total Energy Saving Of Solar Panels Sold Worldwide In A Year"@en .
+                                                                                 rdfs:label "Total Energy Saving Of Solar Panels Sold Worldwide In A Year"@en ;
+                                                                                 skos:definition "Total_Energy_Saving_Of_Solar_Panels_Sold_Worldwide_In_A_Year - refers to the aggregate amount of energy conserved or generated by all solar panels sold globally within a single calendar year. This metric serves to evaluate the impact of solar technology on energy sustainability and its contribution to reducing carbon emissions, thereby promoting environmental sustainability."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-CO2Savings#Total_Energy_Savings_Of_Wind_Turbines_Sold_Worldwide_In_A_Year
@@ -19977,7 +19988,8 @@ ecsel-dr-GDM:Aux_Resource_Requirement rdf:type owl:Class ;
 ecsel-dr-GDM:Bill_Of_Materials rdf:type owl:Class ;
                                owl:equivalentClass ecsel-dr-Planning:Bill_Of_Material ;
                                rdfs:subClassOf dr:Product_Lobe ;
-                               rdfs:label "Bill Of Materials"@en .
+                               rdfs:label "Bill Of Materials"@en ;
+                               skos:definition "Bill_Of_Materials - is a comprehensive list that outlines the components, parts, and raw materials required to manufacture a product, including their quantities and specifications. It serves as a crucial document within the supply chain process, providing the necessary information for production planning, inventory management, and cost estimation."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Calendar
@@ -20264,11 +20276,6 @@ ecsel-dr-GDM:Product_Level_2 rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-GDM#Product_Level_3
 ecsel-dr-GDM:Product_Level_3 rdf:type owl:Class ;
                              owl:equivalentClass ecsel-dr-SO:Product_Level_3 ;
-                             rdfs:subClassOf dr:Product_Lobe .
-
-
-###  http://www.w3id.org/ecsel-dr-GDM#Product_Level_4
-ecsel-dr-GDM:Product_Level_4 rdf:type owl:Class ;
                              rdfs:subClassOf dr:Product_Lobe .
 
 
@@ -22044,7 +22051,8 @@ ecsel-dr-PROD:Plan_Position rdf:type owl:Class ;
 ecsel-dr-PROD:Planning_Element rdf:type owl:Class ;
                                rdfs:subClassOf dr:Product_Lobe ;
                                owl:disjointWith ecsel-dr-PROD:Product ;
-                               rdfs:label "Planning Element"@en .
+                               rdfs:label "Planning Element"@en ;
+                               skos:definition "Planning_Element – in the semiconductor planning represents an aggregated part which can used for planning. This means a Die-Representative for Frontend, Fabrication Position, Plan Position or an element called required for plan those elements serve for different purposes, for example to have sufficient chips on Diebank for Backend manufacturing or to have sufficient capacity, or to have sufficient information for high quality ATP (available to promise) provision and Required for Plan."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PROD#Product
@@ -22107,13 +22115,15 @@ ecsel-dr-PWR:Application_Area rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-PWR#Blocking_Capability
 ecsel-dr-PWR:Blocking_Capability rdf:type owl:Class ;
                                  rdfs:subClassOf ecsel-dr-PWR:Property ;
-                                 rdfs:label "Blocking Capability"@en .
+                                 rdfs:label "Blocking Capability"@en ;
+                                 skos:definition "Blocking_Capability - is a Property in the Power_Lobe that describes an entity's ability to prevent, stop, or constrain actions, flows, or access in the supply chain (for example: stopping production, rejecting shipments, halting transactions, or restricting access). It covers technical and organizational mechanisms (hard/soft, temporary/conditional) used to enforce such blocks."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Blocking_Voltage
 ecsel-dr-PWR:Blocking_Voltage rdf:type owl:Class ;
                               rdfs:subClassOf ecsel-dr-PWR:Property ;
-                              rdfs:label "Blocking Voltage (Break Down)"@en .
+                              rdfs:label "Blocking Voltage (Break Down)"@en ;
+                              skos:definition "Blocking_Voltage - is a Property in the Power_Lobe that represents the voltage level at which an electrical device prevents or substantially inhibits current conduction (for example reverse or off state voltage). Values are typically expressed in volts and recorded as numeric measurements with appropriate units."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Communication_Services
@@ -22155,7 +22165,8 @@ ecsel-dr-PWR:Control_Method rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-PWR#Depletion_Mode
 ecsel-dr-PWR:Depletion_Mode rdf:type owl:Class ;
                             rdfs:subClassOf ecsel-dr-PWR:Operation_Mode ;
-                            rdfs:label "Depletion Mode"@en .
+                            rdfs:label "Depletion Mode"@en ;
+                            skos:definition "Depletion_Mode - is an Operation_Mode within the Power_Lobe that characterises system behaviour in which stored energy or power capacity is being reduced due to consumption, discharge or drawdown. It covers cases such as battery discharge, fuel consumption, reserve use or deliberate sustained power draw, and captures relevant properties such as rate of depletion, duration, and effects on availability and performance. Depletion_Mode is used to represent and reason about energy consumption states and transitions of assets, components and systems in the supply chain digital reference model."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Deployment
@@ -22208,26 +22219,30 @@ ecsel-dr-PWR:Document rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-PWR#Drain
 ecsel-dr-PWR:Drain rdf:type owl:Class ;
                    rdfs:subClassOf ecsel-dr-PWR:Device_Element ;
-                   rdfs:label "Drain"@en .
+                   rdfs:label "Drain"@en ;
+                   skos:definition "Drain - is a Device_Element in the Power_Lobe that represents a component or endpoint that removes, sinks, dissipates, or consumes electrical or energetic power from a system or circuit. Examples include loads, grounding/return points, resistive or mechanical energy absorbers, and heat-dissipating elements. A Drain may be passive or active and can be monitored or controlled; it is used to model power consumption and energy-flow endpoints within the power domain."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Drain_Current
 ecsel-dr-PWR:Drain_Current rdf:type owl:Class ;
                            rdfs:subClassOf ecsel-dr-PWR:Property ;
-                           rdfs:label "Drain Current"@en .
+                           rdfs:label "Drain Current"@en ;
+                           skos:definition "Drain_Current - represents the electrical current drawn, sunk, or consumed by a Drain (power sink or load). It covers instantaneous, steady state, RMS, peak or average current values used to describe, monitor or specify power consumption of a device element. Values are typically expressed in amperes (A) and represented as numeric measurements with associated unit, timestamp and measurement metadata where applicable."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Drain_Source_Voltage
 ecsel-dr-PWR:Drain_Source_Voltage rdf:type owl:Class ;
                                   rdfs:subClassOf ecsel-dr-PWR:Property ;
-                                  rdfs:label "Drain-Source Voltage"@en .
+                                  rdfs:label "Drain-Source Voltage"@en ;
+                                  skos:definition "Drain_Source_Voltage - denotes the electrical potential difference between the drain and source terminals of a power device (for example a MOSFET or other transistor), expressed in volts. It characterizes operating conditions (instantaneous or peak) and is used for monitoring, specification, constraint checking and control of power components. Typically represented as a numeric value with unit volts (V)."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Drain_Voltage
 ecsel-dr-PWR:Drain_Voltage rdf:type owl:Class ;
                            rdfs:subClassOf ecsel-dr-PWR:Process_Input ,
                                            ecsel-dr-PWR:Property ;
-                           rdfs:label "Drain Voltage (Gate-Source Voltage)"@en .
+                           rdfs:label "Drain Voltage (Gate-Source Voltage)"@en ;
+                           skos:definition "Drain_Voltage - representing the electrical potential at a device's drain terminal relative to a reference terminal (typically the source). It denotes the drain-to-source potential difference used to characterize operating and switching behaviour, power flow and device stress; values may be instantaneous, DC, peak or RMS and are expressed in volts (V). This property is used for monitoring, specification, constraint checking and control of power devices."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Electric_Vehicle_Charging
@@ -22268,7 +22283,8 @@ ecsel-dr-PWR:Energy_Storage rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-PWR#Enhancement_Mode
 ecsel-dr-PWR:Enhancement_Mode rdf:type owl:Class ;
                               rdfs:subClassOf ecsel-dr-PWR:Operation_Mode ;
-                              rdfs:label "Enhancement Mode"@en .
+                              rdfs:label "Enhancement Mode"@en ;
+                              skos:definition "Enhancement_Mode - represents a configured or temporary operating state intended to increase a device or system's performance, output, responsiveness, or functional capability above its nominal/standard mode. Enhancement_Mode captures the intent, triggers, allowable duration, and associated constraints (such as increased power draw, thermal limits, safety interlocks, and reduced lifetime trade offs) used for monitoring, control, specification and automated transition logic."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Entity
@@ -22289,7 +22305,8 @@ ecsel-dr-PWR:Financial rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-PWR#Gate
 ecsel-dr-PWR:Gate rdf:type owl:Class ;
                   rdfs:subClassOf ecsel-dr-PWR:Device_Element ;
-                  rdfs:label "Gate"@en .
+                  rdfs:label "Gate"@en ;
+                  skos:definition "Gate - represents a control terminal or component that regulates the flow of electrical current or signals within a power device or circuit. Typical uses include the gate terminal of transistors (which modulates channel conductivity), solid state switching/gating elements, and gate driver interfaces. A Gate is characterized by its control signal (e.g., voltage), switching behaviour, thresholds and timing, and is used for switching, regulation, protection and control of power paths; it can be monitored or driven as part of device or system control."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Gate_Driver
@@ -22378,7 +22395,8 @@ ecsel-dr-PWR:Junction_Temperature rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-PWR#Leakage_Current
 ecsel-dr-PWR:Leakage_Current rdf:type owl:Class ;
                              rdfs:subClassOf ecsel-dr-PWR:Property ;
-                             rdfs:label "Leakage Current"@en .
+                             rdfs:label "Leakage Current"@en ;
+                             skos:definition "Leakage_Current - unintended electric current that flows through or across a device, insulation, or circuit path when the ideal or intended current should be zero. It covers steady state and transient leakage through dielectrics, semiconductors, surface conduction, and insulation breakdown pathways."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Length
@@ -22406,7 +22424,8 @@ ecsel-dr-PWR:Maximum_Junction_Temperature rdf:type owl:Class ;
 ecsel-dr-PWR:Microcontroller rdf:type owl:Class ;
                              rdfs:subClassOf ecsel-dr-PWR:Semiconductors ;
                              rdfs:comment "Industrial sector of Microcontrollers"@en ;
-                             rdfs:label "Microcontroller"@en .
+                             rdfs:label "Microcontroller"@en ;
+                             skos:definition "Microcontroller - a compact integrated embedded controller containing a processor core, program memory, data memory, timing peripherals, analog interfaces, PWM outputs and communications. It executes firmware to implement real time control, protection and regulation functions for power systems, interfacing directly with sensors and actuators. Microcontrollers may support interrupts, timers, safety and low power modes, and are used for deterministic closed loop control, monitoring, logging and local communication in power domain devices."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#N_Channel_Configuration
@@ -22434,25 +22453,29 @@ ecsel-dr-PWR:Object rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-PWR#Off_State_Region
 ecsel-dr-PWR:Off_State_Region rdf:type owl:Class ;
                               rdfs:subClassOf ecsel-dr-PWR:Region_Of_Operation ;
-                              rdfs:label "Off-State Region"@en .
+                              rdfs:label "Off-State Region"@en ;
+                              skos:definition "Off_State_Region - defines the operating conditions under which a device, component, or system is considered ‘off’ or non operational from a power perspective."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#On_State_Power_Loss
 ecsel-dr-PWR:On_State_Power_Loss rdf:type owl:Class ;
                                  rdfs:subClassOf ecsel-dr-PWR:Property ;
-                                 rdfs:label "On-State Power Loss"@en .
+                                 rdfs:label "On-State Power Loss"@en ;
+                                 skos:definition "On_State_Power_Loss - the power dissipated by a device or element while it is in its conducting (on) state."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#On_State_Region
 ecsel-dr-PWR:On_State_Region rdf:type owl:Class ;
                              rdfs:subClassOf ecsel-dr-PWR:Region_Of_Operation ;
-                             rdfs:label "On-State Region"@en .
+                             rdfs:label "On-State Region"@en ;
+                             skos:definition "On_State_Region - identifies the set of operating conditions under which a power device or element is considered to be in its ON (conducting) state."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#On_State_Resistance
 ecsel-dr-PWR:On_State_Resistance rdf:type owl:Class ;
                                  rdfs:subClassOf ecsel-dr-PWR:Property ;
-                                 rdfs:label "On-State Resistance"@en .
+                                 rdfs:label "On-State Resistance"@en ;
+                                 skos:definition "On_State_Resistance - the electrical resistance of a device when it is in its conducting (on) state."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#On_State_Voltage
@@ -22480,7 +22503,8 @@ ecsel-dr-PWR:On_State_Voltage rdf:type owl:Class ;
                                                     rdf:type owl:Class
                                                   ] ;
                               rdfs:subClassOf ecsel-dr-PWR:Property ;
-                              rdfs:label "On-State Voltage"@en .
+                              rdfs:label "On-State Voltage"@en ;
+                              skos:definition "On_State_Voltage - the electrical voltage associated with a device or circuit element when it is in its conductive ('on') state."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Operating_Property
@@ -22492,13 +22516,15 @@ ecsel-dr-PWR:Operating_Property rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-PWR#Operation_Mode
 ecsel-dr-PWR:Operation_Mode rdf:type owl:Class ;
                             rdfs:subClassOf dr:Power_Lobe ;
-                            rdfs:label "Operation Mode"@en .
+                            rdfs:label "Operation Mode"@en ;
+                            skos:definition "Operation_Mode - a defined configuration, behavioral state or control regime of a power-related device, process, or system. It captures the set of operational parameters, control strategies and allowable that determine performance, safety and energy consumption. Operation_Mode is used for specification, monitoring, scheduling and automated control and is linked to Device_Configuration, Control_Method, Process inputs/outputs and Gate_Driver settings to model how components behave in different usage scenarios."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#P_Channel_Configuration
 ecsel-dr-PWR:P_Channel_Configuration rdf:type owl:Class ;
                                      rdfs:subClassOf ecsel-dr-PWR:Device_Configuration ;
-                                     rdfs:label "P-Channel Configuration"@en .
+                                     rdfs:label "P-Channel Configuration"@en ;
+                                     skos:definition "P_Channel_Configuration - the hardware and/or software settings for the use of one or more P channel field effect transistors (P channel MOSFETs/FETs) within a power circuit. It documents electrical connections and orientation (source, drain, gate), intended role (for example high side switch, load switch, complementary stage), gate drive and level shifting schemes, biasing and pull up elements, gate resistances, protection/snubbing components, allowed voltage/current/thermal limits, switching profiles, and any monitoring or control parameters required for safe and efficient operation. This configuration is used for specification, validation, monitoring and automated control of power assemblies where P channel devices determine power routing, protection or load isolation."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Package
@@ -22603,13 +22629,15 @@ ecsel-dr-PWR:Quality rdf:type owl:Class ;
 ecsel-dr-PWR:Real_Estate rdf:type owl:Class ;
                          rdfs:subClassOf ecsel-dr-PWR:Industrial_Sector ;
                          rdfs:comment "Real Estate sector"@en ;
-                         rdfs:label "Real Estate"@en .
+                         rdfs:label "Real Estate"@en ;
+                         skos:definition "Real_Estate - represents the built environment and facility-related enterprises that own, operate, develop or manage physical properties. In the Power_Lobe context this sector models the energy relevant aspects of those properties: electrical infrastructure, grid connections, on site generation and storage, metering and monitoring, HVAC and load profiles, asset and facility management, and regulatory/efficiency requirements. It is used to classify organizations and facilities whose primary activity is real estate development, management or operation, and to link property assets to power consumption, control and optimization use cases."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Region_Of_Operation
 ecsel-dr-PWR:Region_Of_Operation rdf:type owl:Class ;
                                  rdfs:subClassOf ecsel-dr-PWR:Operating_Property ;
-                                 rdfs:label "Region Of Operation"@en .
+                                 rdfs:label "Region Of Operation"@en ;
+                                 skos:definition "Region_Of_Operation - the permissible or intended multidimensional range(s) of operating conditions for a device, component or system. It is used to capture safe operating areas, nominal/optimal bands, derating limits and constraint boundaries for specification, monitoring, validation and automated control."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Resistance
@@ -22623,7 +22651,8 @@ ecsel-dr-PWR:Resistance rdf:type owl:Class ;
 ecsel-dr-PWR:Saturation_Region rdf:type owl:Class ;
                                rdfs:subClassOf ecsel-dr-PWR:On_State_Region ;
                                owl:disjointWith <http://www.w3id.org/ecsel-dr-PWR#Triode/Constant_Resistance_Region> ;
-                               rdfs:label "Saturation Region" .
+                               rdfs:label "Saturation Region" ;
+                               skos:definition "Saturation_Region - the range of operating conditions in which a power switching device is in its saturation (fully on or active) conduction regime."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Semiconductor_Product_Data_Sheet
@@ -22696,7 +22725,8 @@ ecsel-dr-PWR:Solar_Energy rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-PWR#Source
 ecsel-dr-PWR:Source rdf:type owl:Class ;
                     rdfs:subClassOf ecsel-dr-PWR:Device_Element ;
-                    rdfs:label "Source"@en .
+                    rdfs:label "Source"@en ;
+                    skos:definition "Source - represents a component or endpoint that provides, supplies or generates electrical or energetic power to a circuit, system, or device."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Switcher
@@ -22709,7 +22739,8 @@ ecsel-dr-PWR:Switcher rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-PWR#Switching_Frequency
 ecsel-dr-PWR:Switching_Frequency rdf:type owl:Class ;
                                  rdfs:subClassOf ecsel-dr-PWR:Property ;
-                                 rdfs:label "Switching Frequency"@en .
+                                 rdfs:label "Switching Frequency"@en ;
+                                 skos:definition "Switching_Frequency - is the rate at which a power-electronic or switching device alternates its state (on/off or between conduction paths), expressed in hertz (Hz). In a supply-chain/topology context it characterizes the temporal switching behavior of converters, inverters, motor drives, relays, and solid-state switches and impacts efficiency, thermal loading, electromagnetic interference (EMI), filter design, component selection, and regulatory compliance."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Switching_Value
@@ -22739,7 +22770,8 @@ ecsel-dr-PWR:Technology_Hardware_And_Equipment rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-PWR#The_Application_Voltage
 ecsel-dr-PWR:The_Application_Voltage rdf:type owl:Class ;
                                      rdfs:subClassOf ecsel-dr-PWR:Process_Input ;
-                                     rdfs:label "The Application Voltage"@en .
+                                     rdfs:label "The Application Voltage"@en ;
+                                     skos:definition "The_Application_Voltage - an input to a Procedure that defines the required operating voltage for a particular device, process, or application within a power or supply-chain context. The application voltage is used to configure, operate, test, or procure equipment and to ensure compatibility and safety across interconnected components."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#The_Device_Output
@@ -22777,7 +22809,8 @@ Boost Converter process: boosting: is a process that results in the estimation, 
 ###  http://www.w3id.org/ecsel-dr-PWR#Threshold_Voltage
 ecsel-dr-PWR:Threshold_Voltage rdf:type owl:Class ;
                                rdfs:subClassOf ecsel-dr-PWR:Property ;
-                               rdfs:label "Threshold Voltage"@en .
+                               rdfs:label "Threshold Voltage"@en ;
+                               skos:definition "Threshold_Voltage - is the specific electrical potential at which a component or material changes behavior or is considered to have reached an operational or safety limit."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-PWR#Utilities
@@ -22830,7 +22863,8 @@ ecsel-dr-PWR:Width rdf:type owl:Class ;
                                                                                        owl:onProperty ecsel-dr-PWR:acting_as ;
                                                                                        owl:allValuesFrom ecsel-dr-PWR:Constant_Resistance
                                                                                      ] ;
-                                                                     rdfs:label "Triode/Constant Resistance Region"@en .
+                                                                     rdfs:label "Triode/Constant Resistance Region"@en ;
+                                                                     skos:definition "Triode/Constant_Resistance_Region - is an on state operating region of a semiconductor switching device in which the device conducts with an approximately constant resistance between its terminals."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Activity
@@ -22854,7 +22888,7 @@ ecsel-dr-Planning:Autonomous rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-Planning#Available_Capacity
 ecsel-dr-Planning:Available_Capacity rdf:type owl:Class ;
                                      rdfs:subClassOf ecsel-dr-Planning:Required_Capacity ;
-                                     rdfs:comment ": The AVAILABLE CAPACITY describes the ability of a resource within a period of time to perform activities or processes. Elmaghraby (2011) refers to this as operational capacity, i.e. the productive capacity that is obtained from the nominal capacity by subtracting the anticipated and unavoidable loss in productivity, for instance, due to machine breakdowns in a wafer fab." ;
+                                     rdfs:comment "The AVAILABLE CAPACITY describes the ability of a resource within a period of time to perform activities or processes. Elmaghraby (2011) refers to this as operational capacity, i.e. the productive capacity that is obtained from the nominal capacity by subtracting the anticipated and unavoidable loss in productivity, for instance, due to machine breakdowns in a wafer fab." ;
                                      rdfs:label "Available Capacity"@en .
 
 
@@ -22890,7 +22924,8 @@ ecsel-dr-Planning:Capacity rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-Planning#Component_Part
 ecsel-dr-Planning:Component_Part rdf:type owl:Class ;
                                  rdfs:subClassOf ecsel-dr-Planning:Part ;
-                                 rdfs:label "Component Part"@en .
+                                 rdfs:label "Component Part"@en ;
+                                 skos:definition "Component_Part - is a specific type of PART that represents a distinct element or constituent of a larger product assembly. It is integral to the overall functionality and structure of the final product. Like a general part, a component part moves through the manufacturing process according to its product specification but is characterized by its role as a building block within a more complex product. COMPONENT_PARTs may be tested, assessed, and categorized based on the performance and quality criteria outlined in the product specifications."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Criteria
@@ -23399,7 +23434,8 @@ ecsel-dr-RAMI40:Semantic_Expression rdf:type owl:Class ;
                                                                     )
                                                         ] ;
                                     rdfs:subClassOf dr:System_Lobe ;
-                                    rdfs:label "Semantic Expression"@en .
+                                    rdfs:label "Semantic Expression"@en ;
+                                    skos:definition "Semantic_Expression - is a System_Lobe concept used to represent semantic artefacts that express meaning within the supply chain digital reference model. It is the superclass of and equivalent to the set of semantic artefact types: Confirmation (assertions of state or acknowledgement), Measurement (observations or quantified/qualitative measures), and Requirement (constraints, specifications, or desired states). A Semantic Expression therefore collects those domain constructs that convey meaning, values, or constraints relevant to assets, components and views in the Digital Reference model."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Sensor
@@ -23457,7 +23493,8 @@ ecsel-dr-RAMI40:Submodel rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Transport_Interface
 ecsel-dr-RAMI40:Transport_Interface rdf:type owl:Class ;
                                     rdfs:subClassOf ecsel-dr-RAMI40:Submodel ;
-                                    rdfs:label "Transport Interface"@en .
+                                    rdfs:label "Transport Interface"@en ;
+                                    skos:definition "Transport_Interface - represents the data models and interfaces associated with the transportation and movement of goods within the supply chain. This includes data related to logistics, shipping, and distribution, as well as the various modes of transport such as trucks, trains, ships, and aircraft. By providing a standardized framework for capturing and exchanging information about transportation processes and assets, the Transport_Interface subclass enables more efficient and reliable supply chain operations."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-RAMI40#Used_Date
@@ -25470,8 +25507,8 @@ ecsel-dr-CO2Savings:Wind_Turbine rdfs:comment "A device that converts wind energ
                                  rdfs:label "Wind Turbine"@en .
 
 
-ecsel-dr-DF:order_position rdfs:label "has order position"@en ,
-                                      "order position"@en .
+ecsel-dr-DF:has_order_position rdfs:label "has order position"@en ,
+                                          "order position"@en .
 
 
 ecsel-dr-OOSMP:Completely_Lead_Free_Status rdfs:comment "This status determines whether a semiconductor product is lead free or not."@en ;

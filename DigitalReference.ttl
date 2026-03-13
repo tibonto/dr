@@ -47,11 +47,11 @@
                                               "Hans Ehm"@en ;
                                 terms:isVersionOf <http://www.w3id.org/ecsel-dr> ;
                                 terms:license "Apache License Version 2.0" ;
-                                terms:modified "2026-03-09" ;
+                                terms:modified "2026-03-13" ;
                                 terms:title "Digital Reference"@en ;
                                 vann:preferredNamespaceUri <http://www.w3id.org/ecsel-dr/> ;
                                 rdfs:label "Digital Reference"@en ;
-                                owl:versionInfo "1.2.10" .
+                                owl:versionInfo "1.2.11" .
 
 #################################################################
 #    Annotation properties
@@ -1445,7 +1445,8 @@ ssn-system:in_condition rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/digital-reference/quality/is_part_of_lot
 <http://www.w3id.org/digital-reference/quality/is_part_of_lot> rdf:type owl:ObjectProperty ;
-                                                               rdfs:domain <http://www.w3id.org/digital-reference/quality/Product_Instance> ;
+                                                               rdfs:domain <http://www.w3id.org/digital-reference/quality/Product_Instance> ,
+                                                                           <http://www.w3id.org/ecsel-dr/quality/Substrate> ;
                                                                rdfs:range <http://www.w3id.org/digital-reference/quality/Lot> .
 
 
@@ -1563,6 +1564,12 @@ dr:is_date_time_interval_of rdf:type owl:ObjectProperty ;
                             rdfs:label "is date time interval of"@en .
 
 
+###  http://www.w3id.org/ecsel-dr#is_executed_through
+dr:is_executed_through rdf:type owl:ObjectProperty ;
+                       rdfs:domain ecsel-dr-SO:Process ;
+                       rdfs:range ecsel-dr-SO:Equipment .
+
+
 ###  http://www.w3id.org/ecsel-dr#is_geographical_location_of
 dr:is_geographical_location_of rdf:type owl:ObjectProperty ;
                                rdfs:subPropertyOf owl:topObjectProperty ;
@@ -1603,11 +1610,23 @@ dr:is_relationship_nature_of rdf:type owl:ObjectProperty ;
                              rdfs:comment "is relationship nature of"@en .
 
 
+###  http://www.w3id.org/ecsel-dr#is_reported_as_part_of
+dr:is_reported_as_part_of rdf:type owl:ObjectProperty ;
+                          rdfs:domain dr:Failure_Analysis_Code ;
+                          rdfs:range <http://www.w3id.org/ecsel-dr/quality/Quality_Response> .
+
+
 ###  http://www.w3id.org/ecsel-dr#is_used_by_standard
 dr:is_used_by_standard rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf owl:topObjectProperty ;
                        owl:inverseOf dr:uses_standardization_organization ;
                        rdfs:comment "is used by standard"@en .
+
+
+###  http://www.w3id.org/ecsel-dr#places_order
+dr:places_order rdf:type owl:ObjectProperty ;
+                rdfs:domain dr:Customer ;
+                rdfs:range dr:Order .
 
 
 ###  http://www.w3id.org/ecsel-dr#specifies_size
@@ -3396,7 +3415,7 @@ ecsel-dr-DF:assigns_ATP_to rdf:type owl:ObjectProperty ;
                            rdfs:subPropertyOf owl:topObjectProperty ;
                            rdf:type owl:FunctionalProperty ;
                            rdfs:domain ecsel-dr-DF:Allocation_Plan ;
-                           rdfs:range ecsel-dr-DF:Customer ;
+                           rdfs:range dr:Customer ;
                            rdfs:label "assigns ATP to"@en .
 
 
@@ -3405,7 +3424,7 @@ ecsel-dr-DF:belongs_to rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf owl:topObjectProperty ;
                        rdf:type owl:FunctionalProperty ;
                        rdfs:domain ecsel-dr-DF:Demand ;
-                       rdfs:range ecsel-dr-DF:Order ;
+                       rdfs:range dr:Order ;
                        rdfs:label "belongs to"@en .
 
 
@@ -3414,7 +3433,7 @@ ecsel-dr-DF:calculates_promised_delivery_date_for rdf:type owl:ObjectProperty ;
                                                   rdfs:subPropertyOf owl:topObjectProperty ;
                                                   rdf:type owl:FunctionalProperty ;
                                                   rdfs:domain ecsel-dr-DF:Order_Delivery_Plan ;
-                                                  rdfs:range ecsel-dr-DF:Order ;
+                                                  rdfs:range dr:Order ;
                                                   rdfs:label "calculates promised delivery date for"@en .
 
 
@@ -3498,7 +3517,7 @@ ecsel-dr-DF:has_contract rdf:type owl:ObjectProperty ;
 ecsel-dr-DF:has_customer rdf:type owl:ObjectProperty ;
                          rdfs:subPropertyOf owl:topObjectProperty ;
                          rdfs:domain ecsel-dr-DF:Customer_Order ;
-                         rdfs:range ecsel-dr-DF:Customer ;
+                         rdfs:range dr:Customer ;
                          rdfs:label "has customer"@en .
 
 
@@ -3506,7 +3525,7 @@ ecsel-dr-DF:has_customer rdf:type owl:ObjectProperty ;
 ecsel-dr-DF:has_customer_class rdf:type owl:ObjectProperty ;
                                rdfs:subPropertyOf owl:topObjectProperty ;
                                rdf:type owl:FunctionalProperty ;
-                               rdfs:domain ecsel-dr-DF:Customer ;
+                               rdfs:domain dr:Customer ;
                                rdfs:range ecsel-dr-DF:Customer_Class ;
                                rdfs:label "has customer class"@en .
 
@@ -3514,7 +3533,7 @@ ecsel-dr-DF:has_customer_class rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-DF#has_delivery_concept
 ecsel-dr-DF:has_delivery_concept rdf:type owl:ObjectProperty ;
                                  rdfs:subPropertyOf owl:topObjectProperty ;
-                                 rdfs:domain ecsel-dr-DF:Order ;
+                                 rdfs:domain dr:Order ;
                                  rdfs:range ecsel-dr-DF:Delivery_Concept ;
                                  rdfs:label "has delivey concept"@en .
 
@@ -3541,14 +3560,14 @@ ecsel-dr-DF:has_lots rdf:type owl:ObjectProperty ;
 ecsel-dr-DF:has_order_class rdf:type owl:ObjectProperty ;
                             rdfs:subPropertyOf owl:topObjectProperty ;
                             rdf:type owl:FunctionalProperty ;
-                            rdfs:domain ecsel-dr-DF:Order ;
+                            rdfs:domain dr:Order ;
                             rdfs:label "has order class"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-DF#has_order_demand
 ecsel-dr-DF:has_order_demand rdf:type owl:ObjectProperty ;
                              rdfs:subPropertyOf owl:topObjectProperty ;
-                             rdfs:domain ecsel-dr-DF:Order ;
+                             rdfs:domain dr:Order ;
                              rdfs:range ecsel-dr-DF:Demand ;
                              rdfs:label "has order demand"@en .
 
@@ -3556,7 +3575,7 @@ ecsel-dr-DF:has_order_demand rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-DF#has_order_position
 ecsel-dr-DF:has_order_position rdf:type owl:ObjectProperty ;
                                rdfs:subPropertyOf owl:topObjectProperty ;
-                               rdfs:domain ecsel-dr-DF:Order ;
+                               rdfs:domain dr:Order ;
                                rdfs:range ecsel-dr-DF:Order_Position .
 
 
@@ -3666,7 +3685,7 @@ ecsel-dr-DF:is_allocated_to_customer rdf:type owl:ObjectProperty ;
                                      rdfs:subPropertyOf owl:topObjectProperty ;
                                      rdf:type owl:FunctionalProperty ;
                                      rdfs:domain ecsel-dr-DF:Allocated_Available_To_Promise ;
-                                     rdfs:range ecsel-dr-DF:Customer ;
+                                     rdfs:range dr:Customer ;
                                      rdfs:label "is allocated to customer"@en .
 
 
@@ -3675,7 +3694,7 @@ ecsel-dr-DF:is_available_to rdf:type owl:ObjectProperty ;
                             rdfs:subPropertyOf owl:topObjectProperty ;
                             rdf:type owl:FunctionalProperty ;
                             rdfs:domain ecsel-dr-DF:Demand ;
-                            rdfs:range ecsel-dr-DF:Customer ;
+                            rdfs:range dr:Customer ;
                             rdfs:label "is available to"@en .
 
 
@@ -3693,7 +3712,7 @@ ecsel-dr-DF:is_communicated_to rdf:type owl:ObjectProperty ;
                                rdfs:subPropertyOf owl:topObjectProperty ;
                                rdf:type owl:FunctionalProperty ;
                                rdfs:domain ecsel-dr-DF:Confirmed_Delivery_Date ;
-                               rdfs:range ecsel-dr-DF:Customer ;
+                               rdfs:range dr:Customer ;
                                rdfs:label "is communicated to"@en .
 
 
@@ -3701,7 +3720,7 @@ ecsel-dr-DF:is_communicated_to rdf:type owl:ObjectProperty ;
 ecsel-dr-DF:is_fulfilled_by rdf:type owl:ObjectProperty ;
                             rdfs:subPropertyOf owl:topObjectProperty ;
                             rdf:type owl:FunctionalProperty ;
-                            rdfs:domain ecsel-dr-DF:Order ;
+                            rdfs:domain dr:Order ;
                             rdfs:range ecsel-dr-DF:Lot ;
                             rdfs:label "is fulfilled by"@en .
 
@@ -3714,7 +3733,7 @@ ecsel-dr-DF:is_performed_by rdf:type owl:ObjectProperty ;
                                         ecsel-dr-DF:Delivery_Date ,
                                         ecsel-dr-DF:First_Promised_Delivery_Date ,
                                         ecsel-dr-DF:Promised_Delivery_Date ;
-                            rdfs:range ecsel-dr-DF:Supplier ;
+                            rdfs:range dr:Supplier ;
                             rdfs:label "is performed by"@en .
 
 
@@ -3723,7 +3742,7 @@ ecsel-dr-DF:is_requested_by rdf:type owl:ObjectProperty ;
                             rdfs:subPropertyOf owl:topObjectProperty ;
                             rdf:type owl:FunctionalProperty ;
                             rdfs:domain ecsel-dr-DF:Requested_Delivery_Date ;
-                            rdfs:range ecsel-dr-DF:Customer ;
+                            rdfs:range dr:Customer ;
                             rdfs:label "is requested by"@en .
 
 
@@ -4295,13 +4314,13 @@ ecsel-dr-Incoterms:provides rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-Incoterms#purchases
 ecsel-dr-Incoterms:purchases rdf:type owl:ObjectProperty ;
-                             rdfs:domain ecsel-dr-Incoterms:Customer ;
+                             rdfs:domain dr:Customer ;
                              rdfs:range ecsel-dr-Incoterms:Product .
 
 
 ###  http://www.w3id.org/ecsel-dr-Incoterms#receives
 ecsel-dr-Incoterms:receives rdf:type owl:ObjectProperty ;
-                            rdfs:domain ecsel-dr-Incoterms:Customer ;
+                            rdfs:domain dr:Customer ;
                             rdfs:range ecsel-dr-Incoterms:Offer .
 
 
@@ -4325,7 +4344,7 @@ ecsel-dr-Incoterms:uses_from_location rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-Incoterms#uses_to_location
 ecsel-dr-Incoterms:uses_to_location rdf:type owl:ObjectProperty ;
-                                    rdfs:domain ecsel-dr-Incoterms:Customer ;
+                                    rdfs:domain dr:Customer ;
                                     rdfs:range ecsel-dr-Incoterms:To_Location .
 
 
@@ -4410,7 +4429,7 @@ ecsel-dr-OM:describes_customer rdf:type owl:ObjectProperty ;
                                owl:inverseOf ecsel-dr-OM:is_described_by_customer_data ;
                                rdf:type owl:FunctionalProperty ;
                                rdfs:domain ecsel-dr-OM:Customer_Data ;
-                               rdfs:range ecsel-dr-OM:Customer ;
+                               rdfs:range dr:Customer ;
                                rdfs:label "describes customer"@en .
 
 
@@ -4430,7 +4449,7 @@ ecsel-dr-OM:describes_supplier rdf:type owl:ObjectProperty ;
                                owl:inverseOf ecsel-dr-OM:is_described_by_supplier_data ;
                                rdf:type owl:FunctionalProperty ;
                                rdfs:domain ecsel-dr-OM:Supplier_Data ;
-                               rdfs:range ecsel-dr-OM:Supplier ;
+                               rdfs:range dr:Supplier ;
                                rdfs:label "describes supplier"@en .
 
 
@@ -4536,7 +4555,7 @@ ecsel-dr-OM:is_requested_by_customer rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-OM#owns_customer_plant
 ecsel-dr-OM:owns_customer_plant rdf:type owl:ObjectProperty ;
                                 rdfs:subPropertyOf owl:topObjectProperty ;
-                                rdfs:domain ecsel-dr-OM:Customer ;
+                                rdfs:domain dr:Customer ;
                                 rdfs:range ecsel-dr-OM:Customer_Plant ;
                                 rdfs:label "owns customer plant"@en .
 
@@ -4544,7 +4563,7 @@ ecsel-dr-OM:owns_customer_plant rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-OM#requests_order_change_request
 ecsel-dr-OM:requests_order_change_request rdf:type owl:ObjectProperty ;
                                           rdfs:subPropertyOf owl:topObjectProperty ;
-                                          rdfs:domain ecsel-dr-OM:Customer ;
+                                          rdfs:domain dr:Customer ;
                                           rdfs:range ecsel-dr-OM:Order_Change_Request ;
                                           rdfs:label "requests order change request"@en .
 
@@ -6678,7 +6697,7 @@ ecsel-dr-Planning:has_operations rdf:type owl:ObjectProperty ;
 ###  http://www.w3id.org/ecsel-dr-Planning#has_order
 ecsel-dr-Planning:has_order rdf:type owl:ObjectProperty ;
                             rdfs:domain ecsel-dr-Planning:In_Transit_Inventory ;
-                            rdfs:range ecsel-dr-Planning:Order ;
+                            rdfs:range dr:Order ;
                             rdfs:label "has order"@en .
 
 
@@ -7105,7 +7124,7 @@ ecsel-dr-SCP:consists_of_open_order_book rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-SCP#constitutes
 ecsel-dr-SCP:constitutes rdf:type owl:ObjectProperty ;
-                         rdfs:domain ecsel-dr-SCP:Order ;
+                         rdfs:domain dr:Order ;
                          rdfs:range ecsel-dr-SCP:Sales_Demand ;
                          rdfs:label "constitutes"@en .
 
@@ -7119,7 +7138,7 @@ ecsel-dr-SCP:consumes rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-SCP#contributes_to_prioritized_order
 ecsel-dr-SCP:contributes_to_prioritized_order rdf:type owl:ObjectProperty ;
-                                              rdfs:domain ecsel-dr-SCP:Order ;
+                                              rdfs:domain dr:Order ;
                                               rdfs:range ecsel-dr-SCP:Prioritized_Orders ;
                                               rdfs:label "contributes to prioritized order"@en .
 
@@ -7133,7 +7152,7 @@ ecsel-dr-SCP:creates_prioritized_order rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-SCP#entered_to
 ecsel-dr-SCP:entered_to rdf:type owl:ObjectProperty ;
-                        rdfs:domain ecsel-dr-SCP:Order ;
+                        rdfs:domain dr:Order ;
                         rdfs:range ecsel-dr-SCP:Customer_Logistics_Management_Representative ;
                         rdfs:label "entered to"@en .
 
@@ -7189,8 +7208,8 @@ ecsel-dr-SCP:is_part_of_operational_demand rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-SCP#is_place_orders
 ecsel-dr-SCP:is_place_orders rdf:type owl:ObjectProperty ;
-                             rdfs:domain ecsel-dr-SCP:Customer ;
-                             rdfs:range ecsel-dr-SCP:Order ;
+                             rdfs:domain dr:Customer ;
+                             rdfs:range dr:Order ;
                              rdfs:label "is place orders"@en .
 
 
@@ -7266,7 +7285,7 @@ ecsel-dr-SCP:sent_to rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-SCP#sort_to
 ecsel-dr-SCP:sort_to rdf:type owl:ObjectProperty ;
-                     rdfs:domain ecsel-dr-SCP:Order ;
+                     rdfs:domain dr:Order ;
                      rdfs:range ecsel-dr-SCP:Order_Line_Item ;
                      rdfs:label "sort to"@en .
 
@@ -7911,6 +7930,88 @@ ecsel-dr-SO:uses_one_or_more_technology rdf:type owl:ObjectProperty ;
                                         rdfs:domain ecsel-dr-SO:Process ;
                                         rdfs:range ecsel-dr-SO:Workshop ;
                                         rdfs:label "uses one or more technology"@en .
+
+
+###  http://www.w3id.org/ecsel-dr/quality/can_raise
+<http://www.w3id.org/ecsel-dr/quality/can_raise> rdf:type owl:ObjectProperty ;
+                                                 rdfs:domain dr:Customer ;
+                                                 rdfs:range <http://www.w3id.org/ecsel-dr/quality/Quality_Request> .
+
+
+###  http://www.w3id.org/ecsel-dr/quality/has_a_customer
+<http://www.w3id.org/ecsel-dr/quality/has_a_customer> rdf:type owl:ObjectProperty ,
+                                                               owl:IrreflexiveProperty ;
+                                                      rdfs:domain dr:Customer ;
+                                                      rdfs:range dr:Customer .
+
+
+###  http://www.w3id.org/ecsel-dr/quality/has_a_position_on
+<http://www.w3id.org/ecsel-dr/quality/has_a_position_on> rdf:type owl:ObjectProperty ;
+                                                         rdfs:domain <http://www.w3id.org/digital-reference/quality/Product_Instance> ;
+                                                         rdfs:range <http://www.w3id.org/ecsel-dr/quality/Substrate> .
+
+
+###  http://www.w3id.org/ecsel-dr/quality/has_a_product_instance
+<http://www.w3id.org/ecsel-dr/quality/has_a_product_instance> rdf:type owl:ObjectProperty ;
+                                                              rdfs:domain <http://www.w3id.org/digital-reference/quality/Product_Marking> ;
+                                                              rdfs:range <http://www.w3id.org/digital-reference/quality/Product_Instance> .
+
+
+###  http://www.w3id.org/ecsel-dr/quality/is_a_response_to
+<http://www.w3id.org/ecsel-dr/quality/is_a_response_to> rdf:type owl:ObjectProperty ;
+                                                        rdfs:domain <http://www.w3id.org/ecsel-dr/quality/Quality_Response> ;
+                                                        rdfs:range <http://www.w3id.org/ecsel-dr/quality/Quality_Request> .
+
+
+###  http://www.w3id.org/ecsel-dr/quality/is_derived_from_lot
+<http://www.w3id.org/ecsel-dr/quality/is_derived_from_lot> rdf:type owl:ObjectProperty ,
+                                                                    owl:AsymmetricProperty ,
+                                                                    owl:TransitiveProperty ,
+                                                                    owl:IrreflexiveProperty ;
+                                                           rdfs:domain <http://www.w3id.org/digital-reference/quality/Lot> ;
+                                                           rdfs:range <http://www.w3id.org/digital-reference/quality/Lot> .
+
+
+###  http://www.w3id.org/ecsel-dr/quality/is_executed_for
+<http://www.w3id.org/ecsel-dr/quality/is_executed_for> rdf:type owl:ObjectProperty ;
+                                                       rdfs:domain <http://www.w3id.org/ecsel-dr/quality/Failure_Analysis> ;
+                                                       rdfs:range <http://www.w3id.org/digital-reference/quality/Quality_Complaint_Line_Item> .
+
+
+###  http://www.w3id.org/ecsel-dr/quality/is_executed_on
+<http://www.w3id.org/ecsel-dr/quality/is_executed_on> rdf:type owl:ObjectProperty ;
+                                                      rdfs:domain <http://www.w3id.org/ecsel-dr/quality/Failure_Analysis> ;
+                                                      rdfs:range <http://www.w3id.org/digital-reference/quality/Product_Instance> .
+
+
+###  http://www.w3id.org/ecsel-dr/quality/provides
+<http://www.w3id.org/ecsel-dr/quality/provides> rdf:type owl:ObjectProperty ;
+                                                rdfs:domain dr:Supplier ;
+                                                rdfs:range <http://www.w3id.org/ecsel-dr/quality/Quality_Response> .
+
+
+###  http://www.w3id.org/ecsel-dr/quality/receives
+<http://www.w3id.org/ecsel-dr/quality/receives> rdf:type owl:ObjectProperty ;
+                                                rdfs:domain dr:Supplier ;
+                                                rdfs:range <http://www.w3id.org/ecsel-dr/quality/Quality_Request> .
+
+
+###  http://www.w3id.org/ecsel-dr/quality/sells
+<http://www.w3id.org/ecsel-dr/quality/sells> rdf:type owl:ObjectProperty ;
+                                             rdfs:domain dr:Supplier ;
+                                             rdfs:range dr:Order .
+
+
+###  http://www.w3id.org/ecsel-dr/quality/shipped_to
+<http://www.w3id.org/ecsel-dr/quality/shipped_to> rdf:type owl:ObjectProperty ;
+                                                  rdfs:domain <http://www.w3id.org/digital-reference/quality/Product_Instance> ;
+                                                  rdfs:range dr:Customer .
+
+
+###  http://www.w3id.org/ecsel-dr/qualty/is_executed_on
+<http://www.w3id.org/ecsel-dr/qualty/is_executed_on> rdf:type owl:ObjectProperty ;
+                                                     rdfs:domain <http://www.w3id.org/ecsel-dr/quality/Failure_Analysis> ;
+                                                     rdfs:range <http://www.w3id.org/digital-reference/quality/Product_Instance> .
 
 
 #################################################################
@@ -9505,7 +9606,7 @@ ecsel-dr-DF:BOM_version rdf:type owl:DatatypeProperty ;
 ###  http://www.w3id.org/ecsel-dr-DF#batching_interval
 ecsel-dr-DF:batching_interval rdf:type owl:DatatypeProperty ;
                               rdfs:subPropertyOf owl:topDataProperty ;
-                              rdfs:domain ecsel-dr-DF:Order ;
+                              rdfs:domain dr:Order ;
                               rdfs:range rdfs:Literal ;
                               rdfs:comment "This is the time span for which arriving orders are collected to derive for all of them jointly a first promised delivery date." ;
                               rdfs:label "batching interval"@en .
@@ -9522,7 +9623,7 @@ ecsel-dr-DF:customer_class_information rdf:type owl:DatatypeProperty ;
 ###  http://www.w3id.org/ecsel-dr-DF#customer_identifier
 ecsel-dr-DF:customer_identifier rdf:type owl:DatatypeProperty ;
                                 rdfs:subPropertyOf owl:topDataProperty ;
-                                rdfs:domain ecsel-dr-DF:Customer ;
+                                rdfs:domain dr:Customer ;
                                 rdfs:range rdfs:Literal ;
                                 rdfs:label "customer identifier"@en .
 
@@ -9538,7 +9639,7 @@ ecsel-dr-DF:customer_information rdf:type owl:DatatypeProperty ;
 ###  http://www.w3id.org/ecsel-dr-DF#customer_name
 ecsel-dr-DF:customer_name rdf:type owl:DatatypeProperty ;
                           rdfs:subPropertyOf owl:topDataProperty ;
-                          rdfs:domain ecsel-dr-DF:Customer ;
+                          rdfs:domain dr:Customer ;
                           rdfs:range rdfs:Literal ;
                           rdfs:label "customer name"@en .
 
@@ -9546,7 +9647,7 @@ ecsel-dr-DF:customer_name rdf:type owl:DatatypeProperty ;
 ###  http://www.w3id.org/ecsel-dr-DF#customer_priority
 ecsel-dr-DF:customer_priority rdf:type owl:DatatypeProperty ;
                               rdfs:subPropertyOf owl:topDataProperty ;
-                              rdfs:domain ecsel-dr-DF:Customer ;
+                              rdfs:domain dr:Customer ;
                               rdfs:range rdfs:Literal ;
                               rdfs:label "customer priority"@en .
 
@@ -9629,7 +9730,7 @@ ecsel-dr-DF:lot_start_date rdf:type owl:DatatypeProperty ;
 ###  http://www.w3id.org/ecsel-dr-DF#order_date
 ecsel-dr-DF:order_date rdf:type owl:DatatypeProperty ;
                        rdfs:subPropertyOf owl:topDataProperty ;
-                       rdfs:domain ecsel-dr-DF:Order ;
+                       rdfs:domain dr:Order ;
                        rdfs:range xsd:dateTime ;
                        rdfs:label "order date"@en .
 
@@ -9645,7 +9746,7 @@ ecsel-dr-DF:order_information rdf:type owl:DatatypeProperty ;
 ###  http://www.w3id.org/ecsel-dr-DF#order_name
 ecsel-dr-DF:order_name rdf:type owl:DatatypeProperty ;
                        rdfs:subPropertyOf owl:topDataProperty ;
-                       rdfs:domain ecsel-dr-DF:Order ;
+                       rdfs:domain dr:Order ;
                        rdfs:range rdfs:Literal ;
                        rdfs:label "order name"@en .
 
@@ -9653,7 +9754,7 @@ ecsel-dr-DF:order_name rdf:type owl:DatatypeProperty ;
 ###  http://www.w3id.org/ecsel-dr-DF#order_priority
 ecsel-dr-DF:order_priority rdf:type owl:DatatypeProperty ;
                            rdfs:subPropertyOf owl:topDataProperty ;
-                           rdfs:domain ecsel-dr-DF:Order ;
+                           rdfs:domain dr:Order ;
                            rdfs:range rdfs:Literal ;
                            rdfs:label "order priority"@en .
 
@@ -13163,8 +13264,8 @@ ecsel-dr-Planning:time rdf:type owl:DatatypeProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-Planning#type
 ecsel-dr-Planning:type rdf:type owl:DatatypeProperty ;
-                       rdfs:domain ecsel-dr-Planning:Inventory_Policy ,
-                                   ecsel-dr-Planning:Order ,
+                       rdfs:domain dr:Order ,
+                                   ecsel-dr-Planning:Inventory_Policy ,
                                    ecsel-dr-Planning:Supply_Information ;
                        rdfs:range xsd:string ;
                        rdfs:label "type"@en .
@@ -13211,21 +13312,21 @@ ecsel-dr-SCP:confirmed_quantity rdf:type owl:DatatypeProperty ;
 
 ###  http://www.w3id.org/ecsel-dr-SCP#customer_location
 ecsel-dr-SCP:customer_location rdf:type owl:DatatypeProperty ;
-                               rdfs:domain ecsel-dr-SCP:Customer ;
+                               rdfs:domain dr:Customer ;
                                rdfs:range xsd:string ;
                                rdfs:label "customer location"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#customers_ID
 ecsel-dr-SCP:customers_ID rdf:type owl:DatatypeProperty ;
-                          rdfs:domain ecsel-dr-SCP:Customer ;
+                          rdfs:domain dr:Customer ;
                           rdfs:range xsd:integer ;
                           rdfs:label "customers ID"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#granularity
 ecsel-dr-SCP:granularity rdf:type owl:DatatypeProperty ;
-                         rdfs:domain ecsel-dr-SCP:Customer ;
+                         rdfs:domain dr:Customer ;
                          rdfs:range rdfs:Literal ;
                          rdfs:label "granularity"@en .
 
@@ -15042,7 +15143,7 @@ ssn-system:System_Property rdf:type owl:Class ;
 
 ###  http://www.w3id.org/digital-reference/quality/Quality_Complaint
 <http://www.w3id.org/digital-reference/quality/Quality_Complaint> rdf:type owl:Class ;
-                                                                  rdfs:subClassOf dr:Quality_Management_Lobe ;
+                                                                  rdfs:subClassOf <http://www.w3id.org/ecsel-dr/quality/Quality_Request> ;
                                                                   rdfs:description "Technical complaint or Issue as reported by a customer about a (or more than 1) product / device. Helping to solve the customer issue whoever caused it and aligning to critical customer needs helps to drive positive customer scorecard results and enables future business growth." ;
                                                                   rdfs:label "Quality Complaint" .
 
@@ -15143,6 +15244,37 @@ It represents the notion of  Service, Service Documentation, Service-Oriented Ar
               dr:lobe_number 06.001 .
 
 
+###  http://www.w3id.org/ecsel-dr#Customer
+dr:Customer rdf:type owl:Class ;
+            rdfs:subClassOf dr:Planning_Lobe ,
+                            dr:Supply_Chain_Lobe ;
+            rdfs:label "Customer"@en ;
+            skos:definition """CUSTOMER is a person, organization, or business entity that generates demand by placing an order or making a request for a specific product or service. A customer may also fulfill their obligations by facilitating payment for the goods or services received.
+
+Customers can be categorized into two main types: 
+•	External Customers: Entities outside the organization that purchase goods or services, often governed by agreements like Incoterms.
+•	Internal Customers: Stakeholders or departments within the organization that raise internal demand for products or services to support internal processes.
+
+A customer interacts with the organization through actions such as order placement, demand generation, and the completion of financial transactions. Customers are central to both demand creation in the supply chain and the fulfillment processes that ensure the delivery of goods or services.""" .
+
+
+###  http://www.w3id.org/ecsel-dr#Diffusion_Batch
+dr:Diffusion_Batch rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.w3id.org/digital-reference/quality/Lot> .
+
+
+###  http://www.w3id.org/ecsel-dr#End_Customer
+dr:End_Customer rdf:type owl:Class ;
+                rdfs:subClassOf dr:Customer ;
+                rdfs:label "End Customer" .
+
+
+###  http://www.w3id.org/ecsel-dr#Failure_Analysis_Code
+dr:Failure_Analysis_Code rdf:type owl:Class ;
+                         rdfs:subClassOf dr:Quality_Management_Lobe ;
+                         rdfs:label "Failure Analysis Code" .
+
+
 ###  http://www.w3id.org/ecsel-dr#Geographical_Location
 dr:Geographical_Location rdf:type owl:Class ;
                          rdfs:subClassOf dr:Organization_Lobe ;
@@ -15154,6 +15286,16 @@ dr:Geographical_Location rdf:type owl:Class ;
 dr:Integrated_Device_Manufacturer rdf:type owl:Class ;
                                   rdfs:subClassOf ecsel-dr-BMS:Semiconductor_Company ;
                                   rdfs:label "IDM" .
+
+
+###  http://www.w3id.org/ecsel-dr#Order
+dr:Order rdf:type owl:Class ;
+         rdfs:subClassOf dr:Planning_Lobe ,
+                         dr:Supply_Chain_Lobe ;
+         rdfs:comment "DF and Planning definition: An ORDER contains at least one order position. An ORDER has an order type and is associated to DEMAND." ,
+                      "SCP definition: An ORDER is a confirmation of a transaction (a receipt), which can contain multiple line items, each represented by an Offer that has been accepted by the customer." ;
+         rdfs:label "Order"@en ;
+         skos:definition "An ORDER is a confirmation/receipt of a customer transaction associated with DEMAND. It has an order type and contains at least one order position (line item). Each order position corresponds to an accepted Offer by the customer."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr#Organization
@@ -15232,6 +15374,12 @@ dr:Quality_Management_Lobe rdf:type owl:Class ;
                            ecsel-dr-OOSMP:abbreviation "QM" .
 
 
+###  http://www.w3id.org/ecsel-dr#Sales_Channel
+dr:Sales_Channel rdf:type owl:Class ;
+                 rdfs:subClassOf dr:Customer ;
+                 rdfs:label "Sales Channel" .
+
+
 ###  http://www.w3id.org/ecsel-dr#Semiconductor_Development_Lobe
 dr:Semiconductor_Development_Lobe rdf:type owl:Class ;
                                   rdfs:comment """Semiconductor development refers to the process of researching, designing, and creating semiconductor devices to meet technological advancements and industry demands.
@@ -15272,6 +15420,13 @@ It also represents Platform, Procedure, Property, Relationship Nature, Result, S
 dr:Silicon_Foundry rdf:type owl:Class ;
                    rdfs:subClassOf ecsel-dr-BMS:Semiconductor_Company ;
                    rdfs:label "SiFo" .
+
+
+###  http://www.w3id.org/ecsel-dr#Supplier
+dr:Supplier rdf:type owl:Class ;
+            rdfs:subClassOf dr:Supply_Chain_Lobe ;
+            rdfs:comment "A SUPPLIER is an entity fulfilling a demand for a specific product or service." ;
+            rdfs:label "Supplier"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr#Supply_Chain_Lobe
@@ -19525,20 +19680,6 @@ ecsel-dr-DF:Confirmed_Delivery_Date rdf:type owl:Class ;
                                     rdfs:label "Confirmed Delivery Date"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-DF#Customer
-ecsel-dr-DF:Customer rdf:type owl:Class ;
-                     owl:equivalentClass ecsel-dr-OM:Customer ;
-                     rdfs:subClassOf ecsel-dr-OM:Contact_Person_Data ;
-                     rdfs:comment """CUSTOMER is a person, organization, or business entity that generates demand by placing an order or making a request for a specific product or service. A customer may also fulfill their obligations by facilitating payment for the goods or services received.
-
-Customers can be categorized into two main types: 
-•	External Customers: Entities outside the organization that purchase goods or services, often governed by agreements like Incoterms.
-•	Internal Customers: Stakeholders or departments within the organization that raise internal demand for products or services to support internal processes.
-
-A customer interacts with the organization through actions such as order placement, demand generation, and the completion of financial transactions. Customers are central to both demand creation in the supply chain and the fulfillment processes that ensure the delivery of goods or services.""" ;
-                     rdfs:label "Customer" .
-
-
 ###  http://www.w3id.org/ecsel-dr-DF#Customer_Class
 ecsel-dr-DF:Customer_Class rdf:type owl:Class ;
                            rdfs:subClassOf dr:Supply_Chain_Lobe ;
@@ -19548,7 +19689,7 @@ ecsel-dr-DF:Customer_Class rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-DF#Customer_Order
 ecsel-dr-DF:Customer_Order rdf:type owl:Class ;
-                           rdfs:subClassOf ecsel-dr-DF:Order ;
+                           rdfs:subClassOf dr:Order ;
                            owl:disjointWith ecsel-dr-DF:Replenishment_Order ;
                            rdfs:comment "This is an order that is initiated by a customer."^^rdfs:Literal ;
                            rdfs:label "Customer Order"@en .
@@ -19698,14 +19839,6 @@ ecsel-dr-DF:Online_Order_Promising_Plan rdf:type owl:Class ;
                                         skos:definition "Online Order Promising Plan is a dynamic, real-time planning process that evaluates incoming customer orders against current supply chain data—such as inventory availability, production capacity, and supply constraints—to generate immediate and reliable delivery commitments. This plan balances customer demand with supply chain capabilities, ensuring optimized resource utilization and meeting order fulfillment timelines." .
 
 
-###  http://www.w3id.org/ecsel-dr-DF#Order
-ecsel-dr-DF:Order rdf:type owl:Class ;
-                  owl:equivalentClass ecsel-dr-Planning:Order ;
-                  rdfs:subClassOf dr:Supply_Chain_Lobe ;
-                  rdfs:comment "An ORDER contains at least one order position. An ORDER has an order type and is associated to DEMAND." ;
-                  rdfs:label "Order" .
-
-
 ###  http://www.w3id.org/ecsel-dr-DF#Order_Delivery_Plan
 ecsel-dr-DF:Order_Delivery_Plan rdf:type owl:Class ;
                                 rdfs:subClassOf ecsel-dr-DF:Plan ;
@@ -19830,7 +19963,7 @@ ecsel-dr-DF:Promised_Delivery_Date rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-DF#Replenishment_Order
 ecsel-dr-DF:Replenishment_Order rdf:type owl:Class ;
-                                rdfs:subClassOf ecsel-dr-DF:Order ;
+                                rdfs:subClassOf dr:Order ;
                                 rdfs:comment "This is an order that is initiated by an internal request of the semiconductor manufacturer to produce the order according to a MTS strategy. The replenishment order can be divided into different sub order types, depending on the purpose of order creation."^^rdfs:Literal ;
                                 rdfs:label "Replenishment Order"@en .
 
@@ -19860,17 +19993,9 @@ ecsel-dr-DF:Split_Delivery rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-DF#Split_Order
 ecsel-dr-DF:Split_Order rdf:type owl:Class ;
-                        rdfs:subClassOf ecsel-dr-DF:Order ;
+                        rdfs:subClassOf dr:Order ;
                         rdfs:comment "This is an order that results from a split delivery. When an order position of an order is delivered in several portions, each portion starting from the second one is considered as a separate suborder which is called scheduled order position. The original order also exists after the split." ;
                         rdfs:label "Split Order"@en .
-
-
-###  http://www.w3id.org/ecsel-dr-DF#Supplier
-ecsel-dr-DF:Supplier rdf:type owl:Class ;
-                     owl:equivalentClass ecsel-dr-OM:Supplier ;
-                     rdfs:subClassOf dr:Supply_Chain_Lobe ;
-                     rdfs:comment "A SUPPLIER is an entity fulfilling a demand for a specific product or service." ;
-                     rdfs:label "Supplier" .
 
 
 ###  http://www.w3id.org/ecsel-dr-DF#Supply
@@ -20430,21 +20555,6 @@ ecsel-dr-Incoterms:C_Main_Carriage_Paid rdf:type owl:Class ;
                                         rdfs:comment "An Incoterms rule of the group C." .
 
 
-###  http://www.w3id.org/ecsel-dr-Incoterms#Customer
-ecsel-dr-Incoterms:Customer rdf:type owl:Class ;
-                            owl:equivalentClass ecsel-dr-OM:Customer ,
-                                                ecsel-dr-SCP:Customer ;
-                            rdfs:subClassOf dr:Supply_Chain_Lobe ;
-                            rdfs:comment """CUSTOMER is a person, organization, or business entity that generates demand by placing an order or making a request for a specific product or service. A customer may also fulfill their obligations by facilitating payment for the goods or services received.
-
-Customers can be categorized into two main types: 
-•	External Customers: Entities outside the organization that purchase goods or services, often governed by agreements like Incoterms.
-•	Internal Customers: Stakeholders or departments within the organization that raise internal demand for products or services to support internal processes.
-
-A customer interacts with the organization through actions such as order placement, demand generation, and the completion of financial transactions. Customers are central to both demand creation in the supply chain and the fulfillment processes that ensure the delivery of goods or services.""" ;
-                            rdfs:label "Customer" .
-
-
 ###  http://www.w3id.org/ecsel-dr-Incoterms#D_Arrival
 ecsel-dr-Incoterms:D_Arrival rdf:type owl:Class ;
                              rdfs:subClassOf ecsel-dr-Incoterms:Incoterms_Group ;
@@ -20596,20 +20706,6 @@ ecsel-dr-OM:Contact_Person_Data rdf:type owl:Class ;
                                 rdfs:label "Contact Person Data" .
 
 
-###  http://www.w3id.org/ecsel-dr-OM#Customer
-ecsel-dr-OM:Customer rdf:type owl:Class ;
-                     owl:equivalentClass ecsel-dr-SCP:Customer ;
-                     rdfs:subClassOf dr:Supply_Chain_Lobe ;
-                     rdfs:comment """CUSTOMER is a person, organization, or business entity that generates demand by placing an order or making a request for a specific product or service. A customer may also fulfill their obligations by facilitating payment for the goods or services received.
-
-Customers can be categorized into two main types: 
-•	External Customers: Entities outside the organization that purchase goods or services, often governed by agreements like Incoterms.
-•	Internal Customers: Stakeholders or departments within the organization that raise internal demand for products or services to support internal processes.
-
-A customer interacts with the organization through actions such as order placement, demand generation, and the completion of financial transactions. Customers are central to both demand creation in the supply chain and the fulfillment processes that ensure the delivery of goods or services.""" ;
-                     rdfs:label "Customer"@en .
-
-
 ###  http://www.w3id.org/ecsel-dr-OM#Customer_Data
 ecsel-dr-OM:Customer_Data rdf:type owl:Class ;
                           rdfs:subClassOf dr:Supply_Chain_Lobe ;
@@ -20674,16 +20770,9 @@ ecsel-dr-OM:Order_Line_Item rdf:type owl:Class ;
                             rdfs:label "Order Line Item"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-OM#Supplier
-ecsel-dr-OM:Supplier rdf:type owl:Class ;
-                     rdfs:subClassOf dr:Supply_Chain_Lobe ;
-                     rdfs:comment "A SUPPLIER is an entity fulfilling a demand for a specific product or service." ;
-                     rdfs:label "Supplier"@en .
-
-
 ###  http://www.w3id.org/ecsel-dr-OM#Supplier_Data
 ecsel-dr-OM:Supplier_Data rdf:type owl:Class ;
-                          rdfs:subClassOf dr:Supply_Chain_Lobe ;
+                          rdfs:subClassOf dr:Supplier ;
                           rdfs:comment "Information about a supplier." ;
                           rdfs:label "Supplier Data"@en .
 
@@ -23068,13 +23157,6 @@ ecsel-dr-Planning:Macro_Operation rdf:type owl:Class ;
                                   rdfs:label "Macro Operation"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-Planning#Order
-ecsel-dr-Planning:Order rdf:type owl:Class ;
-                        rdfs:subClassOf dr:Supply_Chain_Lobe ;
-                        rdfs:comment "An ORDER contains at least one order position. An ORDER has an order type and is associated to DEMAND." ;
-                        rdfs:label "Order" .
-
-
 ###  http://www.w3id.org/ecsel-dr-Planning#Owner
 ecsel-dr-Planning:Owner rdf:type owl:Class ;
                         rdfs:subClassOf dr:Supply_Chain_Lobe ;
@@ -23564,7 +23646,7 @@ ecsel-dr-SCP:Bottleneck_Resource rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Buffer_Stock_Order
 ecsel-dr-SCP:Buffer_Stock_Order rdf:type owl:Class ;
-                                rdfs:subClassOf ecsel-dr-SCP:Order ;
+                                rdfs:subClassOf dr:Order ;
                                 rdfs:label "Buffer Stock Order"@en .
 
 
@@ -23584,25 +23666,11 @@ ecsel-dr-SCP:Confirmation rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Consignment_Order
 ecsel-dr-SCP:Consignment_Order rdf:type owl:Class ;
-                               rdfs:subClassOf ecsel-dr-SCP:Order ;
+                               rdfs:subClassOf dr:Order ;
                                rdfs:comment """Consignment Stock is a logistics concept where the supplier (Vendor) owned goods are stored at a customer location.
 
 The supplier (Vendor) is responsible to maintain his stock within a defined min/max level."""@en ;
                                rdfs:label "Consignment Order"@en .
-
-
-###  http://www.w3id.org/ecsel-dr-SCP#Customer
-ecsel-dr-SCP:Customer rdf:type owl:Class ;
-                      rdfs:subClassOf dr:Planning_Lobe ,
-                                      ecsel-dr-SCP:General_Customer ;
-                      rdfs:comment """CUSTOMER is a person, organization, or business entity that generates demand by placing an order or making a request for a specific product or service. A customer may also fulfill their obligations by facilitating payment for the goods or services received.
-
-Customers can be categorized into two main types: 
-•	External Customers: Entities outside the organization that purchase goods or services, often governed by agreements like Incoterms.
-•	Internal Customers: Stakeholders or departments within the organization that raise internal demand for products or services to support internal processes.
-
-A customer interacts with the organization through actions such as order placement, demand generation, and the completion of financial transactions. Customers are central to both demand creation in the supply chain and the fulfillment processes that ensure the delivery of goods or services.""" ;
-                      rdfs:label "Customer"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Customer_Logistics_Management_Representative
@@ -23628,7 +23696,7 @@ ecsel-dr-SCP:Die_Bank rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-SCP#EDI_Forecast
 ecsel-dr-SCP:EDI_Forecast rdf:type owl:Class ;
-                          rdfs:subClassOf ecsel-dr-SCP:Order ;
+                          rdfs:subClassOf dr:Order ;
                           rdfs:comment "The EDI Forecast Universe is a Data Mart that was started in 2010 (?) to support Forecast Accuracy  analysis"@en ;
                           rdfs:label "EDI Forecast"@en .
 
@@ -23642,8 +23710,8 @@ ecsel-dr-SCP:Forecast rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-SCP#General_Customer
 ecsel-dr-SCP:General_Customer rdf:type owl:Class ;
-                              rdfs:subClassOf dr:Planning_Lobe ,
-                                              ecsel-dr-SCP:Customer ;
+                              rdfs:subClassOf dr:Customer ,
+                                              dr:Planning_Lobe ;
                               rdfs:label "General Customers"@en ;
                               skos:altLabel """GENERAL CUSTOMERS is a person, organization, or business entity that generates demand by placing an order or making a request for a specific product or service. A general customer may also fulfill their obligations by facilitating payment for the goods or services received.
 
@@ -23717,13 +23785,6 @@ ecsel-dr-SCP:Operational_Demand rdf:type owl:Class ;
                                 rdfs:label "Operational Demand"@en .
 
 
-###  http://www.w3id.org/ecsel-dr-SCP#Order
-ecsel-dr-SCP:Order rdf:type owl:Class ;
-                   rdfs:subClassOf dr:Planning_Lobe ;
-                   rdfs:comment "An ORDER is a confirmation of a transaction (a receipt), which can contain multiple line items, each represented by an Offer that has been accepted by the customer." ;
-                   rdfs:label "Order"@en .
-
-
 ###  http://www.w3id.org/ecsel-dr-SCP#Order_Line_Item
 ecsel-dr-SCP:Order_Line_Item rdf:type owl:Class ;
                              rdfs:subClassOf dr:Planning_Lobe ;
@@ -23761,7 +23822,7 @@ ecsel-dr-SCP:Prioritized_Orders rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Private_Customer
 ecsel-dr-SCP:Private_Customer rdf:type owl:Class ;
-                              rdfs:subClassOf ecsel-dr-SCP:Customer ;
+                              rdfs:subClassOf dr:Customer ;
                               rdfs:label "Private Customers"@en .
 
 
@@ -23815,7 +23876,7 @@ ecsel-dr-SCP:Sales_Demand rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-SCP#Standard_Order
 ecsel-dr-SCP:Standard_Order rdf:type owl:Class ;
-                            rdfs:subClassOf ecsel-dr-SCP:Order ;
+                            rdfs:subClassOf dr:Order ;
                             rdfs:label "Standard Order"@en ;
                             skos:definition "EDI or manually entered, can be shipped, can contain several products." .
 
@@ -24336,6 +24397,31 @@ ecsel-dr-SO:Workshop rdf:type owl:Class ;
                      rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
                      rdfs:comment "The overall organizational working structures within the fabs is described in the entity “Workshop” (master entity)"@en ;
                      rdfs:label "Workshop"@en .
+
+
+###  http://www.w3id.org/ecsel-dr/quality/Assembly_Lot
+<http://www.w3id.org/ecsel-dr/quality/Assembly_Lot> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.w3id.org/digital-reference/quality/Lot> .
+
+
+###  http://www.w3id.org/ecsel-dr/quality/Failure_Analysis
+<http://www.w3id.org/ecsel-dr/quality/Failure_Analysis> rdf:type owl:Class ;
+                                                        rdfs:subClassOf dr:Quality_Management_Lobe .
+
+
+###  http://www.w3id.org/ecsel-dr/quality/Quality_Request
+<http://www.w3id.org/ecsel-dr/quality/Quality_Request> rdf:type owl:Class ;
+                                                       rdfs:subClassOf dr:Quality_Management_Lobe .
+
+
+###  http://www.w3id.org/ecsel-dr/quality/Quality_Response
+<http://www.w3id.org/ecsel-dr/quality/Quality_Response> rdf:type owl:Class ;
+                                                        rdfs:subClassOf dr:Quality_Management_Lobe .
+
+
+###  http://www.w3id.org/ecsel-dr/quality/Substrate
+<http://www.w3id.org/ecsel-dr/quality/Substrate> rdf:type owl:Class ;
+                                                 rdfs:subClassOf dr:Quality_Management_Lobe .
 
 
 ###  http://xmlns.com/foaf/0.1/Agent

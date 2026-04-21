@@ -22812,7 +22812,7 @@ customers are central to both demand creation in the supply chain and the fulfil
 ###  http://www.w3id.org/ecsel-dr-Planning-SCP#SSO_Stocks
 <http://www.w3id.org/ecsel-dr-Planning-SCP#SSO_Stocks> rdf:type owl:Class ;
                                                        rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Planning-SCP#Operational_Demand> ;
-                                                       rdfs:label "SSO Stocks"@en ;
+                                                       rdfs:label "SSO Stocks"@en .
 
 
 
@@ -22820,7 +22820,7 @@ customers are central to both demand creation in the supply chain and the fulfil
 <http://www.w3id.org/ecsel-dr-Planning-SCP#Safety_Stock> rdf:type owl:Class ;
                                                          rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Planning-SCP#SSO_Stocks> ;
                                                          rdfs:comment "Describes a level of extra stock that is maintained to mitigate risk of stockouts  caused by uncertainties in supply and demand."@en ;
-                                                         rdfs:label "Safety Stock"@en .
+                                                         rdfs:label "Safety Stock"@en ;
                                                          skos:definition """SSO Stocks refers to SSO stock profiles applied exclusively at the finished goods level, sourced from Stockplan Rules or manually entered in the SPL UI. This class encompasses three subtypes: Retained Stock, which is handled together with AP_FCST settings via retain stock rules; Min Stock, representing the minimum inventory level desired on hand to buffer small capacity problems; and Max Stock, representing the maximum inventory level permitted, used to fill capacities."""@en .
 
 ###  http://www.w3id.org/ecsel-dr-Planning-SCP#Sales_Demand

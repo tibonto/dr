@@ -18896,7 +18896,8 @@ ecsel-dr-CO2Savings:Wind_Turbine rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Application_Servcice_IDD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Application_Servcice_IDD> rdf:type owl:Class ;
                                                                     rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#Interface_Design_Description_IDD> ;
-                                                                    rdfs:label "AH Application Servcice IDD"@en .
+                                                                    rdfs:label "AH Application Servcice IDD"@en ;
+                                                                    skos:definition """AH Application Service IDD (Application Service Interface Design Description) is a subclass of AH Service Documentation Document and represents the central document within the documentation set of a specific application service in the Eclipse Arrowhead Framework. As an Interface Design Description, it provides a complete and technically precise specification of a service implementation by defining the communication technology, encoding scheme, data format, and information model used by application systems that exchange information by providing and/or consuming application services. It may either declare these technical contents directly or reference external Communication Profile and Semantic Profile documents where those exist, making it the authoritative linking document between the general service description and all technology-specific implementation details."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Application_Service
@@ -18909,7 +18910,8 @@ ecsel-dr-CO2Savings:Wind_Turbine rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Application_Service_SD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Application_Service_SD> rdf:type owl:Class ;
                                                                   rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#Service_Description_SD> ;
-                                                                  rdfs:label "AH Application Service SD"@en .
+                                                                  rdfs:label "AH Application Service SD"@en ;
+                                                                  skos:definition """AH Application Service SD is a subclass of Service Description SD that provides a plain, general description of a specific application service, one built to address a particular real-world use case rather than to run the network itself. It describes what the service does and why it exists, without specifying technical implementation details, and serves as the starting point from which a full technical specification is developed."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Application_System
@@ -18935,13 +18937,15 @@ ecsel-dr-CO2Savings:Wind_Turbine rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Authorization_Control_Service_IDD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Authorization_Control_Service_IDD> rdf:type owl:Class ;
                                                                              rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Mandatory_Core_Service_IDD> ;
-                                                                             rdfs:label "AH Authorization Control Service IDD"@en .
+                                                                             rdfs:label "AH Authorization Control Service IDD"@en ;
+                                                                             skos:definition """AH Authorization Control Service IDD is a subclass of AH Mandatory Core Service IDD representing the technical specification document for the service that controls who is allowed to access what within an Arrowhead local environment. It formally describes how the access control service works, including how it verifies identities and enforces permissions, ensuring that only approved systems can communicate with one another."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Authorization_Control_Service_SD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Authorization_Control_Service_SD> rdf:type owl:Class ;
                                                                             rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Mandatory_Core_Service_SD> ;
-                                                                            rdfs:label "AH Authorization Control Service SD"@en .
+                                                                            rdfs:label "AH Authorization Control Service SD"@en ;
+                                                                            skos:definition """AH Authorization Control Service SD is a subclass of AH Mandatory Core Service SD providing the plain, general description of the access control service that must be present in every Arrowhead local environment. This service is responsible for deciding which systems are allowed to communicate with which other systems, ensuring that no system can access a service it has not been explicitly permitted to use, and that every system is who it claims to be before any exchange takes place."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Authorization_System_Sy_SD
@@ -18971,7 +18975,8 @@ ecsel-dr-CO2Savings:Wind_Turbine rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_Service_IDD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_Service_IDD> rdf:type owl:Class ;
                                                                              rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Core_Service_IDD> ;
-                                                                             rdfs:label "AH Automation Supporting Service IDD"@en .
+                                                                             rdfs:label "AH Automation Supporting Service IDD"@en ;
+                                                                             skos:definition """AH Automation Supporting Service IDD is a subclass of AH Core Service IDD representing technical specification documents for optional built-in services that extend the basic capabilities of an Arrowhead environment. Where the three essential built-in services handle only the minimum needed to get systems talking to each other, these additional services cover broader needs such as storing data, handling events, managing configurations, and monitoring quality, supporting more complete and capable automated operations."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_Service_SD
@@ -19008,13 +19013,15 @@ ecsel-dr-CO2Savings:Wind_Turbine rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Core_Service_IDD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Core_Service_IDD> rdf:type owl:Class ;
                                                             rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#Interface_Design_Description_IDD> ;
-                                                            rdfs:label "AH Core Service IDD"@en .
+                                                            rdfs:label "AH Core Service IDD"@en ;
+                                                            skos:definition """AH Core Service IDD is a subclass of Interface Design Description IDD specifically covering the technical specification documents for the built-in services that keep the Arrowhead Framework running. These documents describe how each built-in service works, how other systems can interact with it, and what rules govern those interactions, forming the foundation that all other services in the network rely on."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Core_Service_SD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Core_Service_SD> rdf:type owl:Class ;
                                                            rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#Service_Description_SD> ;
-                                                           rdfs:label "AH Core Service SD"@en .
+                                                           rdfs:label "AH Core Service SD"@en ;
+                                                           skos:definition """AH Core Service SD is a subclass of Service Description SD that provides plain, general descriptions of the built-in services that form the backbone of the Arrowhead Framework, both the essential ones and the optional supporting ones. These descriptions explain what each built-in service does and what role it plays, without going into technical implementation details."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Core_System
@@ -19050,7 +19057,8 @@ Arriwhead Core Systems can be distinguished in Arrowhead Mandatory Core Systems 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Device_Discovery_Service_IDD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Device_Discovery_Service_IDD> rdf:type owl:Class ;
                                                                         rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_Service_IDD> ;
-                                                                        rdfs:label "AH Device Discovery Service IDD"@en .
+                                                                        rdfs:label "AH Device Discovery Service IDD"@en ;
+                                                                        skos:definition """AH Device Discovery Service IDD is a subclass of AH Automation Supporting Service IDD representing the technical specification document for a service that automatically finds and registers physical devices, such as sensors, machines, or hardware components, within an Arrowhead environment. Once a device is identified and registered, it can be recognised and used by other systems in the network without needing manual configuration."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Device_Discovery_Service_SD
@@ -19098,7 +19106,8 @@ Arriwhead Core Systems can be distinguished in Arrowhead Mandatory Core Systems 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Global_Service_Discovery_Service_IDD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Global_Service_Discovery_Service_IDD> rdf:type owl:Class ;
                                                                                 rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_Service_IDD> ;
-                                                                                rdfs:label "AH Global Service Discovery Service IDD"@en .
+                                                                                rdfs:label "AH Global Service Discovery Service IDD"@en ;
+                                                                                skos:definition """AH Global Service Discovery Service IDD is a subclass of AH Automation Supporting Service IDD representing the technical specification document for a service that enables systems to find and access services located outside their own local environment. Rather than being limited to what is available within a single local network, this service allows a system to search for and connect with services in other locations or networks."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Global_Service_Discovery_Service_SD
@@ -19122,7 +19131,8 @@ Arriwhead Core Systems can be distinguished in Arrowhead Mandatory Core Systems 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Inter_Cloud_Negotiations_Service_IDD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Inter_Cloud_Negotiations_Service_IDD> rdf:type owl:Class ;
                                                                                 rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_Service_IDD> ;
-                                                                                rdfs:label "AH Inter Cloud Negotiations Service IDD"@en .
+                                                                                rdfs:label "AH Inter Cloud Negotiations Service IDD"@en ;
+                                                                                skos:definition """AH Inter Cloud Negotiations Service IDD is a subclass of AH Automation Supporting Service IDD representing the technical specification document for a service that manages the process of establishing agreements and connections between two or more separate Arrowhead local environments. It handles the rules and steps that allow separate, independently managed networks to share resources and collaborate safely."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Inter_Cloud_Negotiations_Service_SD
@@ -19134,7 +19144,8 @@ Arriwhead Core Systems can be distinguished in Arrowhead Mandatory Core Systems 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Local_Cloud
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Local_Cloud> rdf:type owl:Class ;
                                                        rdfs:subClassOf dr:Cloud_Lobe ;
-                                                       rdfs:label "AH Local Cloud"@en .
+                                                       rdfs:label "AH Local Cloud"@en ;
+                                                       skos:definition """AH Local Cloud is a subclass of Cloud Lobe representing a self-contained, private digital environment set up within a specific physical location, such as a factory floor or industrial site. It groups together a collection of connected software systems and devices that need to work with one another, and must always include three essential built-in components: a service directory so systems can find each other, an access control system so only permitted systems can communicate, and a coordination system so the right systems are matched to the right tasks."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Mandatory_Core_Service
@@ -19154,7 +19165,8 @@ While the class AH_mandatory_core_service contains the mandatory core services o
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Mandatory_Core_Service_SD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Mandatory_Core_Service_SD> rdf:type owl:Class ;
                                                                      rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Core_Service_SD> ;
-                                                                     rdfs:label "AH Mandatory Core Service SD"@en .
+                                                                     rdfs:label "AH Mandatory Core Service SD"@en ;
+                                                                     skos:definition """AH Mandatory Core Service SD is a subclass of AH Core Service SD covering plain, general descriptions specifically for the three services that must be present in every Arrowhead local environment: the service directory, the access control system, and the coordination system. Without these three, the network cannot function, making their descriptions a foundational part of the overall documentation."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Mandatory_Core_System
@@ -19178,7 +19190,8 @@ While the class AH_mandatory_core_service contains the mandatory core services o
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Orchestration_Service_IDD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Orchestration_Service_IDD> rdf:type owl:Class ;
                                                                      rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Mandatory_Core_Service_IDD> ;
-                                                                     rdfs:label "AH Orchestration Service IDD"@en .
+                                                                     rdfs:label "AH Orchestration Service IDD"@en ;
+                                                                     skos:definition """AH Orchestration Service IDD is a subclass of AH Mandatory Core Service IDD representing the technical specification document for the coordination service that is required in every Arrowhead local environment. This coordination service is responsible for deciding, at the moment a request is made, which available service a system should connect to, acting like a matchmaker that routes requests to the most appropriate provider. This document formally defines how that matching process works and the rules that govern it."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Orchestration_Service_SD
@@ -19226,7 +19239,8 @@ While the class AH_mandatory_core_service contains the mandatory core services o
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Service_Discovery_Service_IDD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Service_Discovery_Service_IDD> rdf:type owl:Class ;
                                                                          rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Mandatory_Core_Service_IDD> ;
-                                                                         rdfs:label "AH Service Discovery Service IDD"@en .
+                                                                         rdfs:label "AH Service Discovery Service IDD"@en ;
+                                                                         skos:definition """AH Service Discovery Service IDD is a subclass of AH Mandatory Core Service IDD representing the technical specification document for the service directory lookup function required in every Arrowhead local environment. This function allows any system in the network to search for and find other services that are available, similar to looking up a contact in a directory. This document formally defines how that search and lookup process works."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Service_Discovery_Service_SD
@@ -19278,7 +19292,8 @@ That is, CP and SP are useful if different service implementations use the same 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Session_Establish_Service_IDD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Session_Establish_Service_IDD> rdf:type owl:Class ;
                                                                          rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_Service_IDD> ;
-                                                                         rdfs:label "AH Session Establish Service IDD"@en .
+                                                                         rdfs:label "AH Session Establish Service IDD"@en ;
+                                                                         skos:definition """AH Session Establish Service IDD is a subclass of AH Automation Supporting Service IDD representing the technical specification document for a service that handles the process of starting a new communication session between two or more systems. It defines the steps and requirements needed before systems can begin exchanging information, ensuring that all parties are properly identified and that the connection is set up in a consistent and secure way."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Session_Establish_Service_SD
@@ -19290,7 +19305,8 @@ That is, CP and SP are useful if different service implementations use the same 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Session_Management_Service_IDD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Session_Management_Service_IDD> rdf:type owl:Class ;
                                                                           rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_Service_IDD> ;
-                                                                          rdfs:label "AH Session Management Service IDD"@en .
+                                                                          rdfs:label "AH Session Management Service IDD"@en ;
+                                                                          skos:definition """AH Session Management Service IDD is a subclass of AH Automation Supporting Service IDD representing the technical specification document for a service that oversees the full life of a communication session between systems, from the moment it begins, through its active use, until it is properly closed. It ensures that ongoing exchanges between systems remain orderly, trackable, and properly terminated when no longer needed."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Session_Management_Service_SD
@@ -19302,7 +19318,8 @@ That is, CP and SP are useful if different service implementations use the same 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Store_Management_Service_IDD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Store_Management_Service_IDD> rdf:type owl:Class ;
                                                                         rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Mandatory_Core_Service_IDD> ;
-                                                                        rdfs:label "AH Store Management Service IDD"@en .
+                                                                        rdfs:label "AH Store Management Service IDD"@en ;
+                                                                        skos:definition """AH Store Management Service IDD is a subclass of AH Mandatory Core Service IDD representing the technical specification document for the service responsible for storing, organising, and retrieving data within an Arrowhead local environment. This service acts as the managed data store for the network, ensuring that information needed by systems is saved reliably and can be accessed when required."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Store_Management_Service_SD
@@ -19320,7 +19337,8 @@ That is, CP and SP are useful if different service implementations use the same 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_System_Discovery_Service_IDD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_System_Discovery_Service_IDD> rdf:type owl:Class ;
                                                                         rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_Service_IDD> ;
-                                                                        rdfs:label "AH System Discovery Service IDD"@en .
+                                                                        rdfs:label "AH System Discovery Service IDD"@en ;
+                                                                        skos:definition """AH System Discovery Service IDD is a subclass of AH Automation Supporting Service IDD representing the technical specification document for a service that finds and catalogues the software systems present within an Arrowhead environment. Rather than discovering physical devices, this service identifies and records the software systems and applications in the network, what they are, what they can do, and how they are configured, so that the broader network has an accurate and current picture of its members."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_System_Discovery_Service_SD
@@ -19368,7 +19386,8 @@ That is, CP and SP are useful if different service implementations use the same 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Token_Generation_Service_IDD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Token_Generation_Service_IDD> rdf:type owl:Class ;
                                                                         rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Mandatory_Core_Service_IDD> ;
-                                                                        rdfs:label "AH Token Generation Service IDD"@en .
+                                                                        rdfs:label "AH Token Generation Service IDD"@en ;
+                                                                        skos:definition """AH Token Generation Service IDD is a subclass of AH Mandatory Core Service IDD representing the technical specification document for the service that issues security tokens within an Arrowhead local environment. A security token is a short-lived digital pass that a system presents to prove it has been granted permission to use a particular service, similar to a ticket that grants entry for a specific purpose. This document formally defines how those tokens are created and what they must contain."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Token_Generation_Service_SD
@@ -19387,7 +19406,8 @@ That is, CP and SP are useful if different service implementations use the same 
 <http://www.w3id.org/ecsel-dr-Cloud-AH#Communication_Profile_CP> rdf:type owl:Class ;
                                                                  rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Service_Documentation_Document> ;
                                                                  rdfs:comment "Communication Profile (CP)" ;
-                                                                 rdfs:label "Communication Profile"@en .
+                                                                 rdfs:label "Communication Profile"@en ;
+                                                                 skos:definition """Communication Profile CP is a subclass of AH Service Documentation Document describing how a service sends and receives information, for example which communication method and connection type it uses. It is an optional, reusable document that multiple service descriptions can refer to, rather than each one having to repeat the same communication details from scratch."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#Communication_Security_Mechanism
@@ -19479,7 +19499,8 @@ The concept constrained device was introduced in the context of the Internet of 
 <http://www.w3id.org/ecsel-dr-Cloud-AH#Interface_Design_Description_IDD> rdf:type owl:Class ;
                                                                          rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Service_Documentation_Document> ;
                                                                          rdfs:comment "Interface Design Description (IDD)"@en ;
-                                                                         rdfs:label "Interface Design Description IDD"@en .
+                                                                         rdfs:label "Interface Design Description IDD"@en ;
+                                                                         skos:definition """Interface Design Description IDD is a subclass of AH Service Documentation Document representing the main technical specification document for a service in the Arrowhead Framework. It describes exactly how the service works in practice, how it communicates, how it packages data, and what information it exchanges, and may point to separate reusable documents for communication and data format details rather than including everything itself."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#Local_Network
@@ -19529,7 +19550,8 @@ The concept constrained device was introduced in the context of the Internet of 
 <http://www.w3id.org/ecsel-dr-Cloud-AH#Semantic_Profile_SP> rdf:type owl:Class ;
                                                             rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Service_Documentation_Document> ;
                                                             rdfs:comment "Semantic Profile (SP)" ;
-                                                            rdfs:label "Semantic Profile"@en .
+                                                            rdfs:label "Semantic Profile"@en ;
+                                                            skos:definition """Semantic Profile SP is an optional subclass of AH Service Documentation Document that describes the meaning and structure of the information that a service exchanges, for example what each data field represents and how values should be interpreted. It is written as a standalone, reusable document so that multiple services that share the same type of information do not each need to repeat that description individually."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#Sensor_Device
@@ -19560,7 +19582,8 @@ The concept constrained device was introduced in the context of the Internet of 
 <http://www.w3id.org/ecsel-dr-Cloud-AH#Service_Description_SD> rdf:type owl:Class ;
                                                                rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Service_Documentation_Document> ;
                                                                rdfs:comment "Service Description (SD)"@en ;
-                                                               rdfs:label "Service Description SD"@en .
+                                                               rdfs:label "Service Description SD"@en ;
+                                                               skos:definition """Service Description SD is a subclass of AH Service Documentation Document that provides a plain, general description of what an Arrowhead service does and why it exists, without specifying any technical details about how it communicates or how its data is structured. It captures the purpose and function of the service in a way that remains valid regardless of the specific technology used to implement it."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#Service_Documentation
@@ -22272,7 +22295,8 @@ Typical lot size 25 of 50 wafers is a lot in the Frontend.""" .
 ecsel-dr-Planning:Macro_Operation rdf:type owl:Class ;
                                   rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
                                   rdfs:comment "Additional lobe: Planning"@en ;
-                                  rdfs:label "Macro Operation"@en .
+                                  rdfs:label "Macro Operation"@en ;
+                                  skos:definition """Macro Operation is a high-level operational activity or process in the semiconductor supply chain, encompassing a series of interdependent tasks, functions, or sub-processes that collectively achieve a strategic or large-scale objective. Macro Operations represent broader, aggregated activities that typically involve multiple resources, stakeholders, or operational stages and are key to delivering outputs or enabling end-to-end supply chain workflows."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning#Owner
@@ -22595,7 +22619,8 @@ ecsel-dr-Planning:Yield rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-Planning-SCP#Buffer_Stock_Order
 <http://www.w3id.org/ecsel-dr-Planning-SCP#Buffer_Stock_Order> rdf:type owl:Class ;
                                                                rdfs:subClassOf dr:Order ;
-                                                               rdfs:label "Buffer Stock Order"@en .
+                                                               rdfs:label "Buffer Stock Order"@en ;
+                                                               skos:definition "Buffer Stock Order reserves stock for fluctuating customer demands."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Planning-SCP#Capacity_Bottleneck
@@ -23182,7 +23207,8 @@ This classification is done by The Global Industry Classification Standard (GICS
 <http://www.w3id.org/ecsel-dr-Power-PWR#N_Channel_Configuration> rdf:type owl:Class ;
                                                                  rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Power-PWR#Device_Configuration> ;
                                                                  owl:disjointWith <http://www.w3id.org/ecsel-dr-Power-PWR#P_Channel_Configuration> ;
-                                                                 rdfs:label "N-Channel Configuration"@en .
+                                                                 rdfs:label "N-Channel Configuration"@en ;
+                                                                 skos:definition """N-Channel Configuration is the hardware and/or software settings for the use of one or more N-channel field effect transistors (N-channel MOSFETs/FETs) within a power circuit. It documents electrical connections and orientation (source, drain, gate), intended role (for example high side switch, load switch, complementary stage), gate drive and level shifting schemes, biasing and pull up elements, gate resistances, protection/snubbing components, allowed voltage/current/thermal limits, switching profiles, and any monitoring or control parameters required for safe and efficient operation. This configuration is used for specification, validation, monitoring and automated control of power assemblies where N-channel devices determine power routing, protection or load isolation."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Power-PWR#Negative

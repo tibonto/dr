@@ -1430,6 +1430,13 @@ ssn-system:in_condition rdf:type owl:ObjectProperty ;
                                                                         rdfs:range <http://www.w3id.org/digital-reference/quality/Quality_Complaint_Line_Item> .
 
 
+###  http://www.w3id.org/digital-reference/quality/fulfills_order_line_item
+<http://www.w3id.org/digital-reference/quality/fulfills_order_line_item> rdf:type owl:ObjectProperty ;
+                                                                         rdfs:domain <http://www.w3id.org/digital-reference/quality/Shipment> ;
+                                                                         rdfs:range ecsel-dr-OM:Order_Line_Item ;
+                                                                         rdfs:label "fulfills order line item"@en .
+
+
 ###  http://www.w3id.org/digital-reference/quality/has_process
 <http://www.w3id.org/digital-reference/quality/has_process> rdf:type owl:ObjectProperty ;
                                                             rdfs:domain <http://www.w3id.org/digital-reference/quality/Lot> ;
@@ -1463,16 +1470,44 @@ ssn-system:in_condition rdf:type owl:ObjectProperty ;
                                                                            rdfs:range <http://www.w3id.org/digital-reference/quality/Product_Instance> .
 
 
+###  http://www.w3id.org/digital-reference/quality/relates_to_sales_product
+<http://www.w3id.org/digital-reference/quality/relates_to_sales_product> rdf:type owl:ObjectProperty ;
+                                                                         rdfs:domain ecsel-dr-OM:Order_Line_Item ;
+                                                                         rdfs:range ecsel-dr-PROD:Sales_Product ;
+                                                                         rdfs:label "relates to sales product"@en .
+
+
 ###  http://www.w3id.org/digital-reference/quality/reported_via
 <http://www.w3id.org/digital-reference/quality/reported_via> rdf:type owl:ObjectProperty ;
                                                              rdfs:domain <http://www.w3id.org/digital-reference/quality/Quality_Complaint> ;
                                                              rdfs:range <http://www.w3id.org/digital-reference/quality/Quality_Complaint_8D> .
 
 
+###  http://www.w3id.org/digital-reference/quality/reported_via_complaint_8D
+<http://www.w3id.org/digital-reference/quality/reported_via_complaint_8D> rdf:type owl:ObjectProperty ;
+                                                                          rdfs:domain <http://www.w3id.org/digital-reference/quality/Quality_Complaint_Line_Item> ;
+                                                                          rdfs:range <http://www.w3id.org/digital-reference/quality/Quality_Complaint_8D> ;
+                                                                          rdfs:label "reported via complaint 8D"@en .
+
+
 ###  http://www.w3id.org/digital-reference/quality/shipped_in
 <http://www.w3id.org/digital-reference/quality/shipped_in> rdf:type owl:ObjectProperty ;
                                                            rdfs:domain <http://www.w3id.org/digital-reference/quality/Product_Instance> ;
                                                            rdfs:range <http://www.w3id.org/digital-reference/quality/Shipment> .
+
+
+###  http://www.w3id.org/digital-reference/quality/used_in_customer_application
+<http://www.w3id.org/digital-reference/quality/used_in_customer_application> rdf:type owl:ObjectProperty ;
+                                                                            rdfs:domain <http://www.w3id.org/digital-reference/quality/Product_Instance> ;
+                                                                            rdfs:range <http://www.w3id.org/digital-reference/quality/Customer_Application> ;
+                                                                            rdfs:label "used in customer application"@en .
+
+
+###  http://www.w3id.org/digital-reference/quality/uses_product_for
+<http://www.w3id.org/digital-reference/quality/uses_product_for> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:domain dr:Customer ;
+                                                                 rdfs:range <http://www.w3id.org/digital-reference/quality/Customer_Application> ;
+                                                                 rdfs:label "uses product for"@en .
 
 
 ###  http://www.w3id.org/digital-reference/quality/was_produced_in
@@ -1622,12 +1657,6 @@ dr:is_relationship_nature_of rdf:type owl:ObjectProperty ;
                              rdfs:domain sampling:Relationship_Nature ;
                              rdfs:range sampling:Sample_Relationship ;
                              rdfs:comment "is relationship nature of"@en .
-
-
-###  http://www.w3id.org/ecsel-dr#is_reported_as_part_of
-dr:is_reported_as_part_of rdf:type owl:ObjectProperty ;
-                          rdfs:domain dr:Failure_Analysis_Code ;
-                          rdfs:range <http://www.w3id.org/ecsel-dr/quality/Quality_Response> .
 
 
 ###  http://www.w3id.org/ecsel-dr#is_used_by_standard
@@ -7949,6 +7978,14 @@ ecsel-dr-SO:uses_one_or_more_technology rdf:type owl:ObjectProperty ;
                                                  rdfs:range <http://www.w3id.org/ecsel-dr/quality/Quality_Request> .
 
 
+###  http://www.w3id.org/ecsel-dr/quality/filed_by
+<http://www.w3id.org/ecsel-dr/quality/filed_by> rdf:type owl:ObjectProperty ;
+                                                owl:inverseOf <http://www.w3id.org/ecsel-dr/quality/can_raise> ;
+                                                rdfs:domain <http://www.w3id.org/ecsel-dr/quality/Quality_Request> ;
+                                                rdfs:range dr:Customer ;
+                                                rdfs:label "filed by"@en .
+
+
 ###  http://www.w3id.org/ecsel-dr/quality/has_a_customer
 <http://www.w3id.org/ecsel-dr/quality/has_a_customer> rdf:type owl:ObjectProperty ,
                                                                owl:IrreflexiveProperty ;
@@ -7991,6 +8028,13 @@ ecsel-dr-SO:uses_one_or_more_technology rdf:type owl:ObjectProperty ;
 <http://www.w3id.org/ecsel-dr/quality/is_executed_on> rdf:type owl:ObjectProperty ;
                                                       rdfs:domain <http://www.w3id.org/ecsel-dr/quality/Failure_Analysis> ;
                                                       rdfs:range <http://www.w3id.org/digital-reference/quality/Product_Instance> .
+
+
+###  http://www.w3id.org/ecsel-dr/quality/is_sent_to
+<http://www.w3id.org/ecsel-dr/quality/is_sent_to> rdf:type owl:ObjectProperty ;
+                                                  rdfs:domain <http://www.w3id.org/ecsel-dr/quality/Quality_Response> ;
+                                                  rdfs:range dr:Customer ;
+                                                  rdfs:label "is sent to"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr/quality/provides
@@ -8038,6 +8082,14 @@ sosa:result_time rdf:type owl:DatatypeProperty ;
                                                      rdfs:domain <http://www.w3id.org/digital-reference/quality/Product_Instance> ;
                                                      rdfs:range xsd:string ;
                                                      rdfs:label "ECID" .
+
+
+###  http://www.w3id.org/ecsel-dr#Failure_Analysis_Code
+dr:Failure_Analysis_Code rdf:type owl:DatatypeProperty ;
+                         rdfs:domain <http://www.w3id.org/ecsel-dr/quality/Failure_Analysis> ;
+                         rdfs:range xsd:string ;
+                         rdfs:label "Failure Analysis Code"@en ;
+                         skos:definition "A controlled code identifying a failure analysis result reported as part of a quality response for consistent quality classification and follow-up."@en .
 
 
 ###  http://www.w3id.org/digital-reference/quality/ID
@@ -15101,6 +15153,12 @@ ssn-system:System_Property rdf:type owl:Class ;
                                                       skos:definition "A set of responsible contacts for quality work performed during a quality response."@en .
 
 
+###  http://www.w3id.org/digital-reference/quality/Customer_Application
+<http://www.w3id.org/digital-reference/quality/Customer_Application> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf dr:Application ;
+                                                                    rdfs:label "Customer Application"@en .
+
+
 ###  http://www.w3id.org/digital-reference/quality/Lot
 <http://www.w3id.org/digital-reference/quality/Lot> rdf:type owl:Class ;
                                                     rdfs:subClassOf dr:Quality_Management_Lobe ;
@@ -15283,12 +15341,6 @@ dr:End_Customer rdf:type owl:Class ;
                 rdfs:subClassOf dr:Customer ;
                 rdfs:label "End Customer" ;
                 skos:definition "The final person, organization, or business entity that ultimately receives or uses a product or service at the end of the supply chain."@en .
-
-
-###  http://www.w3id.org/ecsel-dr#Failure_Analysis_Code
-dr:Failure_Analysis_Code rdf:type owl:Class ;
-                         rdfs:subClassOf dr:Quality_Management_Lobe ;
-                         rdfs:label "Failure Analysis Code" .
 
 
 ###  http://www.w3id.org/ecsel-dr#Geographical_Location
